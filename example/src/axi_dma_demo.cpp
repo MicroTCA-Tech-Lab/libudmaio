@@ -59,12 +59,13 @@ int main(int argc, char *argv[]) {
 
     bpo::variables_map vm;
     bpo::store(bpo::parse_command_line(argc, argv, desc), vm);
-    bpo::notify(vm);
 
     if (vm.count("help")) {
         std::cout << desc << "\n";
         return 0;
     }
+
+    bpo::notify(vm);
 
     if (trace) {
         boost::log::core::get()->set_filter(blt::severity >= blt::trace);
