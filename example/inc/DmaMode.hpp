@@ -14,15 +14,15 @@
 #include <iostream>
 #include <string>
 
-enum DmaMode { XDMA, ARM };
+enum DmaMode { XDMA, UIO };
 
 std::istream &operator>>(std::istream &in, DmaMode &mode) {
     std::string token;
     in >> token;
     if (token == "xdma")
         mode = DmaMode::XDMA;
-    else if (token == "arm")
-        mode = DmaMode::ARM;
+    else if (token == "uio")
+        mode = DmaMode::UIO;
     else
         in.setstate(std::ios_base::failbit);
     return in;

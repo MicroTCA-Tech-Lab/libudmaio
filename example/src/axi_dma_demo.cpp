@@ -75,16 +75,16 @@ int main(int argc, char *argv[]) {
         boost::log::core::get()->set_filter(blt::severity >= blt::info);
     }
 
-    auto axi_dma = (mode == DmaMode::ARM) ? UioIfFactory::create<UioAxiDmaIf>("axi_dma_0")
+    auto axi_dma = (mode == DmaMode::UIO) ? UioIfFactory::create<UioAxiDmaIf>("axi_dma_0")
                                           : UioIfFactory::create_from_xdma<UioAxiDmaIf>(
                                                 0x00910000, 4 * 1024, "/dev/xdma/card0/events0");
-    auto mem_sgdma = (mode == DmaMode::ARM)
+    auto mem_sgdma = (mode == DmaMode::UIO)
                          ? UioIfFactory::create<UioMemSgdma>("axi_bram_ctrl_0")
                          : UioIfFactory::create_from_xdma<UioMemSgdma>(0x00920000, 8 * 1024);
-    auto traffic_gen = (mode == DmaMode::ARM)
+    auto traffic_gen = (mode == DmaMode::UIO)
                            ? UioIfFactory::create<UioTrafficGen>("axi_traffic_gen_0")
                            : UioIfFactory::create_from_xdma<UioTrafficGen>(0x00890000, 64 * 1024);
-    DmaBufferAbstract *udmabuf = (mode == DmaMode::ARM)
+    DmaBufferAbstract *udmabuf = (mode == DmaMode::UIO)
                                      ? static_cast<DmaBufferAbstract *>(new UDmaBuf{})
                                      : static_cast<DmaBufferAbstract *>(new FpgaDdr4Buffer{});
     uint64_t counter_ok = 0, counter_total = 0;
