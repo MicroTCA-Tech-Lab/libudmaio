@@ -30,6 +30,7 @@
 
 #include "DataHandlerPrint.hpp"
 #include "DmaMode.hpp"
+#include "UioGpioStatus.hpp"
 #include "UioTrafficGen.hpp"
 #include "ZupExampleProjectConsts.hpp"
 
@@ -82,6 +83,7 @@ int main(int argc, char *argv[]) {
 
     std::signal(SIGINT, signal_handler);
 
+    // TODO: use UioGpioStatus to check if DDR4 is up and running
     auto axi_dma = (mode == DmaMode::UIO)
                        ? UioIfFactory::create_from_uio<UioAxiDmaIf>("hier_daq_arm_axi_dma_0")
                        : UioIfFactory::create_from_xdma<UioAxiDmaIf>(
