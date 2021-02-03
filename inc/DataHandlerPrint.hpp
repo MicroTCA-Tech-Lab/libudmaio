@@ -11,28 +11,21 @@
 
 #pragma once
 
-#include <boost/log/core/core.hpp>
-#include <boost/log/sources/logger.hpp>
-#include <boost/log/trivial.hpp>
+#include "AxiTrafficGenLfsr.hpp"
+#include "DataHandlerAbstract.hpp"
 
-namespace blt = boost::log::trivial;
+class DataHandlerPrint : public DataHandlerAbstract {
 
-class UDmaBuf {
-    int _fd;
-    void *_mem;
-    uint64_t _mem_size;
-    uint64_t _phys_addr;
+    std::optional<AxiTrafficGenLfsr> lfsr;
+
     boost::log::sources::severity_logger<blt::severity_level> _slg;
 
-    uint64_t _get_size(int buf_idx);
-    uint64_t _get_phys_addr(int buf_idx);
+    void process_data(const std::vector<uint8_t> &bytes) override;
+
+    uint64_t &_counter_ok;
+    uint64_t &_counter_total;
 
   public:
-    explicit UDmaBuf(int buf_idx = 0);
-
-    ~UDmaBuf();
-
-    uint64_t get_phys_addr();
-
-    void copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t> &out);
+    explicit DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, UDmaBuf &mem,
+                              uint64_t &counter_ok, uint64_t &counter_total);
 };

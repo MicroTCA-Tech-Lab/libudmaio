@@ -52,6 +52,6 @@ class UioTrafficGen : UioIf {
 
   public:
     explicit UioTrafficGen(const std::string &uio_name, uintptr_t addr, size_t size);
-    void start();
+    void start(uint16_t nr_pkts, uint32_t pkt_size, uint16_t pkt_pause);
     void print_version();
 };

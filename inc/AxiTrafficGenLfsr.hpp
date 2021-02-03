@@ -7,32 +7,31 @@
 //                                                                           //
 //---------------------------------------------------------------------------//
 
-// Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
+// Copyright (c) 2018-2021 Deutsches Elektronen-Synchrotron DESY
 
 #pragma once
 
-#include <boost/log/core/core.hpp>
-#include <boost/log/sources/logger.hpp>
-#include <boost/log/trivial.hpp>
+#include <cstdint>
 
-namespace blt = boost::log::trivial;
-
-class UDmaBuf {
-    int _fd;
-    void *_mem;
-    uint64_t _mem_size;
-    uint64_t _phys_addr;
-    boost::log::sources::severity_logger<blt::severity_level> _slg;
-
-    uint64_t _get_size(int buf_idx);
-    uint64_t _get_phys_addr(int buf_idx);
-
+/// implements LFSR as described in "AXI Traffic Generator v3.0"
+class AxiTrafficGenLfsr {
   public:
-    explicit UDmaBuf(int buf_idx = 0);
+    AxiTrafficGenLfsr(uint16_t seed) : val{seed} {};
 
-    ~UDmaBuf();
+    /// set seed to a specific value
+    void set(uint16_t seed) { val = seed; }
 
-    uint64_t get_phys_addr();
+    /// advance LFSR by one iteration, return new value
+    uint16_t advance() {
+        uint16_t new_bit = 1 ^ (val) ^ (val >> 1) ^ (val >> 3) ^ (val >> 12);
 
-    void copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t> &out);
+        val = (new_bit << 15) | (val >> 1);
+        return val;
+    }
+
+    /// get value without advancing the LFSR
+    uint16_t get() { return val; }
+
+  private:
+    uint16_t val;
 };

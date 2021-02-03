@@ -50,8 +50,10 @@ class UioMemSgdma : UioIf {
     void _write_desc(uintptr_t mem_offs, const S2mmDesc *desc);
     void _read_desc(uintptr_t mem_offs, S2mmDesc *desc);
 
+    size_t _nr_cyc_desc;
+
   public:
-    static const int BUF_LEN = 1024 * 1024;
+    static const int BUF_LEN = 2 * 1024 * 1024;
 
     explicit UioMemSgdma(const std::string &uio_name, uintptr_t addr, size_t size);
 
@@ -59,7 +61,16 @@ class UioMemSgdma : UioIf {
 
     void print_desc(const S2mmDesc &desc);
 
-    void print_descs(unsigned int nr_desc);
+    void print_descs();
 
     uint64_t get_first_desc_addr();
+
+    struct BufInfo {
+        uint64_t buf_addr;
+        uint32_t buf_len;
+    };
+
+    std::vector<BufInfo> get_full_buffers();
 };
+
+std::ostream &operator<<(std::ostream &os, const UioMemSgdma::BufInfo &buf_info);

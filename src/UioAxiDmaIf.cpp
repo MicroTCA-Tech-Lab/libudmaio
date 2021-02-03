@@ -27,15 +27,16 @@ void UioAxiDmaIf::start(uint64_t start_desc) {
         << _log_name << ": start, start_desc = " << std::hex << start_desc << std::dec;
 
     // 0.
-    _wr32(ADDR_S2MM_DMACR, 1 << 2);
+#pragma GCC diagnostic ignored "-Wmissing-field-initializers"
+    S2mmDmaControlReg ctrl_reg_rst = {.fields = {.Reset = 1}};
+    _wr32(ADDR_S2MM_DMACR, ctrl_reg_rst.data);
 
     // 1.
     _wr32(ADDR_S2MM_CURDESC, start_desc & ((1ULL << 32) - 1));
     _wr32(ADDR_S2MM_CURDESC_MSB, start_desc >> 32);
 
     // 2.
-    S2mmDmaControlReg ctrl_reg;
-    ctrl_reg.data = _rd32(ADDR_S2MM_DMACR);
+    S2mmDmaControlReg ctrl_reg = {.data = _rd32(ADDR_S2MM_DMACR)};
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
         << _log_name << ": DMA ctrl = 0x" << std::hex << ctrl_reg.data << std::dec;
     ctrl_reg.fields.RS = 1;
@@ -55,3 +56,27 @@ void UioAxiDmaIf::start(uint64_t start_desc) {
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
         << _log_name << ": DMA ctrl = 0x" << std::hex << tmp_ctrl_after << std::dec;
 }
+
+void UioAxiDmaIf::arm_interrupt() {
+    uint32_t mask = 1;
+    int rc = write(_fd, &mask, sizeof(mask));
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+        << _log_name << ": arm interrupt enable, ret code = " << rc;
+}
+
+uint32_t UioAxiDmaIf::clear_interrupt() {
+    uint32_t irq_count;
+    int rc = read(_fd, &irq_count, sizeof(irq_count));
+
+#pragma GCC diagnostic ignored "-Wmissing-field-initializers"
+    S2mmDmaStatusReg status = {.fields = {
+                                   .IOC_Irq = 1,
+                               }};
+    _wr32(ADDR_S2MM_DMASR, status.data);
+
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+        << _log_name << ": clear interrupt , ret code = " << rc << ", irq count = " << irq_count;
+    return irq_count;
+}
+
+int UioAxiDmaIf::get_fd() const { return _fd; }

@@ -11,6 +11,7 @@
 
 #include <filesystem>
 #include <fstream>
+#include <iostream>
 
 #include <fcntl.h>
 #include <sys/mman.h>
@@ -71,3 +72,11 @@ UDmaBuf::~UDmaBuf() {
 }
 
 uint64_t UDmaBuf::get_phys_addr() { return _phys_addr; }
+
+void UDmaBuf::copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t> &out) {
+    size_t old_size = out.size();
+    size_t new_size = old_size + len;
+    uint64_t mmap_addr = buf_addr - _phys_addr;
+    out.resize(new_size);
+    std::memcpy(out.data() + old_size, static_cast<uint8_t *>(_mem) + mmap_addr, len);
+}

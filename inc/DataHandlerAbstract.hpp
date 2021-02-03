@@ -11,28 +11,31 @@
 
 #pragma once
 
-#include <boost/log/core/core.hpp>
-#include <boost/log/sources/logger.hpp>
+#include <vector>
+
 #include <boost/log/trivial.hpp>
+
+#include "UDmaBuf.hpp"
+#include "UioAxiDmaIf.hpp"
+#include "UioMemSgdma.hpp"
 
 namespace blt = boost::log::trivial;
 
-class UDmaBuf {
-    int _fd;
-    void *_mem;
-    uint64_t _mem_size;
-    uint64_t _phys_addr;
-    boost::log::sources::severity_logger<blt::severity_level> _slg;
+class DataHandlerAbstract {
 
-    uint64_t _get_size(int buf_idx);
-    uint64_t _get_phys_addr(int buf_idx);
+    boost::log::sources::severity_logger<blt::severity_level> _slg;
+    int _pipefd_read;
+    int _pipefd_write;
+    UioAxiDmaIf &_dma;
+    UioMemSgdma &_desc;
+    UDmaBuf &_mem;
 
   public:
-    explicit UDmaBuf(int buf_idx = 0);
+    explicit DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc, UDmaBuf &mem);
 
-    ~UDmaBuf();
+    void stop();
 
-    uint64_t get_phys_addr();
+    void operator()();
 
-    void copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t> &out);
+    virtual void process_data(const std::vector<uint8_t> &bytes) = 0;
 };
