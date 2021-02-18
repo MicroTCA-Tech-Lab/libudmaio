@@ -35,11 +35,14 @@ namespace blt = boost::log::trivial;
 class UioIf {
   public:
     explicit UioIf(const std::string &uio_name, uintptr_t addr, size_t size,
-                   const std::string_view log_name)
-        : _int_addr{addr}, _int_size{size}, _slg{}, _log_name{log_name} {
+                   const std::string_view log_name, uintptr_t offs = 0,
+                   const std::string &event_filename = "", bool skip_write_to_arm_int = false)
+        : _int_addr{addr}, _int_size{size}, _slg{}, _log_name{log_name},
+          _skip_write_to_arm_int{skip_write_to_arm_int} {
 
         BOOST_LOG_SEV(_slg, blt::severity_level::debug) << _log_name << ": uio name = " << uio_name;
 
+        // open fd
         _fd = ::open(uio_name.c_str(), O_RDWR);
         if (_fd < 0) {
             throw std::runtime_error("could not open " + uio_name);
@@ -47,11 +50,26 @@ class UioIf {
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
             << _log_name << ": fd =  " << _fd << ", size = " << size;
 
-        _mem = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_SHARED, _fd, 0);
+        // create memory mapping
+        _mem = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_SHARED, _fd, offs);
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
             << _log_name << ": mmap = 0x" << _mem << std::dec;
         if (_mem == MAP_FAILED) {
             throw std::runtime_error("mmap failed for uio " + uio_name);
+        }
+
+        // if there is an event filename, open event fd - otherwise use the same as for the mmap
+        if (event_filename.empty()) {
+            _fd_int = _fd;
+            BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name << ": using fd for fd_int";
+        } else {
+            _fd_int = ::open(event_filename.c_str(), O_RDWR);
+
+            if (_fd_int < 0) {
+                throw std::runtime_error("could not open " + event_filename);
+            }
+            BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+                << _log_name << ": fd_int =  " << _fd_int;
         }
     }
 
@@ -61,12 +79,13 @@ class UioIf {
     }
 
   protected:
-    int _fd;
+    int _fd, _fd_int;
     void *_mem;
     uintptr_t _int_addr;
     size_t _int_size;
     boost::log::sources::severity_logger<blt::severity_level> _slg;
     const std::string_view _log_name;
+    bool _skip_write_to_arm_int;
 
     uint32_t _rd32(uint32_t offs) {
         uint32_t tmp = *(static_cast<uint32_t *>(_mem) + offs / 4);

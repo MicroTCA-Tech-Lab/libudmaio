@@ -58,6 +58,9 @@ void UioAxiDmaIf::start(uint64_t start_desc) {
 }
 
 void UioAxiDmaIf::arm_interrupt() {
+    if (_skip_write_to_arm_int)
+        return;
+
     uint32_t mask = 1;
     int rc = write(_fd, &mask, sizeof(mask));
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
