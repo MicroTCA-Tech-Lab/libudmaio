@@ -33,6 +33,14 @@ class UioIfFactory {
                                    size);
     }
 
+    template <typename T>
+    static std::unique_ptr<T> create_from_xdma(uintptr_t offs, size_t size,
+                                               const std::string &event_filename = "") {
+        // 0x88000000 = the offset at which the IPs are accessible from the PCIe (xdma)
+        return std::make_unique<T>("/dev/xdma/card0/user", 0x88000000 | offs, size, offs,
+                                   event_filename, true);
+    }
+
   private:
     /** @brief gets a number of UIO device based on the name
      *
