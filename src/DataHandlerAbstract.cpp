@@ -45,7 +45,7 @@ void DataHandlerAbstract::stop() {
 void DataHandlerAbstract::operator()() {
     BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: new thread started";
 
-    int dma_fd = _dma.get_fd();
+    int dma_fd = _dma.get_fd_int();
     int nfds = std::max(_pipefd_read, dma_fd) + 1;
 
     fd_set rfds;

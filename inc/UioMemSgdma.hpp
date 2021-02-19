@@ -55,7 +55,9 @@ class UioMemSgdma : UioIf {
   public:
     static const int BUF_LEN = 2 * 1024 * 1024;
 
-    explicit UioMemSgdma(const std::string &uio_name, uintptr_t addr, size_t size);
+    explicit UioMemSgdma(const std::string &uio_name, uintptr_t addr, size_t size,
+                         uintptr_t offs = 0, const std::string &event_filename = "",
+                         bool skip_write_to_arm_int = false);
 
     void write_cyc_mode(const std::vector<uint64_t> &dst_buf_addrs);
 

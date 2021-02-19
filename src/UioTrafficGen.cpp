@@ -19,8 +19,10 @@
 
 namespace blt = boost::log::trivial;
 
-UioTrafficGen::UioTrafficGen(const std::string &uio_name, uintptr_t addr, size_t size)
-    : UioIf{uio_name, addr, size, "UioTrafficGen"} {}
+UioTrafficGen::UioTrafficGen(const std::string &uio_name, uintptr_t addr, size_t size,
+                             uintptr_t offs, const std::string &event_filename,
+                             bool skip_write_to_arm_int)
+    : UioIf{uio_name, addr, size, "UioTrafficGen", offs, event_filename, skip_write_to_arm_int} {}
 
 void UioTrafficGen::start(uint16_t nr_pkts, uint32_t pkt_size, uint16_t pkt_pause) {
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)

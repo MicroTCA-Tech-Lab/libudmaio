@@ -19,8 +19,9 @@
 
 namespace blt = boost::log::trivial;
 
-UioAxiDmaIf::UioAxiDmaIf(const std::string &uio_name, uintptr_t addr, size_t size)
-    : UioIf{uio_name, addr, size, "UioAxiDmaIf"} {}
+UioAxiDmaIf::UioAxiDmaIf(const std::string &uio_name, uintptr_t addr, size_t size, uintptr_t offs,
+                         const std::string &event_filename, bool skip_write_to_arm_int)
+    : UioIf{uio_name, addr, size, "UioAxiDmaIf", offs, event_filename, skip_write_to_arm_int} {}
 
 void UioAxiDmaIf::start(uint64_t start_desc) {
     BOOST_LOG_SEV(_slg, blt::severity_level::debug)
@@ -62,14 +63,14 @@ void UioAxiDmaIf::arm_interrupt() {
         return;
 
     uint32_t mask = 1;
-    int rc = write(_fd, &mask, sizeof(mask));
+    int rc = write(_fd_int, &mask, sizeof(mask));
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
         << _log_name << ": arm interrupt enable, ret code = " << rc;
 }
 
 uint32_t UioAxiDmaIf::clear_interrupt() {
     uint32_t irq_count;
-    int rc = read(_fd, &irq_count, sizeof(irq_count));
+    int rc = read(_fd_int, &irq_count, sizeof(irq_count));
 
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
     S2mmDmaStatusReg status = {.fields = {
@@ -82,4 +83,4 @@ uint32_t UioAxiDmaIf::clear_interrupt() {
     return irq_count;
 }
 
-int UioAxiDmaIf::get_fd() const { return _fd; }
+int UioAxiDmaIf::get_fd_int() const { return _fd_int; }
