@@ -20,7 +20,8 @@
 
 #include "DataHandlerAbstract.hpp"
 
-DataHandlerAbstract::DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc, UDmaBuf &mem)
+DataHandlerAbstract::DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc,
+                                         DmaBufferAbstract &mem)
     : _dma{dma}, _desc{desc}, _mem{mem} {
 
     BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: ctor";

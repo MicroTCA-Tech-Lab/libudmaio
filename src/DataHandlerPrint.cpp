@@ -14,7 +14,7 @@
 
 #include "DataHandlerPrint.hpp"
 
-DataHandlerPrint::DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, UDmaBuf &mem,
+DataHandlerPrint::DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem,
                                    uint64_t &counter_ok, uint64_t &counter_total)
     : DataHandlerAbstract{dma, desc, mem}, lfsr{std::nullopt}, _counter_ok{counter_ok},
       _counter_total{counter_total} {}

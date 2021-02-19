@@ -11,21 +11,11 @@
 
 #pragma once
 
-#include "AxiTrafficGenLfsr.hpp"
-#include "DataHandlerAbstract.hpp"
+#include <cstdint>
+#include <vector>
 
-class DataHandlerPrint : public DataHandlerAbstract {
-
-    std::optional<AxiTrafficGenLfsr> lfsr;
-
-    boost::log::sources::severity_logger<blt::severity_level> _slg;
-
-    void process_data(const std::vector<uint8_t> &bytes) override;
-
-    uint64_t &_counter_ok;
-    uint64_t &_counter_total;
-
+class DmaBufferAbstract {
   public:
-    explicit DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem,
-                              uint64_t &counter_ok, uint64_t &counter_total);
+    virtual uint64_t get_phys_addr() = 0;
+    virtual void copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t> &out) = 0;
 };

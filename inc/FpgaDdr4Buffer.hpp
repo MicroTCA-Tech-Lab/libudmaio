@@ -11,30 +11,37 @@
 
 #pragma once
 
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+
 #include <boost/log/core/core.hpp>
 #include <boost/log/sources/logger.hpp>
 #include <boost/log/trivial.hpp>
 
 #include "DmaBufferAbstract.hpp"
 
-namespace blt = boost::log::trivial;
-
-class UDmaBuf : public DmaBufferAbstract {
-    int _fd;
-    void *_mem;
-    uint64_t _mem_size;
-    uint64_t _phys_addr;
-    boost::log::sources::severity_logger<blt::severity_level> _slg;
-
-    uint64_t _get_size(int buf_idx);
-    uint64_t _get_phys_addr(int buf_idx);
+class FpgaDdr4Buffer : public DmaBufferAbstract {
+    int _dma_fd;
 
   public:
-    explicit UDmaBuf(int buf_idx = 0);
+    explicit FpgaDdr4Buffer() {
+        _dma_fd = open("/dev/xdma/card0/c2h0", O_RDWR);
+        if (_dma_fd < 0) {
+            throw std::runtime_error("could not open /dev/xdma/card0/c2h0");
+        }
+    }
 
-    ~UDmaBuf();
+    uint64_t get_phys_addr() {
+        // FPGA DDR4 is at this address
+        return 0x400000000UL;
+    }
 
-    uint64_t get_phys_addr();
-
-    void copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t> &out);
+    void copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t> &out) {
+        size_t old_size = out.size();
+        size_t new_size = old_size + len;
+        out.resize(new_size);
+        lseek(_dma_fd, buf_addr, SEEK_SET);
+        int rc = read(_dma_fd, out.data() + old_size, len);
+    }
 };

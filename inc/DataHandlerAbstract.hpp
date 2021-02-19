@@ -28,10 +28,10 @@ class DataHandlerAbstract {
     int _pipefd_write;
     UioAxiDmaIf &_dma;
     UioMemSgdma &_desc;
-    UDmaBuf &_mem;
+    DmaBufferAbstract &_mem;
 
   public:
-    explicit DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc, UDmaBuf &mem);
+    explicit DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem);
 
     void stop();
 
