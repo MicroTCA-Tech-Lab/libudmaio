@@ -58,7 +58,7 @@ void DataHandlerAbstract::operator()() {
         FD_SET(dma_fd, &rfds);
         int select_ret = select(nfds, &rfds, NULL, NULL, NULL);
 
-        BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: select =" << select_ret;
+        BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: select = " << select_ret;
 
         if (select_ret < 0) {
             BOOST_LOG_SEV(_slg, blt::severity_level::fatal)
@@ -66,11 +66,7 @@ void DataHandlerAbstract::operator()() {
             return;
         }
 
-        if (FD_ISSET(_pipefd_read, &rfds)) {
-            BOOST_LOG_SEV(_slg, blt::severity_level::debug) << "DataHandler: stopping thread";
-            return;
-        }
-
+        // first process data, then check if we need to stop; select can return with both fds set
         if (FD_ISSET(dma_fd, &rfds)) {
             uint32_t irq_count = _dma.clear_interrupt();
             BOOST_LOG_SEV(_slg, blt::severity_level::trace)
@@ -84,6 +80,11 @@ void DataHandlerAbstract::operator()() {
             }
 
             process_data(bytes);
+        }
+
+        if (FD_ISSET(_pipefd_read, &rfds)) {
+            BOOST_LOG_SEV(_slg, blt::severity_level::debug) << "DataHandler: stopping thread";
+            return;
         }
     }
 }

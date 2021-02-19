@@ -102,6 +102,9 @@ std::vector<UioMemSgdma::BufInfo> UioMemSgdma::get_full_buffers() {
         }
     }
 
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+        << _log_name << ": full bufs = 0x" << full_mask.to_ullong();
+
     // find first buffer to read
     bool seen_1 = false;
     int first_sel = -1;

@@ -23,6 +23,12 @@ void DataHandlerPrint::process_data(const std::vector<uint8_t> &bytes) {
     BOOST_LOG_SEV(_slg, blt::severity_level::debug)
         << "DataHandlerPrint: process data, size = " << bytes.size();
 
+    if (bytes.size() == 0) {
+        BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+            << "DataHandlerPrint: nothing to do, exiting";
+        return;
+    }
+
     const uint16_t *vals = reinterpret_cast<const uint16_t *>(&bytes[0]);
 
     if (!lfsr) {
