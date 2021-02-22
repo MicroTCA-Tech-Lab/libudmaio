@@ -30,7 +30,7 @@ class UioAxiDmaIf : UioIf {
             bool Keyhole : 1;
             bool Cyc_bd_en : 1;
             uint32_t rsvd11_5 : 7;
-            bool IOC_IRqEn : 1;
+            bool IOC_IrqEn : 1;
             bool Dly_IrqEn : 1;
             bool Err_IrqEn : 1;
             uint32_t rsvd15 : 1;

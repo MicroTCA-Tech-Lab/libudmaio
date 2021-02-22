@@ -26,6 +26,9 @@ void UioAxiDmaIf::start(uint64_t start_desc) {
     BOOST_LOG_SEV(_slg, blt::severity_level::debug)
         << _log_name << ": start, start_desc = " << std::hex << start_desc << std::dec;
 
+    // 0.
+    _wr32(ADDR_S2MM_DMACR, 1 << 2);
+
     // 1.
     _wr32(ADDR_S2MM_CURDESC, start_desc & ((1ULL << 32) - 1));
     _wr32(ADDR_S2MM_CURDESC_MSB, start_desc >> 32);
@@ -37,8 +40,9 @@ void UioAxiDmaIf::start(uint64_t start_desc) {
         << _log_name << ": DMA ctrl = 0x" << std::hex << ctrl_reg.data << std::dec;
     ctrl_reg.fields.RS = 1;
     ctrl_reg.fields.Cyc_bd_en = 1;
+    ctrl_reg.fields.IOC_IrqEn = 1;
 
-    // 3. TODO: IOC_IRqEn
+    // 3.
     _wr32(ADDR_S2MM_DMACR, ctrl_reg.data);
 
     BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name << ": DMA control write";
