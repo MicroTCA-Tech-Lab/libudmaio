@@ -53,10 +53,11 @@ class UioTrafficGen : UioIf {
         } fields;
     };
 
+    static constexpr std::string_view _log_name{"UioTrafficGen"};
+
   public:
-    explicit UioTrafficGen(const std::string &uio_name, uintptr_t addr, size_t size,
-                           uintptr_t offs = 0, const std::string &event_filename = "",
-                           bool skip_write_to_arm_int = false);
+    using UioIf::UioIf;
+
     void start(uint16_t nr_pkts, uint32_t pkt_size, uint16_t pkt_pause);
     void print_version();
 };

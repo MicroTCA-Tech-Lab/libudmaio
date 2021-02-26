@@ -17,10 +17,6 @@ namespace blt = boost::log::trivial;
 
 namespace dmamgmt {
 
-UioMemSgdma::UioMemSgdma(const std::string &uio_name, uintptr_t addr, size_t size, uintptr_t offs,
-                         const std::string &event_filename, bool skip_write_to_arm_int)
-    : UioIf{uio_name, addr, size, "UioMemSgdma", offs, event_filename, skip_write_to_arm_int} {}
-
 void UioMemSgdma::_write_desc(uintptr_t mem_offs, const S2mmDesc *desc) {
     memcpy(static_cast<char *>(_mem) + mem_offs, desc, sizeof(S2mmDesc));
 }

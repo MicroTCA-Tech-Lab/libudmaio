@@ -68,10 +68,11 @@ class UioAxiDmaIf : UioIf {
     static_assert(sizeof(S2mmDmaControlReg) == 4);
     static_assert(sizeof(S2mmDmaStatusReg) == 4);
 
+    static constexpr std::string_view _log_name{"UioAxiDmaIf"};
+
   public:
-    explicit UioAxiDmaIf(const std::string &uio_name, uintptr_t addr, size_t size,
-                         uintptr_t offs = 0, const std::string &event_filename = "",
-                         bool skip_write_to_arm_int = false);
+    using UioIf::UioIf;
+
     void start(uint64_t start_desc);
     void arm_interrupt();
     uint32_t clear_interrupt();

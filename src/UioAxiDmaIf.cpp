@@ -21,10 +21,6 @@ namespace blt = boost::log::trivial;
 
 namespace dmamgmt {
 
-UioAxiDmaIf::UioAxiDmaIf(const std::string &uio_name, uintptr_t addr, size_t size, uintptr_t offs,
-                         const std::string &event_filename, bool skip_write_to_arm_int)
-    : UioIf{uio_name, addr, size, "UioAxiDmaIf", offs, event_filename, skip_write_to_arm_int} {}
-
 void UioAxiDmaIf::start(uint64_t start_desc) {
     BOOST_LOG_SEV(_slg, blt::severity_level::debug)
         << _log_name << ": start, start_desc = " << std::hex << start_desc << std::dec;

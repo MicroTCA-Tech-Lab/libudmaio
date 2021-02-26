@@ -36,11 +36,9 @@ namespace dmamgmt {
 
 class UioIf {
   public:
-    explicit UioIf(const std::string &uio_name, uintptr_t addr, size_t size,
-                   const std::string_view log_name, uintptr_t offs = 0,
+    explicit UioIf(const std::string &uio_name, uintptr_t addr, size_t size, uintptr_t offs = 0,
                    const std::string &event_filename = "", bool skip_write_to_arm_int = false)
-        : _int_addr{addr}, _int_size{size}, _slg{}, _log_name{log_name},
-          _skip_write_to_arm_int{skip_write_to_arm_int} {
+        : _int_addr{addr}, _int_size{size}, _slg{}, _skip_write_to_arm_int{skip_write_to_arm_int} {
 
         BOOST_LOG_SEV(_slg, blt::severity_level::debug) << _log_name << ": uio name = " << uio_name;
 
@@ -75,18 +73,18 @@ class UioIf {
         }
     }
 
+  protected:
     ~UioIf() {
         munmap(_mem, _int_size);
         ::close(_fd);
     }
 
-  protected:
     int _fd, _fd_int;
     void *_mem;
     uintptr_t _int_addr;
     size_t _int_size;
     boost::log::sources::severity_logger<blt::severity_level> _slg;
-    const std::string_view _log_name;
+    static constexpr std::string_view _log_name{""};
     bool _skip_write_to_arm_int;
 
     uint32_t _rd32(uint32_t offs) {
