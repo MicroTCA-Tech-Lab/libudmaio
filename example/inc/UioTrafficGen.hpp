@@ -11,9 +11,10 @@
 
 #pragma once
 
-#include "UioIf.hpp"
+#include "libdmamgmt/UioIf.hpp"
 
-namespace dmamgmt {
+using namespace dmamgmt;
+
 
 class UioTrafficGen : UioIf {
     static const int ADDR_ST_CTRL = 0x30;
@@ -59,5 +60,3 @@ class UioTrafficGen : UioIf {
     void start(uint16_t nr_pkts, uint32_t pkt_size, uint16_t pkt_pause);
     void print_version();
 };
-
-} // namespace dmamgmt

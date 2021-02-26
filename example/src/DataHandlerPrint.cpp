@@ -14,8 +14,6 @@
 
 #include "DataHandlerPrint.hpp"
 
-namespace dmamgmt {
-
 DataHandlerPrint::DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem,
                                    uint64_t &counter_ok, uint64_t &counter_total)
     : DataHandlerAbstract{dma, desc, mem}, lfsr{std::nullopt}, _counter_ok{counter_ok},
@@ -55,5 +53,3 @@ void DataHandlerPrint::process_data(const std::vector<uint8_t> &bytes) {
         lfsr->advance();
     }
 }
-
-} // namespace dmamgmt

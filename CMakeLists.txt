@@ -23,7 +23,9 @@ file(GLOB LIBDMAMGMT_PUBLIC_HEADERS "inc/*.hpp")
 install(FILES ${LIBDMAMGMT_PUBLIC_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/libdmamgmt)
 
 # example
-add_executable(axi_dma_demo example/axi_dma_demo.cpp)
-target_include_directories(axi_dma_demo PRIVATE inc)
+add_executable(axi_dma_demo)
+file(GLOB EXAMPLE_SOURCES "example/src/*.cpp")
+target_sources(axi_dma_demo PRIVATE ${EXAMPLE_SOURCES})
+target_include_directories(axi_dma_demo PRIVATE example/inc)
 target_link_libraries(axi_dma_demo ${Boost_LIBRARIES} dmamgmt)
 target_compile_options(axi_dma_demo PRIVATE -Wall -Wextra -O2)

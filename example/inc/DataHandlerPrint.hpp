@@ -12,9 +12,9 @@
 #pragma once
 
 #include "AxiTrafficGenLfsr.hpp"
-#include "DataHandlerAbstract.hpp"
+#include "libdmamgmt/DataHandlerAbstract.hpp"
 
-namespace dmamgmt {
+using namespace dmamgmt;
 
 class DataHandlerPrint : public DataHandlerAbstract {
 
@@ -31,5 +31,3 @@ class DataHandlerPrint : public DataHandlerAbstract {
     explicit DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem,
                               uint64_t &counter_ok, uint64_t &counter_total);
 };
-
-} // namespace dmamgmt

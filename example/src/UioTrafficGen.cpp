@@ -19,8 +19,6 @@
 
 namespace blt = boost::log::trivial;
 
-namespace dmamgmt {
-
 UioTrafficGen::UioTrafficGen(const std::string &uio_name, uintptr_t addr, size_t size,
                              uintptr_t offs, const std::string &event_filename,
                              bool skip_write_to_arm_int)
@@ -57,5 +55,3 @@ void UioTrafficGen::print_version() {
     BOOST_LOG_SEV(_slg, blt::severity_level::info)
         << _log_name << ": version = 0x" << std::hex << st_control.fields.version << std::dec;
 }
-
-} // namespace dmamgmt

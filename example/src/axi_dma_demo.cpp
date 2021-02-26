@@ -20,15 +20,15 @@
 #include <boost/log/trivial.hpp>
 #include <boost/program_options.hpp>
 
-#include "libdmamgmt/DataHandlerPrint.hpp"
 #include "libdmamgmt/FpgaDdr4Buffer.hpp"
 #include "libdmamgmt/UDmaBuf.hpp"
 #include "libdmamgmt/UioAxiDmaIf.hpp"
 #include "libdmamgmt/UioIf.hpp"
 #include "libdmamgmt/UioIfFactory.hpp"
 #include "libdmamgmt/UioMemSgdma.hpp"
-#include "libdmamgmt/UioTrafficGen.hpp"
 
+#include "DataHandlerPrint.hpp"
+#include "UioTrafficGen.hpp"
 #include "DmaMode.hpp"
 
 
