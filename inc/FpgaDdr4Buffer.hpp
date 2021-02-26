@@ -21,6 +21,8 @@
 
 #include "DmaBufferAbstract.hpp"
 
+namespace dmamgmt {
+
 class FpgaDdr4Buffer : public DmaBufferAbstract {
     int _dma_fd;
 
@@ -45,3 +47,5 @@ class FpgaDdr4Buffer : public DmaBufferAbstract {
         int rc = read(_dma_fd, out.data() + old_size, len);
     }
 };
+
+} // namespace dmamgmt

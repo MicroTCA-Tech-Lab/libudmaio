@@ -13,6 +13,8 @@
 
 #include "UioIf.hpp"
 
+namespace dmamgmt {
+
 class UioMemSgdma : UioIf {
     static const int DESC_ADDR_STEP = 0x40;
 
@@ -76,3 +78,5 @@ class UioMemSgdma : UioIf {
 };
 
 std::ostream &operator<<(std::ostream &os, const UioMemSgdma::BufInfo &buf_info);
+
+} // namespace dmamgmt

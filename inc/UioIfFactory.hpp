@@ -19,6 +19,8 @@
 
 #include "UioIf.hpp"
 
+namespace dmamgmt {
+
 class UioIfFactory {
   public:
     template <typename T> static std::unique_ptr<T> create(const std::string &name) {
@@ -98,3 +100,5 @@ class UioIfFactory {
         return addr;
     }
 };
+
+} // namespace dmamgmt

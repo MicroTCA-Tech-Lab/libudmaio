@@ -32,6 +32,8 @@
 
 namespace blt = boost::log::trivial;
 
+namespace dmamgmt {
+
 class UioIf {
   public:
     explicit UioIf(const std::string &uio_name, uintptr_t addr, size_t size,
@@ -100,3 +102,5 @@ class UioIf {
         *(static_cast<uint32_t *>(_mem) + offs / 4) = data;
     }
 };
+
+} // namespace dmamgmt

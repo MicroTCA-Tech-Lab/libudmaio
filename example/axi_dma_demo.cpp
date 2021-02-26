@@ -29,22 +29,13 @@
 #include "libdmamgmt/UioMemSgdma.hpp"
 #include "libdmamgmt/UioTrafficGen.hpp"
 
+#include "DmaMode.hpp"
+
+
 namespace blt = boost::log::trivial;
 namespace bpo = boost::program_options;
 
-enum DmaMode { XDMA, ARM };
-
-std::istream &operator>>(std::istream &in, DmaMode &mode) {
-    std::string token;
-    in >> token;
-    if (token == "xdma")
-        mode = DmaMode::XDMA;
-    else if (token == "arm")
-        mode = DmaMode::ARM;
-    else
-        in.setstate(std::ios_base::failbit);
-    return in;
-}
+using namespace dmamgmt;
 
 int main(int argc, char *argv[]) {
     bpo::options_description desc("AXI DMA demo");

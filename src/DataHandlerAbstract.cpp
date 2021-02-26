@@ -20,6 +20,8 @@
 
 #include "DataHandlerAbstract.hpp"
 
+namespace dmamgmt {
+
 DataHandlerAbstract::DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc,
                                          DmaBufferAbstract &mem)
     : _dma{dma}, _desc{desc}, _mem{mem} {
@@ -88,3 +90,5 @@ void DataHandlerAbstract::operator()() {
         }
     }
 }
+
+} // namespace dmamgmt

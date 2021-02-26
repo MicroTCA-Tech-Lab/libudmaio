@@ -15,6 +15,8 @@
 
 namespace blt = boost::log::trivial;
 
+namespace dmamgmt {
+
 UioMemSgdma::UioMemSgdma(const std::string &uio_name, uintptr_t addr, size_t size, uintptr_t offs,
                          const std::string &event_filename, bool skip_write_to_arm_int)
     : UioIf{uio_name, addr, size, "UioMemSgdma", offs, event_filename, skip_write_to_arm_int} {}
@@ -144,3 +146,5 @@ std::vector<UioMemSgdma::BufInfo> UioMemSgdma::get_full_buffers() {
 
     return bufs;
 }
+
+} // namespace dmamgmt

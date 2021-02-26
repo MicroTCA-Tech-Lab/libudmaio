@@ -13,6 +13,8 @@
 
 #include <cstdint>
 
+namespace dmamgmt {
+
 /// implements LFSR as described in "AXI Traffic Generator v3.0"
 class AxiTrafficGenLfsr {
   public:
@@ -35,3 +37,5 @@ class AxiTrafficGenLfsr {
   private:
     uint16_t val;
 };
+
+} // namespace dmamgmt

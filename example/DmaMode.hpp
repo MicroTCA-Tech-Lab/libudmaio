@@ -11,35 +11,19 @@
 
 #pragma once
 
-#include <vector>
+#include <iostream>
+#include <string>
 
-#include <boost/log/trivial.hpp>
+enum DmaMode { XDMA, ARM };
 
-#include "UDmaBuf.hpp"
-#include "UioAxiDmaIf.hpp"
-#include "UioMemSgdma.hpp"
-
-namespace blt = boost::log::trivial;
-
-namespace dmamgmt {
-
-class DataHandlerAbstract {
-
-    boost::log::sources::severity_logger<blt::severity_level> _slg;
-    int _pipefd_read;
-    int _pipefd_write;
-    UioAxiDmaIf &_dma;
-    UioMemSgdma &_desc;
-    DmaBufferAbstract &_mem;
-
-  public:
-    explicit DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem);
-
-    void stop();
-
-    void operator()();
-
-    virtual void process_data(const std::vector<uint8_t> &bytes) = 0;
-};
-
-} // namespace dmamgmt
+std::istream &operator>>(std::istream &in, DmaMode &mode) {
+    std::string token;
+    in >> token;
+    if (token == "xdma")
+        mode = DmaMode::XDMA;
+    else if (token == "arm")
+        mode = DmaMode::ARM;
+    else
+        in.setstate(std::ios_base::failbit);
+    return in;
+}

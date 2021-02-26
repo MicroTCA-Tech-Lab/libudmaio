@@ -14,6 +14,8 @@
 #include "AxiTrafficGenLfsr.hpp"
 #include "DataHandlerAbstract.hpp"
 
+namespace dmamgmt {
+
 class DataHandlerPrint : public DataHandlerAbstract {
 
     std::optional<AxiTrafficGenLfsr> lfsr;
@@ -29,3 +31,5 @@ class DataHandlerPrint : public DataHandlerAbstract {
     explicit DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem,
                               uint64_t &counter_ok, uint64_t &counter_total);
 };
+
+} // namespace dmamgmt

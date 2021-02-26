@@ -21,6 +21,8 @@
 
 #include "UDmaBuf.hpp"
 
+namespace dmamgmt {
+
 UDmaBuf::UDmaBuf(int buf_idx) {
     _mem_size = _get_size(buf_idx);
     _phys_addr = _get_phys_addr(buf_idx);
@@ -80,3 +82,5 @@ void UDmaBuf::copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t
     out.resize(new_size);
     std::memcpy(out.data() + old_size, static_cast<uint8_t *>(_mem) + mmap_addr, len);
 }
+
+} // namespace dmamgmt
