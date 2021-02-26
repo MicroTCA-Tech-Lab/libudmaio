@@ -20,15 +20,14 @@
 #include <boost/log/trivial.hpp>
 #include <boost/program_options.hpp>
 
-#include "FpgaDdr4Buffer.hpp"
-#include "UDmaBuf.hpp"
-#include "UioAxiDmaIf.hpp"
-#include "UioIf.hpp"
-#include "UioIfFactory.hpp"
-#include "UioMemSgdma.hpp"
-#include "UioTrafficGen.hpp"
-
-#include "DataHandlerPrint.hpp"
+#include "libdmamgmt/DataHandlerPrint.hpp"
+#include "libdmamgmt/FpgaDdr4Buffer.hpp"
+#include "libdmamgmt/UDmaBuf.hpp"
+#include "libdmamgmt/UioAxiDmaIf.hpp"
+#include "libdmamgmt/UioIf.hpp"
+#include "libdmamgmt/UioIfFactory.hpp"
+#include "libdmamgmt/UioMemSgdma.hpp"
+#include "libdmamgmt/UioTrafficGen.hpp"
 
 namespace blt = boost::log::trivial;
 namespace bpo = boost::program_options;
