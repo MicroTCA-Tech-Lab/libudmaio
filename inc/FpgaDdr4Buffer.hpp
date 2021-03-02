@@ -45,6 +45,9 @@ class FpgaDdr4Buffer : public DmaBufferAbstract {
         out.resize(new_size);
         lseek(_dma_fd, buf_addr, SEEK_SET);
         int rc = read(_dma_fd, out.data() + old_size, len);
+        if (rc < static_cast<int>(len)) {
+            // TODO: error handling
+        }
     }
 };
 

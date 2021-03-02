@@ -41,7 +41,9 @@ DataHandlerAbstract::DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc,
 void DataHandlerAbstract::stop() {
     BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: stop";
     char msg[1] = {0};
-    write(_pipefd_write, msg, sizeof(msg));
+    if (write(_pipefd_write, msg, sizeof(msg))) {
+        // Return value can be ignored, b/c we're just stopping the DataHandler
+    }
 }
 
 void DataHandlerAbstract::operator()() {

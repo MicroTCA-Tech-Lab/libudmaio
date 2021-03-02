@@ -35,12 +35,15 @@ void UioMemSgdma::write_cyc_mode(const std::vector<uint64_t> &dst_buf_addrs) {
         bool is_last = dst_buf_addr == dst_buf_addrs.back();
         uint64_t nxtdesc = _int_addr + (is_last ? 0 : offs + DESC_ADDR_STEP);
 
+#pragma GCC diagnostic push // We're OK that everything not listed is zero-initialized.
+#pragma GCC diagnostic ignored "-Wmissing-field-initializers"
         S2mmDesc desc{.nxtdesc = nxtdesc,
                       .buffer_addr = dst_buf_addr,
                       .control =
                           S2mmDescControl{.buffer_len = BUF_LEN, .rxeof = 0, .rxsof = 0, .rsvd = 0},
                       .status = {0},
                       .app = {0}};
+#pragma GCC diagnostic pop
 
         _write_desc(offs, &desc);
 
