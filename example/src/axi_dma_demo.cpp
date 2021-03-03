@@ -20,7 +20,7 @@
 #include <boost/log/trivial.hpp>
 #include <boost/program_options.hpp>
 
-#include "udmaio/FpgaDdr4Buffer.hpp"
+#include "udmaio/FpgaMemBuffer.hpp"
 #include "udmaio/UDmaBuf.hpp"
 #include "udmaio/UioAxiDmaIf.hpp"
 #include "udmaio/UioIf.hpp"
@@ -86,7 +86,7 @@ int main(int argc, char *argv[]) {
                            : UioIfFactory::create_from_xdma<UioTrafficGen>(0x00890000, 64 * 1024);
     DmaBufferAbstract *udmabuf = (mode == DmaMode::UIO)
                                      ? static_cast<DmaBufferAbstract *>(new UDmaBuf{})
-                                     : static_cast<DmaBufferAbstract *>(new FpgaDdr4Buffer{});
+                                     : static_cast<DmaBufferAbstract *>(new FpgaMemBuffer{0x400000000UL});
     uint64_t counter_ok = 0, counter_total = 0;
     DataHandlerPrint data_handler{*axi_dma, *mem_sgdma, *udmabuf, counter_ok, counter_total};
     std::thread t1{data_handler};

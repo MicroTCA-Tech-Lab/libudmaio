@@ -23,11 +23,12 @@
 
 namespace udmaio {
 
-class FpgaDdr4Buffer : public DmaBufferAbstract {
+class FpgaMemBuffer : public DmaBufferAbstract {
     int _dma_fd;
+    uint64_t _phys_addr;
 
   public:
-    explicit FpgaDdr4Buffer() {
+    explicit FpgaMemBuffer(uint64_t phys_addr) : _phys_addr{phys_addr} {
         _dma_fd = open("/dev/xdma/card0/c2h0", O_RDWR);
         if (_dma_fd < 0) {
             throw std::runtime_error("could not open /dev/xdma/card0/c2h0");
@@ -35,8 +36,7 @@ class FpgaDdr4Buffer : public DmaBufferAbstract {
     }
 
     uint64_t get_phys_addr() {
-        // FPGA DDR4 is at this address
-        return 0x400000000UL;
+        return _phys_addr;
     }
 
     void copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t> &out) {
