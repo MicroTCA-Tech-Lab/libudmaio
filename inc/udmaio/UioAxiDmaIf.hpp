@@ -13,7 +13,7 @@
 
 #include "UioIf.hpp"
 
-namespace dmamgmt {
+namespace udmaio {
 
 class UioAxiDmaIf : UioIf {
     static const int ADDR_S2MM_DMACR = 0x30;
@@ -79,4 +79,4 @@ class UioAxiDmaIf : UioIf {
     int get_fd_int() const;
 };
 
-} // namespace dmamgmt
+} // namespace udmaio

@@ -19,7 +19,7 @@
 
 namespace blt = boost::log::trivial;
 
-namespace dmamgmt {
+namespace udmaio {
 
 class UDmaBuf : public DmaBufferAbstract {
     int _fd;
@@ -41,4 +41,4 @@ class UDmaBuf : public DmaBufferAbstract {
     void copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t> &out);
 };
 
-} // namespace dmamgmt
+} // namespace udmaio

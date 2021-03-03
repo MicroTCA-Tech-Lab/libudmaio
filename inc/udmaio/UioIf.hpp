@@ -32,7 +32,7 @@
 
 namespace blt = boost::log::trivial;
 
-namespace dmamgmt {
+namespace udmaio {
 
 class UioIf {
   public:
@@ -101,4 +101,4 @@ class UioIf {
     }
 };
 
-} // namespace dmamgmt
+} // namespace udmaio

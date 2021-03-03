@@ -21,7 +21,7 @@
 
 #include "DmaBufferAbstract.hpp"
 
-namespace dmamgmt {
+namespace udmaio {
 
 class FpgaDdr4Buffer : public DmaBufferAbstract {
     int _dma_fd;
@@ -51,4 +51,4 @@ class FpgaDdr4Buffer : public DmaBufferAbstract {
     }
 };
 
-} // namespace dmamgmt
+} // namespace udmaio

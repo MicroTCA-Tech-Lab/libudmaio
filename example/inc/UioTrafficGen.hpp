@@ -11,9 +11,9 @@
 
 #pragma once
 
-#include "libdmamgmt/UioIf.hpp"
+#include "udmaio/UioIf.hpp"
 
-using namespace dmamgmt;
+using namespace udmaio;
 
 
 class UioTrafficGen : UioIf {

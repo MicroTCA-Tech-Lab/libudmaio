@@ -20,12 +20,12 @@
 #include <boost/log/trivial.hpp>
 #include <boost/program_options.hpp>
 
-#include "libdmamgmt/FpgaDdr4Buffer.hpp"
-#include "libdmamgmt/UDmaBuf.hpp"
-#include "libdmamgmt/UioAxiDmaIf.hpp"
-#include "libdmamgmt/UioIf.hpp"
-#include "libdmamgmt/UioIfFactory.hpp"
-#include "libdmamgmt/UioMemSgdma.hpp"
+#include "udmaio/FpgaDdr4Buffer.hpp"
+#include "udmaio/UDmaBuf.hpp"
+#include "udmaio/UioAxiDmaIf.hpp"
+#include "udmaio/UioIf.hpp"
+#include "udmaio/UioIfFactory.hpp"
+#include "udmaio/UioMemSgdma.hpp"
 
 #include "DataHandlerPrint.hpp"
 #include "UioTrafficGen.hpp"
@@ -35,7 +35,7 @@
 namespace blt = boost::log::trivial;
 namespace bpo = boost::program_options;
 
-using namespace dmamgmt;
+using namespace udmaio;
 
 int main(int argc, char *argv[]) {
     bpo::options_description desc("AXI DMA demo");

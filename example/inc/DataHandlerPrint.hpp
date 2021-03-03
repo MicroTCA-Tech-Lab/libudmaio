@@ -11,10 +11,11 @@
 
 #pragma once
 
-#include "AxiTrafficGenLfsr.hpp"
-#include "libdmamgmt/DataHandlerAbstract.hpp"
+#include "udmaio/DataHandlerAbstract.hpp"
 
-using namespace dmamgmt;
+#include "AxiTrafficGenLfsr.hpp"
+
+using namespace udmaio;
 
 class DataHandlerPrint : public DataHandlerAbstract {
 

@@ -11,35 +11,15 @@
 
 #pragma once
 
+#include <cstdint>
 #include <vector>
 
-#include <boost/log/trivial.hpp>
+namespace udmaio {
 
-#include "UDmaBuf.hpp"
-#include "UioAxiDmaIf.hpp"
-#include "UioMemSgdma.hpp"
-
-namespace blt = boost::log::trivial;
-
-namespace dmamgmt {
-
-class DataHandlerAbstract {
-
-    boost::log::sources::severity_logger<blt::severity_level> _slg;
-    int _pipefd_read;
-    int _pipefd_write;
-    UioAxiDmaIf &_dma;
-    UioMemSgdma &_desc;
-    DmaBufferAbstract &_mem;
-
+class DmaBufferAbstract {
   public:
-    explicit DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem);
-
-    void stop();
-
-    void operator()();
-
-    virtual void process_data(const std::vector<uint8_t> &bytes) = 0;
+    virtual uint64_t get_phys_addr() = 0;
+    virtual void copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t> &out) = 0;
 };
 
-} // namespace dmamgmt
+} // namespace udmaio

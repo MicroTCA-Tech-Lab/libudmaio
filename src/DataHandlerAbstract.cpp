@@ -18,9 +18,9 @@
 #include <sys/select.h>
 #include <unistd.h>
 
-#include "DataHandlerAbstract.hpp"
+#include "udmaio/DataHandlerAbstract.hpp"
 
-namespace dmamgmt {
+namespace udmaio {
 
 DataHandlerAbstract::DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc,
                                          DmaBufferAbstract &mem)
@@ -93,4 +93,4 @@ void DataHandlerAbstract::operator()() {
     }
 }
 
-} // namespace dmamgmt
+} // namespace udmaio

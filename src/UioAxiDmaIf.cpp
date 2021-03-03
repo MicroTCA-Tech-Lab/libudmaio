@@ -15,11 +15,11 @@
 #include <boost/log/sources/logger.hpp>
 #include <boost/log/trivial.hpp>
 
-#include "UioAxiDmaIf.hpp"
+#include "udmaio/UioAxiDmaIf.hpp"
 
 namespace blt = boost::log::trivial;
 
-namespace dmamgmt {
+namespace udmaio {
 
 void UioAxiDmaIf::start(uint64_t start_desc) {
     BOOST_LOG_SEV(_slg, blt::severity_level::debug)
@@ -83,4 +83,4 @@ uint32_t UioAxiDmaIf::clear_interrupt() {
 
 int UioAxiDmaIf::get_fd_int() const { return _fd_int; }
 
-} // namespace dmamgmt
+} // namespace udmaio

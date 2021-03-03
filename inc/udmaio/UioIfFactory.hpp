@@ -19,7 +19,7 @@
 
 #include "UioIf.hpp"
 
-namespace dmamgmt {
+namespace udmaio {
 
 class UioIfFactory {
   public:
@@ -101,4 +101,4 @@ class UioIfFactory {
     }
 };
 
-} // namespace dmamgmt
+} // namespace udmaio

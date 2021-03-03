@@ -11,11 +11,11 @@
 
 #include <bitset>
 
-#include "UioMemSgdma.hpp"
+#include "udmaio/UioMemSgdma.hpp"
 
 namespace blt = boost::log::trivial;
 
-namespace dmamgmt {
+namespace udmaio {
 
 void UioMemSgdma::_write_desc(uintptr_t mem_offs, const S2mmDesc *desc) {
     memcpy(static_cast<char *>(_mem) + mem_offs, desc, sizeof(S2mmDesc));
@@ -146,4 +146,4 @@ std::vector<UioMemSgdma::BufInfo> UioMemSgdma::get_full_buffers() {
     return bufs;
 }
 
-} // namespace dmamgmt
+} // namespace udmaio

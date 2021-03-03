@@ -1,4 +1,4 @@
-# DMA management library
+# Userspace DMA I/O
 
 This library should simplify the use of the [Xilinx AXI DMA
 controller](https://www.xilinx.com/products/intellectual-property/axi_dma.html)

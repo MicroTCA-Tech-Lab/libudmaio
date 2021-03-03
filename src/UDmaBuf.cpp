@@ -19,9 +19,9 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#include "UDmaBuf.hpp"
+#include "udmaio/UDmaBuf.hpp"
 
-namespace dmamgmt {
+namespace udmaio {
 
 UDmaBuf::UDmaBuf(int buf_idx) {
     _mem_size = _get_size(buf_idx);
@@ -83,4 +83,4 @@ void UDmaBuf::copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t
     std::memcpy(out.data() + old_size, static_cast<uint8_t *>(_mem) + mmap_addr, len);
 }
 
-} // namespace dmamgmt
+} // namespace udmaio
