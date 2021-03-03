@@ -9,6 +9,7 @@
 
 // Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
 
+#include <csignal>
 #include <iostream>
 #include <thread>
 
@@ -36,6 +37,10 @@ namespace blt = boost::log::trivial;
 namespace bpo = boost::program_options;
 
 using namespace udmaio;
+
+volatile bool g_stop_loop = false;
+
+void signal_handler([[maybe_unused]] int signal) { g_stop_loop = true; }
 
 int main(int argc, char *argv[]) {
     bpo::options_description desc("AXI DMA demo");
@@ -75,6 +80,8 @@ int main(int argc, char *argv[]) {
         boost::log::core::get()->set_filter(blt::severity >= blt::info);
     }
 
+    std::signal(SIGINT, signal_handler);
+
     auto axi_dma = (mode == DmaMode::UIO)
                        ? UioIfFactory::create_from_uio<UioAxiDmaIf>("hier_daq_arm_axi_dma_0")
                        : UioIfFactory::create_from_xdma<UioAxiDmaIf>(
@@ -109,9 +116,16 @@ int main(int argc, char *argv[]) {
     axi_dma->start(first_desc);
     traffic_gen->start(nr_pkts, pkt_len, pkt_pause);
 
-    // 100 = clk freq, 2 = "safety factor"
-    unsigned int clk_cycles = (pkt_len + pkt_pause) * nr_pkts;
-    std::this_thread::sleep_for(std::chrono::microseconds(clk_cycles / 100 * 2));
+    if (nr_pkts == 0) {
+        // continous mode
+        while (!g_stop_loop) {
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        }
+    } else {
+        // 200 = clk freq, 2 = "safety factor"
+        unsigned int clk_cycles = (pkt_len + pkt_pause) * nr_pkts;
+        std::this_thread::sleep_for(std::chrono::microseconds(clk_cycles / 200 * 2));
+    }
 
     data_handler.stop();
     t1.join();
