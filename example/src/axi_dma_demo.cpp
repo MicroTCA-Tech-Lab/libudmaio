@@ -75,14 +75,14 @@ int main(int argc, char *argv[]) {
         boost::log::core::get()->set_filter(blt::severity >= blt::info);
     }
 
-    auto axi_dma = (mode == DmaMode::UIO) ? UioIfFactory::create<UioAxiDmaIf>("hier_daq_arm_axi_dma_0")
+    auto axi_dma = (mode == DmaMode::UIO) ? UioIfFactory::create_from_uio<UioAxiDmaIf>("hier_daq_arm_axi_dma_0")
                                           : UioIfFactory::create_from_xdma<UioAxiDmaIf>(
                                                 0x00910000, 4 * 1024, "/dev/xdma/card0/events0");
     auto mem_sgdma = (mode == DmaMode::UIO)
-                         ? UioIfFactory::create<UioMemSgdma>("hier_daq_arm_axi_bram_ctrl_0")
+                         ? UioIfFactory::create_from_uio<UioMemSgdma>("hier_daq_arm_axi_bram_ctrl_0")
                          : UioIfFactory::create_from_xdma<UioMemSgdma>(0x00920000, 8 * 1024);
     auto traffic_gen = (mode == DmaMode::UIO)
-                           ? UioIfFactory::create<UioTrafficGen>("hier_daq_arm_axi_traffic_gen_0")
+                           ? UioIfFactory::create_from_uio<UioTrafficGen>("hier_daq_arm_axi_traffic_gen_0")
                            : UioIfFactory::create_from_xdma<UioTrafficGen>(0x00890000, 64 * 1024);
     DmaBufferAbstract *udmabuf = (mode == DmaMode::UIO)
                                      ? static_cast<DmaBufferAbstract *>(new UDmaBuf{})

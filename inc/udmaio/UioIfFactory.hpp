@@ -23,7 +23,7 @@ namespace udmaio {
 
 class UioIfFactory {
   public:
-    template <typename T> static std::unique_ptr<T> create(const std::string &name) {
+    template <typename T> static std::unique_ptr<T> create_from_uio(const std::string &name) {
         static_assert(std::is_base_of<UioIf, T>::value, "T not derived from UioIf");
         int uio_number = _get_uio_number(name);
         if (uio_number < 0) {
