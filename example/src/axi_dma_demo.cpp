@@ -28,9 +28,9 @@
 #include "udmaio/UioMemSgdma.hpp"
 
 #include "DataHandlerPrint.hpp"
-#include "UioTrafficGen.hpp"
 #include "DmaMode.hpp"
-
+#include "UioTrafficGen.hpp"
+#include "ZupExampleProjectConsts.hpp"
 
 namespace blt = boost::log::trivial;
 namespace bpo = boost::program_options;
@@ -75,18 +75,25 @@ int main(int argc, char *argv[]) {
         boost::log::core::get()->set_filter(blt::severity >= blt::info);
     }
 
-    auto axi_dma = (mode == DmaMode::UIO) ? UioIfFactory::create_from_uio<UioAxiDmaIf>("hier_daq_arm_axi_dma_0")
-                                          : UioIfFactory::create_from_xdma<UioAxiDmaIf>(
-                                                0x00910000, 4 * 1024, "/dev/xdma/card0/events0");
-    auto mem_sgdma = (mode == DmaMode::UIO)
-                         ? UioIfFactory::create_from_uio<UioMemSgdma>("hier_daq_arm_axi_bram_ctrl_0")
-                         : UioIfFactory::create_from_xdma<UioMemSgdma>(0x00920000, 8 * 1024);
-    auto traffic_gen = (mode == DmaMode::UIO)
-                           ? UioIfFactory::create_from_uio<UioTrafficGen>("hier_daq_arm_axi_traffic_gen_0")
-                           : UioIfFactory::create_from_xdma<UioTrafficGen>(0x00890000, 64 * 1024);
+    auto axi_dma = (mode == DmaMode::UIO)
+                       ? UioIfFactory::create_from_uio<UioAxiDmaIf>("hier_daq_arm_axi_dma_0")
+                       : UioIfFactory::create_from_xdma<UioAxiDmaIf>(
+                             zup_example_prj::axi_dma_0_addr, zup_example_prj::axi_dma_0_size,
+                             "/dev/xdma/card0/events0");
+    auto mem_sgdma =
+        (mode == DmaMode::UIO)
+            ? UioIfFactory::create_from_uio<UioMemSgdma>("hier_daq_arm_axi_bram_ctrl_0")
+            : UioIfFactory::create_from_xdma<UioMemSgdma>(zup_example_prj::bram_ctrl_0_addr,
+                                                          zup_example_prj::bram_ctrl_0_size);
+    auto traffic_gen =
+        (mode == DmaMode::UIO)
+            ? UioIfFactory::create_from_uio<UioTrafficGen>("hier_daq_arm_axi_traffic_gen_0")
+            : UioIfFactory::create_from_xdma<UioTrafficGen>(
+                  zup_example_prj::axi_traffic_gen_0_addr, zup_example_prj::axi_traffic_gen_0_size);
     DmaBufferAbstract *udmabuf = (mode == DmaMode::UIO)
                                      ? static_cast<DmaBufferAbstract *>(new UDmaBuf{})
-                                     : static_cast<DmaBufferAbstract *>(new FpgaMemBuffer{0x400000000UL});
+                                     : static_cast<DmaBufferAbstract *>(
+                                           new FpgaMemBuffer{zup_example_prj::fpga_mem_phys_addr});
     uint64_t counter_ok = 0, counter_total = 0;
     DataHandlerPrint data_handler{*axi_dma, *mem_sgdma, *udmabuf, counter_ok, counter_total};
     std::thread t1{data_handler};
