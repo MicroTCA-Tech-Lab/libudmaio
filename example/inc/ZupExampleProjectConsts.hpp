@@ -13,14 +13,17 @@
 
 // this information comes from the FPGA project
 namespace zup_example_prj {
-  const uint64_t axi_dma_0_addr = 0x00910000;
-  const uint64_t axi_dma_0_size = 4 * 1024;
+  constexpr uint64_t axi_gpio_status_addr = 0x88801000;
+  constexpr uint64_t axi_gpio_status_size = 4 * 1024;
 
-  const uint64_t bram_ctrl_0_addr = 0x00920000;
-  const uint64_t bram_ctrl_0_size = 8 * 1024;
+  constexpr uint64_t axi_dma_0_addr = 0x00910000;
+  constexpr uint64_t axi_dma_0_size = 4 * 1024;
 
-  const uint64_t axi_traffic_gen_0_addr = 0x00890000;
-  const uint64_t axi_traffic_gen_0_size = 64 * 1024;
+  constexpr uint64_t bram_ctrl_0_addr = 0x00920000;
+  constexpr uint64_t bram_ctrl_0_size = 8 * 1024;
 
-  const uint64_t fpga_mem_phys_addr = 0x400000000UL;
+  constexpr uint64_t axi_traffic_gen_0_addr = 0x00890000;
+  constexpr uint64_t axi_traffic_gen_0_size = 64 * 1024;
+
+  constexpr uint64_t fpga_mem_phys_addr = 0x400000000UL;
 }

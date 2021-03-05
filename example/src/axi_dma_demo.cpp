@@ -11,6 +11,7 @@
 
 #include <csignal>
 #include <iostream>
+#include <stdexcept>
 #include <thread>
 
 #include <boost/log/core/core.hpp>
@@ -83,7 +84,16 @@ int main(int argc, char *argv[]) {
 
     std::signal(SIGINT, signal_handler);
 
-    // TODO: use UioGpioStatus to check if DDR4 is up and running
+    auto gpio_status = (mode == DmaMode::UIO)
+            ? UioIfFactory::create_from_uio<UioGpioStatus>("axi_gpio_status")
+            : UioIfFactory::create_from_xdma<UioGpioStatus>(
+                zup_example_prj::axi_gpio_status_addr, zup_example_prj::axi_gpio_status_size);
+    bool is_ddr4_init = gpio_status->is_ddr4_init_calib_complete();
+    BOOST_LOG_TRIVIAL(debug) << "DDR4 init = " << is_ddr4_init;
+    if (!is_ddr4_init) {
+        throw std::runtime_error("DDR4 init calib is not complete");
+    }
+
     auto axi_dma = (mode == DmaMode::UIO)
                        ? UioIfFactory::create_from_uio<UioAxiDmaIf>("hier_daq_arm_axi_dma_0")
                        : UioIfFactory::create_from_xdma<UioAxiDmaIf>(
