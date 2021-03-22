@@ -16,12 +16,12 @@
 namespace udmaio {
 
 class UioAxiDmaIf : UioIf {
-    static const int ADDR_S2MM_DMACR = 0x30;
-    static const int ADDR_S2MM_DMASR = 0x34;
-    static const int ADDR_S2MM_CURDESC = 0x38;
-    static const int ADDR_S2MM_CURDESC_MSB = 0x3C;
-    static const int ADDR_S2MM_TAILDESC = 0x40;
-    static const int ADDR_S2MM_TAILDESC_MSB = 0x44;
+    static constexpr int ADDR_S2MM_DMACR = 0x30;
+    static constexpr int ADDR_S2MM_DMASR = 0x34;
+    static constexpr int ADDR_S2MM_CURDESC = 0x38;
+    static constexpr int ADDR_S2MM_CURDESC_MSB = 0x3C;
+    static constexpr int ADDR_S2MM_TAILDESC = 0x40;
+    static constexpr int ADDR_S2MM_TAILDESC_MSB = 0x44;
 
     union S2mmDmaControlReg {
         uint32_t data;
