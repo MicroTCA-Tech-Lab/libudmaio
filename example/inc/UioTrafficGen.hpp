@@ -17,19 +17,19 @@ using namespace udmaio;
 
 
 class UioTrafficGen : UioIf {
-    static const int ADDR_ST_CTRL = 0x30;
-    static const int ADDR_ST_CONFIG = 0x34;
-    static const int ADDR_TR_LEN = 0x38;
-    static const int ADDR_TR_COUNT = 0x3C;
-    static const int ADDR_TR_TSTRB0 = 0x40;
-    static const int ADDR_TR_TSTRB1 = 0x44;
-    static const int ADDR_TR_TSTRB2 = 0x48;
-    static const int ADDR_TR_TSTRB3 = 0x4C;
-    static const int ADDR_EX_TR_LEN = 0x50;
-    static const int ADDR_ST_ERR_STATUS = 0x70;
-    static const int ADDR_ST_ERR_EN = 0x74;
-    static const int ADDR_ST_ERR_INT_EN = 0x78;
-    static const int ADDR_ST_ERR_CNT = 0x7C;
+    static constexpr int ADDR_ST_CTRL = 0x30;
+    static constexpr int ADDR_ST_CONFIG = 0x34;
+    static constexpr int ADDR_TR_LEN = 0x38;
+    static constexpr int ADDR_TR_COUNT = 0x3C;
+    static constexpr int ADDR_TR_TSTRB0 = 0x40;
+    static constexpr int ADDR_TR_TSTRB1 = 0x44;
+    static constexpr int ADDR_TR_TSTRB2 = 0x48;
+    static constexpr int ADDR_TR_TSTRB3 = 0x4C;
+    static constexpr int ADDR_EX_TR_LEN = 0x50;
+    static constexpr int ADDR_ST_ERR_STATUS = 0x70;
+    static constexpr int ADDR_ST_ERR_EN = 0x74;
+    static constexpr int ADDR_ST_ERR_INT_EN = 0x78;
+    static constexpr int ADDR_ST_ERR_CNT = 0x7C;
 
     union StControl {
         uint32_t data;

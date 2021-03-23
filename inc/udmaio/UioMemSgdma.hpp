@@ -16,7 +16,7 @@
 namespace udmaio {
 
 class UioMemSgdma : UioIf {
-    static const int DESC_ADDR_STEP = 0x40;
+    static constexpr int DESC_ADDR_STEP = 0x40;
 
     struct __attribute__((packed)) S2mmDescControl {
         uint32_t buffer_len : 26;
@@ -57,7 +57,7 @@ class UioMemSgdma : UioIf {
     static constexpr std::string_view _log_name{"UioMemSgdma"};
 
   public:
-    static const int BUF_LEN = 2 * 1024 * 1024;
+    static constexpr int BUF_LEN = 2 * 1024 * 1024;
 
     using UioIf::UioIf;
 

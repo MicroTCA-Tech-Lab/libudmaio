@@ -13,7 +13,7 @@
 
 // this information comes from the FPGA project
 namespace zup_example_prj {
-  constexpr uint64_t axi_gpio_status_addr = 0x88801000;
+  constexpr uint64_t axi_gpio_status_addr = 0x00801000;
   constexpr uint64_t axi_gpio_status_size = 4 * 1024;
 
   constexpr uint64_t axi_dma_0_addr = 0x00910000;

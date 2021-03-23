@@ -54,6 +54,10 @@ to use the components of this library. This example assumes that the
 is connected to the AXI4-Stream input of the DMA; this Traffic Generator IP
 produces a LFSR pattern which is then compared in the interrupt handler.
 
+### udev rules
+
+To match the device file paths expected by the library, [this udev rule](https://msktechvcs.desy.de/techlab/drivers/dma_ip_drivers/-/tree/master/XDMA/linux-kernel/etc/udev/rules.d) has to be installed for creating the appropriate symlinks.
+
 ### UIO - with default parameters
 
 ```
