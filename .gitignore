@@ -1,4 +1,4 @@
-/build
+/build*
 /.vscode
 
 # vim-specific things
