@@ -19,15 +19,19 @@
 
 namespace blt = boost::log::trivial;
 
+const std::string_view UioTrafficGen::_log_name() const {
+    return "UioTrafficGen";
+}
+
 void UioTrafficGen::start(uint16_t nr_pkts, uint32_t pkt_size, uint16_t pkt_pause) {
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name << ": start, nr pkts = " << nr_pkts << ", pkt size = " << pkt_size;
+        << _log_name() << ": start, nr pkts = " << nr_pkts << ", pkt size = " << pkt_size;
 
     StControl st_ctrl;
     st_ctrl.data = _rd32(ADDR_ST_CTRL);
 
     if (st_ctrl.fields.done) {
-        BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name << ": clearing done bit";
+        BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name() << ": clearing done bit";
         st_ctrl.fields.stren = 0;
         _wr32(ADDR_ST_CTRL, st_ctrl.data);
     }
@@ -48,5 +52,5 @@ void UioTrafficGen::print_version() {
     st_control.data = _rd32(ADDR_ST_CTRL);
 
     BOOST_LOG_SEV(_slg, blt::severity_level::info)
-        << _log_name << ": version = 0x" << std::hex << st_control.fields.version << std::dec;
+        << _log_name() << ": version = 0x" << std::hex << st_control.fields.version << std::dec;
 }

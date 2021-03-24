@@ -25,7 +25,9 @@ class UioGpioStatus : UioIf {
         } fields;
     };
 
-    static constexpr std::string_view _log_name{"UioGpioStatus"};
+    virtual const std::string_view _log_name() const override {
+        return "UioGpioStatus";
+    };
 
   public:
     using UioIf::UioIf;

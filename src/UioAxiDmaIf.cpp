@@ -21,9 +21,13 @@ namespace blt = boost::log::trivial;
 
 namespace udmaio {
 
+const std::string_view UioAxiDmaIf::_log_name() const {
+    return "UioAxiDmaIf";
+}
+
 void UioAxiDmaIf::start(uint64_t start_desc) {
     BOOST_LOG_SEV(_slg, blt::severity_level::debug)
-        << _log_name << ": start, start_desc = " << std::hex << start_desc << std::dec;
+        << _log_name() << ": start, start_desc = " << std::hex << start_desc << std::dec;
 
     // 0.
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
@@ -37,7 +41,7 @@ void UioAxiDmaIf::start(uint64_t start_desc) {
     // 2.
     S2mmDmaControlReg ctrl_reg = {.data = _rd32(ADDR_S2MM_DMACR)};
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name << ": DMA ctrl = 0x" << std::hex << ctrl_reg.data << std::dec;
+        << _log_name() << ": DMA ctrl = 0x" << std::hex << ctrl_reg.data << std::dec;
     ctrl_reg.fields.RS = 1;
     ctrl_reg.fields.Cyc_bd_en = 1;
     ctrl_reg.fields.IOC_IrqEn = 1;
@@ -45,7 +49,7 @@ void UioAxiDmaIf::start(uint64_t start_desc) {
     // 3.
     _wr32(ADDR_S2MM_DMACR, ctrl_reg.data);
 
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name << ": DMA control write";
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name() << ": DMA control write";
 
     // 4.
     _wr32(ADDR_S2MM_TAILDESC, 0x50);                 // for circular
@@ -53,7 +57,7 @@ void UioAxiDmaIf::start(uint64_t start_desc) {
 
     uint32_t tmp_ctrl_after = _rd32(ADDR_S2MM_DMACR);
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name << ": DMA ctrl = 0x" << std::hex << tmp_ctrl_after << std::dec;
+        << _log_name() << ": DMA ctrl = 0x" << std::hex << tmp_ctrl_after << std::dec;
 }
 
 void UioAxiDmaIf::arm_interrupt() {
@@ -63,7 +67,7 @@ void UioAxiDmaIf::arm_interrupt() {
     uint32_t mask = 1;
     int rc = write(_fd_int, &mask, sizeof(mask));
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name << ": arm interrupt enable, ret code = " << rc;
+        << _log_name() << ": arm interrupt enable, ret code = " << rc;
 }
 
 uint32_t UioAxiDmaIf::clear_interrupt() {
@@ -77,7 +81,7 @@ uint32_t UioAxiDmaIf::clear_interrupt() {
     _wr32(ADDR_S2MM_DMASR, status.data);
 
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name << ": clear interrupt , ret code = " << rc << ", irq count = " << irq_count;
+        << _log_name() << ": clear interrupt , ret code = " << rc << ", irq count = " << irq_count;
     return irq_count;
 }
 

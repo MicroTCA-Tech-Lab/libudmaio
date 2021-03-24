@@ -17,6 +17,10 @@ namespace blt = boost::log::trivial;
 
 namespace udmaio {
 
+const std::string_view UioMemSgdma::_log_name() const {
+    return "UioMemSgdma";
+}
+
 void UioMemSgdma::_write_desc(uintptr_t mem_offs, const S2mmDesc *desc) {
     memcpy(static_cast<char *>(_mem) + mem_offs, desc, sizeof(S2mmDesc));
 }
@@ -30,7 +34,7 @@ void UioMemSgdma::write_cyc_mode(const std::vector<uint64_t> &dst_buf_addrs) {
     _nr_cyc_desc = dst_buf_addrs.size();
     for (auto dst_buf_addr : dst_buf_addrs) {
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-            << _log_name << ": dest buf addr = 0x" << std::hex << dst_buf_addr << std::dec;
+            << _log_name() << ": dest buf addr = 0x" << std::hex << dst_buf_addr << std::dec;
 
         bool is_last = dst_buf_addr == dst_buf_addrs.back();
         uint64_t nxtdesc = _int_addr + (is_last ? 0 : offs + DESC_ADDR_STEP);
@@ -52,7 +56,7 @@ void UioMemSgdma::write_cyc_mode(const std::vector<uint64_t> &dst_buf_addrs) {
 }
 
 void UioMemSgdma::print_desc(const S2mmDesc &desc) {
-#define BLI BOOST_LOG_SEV(_slg, blt::severity_level::info) << _log_name << ": "
+#define BLI BOOST_LOG_SEV(_slg, blt::severity_level::info) << _log_name() << ": "
     BLI << "S2mmDesc {";
     BLI << "  next desc   = 0x" << std::hex << desc.nxtdesc;
     BLI << "  buffer addr = 0x" << std::hex << desc.buffer_addr;
@@ -104,7 +108,7 @@ std::vector<UioMemSgdma::BufInfo> UioMemSgdma::get_full_buffers() {
     }
 
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name << ": full bufs = 0x" << full_mask.to_ullong();
+        << _log_name() << ": full bufs = 0x" << full_mask.to_ullong();
 
     // find first buffer to read
     bool seen_1 = false;

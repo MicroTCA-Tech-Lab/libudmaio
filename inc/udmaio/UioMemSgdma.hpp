@@ -54,7 +54,7 @@ class UioMemSgdma : UioIf {
 
     size_t _nr_cyc_desc;
 
-    static constexpr std::string_view _log_name{"UioMemSgdma"};
+    virtual const std::string_view _log_name() const override;
 
   public:
     static constexpr int BUF_LEN = 2 * 1024 * 1024;
