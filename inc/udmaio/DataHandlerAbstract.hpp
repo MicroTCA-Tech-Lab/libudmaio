@@ -14,6 +14,7 @@
 #include <vector>
 
 #include <boost/log/trivial.hpp>
+#include <boost/core/noncopyable.hpp>
 
 #include "UDmaBuf.hpp"
 #include "UioAxiDmaIf.hpp"
@@ -23,7 +24,7 @@ namespace blt = boost::log::trivial;
 
 namespace udmaio {
 
-class DataHandlerAbstract {
+class DataHandlerAbstract : private boost::noncopyable {
 
     boost::log::sources::severity_logger<blt::severity_level> _slg;
     int _pipefd_read;

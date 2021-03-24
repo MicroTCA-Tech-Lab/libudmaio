@@ -117,7 +117,7 @@ int main(int argc, char *argv[]) {
 
     uint64_t counter_ok = 0, counter_total = 0;
     DataHandlerPrint data_handler{*axi_dma, *mem_sgdma, *udmabuf, counter_ok, counter_total};
-    std::thread t1{data_handler};
+    std::thread t1{std::ref(data_handler)};
 
     std::vector<uint64_t> dst_buf_addrs;
     for (int i = 0; i < 32; i++) {
