@@ -15,13 +15,14 @@
 #include "DataHandlerPrint.hpp"
 
 DataHandlerPrint::DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem,
-                                   uint64_t &counter_ok, uint64_t &counter_total)
+                                   uint64_t &counter_ok, uint64_t &counter_total, uint64_t num_bytes_expected)
     : DataHandlerAbstract{dma, desc, mem}, lfsr{std::nullopt}, _counter_ok{counter_ok},
-      _counter_total{counter_total} {}
+      _counter_total{counter_total}, _num_bytes_expected{num_bytes_expected}, _num_bytes_rcvd{0} {}
 
 void DataHandlerPrint::process_data(const std::vector<uint8_t> &bytes) {
     BOOST_LOG_SEV(_slg, blt::severity_level::debug)
         << "DataHandlerPrint: process data, size = " << bytes.size();
+    _num_bytes_rcvd += bytes.size();
 
     if (bytes.size() == 0) {
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
@@ -45,11 +46,18 @@ void DataHandlerPrint::process_data(const std::vector<uint8_t> &bytes) {
                 BOOST_LOG_SEV(_slg, blt::severity_level::fatal)
                     << "mismatch, at " << i * 8 + j << " recv = " << std::hex << recv_val
                     << ", exp = " << exp_val;
-                return;
+                goto finish;
             } else {
                 _counter_ok++;
             }
         }
         lfsr->advance();
+    }
+
+finish:
+    if (_num_bytes_expected != 0 && _num_bytes_rcvd == _num_bytes_expected) {
+        // We're done.
+        BOOST_LOG_SEV(_slg, blt::severity_level::debug) << "DataHandlerPrint: Received all packets";
+        stop();
     }
 }

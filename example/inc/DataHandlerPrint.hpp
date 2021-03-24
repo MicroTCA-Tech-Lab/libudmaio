@@ -27,8 +27,10 @@ class DataHandlerPrint : public DataHandlerAbstract {
 
     uint64_t &_counter_ok;
     uint64_t &_counter_total;
+    uint64_t _num_bytes_expected;
+    uint64_t _num_bytes_rcvd;
 
   public:
     explicit DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem,
-                              uint64_t &counter_ok, uint64_t &counter_total);
+                              uint64_t &counter_ok, uint64_t &counter_total, uint64_t num_bytes_expected);
 };
