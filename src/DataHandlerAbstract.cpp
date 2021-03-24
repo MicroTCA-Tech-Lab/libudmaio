@@ -38,6 +38,13 @@ DataHandlerAbstract::DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc,
     _pipefd_write = pipefd[1];
 };
 
+DataHandlerAbstract::~DataHandlerAbstract()
+{
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: dtor";
+    close(_pipefd_write);
+    close(_pipefd_read);
+}
+
 void DataHandlerAbstract::stop() {
     BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: stop";
     char msg[1] = {0};

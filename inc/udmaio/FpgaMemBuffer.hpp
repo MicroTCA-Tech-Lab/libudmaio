@@ -34,6 +34,9 @@ class FpgaMemBuffer : public DmaBufferAbstract {
             throw std::runtime_error("could not open /dev/xdma/card0/c2h0");
         }
     }
+    virtual ~FpgaMemBuffer() {
+        close(_dma_fd);
+    }
 
     uint64_t get_phys_addr() {
         return _phys_addr;

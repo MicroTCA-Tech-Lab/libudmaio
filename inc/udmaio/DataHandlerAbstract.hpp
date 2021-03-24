@@ -34,6 +34,7 @@ class DataHandlerAbstract {
 
   public:
     explicit DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem);
+    virtual ~DataHandlerAbstract();
 
     void stop();
 

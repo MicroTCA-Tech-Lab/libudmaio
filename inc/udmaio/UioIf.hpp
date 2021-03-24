@@ -75,7 +75,7 @@ class UioIf {
     }
 
   protected:
-    ~UioIf() {
+    virtual ~UioIf() {
         munmap(_mem, _int_size);
         ::close(_fd);
     }
