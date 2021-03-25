@@ -88,7 +88,7 @@ class UioIf {
     bool _skip_write_to_arm_int;
 
     uint32_t _rd32(uint32_t offs) {
-        uint32_t tmp = *(static_cast<uint32_t *>(_mem) + offs / 4);
+        uint32_t tmp = *(static_cast<volatile uint32_t *>(_mem) + offs / 4);
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
             << _log_name() << ": read at 0x" << std::hex << offs << " = 0x" << tmp << std::dec;
         return tmp;
@@ -97,7 +97,7 @@ class UioIf {
     void _wr32(uint32_t offs, uint32_t data) {
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
             << _log_name() << ": write at 0x" << std::hex << offs << " = 0x" << data << std::dec;
-        *(static_cast<uint32_t *>(_mem) + offs / 4) = data;
+        *(static_cast<volatile uint32_t *>(_mem) + offs / 4) = data;
     }
 
     virtual const std::string_view _log_name() const = 0;
