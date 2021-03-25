@@ -47,7 +47,8 @@ void DataHandlerPrint::process_data(const std::vector<uint8_t> &bytes) {
                 BOOST_LOG_SEV(_slg, blt::severity_level::fatal)
                     << "mismatch, at " << i * 8 + j << " recv = " << std::hex << recv_val
                     << ", exp = " << exp_val;
-                goto finish;
+                stop();
+                return;
             } else {
                 _counter_ok++;
             }
@@ -55,7 +56,6 @@ void DataHandlerPrint::process_data(const std::vector<uint8_t> &bytes) {
         lfsr->advance();
     }
 
-finish:
     if (_num_bytes_expected != 0 && _num_bytes_rcvd >= _num_bytes_expected) {
         // We're done.
         if (_num_bytes_rcvd == _num_bytes_expected) {
