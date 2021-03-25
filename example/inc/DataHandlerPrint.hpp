@@ -11,6 +11,8 @@
 
 #pragma once
 
+#include <utility>
+
 #include "udmaio/DataHandlerAbstract.hpp"
 
 #include "AxiTrafficGenLfsr.hpp"
@@ -25,12 +27,13 @@ class DataHandlerPrint : public DataHandlerAbstract {
 
     void process_data(const std::vector<uint8_t> &bytes) override;
 
-    uint64_t &_counter_ok;
-    uint64_t &_counter_total;
+    uint64_t _counter_ok;
+    uint64_t _counter_total;
     uint64_t _num_bytes_expected;
     uint64_t _num_bytes_rcvd;
 
   public:
     explicit DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem,
-                              uint64_t &counter_ok, uint64_t &counter_total, uint64_t num_bytes_expected);
+                              uint64_t num_bytes_expected);
+    std::pair<uint64_t, uint64_t> operator()();
 };

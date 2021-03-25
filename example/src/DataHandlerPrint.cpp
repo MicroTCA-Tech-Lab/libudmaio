@@ -15,9 +15,10 @@
 #include "DataHandlerPrint.hpp"
 
 DataHandlerPrint::DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem,
-                                   uint64_t &counter_ok, uint64_t &counter_total, uint64_t num_bytes_expected)
-    : DataHandlerAbstract{dma, desc, mem}, lfsr{std::nullopt}, _counter_ok{counter_ok},
-      _counter_total{counter_total}, _num_bytes_expected{num_bytes_expected}, _num_bytes_rcvd{0} {}
+                                   uint64_t num_bytes_expected)
+    : DataHandlerAbstract{dma, desc, mem}, lfsr{std::nullopt},
+      _counter_ok{0}, _counter_total{0},
+      _num_bytes_expected{num_bytes_expected}, _num_bytes_rcvd{0} {}
 
 void DataHandlerPrint::process_data(const std::vector<uint8_t> &bytes) {
     BOOST_LOG_SEV(_slg, blt::severity_level::debug)
@@ -57,7 +58,12 @@ void DataHandlerPrint::process_data(const std::vector<uint8_t> &bytes) {
 finish:
     if (_num_bytes_expected != 0 && _num_bytes_rcvd == _num_bytes_expected) {
         // We're done.
-        BOOST_LOG_SEV(_slg, blt::severity_level::debug) << "DataHandlerPrint: Received all packets";
+            BOOST_LOG_SEV(_slg, blt::severity_level::debug) << "DataHandlerPrint: Received all packets";
         stop();
     }
+}
+
+std::pair<uint64_t, uint64_t> DataHandlerPrint::operator()() {
+    DataHandlerAbstract::operator()();
+    return std::make_pair(_counter_ok, _counter_total);
 }

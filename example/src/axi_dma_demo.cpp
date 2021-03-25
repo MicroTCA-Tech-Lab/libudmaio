@@ -116,13 +116,10 @@ int main(int argc, char *argv[]) {
             ? static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<UDmaBuf>())
             : static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<FpgaMemBuffer>(zup_example_prj::fpga_mem_phys_addr));
 
-    uint64_t counter_ok = 0, counter_total = 0;
     DataHandlerPrint data_handler{
         *axi_dma,
         *mem_sgdma,
         *udmabuf,
-        counter_ok,
-        counter_total,
         nr_pkts * pkt_len * 16
     };
     auto fut = std::async(std::launch::async, std::ref(data_handler));
@@ -147,6 +144,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    auto [counter_ok, counter_total] = fut.get();
     std::cout << "Counters: OK = " << counter_ok << ", total = " << counter_total << "\n";
 
     return !(counter_ok == counter_total);
