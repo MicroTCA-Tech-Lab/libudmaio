@@ -120,7 +120,7 @@ int main(int argc, char *argv[]) {
         *axi_dma,
         *mem_sgdma,
         *udmabuf,
-        nr_pkts * pkt_len * 16
+        nr_pkts * pkt_len * zup_example_prj::lfsr_bytes_per_beat
     };
     auto fut = std::async(std::launch::async, std::ref(data_handler));
 
