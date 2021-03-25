@@ -52,7 +52,6 @@ void UioTrafficGen::stop() {
         BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name() << ": clearing done bit";
         // W1C – Write 1 to Clear 
         st_ctrl.fields.done = 1;
-        _wr32(ADDR_ST_CTRL, st_ctrl.data);
     }
     _wr32(ADDR_ST_CTRL, st_ctrl.data);
 }
