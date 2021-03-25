@@ -22,6 +22,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+#include <boost/core/noncopyable.hpp>
 #include <boost/log/core/core.hpp>
 #include <boost/log/expressions.hpp>
 #include <boost/log/keywords/severity.hpp>
@@ -34,7 +35,7 @@ namespace blt = boost::log::trivial;
 
 namespace udmaio {
 
-class UioIf {
+class UioIf : private boost::noncopyable {
   public:
     explicit UioIf(const std::string &uio_name, uintptr_t addr, size_t size, uintptr_t offs = 0,
                    const std::string &event_filename = "", bool skip_write_to_arm_int = false)
