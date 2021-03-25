@@ -12,7 +12,7 @@
 #include <csignal>
 #include <iostream>
 #include <stdexcept>
-#include <thread>
+#include <future>
 
 #include <boost/log/core/core.hpp>
 #include <boost/log/expressions.hpp>
@@ -39,6 +39,7 @@ namespace blt = boost::log::trivial;
 namespace bpo = boost::program_options;
 
 using namespace udmaio;
+using namespace std::chrono_literals;
 
 volatile bool g_stop_loop = false;
 
@@ -109,13 +110,19 @@ int main(int argc, char *argv[]) {
             ? UioIfFactory::create_from_uio<UioTrafficGen>("hier_daq_arm_axi_traffic_gen_0")
             : UioIfFactory::create_from_xdma<UioTrafficGen>(
                   zup_example_prj::axi_traffic_gen_0_addr, zup_example_prj::axi_traffic_gen_0_size);
-    DmaBufferAbstract *udmabuf = (mode == DmaMode::UIO)
-                                     ? static_cast<DmaBufferAbstract *>(new UDmaBuf{})
-                                     : static_cast<DmaBufferAbstract *>(
-                                           new FpgaMemBuffer{zup_example_prj::fpga_mem_phys_addr});
-    uint64_t counter_ok = 0, counter_total = 0;
-    DataHandlerPrint data_handler{*axi_dma, *mem_sgdma, *udmabuf, counter_ok, counter_total};
-    std::thread t1{data_handler};
+
+    auto udmabuf =
+        (mode == DmaMode::UIO)
+            ? static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<UDmaBuf>())
+            : static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<FpgaMemBuffer>(zup_example_prj::fpga_mem_phys_addr));
+
+    DataHandlerPrint data_handler{
+        *axi_dma,
+        *mem_sgdma,
+        *udmabuf,
+        nr_pkts * pkt_len * zup_example_prj::lfsr_bytes_per_beat
+    };
+    auto fut = std::async(std::launch::async, std::ref(data_handler));
 
     std::vector<uint64_t> dst_buf_addrs;
     for (int i = 0; i < 32; i++) {
@@ -128,20 +135,18 @@ int main(int argc, char *argv[]) {
     axi_dma->start(first_desc);
     traffic_gen->start(nr_pkts, pkt_len, pkt_pause);
 
-    if (nr_pkts == 0) {
-        // continous mode
-        while (!g_stop_loop) {
-            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    // Wait until data_handler has finished or user hit Ctrl-C
+    while (fut.wait_for(10ms) != std::future_status::ready) {
+        if (g_stop_loop) {
+            data_handler.stop();
+            fut.wait();
+            break;
         }
-    } else {
-        // 200 = clk freq, 2 = "safety factor"
-        unsigned int clk_cycles = (pkt_len + pkt_pause) * nr_pkts;
-        std::this_thread::sleep_for(std::chrono::microseconds(clk_cycles / 200 * 2));
     }
 
-    data_handler.stop();
-    t1.join();
+    traffic_gen->stop();
 
+    auto [counter_ok, counter_total] = fut.get();
     std::cout << "Counters: OK = " << counter_ok << ", total = " << counter_total << "\n";
 
     return !(counter_ok == counter_total);

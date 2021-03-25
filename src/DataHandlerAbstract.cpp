@@ -11,12 +11,8 @@
 
 #include <iomanip>
 #include <iostream>
-#include <thread>
+#include <functional>
 #include <vector>
-
-#include <fcntl.h>
-#include <sys/select.h>
-#include <unistd.h>
 
 #include "udmaio/DataHandlerAbstract.hpp"
 
@@ -24,73 +20,68 @@ namespace udmaio {
 
 DataHandlerAbstract::DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc,
                                          DmaBufferAbstract &mem)
-    : _dma{dma}, _desc{desc}, _mem{mem} {
-
+    : _dma{dma}, _desc{desc}, _mem{mem},
+      _svc{}, _sd{_svc, _dma.get_fd_int()} {
     BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: ctor";
-
-    int pipefd[2];
-    int rc = pipe2(pipefd, O_DIRECT);
-    if (rc < 0) {
-        throw std::runtime_error("could not create a pipe");
-    }
-
-    _pipefd_read = pipefd[0];
-    _pipefd_write = pipefd[1];
 };
+
+DataHandlerAbstract::~DataHandlerAbstract() {
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: dtor";
+}
 
 void DataHandlerAbstract::stop() {
     BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: stop";
-    char msg[1] = {0};
-    if (write(_pipefd_write, msg, sizeof(msg))) {
-        // Return value can be ignored, b/c we're just stopping the DataHandler
+    _svc.stop();
+}
+
+void DataHandlerAbstract::_start_read() {
+    _dma.arm_interrupt();
+
+    _sd.async_read_some(
+        boost::asio::null_buffers(), // No actual reading - that's deferred to UioAxiDmaIf
+        std::bind(
+            &DataHandlerAbstract::_handle_input,
+            this,
+            std::placeholders::_1 // boost::asio::placeholders::error
+        )
+    );
+}
+
+void DataHandlerAbstract::_handle_input(const boost::system::error_code& ec) {
+    if (ec) {
+        BOOST_LOG_SEV(_slg, blt::severity_level::error)
+            << "DataHandler: I/O error: " << ec.message();
+        return;
     }
+
+    uint32_t irq_count = _dma.clear_interrupt();
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+        << "DataHandler: irq count = " << irq_count;
+
+    std::vector<UioMemSgdma::BufInfo> full_bufs = _desc.get_full_buffers();
+    std::vector<uint8_t> bytes;
+
+    for (auto &buf : full_bufs) {
+        _mem.copy_from_buf(buf.buf_addr, buf.buf_len, bytes);
+    }
+
+    if (!bytes.empty()) {
+        process_data(bytes);
+    } else {
+        BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+            << "DataHandler: spurious event, got no data";
+    }
+
+    _start_read();
 }
 
 void DataHandlerAbstract::operator()() {
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: new thread started";
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: started";
 
-    int dma_fd = _dma.get_fd_int();
-    int nfds = std::max(_pipefd_read, dma_fd) + 1;
+    _start_read();
+    _svc.run();
 
-    fd_set rfds;
-    FD_ZERO(&rfds);
-
-    while (true) {
-        _dma.arm_interrupt();
-        FD_ZERO(&rfds);
-        FD_SET(_pipefd_read, &rfds);
-        FD_SET(dma_fd, &rfds);
-        int select_ret = select(nfds, &rfds, NULL, NULL, NULL);
-
-        BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: select = " << select_ret;
-
-        if (select_ret < 0) {
-            BOOST_LOG_SEV(_slg, blt::severity_level::fatal)
-                << "DataHandler: select failed with code " << select_ret;
-            return;
-        }
-
-        // first process data, then check if we need to stop; select can return with both fds set
-        if (FD_ISSET(dma_fd, &rfds)) {
-            uint32_t irq_count = _dma.clear_interrupt();
-            BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-                << "DataHandler: irq count = " << irq_count;
-
-            std::vector<UioMemSgdma::BufInfo> full_bufs = _desc.get_full_buffers();
-            std::vector<uint8_t> bytes;
-
-            for (auto &buf : full_bufs) {
-                _mem.copy_from_buf(buf.buf_addr, buf.buf_len, bytes);
-            }
-
-            process_data(bytes);
-        }
-
-        if (FD_ISSET(_pipefd_read, &rfds)) {
-            BOOST_LOG_SEV(_slg, blt::severity_level::debug) << "DataHandler: stopping thread";
-            return;
-        }
-    }
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: finished";
 }
 
 } // namespace udmaio

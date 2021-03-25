@@ -26,4 +26,6 @@ namespace zup_example_prj {
   constexpr uint64_t axi_traffic_gen_0_size = 64 * 1024;
 
   constexpr uint64_t fpga_mem_phys_addr = 0x400000000UL;
+
+  constexpr uint16_t lfsr_bytes_per_beat = 16;
 }

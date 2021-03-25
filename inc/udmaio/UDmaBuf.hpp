@@ -34,7 +34,7 @@ class UDmaBuf : public DmaBufferAbstract {
   public:
     explicit UDmaBuf(int buf_idx = 0);
 
-    ~UDmaBuf();
+    virtual ~UDmaBuf();
 
     uint64_t get_phys_addr();
 

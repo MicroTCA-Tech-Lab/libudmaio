@@ -68,8 +68,8 @@ class UioAxiDmaIf : UioIf {
     static_assert(sizeof(S2mmDmaControlReg) == 4);
     static_assert(sizeof(S2mmDmaStatusReg) == 4);
 
-    static constexpr std::string_view _log_name{"UioAxiDmaIf"};
-
+    virtual const std::string_view _log_name() const override;
+ 
   public:
     using UioIf::UioIf;
 

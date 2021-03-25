@@ -53,11 +53,13 @@ class UioTrafficGen : UioIf {
         } fields;
     };
 
-    static constexpr std::string_view _log_name{"UioTrafficGen"};
+    virtual const std::string_view _log_name() const override;
 
   public:
     using UioIf::UioIf;
 
     void start(uint16_t nr_pkts, uint32_t pkt_size, uint16_t pkt_pause);
+    void stop();
+
     void print_version();
 };
