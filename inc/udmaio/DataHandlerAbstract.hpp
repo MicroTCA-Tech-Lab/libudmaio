@@ -13,6 +13,8 @@
 
 #include <vector>
 
+#include <boost/asio.hpp>
+#include <boost/asio/posix/stream_descriptor.hpp>
 #include <boost/log/trivial.hpp>
 #include <boost/core/noncopyable.hpp>
 
@@ -27,11 +29,15 @@ namespace udmaio {
 class DataHandlerAbstract : private boost::noncopyable {
 
     boost::log::sources::severity_logger<blt::severity_level> _slg;
-    int _pipefd_read;
-    int _pipefd_write;
     UioAxiDmaIf &_dma;
     UioMemSgdma &_desc;
     DmaBufferAbstract &_mem;
+
+    boost::asio::io_service _svc;
+    boost::asio::posix::stream_descriptor _sd;
+
+    void _start_read();
+    void _handle_input(const boost::system::error_code& ec);
 
   public:
     explicit DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem);
