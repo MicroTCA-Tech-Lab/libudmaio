@@ -39,8 +39,10 @@ void UioTrafficGen::start(uint16_t nr_pkts, uint32_t pkt_size, uint16_t pkt_paus
     StConfig st_config{
         .fields{.ranlen = 0, .randly = 0, .etkts = 0, .rsvd7_3 = 0, .tdest = 0, .pdly = pkt_pause}};
     _wr32(ADDR_ST_CONFIG, st_config.data);
-    _wr32(ADDR_TR_LEN, nr_pkts << 16 | (pkt_size - 1));
-    _wr32(ADDR_EX_TR_LEN, pkt_size >> 16);
+
+    const auto num_beats_reg = pkt_size - 1;
+    _wr32(ADDR_TR_LEN, nr_pkts << 16 | (num_beats_reg & 0xffff));
+    _wr32(ADDR_EX_TR_LEN, num_beats_reg >> 16);
 
     st_ctrl.fields.done = 0;
     st_ctrl.fields.stren = 1;
