@@ -144,6 +144,8 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    traffic_gen->stop();
+
     auto [counter_ok, counter_total] = fut.get();
     std::cout << "Counters: OK = " << counter_ok << ", total = " << counter_total << "\n";
 

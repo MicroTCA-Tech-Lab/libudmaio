@@ -27,14 +27,7 @@ void UioTrafficGen::start(uint16_t nr_pkts, uint32_t pkt_size, uint16_t pkt_paus
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
         << _log_name() << ": start, nr pkts = " << nr_pkts << ", pkt size = " << pkt_size;
 
-    StControl st_ctrl;
-    st_ctrl.data = _rd32(ADDR_ST_CTRL);
-
-    if (st_ctrl.fields.done) {
-        BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name() << ": clearing done bit";
-        st_ctrl.fields.stren = 0;
-        _wr32(ADDR_ST_CTRL, st_ctrl.data);
-    }
+    stop();
 
     StConfig st_config{
         .fields{.ranlen = 0, .randly = 0, .etkts = 0, .rsvd7_3 = 0, .tdest = 0, .pdly = pkt_pause}};
@@ -44,8 +37,23 @@ void UioTrafficGen::start(uint16_t nr_pkts, uint32_t pkt_size, uint16_t pkt_paus
     _wr32(ADDR_TR_LEN, nr_pkts << 16 | (num_beats_reg & 0xffff));
     _wr32(ADDR_EX_TR_LEN, num_beats_reg >> 16);
 
+    StControl st_ctrl;
+    st_ctrl.data = _rd32(ADDR_ST_CTRL);
     st_ctrl.fields.done = 0;
     st_ctrl.fields.stren = 1;
+    _wr32(ADDR_ST_CTRL, st_ctrl.data);
+}
+
+void UioTrafficGen::stop() {
+    StControl st_ctrl;
+    st_ctrl.data = _rd32(ADDR_ST_CTRL);
+    st_ctrl.fields.stren = 0;
+    if (st_ctrl.fields.done) {
+        BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name() << ": clearing done bit";
+        // W1C – Write 1 to Clear 
+        st_ctrl.fields.done = 1;
+        _wr32(ADDR_ST_CTRL, st_ctrl.data);
+    }
     _wr32(ADDR_ST_CTRL, st_ctrl.data);
 }
 
