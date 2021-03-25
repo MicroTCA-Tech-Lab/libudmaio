@@ -90,7 +90,11 @@ void DataHandlerAbstract::operator()() {
                 _mem.copy_from_buf(buf.buf_addr, buf.buf_len, bytes);
             }
 
-            process_data(bytes);
+            if (!bytes.empty()) {
+                process_data(bytes);
+            } else {
+                BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: spurious event, got no data";
+            }
         }
 
         if (FD_ISSET(_pipefd_read, &rfds)) {
