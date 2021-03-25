@@ -56,9 +56,13 @@ void DataHandlerPrint::process_data(const std::vector<uint8_t> &bytes) {
     }
 
 finish:
-    if (_num_bytes_expected != 0 && _num_bytes_rcvd == _num_bytes_expected) {
+    if (_num_bytes_expected != 0 && _num_bytes_rcvd >= _num_bytes_expected) {
         // We're done.
+        if (_num_bytes_rcvd == _num_bytes_expected) {
             BOOST_LOG_SEV(_slg, blt::severity_level::debug) << "DataHandlerPrint: Received all packets";
+        } else {
+            BOOST_LOG_SEV(_slg, blt::severity_level::error) << "DataHandlerPrint: Received more packets than expected";
+        }
         stop();
     }
 }
