@@ -67,7 +67,7 @@ class UioMemSgdma : UioIf {
 
     void print_descs();
 
-    uint64_t get_first_desc_addr();
+    uint64_t get_first_desc_addr() const;
 
     struct BufInfo {
         uint64_t addr;

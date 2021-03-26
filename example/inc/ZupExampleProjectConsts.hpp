@@ -9,21 +9,16 @@
 
 // Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
 
-#include <cstdint>
+#include "udmaio/UioIf.hpp"
 
 // this information comes from the FPGA project
 namespace zup_example_prj {
-  constexpr uint64_t axi_gpio_status_addr = 0x00801000;
-  constexpr uint64_t axi_gpio_status_size = 4 * 1024;
+  constexpr UioRegion axi_gpio_status { 0x00801000, 4 * 1024 };
+  constexpr UioRegion axi_dma_0 { 0x00910000, 4 * 1024 };
 
-  constexpr uint64_t axi_dma_0_addr = 0x00910000;
-  constexpr uint64_t axi_dma_0_size = 4 * 1024;
+  constexpr UioRegion bram_ctrl_0 { 0x00920000, 8 * 1024 };
 
-  constexpr uint64_t bram_ctrl_0_addr = 0x00920000;
-  constexpr uint64_t bram_ctrl_0_size = 8 * 1024;
-
-  constexpr uint64_t axi_traffic_gen_0_addr = 0x00890000;
-  constexpr uint64_t axi_traffic_gen_0_size = 64 * 1024;
+  constexpr UioRegion axi_traffic_gen_0 { 0x00890000, 64 * 1024 };
 
   constexpr uint64_t fpga_mem_phys_addr = 0x400000000UL;
 

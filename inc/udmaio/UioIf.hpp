@@ -35,11 +35,16 @@ namespace blt = boost::log::trivial;
 
 namespace udmaio {
 
+struct UioRegion {
+    uintptr_t addr;
+    size_t size;
+};
+
 class UioIf : private boost::noncopyable {
   public:
-    explicit UioIf(const std::string &uio_name, uintptr_t addr, size_t size, uintptr_t offs = 0,
+    explicit UioIf(const std::string &uio_name, const UioRegion &region, uintptr_t mmap_offs = 0,
                    const std::string &event_filename = "", bool skip_write_to_arm_int = false)
-        : _int_addr{addr}, _int_size{size}, _slg{}, _skip_write_to_arm_int{skip_write_to_arm_int} {
+        : _region{region}, _slg{}, _skip_write_to_arm_int{skip_write_to_arm_int} {
 
         // Can't call virtual fn from ctor, so can't use _log_name()
         BOOST_LOG_SEV(_slg, blt::severity_level::debug) << "UioIf: uio name = " << uio_name;
@@ -50,10 +55,10 @@ class UioIf : private boost::noncopyable {
             throw std::runtime_error("could not open " + uio_name);
         }
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-            << "UioIf: fd =  " << _fd << ", size = " << size;
+            << "UioIf: fd =  " << _fd << ", size = " << region.size;
 
         // create memory mapping
-        _mem = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_SHARED, _fd, offs);
+        _mem = mmap(NULL, _region.size, PROT_READ | PROT_WRITE, MAP_SHARED, _fd, mmap_offs);
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
             << "UioIf: mmap = 0x" << _mem << std::dec;
         if (_mem == MAP_FAILED) {
@@ -77,7 +82,7 @@ class UioIf : private boost::noncopyable {
 
   protected:
     virtual ~UioIf() {
-        munmap(_mem, _int_size);
+        munmap(_mem, _region.size);
         if (_fd_int != _fd) {
             ::close(_fd_int);
         }
@@ -86,8 +91,7 @@ class UioIf : private boost::noncopyable {
 
     int _fd, _fd_int;
     void *_mem;
-    uintptr_t _int_addr;
-    size_t _int_size;
+    UioRegion _region;
     boost::log::sources::severity_logger<blt::severity_level> _slg;
     bool _skip_write_to_arm_int;
 

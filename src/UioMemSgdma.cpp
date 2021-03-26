@@ -37,7 +37,7 @@ void UioMemSgdma::write_cyc_mode(const std::vector<uint64_t> &dst_buf_addrs) {
             << _log_name() << ": dest buf addr = 0x" << std::hex << dst_buf_addr << std::dec;
 
         bool is_last = dst_buf_addr == dst_buf_addrs.back();
-        uint64_t nxtdesc = _int_addr + (is_last ? 0 : offs + DESC_ADDR_STEP);
+        uint64_t nxtdesc = _region.addr + (is_last ? 0 : offs + DESC_ADDR_STEP);
 
 #pragma GCC diagnostic push // We're OK that everything not listed is zero-initialized.
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
@@ -83,7 +83,9 @@ void UioMemSgdma::print_descs() {
     }
 }
 
-uint64_t UioMemSgdma::get_first_desc_addr() { return _int_addr; }
+uint64_t UioMemSgdma::get_first_desc_addr() const {
+    return _region.addr;
+}
 
 std::ostream &operator<<(std::ostream &os, const UioMemSgdma::BufInfo &buf_info) {
     os << "BufInfo{0x" << std::hex << buf_info.addr << ", 0x" << buf_info.len << std::dec
