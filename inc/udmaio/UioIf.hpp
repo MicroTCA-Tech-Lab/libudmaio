@@ -78,6 +78,9 @@ class UioIf : private boost::noncopyable {
   protected:
     virtual ~UioIf() {
         munmap(_mem, _int_size);
+        if (_fd_int != _fd) {
+            ::close(_fd_int);
+        }
         ::close(_fd);
     }
 
@@ -88,8 +91,12 @@ class UioIf : private boost::noncopyable {
     boost::log::sources::severity_logger<blt::severity_level> _slg;
     bool _skip_write_to_arm_int;
 
+    volatile uint32_t *_reg_ptr(uint32_t offs) const {
+        return static_cast<volatile uint32_t *>(_mem) + offs / 4;
+    }
+
     uint32_t _rd32(uint32_t offs) {
-        uint32_t tmp = *(static_cast<volatile uint32_t *>(_mem) + offs / 4);
+        uint32_t tmp = *_reg_ptr(offs);
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
             << _log_name() << ": read at 0x" << std::hex << offs << " = 0x" << tmp << std::dec;
         return tmp;
@@ -98,7 +105,7 @@ class UioIf : private boost::noncopyable {
     void _wr32(uint32_t offs, uint32_t data) {
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
             << _log_name() << ": write at 0x" << std::hex << offs << " = 0x" << data << std::dec;
-        *(static_cast<volatile uint32_t *>(_mem) + offs / 4) = data;
+        *_reg_ptr(offs) = data;
     }
 
     virtual const std::string_view _log_name() const = 0;
