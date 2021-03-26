@@ -62,7 +62,7 @@ void DataHandlerAbstract::_handle_input(const boost::system::error_code& ec) {
     std::vector<uint8_t> bytes;
 
     for (auto &buf : full_bufs) {
-        _mem.copy_from_buf(buf.buf_addr, buf.buf_len, bytes);
+        _mem.copy_from_buf(buf, bytes);
     }
 
     if (!bytes.empty()) {

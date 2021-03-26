@@ -86,7 +86,7 @@ void UioMemSgdma::print_descs() {
 uint64_t UioMemSgdma::get_first_desc_addr() { return _int_addr; }
 
 std::ostream &operator<<(std::ostream &os, const UioMemSgdma::BufInfo &buf_info) {
-    os << "BufInfo{0x" << std::hex << buf_info.buf_addr << ", 0x" << buf_info.buf_len << std::dec
+    os << "BufInfo{0x" << std::hex << buf_info.addr << ", 0x" << buf_info.len << std::dec
        << "}";
     return os;
 }

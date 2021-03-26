@@ -73,14 +73,16 @@ UDmaBuf::~UDmaBuf() {
     ::close(_fd);
 }
 
-uint64_t UDmaBuf::get_phys_addr() { return _phys_addr; }
+uint64_t UDmaBuf::get_phys_addr() const {
+    return _phys_addr;
+}
 
-void UDmaBuf::copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t> &out) {
+void UDmaBuf::copy_from_buf(const UioMemSgdma::BufInfo &buf_info, std::vector<uint8_t> &out) const {
     size_t old_size = out.size();
-    size_t new_size = old_size + len;
-    uint64_t mmap_addr = buf_addr - _phys_addr;
+    size_t new_size = old_size + buf_info.len;
+    uint64_t mmap_addr = buf_info.addr - _phys_addr;
     out.resize(new_size);
-    std::memcpy(out.data() + old_size, static_cast<uint8_t *>(_mem) + mmap_addr, len);
+    std::memcpy(out.data() + old_size, static_cast<uint8_t *>(_mem) + mmap_addr, buf_info.len);
 }
 
 } // namespace udmaio

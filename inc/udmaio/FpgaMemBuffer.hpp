@@ -38,17 +38,17 @@ class FpgaMemBuffer : public DmaBufferAbstract {
         close(_dma_fd);
     }
 
-    uint64_t get_phys_addr() {
+    uint64_t get_phys_addr() const override {
         return _phys_addr;
     }
 
-    void copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t> &out) {
+    void copy_from_buf(const UioMemSgdma::BufInfo &buf_info, std::vector<uint8_t> &out) const override {
         size_t old_size = out.size();
-        size_t new_size = old_size + len;
+        size_t new_size = old_size + buf_info.len;
         out.resize(new_size);
-        lseek(_dma_fd, buf_addr, SEEK_SET);
-        int rc = read(_dma_fd, out.data() + old_size, len);
-        if (rc < static_cast<int>(len)) {
+        lseek(_dma_fd, buf_info.addr, SEEK_SET);
+        ssize_t rc = read(_dma_fd, out.data() + old_size, buf_info.len);
+        if (rc < static_cast<ssize_t>(buf_info.len)) {
             // TODO: error handling
         }
     }

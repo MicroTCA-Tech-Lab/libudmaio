@@ -70,8 +70,8 @@ class UioMemSgdma : UioIf {
     uint64_t get_first_desc_addr();
 
     struct BufInfo {
-        uint64_t buf_addr;
-        uint32_t buf_len;
+        uint64_t addr;
+        uint32_t len;
     };
 
     std::vector<BufInfo> get_full_buffers();

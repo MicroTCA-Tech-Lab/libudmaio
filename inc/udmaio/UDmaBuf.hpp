@@ -36,9 +36,9 @@ class UDmaBuf : public DmaBufferAbstract {
 
     virtual ~UDmaBuf();
 
-    uint64_t get_phys_addr();
+    uint64_t get_phys_addr() const override;
 
-    void copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t> &out);
+    void copy_from_buf(const UioMemSgdma::BufInfo &buf_info, std::vector<uint8_t> &out) const override;
 };
 
 } // namespace udmaio
