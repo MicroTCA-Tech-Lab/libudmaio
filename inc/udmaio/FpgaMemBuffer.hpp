@@ -25,10 +25,10 @@ namespace udmaio {
 
 class FpgaMemBuffer : public DmaBufferAbstract {
     int _dma_fd;
-    uint64_t _phys_addr;
+    uintptr_t _phys_addr;
 
   public:
-    explicit FpgaMemBuffer(uint64_t phys_addr) : _phys_addr{phys_addr} {
+    explicit FpgaMemBuffer(uintptr_t phys_addr) : _phys_addr{phys_addr} {
         _dma_fd = open("/dev/xdma/card0/c2h0", O_RDWR);
         if (_dma_fd < 0) {
             throw std::runtime_error("could not open /dev/xdma/card0/c2h0");
@@ -38,17 +38,17 @@ class FpgaMemBuffer : public DmaBufferAbstract {
         close(_dma_fd);
     }
 
-    uint64_t get_phys_addr() const override {
+    uintptr_t get_phys_addr() const override {
         return _phys_addr;
     }
 
-    void copy_from_buf(const UioMemSgdma::BufInfo &buf_info, std::vector<uint8_t> &out) const override {
+    void copy_from_buf(const UioRegion &buf_info, std::vector<uint8_t> &out) const override {
         size_t old_size = out.size();
-        size_t new_size = old_size + buf_info.len;
+        size_t new_size = old_size + buf_info.size;
         out.resize(new_size);
         lseek(_dma_fd, buf_info.addr, SEEK_SET);
-        ssize_t rc = read(_dma_fd, out.data() + old_size, buf_info.len);
-        if (rc < static_cast<ssize_t>(buf_info.len)) {
+        ssize_t rc = read(_dma_fd, out.data() + old_size, buf_info.size);
+        if (rc < static_cast<ssize_t>(buf_info.size)) {
             // TODO: error handling
         }
     }

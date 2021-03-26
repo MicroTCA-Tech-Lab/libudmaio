@@ -25,7 +25,7 @@ const std::string_view UioAxiDmaIf::_log_name() const {
     return "UioAxiDmaIf";
 }
 
-void UioAxiDmaIf::start(uint64_t start_desc) {
+void UioAxiDmaIf::start(uintptr_t start_desc) {
     BOOST_LOG_SEV(_slg, blt::severity_level::debug)
         << _log_name() << ": start, start_desc = " << std::hex << start_desc << std::dec;
 

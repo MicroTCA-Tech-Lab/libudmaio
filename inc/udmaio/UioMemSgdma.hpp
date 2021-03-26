@@ -61,22 +61,17 @@ class UioMemSgdma : UioIf {
 
     using UioIf::UioIf;
 
-    void write_cyc_mode(const std::vector<uint64_t> &dst_buf_addrs);
+    void write_cyc_mode(const std::vector<uintptr_t> &dst_buf_addrs);
 
     void print_desc(const S2mmDesc &desc);
 
     void print_descs();
 
-    uint64_t get_first_desc_addr() const;
+    uintptr_t get_first_desc_addr() const;
 
-    struct BufInfo {
-        uint64_t addr;
-        uint32_t len;
-    };
-
-    std::vector<BufInfo> get_full_buffers();
+    std::vector<UioRegion> get_full_buffers();
 };
 
-std::ostream &operator<<(std::ostream &os, const UioMemSgdma::BufInfo &buf_info);
+std::ostream &operator<<(std::ostream &os, const UioRegion &buf_info);
 
 } // namespace udmaio

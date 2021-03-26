@@ -96,8 +96,8 @@ int main(int argc, char *argv[]) {
 
     auto axi_dma = (mode == DmaMode::UIO)
                        ? UioIfFactory::create_from_uio<UioAxiDmaIf>("hier_daq_arm_axi_dma_0")
-                       : UioIfFactory::create_from_xdma<UioAxiDmaIf>(zup_example_prj::axi_dma_0,
-                             "/dev/xdma/card0/events0");
+                       : UioIfFactory::create_from_xdma<UioAxiDmaIf>(zup_example_prj::axi_dma_0, "/dev/xdma/card0/events0");
+
     auto mem_sgdma =
         (mode == DmaMode::UIO)
             ? UioIfFactory::create_from_uio<UioMemSgdma>("hier_daq_arm_axi_bram_ctrl_0")
@@ -120,14 +120,14 @@ int main(int argc, char *argv[]) {
     };
     auto fut = std::async(std::launch::async, std::ref(data_handler));
 
-    std::vector<uint64_t> dst_buf_addrs;
+    std::vector<uintptr_t> dst_buf_addrs;
     for (int i = 0; i < 32; i++) {
         dst_buf_addrs.push_back(udmabuf->get_phys_addr() + i * mem_sgdma->BUF_LEN);
     };
 
     mem_sgdma->write_cyc_mode(dst_buf_addrs);
 
-    uint64_t first_desc = mem_sgdma->get_first_desc_addr();
+    uintptr_t first_desc = mem_sgdma->get_first_desc_addr();
     axi_dma->start(first_desc);
     traffic_gen->start(nr_pkts, pkt_len, pkt_pause);
 

@@ -37,7 +37,7 @@ void UioMemSgdma::write_cyc_mode(const std::vector<uint64_t> &dst_buf_addrs) {
             << _log_name() << ": dest buf addr = 0x" << std::hex << dst_buf_addr << std::dec;
 
         bool is_last = dst_buf_addr == dst_buf_addrs.back();
-        uint64_t nxtdesc = _region.addr + (is_last ? 0 : offs + DESC_ADDR_STEP);
+        uintptr_t nxtdesc = _region.addr + (is_last ? 0 : offs + DESC_ADDR_STEP);
 
 #pragma GCC diagnostic push // We're OK that everything not listed is zero-initialized.
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
@@ -83,17 +83,17 @@ void UioMemSgdma::print_descs() {
     }
 }
 
-uint64_t UioMemSgdma::get_first_desc_addr() const {
+uintptr_t UioMemSgdma::get_first_desc_addr() const {
     return _region.addr;
 }
 
-std::ostream &operator<<(std::ostream &os, const UioMemSgdma::BufInfo &buf_info) {
-    os << "BufInfo{0x" << std::hex << buf_info.addr << ", 0x" << buf_info.len << std::dec
+std::ostream &operator<<(std::ostream &os, const UioRegion &buf_info) {
+    os << "UioRegion{0x" << std::hex << buf_info.addr << ", 0x" << buf_info.size << std::dec
        << "}";
     return os;
 }
 
-std::vector<UioMemSgdma::BufInfo> UioMemSgdma::get_full_buffers() {
+std::vector<UioRegion> UioMemSgdma::get_full_buffers() {
     assert(_nr_cyc_desc <= 64 && "max of 64 desc supported");
     std::bitset<64> full_mask;
 
@@ -127,14 +127,14 @@ std::vector<UioMemSgdma::BufInfo> UioMemSgdma::get_full_buffers() {
         }
     }
 
-    std::vector<UioMemSgdma::BufInfo> bufs;
+    std::vector<UioRegion> bufs;
 
     // start picking up from the first
     for (unsigned int i = first_sel; i < _nr_cyc_desc; i++) {
         if (full_mask[i]) {
             S2mmDesc desc;
             _read_desc(i * DESC_ADDR_STEP, &desc);
-            bufs.emplace_back(UioMemSgdma::BufInfo{desc.buffer_addr, desc.status.buffer_len});
+            bufs.emplace_back(UioRegion{desc.buffer_addr, desc.status.buffer_len});
             full_mask[i] = false;
         }
     }
@@ -144,7 +144,7 @@ std::vector<UioMemSgdma::BufInfo> UioMemSgdma::get_full_buffers() {
         if (full_mask[i]) {
             S2mmDesc desc;
             _read_desc(i * DESC_ADDR_STEP, &desc);
-            bufs.emplace_back(UioMemSgdma::BufInfo{desc.buffer_addr, desc.status.buffer_len});
+            bufs.emplace_back(UioRegion{desc.buffer_addr, desc.status.buffer_len});
             full_mask[i] = false;
         }
     }
