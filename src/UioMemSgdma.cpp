@@ -21,37 +21,33 @@ const std::string_view UioMemSgdma::_log_name() const {
     return "UioMemSgdma";
 }
 
-void UioMemSgdma::_write_desc(uintptr_t mem_offs, const S2mmDesc *desc) {
-    memcpy(static_cast<char *>(_mem) + mem_offs, desc, sizeof(S2mmDesc));
-}
 
-void UioMemSgdma::_read_desc(uintptr_t mem_offs, S2mmDesc *desc) {
-    memcpy(desc, static_cast<char *>(_mem) + mem_offs, sizeof(S2mmDesc));
+UioMemSgdma::S2mmDesc &UioMemSgdma::_desc(size_t i) const
+{
+    assert(i < _nr_cyc_desc && "desc index out of range");
+    char *addr = static_cast<char *>(_mem) + (i * DESC_ADDR_STEP);
+    return *(reinterpret_cast<S2mmDesc *>(addr));
 }
 
 void UioMemSgdma::write_cyc_mode(const std::vector<uint64_t> &dst_buf_addrs) {
-    uint64_t offs = 0;
     _nr_cyc_desc = dst_buf_addrs.size();
+    size_t i = 0;
     for (auto dst_buf_addr : dst_buf_addrs) {
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
             << _log_name() << ": dest buf addr = 0x" << std::hex << dst_buf_addr << std::dec;
 
-        bool is_last = dst_buf_addr == dst_buf_addrs.back();
-        uintptr_t nxtdesc = _region.addr + (is_last ? 0 : offs + DESC_ADDR_STEP);
+        uintptr_t nxtdesc = _region.addr +  ((i + 1) % _nr_cyc_desc) * DESC_ADDR_STEP;
 
 #pragma GCC diagnostic push // We're OK that everything not listed is zero-initialized.
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
-        S2mmDesc desc{.nxtdesc = nxtdesc,
-                      .buffer_addr = dst_buf_addr,
-                      .control =
-                          S2mmDescControl{.buffer_len = BUF_LEN, .rxeof = 0, .rxsof = 0, .rsvd = 0},
-                      .status = {0},
-                      .app = {0}};
+        _desc(i++) = {
+            .nxtdesc = nxtdesc,
+            .buffer_addr = dst_buf_addr,
+            .control = S2mmDescControl{.buffer_len = BUF_LEN, .rxeof = 0, .rxsof = 0, .rsvd = 0},
+            .status = {0},
+            .app = {0}
+        };
 #pragma GCC diagnostic pop
-
-        _write_desc(offs, &desc);
-
-        offs += DESC_ADDR_STEP;
     }
 }
 
@@ -76,10 +72,8 @@ void UioMemSgdma::print_desc(const S2mmDesc &desc) {
 }
 
 void UioMemSgdma::print_descs() {
-    for (unsigned int i = 0; i < _nr_cyc_desc; i++) {
-        S2mmDesc desc;
-        _read_desc(i * DESC_ADDR_STEP, &desc);
-        print_desc(desc);
+    for (size_t i = 0; i < _nr_cyc_desc; i++) {
+        print_desc(_desc(i));
     }
 }
 
@@ -98,55 +92,54 @@ std::vector<UioRegion> UioMemSgdma::get_full_buffers() {
     std::bitset<64> full_mask;
 
     // find all completed (=full) buffers
-    for (unsigned int i = 0; i < _nr_cyc_desc; i++) {
-        S2mmDesc desc;
-        _read_desc(i * DESC_ADDR_STEP, &desc);
-        full_mask[i] = desc.status.cmpit;
-
-        if (desc.status.cmpit) {
-            desc.status.cmpit = 0;
-            _write_desc(i * DESC_ADDR_STEP, &desc);
+    for (size_t i = 0; i < _nr_cyc_desc; i++) {
+        if (_desc(i).status.cmpit) {
+            _desc(i).status.cmpit = 0;
+            full_mask[i] = true;
         }
     }
 
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name() << ": full bufs = 0x" << full_mask.to_ullong();
+        << _log_name() << ": full bufs = 0x" << std::hex << full_mask.to_ullong() << std::dec;
 
     // find first buffer to read
     bool seen_1 = false;
-    int first_sel = -1;
-    for (int i = _nr_cyc_desc - 1; i >= 0; i--) {
-        if (full_mask.test(i)) {
+    ssize_t first_sel = -1;
+    for (ssize_t i = _nr_cyc_desc - 1; i >= 0; i--) {
+        if (full_mask[i]) {
             seen_1 = true;
             first_sel = i;
-        }
-
-        if (!full_mask[i] && seen_1) {
-            first_sel = i + 1;
+        } else if (seen_1) {
             break;
         }
     }
 
     std::vector<UioRegion> bufs;
+    if (!seen_1) {
+        // No completed buffer
+        return bufs;
+    }
 
-    // start picking up from the first
-    for (unsigned int i = first_sel; i < _nr_cyc_desc; i++) {
+    const auto save_if_full = [&](size_t i) {
         if (full_mask[i]) {
-            S2mmDesc desc;
-            _read_desc(i * DESC_ADDR_STEP, &desc);
-            bufs.emplace_back(UioRegion{desc.buffer_addr, desc.status.buffer_len});
+            BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "save: " << i;
+            S2mmDesc &desc = _desc(i);
+            bufs.emplace_back(UioRegion{
+                desc.buffer_addr,
+                desc.status.buffer_len
+            });
             full_mask[i] = false;
         }
+    };
+
+    // start picking up from the first
+    for (size_t i = first_sel; i < _nr_cyc_desc; i++) {
+        save_if_full(i);
     }
 
     // collect the remaining (if any) from the beginning
-    for (unsigned int i = 0; i < _nr_cyc_desc; i++) {
-        if (full_mask[i]) {
-            S2mmDesc desc;
-            _read_desc(i * DESC_ADDR_STEP, &desc);
-            bufs.emplace_back(UioRegion{desc.buffer_addr, desc.status.buffer_len});
-            full_mask[i] = false;
-        }
+    for (size_t i = 0; i < _nr_cyc_desc; i++) {
+        save_if_full(i);
     }
 
     return bufs;
