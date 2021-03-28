@@ -52,6 +52,7 @@ class UioMemSgdma : UioIf {
     S2mmDesc &_desc(size_t i) const;
 
     size_t _nr_cyc_desc;
+    size_t _next_readable_buf;
 
     virtual const std::string_view _log_name() const override;
 

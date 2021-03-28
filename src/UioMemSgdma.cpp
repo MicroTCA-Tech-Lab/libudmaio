@@ -31,6 +31,7 @@ UioMemSgdma::S2mmDesc &UioMemSgdma::_desc(size_t i) const
 
 void UioMemSgdma::write_cyc_mode(const std::vector<uint64_t> &dst_buf_addrs) {
     _nr_cyc_desc = dst_buf_addrs.size();
+    _next_readable_buf = 0;
     size_t i = 0;
     for (auto dst_buf_addr : dst_buf_addrs) {
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
@@ -88,58 +89,21 @@ std::ostream &operator<<(std::ostream &os, const UioRegion &buf_info) {
 }
 
 std::vector<UioRegion> UioMemSgdma::get_full_buffers() {
-    assert(_nr_cyc_desc <= 64 && "max of 64 desc supported");
-    std::bitset<64> full_mask;
+    std::vector<UioRegion> bufs;
 
-    // find all completed (=full) buffers
     for (size_t i = 0; i < _nr_cyc_desc; i++) {
-        if (_desc(i).status.cmpit) {
-            _desc(i).status.cmpit = 0;
-            full_mask[i] = true;
-        }
-    }
-
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name() << ": full bufs = 0x" << std::hex << full_mask.to_ullong() << std::dec;
-
-    // find first buffer to read
-    bool seen_1 = false;
-    ssize_t first_sel = -1;
-    for (ssize_t i = _nr_cyc_desc - 1; i >= 0; i--) {
-        if (full_mask[i]) {
-            seen_1 = true;
-            first_sel = i;
-        } else if (seen_1) {
+        S2mmDesc &desc = _desc(_next_readable_buf);
+        if (!desc.status.cmpit) {
             break;
         }
-    }
-
-    std::vector<UioRegion> bufs;
-    if (!seen_1) {
-        // No completed buffer
-        return bufs;
-    }
-
-    const auto save_if_full = [&](size_t i) {
-        if (full_mask[i]) {
-            BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "save: " << i;
-            S2mmDesc &desc = _desc(i);
-            bufs.emplace_back(UioRegion{
+        desc.status.cmpit = 0;
+        bufs.emplace_back(UioRegion{
                 desc.buffer_addr,
                 desc.status.buffer_len
             });
-            full_mask[i] = false;
-        }
-    };
 
-    // start picking up from the first
-    for (size_t i = first_sel; i < _nr_cyc_desc; i++) {
-        save_if_full(i);
-    }
-
-    // collect the remaining (if any) from the beginning
-    for (size_t i = 0; i < _nr_cyc_desc; i++) {
-        save_if_full(i);
+        _next_readable_buf++;
+        _next_readable_buf %= _nr_cyc_desc;
     }
 
     return bufs;
