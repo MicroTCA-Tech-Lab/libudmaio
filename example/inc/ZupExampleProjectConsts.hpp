@@ -20,7 +20,8 @@ namespace zup_example_prj {
 
   constexpr UioRegion axi_traffic_gen_0 { 0x00890000, 64 * 1024 };
 
-  constexpr uint64_t fpga_mem_phys_addr = 0x400000000UL;
-
   constexpr uint16_t lfsr_bytes_per_beat = 16;
+
+  constexpr uintptr_t fpga_mem_phys_addr = 0x400000000UL;
+  constexpr uintptr_t pcie_axi4l_offset = 0x88000000;
 }

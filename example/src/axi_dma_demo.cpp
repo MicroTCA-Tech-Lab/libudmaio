@@ -87,7 +87,10 @@ int main(int argc, char *argv[]) {
 
     auto gpio_status = (mode == DmaMode::UIO)
             ? UioIfFactory::create_from_uio<UioGpioStatus>("axi_gpio_status")
-            : UioIfFactory::create_from_xdma<UioGpioStatus>(zup_example_prj::axi_gpio_status);
+            : UioIfFactory::create_from_xdma<UioGpioStatus>(
+                zup_example_prj::axi_gpio_status,
+                zup_example_prj::pcie_axi4l_offset
+            );
     bool is_ddr4_init = gpio_status->is_ddr4_init_calib_complete();
     BOOST_LOG_TRIVIAL(debug) << "DDR4 init = " << is_ddr4_init;
     if (!is_ddr4_init) {
@@ -96,16 +99,26 @@ int main(int argc, char *argv[]) {
 
     auto axi_dma = (mode == DmaMode::UIO)
                        ? UioIfFactory::create_from_uio<UioAxiDmaIf>("hier_daq_arm_axi_dma_0")
-                       : UioIfFactory::create_from_xdma<UioAxiDmaIf>(zup_example_prj::axi_dma_0, "/dev/xdma/card0/events0");
+                       : UioIfFactory::create_from_xdma<UioAxiDmaIf>(
+                           zup_example_prj::axi_dma_0,
+                           zup_example_prj::pcie_axi4l_offset,
+                           "/dev/xdma/card0/events0"
+                        );
 
     auto mem_sgdma =
         (mode == DmaMode::UIO)
             ? UioIfFactory::create_from_uio<UioMemSgdma>("hier_daq_arm_axi_bram_ctrl_0")
-            : UioIfFactory::create_from_xdma<UioMemSgdma>(zup_example_prj::bram_ctrl_0);
+            : UioIfFactory::create_from_xdma<UioMemSgdma>(
+                zup_example_prj::bram_ctrl_0,
+                zup_example_prj::pcie_axi4l_offset
+            );
     auto traffic_gen =
         (mode == DmaMode::UIO)
             ? UioIfFactory::create_from_uio<UioTrafficGen>("hier_daq_arm_axi_traffic_gen_0")
-            : UioIfFactory::create_from_xdma<UioTrafficGen>(zup_example_prj::axi_traffic_gen_0);
+            : UioIfFactory::create_from_xdma<UioTrafficGen>(
+                zup_example_prj::axi_traffic_gen_0,
+                zup_example_prj::pcie_axi4l_offset
+            );
 
     auto udmabuf =
         (mode == DmaMode::UIO)

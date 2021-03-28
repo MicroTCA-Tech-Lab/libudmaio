@@ -38,10 +38,10 @@ class UioIfFactory {
 
     template <typename T>
     static std::unique_ptr<T> create_from_xdma(const UioRegion& region,
+                                               uintptr_t pcie_offset = 0,
                                                const std::string &event_filename = "") {
-        // 0x88000000 = the offset at which the IPs are accessible from the PCIe (xdma)
         const UioRegion pcie_region {
-            region.addr | 0x88000000,
+            region.addr | pcie_offset,
             region.size
         };
         return std::make_unique<T>("/dev/xdma/card0/user", pcie_region, region.addr, event_filename, true);
