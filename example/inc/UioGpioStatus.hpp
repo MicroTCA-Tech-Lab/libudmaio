@@ -32,7 +32,7 @@ class UioGpioStatus : UioIf {
   public:
     using UioIf::UioIf;
 
-    bool is_ddr4_init_calib_complete() {
+    bool is_ddr4_init_calib_complete() const {
         GpioData gpio_data = {.data = _rd32(ADDR_GPIO_DATA)};
 
         return gpio_data.fields.ddr4_init_calib_complete;

@@ -61,5 +61,5 @@ class UioTrafficGen : UioIf {
     void start(uint16_t nr_pkts, uint32_t pkt_size, uint16_t pkt_pause);
     void stop();
 
-    void print_version();
+    void print_version() const;
 };

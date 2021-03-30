@@ -63,9 +63,9 @@ class UioMemSgdma : UioIf {
 
     void write_cyc_mode(const std::vector<uintptr_t> &dst_buf_addrs);
 
-    void print_desc(const S2mmDesc &desc);
+    void print_desc(const S2mmDesc &desc) const;
 
-    void print_descs();
+    void print_descs() const;
 
     uintptr_t get_first_desc_addr() const;
 

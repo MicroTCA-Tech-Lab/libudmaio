@@ -56,7 +56,7 @@ void UioTrafficGen::stop() {
     _wr32(ADDR_ST_CTRL, st_ctrl.data);
 }
 
-void UioTrafficGen::print_version() {
+void UioTrafficGen::print_version() const {
     StControl st_control;
     st_control.data = _rd32(ADDR_ST_CTRL);
 

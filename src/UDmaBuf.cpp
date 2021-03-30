@@ -46,7 +46,7 @@ UDmaBuf::UDmaBuf(int buf_idx) {
     }
 }
 
-size_t UDmaBuf::_get_size(int buf_idx) {
+size_t UDmaBuf::_get_size(int buf_idx) const {
     std::string path{"/sys/class/u-dma-buf/udmabuf" + std::to_string(buf_idx) + "/size"};
     std::ifstream ifs{path};
     if (!ifs) {
@@ -57,7 +57,7 @@ size_t UDmaBuf::_get_size(int buf_idx) {
     return std::stoull(size_str, nullptr, 0);
 }
 
-uintptr_t UDmaBuf::_get_phys_addr(int buf_idx) {
+uintptr_t UDmaBuf::_get_phys_addr(int buf_idx) const {
     std::string path{"/sys/class/u-dma-buf/udmabuf" + std::to_string(buf_idx) + "/phys_addr"};
     std::ifstream ifs{path};
     if (!ifs) {

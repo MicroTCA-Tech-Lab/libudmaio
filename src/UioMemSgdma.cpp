@@ -52,7 +52,7 @@ void UioMemSgdma::write_cyc_mode(const std::vector<uint64_t> &dst_buf_addrs) {
     }
 }
 
-void UioMemSgdma::print_desc(const S2mmDesc &desc) {
+void UioMemSgdma::print_desc(const S2mmDesc &desc) const {
 #define BLI BOOST_LOG_SEV(_slg, blt::severity_level::info) << _log_name() << ": "
     BLI << "S2mmDesc {";
     BLI << "  next desc   = 0x" << std::hex << desc.nxtdesc;
@@ -72,7 +72,7 @@ void UioMemSgdma::print_desc(const S2mmDesc &desc) {
     BLI << "}" << std::dec;
 }
 
-void UioMemSgdma::print_descs() {
+void UioMemSgdma::print_descs() const {
     for (size_t i = 0; i < _nr_cyc_desc; i++) {
         print_desc(_desc(i));
     }
