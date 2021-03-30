@@ -23,46 +23,40 @@ class UioAxiDmaIf : UioIf {
     static constexpr int ADDR_S2MM_TAILDESC = 0x40;
     static constexpr int ADDR_S2MM_TAILDESC_MSB = 0x44;
 
-    union S2mmDmaControlReg {
-        uint32_t data;
-        struct __attribute__((packed)) {
-            bool RS : 1;
-            uint32_t rsvd1 : 1;
-            bool Reset : 1;
-            bool Keyhole : 1;
-            bool Cyc_bd_en : 1;
-            uint32_t rsvd11_5 : 7;
-            bool IOC_IrqEn : 1;
-            bool Dly_IrqEn : 1;
-            bool Err_IrqEn : 1;
-            uint32_t rsvd15 : 1;
-            uint32_t IRQThreshold : 8;
-            uint32_t IRQDelay : 8;
-        } fields;
+    struct __attribute__((packed)) S2mmDmaControlReg {
+        bool RS : 1;
+        uint32_t rsvd1 : 1;
+        bool Reset : 1;
+        bool Keyhole : 1;
+        bool Cyc_bd_en : 1;
+        uint32_t rsvd11_5 : 7;
+        bool IOC_IrqEn : 1;
+        bool Dly_IrqEn : 1;
+        bool Err_IrqEn : 1;
+        uint32_t rsvd15 : 1;
+        uint32_t IRQThreshold : 8;
+        uint32_t IRQDelay : 8;
     };
 
-    union S2mmDmaStatusReg {
-        uint32_t data;
-        struct __attribute__((packed)) {
-            bool Halted : 1;
-            bool Idle : 1;
-            uint32_t rsvd2 : 1;
-            bool SGIncld : 1;
-            bool DMAIntErr : 1;
-            bool DMASlvErr : 1;
-            bool DMADecErr : 1;
-            uint32_t rsvd7 : 1;
-            bool SGIntErr : 1;
-            bool SGSlvErr : 1;
-            bool SGDecErr : 1;
-            uint32_t rsvd11 : 1;
-            bool IOC_Irq : 1;
-            bool Dly_Irq : 1;
-            bool Err_Irq : 1;
-            uint32_t rsvd15 : 1;
-            uint32_t RQThresholdSts : 8;
-            uint32_t IRQDelaySts : 8;
-        } fields;
+    struct __attribute__((packed)) S2mmDmaStatusReg {
+        bool Halted : 1;
+        bool Idle : 1;
+        uint32_t rsvd2 : 1;
+        bool SGIncld : 1;
+        bool DMAIntErr : 1;
+        bool DMASlvErr : 1;
+        bool DMADecErr : 1;
+        uint32_t rsvd7 : 1;
+        bool SGIntErr : 1;
+        bool SGSlvErr : 1;
+        bool SGDecErr : 1;
+        uint32_t rsvd11 : 1;
+        bool IOC_Irq : 1;
+        bool Dly_Irq : 1;
+        bool Err_Irq : 1;
+        uint32_t rsvd15 : 1;
+        uint32_t RQThresholdSts : 8;
+        uint32_t IRQDelaySts : 8;
     };
 
     static_assert(sizeof(S2mmDmaControlReg) == 4);

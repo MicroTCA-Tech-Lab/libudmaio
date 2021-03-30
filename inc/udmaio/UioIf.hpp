@@ -99,6 +99,12 @@ class UioIf : private boost::noncopyable {
         return static_cast<volatile uint32_t *>(_mem) + offs / 4;
     }
 
+    template<typename T>
+    T& _reg(uint32_t offs) const {
+        static_assert(sizeof(T) == 4, "register access must be 32 bit");
+        return const_cast<T&>(*reinterpret_cast<volatile T*>(_reg_ptr(offs)));
+    }
+
     uint32_t _rd32(uint32_t offs) const {
         uint32_t tmp = *_reg_ptr(offs);
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
