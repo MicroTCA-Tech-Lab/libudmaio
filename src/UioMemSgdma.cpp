@@ -101,6 +101,8 @@ std::vector<UioRegion> UioMemSgdma::get_full_buffers() {
                 desc.buffer_addr,
                 desc.status.buffer_len
             });
+        BOOST_LOG_SEV(_slg, blt::severity_level::trace) <<
+            "save buf #" << _next_readable_buf << " @ 0x" << std::hex << desc.buffer_addr;
 
         _next_readable_buf++;
         _next_readable_buf %= _nr_cyc_desc;
