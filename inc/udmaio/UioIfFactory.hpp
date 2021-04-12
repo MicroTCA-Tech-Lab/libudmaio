@@ -29,18 +29,22 @@ class UioIfFactory {
         if (uio_number < 0) {
             throw std::runtime_error("could not find a UIO device " + name);
         }
-        uintptr_t addr = _get_map_addr(uio_number);
-        int size = _get_map_size(uio_number);
-        return std::make_unique<T>(std::string{"/dev/uio"} + std::to_string(uio_number), addr,
-                                   size);
+        const UioRegion region {
+            _get_map_addr(uio_number),
+            _get_map_size(uio_number)
+        };
+        return std::make_unique<T>(std::string{"/dev/uio"} + std::to_string(uio_number), region);
     }
 
     template <typename T>
-    static std::unique_ptr<T> create_from_xdma(uintptr_t offs, size_t size,
+    static std::unique_ptr<T> create_from_xdma(const UioRegion& region,
+                                               uintptr_t pcie_offset = 0,
                                                const std::string &event_filename = "") {
-        // 0x88000000 = the offset at which the IPs are accessible from the PCIe (xdma)
-        return std::make_unique<T>("/dev/xdma/card0/user", 0x88000000 | offs, size, offs,
-                                   event_filename, true);
+        const UioRegion pcie_region {
+            region.addr | pcie_offset,
+            region.size
+        };
+        return std::make_unique<T>("/dev/xdma/card0/user", pcie_region, region.addr, event_filename, true);
     }
 
   private:
@@ -71,7 +75,7 @@ class UioIfFactory {
     }
 
     /** @brief gets a size for an uio map */
-    static int _get_map_size(int uio_number, int map_index = 0) {
+    static size_t _get_map_size(int uio_number, int map_index = 0) {
         std::string path{"/sys/class/uio/uio" + std::to_string(uio_number) + "/maps/map" +
                          std::to_string(map_index) + "/size"};
         std::ifstream ifs{path};
@@ -81,8 +85,7 @@ class UioIfFactory {
         }
         std::string size_str;
         ifs >> size_str;
-        int size = std::stoi(size_str, nullptr, 0);
-        return size;
+        return std::stoull(size_str, nullptr, 0);
     }
 
     /** @brief gets an address (physical) for an uio map */
@@ -96,8 +99,7 @@ class UioIfFactory {
         }
         std::string addr_str;
         ifs >> addr_str;
-        std::uintptr_t addr = std::stoull(addr_str, nullptr, 0);
-        return addr;
+        return std::stoull(addr_str, nullptr, 0);
     }
 };
 

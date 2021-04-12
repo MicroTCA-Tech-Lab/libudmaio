@@ -24,21 +24,20 @@ namespace udmaio {
 class UDmaBuf : public DmaBufferAbstract {
     int _fd;
     void *_mem;
-    uint64_t _mem_size;
-    uint64_t _phys_addr;
+    UioRegion _phys;
     boost::log::sources::severity_logger<blt::severity_level> _slg;
 
-    uint64_t _get_size(int buf_idx);
-    uint64_t _get_phys_addr(int buf_idx);
+    size_t _get_size(int buf_idx) const;
+    uintptr_t _get_phys_addr(int buf_idx) const;
 
   public:
     explicit UDmaBuf(int buf_idx = 0);
 
     virtual ~UDmaBuf();
 
-    uint64_t get_phys_addr();
+    uintptr_t get_phys_addr() const override;
 
-    void copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t> &out);
+    void copy_from_buf(const UioRegion &buf_info, std::vector<uint8_t> &out) const override;
 };
 
 } // namespace udmaio

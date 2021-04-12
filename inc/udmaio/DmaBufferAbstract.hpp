@@ -16,12 +16,14 @@
 
 #include <boost/core/noncopyable.hpp>
 
+#include "udmaio/UioMemSgdma.hpp"
+
 namespace udmaio {
 
 class DmaBufferAbstract : private boost::noncopyable {
   public:
-    virtual uint64_t get_phys_addr() = 0;
-    virtual void copy_from_buf(uint64_t buf_addr, uint32_t len, std::vector<uint8_t> &out) = 0;
+    virtual uintptr_t get_phys_addr() const = 0;
+    virtual void copy_from_buf(const UioRegion &buf_info, std::vector<uint8_t> &out) const = 0;
 };
 
 } // namespace udmaio

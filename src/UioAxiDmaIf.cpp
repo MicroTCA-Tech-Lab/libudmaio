@@ -25,29 +25,31 @@ const std::string_view UioAxiDmaIf::_log_name() const {
     return "UioAxiDmaIf";
 }
 
-void UioAxiDmaIf::start(uint64_t start_desc) {
+void UioAxiDmaIf::start(uintptr_t start_desc) {
     BOOST_LOG_SEV(_slg, blt::severity_level::debug)
         << _log_name() << ": start, start_desc = " << std::hex << start_desc << std::dec;
 
     // 0.
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
-    S2mmDmaControlReg ctrl_reg_rst = {.fields = {.Reset = 1}};
-    _wr32(ADDR_S2MM_DMACR, ctrl_reg_rst.data);
+    _reg<S2mmDmaControlReg>(ADDR_S2MM_DMACR) = {
+        .Reset = 1
+    };
 
     // 1.
     _wr32(ADDR_S2MM_CURDESC, start_desc & ((1ULL << 32) - 1));
     _wr32(ADDR_S2MM_CURDESC_MSB, start_desc >> 32);
 
     // 2.
-    S2mmDmaControlReg ctrl_reg = {.data = _rd32(ADDR_S2MM_DMACR)};
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name() << ": DMA ctrl = 0x" << std::hex << ctrl_reg.data << std::dec;
-    ctrl_reg.fields.RS = 1;
-    ctrl_reg.fields.Cyc_bd_en = 1;
-    ctrl_reg.fields.IOC_IrqEn = 1;
+        << _log_name() << ": DMA ctrl = 0x" << std::hex << _rd32(ADDR_S2MM_DMACR) << std::dec;
+
+    auto ctrl_reg = _reg<S2mmDmaControlReg>(ADDR_S2MM_DMACR);
+    ctrl_reg.RS = 1;
+    ctrl_reg.Cyc_bd_en = 1;
+    ctrl_reg.IOC_IrqEn = 1;
 
     // 3.
-    _wr32(ADDR_S2MM_DMACR, ctrl_reg.data);
+    _reg<S2mmDmaControlReg>(ADDR_S2MM_DMACR) = ctrl_reg;
 
     BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name() << ": DMA control write";
 
@@ -75,10 +77,7 @@ uint32_t UioAxiDmaIf::clear_interrupt() {
     int rc = read(_fd_int, &irq_count, sizeof(irq_count));
 
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
-    S2mmDmaStatusReg status = {.fields = {
-                                   .IOC_Irq = 1,
-                               }};
-    _wr32(ADDR_S2MM_DMASR, status.data);
+    _reg<S2mmDmaStatusReg>(ADDR_S2MM_DMASR) = { .IOC_Irq = 1 };
 
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
         << _log_name() << ": clear interrupt , ret code = " << rc << ", irq count = " << irq_count;

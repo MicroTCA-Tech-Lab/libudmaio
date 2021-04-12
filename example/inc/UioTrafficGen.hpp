@@ -31,26 +31,20 @@ class UioTrafficGen : UioIf {
     static constexpr int ADDR_ST_ERR_INT_EN = 0x78;
     static constexpr int ADDR_ST_ERR_CNT = 0x7C;
 
-    union StControl {
-        uint32_t data;
-        struct __attribute__((packed)) {
-            bool stren : 1;
-            bool done : 1;
-            uint32_t rsvd : 22;
-            uint32_t version : 8;
-        } fields;
+    struct __attribute__((packed)) StControl {
+        bool stren : 1;
+        bool done : 1;
+        uint32_t rsvd : 22;
+        uint32_t version : 8;
     };
 
-    union StConfig {
-        uint32_t data;
-        struct __attribute__((packed)) {
-            bool ranlen : 1;
-            bool randly : 1;
-            bool etkts : 1;
-            uint32_t rsvd7_3 : 5;
-            uint32_t tdest : 8;
-            uint32_t pdly : 16;
-        } fields;
+    struct __attribute__((packed))  StConfig {
+        bool ranlen : 1;
+        bool randly : 1;
+        bool etkts : 1;
+        uint32_t rsvd7_3 : 5;
+        uint32_t tdest : 8;
+        uint32_t pdly : 16;
     };
 
     virtual const std::string_view _log_name() const override;
@@ -61,5 +55,5 @@ class UioTrafficGen : UioIf {
     void start(uint16_t nr_pkts, uint32_t pkt_size, uint16_t pkt_pause);
     void stop();
 
-    void print_version();
+    void print_version() const;
 };

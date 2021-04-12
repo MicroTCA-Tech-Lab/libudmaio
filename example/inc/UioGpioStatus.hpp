@@ -18,11 +18,9 @@ using namespace udmaio;
 class UioGpioStatus : UioIf {
     static constexpr int ADDR_GPIO_DATA = 0;
 
-    union GpioData {
-        uint32_t data;
-        struct __attribute__((packed)) {
-            bool ddr4_init_calib_complete : 1;
-        } fields;
+    struct __attribute__((packed)) GpioData {
+        bool ddr4_init_calib_complete : 1;
+        unsigned reserved : 31;
     };
 
     virtual const std::string_view _log_name() const override {
@@ -32,9 +30,7 @@ class UioGpioStatus : UioIf {
   public:
     using UioIf::UioIf;
 
-    bool is_ddr4_init_calib_complete() {
-        GpioData gpio_data = {.data = _rd32(ADDR_GPIO_DATA)};
-
-        return gpio_data.fields.ddr4_init_calib_complete;
+    bool is_ddr4_init_calib_complete() const {
+        return _reg<GpioData>(ADDR_GPIO_DATA).ddr4_init_calib_complete;
     }
 };

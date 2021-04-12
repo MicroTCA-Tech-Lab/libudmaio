@@ -35,11 +35,16 @@ namespace blt = boost::log::trivial;
 
 namespace udmaio {
 
+struct UioRegion {
+    uintptr_t addr;
+    size_t size;
+};
+
 class UioIf : private boost::noncopyable {
   public:
-    explicit UioIf(const std::string &uio_name, uintptr_t addr, size_t size, uintptr_t offs = 0,
+    explicit UioIf(const std::string &uio_name, const UioRegion &region, uintptr_t mmap_offs = 0,
                    const std::string &event_filename = "", bool skip_write_to_arm_int = false)
-        : _int_addr{addr}, _int_size{size}, _slg{}, _skip_write_to_arm_int{skip_write_to_arm_int} {
+        : _region{region}, _slg{}, _skip_write_to_arm_int{skip_write_to_arm_int} {
 
         // Can't call virtual fn from ctor, so can't use _log_name()
         BOOST_LOG_SEV(_slg, blt::severity_level::debug) << "UioIf: uio name = " << uio_name;
@@ -50,10 +55,10 @@ class UioIf : private boost::noncopyable {
             throw std::runtime_error("could not open " + uio_name);
         }
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-            << "UioIf: fd =  " << _fd << ", size = " << size;
+            << "UioIf: fd =  " << _fd << ", size = " << region.size;
 
         // create memory mapping
-        _mem = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_SHARED, _fd, offs);
+        _mem = mmap(NULL, _region.size, PROT_READ | PROT_WRITE, MAP_SHARED, _fd, mmap_offs);
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
             << "UioIf: mmap = 0x" << _mem << std::dec;
         if (_mem == MAP_FAILED) {
@@ -77,19 +82,31 @@ class UioIf : private boost::noncopyable {
 
   protected:
     virtual ~UioIf() {
-        munmap(_mem, _int_size);
+        munmap(_mem, _region.size);
+        if (_fd_int != _fd) {
+            ::close(_fd_int);
+        }
         ::close(_fd);
     }
 
     int _fd, _fd_int;
     void *_mem;
-    uintptr_t _int_addr;
-    size_t _int_size;
-    boost::log::sources::severity_logger<blt::severity_level> _slg;
+    UioRegion _region;
+    mutable boost::log::sources::severity_logger<blt::severity_level> _slg;
     bool _skip_write_to_arm_int;
 
-    uint32_t _rd32(uint32_t offs) {
-        uint32_t tmp = *(static_cast<volatile uint32_t *>(_mem) + offs / 4);
+    volatile uint32_t *_reg_ptr(uint32_t offs) const {
+        return static_cast<volatile uint32_t *>(_mem) + offs / 4;
+    }
+
+    template<typename T>
+    T& _reg(uint32_t offs) const {
+        static_assert(sizeof(T) == 4, "register access must be 32 bit");
+        return const_cast<T&>(*reinterpret_cast<volatile T*>(_reg_ptr(offs)));
+    }
+
+    uint32_t _rd32(uint32_t offs) const {
+        uint32_t tmp = *_reg_ptr(offs);
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
             << _log_name() << ": read at 0x" << std::hex << offs << " = 0x" << tmp << std::dec;
         return tmp;
@@ -98,7 +115,7 @@ class UioIf : private boost::noncopyable {
     void _wr32(uint32_t offs, uint32_t data) {
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
             << _log_name() << ": write at 0x" << std::hex << offs << " = 0x" << data << std::dec;
-        *(static_cast<volatile uint32_t *>(_mem) + offs / 4) = data;
+        *_reg_ptr(offs) = data;
     }
 
     virtual const std::string_view _log_name() const = 0;

@@ -58,11 +58,11 @@ void DataHandlerAbstract::_handle_input(const boost::system::error_code& ec) {
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
         << "DataHandler: irq count = " << irq_count;
 
-    std::vector<UioMemSgdma::BufInfo> full_bufs = _desc.get_full_buffers();
+    std::vector<UioRegion> full_bufs = _desc.get_full_buffers();
     std::vector<uint8_t> bytes;
 
     for (auto &buf : full_bufs) {
-        _mem.copy_from_buf(buf.buf_addr, buf.buf_len, bytes);
+        _mem.copy_from_buf(buf, bytes);
     }
 
     if (!bytes.empty()) {

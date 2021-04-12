@@ -88,7 +88,9 @@ int main(int argc, char *argv[]) {
     auto gpio_status = (mode == DmaMode::UIO)
             ? UioIfFactory::create_from_uio<UioGpioStatus>("axi_gpio_status")
             : UioIfFactory::create_from_xdma<UioGpioStatus>(
-                zup_example_prj::axi_gpio_status_addr, zup_example_prj::axi_gpio_status_size);
+                zup_example_prj::axi_gpio_status,
+                zup_example_prj::pcie_axi4l_offset
+            );
     bool is_ddr4_init = gpio_status->is_ddr4_init_calib_complete();
     BOOST_LOG_TRIVIAL(debug) << "DDR4 init = " << is_ddr4_init;
     if (!is_ddr4_init) {
@@ -98,18 +100,25 @@ int main(int argc, char *argv[]) {
     auto axi_dma = (mode == DmaMode::UIO)
                        ? UioIfFactory::create_from_uio<UioAxiDmaIf>("hier_daq_arm_axi_dma_0")
                        : UioIfFactory::create_from_xdma<UioAxiDmaIf>(
-                             zup_example_prj::axi_dma_0_addr, zup_example_prj::axi_dma_0_size,
-                             "/dev/xdma/card0/events0");
+                           zup_example_prj::axi_dma_0,
+                           zup_example_prj::pcie_axi4l_offset,
+                           "/dev/xdma/card0/events0"
+                        );
+
     auto mem_sgdma =
         (mode == DmaMode::UIO)
             ? UioIfFactory::create_from_uio<UioMemSgdma>("hier_daq_arm_axi_bram_ctrl_0")
-            : UioIfFactory::create_from_xdma<UioMemSgdma>(zup_example_prj::bram_ctrl_0_addr,
-                                                          zup_example_prj::bram_ctrl_0_size);
+            : UioIfFactory::create_from_xdma<UioMemSgdma>(
+                zup_example_prj::bram_ctrl_0,
+                zup_example_prj::pcie_axi4l_offset
+            );
     auto traffic_gen =
         (mode == DmaMode::UIO)
             ? UioIfFactory::create_from_uio<UioTrafficGen>("hier_daq_arm_axi_traffic_gen_0")
             : UioIfFactory::create_from_xdma<UioTrafficGen>(
-                  zup_example_prj::axi_traffic_gen_0_addr, zup_example_prj::axi_traffic_gen_0_size);
+                zup_example_prj::axi_traffic_gen_0,
+                zup_example_prj::pcie_axi4l_offset
+            );
 
     auto udmabuf =
         (mode == DmaMode::UIO)
@@ -124,14 +133,14 @@ int main(int argc, char *argv[]) {
     };
     auto fut = std::async(std::launch::async, std::ref(data_handler));
 
-    std::vector<uint64_t> dst_buf_addrs;
+    std::vector<uintptr_t> dst_buf_addrs;
     for (int i = 0; i < 32; i++) {
         dst_buf_addrs.push_back(udmabuf->get_phys_addr() + i * mem_sgdma->BUF_LEN);
     };
 
     mem_sgdma->write_cyc_mode(dst_buf_addrs);
 
-    uint64_t first_desc = mem_sgdma->get_first_desc_addr();
+    uintptr_t first_desc = mem_sgdma->get_first_desc_addr();
     axi_dma->start(first_desc);
     traffic_gen->start(nr_pkts, pkt_len, pkt_pause);
 

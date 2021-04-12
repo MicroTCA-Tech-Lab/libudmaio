@@ -30,7 +30,7 @@ class AxiTrafficGenLfsr {
     }
 
     /// get value without advancing the LFSR
-    uint16_t get() { return val; }
+    uint16_t get() const { return val; }
 
   private:
     uint16_t val;

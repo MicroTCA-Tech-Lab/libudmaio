@@ -29,37 +29,32 @@ void UioTrafficGen::start(uint16_t nr_pkts, uint32_t pkt_size, uint16_t pkt_paus
 
     stop();
 
-    StConfig st_config{
-        .fields{.ranlen = 0, .randly = 0, .etkts = 0, .rsvd7_3 = 0, .tdest = 0, .pdly = pkt_pause}};
-    _wr32(ADDR_ST_CONFIG, st_config.data);
+    _reg<StConfig>(ADDR_ST_CONFIG) = {
+        .ranlen = 0, .randly = 0, .etkts = 0, .rsvd7_3 = 0, .tdest = 0, .pdly = pkt_pause
+    };
 
     const auto num_beats_reg = pkt_size - 1;
     _wr32(ADDR_TR_LEN, nr_pkts << 16 | (num_beats_reg & 0xffff));
     _wr32(ADDR_EX_TR_LEN, num_beats_reg >> 16);
 
-    StControl st_ctrl;
-    st_ctrl.data = _rd32(ADDR_ST_CTRL);
-    st_ctrl.fields.done = 0;
-    st_ctrl.fields.stren = 1;
-    _wr32(ADDR_ST_CTRL, st_ctrl.data);
+    auto st_ctrl = _reg<StControl>(ADDR_ST_CTRL);
+    st_ctrl.done = 0;
+    st_ctrl.stren = 1;
+    _reg<StControl>(ADDR_ST_CTRL) = st_ctrl;
 }
 
 void UioTrafficGen::stop() {
-    StControl st_ctrl;
-    st_ctrl.data = _rd32(ADDR_ST_CTRL);
-    st_ctrl.fields.stren = 0;
-    if (st_ctrl.fields.done) {
+    auto st_ctrl = _reg<StControl>(ADDR_ST_CTRL);
+    st_ctrl.stren = 0;
+    if (st_ctrl.done) {
         BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name() << ": clearing done bit";
         // W1C – Write 1 to Clear 
-        st_ctrl.fields.done = 1;
+        st_ctrl.done = 1;
     }
-    _wr32(ADDR_ST_CTRL, st_ctrl.data);
+    _reg<StControl>(ADDR_ST_CTRL) = st_ctrl;
 }
 
-void UioTrafficGen::print_version() {
-    StControl st_control;
-    st_control.data = _rd32(ADDR_ST_CTRL);
-
+void UioTrafficGen::print_version() const {
     BOOST_LOG_SEV(_slg, blt::severity_level::info)
-        << _log_name() << ": version = 0x" << std::hex << st_control.fields.version << std::dec;
+        << _log_name() << ": version = 0x" << std::hex << _reg<StControl>(ADDR_ST_CTRL).version << std::dec;
 }
