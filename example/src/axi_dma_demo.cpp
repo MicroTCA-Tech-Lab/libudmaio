@@ -52,6 +52,7 @@ int main(int argc, char *argv[]) {
     uint16_t nr_pkts;
     uint32_t pkt_len;
     DmaMode mode;
+    std::string dev_path;
 
     // clang-format off
     desc.add_options()
@@ -62,6 +63,7 @@ int main(int argc, char *argv[]) {
     ("pkt_pause", bpo::value<uint16_t>(&pkt_pause)->default_value(10), "pause between pkts - see AXI TG user's manual")
     ("nr_pkts", bpo::value<uint16_t>(&nr_pkts)->default_value(1), "number of packets to generate - see AXI TG user's manual")
     ("pkt_len", bpo::value<uint32_t>(&pkt_len)->default_value(1024), "packet length - see AXI TG user's manual")
+    ("dev_path", bpo::value<std::string>(&dev_path), "Path to xdma device nodes")
     ;
     // clang-format on
 
@@ -74,6 +76,11 @@ int main(int argc, char *argv[]) {
     }
 
     bpo::notify(vm);
+
+    if (mode == DmaMode::XDMA && dev_path.empty()) {
+        std::cerr << "XDMA mode needs path to device (--dev-path)" << std::endl;
+        return 0;
+    }
 
     if (trace) {
         boost::log::core::get()->set_filter(blt::severity >= blt::trace);
@@ -88,6 +95,7 @@ int main(int argc, char *argv[]) {
     auto gpio_status = (mode == DmaMode::UIO)
             ? UioIfFactory::create_from_uio<UioGpioStatus>("axi_gpio_status")
             : UioIfFactory::create_from_xdma<UioGpioStatus>(
+                dev_path,
                 zup_example_prj::axi_gpio_status,
                 zup_example_prj::pcie_axi4l_offset
             );
@@ -100,15 +108,17 @@ int main(int argc, char *argv[]) {
     auto axi_dma = (mode == DmaMode::UIO)
                        ? UioIfFactory::create_from_uio<UioAxiDmaIf>("hier_daq_arm_axi_dma_0")
                        : UioIfFactory::create_from_xdma<UioAxiDmaIf>(
+                           dev_path,
                            zup_example_prj::axi_dma_0,
                            zup_example_prj::pcie_axi4l_offset,
-                           "/dev/xdma/card0/events0"
+                           "events0"
                         );
 
     auto mem_sgdma =
         (mode == DmaMode::UIO)
             ? UioIfFactory::create_from_uio<UioMemSgdma>("hier_daq_arm_axi_bram_ctrl_0")
             : UioIfFactory::create_from_xdma<UioMemSgdma>(
+                dev_path,
                 zup_example_prj::bram_ctrl_0,
                 zup_example_prj::pcie_axi4l_offset
             );
@@ -116,6 +126,7 @@ int main(int argc, char *argv[]) {
         (mode == DmaMode::UIO)
             ? UioIfFactory::create_from_uio<UioTrafficGen>("hier_daq_arm_axi_traffic_gen_0")
             : UioIfFactory::create_from_xdma<UioTrafficGen>(
+                dev_path,
                 zup_example_prj::axi_traffic_gen_0,
                 zup_example_prj::pcie_axi4l_offset
             );
@@ -123,7 +134,10 @@ int main(int argc, char *argv[]) {
     auto udmabuf =
         (mode == DmaMode::UIO)
             ? static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<UDmaBuf>())
-            : static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<FpgaMemBuffer>(zup_example_prj::fpga_mem_phys_addr));
+            : static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<FpgaMemBuffer>(
+                dev_path,
+                zup_example_prj::fpga_mem_phys_addr
+            ));
 
     DataHandlerPrint data_handler{
         *axi_dma,

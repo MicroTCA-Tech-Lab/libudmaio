@@ -28,10 +28,11 @@ class FpgaMemBuffer : public DmaBufferAbstract {
     uintptr_t _phys_addr;
 
   public:
-    explicit FpgaMemBuffer(uintptr_t phys_addr) : _phys_addr{phys_addr} {
-        _dma_fd = open("/dev/xdma/card0/c2h0", O_RDWR);
+    explicit FpgaMemBuffer(const std::string &path, uintptr_t phys_addr) : _phys_addr{phys_addr} {
+        const std::string dev_path{path + "/c2h0"};
+        _dma_fd = open(dev_path.c_str(), O_RDWR);
         if (_dma_fd < 0) {
-            throw std::runtime_error("could not open /dev/xdma/card0/c2h0");
+            throw std::runtime_error("could not open " + dev_path);
         }
     }
     virtual ~FpgaMemBuffer() {

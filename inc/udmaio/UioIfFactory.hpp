@@ -37,14 +37,16 @@ class UioIfFactory {
     }
 
     template <typename T>
-    static std::unique_ptr<T> create_from_xdma(const UioRegion& region,
+    static std::unique_ptr<T> create_from_xdma(const std::string &path,
+                                               const UioRegion& region,
                                                uintptr_t pcie_offset = 0,
                                                const std::string &event_filename = "") {
         const UioRegion pcie_region {
             region.addr | pcie_offset,
             region.size
         };
-        return std::make_unique<T>("/dev/xdma/card0/user", pcie_region, region.addr, event_filename, true);
+        const std::string evt_path = !event_filename.empty() ? path + "/" + event_filename : "";
+        return std::make_unique<T>(path + "/user", pcie_region, region.addr, evt_path, true);
     }
 
   private:
