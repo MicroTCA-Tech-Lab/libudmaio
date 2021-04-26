@@ -31,6 +31,6 @@ class UioGpioStatus : UioIf {
     using UioIf::UioIf;
 
     bool is_ddr4_init_calib_complete() const {
-        return _reg<GpioData>(ADDR_GPIO_DATA).ddr4_init_calib_complete;
+        return _rd_reg<GpioData>(ADDR_GPIO_DATA).ddr4_init_calib_complete;
     }
 };
