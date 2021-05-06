@@ -47,7 +47,7 @@ class DataHandlerAbstract : private boost::noncopyable {
 
     void operator()();
 
-    virtual void process_data(const std::vector<uint8_t> &bytes) = 0;
+    virtual void process_data(std::vector<uint8_t> bytes) = 0;
 };
 
 } // namespace udmaio

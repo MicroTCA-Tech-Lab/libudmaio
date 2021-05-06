@@ -25,7 +25,7 @@ class DataHandlerPrint : public DataHandlerAbstract {
 
     boost::log::sources::severity_logger<blt::severity_level> _slg;
 
-    void process_data(const std::vector<uint8_t> &bytes) override;
+    void process_data(std::vector<uint8_t> bytes) override;
 
     uint64_t _counter_ok;
     uint64_t _counter_total;
