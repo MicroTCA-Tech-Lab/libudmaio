@@ -25,9 +25,10 @@ install(TARGETS udmaio
     PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/udmaio
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
-# example
+# common examples stuff
 file(GLOB COMMON_SOURCES "example/common/src/*.cpp")
 
+# cpp example
 add_executable(axi_dma_demo_cpp)
 file(GLOB EXAMPLE_SOURCES "example/demo_cpp/src/*.cpp")
 target_sources(axi_dma_demo_cpp PRIVATE ${EXAMPLE_SOURCES} ${COMMON_SOURCES})
@@ -37,3 +38,11 @@ target_compile_options(axi_dma_demo_cpp PRIVATE -Wall -Wextra -O2)
 if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16.0") 
     target_precompile_headers(axi_dma_demo_cpp PRIVATE example/common/inc/BoostPCH.hpp)
 endif()
+
+# python example
+add_subdirectory(example/demo_python/pybind11)
+pybind11_add_module(axi_dma_demo_python example/demo_python/src/axi_dma_demo.cpp)
+
+# EXAMPLE_VERSION_INFO is defined by setup.py and passed into the C++ code as a
+# define (VERSION_INFO) here.
+target_compile_definitions(axi_dma_demo_python PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
