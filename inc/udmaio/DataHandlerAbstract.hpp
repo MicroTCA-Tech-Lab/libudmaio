@@ -43,7 +43,7 @@ class DataHandlerAbstract : private boost::noncopyable {
     explicit DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem);
     virtual ~DataHandlerAbstract();
 
-    void stop();
+    virtual void stop();
 
     void operator()();
 
