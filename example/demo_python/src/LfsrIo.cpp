@@ -50,6 +50,12 @@ LfsrIo::LfsrIo(const std::string& dev_path) {
                 zup_example_prj::fpga_mem_phys_addr
             ));
     
+    _dataHandler = std::make_unique<DataHandlerSync>(
+        *_axi_dma,
+        *_mem_sgdma,
+        *_udmabuf
+    );
+
     std::vector<uintptr_t> dst_buf_addrs;
     for (int i = 0; i < 32; i++) {
         dst_buf_addrs.push_back(_udmabuf->get_phys_addr() + i * _mem_sgdma->BUF_LEN);

@@ -13,6 +13,8 @@ print("Starting LfsrIo")
 l.start(1024, 1, 60000)
 
 print("Reading LfsrIo packet")
-result = l.read()
+result = l.read(1000)
+
+l.stop()
 
 print(result)
