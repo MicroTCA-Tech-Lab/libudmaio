@@ -2,6 +2,7 @@
 
 import sys
 import os
+import numpy as np
 
 sys.path.append(os.getcwd())
 from lfsr_demo import LfsrIo

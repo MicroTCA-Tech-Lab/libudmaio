@@ -1,6 +1,7 @@
 // Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
 
 #include "LfsrIo.h"
+
 #include "udmaio/UioIfFactory.hpp"
 #include "udmaio/UDmaBuf.hpp"
 #include "udmaio/FpgaMemBuffer.hpp"
@@ -75,8 +76,23 @@ void LfsrIo::stop() {
     _dataHandler->stop();
 }
 
-std::vector<uint8_t> LfsrIo::read(uint32_t ms_timeout) {
-    return _dataHandler->read();
+py::array_t<uint16_t> LfsrIo::read(uint32_t ms_timeout) {
+    // Create vector on the heap, holding the data
+    auto vec = new std::vector<uint8_t>(
+        _dataHandler->read(std::chrono::milliseconds{ms_timeout})
+    );
+    // Callback for Python garbage collector
+    py::capsule gc_callback(vec, [](void *f) {
+        auto ptr = reinterpret_cast<std::vector<uint8_t> *>(f);
+        delete ptr;
+    });
+    // Return Numpy array, transferring ownership to Python
+    return py::array_t<uint16_t>(
+        {vec->size() / sizeof(uint16_t)}, // shape
+        {sizeof(uint16_t)},               // stride
+        reinterpret_cast<uint16_t*>(vec->data()), // data pointer
+        gc_callback
+    );
 }
 
 void LfsrIo::_checkDDR4Init(const std::string& dev_path, DmaMode mode)

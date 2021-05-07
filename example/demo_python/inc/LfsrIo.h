@@ -4,6 +4,8 @@
 #include <vector>
 #include <cstddef>
 
+#include <pybind11/numpy.h>
+
 #include "udmaio/UioAxiDmaIf.hpp"
 #include "udmaio/UioMemSgdma.hpp"
 #include "udmaio/DmaBufferAbstract.hpp"
@@ -11,6 +13,8 @@
 
 #include "DmaMode.hpp"
 #include "UioTrafficGen.hpp"
+
+namespace py = pybind11;
 
 class LfsrIo {
     enum class DebugLevel {
@@ -34,5 +38,5 @@ public:
     void start(uint32_t pkt_len, uint16_t nr_pkts, uint16_t pkt_pause);
     void stop();
 
-    std::vector<uint8_t> read(uint32_t ms_timeout=0);
+    py::array_t<uint16_t> read(uint32_t ms_timeout=0);
 };
