@@ -69,7 +69,7 @@ void LfsrIo::start(uint32_t pkt_len, uint16_t nr_pkts, uint16_t pkt_pause) {
     _axi_dma->start(first_desc);
     _traffic_gen->start(nr_pkts, pkt_len, pkt_pause);
 
-    _dataHandler->operator()();
+    (*_dataHandler)();
 }
 
 void LfsrIo::stop() {
