@@ -41,8 +41,11 @@ endif()
 
 # python example
 add_subdirectory(example/demo_python/pybind11)
-pybind11_add_module(axi_dma_demo_python example/demo_python/src/axi_dma_demo.cpp)
+file(GLOB PY_BINDING_SOURCES "example/demo_python/src/*.cpp")
+pybind11_add_module(lfsr_demo ${PY_BINDING_SOURCES} ${COMMON_SOURCES})
+target_include_directories(lfsr_demo PRIVATE example/demo_python/inc example/common/inc)
+target_link_libraries(lfsr_demo PRIVATE Boost::log Boost::program_options Boost::dynamic_linking udmaio)
 
 # EXAMPLE_VERSION_INFO is defined by setup.py and passed into the C++ code as a
 # define (VERSION_INFO) here.
-target_compile_definitions(axi_dma_demo_python PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
+target_compile_definitions(lfsr_demo PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
