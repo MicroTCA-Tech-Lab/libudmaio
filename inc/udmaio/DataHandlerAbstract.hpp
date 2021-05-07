@@ -28,7 +28,7 @@ namespace udmaio {
 
 class DataHandlerAbstract : private boost::noncopyable {
 
-    boost::log::sources::severity_logger<blt::severity_level> _slg;
+    boost::log::sources::severity_logger_mt<blt::severity_level> _slg;
     UioAxiDmaIf &_dma;
     UioMemSgdma &_desc;
     DmaBufferAbstract &_mem;

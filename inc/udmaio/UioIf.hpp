@@ -92,7 +92,7 @@ class UioIf : private boost::noncopyable {
     int _fd, _fd_int;
     void *_mem;
     UioRegion _region;
-    mutable boost::log::sources::severity_logger<blt::severity_level> _slg;
+    mutable boost::log::sources::severity_logger_mt<blt::severity_level> _slg;
     bool _skip_write_to_arm_int;
 
     volatile uint32_t *_reg_ptr(uint32_t offs) const {

@@ -25,7 +25,7 @@ class UDmaBuf : public DmaBufferAbstract {
     int _fd;
     void *_mem;
     UioRegion _phys;
-    boost::log::sources::severity_logger<blt::severity_level> _slg;
+    boost::log::sources::severity_logger_mt<blt::severity_level> _slg;
 
     size_t _get_size(int buf_idx) const;
     uintptr_t _get_phys_addr(int buf_idx) const;

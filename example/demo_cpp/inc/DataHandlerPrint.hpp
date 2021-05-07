@@ -23,7 +23,7 @@ class DataHandlerPrint : public DataHandlerAbstract {
 
     std::optional<AxiTrafficGenLfsr> lfsr;
 
-    boost::log::sources::severity_logger<blt::severity_level> _slg;
+    boost::log::sources::severity_logger_mt<blt::severity_level> _slg;
 
     void process_data(std::vector<uint8_t> bytes) override;
 
