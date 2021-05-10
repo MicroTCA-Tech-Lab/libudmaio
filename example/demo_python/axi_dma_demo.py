@@ -4,6 +4,7 @@ import sys
 import os
 import numpy as np
 from itertools import zip_longest
+import argparse
 
 sys.path.append(os.getcwd())
 from lfsr_demo import LfsrIo
@@ -45,24 +46,56 @@ class LfsrChecker(object):
         return True
 
 
-print('Creating LfsrIo instance')
-l = LfsrIo('/dev/xdma/slot4')
+def main():
+    parser = argparse.ArgumentParser(
+        description='AXI DMA demo for LFSR traffic generator'
+    )
+    parser.add_argument('-l', '--pkt_len',
+                        type=int,
+                        default=1024,
+                        help='Packet length, default 1024'
+    )
+    parser.add_argument('-n', '--nr_pkts',
+                        type=int,
+                        default=1,
+                        help='Number of packets, default 1'
+    )
+    parser.add_argument('-p', '--pkt_pause',
+                        type=int,
+                        default=10,
+                        help='Pause between packets, default 10'
+    )
+    parser.add_argument('-d', '--dev_path',
+                        type=str,
+                        help='Path to xdma device nodes'
+    )
+    args = parser.parse_args()
 
-print('Starting LfsrIo')
-l.start(1024, 10, 60000)
+    if not args.dev_path:
+        print('Need device path in XDMA mode', file=sys.stderr)
+        sys.exit(-1)
 
-checker = LfsrChecker()
+    print('Creating LfsrIo instance')
+    l = LfsrIo(args.dev_path)
 
-words_total = 0
+    print('Starting LfsrIo')
+    l.start(args.pkt_len, args.nr_pkts, args.pkt_pause)
 
-while True:
-    result = l.read(10)
-    if not result.size:
-        break
-    if not checker.check(result):
-        break
-    words_total += result.size
+    checker = LfsrChecker()
+    words_total = 0
 
-print(f'{words_total} words OK')
+    while True:
+        result = l.read(10)
+        if not result.size:
+            break
+        if not checker.check(result):
+            break
+        words_total += result.size
 
-l.stop()
+    print(f'{words_total} words OK')
+
+    l.stop()
+
+
+if __name__ == '__main__':
+    main()

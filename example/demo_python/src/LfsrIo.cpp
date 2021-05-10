@@ -81,9 +81,11 @@ py::array_t<uint16_t> LfsrIo::read(uint32_t ms_timeout) {
     auto vec = new std::vector<uint8_t>(
         _dataHandler->read(std::chrono::milliseconds{ms_timeout})
     );
+    std::cout << "Created vector @" << std::hex << uintptr_t(vec) << ", data @" << uintptr_t(vec->data()) << "\n";
     // Callback for Python garbage collector
     py::capsule gc_callback(vec, [](void *f) {
         auto ptr = reinterpret_cast<std::vector<uint8_t> *>(f);
+        std::cout << "Deleting vector @" << std::hex << uintptr_t(ptr) << ", data @" << uintptr_t(ptr->data()) << "\n";
         delete ptr;
     });
     // Return Numpy array, transferring ownership to Python
