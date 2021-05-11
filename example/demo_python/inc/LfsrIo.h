@@ -24,7 +24,7 @@ class LfsrIo {
         trace = 3
     };
 
-    static void _checkDDR4Init(const std::string& dev_path, DmaMode mode);
+    static void _checkDDR4Init(DmaMode mode, const std::string& dev_path);
 
     std::unique_ptr<udmaio::UioAxiDmaIf> _axi_dma;
     std::unique_ptr<udmaio::UioMemSgdma> _mem_sgdma;
@@ -33,7 +33,7 @@ class LfsrIo {
     std::unique_ptr<UioTrafficGen> _traffic_gen;
 
 public:
-    LfsrIo(const std::string& dev_path);
+    LfsrIo(DmaMode mode, const std::string& dev_path = "");
 
     void start(uint32_t pkt_len, uint16_t nr_pkts, uint16_t pkt_pause);
     void stop();

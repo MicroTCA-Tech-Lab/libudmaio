@@ -11,10 +11,12 @@
 
 using namespace udmaio;
 
-LfsrIo::LfsrIo(const std::string& dev_path) {
-    auto mode = DmaMode::XDMA;
+LfsrIo::LfsrIo(DmaMode mode, const std::string& dev_path) {
+    if (mode == DmaMode::XDMA && dev_path.empty()) {
+        throw std::runtime_error("Need dev_path in XDMA mode");
+    }
 
-    _checkDDR4Init(dev_path, mode);
+    _checkDDR4Init(mode, dev_path);
 
     _axi_dma = (mode == DmaMode::UIO)
                        ? UioIfFactory::create_from_uio<UioAxiDmaIf>("hier_daq_arm_axi_dma_0")
@@ -95,7 +97,7 @@ py::array_t<uint16_t> LfsrIo::read(uint32_t ms_timeout) {
     );
 }
 
-void LfsrIo::_checkDDR4Init(const std::string& dev_path, DmaMode mode)
+void LfsrIo::_checkDDR4Init(DmaMode mode, const std::string& dev_path)
 {
     auto gpio_status = (mode == DmaMode::UIO)
             ? UioIfFactory::create_from_uio<UioGpioStatus>("axi_gpio_status")

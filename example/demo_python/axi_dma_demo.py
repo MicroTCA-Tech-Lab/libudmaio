@@ -50,7 +50,7 @@ class LfsrChecker(object):
         for n, v in enumerate(vfy):
             if not np.all(np.equal(arr[n], v)):
                 print(f'mismatch at row {n}: rcv {arr[n]}, exp {v}')
-                    return False
+                return False
         return True
 
 
@@ -77,6 +77,15 @@ def main():
                         type=str,
                         help='Path to xdma device nodes'
     )
+    dma_mode = parser.add_mutually_exclusive_group(required=True)
+    dma_mode.add_argument('-x', '--xdma',
+                           action='store_true',
+                           help='Use XDMA mode'
+    )
+    dma_mode.add_argument('-u', '--uio',
+                           action='store_true',
+                           help='Use UIO mode'
+    )
     args = parser.parse_args()
 
     if not args.dev_path:
@@ -84,7 +93,10 @@ def main():
         sys.exit(-1)
 
     print('Creating LfsrIo instance')
-    l = LfsrIo(args.dev_path)
+    l = LfsrIo(
+        LfsrIo.xdma if args.xdma else LfsrIo.uio,
+        args.dev_path
+    )
 
     print('Starting LfsrIo')
     l.start(args.pkt_len, args.nr_pkts, args.pkt_pause)
