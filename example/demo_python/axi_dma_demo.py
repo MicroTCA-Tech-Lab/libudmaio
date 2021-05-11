@@ -21,13 +21,19 @@ class Lfsr(object):
         self.state = seed
 
     def advance(self):
+        old_val = self.state
         new_bit = 1 ^ (self.state) ^ (self.state >> 1) ^ (self.state >> 3) ^ (self.state >> 12)
         self.state = (new_bit << 15) | (self.state >> 1)
         self.state &= 0xffff
+        return old_val
 
 
 # Checks array against expected LFSR values
 class LfsrChecker(object):
+
+    # Each array is built up by blocks of N identical values (determined by bus size)
+    IDENTICAL_BLK_LEN = 8
+
     def __init__(self):
         self.lfsr = None
     
@@ -35,14 +41,16 @@ class LfsrChecker(object):
         if self.lfsr is None:
             self.lfsr = Lfsr(arr[0])
         
-        pos = 0
-        for chunk in grouper(8, arr):
-            for rcv_val in chunk:
-                if rcv_val != self.lfsr.state:
-                    print(f'mismatch at {pos}: rcv {rcv_val}, exp {self.lfsr.state}')
+        # Create vector of expected values
+        vfy = np.asarray([self.lfsr.advance() for n in range(len(arr) // self.IDENTICAL_BLK_LEN)], dtype=np.uint16)
+
+        # Create matrix where rows are blocks of identical values
+        arr = arr.reshape(-1, self.IDENTICAL_BLK_LEN)
+
+        for n, v in enumerate(vfy):
+            if not np.all(np.equal(arr[n], v)):
+                print(f'mismatch at row {n}: rcv {arr[n]}, exp {v}')
                     return False
-                pos += 1
-            self.lfsr.advance()
         return True
 
 
