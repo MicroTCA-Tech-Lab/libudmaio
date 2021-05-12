@@ -58,6 +58,10 @@ if(DEFINED ENV{SDKTARGETSYSROOT})
     set(PYTHONLIBS_FOUND TRUE CACHE INTERNAL "")
 endif()
 
+if(NOT EXISTS "${CMAKE_CURRENT_LIST_DIR}/example/demo_python/pybind11/CMakeLists.txt")
+    message(FATAL_ERROR "pybind11 not found; make sure to 'git submodule init && git submodule update'")
+endif()
+
 add_subdirectory(example/demo_python/pybind11)
 file(GLOB PY_BINDING_SOURCES "example/demo_python/src/*.cpp")
 pybind11_add_module(lfsr_demo ${PY_BINDING_SOURCES} ${COMMON_SOURCES})
