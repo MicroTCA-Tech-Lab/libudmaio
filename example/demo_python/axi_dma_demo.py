@@ -88,14 +88,14 @@ def main():
     )
     args = parser.parse_args()
 
-    if not args.dev_path:
+    if args.xdma and not args.dev_path:
         print('Need device path in XDMA mode', file=sys.stderr)
         sys.exit(-1)
 
     print('Creating LfsrIo instance')
     l = LfsrIo(
         LfsrIo.xdma if args.xdma else LfsrIo.uio,
-        args.dev_path
+        args.dev_path or ""
     )
 
     print('Starting LfsrIo')
