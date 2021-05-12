@@ -39,7 +39,25 @@ if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16.0")
     target_precompile_headers(axi_dma_demo_cpp PRIVATE example/common/inc/BoostPCH.hpp)
 endif()
 
-# python example
+# Python example
+# If we're running a Yocto SDK for cross compilation, force pybind11 to use target's Python headers
+if(DEFINED ENV{SDKTARGETSYSROOT})
+    # Find Python3 headers for the target
+    string(STRIP "$ENV{SDKTARGETSYSROOT}/usr/include" TARGET_HEADERS)
+    file(
+        GLOB TARGET_PYTHON_HEADERS
+        LIST_DIRECTORIES true
+        "${TARGET_HEADERS}/python3*"
+    )
+    if(TARGET_PYTHON_HEADERS STREQUAL "")
+        message(FATAL_ERROR "Found no Python3 headers under ${TARGET_HEADERS}")
+    endif()
+    # Override pybind11's Python search mechanism
+    set(PYTHON_INCLUDE_DIRS ${TARGET_PYTHON_HEADERS} CACHE INTERNAL "Cross python include path")
+    set(PYTHON_MODULE_EXTENSION ".so" CACHE INTERNAL "Cross python lib extension")
+    set(PYTHONLIBS_FOUND TRUE CACHE INTERNAL "")
+endif()
+
 add_subdirectory(example/demo_python/pybind11)
 file(GLOB PY_BINDING_SOURCES "example/demo_python/src/*.cpp")
 pybind11_add_module(lfsr_demo ${PY_BINDING_SOURCES} ${COMMON_SOURCES})
