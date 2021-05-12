@@ -3,16 +3,10 @@
 import sys
 import os
 import numpy as np
-from itertools import zip_longest
 import argparse
 
 sys.path.append(os.getcwd())
 from lfsr_demo import LfsrIo
-
-
-def grouper(n, iterable):
-    "grouper(3, 'abcdef') -> ('a','b','c'), ('d','e','f')"
-    return zip_longest(*[iter(iterable)]*n)
 
 
 # Implements LFSR as described in "AXI Traffic Generator v3.0"
