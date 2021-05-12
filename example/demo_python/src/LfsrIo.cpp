@@ -11,7 +11,9 @@
 
 using namespace udmaio;
 
-LfsrIo::LfsrIo(DmaMode mode, const std::string& dev_path) {
+LfsrIo::LfsrIo(boost::log::trivial::severity_level log_lvl, DmaMode mode, const std::string& dev_path) {
+    boost::log::core::get()->set_filter(blt::severity >= log_lvl);
+
     if (mode == DmaMode::XDMA && dev_path.empty()) {
         throw std::runtime_error("Need dev_path in XDMA mode");
     }

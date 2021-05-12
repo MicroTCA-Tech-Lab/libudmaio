@@ -86,6 +86,15 @@ def main():
                            action='store_true',
                            help='Use UIO mode'
     )
+    log_lvl = parser.add_mutually_exclusive_group(required=False)
+    log_lvl.add_argument('--debug',
+                         action='store_true',
+                         help='Enable verbose output (debug level)'
+    )
+    log_lvl.add_argument('--trace',
+                         action='store_true',
+                         help='Enable even more verbose output (trace level)'
+    )
     args = parser.parse_args()
 
     if args.xdma and not args.dev_path:
@@ -94,6 +103,7 @@ def main():
 
     print('Creating LfsrIo instance')
     l = LfsrIo(
+        LfsrIo.trace if args.trace else LfsrIo.debug if args.debug else LfsrIo.info,
         LfsrIo.xdma if args.xdma else LfsrIo.uio,
         args.dev_path or ""
     )

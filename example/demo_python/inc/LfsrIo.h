@@ -17,13 +17,6 @@
 namespace py = pybind11;
 
 class LfsrIo {
-    enum class DebugLevel {
-        none = 0,
-        info = 1,
-        debug = 2,
-        trace = 3
-    };
-
     static void _checkDDR4Init(DmaMode mode, const std::string& dev_path);
 
     std::unique_ptr<udmaio::UioAxiDmaIf> _axi_dma;
@@ -33,7 +26,14 @@ class LfsrIo {
     std::unique_ptr<UioTrafficGen> _traffic_gen;
 
 public:
-    LfsrIo(DmaMode mode, const std::string& dev_path = "");
+    enum class LogLevel {
+        fatal = boost::log::trivial::severity_level::fatal,
+        info = boost::log::trivial::severity_level::info,
+        debug = boost::log::trivial::severity_level::debug,
+        trace = boost::log::trivial::severity_level::trace
+    };
+
+    LfsrIo(boost::log::trivial::severity_level log_lvl, DmaMode mode, const std::string& dev_path = "");
 
     void start(uint32_t pkt_len, uint16_t nr_pkts, uint16_t pkt_pause);
     void stop();
