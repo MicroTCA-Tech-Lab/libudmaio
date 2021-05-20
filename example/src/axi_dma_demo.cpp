@@ -57,13 +57,13 @@ int main(int argc, char *argv[]) {
     // clang-format off
     desc.add_options()
     ("help,h", "this help")
-    ("mode", bpo::value<DmaMode>(&mode)->multitoken()->required(), "select operation mode - see docs for details")
+    ("mode", bpo::value<DmaMode>(&mode)->multitoken()->required(), "select operation mode (xdma or uio) - see docs for details")
     ("debug", bpo::bool_switch(&debug), "enable verbose output (debug level)")
     ("trace", bpo::bool_switch(&trace), "enable even more verbose output (trace level)")
     ("pkt_pause", bpo::value<uint16_t>(&pkt_pause)->default_value(10), "pause between pkts - see AXI TG user's manual")
     ("nr_pkts", bpo::value<uint16_t>(&nr_pkts)->default_value(1), "number of packets to generate - see AXI TG user's manual")
     ("pkt_len", bpo::value<uint32_t>(&pkt_len)->default_value(1024), "packet length - see AXI TG user's manual")
-    ("dev_path", bpo::value<std::string>(&dev_path), "Path to xdma device nodes")
+    ("dev_path", bpo::value<std::string>(&dev_path), "Path to xdma device nodes (e.g. /dev/xdma/card0)")
     ;
     // clang-format on
 
