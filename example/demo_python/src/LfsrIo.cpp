@@ -2,12 +2,10 @@
 
 #include "LfsrIo.h"
 
-#include "udmaio/UioIfFactory.hpp"
 #include "udmaio/UDmaBuf.hpp"
 #include "udmaio/FpgaMemBuffer.hpp"
 #include "UioGpioStatus.hpp"
 #include "ZupExampleProjectConsts.hpp"
-
 
 using namespace udmaio;
 
@@ -18,42 +16,45 @@ LfsrIo::LfsrIo(boost::log::trivial::severity_level log_lvl, DmaMode mode, const 
         throw std::runtime_error("Need dev_path in XDMA mode");
     }
 
-    _checkDDR4Init(mode, dev_path);
+    auto cfg_ptr = (mode == DmaMode::UIO)
+        ? static_cast<std::unique_ptr<UioConfigBase>>(std::make_unique<UioConfigUio>())
+        : static_cast<std::unique_ptr<UioConfigBase>>(std::make_unique<UioConfigXdma>(
+            dev_path,
+            zup_example_prj::pcie_axi4l_offset
+        ));
+    auto& cfg = *cfg_ptr;
 
-    _axi_dma = (mode == DmaMode::UIO)
-                       ? UioIfFactory::create_from_uio<UioAxiDmaIf>("hier_daq_arm_axi_dma_0")
-                       : UioIfFactory::create_from_xdma<UioAxiDmaIf>(
-                           dev_path,
-                           zup_example_prj::axi_dma_0,
-                           zup_example_prj::pcie_axi4l_offset,
-                           "events0"
-                        );
-
-    _mem_sgdma =
+    _checkDDR4Init(
         (mode == DmaMode::UIO)
-            ? UioIfFactory::create_from_uio<UioMemSgdma>("hier_daq_arm_axi_bram_ctrl_0")
-            : UioIfFactory::create_from_xdma<UioMemSgdma>(
-                dev_path,
-                zup_example_prj::bram_ctrl_0,
-                zup_example_prj::pcie_axi4l_offset
-            );
+        ? cfg("axi_gpio_status")
+        : cfg(zup_example_prj::axi_gpio_status)
+    );
 
-    _traffic_gen =
+    _axi_dma = std::make_unique<UioAxiDmaIf>(
         (mode == DmaMode::UIO)
-            ? UioIfFactory::create_from_uio<UioTrafficGen>("hier_daq_arm_axi_traffic_gen_0")
-            : UioIfFactory::create_from_xdma<UioTrafficGen>(
-                dev_path,
-                zup_example_prj::axi_traffic_gen_0,
-                zup_example_prj::pcie_axi4l_offset
-            );
+        ? cfg("hier_daq_arm_axi_dma_0")
+        : cfg(zup_example_prj::axi_dma_0, "events0")
+    );
+
+    _mem_sgdma = std::make_unique<UioMemSgdma>(
+        (mode == DmaMode::UIO)
+        ? cfg("hier_daq_arm_axi_bram_ctrl_0")
+        : cfg(zup_example_prj::bram_ctrl_0)
+    );
+
+    _traffic_gen = std::make_unique<UioTrafficGen>(
+        (mode == DmaMode::UIO)
+        ? cfg("hier_daq_arm_axi_traffic_gen_0")
+        : cfg(zup_example_prj::axi_traffic_gen_0)
+    );
 
     _udmabuf =
         (mode == DmaMode::UIO)
-            ? static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<UDmaBuf>())
-            : static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<FpgaMemBuffer>(
-                dev_path,
-                zup_example_prj::fpga_mem_phys_addr
-            ));
+        ? static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<UDmaBuf>())
+        : static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<FpgaMemBuffer>(
+            dev_path,
+            zup_example_prj::fpga_mem_phys_addr
+        ));
     
     _dataHandler = std::make_unique<DataHandlerSync>(
         *_axi_dma,
@@ -99,16 +100,10 @@ py::array_t<uint16_t> LfsrIo::read(uint32_t ms_timeout) {
     );
 }
 
-void LfsrIo::_checkDDR4Init(DmaMode mode, const std::string& dev_path)
+void LfsrIo::_checkDDR4Init(UioDeviceInfo dev)
 {
-    auto gpio_status = (mode == DmaMode::UIO)
-            ? UioIfFactory::create_from_uio<UioGpioStatus>("axi_gpio_status")
-            : UioIfFactory::create_from_xdma<UioGpioStatus>(
-                dev_path,
-                zup_example_prj::axi_gpio_status,
-                zup_example_prj::pcie_axi4l_offset
-            );
-    bool is_ddr4_init = gpio_status->is_ddr4_init_calib_complete();
+    auto gpio_status = UioGpioStatus(dev);
+    bool is_ddr4_init = gpio_status.is_ddr4_init_calib_complete();
     BOOST_LOG_TRIVIAL(debug) << "DDR4 init = " << is_ddr4_init;
     if (!is_ddr4_init) {
         throw std::runtime_error("DDR4 init calib is not complete");

@@ -17,7 +17,7 @@
 namespace py = pybind11;
 
 class LfsrIo {
-    static void _checkDDR4Init(DmaMode mode, const std::string& dev_path);
+    static void _checkDDR4Init(UioDeviceInfo dev);
 
     std::unique_ptr<udmaio::UioAxiDmaIf> _axi_dma;
     std::unique_ptr<udmaio::UioMemSgdma> _mem_sgdma;
