@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(libudmaio)
+project(libudmaio VERSION 0.8.0)
 
 find_package(Boost 1.65 COMPONENTS log program_options REQUIRED)
 
@@ -15,6 +15,7 @@ file(GLOB UDMAIO_PUBLIC_HEADERS "inc/udmaio/*.hpp")
 set_target_properties(udmaio PROPERTIES PUBLIC_HEADER "${UDMAIO_PUBLIC_HEADERS}")
 target_link_libraries(udmaio Boost::log Boost::program_options Boost::dynamic_linking)
 target_compile_options(udmaio PRIVATE -Wall -Wextra -O2)
+set_target_properties(udmaio PROPERTIES VERSION ${PROJECT_VERSION})
 if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16.0") 
     target_precompile_headers(udmaio PRIVATE inc/udmaio/BoostPCH.hpp)
 endif()
