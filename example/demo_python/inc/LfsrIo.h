@@ -7,11 +7,11 @@
 #include <pybind11/numpy.h>
 
 #include "udmaio/UioAxiDmaIf.hpp"
+#include "udmaio/UioConfig.hpp"
 #include "udmaio/UioMemSgdma.hpp"
 #include "udmaio/DmaBufferAbstract.hpp"
 #include "udmaio/DataHandlerSync.hpp"
 
-#include "DmaMode.hpp"
 #include "UioTrafficGen.hpp"
 
 namespace py = pybind11;
@@ -33,7 +33,7 @@ public:
         trace = boost::log::trivial::severity_level::trace
     };
 
-    LfsrIo(boost::log::trivial::severity_level log_lvl, DmaMode mode, const std::string& dev_path = "");
+    LfsrIo(boost::log::trivial::severity_level log_lvl, std::shared_ptr<udmaio::UioConfigBase> cfg_ptr);
 
     void start(uint32_t pkt_len, uint16_t nr_pkts, uint16_t pkt_pause);
     void stop();

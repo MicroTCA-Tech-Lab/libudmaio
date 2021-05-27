@@ -1,9 +1,14 @@
 #pragma once
 
+#include <iostream>
 #include <stdexcept>
 #include <string>
 
 namespace udmaio {
+
+enum class DmaMode { XDMA, UIO };
+
+std::istream &operator>>(std::istream &in, DmaMode &mode);
 
 struct UioRegion {
     uintptr_t addr;
@@ -19,6 +24,8 @@ struct UioDeviceInfo {
 
 class UioConfigBase {
 public:
+    virtual std::string dev_path() { return ""; };
+    virtual DmaMode mode() = 0;
     virtual UioDeviceInfo operator()([[maybe_unused]] std::string dev_name) {
         throw std::runtime_error("UioConfig: not implemented");
     };
@@ -33,7 +40,8 @@ class UioConfigUio : public UioConfigBase {
     static std::uintptr_t _get_map_addr(int uio_number, int map_index = 0);
 
 public:
-    UioDeviceInfo operator()(std::string dev_name);
+    UioDeviceInfo operator()(std::string dev_name) override;
+    DmaMode mode() override { return DmaMode::UIO; };
 };
 
 class UioConfigXdma : public UioConfigBase {
@@ -43,7 +51,9 @@ class UioConfigXdma : public UioConfigBase {
 public:
     UioConfigXdma() = delete;
     UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs);
-    UioDeviceInfo operator()(UioRegion dev_region, std::string evt_dev = "");
+    UioDeviceInfo operator()(UioRegion dev_region, std::string evt_dev = "") override;
+    std::string dev_path() override { return _xdma_path; };
+    DmaMode mode() override { return DmaMode::XDMA; };
 };
 
 } // namespace udmaio

@@ -6,8 +6,10 @@ import numpy as np
 import argparse
 
 sys.path.append(os.getcwd())
-from lfsr_demo import LfsrIo
+from lfsr_demo import LfsrIo, ConfigUio, ConfigXdma
 
+
+PCIE_AXI4L_OFFSET = 0x88000000
 
 # Implements LFSR as described in "AXI Traffic Generator v3.0"
 class Lfsr(object):
@@ -94,12 +96,16 @@ def main():
     if args.xdma and not args.dev_path:
         print('Need device path in XDMA mode', file=sys.stderr)
         sys.exit(-1)
+    
+    if args.xdma:
+        cfg = ConfigXdma(args.dev_path, PCIE_AXI4L_OFFSET)
+    else:
+        cfg = ConfigUio()
 
     print('Creating LfsrIo instance')
     l = LfsrIo(
         LfsrIo.trace if args.trace else LfsrIo.debug if args.debug else LfsrIo.info,
-        LfsrIo.xdma if args.xdma else LfsrIo.uio,
-        args.dev_path or ""
+        cfg
     )
 
     print('Starting LfsrIo')

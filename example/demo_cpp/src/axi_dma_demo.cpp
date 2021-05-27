@@ -29,7 +29,6 @@
 #include "udmaio/UioMemSgdma.hpp"
 
 #include "DataHandlerPrint.hpp"
-#include "DmaMode.hpp"
 #include "UioGpioStatus.hpp"
 #include "UioTrafficGen.hpp"
 #include "ZupExampleProjectConsts.hpp"

@@ -9,50 +9,39 @@
 
 using namespace udmaio;
 
-LfsrIo::LfsrIo(boost::log::trivial::severity_level log_lvl, DmaMode mode, const std::string& dev_path) {
+LfsrIo::LfsrIo(boost::log::trivial::severity_level log_lvl, std::shared_ptr<udmaio::UioConfigBase> cfg_ptr) {
     boost::log::core::get()->set_filter(blt::severity >= log_lvl);
 
-    if (mode == DmaMode::XDMA && dev_path.empty()) {
-        throw std::runtime_error("Need dev_path in XDMA mode");
-    }
-
-    auto cfg_ptr = (mode == DmaMode::UIO)
-        ? static_cast<std::unique_ptr<UioConfigBase>>(std::make_unique<UioConfigUio>())
-        : static_cast<std::unique_ptr<UioConfigBase>>(std::make_unique<UioConfigXdma>(
-            dev_path,
-            zup_example_prj::pcie_axi4l_offset
-        ));
-    auto& cfg = *cfg_ptr;
-
+    udmaio::UioConfigBase& cfg = *cfg_ptr;
     _checkDDR4Init(
-        (mode == DmaMode::UIO)
+        (cfg.mode() == DmaMode::UIO)
         ? cfg("axi_gpio_status")
         : cfg(zup_example_prj::axi_gpio_status)
     );
 
     _axi_dma = std::make_unique<UioAxiDmaIf>(
-        (mode == DmaMode::UIO)
+        (cfg.mode() == DmaMode::UIO)
         ? cfg("hier_daq_arm_axi_dma_0")
         : cfg(zup_example_prj::axi_dma_0, "events0")
     );
 
     _mem_sgdma = std::make_unique<UioMemSgdma>(
-        (mode == DmaMode::UIO)
+        (cfg.mode() == DmaMode::UIO)
         ? cfg("hier_daq_arm_axi_bram_ctrl_0")
         : cfg(zup_example_prj::bram_ctrl_0)
     );
 
     _traffic_gen = std::make_unique<UioTrafficGen>(
-        (mode == DmaMode::UIO)
+        (cfg.mode() == DmaMode::UIO)
         ? cfg("hier_daq_arm_axi_traffic_gen_0")
         : cfg(zup_example_prj::axi_traffic_gen_0)
     );
 
     _udmabuf =
-        (mode == DmaMode::UIO)
+        (cfg.mode() == DmaMode::UIO)
         ? static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<UDmaBuf>())
         : static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<FpgaMemBuffer>(
-            dev_path,
+            cfg.dev_path(),
             zup_example_prj::fpga_mem_phys_addr
         ));
     
