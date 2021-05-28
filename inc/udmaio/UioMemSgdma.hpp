@@ -12,6 +12,7 @@
 #pragma once
 
 #include "UioIf.hpp"
+#include "DmaBufferAbstract.hpp"
 
 namespace udmaio {
 
@@ -55,13 +56,12 @@ class UioMemSgdma : UioIf {
     size_t _next_readable_buf;
 
     virtual const std::string_view _log_name() const override;
+    void write_cyc_mode(const std::vector<UioRegion> &dst_bufs);
 
   public:
-    static constexpr int BUF_LEN = 2 * 1024 * 1024;
-
     using UioIf::UioIf;
 
-    void write_cyc_mode(const std::vector<uintptr_t> &dst_buf_addrs);
+    void init_buffers(DmaBufferAbstract& mem, size_t num_buffers, size_t buf_size);
 
     void print_desc(const S2mmDesc &desc) const;
 

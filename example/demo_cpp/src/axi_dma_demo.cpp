@@ -117,20 +117,17 @@ int main(int argc, char *argv[]) {
             zup_example_prj::fpga_mem_phys_addr
         ));
 
+    const size_t pkt_size = pkt_len * zup_example_prj::lfsr_bytes_per_beat;
+
     DataHandlerPrint data_handler{
         *axi_dma,
         *mem_sgdma,
         *udmabuf,
-        nr_pkts * pkt_len * zup_example_prj::lfsr_bytes_per_beat
+        nr_pkts * pkt_size
     };
     auto fut = std::async(std::launch::async, std::ref(data_handler));
 
-    std::vector<uintptr_t> dst_buf_addrs;
-    for (int i = 0; i < 32; i++) {
-        dst_buf_addrs.push_back(udmabuf->get_phys_addr() + i * mem_sgdma->BUF_LEN);
-    };
-
-    mem_sgdma->write_cyc_mode(dst_buf_addrs);
+    mem_sgdma->init_buffers(*udmabuf, 32, pkt_size);
 
     uintptr_t first_desc = mem_sgdma->get_first_desc_addr();
     axi_dma->start(first_desc);

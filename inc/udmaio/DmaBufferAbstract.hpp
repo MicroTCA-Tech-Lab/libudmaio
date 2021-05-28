@@ -16,7 +16,7 @@
 
 #include <boost/core/noncopyable.hpp>
 
-#include "udmaio/UioMemSgdma.hpp"
+#include "udmaio/UioConfig.hpp"
 
 namespace udmaio {
 

@@ -31,15 +31,12 @@ LfsrIo::LfsrIo(boost::log::trivial::severity_level log_lvl, std::shared_ptr<udma
         *_mem_sgdma,
         *_udmabuf
     );
-
-    std::vector<uintptr_t> dst_buf_addrs;
-    for (int i = 0; i < 32; i++) {
-        dst_buf_addrs.push_back(_udmabuf->get_phys_addr() + i * _mem_sgdma->BUF_LEN);
-    };
-    _mem_sgdma->write_cyc_mode(dst_buf_addrs);
 }
 
 void LfsrIo::start(uint32_t pkt_len, uint16_t nr_pkts, uint16_t pkt_pause) {
+    const size_t pkt_size = pkt_len * zup_example_prj::lfsr_bytes_per_beat;
+    _mem_sgdma->init_buffers(*_udmabuf, 32, pkt_size);
+
     uintptr_t first_desc = _mem_sgdma->get_first_desc_addr();
     _axi_dma->start(first_desc);
     _traffic_gen->start(nr_pkts, pkt_len, pkt_pause);
