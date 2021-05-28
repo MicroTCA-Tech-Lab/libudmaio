@@ -19,11 +19,11 @@ struct UioDeviceLocation {
     UioDeviceLocation(std::string uioname, UioRegion xdmaregion, std::string xdmaevtdev = "")
     : uio_name(uioname), xdma_region(xdmaregion), xdma_evt_dev(xdmaevtdev) {};
     // Device name (from device tree) for access through UIO
-    const std::string uio_name;
+    std::string uio_name;
     // Memory-mapped region for access through XDMA
-    const UioRegion xdma_region;
+    UioRegion xdma_region;
     // optional: event file for access through XDMA
-    const std::string xdma_evt_dev;
+    std::string xdma_evt_dev;
 };
 
 struct UioDeviceInfo {

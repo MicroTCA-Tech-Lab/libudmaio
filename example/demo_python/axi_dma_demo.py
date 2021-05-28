@@ -6,10 +6,24 @@ import numpy as np
 import argparse
 
 sys.path.append(os.getcwd())
-from lfsr_demo import LfsrIo, ConfigUio, ConfigXdma
+from lfsr_demo import LfsrIo, ConfigUio, ConfigXdma, UioDeviceLocation, UioRegion, UioIf
 
+AXI_GPIO_STATUS = UioDeviceLocation(
+    'axi_gpio_status', UioRegion(0x00801000, 4 * 1024)
+)
 
 PCIE_AXI4L_OFFSET = 0x88000000
+
+class GpioStatus(UioIf):
+    ADDR_GPIO_DATA = 0
+
+    def _log_name(self):
+        return 'PythonGpioStatus'
+    
+    def test(self):
+        print('Testing GpioStatus...')
+        a = self._rd32(GpioStatus.ADDR_GPIO_DATA)
+        print(f'Read {a} from GPIO')
 
 # Implements LFSR as described in "AXI Traffic Generator v3.0"
 class Lfsr(object):
@@ -101,6 +115,9 @@ def main():
         cfg = ConfigXdma(args.dev_path, PCIE_AXI4L_OFFSET)
     else:
         cfg = ConfigUio()
+
+    g = GpioStatus(cfg(AXI_GPIO_STATUS))
+    g.test()
 
     print('Creating LfsrIo instance')
     l = LfsrIo(

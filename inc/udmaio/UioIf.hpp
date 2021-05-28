@@ -76,7 +76,6 @@ class UioIf : private boost::noncopyable {
         }
     }
 
-  protected:
     virtual ~UioIf() {
         munmap(_mem, _region.size);
         if (_fd_int != _fd) {
@@ -85,6 +84,7 @@ class UioIf : private boost::noncopyable {
         ::close(_fd);
     }
 
+  protected:
     int _fd, _fd_int;
     void *_mem;
     UioRegion _region;

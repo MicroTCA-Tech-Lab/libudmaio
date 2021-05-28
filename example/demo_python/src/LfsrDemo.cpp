@@ -7,6 +7,27 @@
 
 namespace py = pybind11;
 
+class UioIf_PyOverrideHelper : public udmaio::UioIf {
+public:
+    using udmaio::UioIf::UioIf;
+
+    const std::string_view _log_name() const override {
+        PYBIND11_OVERRIDE_PURE(
+            std::string_view, /* Return type */
+            udmaio::UioIf,    /* Parent class */
+            _log_name,        /* Name of function */
+        );
+    };
+};
+
+class UioIf_PyPublishHelper : public udmaio::UioIf {
+public:
+    using udmaio::UioIf::UioIf;
+    using udmaio::UioIf::_log_name;
+    using udmaio::UioIf::_rd32;
+    using udmaio::UioIf::_wr32;
+};
+
 PYBIND11_MODULE(lfsr_demo, m) {
     py::class_<udmaio::UioRegion>(m, "UioRegion")
         .def(py::init<uintptr_t, size_t>())
@@ -19,6 +40,15 @@ PYBIND11_MODULE(lfsr_demo, m) {
         .def_readwrite("evt_path", &udmaio::UioDeviceInfo::evt_path)
         .def_readwrite("region", &udmaio::UioDeviceInfo::region)
         .def_readwrite("mmap_offs", &udmaio::UioDeviceInfo::mmap_offs);
+    
+    py::class_<udmaio::UioDeviceLocation>(m, "UioDeviceLocation")
+        .def(py::init<std::string, UioRegion, std::string>(),
+             py::arg("uioname"),
+             py::arg("xdmaregion"),
+             py::arg("xdmaevtdev") = std::string(""))
+        .def_readwrite("uio_name", &udmaio::UioDeviceLocation::uio_name)
+        .def_readwrite("xdma_region", &udmaio::UioDeviceLocation::xdma_region)
+        .def_readwrite("xdma_evt_dev", &udmaio::UioDeviceLocation::xdma_evt_dev);
 
     py::class_<udmaio::UioConfigBase, std::shared_ptr<udmaio::UioConfigBase>>(m, "ConfigBase");
 
@@ -44,6 +74,12 @@ PYBIND11_MODULE(lfsr_demo, m) {
              py::arg("dev_region"),
              py::arg("evt_dev") = ""
         );
+
+    py::class_<udmaio::UioIf, UioIf_PyOverrideHelper, std::shared_ptr<udmaio::UioIf>> (m, "UioIf")
+        .def(py::init<UioDeviceInfo>())
+        .def("_log_name", &UioIf_PyPublishHelper::_log_name)
+        .def("_rd32", &UioIf_PyPublishHelper::_rd32)
+        .def("_wr32", &UioIf_PyPublishHelper::_wr32);
 
     py::class_<LfsrIo> lfsr_io(m, "LfsrIo");
 
