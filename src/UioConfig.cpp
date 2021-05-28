@@ -88,6 +88,10 @@ UioDeviceInfo UioConfigUio::operator()(std::string dev_name) {
     };
 }
 
+UioDeviceInfo UioConfigUio::operator()(UioDeviceLocation dev_loc) {
+    return operator()(dev_loc.uio_name);
+}
+
 UioConfigXdma::UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs)
 :_xdma_path(xdma_path)
 ,_pcie_offs(pcie_offs) {
@@ -104,5 +108,9 @@ UioDeviceInfo UioConfigXdma::operator()(UioRegion dev_region, std::string evt_de
         .mmap_offs = dev_region.addr
     };
 };
+
+UioDeviceInfo UioConfigXdma::operator()(UioDeviceLocation dev_loc) {
+    return operator()(dev_loc.xdma_region, dev_loc.xdma_evt_dev);
+}
 
 }

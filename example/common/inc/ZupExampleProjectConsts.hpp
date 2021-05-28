@@ -9,16 +9,14 @@
 
 // Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
 
-#include "udmaio/UioIf.hpp"
+#include "udmaio/UioConfig.hpp"
 
 // this information comes from the FPGA project
 namespace zup_example_prj {
-  constexpr UioRegion axi_gpio_status { 0x00801000, 4 * 1024 };
-  constexpr UioRegion axi_dma_0 { 0x00910000, 4 * 1024 };
-
-  constexpr UioRegion bram_ctrl_0 { 0x00920000, 8 * 1024 };
-
-  constexpr UioRegion axi_traffic_gen_0 { 0x00890000, 64 * 1024 };
+  const UioDeviceLocation axi_gpio_status { "axi_gpio_status", { 0x00801000, 4 * 1024 }};
+  const UioDeviceLocation axi_dma_0 { "hier_daq_arm_axi_dma_0", { 0x00910000, 4 * 1024 }, "events0" };
+  const UioDeviceLocation bram_ctrl_0 { "hier_daq_arm_axi_bram_ctrl_0", { 0x00920000, 8 * 1024 }};
+  const UioDeviceLocation axi_traffic_gen_0 { "hier_daq_arm_axi_traffic_gen_0", { 0x00890000, 64 * 1024 }};
 
   constexpr uint16_t lfsr_bytes_per_beat = 16;
 

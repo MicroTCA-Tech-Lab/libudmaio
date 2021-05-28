@@ -15,6 +15,17 @@ struct UioRegion {
     size_t size;
 };
 
+struct UioDeviceLocation {
+    UioDeviceLocation(std::string uioname, UioRegion xdmaregion, std::string xdmaevtdev = "")
+    : uio_name(uioname), xdma_region(xdmaregion), xdma_evt_dev(xdmaevtdev) {};
+    // Device name (from device tree) for access through UIO
+    const std::string uio_name;
+    // Memory-mapped region for access through XDMA
+    const UioRegion xdma_region;
+    // optional: event file for access through XDMA
+    const std::string xdma_evt_dev;
+};
+
 struct UioDeviceInfo {
     std::string dev_path;
     std::string evt_path;
@@ -32,6 +43,7 @@ public:
     virtual UioDeviceInfo operator()([[maybe_unused]] UioRegion dev_region, [[maybe_unused]] std::string evt_dev = "") {
         throw std::runtime_error("UioConfig: not implemented");
     };
+    virtual UioDeviceInfo operator()(UioDeviceLocation dev_loc) = 0;
 };
 
 class UioConfigUio : public UioConfigBase {
@@ -41,6 +53,7 @@ class UioConfigUio : public UioConfigBase {
 
 public:
     UioDeviceInfo operator()(std::string dev_name) override;
+    UioDeviceInfo operator()(UioDeviceLocation dev_loc) override;
     DmaMode mode() override { return DmaMode::UIO; };
 };
 
@@ -52,6 +65,7 @@ public:
     UioConfigXdma() = delete;
     UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs);
     UioDeviceInfo operator()(UioRegion dev_region, std::string evt_dev = "") override;
+    UioDeviceInfo operator()(UioDeviceLocation dev_loc) override;
     std::string dev_path() override { return _xdma_path; };
     DmaMode mode() override { return DmaMode::XDMA; };
 };

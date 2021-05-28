@@ -13,30 +13,11 @@ LfsrIo::LfsrIo(boost::log::trivial::severity_level log_lvl, std::shared_ptr<udma
     boost::log::core::get()->set_filter(blt::severity >= log_lvl);
 
     udmaio::UioConfigBase& cfg = *cfg_ptr;
-    _checkDDR4Init(
-        (cfg.mode() == DmaMode::UIO)
-        ? cfg("axi_gpio_status")
-        : cfg(zup_example_prj::axi_gpio_status)
-    );
+    _checkDDR4Init(cfg(zup_example_prj::axi_gpio_status));
 
-    _axi_dma = std::make_unique<UioAxiDmaIf>(
-        (cfg.mode() == DmaMode::UIO)
-        ? cfg("hier_daq_arm_axi_dma_0")
-        : cfg(zup_example_prj::axi_dma_0, "events0")
-    );
-
-    _mem_sgdma = std::make_unique<UioMemSgdma>(
-        (cfg.mode() == DmaMode::UIO)
-        ? cfg("hier_daq_arm_axi_bram_ctrl_0")
-        : cfg(zup_example_prj::bram_ctrl_0)
-    );
-
-    _traffic_gen = std::make_unique<UioTrafficGen>(
-        (cfg.mode() == DmaMode::UIO)
-        ? cfg("hier_daq_arm_axi_traffic_gen_0")
-        : cfg(zup_example_prj::axi_traffic_gen_0)
-    );
-
+    _axi_dma = std::make_unique<UioAxiDmaIf>(cfg(zup_example_prj::axi_dma_0));
+    _mem_sgdma = std::make_unique<UioMemSgdma>(cfg(zup_example_prj::bram_ctrl_0));
+    _traffic_gen = std::make_unique<UioTrafficGen>(cfg(zup_example_prj::axi_traffic_gen_0));
     _udmabuf =
         (cfg.mode() == DmaMode::UIO)
         ? static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<UDmaBuf>())

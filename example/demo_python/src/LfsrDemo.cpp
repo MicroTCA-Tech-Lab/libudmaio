@@ -24,11 +24,26 @@ PYBIND11_MODULE(lfsr_demo, m) {
 
     py::class_<udmaio::UioConfigUio, udmaio::UioConfigBase, std::shared_ptr<udmaio::UioConfigUio>>(m, "ConfigUio")
         .def(py::init<>())
-        .def("__call__", &udmaio::UioConfigUio::operator());
+        // We have to expose overloaded functions explicitly
+        .def("__call__",
+             static_cast<udmaio::UioDeviceInfo (udmaio::UioConfigUio::*)(UioDeviceLocation)>(&udmaio::UioConfigUio::operator())
+        )
+        .def("__call__",
+             static_cast<udmaio::UioDeviceInfo (udmaio::UioConfigUio::*)(std::string)>(&udmaio::UioConfigUio::operator())
+        );
 
     py::class_<udmaio::UioConfigXdma, udmaio::UioConfigBase, std::shared_ptr<udmaio::UioConfigXdma>>(m, "ConfigXdma")
         .def(py::init<std::string, uintptr_t>())
-        .def("__call__", &udmaio::UioConfigXdma::operator(), py::arg("dev_region"), py::arg("evt_dev") = "");
+        // We have to expose overloaded functions explicitly
+        .def("__call__",
+             static_cast<udmaio::UioDeviceInfo (udmaio::UioConfigXdma::*)(UioDeviceLocation)>(&udmaio::UioConfigXdma::operator())
+        )
+        .def("__call__",
+             static_cast<udmaio::UioDeviceInfo (udmaio::UioConfigXdma::*)(udmaio::UioRegion, std::string)>(&udmaio::UioConfigXdma::operator()),
+             // We have to expose default arguments explicitly
+             py::arg("dev_region"),
+             py::arg("evt_dev") = ""
+        );
 
     py::class_<LfsrIo> lfsr_io(m, "LfsrIo");
 

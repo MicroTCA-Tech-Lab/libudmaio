@@ -98,11 +98,7 @@ int main(int argc, char *argv[]) {
         ));
     auto& cfg = *cfg_ptr;
     
-    auto gpio_status = std::make_unique<UioGpioStatus>(
-        (mode == DmaMode::UIO)
-        ? cfg("axi_gpio_status")
-        : cfg(zup_example_prj::axi_gpio_status)
-    );
+    auto gpio_status = std::make_unique<UioGpioStatus>(cfg(zup_example_prj::axi_gpio_status));
 
     bool is_ddr4_init = gpio_status->is_ddr4_init_calib_complete();
     BOOST_LOG_TRIVIAL(debug) << "DDR4 init = " << is_ddr4_init;
@@ -110,23 +106,9 @@ int main(int argc, char *argv[]) {
         throw std::runtime_error("DDR4 init calib is not complete");
     }
 
-    auto axi_dma = std::make_unique<UioAxiDmaIf>(
-        (mode == DmaMode::UIO)
-        ? cfg("hier_daq_arm_axi_dma_0")
-        : cfg(zup_example_prj::axi_dma_0, "events0")
-    );
-
-    auto mem_sgdma = std::make_unique<UioMemSgdma>(
-        (mode == DmaMode::UIO)
-        ? cfg("hier_daq_arm_axi_bram_ctrl_0")
-        : cfg(zup_example_prj::bram_ctrl_0)
-    );
-
-    auto traffic_gen = std::make_unique<UioTrafficGen>(
-        (mode == DmaMode::UIO)
-        ? cfg("hier_daq_arm_axi_traffic_gen_0")
-        : cfg(zup_example_prj::axi_traffic_gen_0)
-    );
+    auto axi_dma = std::make_unique<UioAxiDmaIf>(cfg(zup_example_prj::axi_dma_0));
+    auto mem_sgdma = std::make_unique<UioMemSgdma>(cfg(zup_example_prj::bram_ctrl_0));
+    auto traffic_gen = std::make_unique<UioTrafficGen>(cfg(zup_example_prj::axi_traffic_gen_0));
 
     auto udmabuf = (mode == DmaMode::UIO)
         ? static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<UDmaBuf>())
