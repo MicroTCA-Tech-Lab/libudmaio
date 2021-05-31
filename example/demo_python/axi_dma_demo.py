@@ -8,14 +8,17 @@ import argparse
 sys.path.append(os.getcwd())
 from lfsr_demo import LfsrIo, ConfigUio, ConfigXdma, UioDeviceLocation, UioRegion
 from GpioStatus import GpioStatus
-
+from TrafficGen import TrafficGen
 
 AXI_GPIO_STATUS = UioDeviceLocation(
     'axi_gpio_status', UioRegion(0x00801000, 4 * 1024)
 )
+AXI_TRAFFIC_GEN = UioDeviceLocation(
+    'hier_daq_arm_axi_traffic_gen_0', UioRegion(0x00890000, 64 * 1024)
+)
 
 PCIE_AXI4L_OFFSET = 0x88000000
-
+LFSR_BYTES_PER_BEAT = 16
 
 # Implements LFSR as described in "AXI Traffic Generator v3.0"
 class Lfsr(object):
@@ -113,19 +116,24 @@ def main():
         raise RuntimeError('DDR4 init calib is not complete')
 
     print('Creating LfsrIo instance')
-    l = LfsrIo(
+    dma = LfsrIo(
         LfsrIo.trace if args.trace else LfsrIo.debug if args.debug else LfsrIo.info,
         cfg
     )
 
-    print('Starting LfsrIo')
-    l.start(args.pkt_len, args.nr_pkts, args.pkt_pause)
+    traffic_gen = TrafficGen(cfg(AXI_TRAFFIC_GEN))
+
+    print('Starting DMA')
+    dma.start(args.pkt_len * LFSR_BYTES_PER_BEAT)
+
+    print('Starting TrafficGen')
+    traffic_gen.start(args.nr_pkts, args.pkt_len, args.pkt_pause)
 
     checker = LfsrChecker()
     words_total = 0
 
     while True:
-        result = l.read(10)
+        result = dma.read(10)
         if not result.size:
             break
         if not checker.check(result):
@@ -134,7 +142,7 @@ def main():
 
     print(f'{words_total} words OK')
 
-    l.stop()
+    dma.stop()
 
 
 if __name__ == '__main__':

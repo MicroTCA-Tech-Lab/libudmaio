@@ -16,7 +16,6 @@ LfsrIo::LfsrIo(boost::log::trivial::severity_level log_lvl, std::shared_ptr<udma
 
     _axi_dma = std::make_unique<UioAxiDmaIf>(cfg(zup_example_prj::axi_dma_0));
     _mem_sgdma = std::make_unique<UioMemSgdma>(cfg(zup_example_prj::bram_ctrl_0));
-    _traffic_gen = std::make_unique<UioTrafficGen>(cfg(zup_example_prj::axi_traffic_gen_0));
     _udmabuf =
         (cfg.mode() == DmaMode::UIO)
         ? static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<UDmaBuf>())
@@ -32,13 +31,11 @@ LfsrIo::LfsrIo(boost::log::trivial::severity_level log_lvl, std::shared_ptr<udma
     );
 }
 
-void LfsrIo::start(uint32_t pkt_len, uint16_t nr_pkts, uint16_t pkt_pause) {
-    const size_t pkt_size = pkt_len * zup_example_prj::lfsr_bytes_per_beat;
+void LfsrIo::start(size_t pkt_size) {
     _mem_sgdma->init_buffers(*_udmabuf, 32, pkt_size);
 
     uintptr_t first_desc = _mem_sgdma->get_first_desc_addr();
     _axi_dma->start(first_desc);
-    _traffic_gen->start(nr_pkts, pkt_len, pkt_pause);
 
     (*_dataHandler)();
 }

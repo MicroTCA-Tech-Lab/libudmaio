@@ -12,8 +12,6 @@
 #include "udmaio/DmaBufferAbstract.hpp"
 #include "udmaio/DataHandlerSync.hpp"
 
-#include "UioTrafficGen.hpp"
-
 namespace py = pybind11;
 
 class LfsrIo {
@@ -21,7 +19,6 @@ class LfsrIo {
     std::unique_ptr<udmaio::UioMemSgdma> _mem_sgdma;
     std::unique_ptr<udmaio::DmaBufferAbstract> _udmabuf;
     std::unique_ptr<udmaio::DataHandlerSync> _dataHandler;
-    std::unique_ptr<UioTrafficGen> _traffic_gen;
 
 public:
     enum class LogLevel {
@@ -33,7 +30,7 @@ public:
 
     LfsrIo(boost::log::trivial::severity_level log_lvl, std::shared_ptr<udmaio::UioConfigBase> cfg_ptr);
 
-    void start(uint32_t pkt_len, uint16_t nr_pkts, uint16_t pkt_pause);
+    void start(size_t pkt_size);
     void stop();
 
     py::array_t<uint16_t> read(uint32_t ms_timeout=0);

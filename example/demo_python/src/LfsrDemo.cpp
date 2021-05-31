@@ -42,7 +42,7 @@ PYBIND11_MODULE(lfsr_demo, m) {
         .def_readwrite("mmap_offs", &udmaio::UioDeviceInfo::mmap_offs);
     
     py::class_<udmaio::UioDeviceLocation>(m, "UioDeviceLocation")
-        .def(py::init<std::string, UioRegion, std::string>(),
+        .def(py::init<std::string, udmaio::UioRegion, std::string>(),
              py::arg("uioname"),
              py::arg("xdmaregion"),
              py::arg("xdmaevtdev") = std::string(""))
@@ -56,7 +56,7 @@ PYBIND11_MODULE(lfsr_demo, m) {
         .def(py::init<>())
         // We have to expose overloaded functions explicitly
         .def("__call__",
-             static_cast<udmaio::UioDeviceInfo (udmaio::UioConfigUio::*)(UioDeviceLocation)>(&udmaio::UioConfigUio::operator())
+             static_cast<udmaio::UioDeviceInfo (udmaio::UioConfigUio::*)(udmaio::UioDeviceLocation)>(&udmaio::UioConfigUio::operator())
         )
         .def("__call__",
              static_cast<udmaio::UioDeviceInfo (udmaio::UioConfigUio::*)(std::string)>(&udmaio::UioConfigUio::operator())
@@ -66,7 +66,7 @@ PYBIND11_MODULE(lfsr_demo, m) {
         .def(py::init<std::string, uintptr_t>())
         // We have to expose overloaded functions explicitly
         .def("__call__",
-             static_cast<udmaio::UioDeviceInfo (udmaio::UioConfigXdma::*)(UioDeviceLocation)>(&udmaio::UioConfigXdma::operator())
+             static_cast<udmaio::UioDeviceInfo (udmaio::UioConfigXdma::*)(udmaio::UioDeviceLocation)>(&udmaio::UioConfigXdma::operator())
         )
         .def("__call__",
              static_cast<udmaio::UioDeviceInfo (udmaio::UioConfigXdma::*)(udmaio::UioRegion, std::string)>(&udmaio::UioConfigXdma::operator()),
@@ -76,7 +76,7 @@ PYBIND11_MODULE(lfsr_demo, m) {
         );
 
     py::class_<udmaio::UioIf, UioIf_PyOverrideHelper, std::shared_ptr<udmaio::UioIf>> (m, "UioIf")
-        .def(py::init<UioDeviceInfo>())
+        .def(py::init<udmaio::UioDeviceInfo>())
         .def("_log_name", &UioIf_PyPublishHelper::_log_name)
         .def("_rd32", &UioIf_PyPublishHelper::_rd32)
         .def("_wr32", &UioIf_PyPublishHelper::_wr32);
