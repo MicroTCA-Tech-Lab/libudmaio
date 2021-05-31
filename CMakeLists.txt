@@ -25,18 +25,15 @@ install(TARGETS udmaio
     PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/udmaio
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
-# common examples stuff
-file(GLOB COMMON_SOURCES "example/common/src/*.cpp")
-
 # cpp example
 add_executable(axi_dma_demo_cpp)
 file(GLOB EXAMPLE_SOURCES "example/demo_cpp/src/*.cpp")
-target_sources(axi_dma_demo_cpp PRIVATE ${EXAMPLE_SOURCES} ${COMMON_SOURCES})
-target_include_directories(axi_dma_demo_cpp PRIVATE example/demo_cpp/inc example/common/inc)
+target_sources(axi_dma_demo_cpp PRIVATE ${EXAMPLE_SOURCES})
+target_include_directories(axi_dma_demo_cpp PRIVATE example/demo_cpp/inc)
 target_link_libraries(axi_dma_demo_cpp Boost::log Boost::program_options Boost::dynamic_linking udmaio)
 target_compile_options(axi_dma_demo_cpp PRIVATE -Wall -Wextra -O2)
 if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16.0") 
-    target_precompile_headers(axi_dma_demo_cpp PRIVATE example/common/inc/BoostPCH.hpp)
+    target_precompile_headers(axi_dma_demo_cpp PRIVATE example/demo_cpp/inc/BoostPCH.hpp)
 endif()
 
 # Python example
@@ -64,6 +61,6 @@ endif()
 
 add_subdirectory(example/demo_python/pybind11)
 file(GLOB PY_BINDING_SOURCES "example/demo_python/src/*.cpp")
-pybind11_add_module(lfsr_demo ${PY_BINDING_SOURCES} ${COMMON_SOURCES})
-target_include_directories(lfsr_demo PRIVATE example/demo_python/inc example/common/inc)
-target_link_libraries(lfsr_demo PRIVATE Boost::log Boost::program_options Boost::dynamic_linking udmaio)
+pybind11_add_module(pyudmaio ${PY_BINDING_SOURCES})
+target_include_directories(pyudmaio PRIVATE example/demo_python/inc)
+target_link_libraries(pyudmaio PRIVATE Boost::log Boost::program_options Boost::dynamic_linking udmaio)

@@ -6,19 +6,11 @@ import numpy as np
 import argparse
 
 sys.path.append(os.getcwd())
-from lfsr_demo import LfsrIo, ConfigUio, ConfigXdma, UioDeviceLocation, UioRegion
+from pyudmaio import ConfigUio, ConfigXdma, FpgaMemBuffer, UDmaBuf, UioAxiDmaIf, UioMemSgdma, DataHandler
 from GpioStatus import GpioStatus
 from TrafficGen import TrafficGen
 
-AXI_GPIO_STATUS = UioDeviceLocation(
-    'axi_gpio_status', UioRegion(0x00801000, 4 * 1024)
-)
-AXI_TRAFFIC_GEN = UioDeviceLocation(
-    'hier_daq_arm_axi_traffic_gen_0', UioRegion(0x00890000, 64 * 1024)
-)
-
-PCIE_AXI4L_OFFSET = 0x88000000
-LFSR_BYTES_PER_BEAT = 16
+from ProjectConsts import ZupExampleConsts
 
 # Implements LFSR as described in "AXI Traffic Generator v3.0"
 class Lfsr(object):
@@ -105,26 +97,32 @@ def main():
     if args.xdma and not args.dev_path:
         print('Need device path in XDMA mode', file=sys.stderr)
         sys.exit(-1)
+
+    consts = ZupExampleConsts
     
     if args.xdma:
-        cfg = ConfigXdma(args.dev_path, PCIE_AXI4L_OFFSET)
+        cfg = ConfigXdma(args.dev_path, consts.PCIE_AXI4L_OFFSET)
     else:
         cfg = ConfigUio()
 
-    g = GpioStatus(cfg(AXI_GPIO_STATUS))
+    g = GpioStatus(cfg(consts.AXI_GPIO_STATUS))
     if not g.is_ddr4_init_calib_complete():
         raise RuntimeError('DDR4 init calib is not complete')
 
-    print('Creating LfsrIo instance')
-    dma = LfsrIo(
-        LfsrIo.trace if args.trace else LfsrIo.debug if args.debug else LfsrIo.info,
-        cfg
-    )
+    print('Creating DMA handler')
 
-    traffic_gen = TrafficGen(cfg(AXI_TRAFFIC_GEN))
+    axi_dma = UioAxiDmaIf(cfg(consts.AXI_DMA_0))
+    mem_sgdma = UioMemSgdma(cfg(consts.BRAM_CTRL_0))
+    if args.xdma:
+        udmabuf = FpgaMemBuffer(args.dev_path, consts.FPGA_MEM_PHYS_ADDR)
+    else:
+        udmabuf = UDmaBuf()
+    
+    data_handler = DataHandler(axi_dma, mem_sgdma, udmabuf)
+    traffic_gen = TrafficGen(cfg(consts.AXI_TRAFFIC_GEN_0))
 
     print('Starting DMA')
-    dma.start(args.pkt_len * LFSR_BYTES_PER_BEAT)
+    data_handler.start(args.pkt_len * consts.LFSR_BYTES_PER_BEAT)
 
     print('Starting TrafficGen')
     traffic_gen.start(args.nr_pkts, args.pkt_len, args.pkt_pause)
@@ -133,7 +131,7 @@ def main():
     words_total = 0
 
     while True:
-        result = dma.read(10)
+        result = data_handler.read(10)
         if not result.size:
             break
         if not checker.check(result):
@@ -141,8 +139,8 @@ def main():
         words_total += result.size
 
     print(f'{words_total} words OK')
-
-    dma.stop()
+    traffic_gen.stop()
+    data_handler.stop()
 
 
 if __name__ == '__main__':

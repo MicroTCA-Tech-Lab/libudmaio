@@ -16,13 +16,13 @@ class DataHandlerSync : public DataHandlerAbstract {
 
 public:
     using DataHandlerAbstract::DataHandlerAbstract;
-    ~DataHandlerSync();
+    virtual ~DataHandlerSync();
 
     void operator()();
 
     void process_data(std::vector<uint8_t> bytes) override;
 
-    void stop() override;
+    virtual void stop() override;
 
     std::vector<uint8_t> read();
     std::vector<uint8_t> read(std::chrono::milliseconds timeout);

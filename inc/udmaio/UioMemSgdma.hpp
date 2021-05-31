@@ -16,7 +16,7 @@
 
 namespace udmaio {
 
-class UioMemSgdma : UioIf {
+class UioMemSgdma : public UioIf {
     static constexpr int DESC_ADDR_STEP = 0x40;
 
     struct __attribute__((packed)) S2mmDescControl {

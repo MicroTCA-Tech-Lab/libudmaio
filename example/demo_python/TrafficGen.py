@@ -1,4 +1,4 @@
-from lfsr_demo import UioIf
+from pyudmaio import UioIf
 from UioReg import UioReg
 
 

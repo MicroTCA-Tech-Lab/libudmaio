@@ -2,8 +2,10 @@
 #include <pybind11/stl.h>
 
 #include "udmaio/UioConfig.hpp"
+#include "udmaio/FpgaMemBuffer.hpp"
+#include "udmaio/UDmaBuf.hpp"
 
-#include "LfsrIo.h"
+#include "DataHandlerPython.hpp"
 
 namespace py = pybind11;
 
@@ -28,7 +30,7 @@ public:
     using udmaio::UioIf::_wr32;
 };
 
-PYBIND11_MODULE(lfsr_demo, m) {
+PYBIND11_MODULE(pyudmaio, m) {
     py::class_<udmaio::UioRegion>(m, "UioRegion")
         .def(py::init<uintptr_t, size_t>())
         .def_readwrite("addr", &udmaio::UioRegion::addr)
@@ -81,13 +83,30 @@ PYBIND11_MODULE(lfsr_demo, m) {
         .def("_rd32", &UioIf_PyPublishHelper::_rd32)
         .def("_wr32", &UioIf_PyPublishHelper::_wr32);
 
-    py::class_<LfsrIo> lfsr_io(m, "LfsrIo");
+    py::class_<udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::DmaBufferAbstract>>(m, "DmaBufferAbstract");
 
-    lfsr_io.def(py::init<boost::log::trivial::severity_level, std::shared_ptr<udmaio::UioConfigBase>>())
-           .def("start", &LfsrIo::start)
-           .def("stop", &LfsrIo::stop)
-           .def("read", &LfsrIo::read);
+    py::class_<udmaio::FpgaMemBuffer, udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::FpgaMemBuffer>>(m, "FpgaMemBuffer")
+        .def(py::init<const std::string &, uintptr_t>());
 
+    py::class_<udmaio::UDmaBuf, udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::UDmaBuf>>(m, "UDmaBuf")
+        .def(py::init<int>(), py::arg("buf_idx") = 0);
+
+    py::class_<udmaio::UioAxiDmaIf, udmaio::UioIf, std::shared_ptr<udmaio::UioAxiDmaIf>>(m, "UioAxiDmaIf")
+         .def(py::init<udmaio::UioDeviceInfo>());
+
+    py::class_<udmaio::UioMemSgdma, udmaio::UioIf, std::shared_ptr<udmaio::UioMemSgdma>>(m, "UioMemSgdma")
+         .def(py::init<udmaio::UioDeviceInfo>());
+
+    py::class_<udmaio::DataHandlerPython> data_handler(m, "DataHandler");
+
+    data_handler.def(py::init<std::shared_ptr<udmaio::UioAxiDmaIf>,
+                              std::shared_ptr<udmaio::UioMemSgdma>,
+                              std::shared_ptr<udmaio::DmaBufferAbstract>>())
+                .def("start", &udmaio::DataHandlerPython::start)
+                .def("stop", &udmaio::DataHandlerPython::stop)
+                .def("read", &udmaio::DataHandlerPython::numpy_read);
+
+#if 0 // FIXME: where to put these enums
     py::enum_<udmaio::DmaMode>(lfsr_io, "DmaMode")
         .value("xdma", udmaio::DmaMode::XDMA)
         .value("uio", udmaio::DmaMode::UIO)
@@ -99,4 +118,5 @@ PYBIND11_MODULE(lfsr_demo, m) {
         .value("debug", boost::log::trivial::severity_level::debug)
         .value("trace", boost::log::trivial::severity_level::trace)
         .export_values();
+#endif
 }
