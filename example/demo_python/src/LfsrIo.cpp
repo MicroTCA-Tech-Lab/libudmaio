@@ -13,7 +13,6 @@ LfsrIo::LfsrIo(boost::log::trivial::severity_level log_lvl, std::shared_ptr<udma
     boost::log::core::get()->set_filter(blt::severity >= log_lvl);
 
     udmaio::UioConfigBase& cfg = *cfg_ptr;
-    _checkDDR4Init(cfg(zup_example_prj::axi_gpio_status));
 
     _axi_dma = std::make_unique<UioAxiDmaIf>(cfg(zup_example_prj::axi_dma_0));
     _mem_sgdma = std::make_unique<UioMemSgdma>(cfg(zup_example_prj::bram_ctrl_0));
@@ -65,14 +64,4 @@ py::array_t<uint16_t> LfsrIo::read(uint32_t ms_timeout) {
         reinterpret_cast<uint16_t*>(vec->data()), // data pointer
         gc_callback
     );
-}
-
-void LfsrIo::_checkDDR4Init(UioDeviceInfo dev)
-{
-    auto gpio_status = UioGpioStatus(dev);
-    bool is_ddr4_init = gpio_status.is_ddr4_init_calib_complete();
-    BOOST_LOG_TRIVIAL(debug) << "DDR4 init = " << is_ddr4_init;
-    if (!is_ddr4_init) {
-        throw std::runtime_error("DDR4 init calib is not complete");
-    }
 }

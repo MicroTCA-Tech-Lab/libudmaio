@@ -1,5 +1,6 @@
 /build*
 /.vscode
+*.pyc
 
 # vim-specific things
 *~
