@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 # Available at setup time due to pyproject.toml
 from pybind11.setup_helpers import Pybind11Extension, build_ext
@@ -19,8 +19,8 @@ __version__ = "0.0.1"
 
 ext_modules = [
     Pybind11Extension(
-        'pyudmaio',
-        [
+        'pyudmaio_binding',
+        sources = [
             'src/DataHandlerPython.cpp',
             'src/PythonBinding.cpp'
         ],
@@ -28,15 +28,6 @@ ext_modules = [
         define_macros = [
             ('VERSION_INFO', __version__),
             ('BOOST_ALL_DYN_LINK', None),
-#            ('BOOST_ALL_NO_LIB', None),
-#            ('BOOST_ATOMIC_DYN_LINK', None),
-#            ('BOOST_CHRONO_DYN_LINK', None),
-#            ('BOOST_DATE_TIME_DYN_LINK', None),
-#            ('BOOST_FILESYSTEM_DYN_LINK', None),
-#            ('BOOST_LOG_DYN_LINK', None),
-#            ('BOOST_PROGRAM_OPTIONS_DYN_LINK', None),
-#            ('BOOST_REGEX_DYN_LINK', None),
-#            ('BOOST_THREAD_DYN_LINK', None),
         ],
         libraries = [
             'udmaio'
@@ -50,7 +41,7 @@ ext_modules = [
 setup(
     name="pyudmaio",
     version=__version__,
-    author="Patrick Huesmann",
+    author="Patrick Huesmann, Jan Marjanovic",
     author_email="patrick.huesmann@desy.de",
     url="https://techlab.desy.de/",
     description="Python binding for libudmaio",
@@ -64,5 +55,6 @@ setup(
     cmdclass={
         "build_ext": build_ext
     },
+    packages=find_packages(exclude=['tests']),
     zip_safe=False,
 )
