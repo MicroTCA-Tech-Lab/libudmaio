@@ -1,6 +1,7 @@
 /build*
 /.vscode
 *.pyc
+*.egg-info
 
 # vim-specific things
 *~

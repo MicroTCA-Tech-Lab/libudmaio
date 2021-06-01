@@ -59,8 +59,8 @@ if(NOT EXISTS "${CMAKE_CURRENT_LIST_DIR}/example/demo_python/pybind11/CMakeLists
     message(FATAL_ERROR "pybind11 not found; make sure to 'git submodule init && git submodule update'")
 endif()
 
-add_subdirectory(example/demo_python/pybind11)
-file(GLOB PY_BINDING_SOURCES "example/demo_python/src/*.cpp")
-pybind11_add_module(pyudmaio ${PY_BINDING_SOURCES})
-target_include_directories(pyudmaio PRIVATE example/demo_python/inc)
-target_link_libraries(pyudmaio PRIVATE Boost::log Boost::program_options Boost::dynamic_linking udmaio)
+#add_subdirectory(example/demo_python/pybind11)
+#file(GLOB PY_BINDING_SOURCES "example/demo_python/src/*.cpp")
+#pybind11_add_module(pyudmaio ${PY_BINDING_SOURCES})
+#target_include_directories(pyudmaio PRIVATE example/demo_python/inc)
+#target_link_libraries(pyudmaio PRIVATE Boost::log Boost::program_options Boost::dynamic_linking udmaio)
