@@ -7,7 +7,6 @@ import os
 import numpy as np
 import argparse
 
-sys.path.append(os.getcwd())
 from pyudmaio import ConfigUio, ConfigXdma, FpgaMemBuffer, UDmaBuf, UioAxiDmaIf, UioMemSgdma, DataHandler
 from GpioStatus import GpioStatus
 from TrafficGen import TrafficGen
