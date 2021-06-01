@@ -17,15 +17,21 @@
 
 namespace udmaio {
 
-enum class DmaMode { XDMA, UIO };
+/// DMA access mode
+enum class DmaMode {
+    XDMA,   // PCIe XDMA driver
+    UIO     // ARM userspace I/O
+};
 
 std::istream &operator>>(std::istream &in, DmaMode &mode);
 
+/// General-purpose struct to define a memory area
 struct UioRegion {
     uintptr_t addr;
     size_t size;
 };
 
+/// Holds information where a device can be found over both UIO and XDMA
 struct UioDeviceLocation {
     UioDeviceLocation(std::string uioname, UioRegion xdmaregion, std::string xdmaevtdev = "")
     : uio_name(uioname), xdma_region(xdmaregion), xdma_evt_dev(xdmaevtdev) {};
@@ -37,6 +43,7 @@ struct UioDeviceLocation {
     std::string xdma_evt_dev;
 };
 
+/// Data needed to construct an UioIf; contains information how to connect to a device
 struct UioDeviceInfo {
     std::string dev_path;
     std::string evt_path;
@@ -57,6 +64,7 @@ public:
     virtual UioDeviceInfo operator()(UioDeviceLocation dev_loc) = 0;
 };
 
+// Creates UioDeviceInfo from UioDeviceLocation (UIO version)
 class UioConfigUio : public UioConfigBase {
     static int _get_uio_number(std::string_view name);
     static size_t _get_map_size(int uio_number, int map_index = 0);
@@ -68,6 +76,7 @@ public:
     DmaMode mode() override { return DmaMode::UIO; };
 };
 
+// Creates UioDeviceInfo from UioDeviceLocation (XDMA version)
 class UioConfigXdma : public UioConfigBase {
     std::string _xdma_path;
     uintptr_t _pcie_offs;
