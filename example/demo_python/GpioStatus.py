@@ -1,5 +1,4 @@
-from pyudmaio import UioIf
-from UioReg import UioReg
+from pyudmaio import UioIf, UioReg
 
 
 class GpioStatus(UioIf):
