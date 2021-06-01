@@ -19,7 +19,7 @@ __version__ = "0.0.1"
 
 ext_modules = [
     Pybind11Extension(
-        'pyudmaio_binding',
+        'pyudmaio.binding',
         sources = [
             'src/DataHandlerPython.cpp',
             'src/PythonBinding.cpp'

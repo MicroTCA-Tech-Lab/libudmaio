@@ -30,7 +30,7 @@ public:
     using udmaio::UioIf::_wr32;
 };
 
-PYBIND11_MODULE(pyudmaio_binding, m) {
+PYBIND11_MODULE(binding, m) {
     py::class_<udmaio::UioRegion>(m, "UioRegion")
         .def(py::init<uintptr_t, size_t>())
         .def_readwrite("addr", &udmaio::UioRegion::addr)
