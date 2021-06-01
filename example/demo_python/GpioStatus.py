@@ -1,5 +1,6 @@
-from pyudmaio import UioIf, UioReg
+# Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
 
+from pyudmaio import UioIf, UioReg
 
 class GpioStatus(UioIf):
     def __init__(self, cfg):

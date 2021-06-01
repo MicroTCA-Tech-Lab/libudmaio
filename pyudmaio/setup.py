@@ -1,3 +1,5 @@
+# Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
+
 from setuptools import setup, find_packages
 
 # Available at setup time due to pyproject.toml

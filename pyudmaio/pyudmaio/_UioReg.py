@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
+
 import bitstruct
 
 

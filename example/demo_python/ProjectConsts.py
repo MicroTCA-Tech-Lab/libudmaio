@@ -1,3 +1,5 @@
+# Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
+
 from pyudmaio import UioDeviceLocation, UioRegion
 
 
