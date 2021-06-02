@@ -34,9 +34,6 @@ ext_modules = [
         libraries = [
             'udmaio'
         ],
-        runtime_library_dirs = [
-            '/usr/local/lib'
-        ]
         ),
 ]
 
