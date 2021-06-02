@@ -6,9 +6,25 @@ from setuptools import setup, find_packages
 from pybind11.setup_helpers import Pybind11Extension, build_ext
 from pybind11 import get_cmake_dir
 
-import sys
+import os
+import re
+import glob
 
-__version__ = "0.0.1"
+# Use same version for python package as for the whole library.
+# Assumes CMakeLists.txt is one dir above this script and contains "project(libudmaio VERSION x.y.z)"
+def get_version_from_cmakelists():
+    re_ver = re.compile(r'^project\(libudmaio\s+VERSION\s+(\d+\.\d+\.\d+)\)')
+    script_path = os.path.dirname(os.path.realpath(__file__))
+    print(os.getcwd(), glob.glob("*"))
+    with open(os.path.join(script_path, '..', 'CMakeLists.txt'), 'r') as f:
+        for l in f:
+            m = re_ver.match(l)
+            if m:
+                return m.group(1)
+    
+    raise RuntimeError('Version string not found in CMakeLists.txt!')
+
+__version__ = get_version_from_cmakelists()
 
 # The main interface is through Pybind11Extension.
 # * You can add cxx_std=11/14/17, and then build_ext can be removed.
