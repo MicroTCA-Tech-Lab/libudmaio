@@ -28,8 +28,8 @@ class DataHandlerPython : public DataHandlerSync {
 public:
     DataHandlerPython(std::shared_ptr<UioAxiDmaIf>, std::shared_ptr<UioMemSgdma>, std::shared_ptr<DmaBufferAbstract>);
 
-    void start(size_t pkt_size);
-    py::array_t<uint16_t> numpy_read(uint32_t ms_timeout=0);
+    void start(int nr_pkts, size_t pkt_size);
+    py::array_t<uint8_t> numpy_read(uint32_t ms_timeout=0);
 
 };
 

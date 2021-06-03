@@ -123,7 +123,8 @@ def main():
     traffic_gen = TrafficGen(cfg(consts.AXI_TRAFFIC_GEN_0))
 
     print('Starting DMA')
-    data_handler.start(args.pkt_len * consts.LFSR_BYTES_PER_BEAT)
+    NR_BUFFERS = 32
+    data_handler.start(NR_BUFFERS, args.pkt_len * consts.LFSR_BYTES_PER_BEAT)
 
     print('Starting TrafficGen')
     traffic_gen.start(args.nr_pkts, args.pkt_len, args.pkt_pause)
@@ -132,9 +133,10 @@ def main():
     words_total = 0
 
     while True:
-        result = data_handler.read(10)
-        if not result.size:
+        data_bytes = data_handler.read(10)
+        if not data_bytes.size:
             break
+        result = np.frombuffer(data_bytes.tobytes(), dtype=np.uint16)
         if not checker.check(result):
             break
         words_total += result.size

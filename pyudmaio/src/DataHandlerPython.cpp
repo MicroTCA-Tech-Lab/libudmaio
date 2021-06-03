@@ -22,8 +22,8 @@ DataHandlerPython::DataHandlerPython(std::shared_ptr<UioAxiDmaIf> dma_ptr,
 ,_mem_ptr(mem_ptr) {
 }
 
-void DataHandlerPython::start(size_t pkt_size) {
-    _desc_ptr->init_buffers(*_mem_ptr, 32, pkt_size);
+void DataHandlerPython::start(int nr_pkts, size_t pkt_size) {
+    _desc_ptr->init_buffers(*_mem_ptr, nr_pkts, pkt_size);
 
     uintptr_t first_desc = _desc_ptr->get_first_desc_addr();
     _dma_ptr->start(first_desc);
@@ -31,7 +31,7 @@ void DataHandlerPython::start(size_t pkt_size) {
     this->operator()();
 }
 
-py::array_t<uint16_t> DataHandlerPython::numpy_read(uint32_t ms_timeout) {
+py::array_t<uint8_t> DataHandlerPython::numpy_read(uint32_t ms_timeout) {
     // Create vector on the heap, holding the data
     auto vec = new std::vector<uint8_t>(
         read(std::chrono::milliseconds{ms_timeout})
@@ -42,10 +42,10 @@ py::array_t<uint16_t> DataHandlerPython::numpy_read(uint32_t ms_timeout) {
         delete ptr;
     });
     // Return Numpy array, transferring ownership to Python
-    return py::array_t<uint16_t>(
-        {vec->size() / sizeof(uint16_t)}, // shape
-        {sizeof(uint16_t)},               // stride
-        reinterpret_cast<uint16_t*>(vec->data()), // data pointer
+    return py::array_t<uint8_t>(
+        {vec->size() / sizeof(uint8_t)}, // shape
+        {sizeof(uint8_t)},               // stride
+        reinterpret_cast<uint8_t*>(vec->data()), // data pointer
         gc_callback
     );
 }

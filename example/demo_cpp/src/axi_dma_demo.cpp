@@ -127,7 +127,8 @@ int main(int argc, char *argv[]) {
     };
     auto fut = std::async(std::launch::async, std::ref(data_handler));
 
-    mem_sgdma->init_buffers(*udmabuf, 32, pkt_size);
+    constexpr int nr_buffers = 32;
+    mem_sgdma->init_buffers(*udmabuf, nr_buffers, pkt_size);
 
     uintptr_t first_desc = mem_sgdma->get_first_desc_addr();
     axi_dma->start(first_desc);
