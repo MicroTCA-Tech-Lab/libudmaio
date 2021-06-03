@@ -23,19 +23,19 @@
 
 namespace udmaio {
 
-class FpgaMemBuffer : public DmaBufferAbstract {
+class FpgaMemBufferOverXdma : public DmaBufferAbstract {
     int _dma_fd;
     uintptr_t _phys_addr;
 
   public:
-    explicit FpgaMemBuffer(const std::string &path, uintptr_t phys_addr) : _phys_addr{phys_addr} {
+    explicit FpgaMemBufferOverXdma(const std::string &path, uintptr_t phys_addr) : _phys_addr{phys_addr} {
         const std::string dev_path{path + "/c2h0"};
         _dma_fd = open(dev_path.c_str(), O_RDWR);
         if (_dma_fd < 0) {
             throw std::runtime_error("could not open " + dev_path);
         }
     }
-    virtual ~FpgaMemBuffer() {
+    virtual ~FpgaMemBufferOverXdma() {
         close(_dma_fd);
     }
 

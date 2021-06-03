@@ -115,7 +115,7 @@ def main():
     axi_dma = UioAxiDmaIf(cfg(consts.AXI_DMA_0))
     mem_sgdma = UioMemSgdma(cfg(consts.BRAM_CTRL_0))
     if args.xdma:
-        udmabuf = FpgaMemBuffer(args.dev_path, consts.FPGA_MEM_PHYS_ADDR)
+        udmabuf = FpgaMemBufferOverXdma(args.dev_path, consts.FPGA_MEM_PHYS_ADDR)
     else:
         udmabuf = UDmaBuf()
     

@@ -13,7 +13,8 @@
 #include <pybind11/stl.h>
 
 #include "udmaio/UioConfig.hpp"
-#include "udmaio/FpgaMemBuffer.hpp"
+#include "udmaio/FpgaMemBufferOverAxi.hpp"
+#include "udmaio/FpgaMemBufferOverXdma.hpp"
 #include "udmaio/UDmaBuf.hpp"
 
 #include "DataHandlerPython.hpp"
@@ -53,7 +54,7 @@ PYBIND11_MODULE(binding, m) {
         .def_readwrite("evt_path", &udmaio::UioDeviceInfo::evt_path)
         .def_readwrite("region", &udmaio::UioDeviceInfo::region)
         .def_readwrite("mmap_offs", &udmaio::UioDeviceInfo::mmap_offs);
-    
+
     py::class_<udmaio::UioDeviceLocation>(m, "UioDeviceLocation")
         .def(py::init<std::string, udmaio::UioRegion, std::string>(),
              py::arg("uioname"),
@@ -96,7 +97,10 @@ PYBIND11_MODULE(binding, m) {
 
     py::class_<udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::DmaBufferAbstract>>(m, "DmaBufferAbstract");
 
-    py::class_<udmaio::FpgaMemBuffer, udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::FpgaMemBuffer>>(m, "FpgaMemBuffer")
+    py::class_<udmaio::FpgaMemBufferOverAxi, udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::FpgaMemBufferOverAxi>>(m, "FpgaMemBufferOverAxi")
+        .def(py::init<uintptr_t, uintptr_t>());
+
+    py::class_<udmaio::FpgaMemBufferOverXdma, udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::FpgaMemBufferOverXdma>>(m, "FpgaMemBufferOverXdma")
         .def(py::init<const std::string &, uintptr_t>());
 
     py::class_<udmaio::UDmaBuf, udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::UDmaBuf>>(m, "UDmaBuf")

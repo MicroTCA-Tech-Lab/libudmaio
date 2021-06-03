@@ -22,7 +22,7 @@
 #include <boost/log/trivial.hpp>
 #include <boost/program_options.hpp>
 
-#include "udmaio/FpgaMemBuffer.hpp"
+#include "udmaio/FpgaMemBufferOverXdma.hpp"
 #include "udmaio/UDmaBuf.hpp"
 #include "udmaio/UioAxiDmaIf.hpp"
 #include "udmaio/UioIf.hpp"
@@ -112,7 +112,7 @@ int main(int argc, char *argv[]) {
 
     auto udmabuf = (mode == DmaMode::UIO)
         ? static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<UDmaBuf>())
-        : static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<FpgaMemBuffer>(
+        : static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<FpgaMemBufferOverXdma>(
             dev_path,
             zup_example_prj::fpga_mem_phys_addr
         ));
