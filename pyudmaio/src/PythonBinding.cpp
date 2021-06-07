@@ -43,6 +43,9 @@ public:
 };
 
 PYBIND11_MODULE(binding, m) {
+    // set default to info, with a function provided to set the level dynamically
+    boost::log::core::get()->set_filter(blt::severity >= blt::info);
+
     py::class_<udmaio::UioRegion>(m, "UioRegion")
         .def(py::init<uintptr_t, size_t>())
         .def_readwrite("addr", &udmaio::UioRegion::addr)
@@ -121,17 +124,15 @@ PYBIND11_MODULE(binding, m) {
                 .def("stop", &udmaio::DataHandlerPython::stop)
                 .def("read", &udmaio::DataHandlerPython::numpy_read);
 
-#if 0 // FIXME: where to put these enums
-    py::enum_<udmaio::DmaMode>(lfsr_io, "DmaMode")
-        .value("xdma", udmaio::DmaMode::XDMA)
-        .value("uio", udmaio::DmaMode::UIO)
+    py::enum_<boost::log::trivial::severity_level>(m, "LogLevel")
+        .value("FATAL", boost::log::trivial::severity_level::fatal)
+        .value("INFO", boost::log::trivial::severity_level::info)
+        .value("DEBUG", boost::log::trivial::severity_level::debug)
+        .value("TRACE", boost::log::trivial::severity_level::trace)
         .export_values();
 
-    py::enum_<boost::log::trivial::severity_level>(lfsr_io, "LogLevel")
-        .value("fatal", boost::log::trivial::severity_level::fatal)
-        .value("info", boost::log::trivial::severity_level::info)
-        .value("debug", boost::log::trivial::severity_level::debug)
-        .value("trace", boost::log::trivial::severity_level::trace)
-        .export_values();
-#endif
+    m.def("set_logging_level", [](boost::log::trivial::severity_level level) {
+        boost::log::core::get()->set_filter(blt::severity >= level);
+    });
+
 }
