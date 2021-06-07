@@ -8,6 +8,7 @@ import numpy as np
 import argparse
 
 from pyudmaio import ConfigUio, ConfigXdma, FpgaMemBufferOverAxi, UDmaBuf, UioAxiDmaIf, UioMemSgdma, DataHandler
+from pyudmaio import LogLevel, set_logging_level
 from GpioStatus import GpioStatus
 from TrafficGen import TrafficGen
 
@@ -98,6 +99,13 @@ def main():
     if args.xdma and not args.dev_path:
         print('Need device path in XDMA mode', file=sys.stderr)
         sys.exit(-1)
+
+    if args.trace:
+        print("Set log level to TRACE")
+        set_logging_level(LogLevel.TRACE)
+    elif args.debug:
+        print("Set log level to DEBUG")
+        set_logging_level(LogLevel.DEBUG)
 
     consts = ZupExampleConsts
     
