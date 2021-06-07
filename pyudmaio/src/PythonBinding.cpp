@@ -100,8 +100,8 @@ PYBIND11_MODULE(binding, m) {
 
     py::class_<udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::DmaBufferAbstract>>(m, "DmaBufferAbstract");
 
-    py::class_<udmaio::FpgaMemBufferOverAxi, udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::FpgaMemBufferOverAxi>>(m, "FpgaMemBufferOverAxi")
-        .def(py::init<uintptr_t, uintptr_t>());
+    py::class_<udmaio::FpgaMemBufferOverAxi, udmaio::DmaBufferAbstract, udmaio::UioIf, std::shared_ptr<udmaio::FpgaMemBufferOverAxi>>(m, "FpgaMemBufferOverAxi")
+        .def(py::init<udmaio::UioDeviceInfo>());
 
     py::class_<udmaio::FpgaMemBufferOverXdma, udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::FpgaMemBufferOverXdma>>(m, "FpgaMemBufferOverXdma")
         .def(py::init<const std::string &, uintptr_t>());
