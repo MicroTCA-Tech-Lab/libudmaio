@@ -46,9 +46,22 @@ memory where the DMA is writing to:
 * FPGA memory, where the memory is connected directly to the FPGA (e.g. DDR4
   memory connected directly to Programmable Logic (PL) on DAMC-FMC2ZUP)
 
-## Python library
+## Python binding
+
+Please keep in mind that on some systems (e.g. DAMC-FMC2ZUP and DAMC-FMC1Z7IO)
+the `libudmaio` and the `pyudmaio` Python binding can be already installed. The
+steps descibed in the chapter below are only needed for the development of the
+library itself.
 
 ### Installation
+
+The Python binding `pyudmaio` uses `setuptools` to build/install and requires
+[pip 21 or
+newer](https://pybind11.readthedocs.io/en/stable/compiling.html?highlight=setuptools#setup-helpers-pep518).
+
+It also assumes the `libudmaio` header files and shared library to be installed
+system-wide. Make sure to `make install` the C++ library before trying to
+install the Python binding.
 
 To install the Python library, in-tree build must be used:
 
@@ -126,13 +139,3 @@ $ ./axi_dma_demo --mode xdma --debug
 [2021-03-01 13:49:31.942382] [0x00007f6b7e568700] [debug]   DataHandler: stopping thread
 Counters: OK = 8192, total = 8192
 ```
-
-## Python binding
-
-The Python binding `pyudmaio` uses `setuptools` to build/install and requires [pip 10 or newer](https://pybind11.readthedocs.io/en/stable/compiling.html?highlight=setuptools#setup-helpers-pep518).
-For system-wide installation:
-```
-cd pyudmaio && sudo pip3 install .
-```
-
-It also assumes the `libudmaio` header files and shared library to be installed system-wide. Make sure to `make install` the C++ library before trying to install the Python binding.
