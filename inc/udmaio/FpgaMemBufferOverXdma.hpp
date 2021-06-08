@@ -43,6 +43,11 @@ class FpgaMemBufferOverXdma : public DmaBufferAbstract {
         return _phys_addr;
     }
 
+    uintptr_t get_phys_size() const override {
+        // there is no way to get the size over the Xdma, return 0 and let the user handle it
+        return 0;
+    }
+
     void copy_from_buf(const UioRegion &buf_info, std::vector<uint8_t> &out) const override {
         size_t old_size = out.size();
         size_t new_size = old_size + buf_info.size;

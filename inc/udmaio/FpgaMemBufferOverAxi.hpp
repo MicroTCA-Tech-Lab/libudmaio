@@ -39,6 +39,8 @@ class FpgaMemBufferOverAxi : public DmaBufferAbstract, public UioIf {
 
     uintptr_t get_phys_addr() const override { return _region.addr; }
 
+    uintptr_t get_phys_size() const override { return _region.size; }
+
     void copy_from_buf(const UioRegion &buf_info, std::vector<uint8_t> &out) const override {
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
             << "FpgaMemBufferOverAxi: copy_from_buf: buf_info.addr = 0x" << std::hex

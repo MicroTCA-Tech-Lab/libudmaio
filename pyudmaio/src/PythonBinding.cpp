@@ -98,7 +98,10 @@ PYBIND11_MODULE(binding, m) {
         .def("_rd32", &UioIf_PyPublishHelper::_rd32)
         .def("_wr32", &UioIf_PyPublishHelper::_wr32);
 
-    py::class_<udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::DmaBufferAbstract>>(m, "DmaBufferAbstract");
+    py::class_<udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::DmaBufferAbstract>>(m, "DmaBufferAbstract")
+        .def("get_phys_addr", &udmaio::DmaBufferAbstract::get_phys_addr)
+        .def("get_phys_size", &udmaio::DmaBufferAbstract::get_phys_size)
+        ;
 
     py::class_<udmaio::FpgaMemBufferOverAxi, udmaio::DmaBufferAbstract, udmaio::UioIf, std::shared_ptr<udmaio::FpgaMemBufferOverAxi>>(m, "FpgaMemBufferOverAxi")
         .def(py::init<udmaio::UioDeviceInfo>());

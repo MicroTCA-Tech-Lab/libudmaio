@@ -23,6 +23,7 @@ namespace udmaio {
 class DmaBufferAbstract : private boost::noncopyable {
   public:
     virtual uintptr_t get_phys_addr() const = 0;
+    virtual uintptr_t get_phys_size() const = 0;
     virtual void copy_from_buf(const UioRegion &buf_info, std::vector<uint8_t> &out) const = 0;
 };
 
