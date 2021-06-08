@@ -125,7 +125,9 @@ PYBIND11_MODULE(binding, m) {
                               std::shared_ptr<udmaio::DmaBufferAbstract>>())
                 .def("start", &udmaio::DataHandlerPython::start)
                 .def("stop", &udmaio::DataHandlerPython::stop)
-                .def("read", &udmaio::DataHandlerPython::numpy_read);
+                .def("read", &udmaio::DataHandlerPython::numpy_read)
+                .def("read_nb", &udmaio::DataHandlerPython::numpy_read_nb);
+                ;
 
     py::enum_<boost::log::trivial::severity_level>(m, "LogLevel")
         .value("FATAL", boost::log::trivial::severity_level::fatal)
