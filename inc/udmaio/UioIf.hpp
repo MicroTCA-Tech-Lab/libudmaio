@@ -134,6 +134,26 @@ class UioIf : private boost::noncopyable {
         *_reg_ptr(offs) = data;
     }
 
+    void arm_interrupt() {
+        if (_skip_write_to_arm_int)
+            return;
+
+        uint32_t mask = 1;
+        int rc = write(_fd_int, &mask, sizeof(mask));
+        BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+            << _log_name() << ": arm interrupt enable, ret code = " << rc;
+    }
+
+    uint32_t wait_for_interrupt() {
+        uint32_t irq_count;
+        BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name()
+            << ": wait for interrupt ...";
+        int rc = read(_fd_int, &irq_count, sizeof(irq_count));
+        BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name()
+            << ": interrupt received, rc = " << rc << ", irq count = " << irq_count;
+        return irq_count;
+    }
+
     virtual const std::string_view _log_name() const = 0;
 };
 

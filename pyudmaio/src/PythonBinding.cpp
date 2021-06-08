@@ -40,6 +40,8 @@ public:
     using udmaio::UioIf::_log_name;
     using udmaio::UioIf::_rd32;
     using udmaio::UioIf::_wr32;
+    using udmaio::UioIf::arm_interrupt;
+    using udmaio::UioIf::wait_for_interrupt;
 };
 
 PYBIND11_MODULE(binding, m) {
@@ -96,7 +98,10 @@ PYBIND11_MODULE(binding, m) {
         .def(py::init<udmaio::UioDeviceInfo>())
         .def("_log_name", &UioIf_PyPublishHelper::_log_name)
         .def("_rd32", &UioIf_PyPublishHelper::_rd32)
-        .def("_wr32", &UioIf_PyPublishHelper::_wr32);
+        .def("_wr32", &UioIf_PyPublishHelper::_wr32)
+        .def("arm_interrupt", &UioIf_PyPublishHelper::arm_interrupt)
+        .def("wait_for_interrupt", &UioIf_PyPublishHelper::wait_for_interrupt)
+        ;
 
     py::class_<udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::DmaBufferAbstract>>(m, "DmaBufferAbstract")
         .def("get_phys_addr", &udmaio::DmaBufferAbstract::get_phys_addr)

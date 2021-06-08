@@ -68,7 +68,7 @@ class UioAxiDmaIf : public UioIf {
     using UioIf::UioIf;
 
     void start(uintptr_t start_desc);
-    void arm_interrupt();
+    using UioIf::arm_interrupt;
     uint32_t clear_interrupt();
     int get_fd_int() const;
 };
