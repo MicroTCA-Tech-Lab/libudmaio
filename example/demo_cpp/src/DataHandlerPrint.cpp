@@ -20,7 +20,7 @@ DataHandlerPrint::DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBuffe
       _counter_ok{0}, _counter_total{0},
       _num_bytes_expected{num_bytes_expected}, _num_bytes_rcvd{0} {}
 
-void DataHandlerPrint::process_data(const std::vector<uint8_t> &bytes) {
+void DataHandlerPrint::process_data(std::vector<uint8_t> bytes) {
     BOOST_LOG_SEV(_slg, blt::severity_level::debug)
         << "DataHandlerPrint: process data, size = " << bytes.size();
     _num_bytes_rcvd += bytes.size();

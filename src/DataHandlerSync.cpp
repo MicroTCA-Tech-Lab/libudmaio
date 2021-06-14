@@ -9,31 +9,35 @@
 
 // Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
 
-#pragma once
+#include "udmaio/DataHandlerSync.hpp"
 
-#include <utility>
+namespace udmaio {
 
-#include "udmaio/DataHandlerAbstract.hpp"
+DataHandlerSync::~DataHandlerSync() {
+    if (_ioThread) {
+        _ioThread->join();
+    }
+}
 
-#include "AxiTrafficGenLfsr.hpp"
+void DataHandlerSync::operator()() {
+    _ioThread = std::thread{&DataHandlerAbstract::operator(), this};
+}
 
-using namespace udmaio;
+void DataHandlerSync::process_data(std::vector<uint8_t> bytes) {
+    _queue.push(std::move(bytes));
+}
 
-class DataHandlerPrint : public DataHandlerAbstract {
+void DataHandlerSync::stop() {
+    _queue.abort();
+    DataHandlerAbstract::stop();
+}
 
-    std::optional<AxiTrafficGenLfsr> lfsr;
+std::vector<uint8_t> DataHandlerSync::read() {
+    return _queue.pop();
+}
 
-    boost::log::sources::severity_logger<blt::severity_level> _slg;
+std::vector<uint8_t> DataHandlerSync::read(std::chrono::milliseconds timeout) {
+    return _queue.pop(timeout);
+}
 
-    void process_data(const std::vector<uint8_t> &bytes) override;
-
-    uint64_t _counter_ok;
-    uint64_t _counter_total;
-    uint64_t _num_bytes_expected;
-    uint64_t _num_bytes_rcvd;
-
-  public:
-    explicit DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem,
-                              uint64_t num_bytes_expected);
-    std::pair<uint64_t, uint64_t> operator()();
-};
+}

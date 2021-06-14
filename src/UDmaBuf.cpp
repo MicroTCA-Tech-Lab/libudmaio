@@ -77,6 +77,10 @@ uintptr_t UDmaBuf::get_phys_addr() const {
     return _phys.addr;
 }
 
+uintptr_t UDmaBuf::get_phys_size() const {
+    return _phys.size;
+}
+
 void UDmaBuf::copy_from_buf(const UioRegion &buf_info, std::vector<uint8_t> &out) const {
     size_t old_size = out.size();
     size_t new_size = old_size + buf_info.size;

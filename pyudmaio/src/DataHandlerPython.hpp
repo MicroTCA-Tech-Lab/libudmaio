@@ -11,34 +11,27 @@
 
 #pragma once
 
-#include <boost/log/core/core.hpp>
-#include <boost/log/sources/logger.hpp>
-#include <boost/log/trivial.hpp>
+#include <memory>
+#include <pybind11/numpy.h>
 
-#include "DmaBufferAbstract.hpp"
+#include "udmaio/DataHandlerSync.hpp"
 
-namespace blt = boost::log::trivial;
+namespace py = pybind11;
 
 namespace udmaio {
 
-class UDmaBuf : public DmaBufferAbstract {
-    int _fd;
-    void *_mem;
-    UioRegion _phys;
-    boost::log::sources::severity_logger_mt<blt::severity_level> _slg;
+class DataHandlerPython : public DataHandlerSync {
+    std::shared_ptr<UioAxiDmaIf> _dma_ptr;
+    std::shared_ptr<UioMemSgdma> _desc_ptr;
+    std::shared_ptr<DmaBufferAbstract> _mem_ptr;
 
-    size_t _get_size(int buf_idx) const;
-    uintptr_t _get_phys_addr(int buf_idx) const;
+public:
+    DataHandlerPython(std::shared_ptr<UioAxiDmaIf>, std::shared_ptr<UioMemSgdma>, std::shared_ptr<DmaBufferAbstract>);
 
-  public:
-    explicit UDmaBuf(int buf_idx = 0);
+    void start(int nr_pkts, size_t pkt_size, bool init_only = false);
+    py::array_t<uint8_t> numpy_read(uint32_t ms_timeout=0);
+    py::array_t<uint8_t> numpy_read_nb();
 
-    virtual ~UDmaBuf();
-
-    uintptr_t get_phys_addr() const override;
-    uintptr_t get_phys_size() const override;
-
-    void copy_from_buf(const UioRegion &buf_info, std::vector<uint8_t> &out) const override;
 };
 
 } // namespace udmaio

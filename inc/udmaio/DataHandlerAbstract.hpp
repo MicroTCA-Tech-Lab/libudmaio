@@ -28,7 +28,7 @@ namespace udmaio {
 
 class DataHandlerAbstract : private boost::noncopyable {
 
-    boost::log::sources::severity_logger<blt::severity_level> _slg;
+    boost::log::sources::severity_logger_mt<blt::severity_level> _slg;
     UioAxiDmaIf &_dma;
     UioMemSgdma &_desc;
     DmaBufferAbstract &_mem;
@@ -43,11 +43,11 @@ class DataHandlerAbstract : private boost::noncopyable {
     explicit DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem);
     virtual ~DataHandlerAbstract();
 
-    void stop();
+    virtual void stop();
 
     void operator()();
 
-    virtual void process_data(const std::vector<uint8_t> &bytes) = 0;
+    virtual void process_data(std::vector<uint8_t> bytes) = 0;
 };
 
 } // namespace udmaio

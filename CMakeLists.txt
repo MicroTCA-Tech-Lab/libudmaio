@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(libudmaio VERSION 0.8.0)
+project(libudmaio VERSION 0.8.7)
 
 find_package(Boost 1.65 COMPONENTS log program_options REQUIRED)
 
@@ -26,13 +26,13 @@ install(TARGETS udmaio
     PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/udmaio
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
-# example
-add_executable(axi_dma_demo)
-file(GLOB EXAMPLE_SOURCES "example/src/*.cpp")
-target_sources(axi_dma_demo PRIVATE ${EXAMPLE_SOURCES})
-target_include_directories(axi_dma_demo PRIVATE example/inc)
-target_link_libraries(axi_dma_demo Boost::log Boost::program_options Boost::dynamic_linking udmaio)
-target_compile_options(axi_dma_demo PRIVATE -Wall -Wextra -O2)
+# cpp example
+add_executable(axi_dma_demo_cpp)
+file(GLOB EXAMPLE_SOURCES "example/demo_cpp/src/*.cpp")
+target_sources(axi_dma_demo_cpp PRIVATE ${EXAMPLE_SOURCES})
+target_include_directories(axi_dma_demo_cpp PRIVATE example/demo_cpp/inc)
+target_link_libraries(axi_dma_demo_cpp Boost::log Boost::program_options Boost::dynamic_linking udmaio)
+target_compile_options(axi_dma_demo_cpp PRIVATE -Wall -Wextra -O2)
 if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16.0") 
-    target_precompile_headers(axi_dma_demo PRIVATE example/inc/BoostPCH.hpp)
+    target_precompile_headers(axi_dma_demo_cpp PRIVATE example/demo_cpp/inc/BoostPCH.hpp)
 endif()

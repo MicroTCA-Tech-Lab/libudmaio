@@ -29,13 +29,13 @@ UioMemSgdma::S2mmDesc &UioMemSgdma::_desc(size_t i) const
     return *(reinterpret_cast<S2mmDesc *>(addr));
 }
 
-void UioMemSgdma::write_cyc_mode(const std::vector<uint64_t> &dst_buf_addrs) {
-    _nr_cyc_desc = dst_buf_addrs.size();
+void UioMemSgdma::write_cyc_mode(const std::vector<UioRegion> &dst_bufs) {
+    _nr_cyc_desc = dst_bufs.size();
     _next_readable_buf = 0;
     size_t i = 0;
-    for (auto dst_buf_addr : dst_buf_addrs) {
+    for (auto dst_buf : dst_bufs) {
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-            << _log_name() << ": dest buf addr = 0x" << std::hex << dst_buf_addr << std::dec;
+            << _log_name() << ": dest buf addr = 0x" << std::hex << dst_buf.addr << std::dec;
 
         uintptr_t nxtdesc = _region.addr +  ((i + 1) % _nr_cyc_desc) * DESC_ADDR_STEP;
 
@@ -43,13 +43,32 @@ void UioMemSgdma::write_cyc_mode(const std::vector<uint64_t> &dst_buf_addrs) {
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
         _desc(i++) = {
             .nxtdesc = nxtdesc,
-            .buffer_addr = dst_buf_addr,
-            .control = S2mmDescControl{.buffer_len = BUF_LEN, .rxeof = 0, .rxsof = 0, .rsvd = 0},
+            .buffer_addr = dst_buf.addr,
+            .control = S2mmDescControl{
+                .buffer_len = static_cast<uint32_t>(dst_buf.size),
+                .rxeof = 0,
+                .rxsof = 0,
+                .rsvd = 0
+            },
             .status = {0},
             .app = {0}
         };
 #pragma GCC diagnostic pop
     }
+}
+
+void UioMemSgdma::init_buffers(DmaBufferAbstract& mem, size_t num_buffers, size_t buf_size)
+{
+    // FIXME: enforce alignment constraints?
+    std::vector<UioRegion> dst_bufs;
+    for (size_t i = 0; i < num_buffers; i++) {
+        dst_bufs.push_back({
+            .addr = mem.get_phys_addr() + i * buf_size,
+            .size = buf_size
+        });
+    };
+
+    write_cyc_mode(dst_bufs);
 }
 
 void UioMemSgdma::print_desc(const S2mmDesc &desc) const {

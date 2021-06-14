@@ -11,19 +11,30 @@
 
 #pragma once
 
-#include <iostream>
-#include <string>
+#include <optional>
+#include <thread>
 
-enum DmaMode { XDMA, UIO };
+#include "DataHandlerAbstract.hpp"
+#include "ConcurrentQueue.hpp"
 
-std::istream &operator>>(std::istream &in, DmaMode &mode) {
-    std::string token;
-    in >> token;
-    if (token == "xdma")
-        mode = DmaMode::XDMA;
-    else if (token == "uio")
-        mode = DmaMode::UIO;
-    else
-        in.setstate(std::ios_base::failbit);
-    return in;
-}
+namespace udmaio {
+
+class DataHandlerSync : public DataHandlerAbstract {
+    ConcurrentQueue<std::vector<uint8_t>> _queue;
+    std::optional<std::thread> _ioThread;
+
+public:
+    using DataHandlerAbstract::DataHandlerAbstract;
+    virtual ~DataHandlerSync();
+
+    void operator()();
+
+    void process_data(std::vector<uint8_t> bytes) override;
+
+    virtual void stop() override;
+
+    std::vector<uint8_t> read();
+    std::vector<uint8_t> read(std::chrono::milliseconds timeout);
+};
+
+} // namespace udmaio

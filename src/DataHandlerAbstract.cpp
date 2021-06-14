@@ -66,7 +66,7 @@ void DataHandlerAbstract::_handle_input(const boost::system::error_code& ec) {
     }
 
     if (!bytes.empty()) {
-        process_data(bytes);
+        process_data(std::move(bytes));
     } else {
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
             << "DataHandler: spurious event, got no data";

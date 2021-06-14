@@ -9,19 +9,31 @@
 
 // Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
 
-#include "udmaio/UioIf.hpp"
+#pragma once
 
-// this information comes from the FPGA project
-namespace zup_example_prj {
-  constexpr UioRegion axi_gpio_status { 0x00801000, 4 * 1024 };
-  constexpr UioRegion axi_dma_0 { 0x00910000, 4 * 1024 };
+#include <utility>
 
-  constexpr UioRegion bram_ctrl_0 { 0x00920000, 8 * 1024 };
+#include "udmaio/DataHandlerAbstract.hpp"
 
-  constexpr UioRegion axi_traffic_gen_0 { 0x00890000, 64 * 1024 };
+#include "AxiTrafficGenLfsr.hpp"
 
-  constexpr uint16_t lfsr_bytes_per_beat = 16;
+using namespace udmaio;
 
-  constexpr uintptr_t fpga_mem_phys_addr = 0x400000000UL;
-  constexpr uintptr_t pcie_axi4l_offset = 0x88000000;
-}
+class DataHandlerPrint : public DataHandlerAbstract {
+
+    std::optional<AxiTrafficGenLfsr> lfsr;
+
+    boost::log::sources::severity_logger_mt<blt::severity_level> _slg;
+
+    void process_data(std::vector<uint8_t> bytes) override;
+
+    uint64_t _counter_ok;
+    uint64_t _counter_total;
+    uint64_t _num_bytes_expected;
+    uint64_t _num_bytes_rcvd;
+
+  public:
+    explicit DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem,
+                              uint64_t num_bytes_expected);
+    std::pair<uint64_t, uint64_t> operator()();
+};

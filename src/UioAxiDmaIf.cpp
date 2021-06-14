@@ -62,25 +62,14 @@ void UioAxiDmaIf::start(uintptr_t start_desc) {
         << _log_name() << ": DMA ctrl = 0x" << std::hex << tmp_ctrl_after << std::dec;
 }
 
-void UioAxiDmaIf::arm_interrupt() {
-    if (_skip_write_to_arm_int)
-        return;
-
-    uint32_t mask = 1;
-    int rc = write(_fd_int, &mask, sizeof(mask));
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name() << ": arm interrupt enable, ret code = " << rc;
-}
-
 uint32_t UioAxiDmaIf::clear_interrupt() {
-    uint32_t irq_count;
-    int rc = read(_fd_int, &irq_count, sizeof(irq_count));
+    uint32_t irq_count = wait_for_interrupt();
 
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
     _wr_reg<S2mmDmaStatusReg>(ADDR_S2MM_DMASR, { .IOC_Irq = 1 });
 
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name() << ": clear interrupt , ret code = " << rc << ", irq count = " << irq_count;
+        << _log_name() << ": clear interrupt";
     return irq_count;
 }
 

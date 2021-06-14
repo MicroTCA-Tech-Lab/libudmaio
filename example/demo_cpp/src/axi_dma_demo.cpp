@@ -22,15 +22,13 @@
 #include <boost/log/trivial.hpp>
 #include <boost/program_options.hpp>
 
-#include "udmaio/FpgaMemBuffer.hpp"
+#include "udmaio/FpgaMemBufferOverXdma.hpp"
 #include "udmaio/UDmaBuf.hpp"
 #include "udmaio/UioAxiDmaIf.hpp"
 #include "udmaio/UioIf.hpp"
-#include "udmaio/UioIfFactory.hpp"
 #include "udmaio/UioMemSgdma.hpp"
 
 #include "DataHandlerPrint.hpp"
-#include "DmaMode.hpp"
 #include "UioGpioStatus.hpp"
 #include "UioTrafficGen.hpp"
 #include "ZupExampleProjectConsts.hpp"
@@ -92,67 +90,45 @@ int main(int argc, char *argv[]) {
 
     std::signal(SIGINT, signal_handler);
 
-    auto gpio_status = (mode == DmaMode::UIO)
-            ? UioIfFactory::create_from_uio<UioGpioStatus>("axi_gpio_status")
-            : UioIfFactory::create_from_xdma<UioGpioStatus>(
-                dev_path,
-                zup_example_prj::axi_gpio_status,
-                zup_example_prj::pcie_axi4l_offset
-            );
+    auto cfg_ptr = (mode == DmaMode::UIO)
+        ? static_cast<std::unique_ptr<UioConfigBase>>(std::make_unique<UioConfigUio>())
+        : static_cast<std::unique_ptr<UioConfigBase>>(std::make_unique<UioConfigXdma>(
+            dev_path,
+            zup_example_prj::pcie_axi4l_offset
+        ));
+    auto& cfg = *cfg_ptr;
+    
+    auto gpio_status = std::make_unique<UioGpioStatus>(cfg(zup_example_prj::axi_gpio_status));
+
     bool is_ddr4_init = gpio_status->is_ddr4_init_calib_complete();
     BOOST_LOG_TRIVIAL(debug) << "DDR4 init = " << is_ddr4_init;
     if (!is_ddr4_init) {
         throw std::runtime_error("DDR4 init calib is not complete");
     }
 
-    auto axi_dma = (mode == DmaMode::UIO)
-                       ? UioIfFactory::create_from_uio<UioAxiDmaIf>("hier_daq_arm_axi_dma_0")
-                       : UioIfFactory::create_from_xdma<UioAxiDmaIf>(
-                           dev_path,
-                           zup_example_prj::axi_dma_0,
-                           zup_example_prj::pcie_axi4l_offset,
-                           "events0"
-                        );
+    auto axi_dma = std::make_unique<UioAxiDmaIf>(cfg(zup_example_prj::axi_dma_0));
+    auto mem_sgdma = std::make_unique<UioMemSgdma>(cfg(zup_example_prj::bram_ctrl_0));
+    auto traffic_gen = std::make_unique<UioTrafficGen>(cfg(zup_example_prj::axi_traffic_gen_0));
 
-    auto mem_sgdma =
-        (mode == DmaMode::UIO)
-            ? UioIfFactory::create_from_uio<UioMemSgdma>("hier_daq_arm_axi_bram_ctrl_0")
-            : UioIfFactory::create_from_xdma<UioMemSgdma>(
-                dev_path,
-                zup_example_prj::bram_ctrl_0,
-                zup_example_prj::pcie_axi4l_offset
-            );
-    auto traffic_gen =
-        (mode == DmaMode::UIO)
-            ? UioIfFactory::create_from_uio<UioTrafficGen>("hier_daq_arm_axi_traffic_gen_0")
-            : UioIfFactory::create_from_xdma<UioTrafficGen>(
-                dev_path,
-                zup_example_prj::axi_traffic_gen_0,
-                zup_example_prj::pcie_axi4l_offset
-            );
+    auto udmabuf = (mode == DmaMode::UIO)
+        ? static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<UDmaBuf>())
+        : static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<FpgaMemBufferOverXdma>(
+            dev_path,
+            zup_example_prj::fpga_mem_phys_addr
+        ));
 
-    auto udmabuf =
-        (mode == DmaMode::UIO)
-            ? static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<UDmaBuf>())
-            : static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<FpgaMemBuffer>(
-                dev_path,
-                zup_example_prj::fpga_mem_phys_addr
-            ));
+    const size_t pkt_size = pkt_len * zup_example_prj::lfsr_bytes_per_beat;
 
     DataHandlerPrint data_handler{
         *axi_dma,
         *mem_sgdma,
         *udmabuf,
-        nr_pkts * pkt_len * zup_example_prj::lfsr_bytes_per_beat
+        nr_pkts * pkt_size
     };
     auto fut = std::async(std::launch::async, std::ref(data_handler));
 
-    std::vector<uintptr_t> dst_buf_addrs;
-    for (int i = 0; i < 32; i++) {
-        dst_buf_addrs.push_back(udmabuf->get_phys_addr() + i * mem_sgdma->BUF_LEN);
-    };
-
-    mem_sgdma->write_cyc_mode(dst_buf_addrs);
+    constexpr int nr_buffers = 32;
+    mem_sgdma->init_buffers(*udmabuf, nr_buffers, pkt_size);
 
     uintptr_t first_desc = mem_sgdma->get_first_desc_addr();
     axi_dma->start(first_desc);
