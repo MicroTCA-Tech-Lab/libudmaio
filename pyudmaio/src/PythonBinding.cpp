@@ -128,7 +128,8 @@ PYBIND11_MODULE(binding, m) {
     data_handler.def(py::init<std::shared_ptr<udmaio::UioAxiDmaIf>,
                               std::shared_ptr<udmaio::UioMemSgdma>,
                               std::shared_ptr<udmaio::DmaBufferAbstract>>())
-                .def("start", &udmaio::DataHandlerPython::start)
+                .def("start", &udmaio::DataHandlerPython::start,
+                        py::arg("nr_pkts"), py::arg("pkt_size"), py::arg("init_only") = false)
                 .def("stop", &udmaio::DataHandlerPython::stop)
                 .def("read", &udmaio::DataHandlerPython::numpy_read)
                 .def("read_nb", &udmaio::DataHandlerPython::numpy_read_nb);
