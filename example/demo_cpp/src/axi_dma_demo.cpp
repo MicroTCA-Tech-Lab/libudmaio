@@ -76,7 +76,7 @@ int main(int argc, char *argv[]) {
     bpo::notify(vm);
 
     if (mode == DmaMode::XDMA && dev_path.empty()) {
-        std::cerr << "XDMA mode needs path to device (--dev-path)" << std::endl;
+        std::cerr << "XDMA mode needs path to device (--dev_path)" << std::endl;
         return 0;
     }
 
