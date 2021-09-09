@@ -32,9 +32,14 @@
 #include "UioGpioStatus.hpp"
 #include "UioTrafficGen.hpp"
 
-#if TARGET_HW == ZUP
+#define TARGET_HW_ZUP  1
+#define TARGET_HW_Z7IO 2
+
+#if TARGET_HW == TARGET_HW_ZUP
+#pragma message "Compiling for DAMC-FMC2ZUP"
 #include "ZupExampleProjectConsts.hpp"
-#elif TARGET_HW == Z7IO
+#elif TARGET_HW == TARGET_HW_Z7IO
+#pragma message "Compiling for DAMC-FMC1Z7IO"
 #include "Z7ioExampleProjectConsts.hpp"
 #endif
 

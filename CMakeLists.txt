@@ -26,6 +26,7 @@ install(TARGETS udmaio
     PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/udmaio
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
+# Invoke cmake with -DTARGET_HW=ZUP or -DTARGET_HW=Z7IO. ZUP is the default
 if("${TARGET_HW}" STREQUAL "")
     message(WARNING "Set target hardware, e.g. cmake -DTARGET_HW=ZUP\nSupported targets: ZUP, Z7IO\nUsing ZUP as default target")
     set(TARGET_HW "ZUP")
@@ -38,7 +39,7 @@ target_sources(axi_dma_demo_cpp PRIVATE ${EXAMPLE_SOURCES})
 target_include_directories(axi_dma_demo_cpp PRIVATE example/demo_cpp/inc)
 target_link_libraries(axi_dma_demo_cpp Boost::log Boost::program_options Boost::dynamic_linking udmaio)
 target_compile_options(axi_dma_demo_cpp PRIVATE -Wall -Wextra -O2)
-target_compile_definitions(axi_dma_demo_cpp PRIVATE -DTARGET_HW=${TARGET_HW})
+target_compile_definitions(axi_dma_demo_cpp PRIVATE -DTARGET_HW=TARGET_HW_${TARGET_HW})
 if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16.0") 
     target_precompile_headers(axi_dma_demo_cpp PRIVATE example/demo_cpp/inc/BoostPCH.hpp)
 endif()
