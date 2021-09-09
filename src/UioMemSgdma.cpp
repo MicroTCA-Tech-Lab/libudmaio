@@ -21,12 +21,35 @@ const std::string_view UioMemSgdma::_log_name() const {
     return "UioMemSgdma";
 }
 
+// Workaround for limited PCIe memory access to certain devices:
+// "For 7 series Gen2 IP, PCIe access from the Host system must be limited to 1DW (4 Bytes) transaction only." (see Xilinx pg195, page 10)
+// If using direct access to the mmap()ed area (or a regular memcpy), the CPU will issue larger transfers and the system will crash
+void UioMemSgdma::memcpy32_helper(void *__restrict__ dest, const void *__restrict__ src, size_t n) {
+    assert((reinterpret_cast<uintptr_t>(dest) % sizeof(uint32_t) == 0) && "memcpy32_helper: Dest addr not aligned to 32 bit");
+    assert((reinterpret_cast<uintptr_t>(src) % sizeof(uint32_t) == 0) && "memcpy32_helper: Source addr not aligned to 32 bit");
+    assert((n % sizeof(uint32_t) == 0) && "memcpy32_helper: Copy size not aligned to 32 bit");
+    n /= sizeof(uint32_t);
+    uint32_t *__restrict__ dest32 = static_cast<uint32_t *>(dest);
+    const uint32_t *__restrict__ src32 = static_cast<const uint32_t *>(src);
+    while (n--) {
+        *dest32++ = *src32++;
+    }
+}
 
-UioMemSgdma::S2mmDesc &UioMemSgdma::_desc(size_t i) const
-{
+UioMemSgdma::S2mmDesc* UioMemSgdma::desc_ptr(size_t i) const {
     assert(i < _nr_cyc_desc && "desc index out of range");
     char *addr = static_cast<char *>(_mem) + (i * DESC_ADDR_STEP);
-    return *(reinterpret_cast<S2mmDesc *>(addr));
+    return reinterpret_cast<S2mmDesc *>(addr);
+}
+
+UioMemSgdma::S2mmDesc UioMemSgdma::read_desc(size_t i) const {
+    S2mmDesc result;
+    memcpy32_helper(&result, desc_ptr(i), sizeof(S2mmDesc));
+    return result;
+}
+
+void UioMemSgdma::write_desc(size_t i, const S2mmDesc& src) {
+    memcpy32_helper(desc_ptr(i), &src, sizeof(S2mmDesc));
 }
 
 void UioMemSgdma::write_cyc_mode(const std::vector<UioRegion> &dst_bufs) {
@@ -41,7 +64,7 @@ void UioMemSgdma::write_cyc_mode(const std::vector<UioRegion> &dst_bufs) {
 
 #pragma GCC diagnostic push // We're OK that everything not listed is zero-initialized.
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
-        _desc(i++) = {
+        S2mmDesc desc{
             .nxtdesc = nxtdesc,
             .buffer_addr = dst_buf.addr,
             .control = S2mmDescControl{
@@ -53,6 +76,7 @@ void UioMemSgdma::write_cyc_mode(const std::vector<UioRegion> &dst_bufs) {
             .status = {0},
             .app = {0}
         };
+        write_desc(i++, desc);
 #pragma GCC diagnostic pop
     }
 }
@@ -93,7 +117,7 @@ void UioMemSgdma::print_desc(const S2mmDesc &desc) const {
 
 void UioMemSgdma::print_descs() const {
     for (size_t i = 0; i < _nr_cyc_desc; i++) {
-        print_desc(_desc(i));
+        print_desc(read_desc(i));
     }
 }
 
@@ -111,7 +135,7 @@ std::vector<UioRegion> UioMemSgdma::get_full_buffers() {
     std::vector<UioRegion> bufs;
 
     for (size_t i = 0; i < _nr_cyc_desc; i++) {
-        S2mmDesc &desc = _desc(_next_readable_buf);
+        S2mmDesc desc = read_desc(_next_readable_buf);
         if (!desc.status.cmpit) {
             break;
         }

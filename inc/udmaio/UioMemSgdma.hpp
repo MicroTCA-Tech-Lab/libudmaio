@@ -50,7 +50,10 @@ class UioMemSgdma : public UioIf {
     static_assert(sizeof(S2mmDescStatus) == 4, "size of S2mmDescStatus must be 4");
     static_assert(sizeof(S2mmDesc) == 0x38, "size of S2mmDesc must be 0x34+4 for alignment");
 
-    S2mmDesc &_desc(size_t i) const;
+    static void memcpy32_helper(void *__restrict__ dest, const void *__restrict__ src, size_t n);
+    S2mmDesc* desc_ptr(size_t i) const;
+    S2mmDesc read_desc(size_t i) const;
+    void write_desc(size_t i, const S2mmDesc& src);
 
     size_t _nr_cyc_desc;
     size_t _next_readable_buf;
