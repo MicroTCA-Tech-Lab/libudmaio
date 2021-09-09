@@ -7,7 +7,8 @@ import os
 import numpy as np
 import argparse
 
-from pyudmaio import ConfigUio, ConfigXdma, FpgaMemBufferOverAxi, UDmaBuf, UioAxiDmaIf, UioMemSgdma, DataHandler
+from pyudmaio import ConfigUio, ConfigXdma, FpgaMemBufferOverAxi, FpgaMemBufferOverXdma
+from pyudmaio import UDmaBuf, UioAxiDmaIf, UioMemSgdma, DataHandler
 from pyudmaio import LogLevel, set_logging_level
 from GpioStatus import GpioStatus
 from TrafficGen import TrafficGen
