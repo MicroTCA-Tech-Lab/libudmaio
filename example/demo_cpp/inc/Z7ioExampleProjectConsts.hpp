@@ -18,7 +18,7 @@ namespace target_hw_consts {
   const UioDeviceLocation bram_ctrl_0 { "hier_daq_axi_bram_ctrl_0", { 0x00920000, 8 * 1024 }};
   const UioDeviceLocation axi_traffic_gen_0 { "hier_daq_axi_traffic_gen_0", { 0x00890000, 64 * 1024 }};
 
-  constexpr uint16_t lfsr_bytes_per_beat = 16;
+  constexpr uint16_t lfsr_bytes_per_beat = 8;
 
   constexpr uintptr_t fpga_mem_phys_addr = 0x03f100000UL;
   constexpr uintptr_t pcie_axi4l_offset = 0x44000000;
