@@ -15,9 +15,10 @@
 #include "DataHandlerPrint.hpp"
 
 DataHandlerPrint::DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem,
-                                   uint64_t num_bytes_expected)
+                                   unsigned int num_bytes_per_beat, uint64_t num_bytes_expected)
     : DataHandlerAbstract{dma, desc, mem}, lfsr{std::nullopt},
       _counter_ok{0}, _counter_total{0},
+      _num_bytes_per_beat{num_bytes_per_beat},
       _num_bytes_expected{num_bytes_expected}, _num_bytes_rcvd{0} {}
 
 void DataHandlerPrint::process_data(std::vector<uint8_t> bytes) {
@@ -38,20 +39,21 @@ void DataHandlerPrint::process_data(std::vector<uint8_t> bytes) {
         lfsr = AxiTrafficGenLfsr{seed};
     }
 
-    for (unsigned int i = 0; i < bytes.size() / 2 / 8; i++) {
+    size_t idx = 0;
+    for (unsigned int i = 0; i < bytes.size() / _num_bytes_per_beat; i++) {
         uint16_t exp_val = lfsr->get();
-        for (int j = 0; j < 8; j++) {
-            uint16_t recv_val = vals[i * 8 + j];
+        for (unsigned int j = 0; j < (_num_bytes_per_beat / sizeof(uint16_t)); j++) {
+            uint16_t recv_val = vals[idx];
             _counter_total++;
             if (exp_val != recv_val) {
                 BOOST_LOG_SEV(_slg, blt::severity_level::fatal)
-                    << "mismatch, at " << i * 8 + j << " recv = " << std::hex << recv_val
+                    << "mismatch, at " << idx << " recv = " << std::hex << recv_val
                     << ", exp = " << exp_val;
                 stop();
                 return;
-            } else {
-                _counter_ok++;
             }
+            _counter_ok++;
+            idx++;
         }
         lfsr->advance();
     }
