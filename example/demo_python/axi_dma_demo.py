@@ -31,21 +31,21 @@ class Lfsr(object):
 # Checks array against expected LFSR values
 class LfsrChecker(object):
 
-    # Each array is built up by blocks of N identical values (determined by bus size)
-    IDENTICAL_BLK_LEN = 8
-
-    def __init__(self):
+    # blk_len: Each array is built up by blocks of N identical values (determined by bus width)
+    # e.g. 8 for ZUP, 4 for Z7IO
+    def __init__(self, blk_len):
         self.lfsr = None
+        self.blk_len = blk_len
     
     def check(self, arr):
         if self.lfsr is None:
             self.lfsr = Lfsr(arr[0])
         
         # Create vector of expected values
-        vfy = np.asarray([self.lfsr.advance() for n in range(len(arr) // self.IDENTICAL_BLK_LEN)], dtype=np.uint16)
+        vfy = np.asarray([self.lfsr.advance() for n in range(len(arr) // self.blk_len)], dtype=np.uint16)
 
         # Create matrix where rows are blocks of identical values
-        arr = arr.reshape(-1, self.IDENTICAL_BLK_LEN)
+        arr = arr.reshape(-1, self.blk_len)
 
         for n, v in enumerate(vfy):
             if not np.all(np.equal(arr[n], v)):
@@ -72,6 +72,11 @@ def main():
                         type=int,
                         default=10,
                         help='Pause between packets, default 10'
+    )
+    parser.add_argument('-b', '--blk_len',
+                        type=int,
+                        default=8,
+                        help='LFSR block length / words per beat, default 8'
     )
     parser.add_argument('-d', '--dev_path',
                         type=str,
@@ -138,7 +143,7 @@ def main():
     print('Starting TrafficGen')
     traffic_gen.start(args.nr_pkts, args.pkt_len, args.pkt_pause)
 
-    checker = LfsrChecker()
+    checker = LfsrChecker(args.blk_len)
     words_total = 0
 
     while True:
