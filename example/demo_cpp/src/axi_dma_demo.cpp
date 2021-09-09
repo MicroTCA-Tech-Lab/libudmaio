@@ -31,7 +31,12 @@
 #include "DataHandlerPrint.hpp"
 #include "UioGpioStatus.hpp"
 #include "UioTrafficGen.hpp"
+
+#if TARGET_HW == ZUP
 #include "ZupExampleProjectConsts.hpp"
+#elif TARGET_HW == Z7IO
+#include "Z7ioExampleProjectConsts.hpp"
+#endif
 
 namespace blt = boost::log::trivial;
 namespace bpo = boost::program_options;
@@ -94,11 +99,11 @@ int main(int argc, char *argv[]) {
         ? static_cast<std::unique_ptr<UioConfigBase>>(std::make_unique<UioConfigUio>())
         : static_cast<std::unique_ptr<UioConfigBase>>(std::make_unique<UioConfigXdma>(
             dev_path,
-            zup_example_prj::pcie_axi4l_offset
+            target_hw_consts::pcie_axi4l_offset
         ));
     auto& cfg = *cfg_ptr;
     
-    auto gpio_status = std::make_unique<UioGpioStatus>(cfg(zup_example_prj::axi_gpio_status));
+    auto gpio_status = std::make_unique<UioGpioStatus>(cfg(target_hw_consts::axi_gpio_status));
 
     bool is_ddr4_init = gpio_status->is_ddr4_init_calib_complete();
     BOOST_LOG_TRIVIAL(debug) << "DDR4 init = " << is_ddr4_init;
@@ -106,18 +111,18 @@ int main(int argc, char *argv[]) {
         throw std::runtime_error("DDR4 init calib is not complete");
     }
 
-    auto axi_dma = std::make_unique<UioAxiDmaIf>(cfg(zup_example_prj::axi_dma_0));
-    auto mem_sgdma = std::make_unique<UioMemSgdma>(cfg(zup_example_prj::bram_ctrl_0));
-    auto traffic_gen = std::make_unique<UioTrafficGen>(cfg(zup_example_prj::axi_traffic_gen_0));
+    auto axi_dma = std::make_unique<UioAxiDmaIf>(cfg(target_hw_consts::axi_dma_0));
+    auto mem_sgdma = std::make_unique<UioMemSgdma>(cfg(target_hw_consts::bram_ctrl_0));
+    auto traffic_gen = std::make_unique<UioTrafficGen>(cfg(target_hw_consts::axi_traffic_gen_0));
 
     auto udmabuf = (mode == DmaMode::UIO)
         ? static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<UDmaBuf>())
         : static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<FpgaMemBufferOverXdma>(
             dev_path,
-            zup_example_prj::fpga_mem_phys_addr
+            target_hw_consts::fpga_mem_phys_addr
         ));
 
-    const size_t pkt_size = pkt_len * zup_example_prj::lfsr_bytes_per_beat;
+    const size_t pkt_size = pkt_len * target_hw_consts::lfsr_bytes_per_beat;
 
     DataHandlerPrint data_handler{
         *axi_dma,
