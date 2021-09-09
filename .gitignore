@@ -1,4 +1,5 @@
 /build*
+/pyudmaio/build*
 /.vscode
 *.pyc
 *.egg-info
