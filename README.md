@@ -85,7 +85,7 @@ produces a LFSR pattern which is then compared in the interrupt handler.
 
 ### udev rules
 
-To match the device file paths expected by the library, [this udev rule](https://msktechvcs.desy.de/techlab/drivers/dma_ip_drivers/-/tree/master/XDMA/linux-kernel/etc/udev/rules.d) has to be installed for creating the appropriate symlinks.
+Install TechLab's xdma metapackage (either as Debian package `xdma-dkms` from [doocs.desy.de](https://doocs.desy.de/pub/doocs/dists/) or [from source](https://github.com/MicroTCA-Tech-Lab/xdma-metapackage)) to make sure udev rules are installed to match the device file paths expected by the library.
 
 ### UIO - with default parameters
 
