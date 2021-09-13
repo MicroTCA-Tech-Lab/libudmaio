@@ -13,7 +13,7 @@ from pyudmaio import LogLevel, set_logging_level
 from GpioStatus import GpioStatus
 from TrafficGen import TrafficGen
 
-from ProjectConsts import ZupExampleConsts
+import ProjectConsts
 
 # Implements LFSR as described in "AXI Traffic Generator v3.0"
 class Lfsr(object):
@@ -57,6 +57,11 @@ class LfsrChecker(object):
 def main():
     parser = argparse.ArgumentParser(
         description='AXI DMA demo for LFSR traffic generator'
+    )
+    parser.add_argument('-H', '--hardware',
+                        type=str,
+                        default='zup',
+                        help='Hardware (zup or z7io)'
     )
     parser.add_argument('-l', '--pkt_len',
                         type=int,
@@ -113,7 +118,10 @@ def main():
         print("Set log level to DEBUG")
         set_logging_level(LogLevel.DEBUG)
 
-    consts = ZupExampleConsts
+    consts = {
+        'zup': ProjectConsts.ZupExampleConsts,
+        'z7io': ProjectConsts.Z7ioExampleConsts
+    }[args.hardware.lower()]
     
     if args.xdma:
         cfg = ConfigXdma(args.dev_path, consts.PCIE_AXI4L_OFFSET)
