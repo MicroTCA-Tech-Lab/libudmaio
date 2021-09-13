@@ -139,3 +139,23 @@ $ ./axi_dma_demo --mode xdma --debug
 [2021-03-01 13:49:31.942382] [0x00007f6b7e568700] [debug]   DataHandler: stopping thread
 Counters: OK = 8192, total = 8192
 ```
+
+## Selecting the target hardware
+
+The demo application includes hardware-related constants such as bus width and IP core addresses. To make it work, the right target hardware must be selected. The demo application currently supports DAMC-FMC2ZUP and DAMC-FMC1Z7IO.
+
+### Hardware selection for the C++ demo
+
+The hardware is selected at build time using a CMake parameter.
+```
+cmake -DTARGET_HW=ZUP
+cmake -DTARGET_HW=Z7IO
+```
+
+### Hardware selection for the Python demo
+
+The hardware is selected at runtime using a command line parameter.
+```
+./axi_dma_demo.py -H zup
+./axi_dma_demo.py -H z7io
+```
