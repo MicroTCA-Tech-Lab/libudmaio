@@ -20,6 +20,6 @@ namespace target_hw_consts {
 
   constexpr uint16_t lfsr_bytes_per_beat = 16;
 
-  constexpr uintptr_t fpga_mem_phys_addr = 0x400000000UL;
+  constexpr uintptr_t fpga_mem_phys_addr = 0x500000000UL;
   constexpr uintptr_t pcie_axi4l_offset = 0x88000000;
 }

@@ -17,7 +17,7 @@ class ZupExampleConsts(object):
         'hier_daq_arm_axi_traffic_gen_0', UioRegion(0x00890000, 64 * 1024)
     )
 
-    FPGA_MEM_PHYS_ADDR = 0x400000000
+    FPGA_MEM_PHYS_ADDR = 0x500000000
     PCIE_AXI4L_OFFSET = 0x88000000
     LFSR_BYTES_PER_BEAT = 16
 
