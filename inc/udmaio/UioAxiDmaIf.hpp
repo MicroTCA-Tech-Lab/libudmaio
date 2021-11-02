@@ -63,7 +63,7 @@ class UioAxiDmaIf : public UioIf {
     static_assert(sizeof(S2mmDmaStatusReg) == 4);
 
     virtual const std::string_view _log_name() const override;
- 
+
   public:
     using UioIf::UioIf;
 
@@ -71,6 +71,7 @@ class UioAxiDmaIf : public UioIf {
     using UioIf::arm_interrupt;
     uint32_t clear_interrupt();
     int get_fd_int() const;
+    bool check_for_errors();
 };
 
 } // namespace udmaio
