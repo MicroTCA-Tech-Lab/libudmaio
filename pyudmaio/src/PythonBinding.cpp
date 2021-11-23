@@ -54,7 +54,7 @@ PYBIND11_MODULE(binding, m) {
         .def_readwrite("size", &udmaio::UioRegion::size);
 
     py::class_<udmaio::UioDeviceInfo>(m, "UioDeviceInfo")
-        .def(py::init<>())
+        .def(py::init<std::string, std::string, udmaio::UioRegion, uintptr_t>())
         .def_readwrite("dev_path", &udmaio::UioDeviceInfo::dev_path)
         .def_readwrite("evt_path", &udmaio::UioDeviceInfo::evt_path)
         .def_readwrite("region", &udmaio::UioDeviceInfo::region)
