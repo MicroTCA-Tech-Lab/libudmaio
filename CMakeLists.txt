@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(libudmaio VERSION 0.9.0)
+project(libudmaio VERSION 0.9.1)
 
 find_package(Boost 1.65 COMPONENTS log program_options REQUIRED)
 
