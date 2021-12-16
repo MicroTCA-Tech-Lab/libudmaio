@@ -121,7 +121,9 @@ PYBIND11_MODULE(binding, m) {
          .def(py::init<udmaio::UioDeviceInfo>());
 
     py::class_<udmaio::UioMemSgdma, udmaio::UioIf, std::shared_ptr<udmaio::UioMemSgdma>>(m, "UioMemSgdma")
-         .def(py::init<udmaio::UioDeviceInfo>());
+         .def(py::init<udmaio::UioDeviceInfo>())
+         .def("print_descs", &udmaio::UioMemSgdma::print_descs)
+         ;
 
     py::class_<udmaio::DataHandlerPython> data_handler(m, "DataHandler");
 
