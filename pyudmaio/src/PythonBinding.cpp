@@ -133,8 +133,9 @@ PYBIND11_MODULE(binding, m) {
                 .def("start", &udmaio::DataHandlerPython::start,
                         py::arg("nr_pkts"), py::arg("pkt_size"), py::arg("init_only") = false)
                 .def("stop", &udmaio::DataHandlerPython::stop)
-                .def("read", &udmaio::DataHandlerPython::numpy_read)
-                .def("read_nb", &udmaio::DataHandlerPython::numpy_read_nb);
+                .def("read", &udmaio::DataHandlerPython::numpy_read,
+                        py::arg("ms_timeout"))
+                .def("read_nb", &udmaio::DataHandlerPython::numpy_read_nb)
                 ;
 
     py::enum_<boost::log::trivial::severity_level>(m, "LogLevel")
