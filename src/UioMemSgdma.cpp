@@ -117,6 +117,8 @@ void UioMemSgdma::print_desc(const S2mmDesc &desc) const {
 
 void UioMemSgdma::print_descs() const {
     for (size_t i = 0; i < _nr_cyc_desc; i++) {
+        BLI << "Reading desc " << i << "/" << _nr_cyc_desc - 1 << " from offset 0x"
+            << std::hex << i * DESC_ADDR_STEP << std::dec;
         print_desc(read_desc(i));
     }
 }
