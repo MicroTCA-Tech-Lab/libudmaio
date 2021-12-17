@@ -43,11 +43,9 @@ public:
 
     void push(T item) {
         std::unique_lock<std::mutex> lock(_mutex);
-        while (_queue.size() >= MAX_ELEMS) {
-            if (_abort) {
-                return;
-            }
-            _cond.wait(lock);
+        if (_queue.size() >= MAX_ELEMS) {
+            lock.unlock();
+            throw std::runtime_error("libudmaio: ConcurrentQueue full");
         }
         _queue.push(std::move(item));
         lock.unlock();
@@ -67,6 +65,6 @@ private:
     std::queue<T> _queue;
     std::mutex _mutex;
     std::condition_variable _cond;
-    constexpr static size_t MAX_ELEMS = 1000;
+    constexpr static size_t MAX_ELEMS = 64;
     bool _abort = false;
 };
