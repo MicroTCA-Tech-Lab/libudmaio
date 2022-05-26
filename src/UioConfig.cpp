@@ -8,12 +8,14 @@
 //---------------------------------------------------------------------------//
 
 // Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
+// Copyright (c) 2022 Atom Computing, Inc.
 
 #include "udmaio/UioConfig.hpp"
 
 #include <fstream>
 #include <filesystem>
 #include <regex>
+#include <unistd.h>
 
 namespace udmaio {
 
@@ -83,8 +85,50 @@ std::uintptr_t UioConfigUio::_get_map_addr(int uio_number, int map_index) {
     return std::stoull(addr_str, nullptr, 0);
 }
 
+/** @brief gets device info (mem region, mmap offset, ...) from a uio name
+ *
+ * In a case where there are more than one memory mappings, an individual memory
+ * mapping can be selected by appending a colon (":") to the UIO name, followed
+ * by the mapping index. The UIO names are (in most cases) derived from the IP
+ * names in Vivado Block Diagram, and those names cannot include a colon.
+ * Additionally, a colon cannot be used in the device tree identifiers. It is,
+ * therefore, safe to reserve a colon as a special character.
+ *
+ * Example:
+ *
+ * Consider the following output of the `lsuio` command:
+ *
+ * ```
+ * uio8: name=example_clocking, version=devicetree, events=0
+ *     map[0]: addr=0xA0140000, size=65536
+ * uio7: name=example_app_top, version=devicetree, events=0
+ *     map[0]: addr=0xA0200000, size=1048576
+ *     map[1]: addr=0xA0300000, size=65536
+ * ```
+ *
+ * - The "example_clocking" UIO can be selected either with `example_clocking`
+ *   or `example_clocking:0`.
+ * - Similarly, the first memory mapping of "example_app_top" can be selected
+ *   either with `example_app_top` or with `example_app_top:0`.
+ * - Second memory mapping of "example_app_top" can only be selected with
+ *   `example_app_top:1`
+ *
+ */
 UioDeviceInfo UioConfigUio::operator()(std::string dev_name) {
-    int uio_number = _get_uio_number(dev_name);
+
+    int map_index = 0;
+    std::string base_dev_name; // a name without the colon
+
+    size_t colon_pos = dev_name.find(":");
+    if (colon_pos != std::string::npos) {
+        base_dev_name = dev_name.substr(0, colon_pos);
+        std::string_view idx_substr = dev_name.substr(colon_pos+1, std::string::npos);
+        map_index = std::stoi(std::string{idx_substr});
+    } else {
+        base_dev_name = dev_name;
+    }
+
+    int uio_number = _get_uio_number(base_dev_name);
     if (uio_number < 0) {
         throw std::runtime_error("could not find a UIO device " + dev_name);
     }
@@ -92,10 +136,10 @@ UioDeviceInfo UioConfigUio::operator()(std::string dev_name) {
         .dev_path = std::string{"/dev/uio"} + std::to_string(uio_number),
         .evt_path = "",
         .region = {
-            _get_map_addr(uio_number),
-            _get_map_size(uio_number)
+            _get_map_addr(uio_number, map_index),
+            _get_map_size(uio_number, map_index)
         },
-        .mmap_offs = 0
+        .mmap_offs = map_index * getpagesize()
     };
 }
 
