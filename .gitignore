@@ -7,3 +7,6 @@
 # vim-specific things
 *~
 [._]*.un~
+
+# doxygen
+docs/doxygen

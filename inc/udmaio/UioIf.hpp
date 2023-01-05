@@ -37,9 +37,11 @@ namespace blt = boost::log::trivial;
 
 namespace udmaio {
 
-// Base class for UIO interfaces
+/// Base class for UIO interfaces
 class UioIf : private boost::noncopyable {
   public:
+    /// @brief Construct the UioIf
+    /// @param dev UioDeviceInfo describing the connection information
     explicit UioIf(UioDeviceInfo dev)
         : _region{dev.region}, _slg{}, _skip_write_to_arm_int{!dev.evt_path.empty()} {
 
@@ -56,8 +58,7 @@ class UioIf : private boost::noncopyable {
 
         // create memory mapping
         _mem = mmap(NULL, _region.size, PROT_READ | PROT_WRITE, MAP_SHARED, _fd, dev.mmap_offs);
-        BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-            << "UioIf: mmap = 0x" << _mem << std::dec;
+        BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "UioIf: mmap = 0x" << _mem << std::dec;
         if (_mem == MAP_FAILED) {
             throw std::runtime_error("mmap failed for uio " + dev.dev_path);
         }
@@ -72,8 +73,7 @@ class UioIf : private boost::noncopyable {
             if (_fd_int < 0) {
                 throw std::runtime_error("could not open " + dev.evt_path);
             }
-            BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-                << "UioIf: fd_int =  " << _fd_int;
+            BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "UioIf: fd_int =  " << _fd_int;
         }
     }
 
@@ -96,29 +96,22 @@ class UioIf : private boost::noncopyable {
         return static_cast<volatile uint32_t *>(_mem) + offs / 4;
     }
 
-    template<typename T>
-    struct reg_cast_t {
+    template <typename T> struct reg_cast_t {
         union {
             uint32_t raw;
             T data;
         };
     };
 
-    template<typename T>
-    T _rd_reg(uint32_t offs) const {
+    template <typename T> T _rd_reg(uint32_t offs) const {
         static_assert(sizeof(T) == 4, "register access must be 32 bit");
-        reg_cast_t<T> tmp = {
-            .raw = _rd32(offs)
-        };
+        reg_cast_t<T> tmp = {.raw = _rd32(offs)};
         return tmp.data;
     }
 
-    template<typename T>
-    void _wr_reg(uint32_t offs, T data) {
+    template <typename T> void _wr_reg(uint32_t offs, T data) {
         static_assert(sizeof(T) == 4, "register access must be 32 bit");
-        reg_cast_t<T> tmp = {
-            .data = data
-        };
+        reg_cast_t<T> tmp = {.data = data};
         _wr32(offs, tmp.raw);
     }
 
@@ -147,11 +140,11 @@ class UioIf : private boost::noncopyable {
 
     uint32_t wait_for_interrupt() {
         uint32_t irq_count;
-        BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name()
-            << ": wait for interrupt ...";
+        BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+            << _log_name() << ": wait for interrupt ...";
         int rc = read(_fd_int, &irq_count, sizeof(irq_count));
-        BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name()
-            << ": interrupt received, rc = " << rc << ", irq count = " << irq_count;
+        BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+            << _log_name() << ": interrupt received, rc = " << rc << ", irq count = " << irq_count;
         return irq_count;
     }
 

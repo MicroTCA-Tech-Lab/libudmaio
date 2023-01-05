@@ -14,27 +14,34 @@
 #include <optional>
 #include <thread>
 
-#include "DataHandlerAbstract.hpp"
 #include "ConcurrentQueue.hpp"
+#include "DataHandlerAbstract.hpp"
 
 namespace udmaio {
 
-// Synchronous data handler with blocking read interface
+/// Synchronous data handler with blocking read interface
 class DataHandlerSync : public DataHandlerAbstract {
-    ConcurrentQueue<std::vector<uint8_t>> _queue;
-    std::optional<std::thread> _ioThread;
+    ConcurrentQueue<std::vector<uint8_t>> _queue; ///< FIFO queue holding the received data
+    std::optional<std::thread> _ioThread;         ///< I/O thread
 
-public:
+  public:
     using DataHandlerAbstract::DataHandlerAbstract;
     virtual ~DataHandlerSync();
 
+    /// Run the data reception
     void operator()();
 
     void process_data(std::vector<uint8_t> bytes) override;
 
     virtual void stop() override;
 
+    /// @brief Blocking read
+    /// @return Received data
     std::vector<uint8_t> read();
+
+    /// @brief Blocking read with timeout
+    /// @param timeout Timeout in milliseconds
+    /// @return Received data
     std::vector<uint8_t> read(std::chrono::milliseconds timeout);
 };
 

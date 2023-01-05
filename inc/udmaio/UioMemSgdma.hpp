@@ -11,12 +11,12 @@
 
 #pragma once
 
-#include "UioIf.hpp"
 #include "DmaBufferAbstract.hpp"
+#include "UioIf.hpp"
 
 namespace udmaio {
 
-// Interface to AXI DMA scatter-gather buffers & descriptors
+/// Interface to AXI DMA scatter-gather buffers & descriptors
 class UioMemSgdma : public UioIf {
     static constexpr int DESC_ADDR_STEP = 0x40;
 
@@ -52,9 +52,9 @@ class UioMemSgdma : public UioIf {
     static_assert(sizeof(S2mmDesc) == 0x38, "size of S2mmDesc must be 0x34+4 for alignment");
 
     static void memcpy32_helper(void *__restrict__ dest, const void *__restrict__ src, size_t n);
-    S2mmDesc* desc_ptr(size_t i) const;
+    S2mmDesc *desc_ptr(size_t i) const;
     S2mmDesc read_desc(size_t i) const;
-    void write_desc(size_t i, const S2mmDesc& src);
+    void write_desc(size_t i, const S2mmDesc &src);
 
     size_t _nr_cyc_desc;
     size_t _next_readable_buf;
@@ -65,14 +65,25 @@ class UioMemSgdma : public UioIf {
   public:
     using UioIf::UioIf;
 
-    void init_buffers(DmaBufferAbstract& mem, size_t num_buffers, size_t buf_size);
+    /// @brief Initialize SGDMA descriptors
+    /// @param mem Memory receiving the SGDMA data
+    /// @param num_buffers Number of descriptors / SGDMA blocks
+    /// @param buf_size Size of each SGDMA block
+    void init_buffers(DmaBufferAbstract &mem, size_t num_buffers, size_t buf_size);
 
+    /// @brief Print SGDMA descriptor
+    /// @param desc SGDMA descriptor
     void print_desc(const S2mmDesc &desc) const;
 
+    /// @brief Print all SGDMA descriptors
     void print_descs() const;
 
+    /// @brief Get address of first SGDMA descriptor (needed for the AXI DMA I/F)
+    /// @return Address of first SGDMA descriptor
     uintptr_t get_first_desc_addr() const;
 
+    /// @brief Get full SGDMA buffers
+    /// @return Vector of UioRegion pointing into full buffers
     std::vector<UioRegion> get_full_buffers();
 };
 

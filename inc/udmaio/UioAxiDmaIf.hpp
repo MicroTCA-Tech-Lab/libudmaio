@@ -15,7 +15,7 @@
 
 namespace udmaio {
 
-// Interface to AXI DMA Core
+/// Interface to AXI DMA Core
 class UioAxiDmaIf : public UioIf {
     static constexpr int ADDR_S2MM_DMACR = 0x30;
     static constexpr int ADDR_S2MM_DMASR = 0x34;
@@ -68,10 +68,21 @@ class UioAxiDmaIf : public UioIf {
   public:
     using UioIf::UioIf;
 
+    /// @brief Configure and start the AXI DMA controller
+    /// @param start_desc Address of first SGDMA descriptor
     void start(uintptr_t start_desc);
+
     using UioIf::arm_interrupt;
+
+    /// Wait for interrupt and acknowledge it
     uint32_t clear_interrupt();
+
+    /// @brief Get file descriptor of interrupt event file
+    /// @return Event file descriptor
     int get_fd_int() const;
+
+    /// @brief Check status register and log any errors
+    /// @return true if any error occurred
     bool check_for_errors();
 };
 

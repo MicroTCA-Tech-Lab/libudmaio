@@ -28,7 +28,7 @@ namespace blt = boost::log::trivial;
 
 namespace udmaio {
 
-// DMA data buffer accessed over AXI/UIO, described w/ explicit address & size
+/// DMA data buffer accessed over AXI/UIO, described w/ explicit address & size
 class FpgaMemBufferOverAxi : public DmaBufferAbstract, public UioIf {
 
     virtual const std::string_view _log_name() const override {

@@ -12,15 +12,17 @@
 #pragma once
 
 #include <chrono>
+#include <condition_variable>
+#include <mutex>
 #include <queue>
 #include <thread>
-#include <mutex>
-#include <condition_variable>
 
-// Helper class to implement a blocking FIFO between threads
-template <typename T>
-class ConcurrentQueue {
-public:
+/// Helper class to implement a blocking FIFO between threads
+template <typename T> class ConcurrentQueue {
+  public:
+    /// @brief Pop an element from the queue, block if none available
+    /// @param timeout timeout in ms, default 0 = no timeout, return empty T if elapsed
+    /// @return Element popped from the queue
     T pop(std::chrono::milliseconds timeout = std::chrono::milliseconds{0}) {
         std::unique_lock<std::mutex> lock{_mutex};
         while (_queue.empty()) {
@@ -42,6 +44,8 @@ public:
         return val;
     }
 
+    /// @brief Push an element to the queue
+    /// @param item Element to push to the queue
     void push(T item) {
         std::unique_lock<std::mutex> lock(_mutex);
         if (_queue.size() >= MAX_ELEMS) {
@@ -53,16 +57,17 @@ public:
         _cond.notify_one();
     }
 
+    /// @brief Abort any blocking consumers
     void abort() {
         _abort = true;
         _cond.notify_one();
     }
 
     ConcurrentQueue() = default;
-    ConcurrentQueue(const ConcurrentQueue&) = delete;
-    ConcurrentQueue& operator=(const ConcurrentQueue&) = delete;
+    ConcurrentQueue(const ConcurrentQueue &) = delete;
+    ConcurrentQueue &operator=(const ConcurrentQueue &) = delete;
 
-private:
+  private:
     std::queue<T> _queue;
     std::mutex _mutex;
     std::condition_variable _cond;

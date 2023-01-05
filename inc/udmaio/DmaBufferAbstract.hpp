@@ -20,11 +20,20 @@
 
 namespace udmaio {
 
-// Base class for DMA data buffer
+/// Base class for DMA data buffer
 class DmaBufferAbstract : private boost::noncopyable {
   public:
+    /// @brief Get physical address
+    /// @return Physical address of DMA data buffer
     virtual uintptr_t get_phys_addr() const = 0;
+
+    /// @brief Get buffer size
+    /// @return Size of DMA data buffer
     virtual uintptr_t get_phys_size() const = 0;
+
+    /// @brief Get received DMA data
+    /// @param buf_info Memory region of DMA buffer
+    /// @param out Received data
     virtual void copy_from_buf(const UioRegion &buf_info, std::vector<uint8_t> &out) const = 0;
 };
 
