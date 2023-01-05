@@ -12,6 +12,7 @@
 #pragma once
 
 #include <utility>
+#include <optional>
 
 #include "udmaio/DataHandlerAbstract.hpp"
 
