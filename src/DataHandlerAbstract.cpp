@@ -9,19 +9,19 @@
 
 // Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
 
+#include "udmaio/DataHandlerAbstract.hpp"
+
+#include <functional>
 #include <iomanip>
 #include <iostream>
-#include <functional>
 #include <vector>
-
-#include "udmaio/DataHandlerAbstract.hpp"
 
 namespace udmaio {
 
-DataHandlerAbstract::DataHandlerAbstract(UioAxiDmaIf &dma, UioMemSgdma &desc,
-                                         DmaBufferAbstract &mem)
-    : _dma{dma}, _desc{desc}, _mem{mem},
-      _svc{}, _sd{_svc, _dma.get_fd_int()} {
+DataHandlerAbstract::DataHandlerAbstract(UioAxiDmaIf& dma,
+                                         UioMemSgdma& desc,
+                                         DmaBufferAbstract& mem)
+    : _dma{dma}, _desc{desc}, _mem{mem}, _svc{}, _sd{_svc, _dma.get_fd_int()} {
     BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: ctor";
 };
 
@@ -38,13 +38,11 @@ void DataHandlerAbstract::_start_read() {
     _dma.arm_interrupt();
 
     _sd.async_read_some(
-        boost::asio::null_buffers(), // No actual reading - that's deferred to UioAxiDmaIf
-        std::bind(
-            &DataHandlerAbstract::_handle_input,
-            this,
-            std::placeholders::_1 // boost::asio::placeholders::error
-        )
-    );
+        boost::asio::null_buffers(),  // No actual reading - that's deferred to UioAxiDmaIf
+        std::bind(&DataHandlerAbstract::_handle_input,
+                  this,
+                  std::placeholders::_1  // boost::asio::placeholders::error
+                  ));
 }
 
 void DataHandlerAbstract::_handle_input(const boost::system::error_code& ec) {
@@ -55,13 +53,12 @@ void DataHandlerAbstract::_handle_input(const boost::system::error_code& ec) {
     }
 
     uint32_t irq_count = _dma.clear_interrupt();
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << "DataHandler: irq count = " << irq_count;
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: irq count = " << irq_count;
 
     std::vector<UioRegion> full_bufs = _desc.get_full_buffers();
     std::vector<uint8_t> bytes;
 
-    for (auto &buf : full_bufs) {
+    for (auto& buf : full_bufs) {
         _mem.copy_from_buf(buf, bytes);
     }
 
@@ -84,4 +81,4 @@ void DataHandlerAbstract::operator()() {
     BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: finished";
 }
 
-} // namespace udmaio
+}  // namespace udmaio

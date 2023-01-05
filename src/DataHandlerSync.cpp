@@ -40,4 +40,4 @@ std::vector<uint8_t> DataHandlerSync::read(std::chrono::milliseconds timeout) {
     return _queue.pop(timeout);
 }
 
-}
+}  // namespace udmaio

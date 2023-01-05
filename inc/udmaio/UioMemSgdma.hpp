@@ -51,16 +51,16 @@ class UioMemSgdma : public UioIf {
     static_assert(sizeof(S2mmDescStatus) == 4, "size of S2mmDescStatus must be 4");
     static_assert(sizeof(S2mmDesc) == 0x38, "size of S2mmDesc must be 0x34+4 for alignment");
 
-    static void memcpy32_helper(void *__restrict__ dest, const void *__restrict__ src, size_t n);
-    S2mmDesc *desc_ptr(size_t i) const;
+    static void memcpy32_helper(void* __restrict__ dest, const void* __restrict__ src, size_t n);
+    S2mmDesc* desc_ptr(size_t i) const;
     S2mmDesc read_desc(size_t i) const;
-    void write_desc(size_t i, const S2mmDesc &src);
+    void write_desc(size_t i, const S2mmDesc& src);
 
     size_t _nr_cyc_desc;
     size_t _next_readable_buf;
 
     virtual const std::string_view _log_name() const override;
-    void write_cyc_mode(const std::vector<UioRegion> &dst_bufs);
+    void write_cyc_mode(const std::vector<UioRegion>& dst_bufs);
 
   public:
     using UioIf::UioIf;
@@ -69,11 +69,11 @@ class UioMemSgdma : public UioIf {
     /// @param mem Memory receiving the SGDMA data
     /// @param num_buffers Number of descriptors / SGDMA blocks
     /// @param buf_size Size of each SGDMA block
-    void init_buffers(DmaBufferAbstract &mem, size_t num_buffers, size_t buf_size);
+    void init_buffers(DmaBufferAbstract& mem, size_t num_buffers, size_t buf_size);
 
     /// @brief Print SGDMA descriptor
     /// @param desc SGDMA descriptor
-    void print_desc(const S2mmDesc &desc) const;
+    void print_desc(const S2mmDesc& desc) const;
 
     /// @brief Print all SGDMA descriptors
     void print_descs() const;
@@ -87,6 +87,6 @@ class UioMemSgdma : public UioIf {
     std::vector<UioRegion> get_full_buffers();
 };
 
-std::ostream &operator<<(std::ostream &os, const UioRegion &buf_info);
+std::ostream& operator<<(std::ostream& os, const UioRegion& buf_info);
 
-} // namespace udmaio
+}  // namespace udmaio

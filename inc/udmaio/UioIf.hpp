@@ -16,22 +16,21 @@
 #include <iostream>
 #include <memory>
 
+#include <boost/core/noncopyable.hpp>
+#include <boost/log/core/core.hpp>
+#include <boost/log/expressions.hpp>
+#include <boost/log/keywords/severity.hpp>
+#include <boost/log/sources/logger.hpp>
+#include <boost/log/trivial.hpp>
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
 
-#include <boost/core/noncopyable.hpp>
-#include <boost/log/core/core.hpp>
-#include <boost/log/expressions.hpp>
-#include <boost/log/keywords/severity.hpp>
-#include <boost/log/sources/logger.hpp>
+#include "udmaio/UioConfig.hpp"
 #include <boost/log/sources/record_ostream.hpp>
 #include <boost/log/sources/severity_logger.hpp>
-#include <boost/log/trivial.hpp>
-
-#include "udmaio/UioConfig.hpp"
 
 namespace blt = boost::log::trivial;
 
@@ -44,7 +43,6 @@ class UioIf : private boost::noncopyable {
     /// @param dev UioDeviceInfo describing the connection information
     explicit UioIf(UioDeviceInfo dev)
         : _region{dev.region}, _slg{}, _skip_write_to_arm_int{!dev.evt_path.empty()} {
-
         // Can't call virtual fn from ctor, so can't use _log_name()
         BOOST_LOG_SEV(_slg, blt::severity_level::debug) << "UioIf: uio name = " << dev.dev_path;
 
@@ -87,29 +85,32 @@ class UioIf : private boost::noncopyable {
 
   protected:
     int _fd, _fd_int;
-    void *_mem;
+    void* _mem;
     UioRegion _region;
     mutable boost::log::sources::severity_logger_mt<blt::severity_level> _slg;
     bool _skip_write_to_arm_int;
 
-    volatile uint32_t *_reg_ptr(uint32_t offs) const {
-        return static_cast<volatile uint32_t *>(_mem) + offs / 4;
+    volatile uint32_t* _reg_ptr(uint32_t offs) const {
+        return static_cast<volatile uint32_t*>(_mem) + offs / 4;
     }
 
-    template <typename T> struct reg_cast_t {
+    template <typename T>
+    struct reg_cast_t {
         union {
             uint32_t raw;
             T data;
         };
     };
 
-    template <typename T> T _rd_reg(uint32_t offs) const {
+    template <typename T>
+    T _rd_reg(uint32_t offs) const {
         static_assert(sizeof(T) == 4, "register access must be 32 bit");
         reg_cast_t<T> tmp = {.raw = _rd32(offs)};
         return tmp.data;
     }
 
-    template <typename T> void _wr_reg(uint32_t offs, T data) {
+    template <typename T>
+    void _wr_reg(uint32_t offs, T data) {
         static_assert(sizeof(T) == 4, "register access must be 32 bit");
         reg_cast_t<T> tmp = {.data = data};
         _wr32(offs, tmp.raw);
@@ -151,4 +152,4 @@ class UioIf : private boost::noncopyable {
     virtual const std::string_view _log_name() const = 0;
 };
 
-} // namespace udmaio
+}  // namespace udmaio

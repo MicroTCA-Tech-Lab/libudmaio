@@ -11,13 +11,12 @@
 
 #pragma once
 
-#include <fcntl.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-
 #include <boost/log/core/core.hpp>
 #include <boost/log/sources/logger.hpp>
 #include <boost/log/trivial.hpp>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
 #include "DmaBufferAbstract.hpp"
 
@@ -32,7 +31,7 @@ class FpgaMemBufferOverXdma : public DmaBufferAbstract {
     /// @brief Constructs a DMA data buffer
     /// @param path Base path of XDMA instance in `/dev`
     /// @param phys_addr Physical address of DMA data buffer
-    explicit FpgaMemBufferOverXdma(const std::string &path, uintptr_t phys_addr)
+    explicit FpgaMemBufferOverXdma(const std::string& path, uintptr_t phys_addr)
         : _phys_addr{phys_addr} {
         const std::string dev_path{path + "/c2h0"};
         _dma_fd = open(dev_path.c_str(), O_RDWR);
@@ -49,7 +48,7 @@ class FpgaMemBufferOverXdma : public DmaBufferAbstract {
         return 0;
     }
 
-    void copy_from_buf(const UioRegion &buf_info, std::vector<uint8_t> &out) const override {
+    void copy_from_buf(const UioRegion& buf_info, std::vector<uint8_t>& out) const override {
         size_t old_size = out.size();
         size_t new_size = old_size + buf_info.size;
         out.resize(new_size);
@@ -61,4 +60,4 @@ class FpgaMemBufferOverXdma : public DmaBufferAbstract {
     }
 };
 
-} // namespace udmaio
+}  // namespace udmaio

@@ -25,7 +25,7 @@ namespace udmaio {
 /// (see https://github.com/ikwzm/udmabuf)
 class UDmaBuf : public DmaBufferAbstract {
     int _fd;
-    void *_mem;
+    void* _mem;
     UioRegion _phys;
     boost::log::sources::severity_logger_mt<blt::severity_level> _slg;
 
@@ -42,7 +42,7 @@ class UDmaBuf : public DmaBufferAbstract {
     uintptr_t get_phys_addr() const override;
     uintptr_t get_phys_size() const override;
 
-    void copy_from_buf(const UioRegion &buf_info, std::vector<uint8_t> &out) const override;
+    void copy_from_buf(const UioRegion& buf_info, std::vector<uint8_t>& out) const override;
 };
 
-} // namespace udmaio
+}  // namespace udmaio

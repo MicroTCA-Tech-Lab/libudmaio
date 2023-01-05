@@ -9,19 +9,21 @@
 
 // Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
 
+#include "udmaio/UioAxiDmaIf.hpp"
+
 #include <ios>
 
 #include <boost/log/core/core.hpp>
 #include <boost/log/sources/logger.hpp>
 #include <boost/log/trivial.hpp>
 
-#include "udmaio/UioAxiDmaIf.hpp"
-
 namespace blt = boost::log::trivial;
 
 namespace udmaio {
 
-const std::string_view UioAxiDmaIf::_log_name() const { return "UioAxiDmaIf"; }
+const std::string_view UioAxiDmaIf::_log_name() const {
+    return "UioAxiDmaIf";
+}
 
 void UioAxiDmaIf::start(uintptr_t start_desc) {
     BOOST_LOG_SEV(_slg, blt::severity_level::debug)
@@ -50,8 +52,8 @@ void UioAxiDmaIf::start(uintptr_t start_desc) {
     BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name() << ": DMA control write";
 
     // 4.
-    _wr32(ADDR_S2MM_TAILDESC, 0x50);                 // for circular
-    _wr32(ADDR_S2MM_TAILDESC_MSB, start_desc >> 32); // for circular
+    _wr32(ADDR_S2MM_TAILDESC, 0x50);                  // for circular
+    _wr32(ADDR_S2MM_TAILDESC_MSB, start_desc >> 32);  // for circular
 
     uint32_t tmp_ctrl_after = _rd32(ADDR_S2MM_DMACR);
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
@@ -68,7 +70,9 @@ uint32_t UioAxiDmaIf::clear_interrupt() {
     return irq_count;
 }
 
-int UioAxiDmaIf::get_fd_int() const { return _fd_int; }
+int UioAxiDmaIf::get_fd_int() const {
+    return _fd_int;
+}
 
 bool UioAxiDmaIf::check_for_errors() {
     bool has_errors = false;
@@ -110,4 +114,4 @@ bool UioAxiDmaIf::check_for_errors() {
     return has_errors;
 }
 
-} // namespace udmaio
+}  // namespace udmaio

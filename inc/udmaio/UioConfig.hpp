@@ -19,16 +19,16 @@ namespace udmaio {
 
 /// DMA access mode
 enum class DmaMode {
-    XDMA, ///< PCIe XDMA driver
-    UIO   ///< ARM userspace I/O
+    XDMA,  ///< PCIe XDMA driver
+    UIO    ///< ARM userspace I/O
 };
 
-std::istream &operator>>(std::istream &in, DmaMode &mode);
+std::istream& operator>>(std::istream& in, DmaMode& mode);
 
 /// General-purpose struct to define a memory area
 struct UioRegion {
-    uintptr_t addr; ///< Start of region
-    size_t size;    ///< Size of region
+    uintptr_t addr;  ///< Start of region
+    size_t size;     ///< Size of region
 };
 
 /// Holds information where a device can be found over both UIO and XDMA
@@ -106,4 +106,4 @@ class UioConfigXdma : public UioConfigBase {
     DmaMode mode() override { return DmaMode::XDMA; };
 };
 
-} // namespace udmaio
+}  // namespace udmaio

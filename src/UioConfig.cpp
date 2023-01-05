@@ -11,13 +11,13 @@
 
 #include "udmaio/UioConfig.hpp"
 
-#include <fstream>
 #include <filesystem>
+#include <fstream>
 #include <regex>
 
 namespace udmaio {
 
-std::istream &operator>>(std::istream &in, DmaMode &mode) {
+std::istream& operator>>(std::istream& in, DmaMode& mode) {
     std::string token;
     in >> token;
     if (token == "xdma")
@@ -36,7 +36,7 @@ std::istream &operator>>(std::istream &in, DmaMode &mode) {
  */
 int UioConfigUio::_get_uio_number(std::string_view name) {
     std::string path = "/sys/class/uio/";
-    for (const auto &entry : std::filesystem::directory_iterator(path)) {
+    for (const auto& entry : std::filesystem::directory_iterator(path)) {
         std::ifstream ifs{entry.path() / "name"};
 
         if (!ifs) {
@@ -58,11 +58,11 @@ int UioConfigUio::_get_uio_number(std::string_view name) {
 /** @brief gets a size for an uio map */
 size_t UioConfigUio::_get_map_size(int uio_number, int map_index) {
     std::string path{"/sys/class/uio/uio" + std::to_string(uio_number) + "/maps/map" +
-                        std::to_string(map_index) + "/size"};
+                     std::to_string(map_index) + "/size"};
     std::ifstream ifs{path};
     if (!ifs) {
         throw std::runtime_error("could not find a map info for UIO device " +
-                                    std::to_string(uio_number));
+                                 std::to_string(uio_number));
     }
     std::string size_str;
     ifs >> size_str;
@@ -72,11 +72,11 @@ size_t UioConfigUio::_get_map_size(int uio_number, int map_index) {
 /** @brief gets an address (physical) for an uio map */
 std::uintptr_t UioConfigUio::_get_map_addr(int uio_number, int map_index) {
     std::string path{"/sys/class/uio/uio" + std::to_string(uio_number) + "/maps/map" +
-                        std::to_string(map_index) + "/addr"};
+                     std::to_string(map_index) + "/addr"};
     std::ifstream ifs{path};
     if (!ifs) {
         throw std::runtime_error("could not find a map info for UIO device " +
-                                    std::to_string(uio_number));
+                                 std::to_string(uio_number));
     }
     std::string addr_str;
     ifs >> addr_str;
@@ -91,11 +91,8 @@ UioDeviceInfo UioConfigUio::operator()(std::string dev_name) {
     return {
         .dev_path = std::string{"/dev/uio"} + std::to_string(uio_number),
         .evt_path = "",
-        .region = {
-            _get_map_addr(uio_number),
-            _get_map_size(uio_number)
-        },
-        .mmap_offs = 0
+        .region = {_get_map_addr(uio_number), _get_map_size(uio_number)},
+        .mmap_offs = 0,
     };
 }
 
@@ -104,19 +101,14 @@ UioDeviceInfo UioConfigUio::operator()(UioDeviceLocation dev_loc) {
 }
 
 UioConfigXdma::UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs)
-:_xdma_path(xdma_path)
-,_pcie_offs(pcie_offs) {
-}
+    : _xdma_path(xdma_path), _pcie_offs(pcie_offs) {}
 
 UioDeviceInfo UioConfigXdma::operator()(UioRegion dev_region, std::string evt_dev) {
     return {
         .dev_path = _xdma_path + "/user",
         .evt_path = !evt_dev.empty() ? _xdma_path + "/" + evt_dev : "",
-        .region = {
-            dev_region.addr | _pcie_offs,
-            dev_region.size
-        },
-        .mmap_offs = dev_region.addr
+        .region = {dev_region.addr | _pcie_offs, dev_region.size},
+        .mmap_offs = dev_region.addr,
     };
 };
 
@@ -124,4 +116,4 @@ UioDeviceInfo UioConfigXdma::operator()(UioDeviceLocation dev_loc) {
     return operator()(dev_loc.xdma_region, dev_loc.xdma_evt_dev);
 }
 
-}
+}  // namespace udmaio

@@ -18,7 +18,8 @@
 #include <thread>
 
 /// Helper class to implement a blocking FIFO between threads
-template <typename T> class ConcurrentQueue {
+template <typename T>
+class ConcurrentQueue {
   public:
     /// @brief Pop an element from the queue, block if none available
     /// @param timeout timeout in ms, default 0 = no timeout, return empty T if elapsed
@@ -64,8 +65,8 @@ template <typename T> class ConcurrentQueue {
     }
 
     ConcurrentQueue() = default;
-    ConcurrentQueue(const ConcurrentQueue &) = delete;
-    ConcurrentQueue &operator=(const ConcurrentQueue &) = delete;
+    ConcurrentQueue(const ConcurrentQueue&) = delete;
+    ConcurrentQueue& operator=(const ConcurrentQueue&) = delete;
 
   private:
     std::queue<T> _queue;

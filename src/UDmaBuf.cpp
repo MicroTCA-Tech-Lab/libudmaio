@@ -9,6 +9,8 @@
 
 // Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
 
+#include "udmaio/UDmaBuf.hpp"
+
 #include <filesystem>
 #include <fstream>
 #include <iostream>
@@ -19,15 +21,10 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#include "udmaio/UDmaBuf.hpp"
-
 namespace udmaio {
 
 UDmaBuf::UDmaBuf(int buf_idx) {
-    _phys = {
-        _get_phys_addr(buf_idx),
-        _get_size(buf_idx)
-    };
+    _phys = {_get_phys_addr(buf_idx), _get_size(buf_idx)};
     BOOST_LOG_SEV(_slg, blt::severity_level::debug) << "UDmaBuf: size      = " << _phys.size;
     BOOST_LOG_SEV(_slg, blt::severity_level::debug)
         << "UDmaBuf: phys addr = " << std::hex << _phys.addr << std::dec;
@@ -81,12 +78,12 @@ uintptr_t UDmaBuf::get_phys_size() const {
     return _phys.size;
 }
 
-void UDmaBuf::copy_from_buf(const UioRegion &buf_info, std::vector<uint8_t> &out) const {
+void UDmaBuf::copy_from_buf(const UioRegion& buf_info, std::vector<uint8_t>& out) const {
     size_t old_size = out.size();
     size_t new_size = old_size + buf_info.size;
     uintptr_t mmap_addr = buf_info.addr - _phys.addr;
     out.resize(new_size);
-    std::memcpy(out.data() + old_size, static_cast<uint8_t *>(_mem) + mmap_addr, buf_info.size);
+    std::memcpy(out.data() + old_size, static_cast<uint8_t*>(_mem) + mmap_addr, buf_info.size);
 }
 
-} // namespace udmaio
+}  // namespace udmaio

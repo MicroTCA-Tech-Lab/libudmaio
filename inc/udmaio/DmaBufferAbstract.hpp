@@ -34,7 +34,7 @@ class DmaBufferAbstract : private boost::noncopyable {
     /// @brief Get received DMA data
     /// @param buf_info Memory region of DMA buffer
     /// @param out Received data
-    virtual void copy_from_buf(const UioRegion &buf_info, std::vector<uint8_t> &out) const = 0;
+    virtual void copy_from_buf(const UioRegion& buf_info, std::vector<uint8_t>& out) const = 0;
 };
 
-} // namespace udmaio
+}  // namespace udmaio

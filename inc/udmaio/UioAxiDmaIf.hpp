@@ -86,4 +86,4 @@ class UioAxiDmaIf : public UioIf {
     bool check_for_errors();
 };
 
-} // namespace udmaio
+}  // namespace udmaio

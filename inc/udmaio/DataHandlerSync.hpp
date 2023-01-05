@@ -21,8 +21,8 @@ namespace udmaio {
 
 /// Synchronous data handler with blocking read interface
 class DataHandlerSync : public DataHandlerAbstract {
-    ConcurrentQueue<std::vector<uint8_t>> _queue; ///< FIFO queue holding the received data
-    std::optional<std::thread> _ioThread;         ///< I/O thread
+    ConcurrentQueue<std::vector<uint8_t>> _queue;  ///< FIFO queue holding the received data
+    std::optional<std::thread> _ioThread;          ///< I/O thread
 
   public:
     using DataHandlerAbstract::DataHandlerAbstract;
@@ -45,4 +45,4 @@ class DataHandlerSync : public DataHandlerAbstract {
     std::vector<uint8_t> read(std::chrono::milliseconds timeout);
 };
 
-} // namespace udmaio
+}  // namespace udmaio

@@ -11,15 +11,14 @@
 
 #pragma once
 
+#include <boost/log/core/core.hpp>
+#include <boost/log/sources/logger.hpp>
+#include <boost/log/trivial.hpp>
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
-
-#include <boost/log/core/core.hpp>
-#include <boost/log/sources/logger.hpp>
-#include <boost/log/trivial.hpp>
 
 #include "DmaBufferAbstract.hpp"
 #include "UioIf.hpp"
@@ -30,10 +29,7 @@ namespace udmaio {
 
 /// DMA data buffer accessed over AXI/UIO, described w/ explicit address & size
 class FpgaMemBufferOverAxi : public DmaBufferAbstract, public UioIf {
-
-    virtual const std::string_view _log_name() const override {
-        return "FpgaMemBufferOverAxi";
-    }
+    virtual const std::string_view _log_name() const override { return "FpgaMemBufferOverAxi"; }
 
   public:
     using UioIf::UioIf;
@@ -42,7 +38,7 @@ class FpgaMemBufferOverAxi : public DmaBufferAbstract, public UioIf {
 
     uintptr_t get_phys_size() const override { return _region.size; }
 
-    void copy_from_buf(const UioRegion &buf_info, std::vector<uint8_t> &out) const override {
+    void copy_from_buf(const UioRegion& buf_info, std::vector<uint8_t>& out) const override {
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
             << "FpgaMemBufferOverAxi: copy_from_buf: buf_info.addr = 0x" << std::hex
             << buf_info.addr << std::dec;
@@ -52,8 +48,8 @@ class FpgaMemBufferOverAxi : public DmaBufferAbstract, public UioIf {
         size_t new_size = old_size + buf_info.size;
         uintptr_t mmap_addr = buf_info.addr - _region.addr;
         out.resize(new_size);
-        std::memcpy(out.data() + old_size, static_cast<uint8_t *>(_mem) + mmap_addr, buf_info.size);
+        std::memcpy(out.data() + old_size, static_cast<uint8_t*>(_mem) + mmap_addr, buf_info.size);
     }
 };
 
-} // namespace udmaio
+}  // namespace udmaio
