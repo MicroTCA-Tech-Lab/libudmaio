@@ -20,6 +20,7 @@
 
 namespace udmaio {
 
+// Base class for DMA data buffer
 class DmaBufferAbstract : private boost::noncopyable {
   public:
     virtual uintptr_t get_phys_addr() const = 0;

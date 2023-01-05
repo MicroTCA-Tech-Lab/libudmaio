@@ -20,6 +20,7 @@
 
 using namespace udmaio;
 
+// DataHandler implementation that checks LFSR data and prints status / stats
 class DataHandlerPrint : public DataHandlerAbstract {
 
     std::optional<AxiTrafficGenLfsr> lfsr;

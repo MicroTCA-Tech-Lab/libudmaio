@@ -15,6 +15,7 @@
 
 using namespace udmaio;
 
+// Interface to GPIO status port of the demo application
 class UioGpioStatus : UioIf {
     static constexpr int ADDR_GPIO_DATA = 0;
 

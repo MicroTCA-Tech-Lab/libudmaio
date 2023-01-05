@@ -23,6 +23,7 @@
 
 namespace udmaio {
 
+// DMA data buffer accessed over XDMA using the xdma c2h0 stream channel
 class FpgaMemBufferOverXdma : public DmaBufferAbstract {
     int _dma_fd;
     uintptr_t _phys_addr;

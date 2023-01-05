@@ -21,6 +21,7 @@ namespace blt = boost::log::trivial;
 
 namespace udmaio {
 
+// DMA data buffer accessed over AXI/UIO, implemented w/ udmabuf (see https://github.com/ikwzm/udmabuf)
 class UDmaBuf : public DmaBufferAbstract {
     int _fd;
     void *_mem;

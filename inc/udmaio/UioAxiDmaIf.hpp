@@ -15,6 +15,7 @@
 
 namespace udmaio {
 
+// Interface to AXI DMA Core
 class UioAxiDmaIf : public UioIf {
     static constexpr int ADDR_S2MM_DMACR = 0x30;
     static constexpr int ADDR_S2MM_DMASR = 0x34;

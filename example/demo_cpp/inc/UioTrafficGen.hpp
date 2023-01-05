@@ -15,7 +15,7 @@
 
 using namespace udmaio;
 
-
+// Interface to LFSR core of the demo application
 class UioTrafficGen : UioIf {
     static constexpr int ADDR_ST_CTRL = 0x30;
     static constexpr int ADDR_ST_CONFIG = 0x34;

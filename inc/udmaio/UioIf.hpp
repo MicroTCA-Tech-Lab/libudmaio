@@ -37,6 +37,7 @@ namespace blt = boost::log::trivial;
 
 namespace udmaio {
 
+// Base class for UIO interfaces
 class UioIf : private boost::noncopyable {
   public:
     explicit UioIf(UioDeviceInfo dev)

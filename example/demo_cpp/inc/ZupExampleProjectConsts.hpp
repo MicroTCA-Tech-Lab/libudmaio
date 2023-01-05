@@ -11,6 +11,8 @@
 
 #include "udmaio/UioConfig.hpp"
 
+using udmaio::UioDeviceLocation;
+
 // this information comes from the FPGA project
 namespace target_hw_consts {
   const UioDeviceLocation axi_gpio_status { "hier_interconnect_axi_gpio_status", { 0x50000, 4 * 1024 }};

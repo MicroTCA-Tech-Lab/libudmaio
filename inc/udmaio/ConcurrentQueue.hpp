@@ -17,6 +17,7 @@
 #include <mutex>
 #include <condition_variable>
 
+// Helper class to implement a blocking FIFO between threads
 template <typename T>
 class ConcurrentQueue {
 public:

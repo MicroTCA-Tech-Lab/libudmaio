@@ -26,6 +26,7 @@ namespace blt = boost::log::trivial;
 
 namespace udmaio {
 
+// Base class to implement a DMA data reception handler
 class DataHandlerAbstract : private boost::noncopyable {
 
     boost::log::sources::severity_logger_mt<blt::severity_level> _slg;

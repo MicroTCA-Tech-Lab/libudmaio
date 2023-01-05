@@ -19,6 +19,7 @@
 
 namespace udmaio {
 
+// Synchronous data handler with blocking read interface
 class DataHandlerSync : public DataHandlerAbstract {
     ConcurrentQueue<std::vector<uint8_t>> _queue;
     std::optional<std::thread> _ioThread;

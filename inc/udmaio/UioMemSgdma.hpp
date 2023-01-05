@@ -16,6 +16,7 @@
 
 namespace udmaio {
 
+// Interface to AXI DMA scatter-gather buffers & descriptors
 class UioMemSgdma : public UioIf {
     static constexpr int DESC_ADDR_STEP = 0x40;
 

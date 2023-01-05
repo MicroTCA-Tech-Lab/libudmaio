@@ -13,15 +13,15 @@
 
 #include <cstdint>
 
-/// implements LFSR as described in "AXI Traffic Generator v3.0"
+// Implements LFSR as described in "AXI Traffic Generator v3.0"
 class AxiTrafficGenLfsr {
   public:
     AxiTrafficGenLfsr(uint16_t seed) : val{seed} {};
 
-    /// set seed to a specific value
+    // Set seed to a specific value
     void set(uint16_t seed) { val = seed; }
 
-    /// advance LFSR by one iteration, return new value
+    // Advance LFSR by one iteration, return new value
     uint16_t advance() {
         uint16_t new_bit = 1 ^ (val) ^ (val >> 1) ^ (val >> 3) ^ (val >> 12);
 
@@ -29,7 +29,7 @@ class AxiTrafficGenLfsr {
         return val;
     }
 
-    /// get value without advancing the LFSR
+    // Get value without advancing the LFSR
     uint16_t get() const { return val; }
 
   private:
