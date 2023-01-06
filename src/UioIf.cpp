@@ -1,0 +1,98 @@
+#include "udmaio/UioIf.hpp"
+
+namespace udmaio {
+
+std::unique_ptr<UioConfigBase> UioIf::_link_cfg{};
+
+void UioIf::setLinkAxi() {
+    _link_cfg = std::make_unique<UioConfigUio>();
+}
+
+void UioIf::setLinkXdma(std::string xdma_path, uintptr_t pcie_offs) {
+    _link_cfg = std::make_unique<UioConfigXdma>(xdma_path, pcie_offs);
+}
+
+UioIf::UioIf(UioDeviceInfo dev)
+    : _region{dev.region}, _slg{}, _skip_write_to_arm_int{!dev.evt_path.empty()} {
+    // Can't call virtual fn from ctor, so can't use _log_name()
+    BOOST_LOG_SEV(_slg, blt::severity_level::debug) << "UioIf: uio name = " << dev.dev_path;
+
+    // open fd
+    _fd = ::open(dev.dev_path.c_str(), O_RDWR);
+    if (_fd < 0) {
+        throw std::runtime_error("could not open " + dev.dev_path);
+    }
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+        << "UioIf: fd =  " << _fd << ", size = " << _region.size;
+
+    // create memory mapping
+    _mem = mmap(NULL, _region.size, PROT_READ | PROT_WRITE, MAP_SHARED, _fd, dev.mmap_offs);
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "UioIf: mmap = 0x" << _mem << std::dec;
+    if (_mem == MAP_FAILED) {
+        throw std::runtime_error("mmap failed for uio " + dev.dev_path);
+    }
+
+    // if there is an event filename, open event fd - otherwise use the same as for the mmap
+    if (dev.evt_path.empty()) {
+        _fd_int = _fd;
+        BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "UioIf: using fd for fd_int";
+    } else {
+        _fd_int = ::open(dev.evt_path.c_str(), O_RDWR);
+
+        if (_fd_int < 0) {
+            throw std::runtime_error("could not open " + dev.evt_path);
+        }
+        BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "UioIf: fd_int =  " << _fd_int;
+    }
+}
+
+UioIf::UioIf(UioDeviceLocation dev_loc) : UioIf(_dev_info_from_dev_loc(dev_loc)){};
+
+UioIf::~UioIf() {
+    munmap(_mem, _region.size);
+    if (_fd_int != _fd) {
+        ::close(_fd_int);
+    }
+    ::close(_fd);
+}
+
+UioDeviceInfo UioIf::_dev_info_from_dev_loc(UioDeviceLocation dev_loc) {
+    if (!_link_cfg) {
+        throw std::runtime_error("UioIf link type not set (use setLinkAxi() or setLinkXdma())");
+    }
+    return _link_cfg->operator()(dev_loc);
+}
+
+void UioIf::arm_interrupt() {
+    if (_skip_write_to_arm_int)
+        return;
+
+    uint32_t mask = 1;
+    int rc = write(_fd_int, &mask, sizeof(mask));
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+        << _log_name() << ": arm interrupt enable, ret code = " << rc;
+}
+
+uint32_t UioIf::wait_for_interrupt() {
+    uint32_t irq_count;
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name() << ": wait for interrupt ...";
+    int rc = read(_fd_int, &irq_count, sizeof(irq_count));
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+        << _log_name() << ": interrupt received, rc = " << rc << ", irq count = " << irq_count;
+    return irq_count;
+}
+
+uint32_t UioIf::_rd32(uint32_t offs) const {
+    uint32_t tmp = *_reg_ptr(offs);
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+        << _log_name() << ": read at 0x" << std::hex << offs << " = 0x" << tmp << std::dec;
+    return tmp;
+}
+
+void UioIf::_wr32(uint32_t offs, uint32_t data) {
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+        << _log_name() << ": write at 0x" << std::hex << offs << " = 0x" << data << std::dec;
+    *_reg_ptr(offs) = data;
+}
+
+}  // namespace udmaio
