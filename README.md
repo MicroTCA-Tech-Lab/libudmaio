@@ -162,6 +162,12 @@ The hardware is selected at runtime using a command line parameter.
 
 # Source code documentation
 
+## Local build
+
 * To create the Doxygen documentation for the library, run `doxygen` in the source tree root.
 * To create the Doxygen documentation for the C++ example, run `doxygen` in the `example` directory.
 * The Doxygen documentation is created in `docs/libudmaio` and `docs/example`, respectively.
+
+## GitHub pages
+
+The Doxygen source code documentation of the master branch is also available on [GitHub pages](https://microtca-tech-lab.github.io/libudmaio/).
