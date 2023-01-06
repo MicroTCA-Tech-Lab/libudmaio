@@ -9,17 +9,23 @@
 
 // Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
 
+#include "DataHandlerPrint.hpp"
+
 #include <iostream>
 #include <thread>
 
-#include "DataHandlerPrint.hpp"
-
-DataHandlerPrint::DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem,
-                                   unsigned int num_bytes_per_beat, uint64_t num_bytes_expected)
-    : DataHandlerAbstract{dma, desc, mem}, lfsr{std::nullopt},
-      _counter_ok{0}, _counter_total{0},
-      _num_bytes_per_beat{num_bytes_per_beat},
-      _num_bytes_expected{num_bytes_expected}, _num_bytes_rcvd{0} {}
+DataHandlerPrint::DataHandlerPrint(UioAxiDmaIf& dma,
+                                   UioMemSgdma& desc,
+                                   DmaBufferAbstract& mem,
+                                   unsigned int num_bytes_per_beat,
+                                   uint64_t num_bytes_expected)
+    : DataHandlerAbstract{dma, desc, mem}
+    , lfsr{std::nullopt}
+    , _counter_ok{0}
+    , _counter_total{0}
+    , _num_bytes_per_beat{num_bytes_per_beat}
+    , _num_bytes_expected{num_bytes_expected}
+    , _num_bytes_rcvd{0} {}
 
 void DataHandlerPrint::process_data(std::vector<uint8_t> bytes) {
     BOOST_LOG_SEV(_slg, blt::severity_level::debug)
@@ -32,7 +38,7 @@ void DataHandlerPrint::process_data(std::vector<uint8_t> bytes) {
         return;
     }
 
-    const uint16_t *vals = reinterpret_cast<const uint16_t *>(&bytes[0]);
+    const uint16_t* vals = reinterpret_cast<const uint16_t*>(&bytes[0]);
 
     if (!lfsr) {
         uint16_t seed = vals[0];
@@ -61,9 +67,11 @@ void DataHandlerPrint::process_data(std::vector<uint8_t> bytes) {
     if (_num_bytes_expected != 0 && _num_bytes_rcvd >= _num_bytes_expected) {
         // We're done.
         if (_num_bytes_rcvd == _num_bytes_expected) {
-            BOOST_LOG_SEV(_slg, blt::severity_level::debug) << "DataHandlerPrint: Received all packets";
+            BOOST_LOG_SEV(_slg, blt::severity_level::debug)
+                << "DataHandlerPrint: Received all packets";
         } else {
-            BOOST_LOG_SEV(_slg, blt::severity_level::error) << "DataHandlerPrint: Received more packets than expected";
+            BOOST_LOG_SEV(_slg, blt::severity_level::error)
+                << "DataHandlerPrint: Received more packets than expected";
         }
         stop();
     }

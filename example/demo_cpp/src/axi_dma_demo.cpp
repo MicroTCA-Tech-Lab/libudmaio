@@ -10,29 +10,28 @@
 // Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
 
 #include <csignal>
+#include <future>
 #include <iostream>
 #include <stdexcept>
-#include <future>
 
 #include <boost/log/core/core.hpp>
 #include <boost/log/expressions.hpp>
 #include <boost/log/keywords/severity.hpp>
 #include <boost/log/sources/logger.hpp>
-#include <boost/log/sources/severity_logger.hpp>
 #include <boost/log/trivial.hpp>
-#include <boost/program_options.hpp>
 
+#include "DataHandlerPrint.hpp"
+#include "UioGpioStatus.hpp"
+#include "UioTrafficGen.hpp"
 #include "udmaio/FpgaMemBufferOverXdma.hpp"
 #include "udmaio/UDmaBuf.hpp"
 #include "udmaio/UioAxiDmaIf.hpp"
 #include "udmaio/UioIf.hpp"
 #include "udmaio/UioMemSgdma.hpp"
+#include <boost/log/sources/severity_logger.hpp>
+#include <boost/program_options.hpp>
 
-#include "DataHandlerPrint.hpp"
-#include "UioGpioStatus.hpp"
-#include "UioTrafficGen.hpp"
-
-#define TARGET_HW_ZUP  1
+#define TARGET_HW_ZUP 1
 #define TARGET_HW_Z7IO 2
 
 #if TARGET_HW == TARGET_HW_ZUP
@@ -51,9 +50,11 @@ using namespace std::chrono_literals;
 
 volatile bool g_stop_loop = false;
 
-void signal_handler([[maybe_unused]] int signal) { g_stop_loop = true; }
+void signal_handler([[maybe_unused]] int signal) {
+    g_stop_loop = true;
+}
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
     bpo::options_description desc("AXI DMA demo");
     bool debug, trace;
     uint16_t pkt_pause;
@@ -100,14 +101,13 @@ int main(int argc, char *argv[]) {
 
     std::signal(SIGINT, signal_handler);
 
-    auto cfg_ptr = (mode == DmaMode::UIO)
-        ? static_cast<std::unique_ptr<UioConfigBase>>(std::make_unique<UioConfigUio>())
-        : static_cast<std::unique_ptr<UioConfigBase>>(std::make_unique<UioConfigXdma>(
-            dev_path,
-            target_hw_consts::pcie_axi4l_offset
-        ));
+    auto cfg_ptr =
+        (mode == DmaMode::UIO)
+            ? static_cast<std::unique_ptr<UioConfigBase>>(std::make_unique<UioConfigUio>())
+            : static_cast<std::unique_ptr<UioConfigBase>>(
+                  std::make_unique<UioConfigXdma>(dev_path, target_hw_consts::pcie_axi4l_offset));
     auto& cfg = *cfg_ptr;
-    
+
     auto gpio_status = std::make_unique<UioGpioStatus>(cfg(target_hw_consts::axi_gpio_status));
 
     bool is_ddr4_init = gpio_status->is_ddr4_init_calib_complete();
@@ -120,22 +120,20 @@ int main(int argc, char *argv[]) {
     auto mem_sgdma = std::make_unique<UioMemSgdma>(cfg(target_hw_consts::bram_ctrl_0));
     auto traffic_gen = std::make_unique<UioTrafficGen>(cfg(target_hw_consts::axi_traffic_gen_0));
 
-    auto udmabuf = (mode == DmaMode::UIO)
-        ? static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<UDmaBuf>())
-        : static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<FpgaMemBufferOverXdma>(
-            dev_path,
-            target_hw_consts::fpga_mem_phys_addr
-        ));
+    auto udmabuf =
+        (mode == DmaMode::UIO)
+            ? static_cast<std::unique_ptr<DmaBufferAbstract>>(std::make_unique<UDmaBuf>())
+            : static_cast<std::unique_ptr<DmaBufferAbstract>>(
+                  std::make_unique<FpgaMemBufferOverXdma>(dev_path,
+                                                          target_hw_consts::fpga_mem_phys_addr));
 
     const size_t pkt_size = pkt_len * target_hw_consts::lfsr_bytes_per_beat;
 
-    DataHandlerPrint data_handler{
-        *axi_dma,
-        *mem_sgdma,
-        *udmabuf,
-        target_hw_consts::lfsr_bytes_per_beat,
-        nr_pkts * pkt_size
-    };
+    DataHandlerPrint data_handler{*axi_dma,
+                                  *mem_sgdma,
+                                  *udmabuf,
+                                  target_hw_consts::lfsr_bytes_per_beat,
+                                  nr_pkts * pkt_size};
     auto fut = std::async(std::launch::async, std::ref(data_handler));
 
     constexpr int nr_buffers = 32;

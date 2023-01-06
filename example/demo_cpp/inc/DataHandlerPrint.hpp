@@ -11,18 +11,16 @@
 
 #pragma once
 
-#include <utility>
 #include <optional>
-
-#include "udmaio/DataHandlerAbstract.hpp"
+#include <utility>
 
 #include "AxiTrafficGenLfsr.hpp"
+#include "udmaio/DataHandlerAbstract.hpp"
 
 using namespace udmaio;
 
-// DataHandler implementation that checks LFSR data and prints status / stats
+/// DataHandler implementation that checks LFSR data and prints status / stats
 class DataHandlerPrint : public DataHandlerAbstract {
-
     std::optional<AxiTrafficGenLfsr> lfsr;
 
     boost::log::sources::severity_logger_mt<blt::severity_level> _slg;
@@ -36,7 +34,10 @@ class DataHandlerPrint : public DataHandlerAbstract {
     uint64_t _num_bytes_rcvd;
 
   public:
-    explicit DataHandlerPrint(UioAxiDmaIf &dma, UioMemSgdma &desc, DmaBufferAbstract &mem,
-                              unsigned int num_bytes_per_beat, uint64_t num_bytes_expected);
+    explicit DataHandlerPrint(UioAxiDmaIf& dma,
+                              UioMemSgdma& desc,
+                              DmaBufferAbstract& mem,
+                              unsigned int num_bytes_per_beat,
+                              uint64_t num_bytes_expected);
     std::pair<uint64_t, uint64_t> operator()();
 };

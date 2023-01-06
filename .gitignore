@@ -9,4 +9,5 @@
 [._]*.un~
 
 # doxygen
-docs/doxygen
+docs/libudmaio
+docs/example

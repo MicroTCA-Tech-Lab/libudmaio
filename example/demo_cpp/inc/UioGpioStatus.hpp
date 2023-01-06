@@ -15,7 +15,7 @@
 
 using namespace udmaio;
 
-// Interface to GPIO status port of the demo application
+/// Interface to GPIO status port of the demo application
 class UioGpioStatus : UioIf {
     static constexpr int ADDR_GPIO_DATA = 0;
 
@@ -24,9 +24,7 @@ class UioGpioStatus : UioIf {
         unsigned reserved : 31;
     };
 
-    virtual const std::string_view _log_name() const override {
-        return "UioGpioStatus";
-    };
+    virtual const std::string_view _log_name() const override { return "UioGpioStatus"; };
 
   public:
     using UioIf::UioIf;
