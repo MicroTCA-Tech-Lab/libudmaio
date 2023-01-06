@@ -71,8 +71,8 @@ class UioConfigBase {
 /// Creates UioDeviceInfo from UioDeviceLocation (UIO version)
 class UioConfigUio : public UioConfigBase {
     static int _get_uio_number(std::string_view name);
-    static size_t _get_map_size(int uio_number, int map_index = 0);
-    static std::uintptr_t _get_map_addr(int uio_number, int map_index = 0);
+    static size_t _get_map_size(int uio_number, int map_index);
+    static std::uintptr_t _get_map_addr(int uio_number, int map_index);
 
   public:
     /// @brief Create UioDeviceInfo from device name
