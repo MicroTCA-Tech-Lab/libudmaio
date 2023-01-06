@@ -1,0 +1,27 @@
+name: Doxygen to GitHub Pages
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+        with:
+          submodules: True
+
+      - name: Doxygen build (libudmaio)
+        uses: mattnotmitt/doxygen-action@1.9.5
+
+      - name: Doxygen build (example)
+        uses: mattnotmitt/doxygen-action@1.9.5
+        with:
+          working-directory: ./example
+
+      - name: Doxygen deploy
+        uses: peaceiris/actions-gh-pages@v3.9.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
