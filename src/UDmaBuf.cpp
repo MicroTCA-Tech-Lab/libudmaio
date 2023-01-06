@@ -23,8 +23,7 @@
 
 namespace udmaio {
 
-UDmaBuf::UDmaBuf(int buf_idx) {
-    _phys = {_get_phys_addr(buf_idx), _get_size(buf_idx)};
+UDmaBuf::UDmaBuf(int buf_idx) : _phys{_get_phys_addr(buf_idx), _get_size(buf_idx)} {
     BOOST_LOG_SEV(_slg, blt::severity_level::debug) << "UDmaBuf: size      = " << _phys.size;
     BOOST_LOG_SEV(_slg, blt::severity_level::debug)
         << "UDmaBuf: phys addr = " << std::hex << _phys.addr << std::dec;
@@ -43,7 +42,7 @@ UDmaBuf::UDmaBuf(int buf_idx) {
     }
 }
 
-size_t UDmaBuf::_get_size(int buf_idx) const {
+size_t UDmaBuf::_get_size(int buf_idx) {
     std::string path{"/sys/class/u-dma-buf/udmabuf" + std::to_string(buf_idx) + "/size"};
     std::ifstream ifs{path};
     if (!ifs) {
@@ -54,7 +53,7 @@ size_t UDmaBuf::_get_size(int buf_idx) const {
     return std::stoull(size_str, nullptr, 0);
 }
 
-uintptr_t UDmaBuf::_get_phys_addr(int buf_idx) const {
+uintptr_t UDmaBuf::_get_phys_addr(int buf_idx) {
     std::string path{"/sys/class/u-dma-buf/udmabuf" + std::to_string(buf_idx) + "/phys_addr"};
     std::ifstream ifs{path};
     if (!ifs) {

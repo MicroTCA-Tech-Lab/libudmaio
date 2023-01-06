@@ -26,11 +26,11 @@ namespace udmaio {
 class UDmaBuf : public DmaBufferAbstract {
     int _fd;
     void* _mem;
-    UioRegion _phys;
+    const UioRegion _phys;
     boost::log::sources::severity_logger_mt<blt::severity_level> _slg;
 
-    size_t _get_size(int buf_idx) const;
-    uintptr_t _get_phys_addr(int buf_idx) const;
+    static size_t _get_size(int buf_idx);
+    static uintptr_t _get_phys_addr(int buf_idx);
 
   public:
     /// @brief Constructs a UDmaBuf
