@@ -1,0 +1,41 @@
+\hypertarget{_uio_config_8hpp}{}\doxysection{Uio\+Config.\+hpp File Reference}
+\label{_uio_config_8hpp}\index{UioConfig.hpp@{UioConfig.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Uio\+Config.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structudmaio_1_1_uio_region}{udmaio\+::\+Uio\+Region}}
+\begin{DoxyCompactList}\small\item\em General-\/purpose struct to define a memory area. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{udmaio\+::\+Uio\+Device\+Location}}
+\begin{DoxyCompactList}\small\item\em Holds information where a device can be found over both UIO and XDMA. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{udmaio\+::\+Uio\+Device\+Info}}
+\begin{DoxyCompactList}\small\item\em Data needed to construct an \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}; contains information how to connect to a device. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classudmaio_1_1_uio_config_base}{udmaio\+::\+Uio\+Config\+Base}}
+\begin{DoxyCompactList}\small\item\em Base class for \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} configuration. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classudmaio_1_1_uio_config_uio}{udmaio\+::\+Uio\+Config\+Uio}}
+\begin{DoxyCompactList}\small\item\em Creates \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} from \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} (UIO version) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma}{udmaio\+::\+Uio\+Config\+Xdma}}
+\begin{DoxyCompactList}\small\item\em Creates \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} from \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} (XDMA version) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceudmaio}{udmaio}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}{udmaio\+::\+Dma\+Mode}} \{ \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cecaf3dac949aa62d490afa1ac577a5fc028}{udmaio\+::\+XDMA}}
+, \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080ceca910a3bb55574645cc3d46b715f097eb0}{udmaio\+::\+UIO}}
+ \}
+\begin{DoxyCompactList}\small\item\em DMA access mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{namespaceudmaio_adcde5ee0e86bf537b18e3d7588443fc5}{udmaio\+::operator$>$$>$}} (std\+::istream \&in, Dma\+Mode \&mode)
+\end{DoxyCompactItemize}

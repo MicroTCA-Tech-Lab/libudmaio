@@ -1,0 +1,13 @@
+digraph "UioTrafficGen"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="UioTrafficGen",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Interface to LFSR core of the demo application."];
+  Node2 -> Node1 [dir="back",color="firebrick4",style="solid"];
+  Node2 [label="udmaio::UioIf",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_if.html",tooltip="Base class for UIO interfaces."];
+  Node3 -> Node2 [dir="back",color="firebrick4",style="solid"];
+  Node3 [label="boost::noncopyable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+}

@@ -1,0 +1,5 @@
+<map id="udmaio::DataHandlerSync" name="udmaio::DataHandlerSync">
+<area shape="rect" id="node1" title="Synchronous data handler with blocking read interface." alt="" coords="15,152,186,177"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_data_handler_abstract.html" title="Base class to implement a DMA data reception handler." alt="" coords="5,79,196,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="35,5,167,31"/>
+</map>

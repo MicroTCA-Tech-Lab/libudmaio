@@ -1,0 +1,9 @@
+<map id="udmaio::FpgaMemBufferOverAxi" name="udmaio::FpgaMemBufferOverAxi">
+<area shape="rect" id="node1" title="DMA data buffer accessed over AXI/UIO, described w/ explicit address &amp; size." alt="" coords="73,271,281,296"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_dma_buffer_abstract.html" title="Base class for DMA data buffer." alt="" coords="5,196,185,221"/>
+<area shape="rect" id="node3" title=" " alt="" coords="27,101,159,126"/>
+<area shape="rect" id="node4" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="210,196,309,221"/>
+<area shape="rect" id="node5" title=" " alt="" coords="183,93,341,133"/>
+<area shape="rect" id="node6" href="$classudmaio_1_1_uio_config_base.html" title="Base class for UioDeviceInfo configuration." alt="" coords="184,5,340,31"/>
+<area shape="rect" id="node7" href="$structudmaio_1_1_uio_region.html" title="General&#45;purpose struct to define a memory area." alt="" coords="366,101,497,126"/>
+</map>

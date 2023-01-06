@@ -1,0 +1,81 @@
+\hypertarget{axi__dma__demo_8cpp}{}\doxysection{axi\+\_\+dma\+\_\+demo.\+cpp File Reference}
+\label{axi__dma__demo_8cpp}\index{axi\_dma\_demo.cpp@{axi\_dma\_demo.cpp}}
+{\ttfamily \#include $<$csignal$>$}\newline
+{\ttfamily \#include $<$future$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$boost/log/core/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/expressions.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/keywords/severity.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/sources/logger.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/trivial.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}Data\+Handler\+Print.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Uio\+Gpio\+Status.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Uio\+Traffic\+Gen.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}udmaio/\+Fpga\+Mem\+Buffer\+Over\+Xdma.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}udmaio/\+UDma\+Buf.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}udmaio/\+Uio\+Axi\+Dma\+If.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}udmaio/\+Uio\+If.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}udmaio/\+Uio\+Mem\+Sgdma.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/log/sources/severity\+\_\+logger.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/program\+\_\+options.\+hpp$>$}\newline
+Include dependency graph for axi\+\_\+dma\+\_\+demo.\+cpp\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{axi__dma__demo_8cpp_afcc8cdd21f173be56d06722baa7fc68d}{TARGET\+\_\+\+HW\+\_\+\+ZUP}}~1
+\item 
+\#define \mbox{\hyperlink{axi__dma__demo_8cpp_afa703e88e5a6aafe79316b56bb82a4ab}{TARGET\+\_\+\+HW\+\_\+\+Z7\+IO}}~2
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{axi__dma__demo_8cpp_a3b527c56ed133ee6815bfbc625e757af}{signal\+\_\+handler}} (int signal)
+\item 
+int \mbox{\hyperlink{axi__dma__demo_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile bool \mbox{\hyperlink{axi__dma__demo_8cpp_a9500273e36edf10300f1a97e86b1999e}{g\+\_\+stop\+\_\+loop}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{axi__dma__demo_8cpp_afa703e88e5a6aafe79316b56bb82a4ab}\label{axi__dma__demo_8cpp_afa703e88e5a6aafe79316b56bb82a4ab}} 
+\index{axi\_dma\_demo.cpp@{axi\_dma\_demo.cpp}!TARGET\_HW\_Z7IO@{TARGET\_HW\_Z7IO}}
+\index{TARGET\_HW\_Z7IO@{TARGET\_HW\_Z7IO}!axi\_dma\_demo.cpp@{axi\_dma\_demo.cpp}}
+\doxysubsubsection{\texorpdfstring{TARGET\_HW\_Z7IO}{TARGET\_HW\_Z7IO}}
+{\footnotesize\ttfamily \#define TARGET\+\_\+\+HW\+\_\+\+Z7\+IO~2}
+
+\mbox{\Hypertarget{axi__dma__demo_8cpp_afcc8cdd21f173be56d06722baa7fc68d}\label{axi__dma__demo_8cpp_afcc8cdd21f173be56d06722baa7fc68d}} 
+\index{axi\_dma\_demo.cpp@{axi\_dma\_demo.cpp}!TARGET\_HW\_ZUP@{TARGET\_HW\_ZUP}}
+\index{TARGET\_HW\_ZUP@{TARGET\_HW\_ZUP}!axi\_dma\_demo.cpp@{axi\_dma\_demo.cpp}}
+\doxysubsubsection{\texorpdfstring{TARGET\_HW\_ZUP}{TARGET\_HW\_ZUP}}
+{\footnotesize\ttfamily \#define TARGET\+\_\+\+HW\+\_\+\+ZUP~1}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{axi__dma__demo_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{axi__dma__demo_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{axi\_dma\_demo.cpp@{axi\_dma\_demo.cpp}!main@{main}}
+\index{main@{main}!axi\_dma\_demo.cpp@{axi\_dma\_demo.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{axi__dma__demo_8cpp_a3b527c56ed133ee6815bfbc625e757af}\label{axi__dma__demo_8cpp_a3b527c56ed133ee6815bfbc625e757af}} 
+\index{axi\_dma\_demo.cpp@{axi\_dma\_demo.cpp}!signal\_handler@{signal\_handler}}
+\index{signal\_handler@{signal\_handler}!axi\_dma\_demo.cpp@{axi\_dma\_demo.cpp}}
+\doxysubsubsection{\texorpdfstring{signal\_handler()}{signal\_handler()}}
+{\footnotesize\ttfamily void signal\+\_\+handler (\begin{DoxyParamCaption}\item[{int}]{signal }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{axi__dma__demo_8cpp_a9500273e36edf10300f1a97e86b1999e}\label{axi__dma__demo_8cpp_a9500273e36edf10300f1a97e86b1999e}} 
+\index{axi\_dma\_demo.cpp@{axi\_dma\_demo.cpp}!g\_stop\_loop@{g\_stop\_loop}}
+\index{g\_stop\_loop@{g\_stop\_loop}!axi\_dma\_demo.cpp@{axi\_dma\_demo.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_stop\_loop}{g\_stop\_loop}}
+{\footnotesize\ttfamily volatile bool g\+\_\+stop\+\_\+loop = false}
+

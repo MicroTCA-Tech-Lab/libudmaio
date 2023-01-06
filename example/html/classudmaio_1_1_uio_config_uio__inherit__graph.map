@@ -1,0 +1,4 @@
+<map id="udmaio::UioConfigUio" name="udmaio::UioConfigUio">
+<area shape="rect" id="node1" title="Creates UioDeviceInfo from UioDeviceLocation (UIO version)" alt="" coords="10,79,157,104"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_config_base.html" title="Base class for UioDeviceInfo configuration." alt="" coords="5,5,161,31"/>
+</map>

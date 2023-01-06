@@ -1,0 +1,6 @@
+<map id="udmaio::DataHandlerAbstract" name="udmaio::DataHandlerAbstract">
+<area shape="rect" id="node1" title="Base class to implement a DMA data reception handler." alt="" coords="56,79,247,104"/>
+<area shape="rect" id="node3" href="$class_data_handler_print.html" title="DataHandler implementation that checks LFSR data and prints status / stats." alt="" coords="5,152,127,177"/>
+<area shape="rect" id="node4" href="$classudmaio_1_1_data_handler_sync.html" title="Synchronous data handler with blocking read interface." alt="" coords="151,152,322,177"/>
+<area shape="rect" id="node2" title=" " alt="" coords="85,5,217,31"/>
+</map>

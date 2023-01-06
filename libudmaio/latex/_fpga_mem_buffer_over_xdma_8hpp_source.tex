@@ -1,0 +1,65 @@
+\hypertarget{_fpga_mem_buffer_over_xdma_8hpp_source}{}\doxysection{Fpga\+Mem\+Buffer\+Over\+Xdma.\+hpp}
+\label{_fpga_mem_buffer_over_xdma_8hpp_source}\index{FpgaMemBufferOverXdma.hpp@{FpgaMemBufferOverXdma.hpp}}
+\mbox{\hyperlink{_fpga_mem_buffer_over_xdma_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\///}}
+\DoxyCodeLine{2 \textcolor{comment}{//        \_\_\_\_  \_\_\_\_\_\_\_\_\_\_\_\_\_  \_\_    \_\_  \_\_ \_           \_\_\_\_\_ \_\_\_   \_        //}}
+\DoxyCodeLine{3 \textcolor{comment}{//       / \_\_ \(\backslash\)/ \_\_\_\_/ \_\_\_/\(\backslash\) \(\backslash\)/ /   |  \(\backslash\)/  (\_)\_\_ \_ \_ \_\_|\_   \_/ \_\_| /\_\(\backslash\)       //}}
+\DoxyCodeLine{4 \textcolor{comment}{//      / / / / \_\_/  \(\backslash\)\_\_ \(\backslash\)  \(\backslash\)  /    | |\(\backslash\)/| | / \_| '\_/ \_ \(\backslash\)| || (\_\_ / \_ \(\backslash\)      //}}
+\DoxyCodeLine{5 \textcolor{comment}{//     / /\_/ / /\_\_\_ \_\_\_/ /  / /     |\_|  |\_|\_\(\backslash\)\_\_|\_| \(\backslash\)\_\_\_/|\_| \(\backslash\)\_\_\_/\_/ \(\backslash\)\_\(\backslash\)     //}}
+\DoxyCodeLine{6 \textcolor{comment}{//    /\_\_\_\_\_/\_\_\_\_\_//\_\_\_\_/  /\_/      T  E  C  H  N  O  L  O  G  Y   L A B     //}}
+\DoxyCodeLine{7 \textcolor{comment}{//                                                                           //}}
+\DoxyCodeLine{8 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\///}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{// Copyright (c) 2021 Deutsches Elektronen-\/Synchrotron DESY}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <boost/log/core/core.hpp>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <boost/log/sources/logger.hpp>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <boost/log/trivial.hpp>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <fcntl.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <sys/stat.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <sys/types.h>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_dma_buffer_abstract_8hpp}{DmaBufferAbstract.hpp}}"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}} \{}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma}{FpgaMemBufferOverXdma}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{DmaBufferAbstract}} \{}
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}};}
+\DoxyCodeLine{28     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_a3427375448cf17f23407dcf4536b86ec}{\_phys\_addr}};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30   \textcolor{keyword}{public}:}
+\DoxyCodeLine{34     \textcolor{keyword}{explicit} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_a7c3fe91db1d91f4c701830f311ac308d}{FpgaMemBufferOverXdma}}(\textcolor{keyword}{const} std::string\& path, uintptr\_t phys\_addr)}
+\DoxyCodeLine{35         : \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_a3427375448cf17f23407dcf4536b86ec}{\_phys\_addr}}\{phys\_addr\} \{}
+\DoxyCodeLine{36         \textcolor{keyword}{const} std::string dev\_path\{path + \textcolor{stringliteral}{"{}/c2h0"{}}\};}
+\DoxyCodeLine{37         \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}} = open(dev\_path.c\_str(), O\_RDWR);}
+\DoxyCodeLine{38         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}} < 0) \{}
+\DoxyCodeLine{39             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}could not open "{}} + dev\_path);}
+\DoxyCodeLine{40         \}}
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_a95b84664b5ffe4d8935c4e7eeb4cdd4f}{\string~FpgaMemBufferOverXdma}}() \{ close(\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}}); \}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_ac1d0bb078fe6bb4e6e5a32b31c0b1d13}{get\_phys\_addr}}()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_a3427375448cf17f23407dcf4536b86ec}{\_phys\_addr}}; \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa1886d2ecc38f6382e36d756533eef6d}{get\_phys\_size}}()\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{47         \textcolor{comment}{// there is no way to get the size over the Xdma, return 0 and let the user handle it}}
+\DoxyCodeLine{48         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa0ec50d10a28a34bc7aeb09e02f43751}{copy\_from\_buf}}(\textcolor{keyword}{const} \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}}\& buf\_info, std::vector<uint8\_t>\& out)\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{52         \textcolor{keywordtype}{size\_t} old\_size = out.size();}
+\DoxyCodeLine{53         \textcolor{keywordtype}{size\_t} new\_size = old\_size + buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}};}
+\DoxyCodeLine{54         out.resize(new\_size);}
+\DoxyCodeLine{55         lseek(\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}}, buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_aeae3c222eaf007b2850693dfdfd3af9c}{addr}}, SEEK\_SET);}
+\DoxyCodeLine{56         ssize\_t rc = read(\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}}, out.data() + old\_size, buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}});}
+\DoxyCodeLine{57         \textcolor{keywordflow}{if} (rc < \textcolor{keyword}{static\_cast<}ssize\_t\textcolor{keyword}{>}(buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}})) \{}
+\DoxyCodeLine{58             \textcolor{comment}{// TODO: error handling}}
+\DoxyCodeLine{59         \}}
+\DoxyCodeLine{60     \}}
+\DoxyCodeLine{61 \};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \}  \textcolor{comment}{// namespace udmaio}}
+
+\end{DoxyCode}

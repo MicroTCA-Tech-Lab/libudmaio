@@ -1,0 +1,64 @@
+\hypertarget{_uio_traffic_gen_8hpp_source}{}\doxysection{Uio\+Traffic\+Gen.\+hpp}
+\label{_uio_traffic_gen_8hpp_source}\index{UioTrafficGen.hpp@{UioTrafficGen.hpp}}
+\mbox{\hyperlink{_uio_traffic_gen_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\///}}
+\DoxyCodeLine{2 \textcolor{comment}{//        \_\_\_\_  \_\_\_\_\_\_\_\_\_\_\_\_\_  \_\_    \_\_  \_\_ \_           \_\_\_\_\_ \_\_\_   \_        //}}
+\DoxyCodeLine{3 \textcolor{comment}{//       / \_\_ \(\backslash\)/ \_\_\_\_/ \_\_\_/\(\backslash\) \(\backslash\)/ /   |  \(\backslash\)/  (\_)\_\_ \_ \_ \_\_|\_   \_/ \_\_| /\_\(\backslash\)       //}}
+\DoxyCodeLine{4 \textcolor{comment}{//      / / / / \_\_/  \(\backslash\)\_\_ \(\backslash\)  \(\backslash\)  /    | |\(\backslash\)/| | / \_| '\_/ \_ \(\backslash\)| || (\_\_ / \_ \(\backslash\)      //}}
+\DoxyCodeLine{5 \textcolor{comment}{//     / /\_/ / /\_\_\_ \_\_\_/ /  / /     |\_|  |\_|\_\(\backslash\)\_\_|\_| \(\backslash\)\_\_\_/|\_| \(\backslash\)\_\_\_/\_/ \(\backslash\)\_\(\backslash\)     //}}
+\DoxyCodeLine{6 \textcolor{comment}{//    /\_\_\_\_\_/\_\_\_\_\_//\_\_\_\_/  /\_/      T  E  C  H  N  O  L  O  G  Y   L A B     //}}
+\DoxyCodeLine{7 \textcolor{comment}{//                                                                           //}}
+\DoxyCodeLine{8 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\///}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{// Copyright (c) 2021 Deutsches Elektronen-\/Synchrotron DESY}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_uio_if_8hpp}{udmaio/UioIf.hpp}}"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_uio_traffic_gen}{UioTrafficGen}} : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}} \{}
+\DoxyCodeLine{20     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_uio_traffic_gen_a8ae58824aaa4439dc7842ecac3c0718e}{ADDR\_ST\_CTRL}} = 0x30;}
+\DoxyCodeLine{21     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_uio_traffic_gen_af23d658567f1282b1ee5befba8819173}{ADDR\_ST\_CONFIG}} = 0x34;}
+\DoxyCodeLine{22     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_uio_traffic_gen_a71cfc7ae07d8166dca31799446717c3d}{ADDR\_TR\_LEN}} = 0x38;}
+\DoxyCodeLine{23     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_uio_traffic_gen_ae47eebd2941cdc4f40b2dac3d93339f2}{ADDR\_TR\_COUNT}} = 0x3C;}
+\DoxyCodeLine{24     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_uio_traffic_gen_a45764b2f9683f89880b5866b1056ea7a}{ADDR\_TR\_TSTRB0}} = 0x40;}
+\DoxyCodeLine{25     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_uio_traffic_gen_a3ee6065b917a94e86d187416293d8098}{ADDR\_TR\_TSTRB1}} = 0x44;}
+\DoxyCodeLine{26     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_uio_traffic_gen_a4787642a230cc7202673080a6610fab5}{ADDR\_TR\_TSTRB2}} = 0x48;}
+\DoxyCodeLine{27     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_uio_traffic_gen_a51f735b2d74bf9418acb3e55e2fa6f71}{ADDR\_TR\_TSTRB3}} = 0x4C;}
+\DoxyCodeLine{28     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_uio_traffic_gen_af826c1ac63a2b482be25901c818b141d}{ADDR\_EX\_TR\_LEN}} = 0x50;}
+\DoxyCodeLine{29     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_uio_traffic_gen_a8b219b0be19736b16a60b9a47101d45e}{ADDR\_ST\_ERR\_STATUS}} = 0x70;}
+\DoxyCodeLine{30     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_uio_traffic_gen_a7baa34bebf8a73720210175fca783190}{ADDR\_ST\_ERR\_EN}} = 0x74;}
+\DoxyCodeLine{31     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_uio_traffic_gen_a4939011f0b246d4f5133d6bd72c90dbd}{ADDR\_ST\_ERR\_INT\_EN}} = 0x78;}
+\DoxyCodeLine{32     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_uio_traffic_gen_a12609d2e0329e3ae9e346b8210b577f6}{ADDR\_ST\_ERR\_CNT}} = 0x7C;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keyword}{struct }\mbox{\hyperlink{class_uio_traffic_gen_aef74d740463d4bef2ed4a808bb7849ac}{\_\_attribute\_\_}}((packed)) StControl \{}
+\DoxyCodeLine{35         \textcolor{keywordtype}{bool} stren : 1;}
+\DoxyCodeLine{36         \textcolor{keywordtype}{bool} done : 1;}
+\DoxyCodeLine{37         uint32\_t rsvd : 22;}
+\DoxyCodeLine{38         uint32\_t version : 8;}
+\DoxyCodeLine{39     \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keyword}{struct }\mbox{\hyperlink{class_uio_traffic_gen_aef74d740463d4bef2ed4a808bb7849ac}{\_\_attribute\_\_}}((packed)) StConfig \{}
+\DoxyCodeLine{42         \textcolor{keywordtype}{bool} ranlen : 1;}
+\DoxyCodeLine{43         \textcolor{keywordtype}{bool} randly : 1;}
+\DoxyCodeLine{44         \textcolor{keywordtype}{bool} etkts : 1;}
+\DoxyCodeLine{45         uint32\_t rsvd7\_3 : 5;}
+\DoxyCodeLine{46         uint32\_t tdest : 8;}
+\DoxyCodeLine{47         uint32\_t pdly : 16;}
+\DoxyCodeLine{48     \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{keyword}{virtual} \textcolor{keyword}{const} std::string\_view \mbox{\hyperlink{class_uio_traffic_gen_acb4f1ec3084398f6bcda00ed3f25e6ab}{\_log\_name}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52   \textcolor{keyword}{public}:}
+\DoxyCodeLine{53     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if_a9eab72c96cad2df0a438ef2fcf685e2e}{UioIf::UioIf}};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_ad56c154d7266ccfda625c0da9c985862}{start}}(uint16\_t nr\_pkts, uint32\_t pkt\_size, uint16\_t pkt\_pause);}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_a91a7c2c7c803d3d2c2ec3ec704adcd23}{stop}}();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_a750caba91e833c09f3eb2b928bebf40d}{print\_version}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{59 \};}
+
+\end{DoxyCode}

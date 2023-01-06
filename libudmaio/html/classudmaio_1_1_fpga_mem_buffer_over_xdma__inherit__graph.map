@@ -1,0 +1,5 @@
+<map id="udmaio::FpgaMemBufferOverXdma" name="udmaio::FpgaMemBufferOverXdma">
+<area shape="rect" id="node1" title="DMA data buffer accessed over XDMA using the xdma c2h0 stream channel." alt="" coords="5,152,229,177"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_dma_buffer_abstract.html" title="Base class for DMA data buffer." alt="" coords="27,79,207,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="51,5,183,31"/>
+</map>

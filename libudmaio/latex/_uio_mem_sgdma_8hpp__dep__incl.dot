@@ -1,0 +1,19 @@
+digraph "UioMemSgdma.hpp"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="UioMemSgdma.hpp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="DataHandlerAbstract.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_data_handler_abstract_8hpp.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="DataHandlerAbstract.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_data_handler_abstract_8cpp.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="DataHandlerSync.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_data_handler_sync_8hpp.html",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="DataHandlerSync.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_data_handler_sync_8cpp.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="UioMemSgdma.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8cpp.html",tooltip=" "];
+}

@@ -1,0 +1,139 @@
+\hypertarget{classudmaio_1_1_fpga_mem_buffer_over_axi}{}\doxysection{udmaio\+::Fpga\+Mem\+Buffer\+Over\+Axi Class Reference}
+\label{classudmaio_1_1_fpga_mem_buffer_over_axi}\index{udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}}
+
+
+DMA data buffer accessed over AXI/\+UIO, described w/ explicit address \& size.  
+
+
+
+
+{\ttfamily \#include $<$Fpga\+Mem\+Buffer\+Over\+Axi.\+hpp$>$}
+
+
+
+Inheritance diagram for udmaio\+::Fpga\+Mem\+Buffer\+Over\+Axi\+:
+% FIG 0
+
+
+Collaboration diagram for udmaio\+::Fpga\+Mem\+Buffer\+Over\+Axi\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a016fec1601d0de2e9817bff1729077db}{get\+\_\+phys\+\_\+addr}} () const override
+\begin{DoxyCompactList}\small\item\em Get physical address. \end{DoxyCompactList}\item 
+uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a4d58cf3e554e6c357a4fe4cdb67e37d5}{get\+\_\+phys\+\_\+size}} () const override
+\begin{DoxyCompactList}\small\item\em Get buffer size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a141bf386389f4078b954ed9388925f03}{copy\+\_\+from\+\_\+buf}} (const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \&buf\+\_\+info, std\+::vector$<$ uint8\+\_\+t $>$ \&out) const override
+\begin{DoxyCompactList}\small\item\em Get received DMA data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a9eab72c96cad2df0a438ef2fcf685e2e}{Uio\+If}} (\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} dev)
+\begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a93fbd9e04e08851d2588a9cbabb2d401}{Uio\+If}} (\mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} dev\+\_\+loc)
+\begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} Users MUST call \mbox{\hyperlink{classudmaio_1_1_uio_if_a561f0715c14b47fcd87d6e67f824a494}{set\+Link\+Axi()}} or \mbox{\hyperlink{classudmaio_1_1_uio_if_a3f30ddd6c04243ef503fc84522dd3756}{set\+Link\+Xdma()}} before using this. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const std\+::string\+\_\+view \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_acbd47202c8325118dfef3e26b7020de4}{\+\_\+log\+\_\+name}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+DMA data buffer accessed over AXI/\+UIO, described w/ explicit address \& size. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_fpga_mem_buffer_over_axi_acbd47202c8325118dfef3e26b7020de4}\label{classudmaio_1_1_fpga_mem_buffer_over_axi_acbd47202c8325118dfef3e26b7020de4}} 
+\index{udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}!\_log\_name@{\_log\_name}}
+\index{\_log\_name@{\_log\_name}!udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}}
+\doxysubsubsection{\texorpdfstring{\_log\_name()}{\_log\_name()}}
+{\footnotesize\ttfamily virtual const std\+::string\+\_\+view udmaio\+::\+Fpga\+Mem\+Buffer\+Over\+Axi\+::\+\_\+log\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classudmaio_1_1_uio_if_aebd339271c546d44575671edc7f7daf9}{udmaio\+::\+Uio\+If}}.
+
+\mbox{\Hypertarget{classudmaio_1_1_fpga_mem_buffer_over_axi_a141bf386389f4078b954ed9388925f03}\label{classudmaio_1_1_fpga_mem_buffer_over_axi_a141bf386389f4078b954ed9388925f03}} 
+\index{udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}!copy\_from\_buf@{copy\_from\_buf}}
+\index{copy\_from\_buf@{copy\_from\_buf}!udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}}
+\doxysubsubsection{\texorpdfstring{copy\_from\_buf()}{copy\_from\_buf()}}
+{\footnotesize\ttfamily void udmaio\+::\+Fpga\+Mem\+Buffer\+Over\+Axi\+::copy\+\_\+from\+\_\+buf (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \&}]{buf\+\_\+info,  }\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get received DMA data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf\+\_\+info} & Memory region of DMA buffer \\
+\hline
+{\em out} & Received data \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a8e934e32d10f3ecc818fa6c73c1eed81}{udmaio\+::\+Dma\+Buffer\+Abstract}}.
+
+\mbox{\Hypertarget{classudmaio_1_1_fpga_mem_buffer_over_axi_a016fec1601d0de2e9817bff1729077db}\label{classudmaio_1_1_fpga_mem_buffer_over_axi_a016fec1601d0de2e9817bff1729077db}} 
+\index{udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}!get\_phys\_addr@{get\_phys\_addr}}
+\index{get\_phys\_addr@{get\_phys\_addr}!udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}}
+\doxysubsubsection{\texorpdfstring{get\_phys\_addr()}{get\_phys\_addr()}}
+{\footnotesize\ttfamily uintptr\+\_\+t udmaio\+::\+Fpga\+Mem\+Buffer\+Over\+Axi\+::get\+\_\+phys\+\_\+addr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get physical address. 
+
+\begin{DoxyReturn}{Returns}
+Physical address of DMA data buffer 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_abe52ba4c61d6a63e2024eb38f634f3bf}{udmaio\+::\+Dma\+Buffer\+Abstract}}.
+
+\mbox{\Hypertarget{classudmaio_1_1_fpga_mem_buffer_over_axi_a4d58cf3e554e6c357a4fe4cdb67e37d5}\label{classudmaio_1_1_fpga_mem_buffer_over_axi_a4d58cf3e554e6c357a4fe4cdb67e37d5}} 
+\index{udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}!get\_phys\_size@{get\_phys\_size}}
+\index{get\_phys\_size@{get\_phys\_size}!udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}}
+\doxysubsubsection{\texorpdfstring{get\_phys\_size()}{get\_phys\_size()}}
+{\footnotesize\ttfamily uintptr\+\_\+t udmaio\+::\+Fpga\+Mem\+Buffer\+Over\+Axi\+::get\+\_\+phys\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get buffer size. 
+
+\begin{DoxyReturn}{Returns}
+Size of DMA data buffer 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a63369da47cbfa8c63d3a0269a2bffcad}{udmaio\+::\+Dma\+Buffer\+Abstract}}.
+
+\mbox{\Hypertarget{classudmaio_1_1_fpga_mem_buffer_over_axi_a9eab72c96cad2df0a438ef2fcf685e2e}\label{classudmaio_1_1_fpga_mem_buffer_over_axi_a9eab72c96cad2df0a438ef2fcf685e2e}} 
+\index{udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}!UioIf@{UioIf}}
+\index{UioIf@{UioIf}!udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}}
+\doxysubsubsection{\texorpdfstring{UioIf()}{UioIf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}}]{dev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} describing the connection information \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_fpga_mem_buffer_over_axi_a93fbd9e04e08851d2588a9cbabb2d401}\label{classudmaio_1_1_fpga_mem_buffer_over_axi_a93fbd9e04e08851d2588a9cbabb2d401}} 
+\index{udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}!UioIf@{UioIf}}
+\index{UioIf@{UioIf}!udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}}
+\doxysubsubsection{\texorpdfstring{UioIf()}{UioIf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}}}]{dev\+\_\+loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} Users MUST call \mbox{\hyperlink{classudmaio_1_1_uio_if_a561f0715c14b47fcd87d6e67f824a494}{set\+Link\+Axi()}} or \mbox{\hyperlink{classudmaio_1_1_uio_if_a3f30ddd6c04243ef503fc84522dd3756}{set\+Link\+Xdma()}} before using this. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_fpga_mem_buffer_over_axi_8hpp}{Fpga\+Mem\+Buffer\+Over\+Axi.\+hpp}}\end{DoxyCompactItemize}

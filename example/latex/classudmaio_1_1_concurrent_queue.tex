@@ -1,0 +1,167 @@
+\hypertarget{classudmaio_1_1_concurrent_queue}{}\doxysection{udmaio\+::Concurrent\+Queue\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classudmaio_1_1_concurrent_queue}\index{udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}}
+
+
+Helper class to implement a blocking FIFO between threads.  
+
+
+
+
+{\ttfamily \#include $<$Concurrent\+Queue.\+hpp$>$}
+
+
+
+Collaboration diagram for udmaio\+::Concurrent\+Queue\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a448333f6da5f44b12586a2b0041354aa}{pop}} (std\+::chrono\+::milliseconds timeout=std\+::chrono\+::milliseconds\{0\})
+\begin{DoxyCompactList}\small\item\em Pop an element from the queue, block if none available. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a522ac5797493b721ac95f658a0509320}{push}} (T item)
+\begin{DoxyCompactList}\small\item\em Push an element to the queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aaa86ed0665b6ebeb97a155123ef752ac}{abort}} ()
+\begin{DoxyCompactList}\small\item\em Abort any blocking consumers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a4a8392be30ced410bc665a7ecf735cf1}{Concurrent\+Queue}} ()=default
+\item 
+\mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a6d5f4e8e14dccaf9db9172cc98f5c888}{Concurrent\+Queue}} (const \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{Concurrent\+Queue}} \&)=delete
+\item 
+\mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{Concurrent\+Queue}} \& \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_ab86afd4013a112387ffe213a56fb1f05}{operator=}} (const \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{Concurrent\+Queue}} \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::queue$<$ T $>$ \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aa5b3c888ba18a51132f6c68006b7bea5}{\+\_\+queue}}
+\item 
+std\+::mutex \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a30d6a2c6aaaf69eb5ee501526f3f7353}{\+\_\+mutex}}
+\item 
+std\+::condition\+\_\+variable \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_af3be3bf32dc9f61afe7f92a0b6f948a1}{\+\_\+cond}}
+\item 
+bool \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a779c0e38ac39c3f7a44a83202971dc89}{\+\_\+abort}} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr size\+\_\+t \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_afd6c990a383134f9c26082ff4d24b730}{MAX\+\_\+\+ELEMS}} = 64
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class udmaio\+::\+Concurrent\+Queue$<$ T $>$}
+Helper class to implement a blocking FIFO between threads. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_concurrent_queue_a4a8392be30ced410bc665a7ecf735cf1}\label{classudmaio_1_1_concurrent_queue_a4a8392be30ced410bc665a7ecf735cf1}} 
+\index{udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}!ConcurrentQueue@{ConcurrentQueue}}
+\index{ConcurrentQueue@{ConcurrentQueue}!udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ConcurrentQueue()}{ConcurrentQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{udmaio\+::\+Concurrent\+Queue}}$<$ T $>$\+::\+Concurrent\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_concurrent_queue_a6d5f4e8e14dccaf9db9172cc98f5c888}\label{classudmaio_1_1_concurrent_queue_a6d5f4e8e14dccaf9db9172cc98f5c888}} 
+\index{udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}!ConcurrentQueue@{ConcurrentQueue}}
+\index{ConcurrentQueue@{ConcurrentQueue}!udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ConcurrentQueue()}{ConcurrentQueue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{udmaio\+::\+Concurrent\+Queue}}$<$ T $>$\+::\+Concurrent\+Queue (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{Concurrent\+Queue}}$<$ T $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_concurrent_queue_aaa86ed0665b6ebeb97a155123ef752ac}\label{classudmaio_1_1_concurrent_queue_aaa86ed0665b6ebeb97a155123ef752ac}} 
+\index{udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}!abort@{abort}}
+\index{abort@{abort}!udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{abort()}{abort()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{udmaio\+::\+Concurrent\+Queue}}$<$ T $>$\+::abort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Abort any blocking consumers. 
+
+\mbox{\Hypertarget{classudmaio_1_1_concurrent_queue_ab86afd4013a112387ffe213a56fb1f05}\label{classudmaio_1_1_concurrent_queue_ab86afd4013a112387ffe213a56fb1f05}} 
+\index{udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{Concurrent\+Queue}} \& \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{udmaio\+::\+Concurrent\+Queue}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{Concurrent\+Queue}}$<$ T $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_concurrent_queue_a448333f6da5f44b12586a2b0041354aa}\label{classudmaio_1_1_concurrent_queue_a448333f6da5f44b12586a2b0041354aa}} 
+\index{udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}!pop@{pop}}
+\index{pop@{pop}!udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{udmaio\+::\+Concurrent\+Queue}}$<$ T $>$\+::pop (\begin{DoxyParamCaption}\item[{std\+::chrono\+::milliseconds}]{timeout = {\ttfamily std\+:\+:chrono\+:\+:milliseconds\{0\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Pop an element from the queue, block if none available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & timeout in ms, default 0 = no timeout, return empty T if elapsed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Element popped from the queue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classudmaio_1_1_concurrent_queue_a522ac5797493b721ac95f658a0509320}\label{classudmaio_1_1_concurrent_queue_a522ac5797493b721ac95f658a0509320}} 
+\index{udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}!push@{push}}
+\index{push@{push}!udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{udmaio\+::\+Concurrent\+Queue}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{T}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Push an element to the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & Element to push to the queue \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_concurrent_queue_a779c0e38ac39c3f7a44a83202971dc89}\label{classudmaio_1_1_concurrent_queue_a779c0e38ac39c3f7a44a83202971dc89}} 
+\index{udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}!\_abort@{\_abort}}
+\index{\_abort@{\_abort}!udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\_abort}{\_abort}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{udmaio\+::\+Concurrent\+Queue}}$<$ T $>$\+::\+\_\+abort = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_concurrent_queue_af3be3bf32dc9f61afe7f92a0b6f948a1}\label{classudmaio_1_1_concurrent_queue_af3be3bf32dc9f61afe7f92a0b6f948a1}} 
+\index{udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}!\_cond@{\_cond}}
+\index{\_cond@{\_cond}!udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\_cond}{\_cond}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::condition\+\_\+variable \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{udmaio\+::\+Concurrent\+Queue}}$<$ T $>$\+::\+\_\+cond\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_concurrent_queue_a30d6a2c6aaaf69eb5ee501526f3f7353}\label{classudmaio_1_1_concurrent_queue_a30d6a2c6aaaf69eb5ee501526f3f7353}} 
+\index{udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}!\_mutex@{\_mutex}}
+\index{\_mutex@{\_mutex}!udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\_mutex}{\_mutex}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::mutex \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{udmaio\+::\+Concurrent\+Queue}}$<$ T $>$\+::\+\_\+mutex\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_concurrent_queue_aa5b3c888ba18a51132f6c68006b7bea5}\label{classudmaio_1_1_concurrent_queue_aa5b3c888ba18a51132f6c68006b7bea5}} 
+\index{udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}!\_queue@{\_queue}}
+\index{\_queue@{\_queue}!udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\_queue}{\_queue}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::queue$<$T$>$ \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{udmaio\+::\+Concurrent\+Queue}}$<$ T $>$\+::\+\_\+queue\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_concurrent_queue_afd6c990a383134f9c26082ff4d24b730}\label{classudmaio_1_1_concurrent_queue_afd6c990a383134f9c26082ff4d24b730}} 
+\index{udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}!MAX\_ELEMS@{MAX\_ELEMS}}
+\index{MAX\_ELEMS@{MAX\_ELEMS}!udmaio::ConcurrentQueue$<$ T $>$@{udmaio::ConcurrentQueue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MAX\_ELEMS}{MAX\_ELEMS}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr size\+\_\+t \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{udmaio\+::\+Concurrent\+Queue}}$<$ T $>$\+::\+MAX\+\_\+\+ELEMS = 64\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_concurrent_queue_8hpp}{Concurrent\+Queue.\+hpp}}\end{DoxyCompactItemize}

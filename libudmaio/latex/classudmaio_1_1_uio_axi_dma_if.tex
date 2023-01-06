@@ -1,0 +1,216 @@
+\hypertarget{classudmaio_1_1_uio_axi_dma_if}{}\doxysection{udmaio\+::Uio\+Axi\+Dma\+If Class Reference}
+\label{classudmaio_1_1_uio_axi_dma_if}\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+
+
+Interface to AXI DMA Core.  
+
+
+
+
+{\ttfamily \#include $<$Uio\+Axi\+Dma\+If.\+hpp$>$}
+
+
+
+Inheritance diagram for udmaio\+::Uio\+Axi\+Dma\+If\+:
+% FIG 0
+
+
+Collaboration diagram for udmaio\+::Uio\+Axi\+Dma\+If\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a00bfa497dcdb7fba7c9d30ea0949675d}{start}} (uintptr\+\_\+t start\+\_\+desc)
+\begin{DoxyCompactList}\small\item\em Configure and start the AXI DMA controller. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a12ad2b773b16b735c3fe9e8a24fe7139}{clear\+\_\+interrupt}} ()
+\begin{DoxyCompactList}\small\item\em Wait for interrupt and acknowledge it. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a459c4de408c255f2e9927ad7a8dc3466}{get\+\_\+fd\+\_\+int}} () const
+\begin{DoxyCompactList}\small\item\em Get file descriptor of interrupt event file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a5917c7c9808afd9a4271759e60e17ca6}{check\+\_\+for\+\_\+errors}} ()
+\begin{DoxyCompactList}\small\item\em Check status register and log any errors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a9eab72c96cad2df0a438ef2fcf685e2e}{Uio\+If}} (\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} dev)
+\begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a93fbd9e04e08851d2588a9cbabb2d401}{Uio\+If}} (\mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} dev\+\_\+loc)
+\begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} Users MUST call \mbox{\hyperlink{classudmaio_1_1_uio_if_aae0cf01b853b680e992ce17efcf58366}{set\+Link\+Axi()}} or \mbox{\hyperlink{classudmaio_1_1_uio_if_a31ae8b684a5f4f9cc60d7caa7bdd7594}{set\+Link\+Xdma()}} before using this. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a6756aeb5ca3c013d0c4be22e3d573963}{arm\+\_\+interrupt}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a4f18589ef11a139f2dfccd6f21e3f071}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((packed)) S2mm\+Dma\+Control\+Reg
+\item 
+struct \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a1a37265dcab4a24061385e73e8fc2ff1}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((packed)) S2mm\+Dma\+Status\+Reg
+\item 
+virtual const std\+::string\+\_\+view \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a5627fbf50a2475b9288e0a464d5f1672}{\+\_\+log\+\_\+name}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a64bec80d9bb5675b8213050969d262b3}{ADDR\+\_\+\+S2\+MM\+\_\+\+DMACR}} = 0x30
+\item 
+static constexpr int \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a3ca6e5fd5ec37db24c94b39b8e76fe21}{ADDR\+\_\+\+S2\+MM\+\_\+\+DMASR}} = 0x34
+\item 
+static constexpr int \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a87b69b60a25ece10c8cd33d8a4a97d57}{ADDR\+\_\+\+S2\+MM\+\_\+\+CURDESC}} = 0x38
+\item 
+static constexpr int \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a005e50829bdfcc6fd5343a1153180314}{ADDR\+\_\+\+S2\+MM\+\_\+\+CURDESC\+\_\+\+MSB}} = 0x3C
+\item 
+static constexpr int \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_abc89355a02db6885aa901c72da5c3e50}{ADDR\+\_\+\+S2\+MM\+\_\+\+TAILDESC}} = 0x40
+\item 
+static constexpr int \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_aab861721e2d2a8c9cb48024a1b677cd3}{ADDR\+\_\+\+S2\+MM\+\_\+\+TAILDESC\+\_\+\+MSB}} = 0x44
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Interface to AXI DMA Core. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a4f18589ef11a139f2dfccd6f21e3f071}\label{classudmaio_1_1_uio_axi_dma_if_a4f18589ef11a139f2dfccd6f21e3f071}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily struct udmaio\+::\+Uio\+Axi\+Dma\+If\+::\+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(packed)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a1a37265dcab4a24061385e73e8fc2ff1}\label{classudmaio_1_1_uio_axi_dma_if_a1a37265dcab4a24061385e73e8fc2ff1}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily struct udmaio\+::\+Uio\+Axi\+Dma\+If\+::\+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(packed)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a5627fbf50a2475b9288e0a464d5f1672}\label{classudmaio_1_1_uio_axi_dma_if_a5627fbf50a2475b9288e0a464d5f1672}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!\_log\_name@{\_log\_name}}
+\index{\_log\_name@{\_log\_name}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{\_log\_name()}{\_log\_name()}}
+{\footnotesize\ttfamily const std\+::string\+\_\+view udmaio\+::\+Uio\+Axi\+Dma\+If\+::\+\_\+log\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classudmaio_1_1_uio_if_aebd339271c546d44575671edc7f7daf9}{udmaio\+::\+Uio\+If}}.
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a6756aeb5ca3c013d0c4be22e3d573963}\label{classudmaio_1_1_uio_axi_dma_if_a6756aeb5ca3c013d0c4be22e3d573963}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!arm\_interrupt@{arm\_interrupt}}
+\index{arm\_interrupt@{arm\_interrupt}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{arm\_interrupt()}{arm\_interrupt()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+If\+::arm\+\_\+interrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a5917c7c9808afd9a4271759e60e17ca6}\label{classudmaio_1_1_uio_axi_dma_if_a5917c7c9808afd9a4271759e60e17ca6}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!check\_for\_errors@{check\_for\_errors}}
+\index{check\_for\_errors@{check\_for\_errors}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{check\_for\_errors()}{check\_for\_errors()}}
+{\footnotesize\ttfamily bool udmaio\+::\+Uio\+Axi\+Dma\+If\+::check\+\_\+for\+\_\+errors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check status register and log any errors. 
+
+\begin{DoxyReturn}{Returns}
+true if any error occurred 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a12ad2b773b16b735c3fe9e8a24fe7139}\label{classudmaio_1_1_uio_axi_dma_if_a12ad2b773b16b735c3fe9e8a24fe7139}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!clear\_interrupt@{clear\_interrupt}}
+\index{clear\_interrupt@{clear\_interrupt}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{clear\_interrupt()}{clear\_interrupt()}}
+{\footnotesize\ttfamily uint32\+\_\+t udmaio\+::\+Uio\+Axi\+Dma\+If\+::clear\+\_\+interrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Wait for interrupt and acknowledge it. 
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a459c4de408c255f2e9927ad7a8dc3466}\label{classudmaio_1_1_uio_axi_dma_if_a459c4de408c255f2e9927ad7a8dc3466}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!get\_fd\_int@{get\_fd\_int}}
+\index{get\_fd\_int@{get\_fd\_int}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{get\_fd\_int()}{get\_fd\_int()}}
+{\footnotesize\ttfamily int udmaio\+::\+Uio\+Axi\+Dma\+If\+::get\+\_\+fd\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get file descriptor of interrupt event file. 
+
+\begin{DoxyReturn}{Returns}
+Event file descriptor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a00bfa497dcdb7fba7c9d30ea0949675d}\label{classudmaio_1_1_uio_axi_dma_if_a00bfa497dcdb7fba7c9d30ea0949675d}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!start@{start}}
+\index{start@{start}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Axi\+Dma\+If\+::start (\begin{DoxyParamCaption}\item[{uintptr\+\_\+t}]{start\+\_\+desc }\end{DoxyParamCaption})}
+
+
+
+Configure and start the AXI DMA controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+desc} & Address of first SGDMA descriptor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a9eab72c96cad2df0a438ef2fcf685e2e}\label{classudmaio_1_1_uio_axi_dma_if_a9eab72c96cad2df0a438ef2fcf685e2e}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!UioIf@{UioIf}}
+\index{UioIf@{UioIf}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{UioIf()}{UioIf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}}]{dev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} describing the connection information \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a93fbd9e04e08851d2588a9cbabb2d401}\label{classudmaio_1_1_uio_axi_dma_if_a93fbd9e04e08851d2588a9cbabb2d401}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!UioIf@{UioIf}}
+\index{UioIf@{UioIf}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{UioIf()}{UioIf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}}}]{dev\+\_\+loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} Users MUST call \mbox{\hyperlink{classudmaio_1_1_uio_if_aae0cf01b853b680e992ce17efcf58366}{set\+Link\+Axi()}} or \mbox{\hyperlink{classudmaio_1_1_uio_if_a31ae8b684a5f4f9cc60d7caa7bdd7594}{set\+Link\+Xdma()}} before using this. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a87b69b60a25ece10c8cd33d8a4a97d57}\label{classudmaio_1_1_uio_axi_dma_if_a87b69b60a25ece10c8cd33d8a4a97d57}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!ADDR\_S2MM\_CURDESC@{ADDR\_S2MM\_CURDESC}}
+\index{ADDR\_S2MM\_CURDESC@{ADDR\_S2MM\_CURDESC}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{ADDR\_S2MM\_CURDESC}{ADDR\_S2MM\_CURDESC}}
+{\footnotesize\ttfamily constexpr int udmaio\+::\+Uio\+Axi\+Dma\+If\+::\+ADDR\+\_\+\+S2\+MM\+\_\+\+CURDESC = 0x38\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a005e50829bdfcc6fd5343a1153180314}\label{classudmaio_1_1_uio_axi_dma_if_a005e50829bdfcc6fd5343a1153180314}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!ADDR\_S2MM\_CURDESC\_MSB@{ADDR\_S2MM\_CURDESC\_MSB}}
+\index{ADDR\_S2MM\_CURDESC\_MSB@{ADDR\_S2MM\_CURDESC\_MSB}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{ADDR\_S2MM\_CURDESC\_MSB}{ADDR\_S2MM\_CURDESC\_MSB}}
+{\footnotesize\ttfamily constexpr int udmaio\+::\+Uio\+Axi\+Dma\+If\+::\+ADDR\+\_\+\+S2\+MM\+\_\+\+CURDESC\+\_\+\+MSB = 0x3C\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a64bec80d9bb5675b8213050969d262b3}\label{classudmaio_1_1_uio_axi_dma_if_a64bec80d9bb5675b8213050969d262b3}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!ADDR\_S2MM\_DMACR@{ADDR\_S2MM\_DMACR}}
+\index{ADDR\_S2MM\_DMACR@{ADDR\_S2MM\_DMACR}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{ADDR\_S2MM\_DMACR}{ADDR\_S2MM\_DMACR}}
+{\footnotesize\ttfamily constexpr int udmaio\+::\+Uio\+Axi\+Dma\+If\+::\+ADDR\+\_\+\+S2\+MM\+\_\+\+DMACR = 0x30\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a3ca6e5fd5ec37db24c94b39b8e76fe21}\label{classudmaio_1_1_uio_axi_dma_if_a3ca6e5fd5ec37db24c94b39b8e76fe21}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!ADDR\_S2MM\_DMASR@{ADDR\_S2MM\_DMASR}}
+\index{ADDR\_S2MM\_DMASR@{ADDR\_S2MM\_DMASR}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{ADDR\_S2MM\_DMASR}{ADDR\_S2MM\_DMASR}}
+{\footnotesize\ttfamily constexpr int udmaio\+::\+Uio\+Axi\+Dma\+If\+::\+ADDR\+\_\+\+S2\+MM\+\_\+\+DMASR = 0x34\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_abc89355a02db6885aa901c72da5c3e50}\label{classudmaio_1_1_uio_axi_dma_if_abc89355a02db6885aa901c72da5c3e50}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!ADDR\_S2MM\_TAILDESC@{ADDR\_S2MM\_TAILDESC}}
+\index{ADDR\_S2MM\_TAILDESC@{ADDR\_S2MM\_TAILDESC}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{ADDR\_S2MM\_TAILDESC}{ADDR\_S2MM\_TAILDESC}}
+{\footnotesize\ttfamily constexpr int udmaio\+::\+Uio\+Axi\+Dma\+If\+::\+ADDR\+\_\+\+S2\+MM\+\_\+\+TAILDESC = 0x40\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_aab861721e2d2a8c9cb48024a1b677cd3}\label{classudmaio_1_1_uio_axi_dma_if_aab861721e2d2a8c9cb48024a1b677cd3}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!ADDR\_S2MM\_TAILDESC\_MSB@{ADDR\_S2MM\_TAILDESC\_MSB}}
+\index{ADDR\_S2MM\_TAILDESC\_MSB@{ADDR\_S2MM\_TAILDESC\_MSB}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{ADDR\_S2MM\_TAILDESC\_MSB}{ADDR\_S2MM\_TAILDESC\_MSB}}
+{\footnotesize\ttfamily constexpr int udmaio\+::\+Uio\+Axi\+Dma\+If\+::\+ADDR\+\_\+\+S2\+MM\+\_\+\+TAILDESC\+\_\+\+MSB = 0x44\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_uio_axi_dma_if_8hpp}{Uio\+Axi\+Dma\+If.\+hpp}}\item 
+\mbox{\hyperlink{_uio_axi_dma_if_8cpp}{Uio\+Axi\+Dma\+If.\+cpp}}\end{DoxyCompactItemize}

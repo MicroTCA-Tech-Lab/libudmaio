@@ -1,0 +1,47 @@
+\hypertarget{_data_handler_sync_8hpp_source}{}\doxysection{Data\+Handler\+Sync.\+hpp}
+\label{_data_handler_sync_8hpp_source}\index{DataHandlerSync.hpp@{DataHandlerSync.hpp}}
+\mbox{\hyperlink{_data_handler_sync_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\///}}
+\DoxyCodeLine{2 \textcolor{comment}{//        \_\_\_\_  \_\_\_\_\_\_\_\_\_\_\_\_\_  \_\_    \_\_  \_\_ \_           \_\_\_\_\_ \_\_\_   \_        //}}
+\DoxyCodeLine{3 \textcolor{comment}{//       / \_\_ \(\backslash\)/ \_\_\_\_/ \_\_\_/\(\backslash\) \(\backslash\)/ /   |  \(\backslash\)/  (\_)\_\_ \_ \_ \_\_|\_   \_/ \_\_| /\_\(\backslash\)       //}}
+\DoxyCodeLine{4 \textcolor{comment}{//      / / / / \_\_/  \(\backslash\)\_\_ \(\backslash\)  \(\backslash\)  /    | |\(\backslash\)/| | / \_| '\_/ \_ \(\backslash\)| || (\_\_ / \_ \(\backslash\)      //}}
+\DoxyCodeLine{5 \textcolor{comment}{//     / /\_/ / /\_\_\_ \_\_\_/ /  / /     |\_|  |\_|\_\(\backslash\)\_\_|\_| \(\backslash\)\_\_\_/|\_| \(\backslash\)\_\_\_/\_/ \(\backslash\)\_\(\backslash\)     //}}
+\DoxyCodeLine{6 \textcolor{comment}{//    /\_\_\_\_\_/\_\_\_\_\_//\_\_\_\_/  /\_/      T  E  C  H  N  O  L  O  G  Y   L A B     //}}
+\DoxyCodeLine{7 \textcolor{comment}{//                                                                           //}}
+\DoxyCodeLine{8 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\///}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{// Copyright (c) 2021 Deutsches Elektronen-\/Synchrotron DESY}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <optional>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_concurrent_queue_8hpp}{ConcurrentQueue.hpp}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_data_handler_abstract_8hpp}{DataHandlerAbstract.hpp}}"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}} \{}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_data_handler_sync}{DataHandlerSync}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract}{DataHandlerAbstract}} \{}
+\DoxyCodeLine{24     \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{ConcurrentQueue<std::vector<uint8\_t>}}> \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_aaf38b90916bf263efee4ee575fb8da09}{\_queue}};  }
+\DoxyCodeLine{25     std::optional<std::thread> \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_ac2229f46ef9580c91470316faf836276}{\_ioThread}};          }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27   \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_aa5dae4a59e03dc2af6d9fb1bc524395b}{DataHandlerAbstract::DataHandlerAbstract}};}
+\DoxyCodeLine{29     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_a1e3bd0fe8b30b01c3f2409d00d004b42}{\string~DataHandlerSync}}();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_af9ef2065d6dcda7af1a6fbf64f2f24ca}{operator()}}();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_a42e7f4d866c460a6487d525604562102}{process\_data}}(std::vector<uint8\_t> bytes) \textcolor{keyword}{override};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_ac7e05b28f78eb8e086759dd39eb62b8f}{stop}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{40     std::vector<uint8\_t> \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_a605fd0316d366ec4935583b4dce91795}{read}}();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45     std::vector<uint8\_t> \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_a605fd0316d366ec4935583b4dce91795}{read}}(std::chrono::milliseconds timeout);}
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \}  \textcolor{comment}{// namespace udmaio}}
+
+\end{DoxyCode}

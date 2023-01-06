@@ -1,0 +1,89 @@
+\hypertarget{namespaceudmaio}{}\doxysection{udmaio Namespace Reference}
+\label{namespaceudmaio}\index{udmaio@{udmaio}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{Concurrent\+Queue}}
+\begin{DoxyCompactList}\small\item\em Helper class to implement a blocking FIFO between threads. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract}{Data\+Handler\+Abstract}}
+\begin{DoxyCompactList}\small\item\em Base class to implement a DMA data reception handler. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classudmaio_1_1_data_handler_sync}{Data\+Handler\+Sync}}
+\begin{DoxyCompactList}\small\item\em Synchronous data handler with blocking read interface. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{Dma\+Buffer\+Abstract}}
+\begin{DoxyCompactList}\small\item\em Base class for DMA data buffer. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi}{Fpga\+Mem\+Buffer\+Over\+Axi}}
+\begin{DoxyCompactList}\small\item\em DMA data buffer accessed over AXI/\+UIO, described w/ explicit address \& size. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma}{Fpga\+Mem\+Buffer\+Over\+Xdma}}
+\begin{DoxyCompactList}\small\item\em DMA data buffer accessed over XDMA using the xdma c2h0 stream channel. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classudmaio_1_1_u_dma_buf}{UDma\+Buf}}
+\begin{DoxyCompactList}\small\item\em DMA data buffer accessed over AXI/\+UIO, implemented w/ udmabuf (see \href{https://github.com/ikwzm/udmabuf}{\texttt{ https\+://github.\+com/ikwzm/udmabuf}}) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{Uio\+Axi\+Dma\+If}}
+\begin{DoxyCompactList}\small\item\em Interface to AXI DMA Core. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classudmaio_1_1_uio_config_base}{Uio\+Config\+Base}}
+\begin{DoxyCompactList}\small\item\em Base class for \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} configuration. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classudmaio_1_1_uio_config_uio}{Uio\+Config\+Uio}}
+\begin{DoxyCompactList}\small\item\em Creates \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} from \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} (UIO version) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma}{Uio\+Config\+Xdma}}
+\begin{DoxyCompactList}\small\item\em Creates \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} from \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} (XDMA version) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}
+\begin{DoxyCompactList}\small\item\em Data needed to construct an \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}; contains information how to connect to a device. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}}
+\begin{DoxyCompactList}\small\item\em Holds information where a device can be found over both UIO and XDMA. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}
+\begin{DoxyCompactList}\small\item\em Base class for UIO interfaces. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{Uio\+Mem\+Sgdma}}
+\begin{DoxyCompactList}\small\item\em Interface to AXI DMA scatter-\/gather buffers \& descriptors Uses a \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} to access DMA descriptor memory. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}}
+\begin{DoxyCompactList}\small\item\em General-\/purpose struct to define a memory area. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}{Dma\+Mode}} \{ \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cecaf3dac949aa62d490afa1ac577a5fc028}{XDMA}}
+, \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080ceca910a3bb55574645cc3d46b715f097eb0}{UIO}}
+ \}
+\begin{DoxyCompactList}\small\item\em DMA access mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{namespaceudmaio_adcde5ee0e86bf537b18e3d7588443fc5}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}{Dma\+Mode}} \&mode)
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespaceudmaio_ac25c553cf3256b7c5d7cd731d18251ff}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \&buf\+\_\+info)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}\label{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}} 
+\index{udmaio@{udmaio}!DmaMode@{DmaMode}}
+\index{DmaMode@{DmaMode}!udmaio@{udmaio}}
+\doxysubsubsection{\texorpdfstring{DmaMode}{DmaMode}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}{udmaio\+::\+Dma\+Mode}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+DMA access mode. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XDMA@{XDMA}!udmaio@{udmaio}}\index{udmaio@{udmaio}!XDMA@{XDMA}}}\mbox{\Hypertarget{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cecaf3dac949aa62d490afa1ac577a5fc028}\label{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cecaf3dac949aa62d490afa1ac577a5fc028}} 
+XDMA&PCIe XDMA driver. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UIO@{UIO}!udmaio@{udmaio}}\index{udmaio@{udmaio}!UIO@{UIO}}}\mbox{\Hypertarget{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080ceca910a3bb55574645cc3d46b715f097eb0}\label{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080ceca910a3bb55574645cc3d46b715f097eb0}} 
+UIO&ARM userspace I/O. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceudmaio_ac25c553cf3256b7c5d7cd731d18251ff}\label{namespaceudmaio_ac25c553cf3256b7c5d7cd731d18251ff}} 
+\index{udmaio@{udmaio}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!udmaio@{udmaio}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream \& udmaio\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \&}]{buf\+\_\+info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceudmaio_adcde5ee0e86bf537b18e3d7588443fc5}\label{namespaceudmaio_adcde5ee0e86bf537b18e3d7588443fc5}} 
+\index{udmaio@{udmaio}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!udmaio@{udmaio}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily std\+::istream \& udmaio\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}{Dma\+Mode}} \&}]{mode }\end{DoxyParamCaption})}
+

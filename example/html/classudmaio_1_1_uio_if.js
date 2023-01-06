@@ -1,0 +1,25 @@
+var classudmaio_1_1_uio_if =
+[
+    [ "reg_cast_t", "structudmaio_1_1_uio_if_1_1reg__cast__t.html", "structudmaio_1_1_uio_if_1_1reg__cast__t" ],
+    [ "UioIf", "classudmaio_1_1_uio_if.html#a9eab72c96cad2df0a438ef2fcf685e2e", null ],
+    [ "UioIf", "classudmaio_1_1_uio_if.html#a93fbd9e04e08851d2588a9cbabb2d401", null ],
+    [ "~UioIf", "classudmaio_1_1_uio_if.html#ac50743264269138365856bf6cf073273", null ],
+    [ "_dev_info_from_dev_loc", "classudmaio_1_1_uio_if.html#acaef7f066d84ab8469d3a321b1208159", null ],
+    [ "_log_name", "classudmaio_1_1_uio_if.html#aebd339271c546d44575671edc7f7daf9", null ],
+    [ "_rd32", "classudmaio_1_1_uio_if.html#a9a7d60c6438b2d90e204bb5a456ed755", null ],
+    [ "_rd_reg", "classudmaio_1_1_uio_if.html#aa86b529faa971483f9b0ae882dd6b6fe", null ],
+    [ "_reg_ptr", "classudmaio_1_1_uio_if.html#a95119dca4278edac9d6a8b1109ca58d1", null ],
+    [ "_wr32", "classudmaio_1_1_uio_if.html#a493e161ddcaa28c256f075f45e687391", null ],
+    [ "_wr_reg", "classudmaio_1_1_uio_if.html#a4cb6de971ef3efd5d5c06260d97f18f7", null ],
+    [ "arm_interrupt", "classudmaio_1_1_uio_if.html#a6756aeb5ca3c013d0c4be22e3d573963", null ],
+    [ "setLinkAxi", "classudmaio_1_1_uio_if.html#a561f0715c14b47fcd87d6e67f824a494", null ],
+    [ "setLinkXdma", "classudmaio_1_1_uio_if.html#a3f30ddd6c04243ef503fc84522dd3756", null ],
+    [ "wait_for_interrupt", "classudmaio_1_1_uio_if.html#a7035fb19bfd190fe5b482d27cc528b0a", null ],
+    [ "_fd", "classudmaio_1_1_uio_if.html#a2a9abc749581164881422f771d81e77c", null ],
+    [ "_fd_int", "classudmaio_1_1_uio_if.html#afb95a4e415ecce2ecf99bfd8baebc670", null ],
+    [ "_link_cfg", "classudmaio_1_1_uio_if.html#abd41c5a905eb15e80b0a69679e0233c7", null ],
+    [ "_mem", "classudmaio_1_1_uio_if.html#a9284f47ea82fd29ee29b3dfd9f465a73", null ],
+    [ "_region", "classudmaio_1_1_uio_if.html#a7b9d1b5562353fb0df19cc5c4c447458", null ],
+    [ "_skip_write_to_arm_int", "classudmaio_1_1_uio_if.html#ac1aa2dbf3f67dbcc0d77a8e346ca2339", null ],
+    [ "_slg", "classudmaio_1_1_uio_if.html#a455a6630db927accf88d12d5b838d90f", null ]
+];

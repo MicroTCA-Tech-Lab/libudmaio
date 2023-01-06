@@ -1,0 +1,86 @@
+\hypertarget{class_axi_traffic_gen_lfsr}{}\doxysection{Axi\+Traffic\+Gen\+Lfsr Class Reference}
+\label{class_axi_traffic_gen_lfsr}\index{AxiTrafficGenLfsr@{AxiTrafficGenLfsr}}
+
+
+Implements LFSR as described in \char`\"{}\+AXI Traffic Generator v3.\+0\char`\"{}.  
+
+
+
+
+{\ttfamily \#include $<$Axi\+Traffic\+Gen\+Lfsr.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_axi_traffic_gen_lfsr_a4025e27f51784c851fdaeeeed2b00d95}{Axi\+Traffic\+Gen\+Lfsr}} (uint16\+\_\+t seed)
+\item 
+void \mbox{\hyperlink{class_axi_traffic_gen_lfsr_a7689461a613584fe9f91bb5d1d0e0e95}{set}} (uint16\+\_\+t seed)
+\begin{DoxyCompactList}\small\item\em Set seed to a specific value. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_axi_traffic_gen_lfsr_a422fc57972e6e50787d103ee04af6d98}{advance}} ()
+\begin{DoxyCompactList}\small\item\em Advance LFSR by one iteration, return new value. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_axi_traffic_gen_lfsr_a27337acd2f6dbf24f8449148ae091f63}{get}} () const
+\begin{DoxyCompactList}\small\item\em Get value without advancing the LFSR. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{class_axi_traffic_gen_lfsr_aed2a855f64ff59a3e69a9882d23bc134}{val}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements LFSR as described in \char`\"{}\+AXI Traffic Generator v3.\+0\char`\"{}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_axi_traffic_gen_lfsr_a4025e27f51784c851fdaeeeed2b00d95}\label{class_axi_traffic_gen_lfsr_a4025e27f51784c851fdaeeeed2b00d95}} 
+\index{AxiTrafficGenLfsr@{AxiTrafficGenLfsr}!AxiTrafficGenLfsr@{AxiTrafficGenLfsr}}
+\index{AxiTrafficGenLfsr@{AxiTrafficGenLfsr}!AxiTrafficGenLfsr@{AxiTrafficGenLfsr}}
+\doxysubsubsection{\texorpdfstring{AxiTrafficGenLfsr()}{AxiTrafficGenLfsr()}}
+{\footnotesize\ttfamily Axi\+Traffic\+Gen\+Lfsr\+::\+Axi\+Traffic\+Gen\+Lfsr (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_axi_traffic_gen_lfsr_a422fc57972e6e50787d103ee04af6d98}\label{class_axi_traffic_gen_lfsr_a422fc57972e6e50787d103ee04af6d98}} 
+\index{AxiTrafficGenLfsr@{AxiTrafficGenLfsr}!advance@{advance}}
+\index{advance@{advance}!AxiTrafficGenLfsr@{AxiTrafficGenLfsr}}
+\doxysubsubsection{\texorpdfstring{advance()}{advance()}}
+{\footnotesize\ttfamily uint16\+\_\+t Axi\+Traffic\+Gen\+Lfsr\+::advance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Advance LFSR by one iteration, return new value. 
+
+\mbox{\Hypertarget{class_axi_traffic_gen_lfsr_a27337acd2f6dbf24f8449148ae091f63}\label{class_axi_traffic_gen_lfsr_a27337acd2f6dbf24f8449148ae091f63}} 
+\index{AxiTrafficGenLfsr@{AxiTrafficGenLfsr}!get@{get}}
+\index{get@{get}!AxiTrafficGenLfsr@{AxiTrafficGenLfsr}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily uint16\+\_\+t Axi\+Traffic\+Gen\+Lfsr\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get value without advancing the LFSR. 
+
+\mbox{\Hypertarget{class_axi_traffic_gen_lfsr_a7689461a613584fe9f91bb5d1d0e0e95}\label{class_axi_traffic_gen_lfsr_a7689461a613584fe9f91bb5d1d0e0e95}} 
+\index{AxiTrafficGenLfsr@{AxiTrafficGenLfsr}!set@{set}}
+\index{set@{set}!AxiTrafficGenLfsr@{AxiTrafficGenLfsr}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Axi\+Traffic\+Gen\+Lfsr\+::set (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set seed to a specific value. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_axi_traffic_gen_lfsr_aed2a855f64ff59a3e69a9882d23bc134}\label{class_axi_traffic_gen_lfsr_aed2a855f64ff59a3e69a9882d23bc134}} 
+\index{AxiTrafficGenLfsr@{AxiTrafficGenLfsr}!val@{val}}
+\index{val@{val}!AxiTrafficGenLfsr@{AxiTrafficGenLfsr}}
+\doxysubsubsection{\texorpdfstring{val}{val}}
+{\footnotesize\ttfamily uint16\+\_\+t Axi\+Traffic\+Gen\+Lfsr\+::val\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_axi_traffic_gen_lfsr_8hpp}{Axi\+Traffic\+Gen\+Lfsr.\+hpp}}\end{DoxyCompactItemize}

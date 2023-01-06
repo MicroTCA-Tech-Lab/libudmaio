@@ -1,0 +1,169 @@
+\hypertarget{classudmaio_1_1_uio_config_xdma}{}\doxysection{udmaio\+::Uio\+Config\+Xdma Class Reference}
+\label{classudmaio_1_1_uio_config_xdma}\index{udmaio::UioConfigXdma@{udmaio::UioConfigXdma}}
+
+
+Creates \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} from \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} (XDMA version)  
+
+
+
+
+{\ttfamily \#include $<$Uio\+Config.\+hpp$>$}
+
+
+
+Inheritance diagram for udmaio\+::Uio\+Config\+Xdma\+:
+% FIG 0
+
+
+Collaboration diagram for udmaio\+::Uio\+Config\+Xdma\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_ae57292575248142f2e15b0872c782953}{Uio\+Config\+Xdma}} ()=delete
+\item 
+\mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a196df351db3d69f3605bcb89131f02cc}{Uio\+Config\+Xdma}} (std\+::string xdma\+\_\+path, uintptr\+\_\+t pcie\+\_\+offs)
+\begin{DoxyCompactList}\small\item\em Create \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma}{Uio\+Config\+Xdma}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a0db17013b646dbe71a69cc4dc6fec1db}{operator()}} (\mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} dev\+\_\+region, std\+::string evt\+\_\+dev=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Create \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} from memory region. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a33fc547687ace9d054aa227d141ed3ea}{operator()}} (\mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} dev\+\_\+loc) override
+\begin{DoxyCompactList}\small\item\em Make a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a45640a91e84015734b8d02af66a8abce}{dev\+\_\+path}} () override
+\begin{DoxyCompactList}\small\item\em Get device file path (if applicable) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}{Dma\+Mode}} \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a8e91341dbfe554dc57e6509e62f3ce35}{mode}} () override
+\begin{DoxyCompactList}\small\item\em Mode of physical connection to the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a36bed740a1bf141c196f9716b5379a57}{\+\_\+xdma\+\_\+path}}
+\item 
+uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a5198fbe1e91b423d6334d1788d60be7c}{\+\_\+pcie\+\_\+offs}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Creates \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} from \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} (XDMA version) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_uio_config_xdma_ae57292575248142f2e15b0872c782953}\label{classudmaio_1_1_uio_config_xdma_ae57292575248142f2e15b0872c782953}} 
+\index{udmaio::UioConfigXdma@{udmaio::UioConfigXdma}!UioConfigXdma@{UioConfigXdma}}
+\index{UioConfigXdma@{UioConfigXdma}!udmaio::UioConfigXdma@{udmaio::UioConfigXdma}}
+\doxysubsubsection{\texorpdfstring{UioConfigXdma()}{UioConfigXdma()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily udmaio\+::\+Uio\+Config\+Xdma\+::\+Uio\+Config\+Xdma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_config_xdma_a196df351db3d69f3605bcb89131f02cc}\label{classudmaio_1_1_uio_config_xdma_a196df351db3d69f3605bcb89131f02cc}} 
+\index{udmaio::UioConfigXdma@{udmaio::UioConfigXdma}!UioConfigXdma@{UioConfigXdma}}
+\index{UioConfigXdma@{UioConfigXdma}!udmaio::UioConfigXdma@{udmaio::UioConfigXdma}}
+\doxysubsubsection{\texorpdfstring{UioConfigXdma()}{UioConfigXdma()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily udmaio\+::\+Uio\+Config\+Xdma\+::\+Uio\+Config\+Xdma (\begin{DoxyParamCaption}\item[{std\+::string}]{xdma\+\_\+path,  }\item[{uintptr\+\_\+t}]{pcie\+\_\+offs }\end{DoxyParamCaption})}
+
+
+
+Create \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma}{Uio\+Config\+Xdma}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xdma\+\_\+path} & XDMA device path {\ttfamily /dev/...} \\
+\hline
+{\em pcie\+\_\+offs} & PCIe offset in memory \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_uio_config_xdma_a45640a91e84015734b8d02af66a8abce}\label{classudmaio_1_1_uio_config_xdma_a45640a91e84015734b8d02af66a8abce}} 
+\index{udmaio::UioConfigXdma@{udmaio::UioConfigXdma}!dev\_path@{dev\_path}}
+\index{dev\_path@{dev\_path}!udmaio::UioConfigXdma@{udmaio::UioConfigXdma}}
+\doxysubsubsection{\texorpdfstring{dev\_path()}{dev\_path()}}
+{\footnotesize\ttfamily std\+::string udmaio\+::\+Uio\+Config\+Xdma\+::dev\+\_\+path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get device file path (if applicable) 
+
+\begin{DoxyReturn}{Returns}
+Device file path 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classudmaio_1_1_uio_config_base_ad96712dac51d4dc4a8ac4780b2de6a8e}{udmaio\+::\+Uio\+Config\+Base}}.
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_config_xdma_a8e91341dbfe554dc57e6509e62f3ce35}\label{classudmaio_1_1_uio_config_xdma_a8e91341dbfe554dc57e6509e62f3ce35}} 
+\index{udmaio::UioConfigXdma@{udmaio::UioConfigXdma}!mode@{mode}}
+\index{mode@{mode}!udmaio::UioConfigXdma@{udmaio::UioConfigXdma}}
+\doxysubsubsection{\texorpdfstring{mode()}{mode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}{Dma\+Mode}} udmaio\+::\+Uio\+Config\+Xdma\+::mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Mode of physical connection to the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} object. 
+
+\begin{DoxyReturn}{Returns}
+Dma\+Mode enum 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classudmaio_1_1_uio_config_base_a3662b6e5c9c2f391a9f02a54105d17d4}{udmaio\+::\+Uio\+Config\+Base}}.
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_config_xdma_a33fc547687ace9d054aa227d141ed3ea}\label{classudmaio_1_1_uio_config_xdma_a33fc547687ace9d054aa227d141ed3ea}} 
+\index{udmaio::UioConfigXdma@{udmaio::UioConfigXdma}!operator()@{operator()}}
+\index{operator()@{operator()}!udmaio::UioConfigXdma@{udmaio::UioConfigXdma}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} udmaio\+::\+Uio\+Config\+Xdma\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}}}]{dev\+\_\+loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Make a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+\_\+loc} & Configuration data for a \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} for both XDMA and UIO \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} object to allow constructing the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classudmaio_1_1_uio_config_base_abb84f646e4e513ed22614056850a12ad}{udmaio\+::\+Uio\+Config\+Base}}.
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_config_xdma_a0db17013b646dbe71a69cc4dc6fec1db}\label{classudmaio_1_1_uio_config_xdma_a0db17013b646dbe71a69cc4dc6fec1db}} 
+\index{udmaio::UioConfigXdma@{udmaio::UioConfigXdma}!operator()@{operator()}}
+\index{operator()@{operator()}!udmaio::UioConfigXdma@{udmaio::UioConfigXdma}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} udmaio\+::\+Uio\+Config\+Xdma\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}}}]{dev\+\_\+region,  }\item[{std\+::string}]{evt\+\_\+dev = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Create \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} from memory region. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+\_\+region} & Memory region for the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} \\
+\hline
+{\em evt\+\_\+dev} & (optional) Event file for interrupts \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} object to allow constructing the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_uio_config_xdma_a5198fbe1e91b423d6334d1788d60be7c}\label{classudmaio_1_1_uio_config_xdma_a5198fbe1e91b423d6334d1788d60be7c}} 
+\index{udmaio::UioConfigXdma@{udmaio::UioConfigXdma}!\_pcie\_offs@{\_pcie\_offs}}
+\index{\_pcie\_offs@{\_pcie\_offs}!udmaio::UioConfigXdma@{udmaio::UioConfigXdma}}
+\doxysubsubsection{\texorpdfstring{\_pcie\_offs}{\_pcie\_offs}}
+{\footnotesize\ttfamily uintptr\+\_\+t udmaio\+::\+Uio\+Config\+Xdma\+::\+\_\+pcie\+\_\+offs\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_config_xdma_a36bed740a1bf141c196f9716b5379a57}\label{classudmaio_1_1_uio_config_xdma_a36bed740a1bf141c196f9716b5379a57}} 
+\index{udmaio::UioConfigXdma@{udmaio::UioConfigXdma}!\_xdma\_path@{\_xdma\_path}}
+\index{\_xdma\_path@{\_xdma\_path}!udmaio::UioConfigXdma@{udmaio::UioConfigXdma}}
+\doxysubsubsection{\texorpdfstring{\_xdma\_path}{\_xdma\_path}}
+{\footnotesize\ttfamily std\+::string udmaio\+::\+Uio\+Config\+Xdma\+::\+\_\+xdma\+\_\+path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_uio_config_8hpp}{Uio\+Config.\+hpp}}\end{DoxyCompactItemize}

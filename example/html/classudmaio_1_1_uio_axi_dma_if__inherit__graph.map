@@ -1,0 +1,5 @@
+<map id="udmaio::UioAxiDmaIf" name="udmaio::UioAxiDmaIf">
+<area shape="rect" id="node1" title="Interface to AXI DMA Core." alt="" coords="5,152,148,177"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="27,79,126,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="11,5,143,31"/>
+</map>

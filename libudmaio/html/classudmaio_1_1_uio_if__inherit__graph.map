@@ -1,0 +1,7 @@
+<map id="udmaio::UioIf" name="udmaio::UioIf">
+<area shape="rect" id="node1" title="Base class for UIO interfaces." alt="" coords="260,79,359,104"/>
+<area shape="rect" id="node3" href="$classudmaio_1_1_fpga_mem_buffer_over_axi.html" title="DMA data buffer accessed over AXI/UIO, described w/ explicit address &amp; size." alt="" coords="5,152,213,177"/>
+<area shape="rect" id="node4" href="$classudmaio_1_1_uio_axi_dma_if.html" title="Interface to AXI DMA Core." alt="" coords="238,152,381,177"/>
+<area shape="rect" id="node5" href="$classudmaio_1_1_uio_mem_sgdma.html" title="Interface to AXI DMA scatter&#45;gather buffers &amp; descriptors Uses a UioIf to access DMA descriptor memor..." alt="" coords="405,152,565,177"/>
+<area shape="rect" id="node2" title=" " alt="" coords="243,5,375,31"/>
+</map>

@@ -1,0 +1,258 @@
+\hypertarget{classudmaio_1_1_uio_mem_sgdma}{}\doxysection{udmaio\+::Uio\+Mem\+Sgdma Class Reference}
+\label{classudmaio_1_1_uio_mem_sgdma}\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+
+
+Interface to AXI DMA scatter-\/gather buffers \& descriptors Uses a \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} to access DMA descriptor memory.  
+
+
+
+
+{\ttfamily \#include $<$Uio\+Mem\+Sgdma.\+hpp$>$}
+
+
+
+Inheritance diagram for udmaio\+::Uio\+Mem\+Sgdma\+:
+% FIG 0
+
+
+Collaboration diagram for udmaio\+::Uio\+Mem\+Sgdma\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_ae0be4822f52dec3b56305cb37779401d}{init\+\_\+buffers}} (\mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{Dma\+Buffer\+Abstract}} \&mem, size\+\_\+t num\+\_\+buffers, size\+\_\+t buf\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Initialize SGDMA descriptors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a82a1d8293baf5800a56c186d006dd234}{print\+\_\+desc}} (const S2mm\+Desc \&desc) const
+\begin{DoxyCompactList}\small\item\em Print SGDMA descriptor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a0dd0d06deac7f7810feeafa37c399dae}{print\+\_\+descs}} () const
+\begin{DoxyCompactList}\small\item\em Print all SGDMA descriptors. \end{DoxyCompactList}\item 
+uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_ac86d786996e68219d26db1ae67cfd0a9}{get\+\_\+first\+\_\+desc\+\_\+addr}} () const
+\begin{DoxyCompactList}\small\item\em Get address of first SGDMA descriptor (needed for the AXI DMA I/F) \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} $>$ \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a34ffc4c13f92af1e5a99075fd7582f08}{get\+\_\+full\+\_\+buffers}} ()
+\begin{DoxyCompactList}\small\item\em Get full SGDMA buffers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a9eab72c96cad2df0a438ef2fcf685e2e}{Uio\+If}} (\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} dev)
+\begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a93fbd9e04e08851d2588a9cbabb2d401}{Uio\+If}} (\mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} dev\+\_\+loc)
+\begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} Users MUST call \mbox{\hyperlink{classudmaio_1_1_uio_if_a561f0715c14b47fcd87d6e67f824a494}{set\+Link\+Axi()}} or \mbox{\hyperlink{classudmaio_1_1_uio_if_a3f30ddd6c04243ef503fc84522dd3756}{set\+Link\+Xdma()}} before using this. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a5bb8c7d44b6bef0bc82268a84d5c6f99}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((packed)) S2mm\+Desc\+Control
+\item 
+struct \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_ab92cda16dbbcef1e885df0cb0d3bf0d8}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((packed)) S2mm\+Desc\+Status
+\item 
+struct \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_af1afffe0e924857e45845206ae9ef5b5}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((packed, aligned(8))) S2mm\+Desc
+\item 
+S2mm\+Desc $\ast$ \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_ac9653d73072e449a5a0a7136ed7deb07}{desc\+\_\+ptr}} (size\+\_\+t i) const
+\item 
+S2mm\+Desc \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a6242be7f49ce0bb7bf0913a510018669}{read\+\_\+desc}} (size\+\_\+t i) const
+\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_aa6ef679ce983f46e1e4a13ed696cda81}{write\+\_\+desc}} (size\+\_\+t i, const S2mm\+Desc \&src)
+\item 
+virtual const std\+::string\+\_\+view \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a9ca19d2561b8c8fa25f627ac4d27e0d7}{\+\_\+log\+\_\+name}} () const override
+\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_ad1c770a8302c0f8c6838dca51efe5993}{write\+\_\+cyc\+\_\+mode}} (const std\+::vector$<$ \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} $>$ \&dst\+\_\+bufs)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a27a6fb950fca04b9a8ff693f732eadd2}{memcpy32\+\_\+helper}} (void $\ast$\+\_\+\+\_\+restrict\+\_\+\+\_\+ dest, const void $\ast$\+\_\+\+\_\+restrict\+\_\+\+\_\+ src, size\+\_\+t n)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a68e9947dea4f4f7f55f1b1a738a32529}{\+\_\+nr\+\_\+cyc\+\_\+desc}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a61e1d6a02ede507d2f4c1709939f6413}{\+\_\+next\+\_\+readable\+\_\+buf}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a62c5f9829c57bd2bbebf63cae30e5260}{DESC\+\_\+\+ADDR\+\_\+\+STEP}} = 0x40
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Interface to AXI DMA scatter-\/gather buffers \& descriptors Uses a \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} to access DMA descriptor memory. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_a5bb8c7d44b6bef0bc82268a84d5c6f99}\label{classudmaio_1_1_uio_mem_sgdma_a5bb8c7d44b6bef0bc82268a84d5c6f99}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily struct udmaio\+::\+Uio\+Mem\+Sgdma\+::\+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(packed)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_ab92cda16dbbcef1e885df0cb0d3bf0d8}\label{classudmaio_1_1_uio_mem_sgdma_ab92cda16dbbcef1e885df0cb0d3bf0d8}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily struct udmaio\+::\+Uio\+Mem\+Sgdma\+::\+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(packed)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_af1afffe0e924857e45845206ae9ef5b5}\label{classudmaio_1_1_uio_mem_sgdma_af1afffe0e924857e45845206ae9ef5b5}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily struct udmaio\+::\+Uio\+Mem\+Sgdma\+::\+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(packed, aligned(8))}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_a9ca19d2561b8c8fa25f627ac4d27e0d7}\label{classudmaio_1_1_uio_mem_sgdma_a9ca19d2561b8c8fa25f627ac4d27e0d7}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!\_log\_name@{\_log\_name}}
+\index{\_log\_name@{\_log\_name}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{\_log\_name()}{\_log\_name()}}
+{\footnotesize\ttfamily virtual const std\+::string\+\_\+view udmaio\+::\+Uio\+Mem\+Sgdma\+::\+\_\+log\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classudmaio_1_1_uio_if_aebd339271c546d44575671edc7f7daf9}{udmaio\+::\+Uio\+If}}.
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_ac9653d73072e449a5a0a7136ed7deb07}\label{classudmaio_1_1_uio_mem_sgdma_ac9653d73072e449a5a0a7136ed7deb07}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!desc\_ptr@{desc\_ptr}}
+\index{desc\_ptr@{desc\_ptr}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{desc\_ptr()}{desc\_ptr()}}
+{\footnotesize\ttfamily S2mm\+Desc $\ast$ udmaio\+::\+Uio\+Mem\+Sgdma\+::desc\+\_\+ptr (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_ac86d786996e68219d26db1ae67cfd0a9}\label{classudmaio_1_1_uio_mem_sgdma_ac86d786996e68219d26db1ae67cfd0a9}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!get\_first\_desc\_addr@{get\_first\_desc\_addr}}
+\index{get\_first\_desc\_addr@{get\_first\_desc\_addr}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{get\_first\_desc\_addr()}{get\_first\_desc\_addr()}}
+{\footnotesize\ttfamily uintptr\+\_\+t udmaio\+::\+Uio\+Mem\+Sgdma\+::get\+\_\+first\+\_\+desc\+\_\+addr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get address of first SGDMA descriptor (needed for the AXI DMA I/F) 
+
+\begin{DoxyReturn}{Returns}
+Address of first SGDMA descriptor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_a34ffc4c13f92af1e5a99075fd7582f08}\label{classudmaio_1_1_uio_mem_sgdma_a34ffc4c13f92af1e5a99075fd7582f08}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!get\_full\_buffers@{get\_full\_buffers}}
+\index{get\_full\_buffers@{get\_full\_buffers}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{get\_full\_buffers()}{get\_full\_buffers()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} $>$ udmaio\+::\+Uio\+Mem\+Sgdma\+::get\+\_\+full\+\_\+buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get full SGDMA buffers. 
+
+\begin{DoxyReturn}{Returns}
+Vector of \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} pointing into full buffers 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_ae0be4822f52dec3b56305cb37779401d}\label{classudmaio_1_1_uio_mem_sgdma_ae0be4822f52dec3b56305cb37779401d}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!init\_buffers@{init\_buffers}}
+\index{init\_buffers@{init\_buffers}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{init\_buffers()}{init\_buffers()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Mem\+Sgdma\+::init\+\_\+buffers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{Dma\+Buffer\+Abstract}} \&}]{mem,  }\item[{size\+\_\+t}]{num\+\_\+buffers,  }\item[{size\+\_\+t}]{buf\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Initialize SGDMA descriptors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mem} & Memory receiving the SGDMA data \\
+\hline
+{\em num\+\_\+buffers} & Number of descriptors / SGDMA blocks \\
+\hline
+{\em buf\+\_\+size} & Size of each SGDMA block \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_a27a6fb950fca04b9a8ff693f732eadd2}\label{classudmaio_1_1_uio_mem_sgdma_a27a6fb950fca04b9a8ff693f732eadd2}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!memcpy32\_helper@{memcpy32\_helper}}
+\index{memcpy32\_helper@{memcpy32\_helper}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{memcpy32\_helper()}{memcpy32\_helper()}}
+{\footnotesize\ttfamily static void udmaio\+::\+Uio\+Mem\+Sgdma\+::memcpy32\+\_\+helper (\begin{DoxyParamCaption}\item[{void $\ast$\+\_\+\+\_\+restrict\+\_\+\+\_\+}]{dest,  }\item[{const void $\ast$\+\_\+\+\_\+restrict\+\_\+\+\_\+}]{src,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_a82a1d8293baf5800a56c186d006dd234}\label{classudmaio_1_1_uio_mem_sgdma_a82a1d8293baf5800a56c186d006dd234}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!print\_desc@{print\_desc}}
+\index{print\_desc@{print\_desc}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{print\_desc()}{print\_desc()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Mem\+Sgdma\+::print\+\_\+desc (\begin{DoxyParamCaption}\item[{const S2mm\+Desc \&}]{desc }\end{DoxyParamCaption}) const}
+
+
+
+Print SGDMA descriptor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em desc} & SGDMA descriptor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_a0dd0d06deac7f7810feeafa37c399dae}\label{classudmaio_1_1_uio_mem_sgdma_a0dd0d06deac7f7810feeafa37c399dae}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!print\_descs@{print\_descs}}
+\index{print\_descs@{print\_descs}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{print\_descs()}{print\_descs()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Mem\+Sgdma\+::print\+\_\+descs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Print all SGDMA descriptors. 
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_a6242be7f49ce0bb7bf0913a510018669}\label{classudmaio_1_1_uio_mem_sgdma_a6242be7f49ce0bb7bf0913a510018669}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!read\_desc@{read\_desc}}
+\index{read\_desc@{read\_desc}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{read\_desc()}{read\_desc()}}
+{\footnotesize\ttfamily S2mm\+Desc udmaio\+::\+Uio\+Mem\+Sgdma\+::read\+\_\+desc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_a9eab72c96cad2df0a438ef2fcf685e2e}\label{classudmaio_1_1_uio_mem_sgdma_a9eab72c96cad2df0a438ef2fcf685e2e}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!UioIf@{UioIf}}
+\index{UioIf@{UioIf}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{UioIf()}{UioIf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}}]{dev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} describing the connection information \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_a93fbd9e04e08851d2588a9cbabb2d401}\label{classudmaio_1_1_uio_mem_sgdma_a93fbd9e04e08851d2588a9cbabb2d401}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!UioIf@{UioIf}}
+\index{UioIf@{UioIf}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{UioIf()}{UioIf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}}}]{dev\+\_\+loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} Users MUST call \mbox{\hyperlink{classudmaio_1_1_uio_if_a561f0715c14b47fcd87d6e67f824a494}{set\+Link\+Axi()}} or \mbox{\hyperlink{classudmaio_1_1_uio_if_a3f30ddd6c04243ef503fc84522dd3756}{set\+Link\+Xdma()}} before using this. 
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_ad1c770a8302c0f8c6838dca51efe5993}\label{classudmaio_1_1_uio_mem_sgdma_ad1c770a8302c0f8c6838dca51efe5993}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!write\_cyc\_mode@{write\_cyc\_mode}}
+\index{write\_cyc\_mode@{write\_cyc\_mode}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{write\_cyc\_mode()}{write\_cyc\_mode()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Mem\+Sgdma\+::write\+\_\+cyc\+\_\+mode (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} $>$ \&}]{dst\+\_\+bufs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_aa6ef679ce983f46e1e4a13ed696cda81}\label{classudmaio_1_1_uio_mem_sgdma_aa6ef679ce983f46e1e4a13ed696cda81}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!write\_desc@{write\_desc}}
+\index{write\_desc@{write\_desc}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{write\_desc()}{write\_desc()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Mem\+Sgdma\+::write\+\_\+desc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i,  }\item[{const S2mm\+Desc \&}]{src }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_a61e1d6a02ede507d2f4c1709939f6413}\label{classudmaio_1_1_uio_mem_sgdma_a61e1d6a02ede507d2f4c1709939f6413}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!\_next\_readable\_buf@{\_next\_readable\_buf}}
+\index{\_next\_readable\_buf@{\_next\_readable\_buf}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{\_next\_readable\_buf}{\_next\_readable\_buf}}
+{\footnotesize\ttfamily size\+\_\+t udmaio\+::\+Uio\+Mem\+Sgdma\+::\+\_\+next\+\_\+readable\+\_\+buf\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_a68e9947dea4f4f7f55f1b1a738a32529}\label{classudmaio_1_1_uio_mem_sgdma_a68e9947dea4f4f7f55f1b1a738a32529}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!\_nr\_cyc\_desc@{\_nr\_cyc\_desc}}
+\index{\_nr\_cyc\_desc@{\_nr\_cyc\_desc}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{\_nr\_cyc\_desc}{\_nr\_cyc\_desc}}
+{\footnotesize\ttfamily size\+\_\+t udmaio\+::\+Uio\+Mem\+Sgdma\+::\+\_\+nr\+\_\+cyc\+\_\+desc\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_a62c5f9829c57bd2bbebf63cae30e5260}\label{classudmaio_1_1_uio_mem_sgdma_a62c5f9829c57bd2bbebf63cae30e5260}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!DESC\_ADDR\_STEP@{DESC\_ADDR\_STEP}}
+\index{DESC\_ADDR\_STEP@{DESC\_ADDR\_STEP}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{DESC\_ADDR\_STEP}{DESC\_ADDR\_STEP}}
+{\footnotesize\ttfamily constexpr int udmaio\+::\+Uio\+Mem\+Sgdma\+::\+DESC\+\_\+\+ADDR\+\_\+\+STEP = 0x40\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_uio_mem_sgdma_8hpp}{Uio\+Mem\+Sgdma.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,39 @@
+digraph "udmaio::DataHandlerSync"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="udmaio::DataHandlerSync",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Synchronous data handler with blocking read interface."];
+  Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="udmaio::DataHandlerAbstract",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_data_handler_abstract.html",tooltip="Base class to implement a DMA data reception handler."];
+  Node3 -> Node2 [dir="back",color="firebrick4",style="solid"];
+  Node3 [label="boost::noncopyable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" _dma" ];
+  Node4 [label="udmaio::UioAxiDmaIf",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_axi_dma_if.html",tooltip="Interface to AXI DMA Core."];
+  Node5 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="udmaio::UioIf",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_if.html",tooltip="Base class for UIO interfaces."];
+  Node3 -> Node5 [dir="back",color="firebrick4",style="solid"];
+  Node6 -> Node5 [dir="back",color="darkorchid3",style="dashed",label=" _link_cfg" ];
+  Node6 [label="std::unique_ptr\< udmaio\l::UioConfigBase \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node7 [label="udmaio::UioConfigBase",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_config_base.html",tooltip="Base class for UioDeviceInfo configuration."];
+  Node8 -> Node5 [dir="back",color="darkorchid3",style="dashed",label=" _region" ];
+  Node8 [label="udmaio::UioRegion",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structudmaio_1_1_uio_region.html",tooltip="General-purpose struct to define a memory area."];
+  Node9 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" _desc" ];
+  Node9 [label="udmaio::UioMemSgdma",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_mem_sgdma.html",tooltip="Interface to AXI DMA scatter-gather buffers & descriptors Uses a UioIf to access DMA descriptor memor..."];
+  Node5 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node10 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" _mem" ];
+  Node10 [label="udmaio::DmaBufferAbstract",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_dma_buffer_abstract.html",tooltip="Base class for DMA data buffer."];
+  Node3 -> Node10 [dir="back",color="firebrick4",style="solid"];
+  Node11 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" _queue" ];
+  Node11 [label="udmaio::ConcurrentQueue\l\< std::vector\< uint8_t \> \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_concurrent_queue.html",tooltip=" "];
+  Node12 -> Node11 [dir="back",color="darkorchid3",style="dashed",label=" _queue" ];
+  Node12 [label="std::queue\< std::vector\l\< uint8_t \> \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node13 -> Node12 [dir="back",color="darkorchid3",style="dashed",label=" elements" ];
+  Node13 [label="std::vector\< uint8_t \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node14 -> Node11 [dir="back",color="darkorchid3",style="dashed",label=" _mutex" ];
+  Node14 [label="std::mutex",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+}

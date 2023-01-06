@@ -1,0 +1,200 @@
+\hypertarget{class_uio_traffic_gen}{}\doxysection{Uio\+Traffic\+Gen Class Reference}
+\label{class_uio_traffic_gen}\index{UioTrafficGen@{UioTrafficGen}}
+
+
+Interface to LFSR core of the demo application.  
+
+
+
+
+{\ttfamily \#include $<$Uio\+Traffic\+Gen.\+hpp$>$}
+
+
+
+Inheritance diagram for Uio\+Traffic\+Gen\+:
+% FIG 0
+
+
+Collaboration diagram for Uio\+Traffic\+Gen\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_uio_traffic_gen_ad56c154d7266ccfda625c0da9c985862}{start}} (uint16\+\_\+t nr\+\_\+pkts, uint32\+\_\+t pkt\+\_\+size, uint16\+\_\+t pkt\+\_\+pause)
+\item 
+void \mbox{\hyperlink{class_uio_traffic_gen_a91a7c2c7c803d3d2c2ec3ec704adcd23}{stop}} ()
+\item 
+void \mbox{\hyperlink{class_uio_traffic_gen_a750caba91e833c09f3eb2b928bebf40d}{print\+\_\+version}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{class_uio_traffic_gen_aef74d740463d4bef2ed4a808bb7849ac}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((packed)) St\+Control
+\item 
+struct \mbox{\hyperlink{class_uio_traffic_gen_a57bc9002ca63d336089ce7c68b80cd12}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((packed)) St\+Config
+\item 
+virtual const std\+::string\+\_\+view \mbox{\hyperlink{class_uio_traffic_gen_acb4f1ec3084398f6bcda00ed3f25e6ab}{\+\_\+log\+\_\+name}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{class_uio_traffic_gen_a8ae58824aaa4439dc7842ecac3c0718e}{ADDR\+\_\+\+ST\+\_\+\+CTRL}} = 0x30
+\item 
+static constexpr int \mbox{\hyperlink{class_uio_traffic_gen_af23d658567f1282b1ee5befba8819173}{ADDR\+\_\+\+ST\+\_\+\+CONFIG}} = 0x34
+\item 
+static constexpr int \mbox{\hyperlink{class_uio_traffic_gen_a71cfc7ae07d8166dca31799446717c3d}{ADDR\+\_\+\+TR\+\_\+\+LEN}} = 0x38
+\item 
+static constexpr int \mbox{\hyperlink{class_uio_traffic_gen_ae47eebd2941cdc4f40b2dac3d93339f2}{ADDR\+\_\+\+TR\+\_\+\+COUNT}} = 0x3C
+\item 
+static constexpr int \mbox{\hyperlink{class_uio_traffic_gen_a45764b2f9683f89880b5866b1056ea7a}{ADDR\+\_\+\+TR\+\_\+\+TSTRB0}} = 0x40
+\item 
+static constexpr int \mbox{\hyperlink{class_uio_traffic_gen_a3ee6065b917a94e86d187416293d8098}{ADDR\+\_\+\+TR\+\_\+\+TSTRB1}} = 0x44
+\item 
+static constexpr int \mbox{\hyperlink{class_uio_traffic_gen_a4787642a230cc7202673080a6610fab5}{ADDR\+\_\+\+TR\+\_\+\+TSTRB2}} = 0x48
+\item 
+static constexpr int \mbox{\hyperlink{class_uio_traffic_gen_a51f735b2d74bf9418acb3e55e2fa6f71}{ADDR\+\_\+\+TR\+\_\+\+TSTRB3}} = 0x4C
+\item 
+static constexpr int \mbox{\hyperlink{class_uio_traffic_gen_af826c1ac63a2b482be25901c818b141d}{ADDR\+\_\+\+EX\+\_\+\+TR\+\_\+\+LEN}} = 0x50
+\item 
+static constexpr int \mbox{\hyperlink{class_uio_traffic_gen_a8b219b0be19736b16a60b9a47101d45e}{ADDR\+\_\+\+ST\+\_\+\+ERR\+\_\+\+STATUS}} = 0x70
+\item 
+static constexpr int \mbox{\hyperlink{class_uio_traffic_gen_a7baa34bebf8a73720210175fca783190}{ADDR\+\_\+\+ST\+\_\+\+ERR\+\_\+\+EN}} = 0x74
+\item 
+static constexpr int \mbox{\hyperlink{class_uio_traffic_gen_a4939011f0b246d4f5133d6bd72c90dbd}{ADDR\+\_\+\+ST\+\_\+\+ERR\+\_\+\+INT\+\_\+\+EN}} = 0x78
+\item 
+static constexpr int \mbox{\hyperlink{class_uio_traffic_gen_a12609d2e0329e3ae9e346b8210b577f6}{ADDR\+\_\+\+ST\+\_\+\+ERR\+\_\+\+CNT}} = 0x7C
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Interface to LFSR core of the demo application. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_uio_traffic_gen_a57bc9002ca63d336089ce7c68b80cd12}\label{class_uio_traffic_gen_a57bc9002ca63d336089ce7c68b80cd12}} 
+\index{UioTrafficGen@{UioTrafficGen}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily struct Uio\+Traffic\+Gen\+::\+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(packed)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_uio_traffic_gen_aef74d740463d4bef2ed4a808bb7849ac}\label{class_uio_traffic_gen_aef74d740463d4bef2ed4a808bb7849ac}} 
+\index{UioTrafficGen@{UioTrafficGen}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily struct Uio\+Traffic\+Gen\+::\+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(packed)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_uio_traffic_gen_acb4f1ec3084398f6bcda00ed3f25e6ab}\label{class_uio_traffic_gen_acb4f1ec3084398f6bcda00ed3f25e6ab}} 
+\index{UioTrafficGen@{UioTrafficGen}!\_log\_name@{\_log\_name}}
+\index{\_log\_name@{\_log\_name}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{\_log\_name()}{\_log\_name()}}
+{\footnotesize\ttfamily const std\+::string\+\_\+view Uio\+Traffic\+Gen\+::\+\_\+log\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classudmaio_1_1_uio_if_aebd339271c546d44575671edc7f7daf9}{udmaio\+::\+Uio\+If}}.
+
+\mbox{\Hypertarget{class_uio_traffic_gen_a750caba91e833c09f3eb2b928bebf40d}\label{class_uio_traffic_gen_a750caba91e833c09f3eb2b928bebf40d}} 
+\index{UioTrafficGen@{UioTrafficGen}!print\_version@{print\_version}}
+\index{print\_version@{print\_version}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{print\_version()}{print\_version()}}
+{\footnotesize\ttfamily void Uio\+Traffic\+Gen\+::print\+\_\+version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_uio_traffic_gen_ad56c154d7266ccfda625c0da9c985862}\label{class_uio_traffic_gen_ad56c154d7266ccfda625c0da9c985862}} 
+\index{UioTrafficGen@{UioTrafficGen}!start@{start}}
+\index{start@{start}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Uio\+Traffic\+Gen\+::start (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{nr\+\_\+pkts,  }\item[{uint32\+\_\+t}]{pkt\+\_\+size,  }\item[{uint16\+\_\+t}]{pkt\+\_\+pause }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_uio_traffic_gen_a91a7c2c7c803d3d2c2ec3ec704adcd23}\label{class_uio_traffic_gen_a91a7c2c7c803d3d2c2ec3ec704adcd23}} 
+\index{UioTrafficGen@{UioTrafficGen}!stop@{stop}}
+\index{stop@{stop}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Uio\+Traffic\+Gen\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_uio_traffic_gen_af826c1ac63a2b482be25901c818b141d}\label{class_uio_traffic_gen_af826c1ac63a2b482be25901c818b141d}} 
+\index{UioTrafficGen@{UioTrafficGen}!ADDR\_EX\_TR\_LEN@{ADDR\_EX\_TR\_LEN}}
+\index{ADDR\_EX\_TR\_LEN@{ADDR\_EX\_TR\_LEN}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{ADDR\_EX\_TR\_LEN}{ADDR\_EX\_TR\_LEN}}
+{\footnotesize\ttfamily constexpr int Uio\+Traffic\+Gen\+::\+ADDR\+\_\+\+EX\+\_\+\+TR\+\_\+\+LEN = 0x50\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_uio_traffic_gen_af23d658567f1282b1ee5befba8819173}\label{class_uio_traffic_gen_af23d658567f1282b1ee5befba8819173}} 
+\index{UioTrafficGen@{UioTrafficGen}!ADDR\_ST\_CONFIG@{ADDR\_ST\_CONFIG}}
+\index{ADDR\_ST\_CONFIG@{ADDR\_ST\_CONFIG}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{ADDR\_ST\_CONFIG}{ADDR\_ST\_CONFIG}}
+{\footnotesize\ttfamily constexpr int Uio\+Traffic\+Gen\+::\+ADDR\+\_\+\+ST\+\_\+\+CONFIG = 0x34\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_uio_traffic_gen_a8ae58824aaa4439dc7842ecac3c0718e}\label{class_uio_traffic_gen_a8ae58824aaa4439dc7842ecac3c0718e}} 
+\index{UioTrafficGen@{UioTrafficGen}!ADDR\_ST\_CTRL@{ADDR\_ST\_CTRL}}
+\index{ADDR\_ST\_CTRL@{ADDR\_ST\_CTRL}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{ADDR\_ST\_CTRL}{ADDR\_ST\_CTRL}}
+{\footnotesize\ttfamily constexpr int Uio\+Traffic\+Gen\+::\+ADDR\+\_\+\+ST\+\_\+\+CTRL = 0x30\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_uio_traffic_gen_a12609d2e0329e3ae9e346b8210b577f6}\label{class_uio_traffic_gen_a12609d2e0329e3ae9e346b8210b577f6}} 
+\index{UioTrafficGen@{UioTrafficGen}!ADDR\_ST\_ERR\_CNT@{ADDR\_ST\_ERR\_CNT}}
+\index{ADDR\_ST\_ERR\_CNT@{ADDR\_ST\_ERR\_CNT}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{ADDR\_ST\_ERR\_CNT}{ADDR\_ST\_ERR\_CNT}}
+{\footnotesize\ttfamily constexpr int Uio\+Traffic\+Gen\+::\+ADDR\+\_\+\+ST\+\_\+\+ERR\+\_\+\+CNT = 0x7C\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_uio_traffic_gen_a7baa34bebf8a73720210175fca783190}\label{class_uio_traffic_gen_a7baa34bebf8a73720210175fca783190}} 
+\index{UioTrafficGen@{UioTrafficGen}!ADDR\_ST\_ERR\_EN@{ADDR\_ST\_ERR\_EN}}
+\index{ADDR\_ST\_ERR\_EN@{ADDR\_ST\_ERR\_EN}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{ADDR\_ST\_ERR\_EN}{ADDR\_ST\_ERR\_EN}}
+{\footnotesize\ttfamily constexpr int Uio\+Traffic\+Gen\+::\+ADDR\+\_\+\+ST\+\_\+\+ERR\+\_\+\+EN = 0x74\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_uio_traffic_gen_a4939011f0b246d4f5133d6bd72c90dbd}\label{class_uio_traffic_gen_a4939011f0b246d4f5133d6bd72c90dbd}} 
+\index{UioTrafficGen@{UioTrafficGen}!ADDR\_ST\_ERR\_INT\_EN@{ADDR\_ST\_ERR\_INT\_EN}}
+\index{ADDR\_ST\_ERR\_INT\_EN@{ADDR\_ST\_ERR\_INT\_EN}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{ADDR\_ST\_ERR\_INT\_EN}{ADDR\_ST\_ERR\_INT\_EN}}
+{\footnotesize\ttfamily constexpr int Uio\+Traffic\+Gen\+::\+ADDR\+\_\+\+ST\+\_\+\+ERR\+\_\+\+INT\+\_\+\+EN = 0x78\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_uio_traffic_gen_a8b219b0be19736b16a60b9a47101d45e}\label{class_uio_traffic_gen_a8b219b0be19736b16a60b9a47101d45e}} 
+\index{UioTrafficGen@{UioTrafficGen}!ADDR\_ST\_ERR\_STATUS@{ADDR\_ST\_ERR\_STATUS}}
+\index{ADDR\_ST\_ERR\_STATUS@{ADDR\_ST\_ERR\_STATUS}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{ADDR\_ST\_ERR\_STATUS}{ADDR\_ST\_ERR\_STATUS}}
+{\footnotesize\ttfamily constexpr int Uio\+Traffic\+Gen\+::\+ADDR\+\_\+\+ST\+\_\+\+ERR\+\_\+\+STATUS = 0x70\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_uio_traffic_gen_ae47eebd2941cdc4f40b2dac3d93339f2}\label{class_uio_traffic_gen_ae47eebd2941cdc4f40b2dac3d93339f2}} 
+\index{UioTrafficGen@{UioTrafficGen}!ADDR\_TR\_COUNT@{ADDR\_TR\_COUNT}}
+\index{ADDR\_TR\_COUNT@{ADDR\_TR\_COUNT}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{ADDR\_TR\_COUNT}{ADDR\_TR\_COUNT}}
+{\footnotesize\ttfamily constexpr int Uio\+Traffic\+Gen\+::\+ADDR\+\_\+\+TR\+\_\+\+COUNT = 0x3C\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_uio_traffic_gen_a71cfc7ae07d8166dca31799446717c3d}\label{class_uio_traffic_gen_a71cfc7ae07d8166dca31799446717c3d}} 
+\index{UioTrafficGen@{UioTrafficGen}!ADDR\_TR\_LEN@{ADDR\_TR\_LEN}}
+\index{ADDR\_TR\_LEN@{ADDR\_TR\_LEN}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{ADDR\_TR\_LEN}{ADDR\_TR\_LEN}}
+{\footnotesize\ttfamily constexpr int Uio\+Traffic\+Gen\+::\+ADDR\+\_\+\+TR\+\_\+\+LEN = 0x38\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_uio_traffic_gen_a45764b2f9683f89880b5866b1056ea7a}\label{class_uio_traffic_gen_a45764b2f9683f89880b5866b1056ea7a}} 
+\index{UioTrafficGen@{UioTrafficGen}!ADDR\_TR\_TSTRB0@{ADDR\_TR\_TSTRB0}}
+\index{ADDR\_TR\_TSTRB0@{ADDR\_TR\_TSTRB0}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{ADDR\_TR\_TSTRB0}{ADDR\_TR\_TSTRB0}}
+{\footnotesize\ttfamily constexpr int Uio\+Traffic\+Gen\+::\+ADDR\+\_\+\+TR\+\_\+\+TSTRB0 = 0x40\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_uio_traffic_gen_a3ee6065b917a94e86d187416293d8098}\label{class_uio_traffic_gen_a3ee6065b917a94e86d187416293d8098}} 
+\index{UioTrafficGen@{UioTrafficGen}!ADDR\_TR\_TSTRB1@{ADDR\_TR\_TSTRB1}}
+\index{ADDR\_TR\_TSTRB1@{ADDR\_TR\_TSTRB1}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{ADDR\_TR\_TSTRB1}{ADDR\_TR\_TSTRB1}}
+{\footnotesize\ttfamily constexpr int Uio\+Traffic\+Gen\+::\+ADDR\+\_\+\+TR\+\_\+\+TSTRB1 = 0x44\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_uio_traffic_gen_a4787642a230cc7202673080a6610fab5}\label{class_uio_traffic_gen_a4787642a230cc7202673080a6610fab5}} 
+\index{UioTrafficGen@{UioTrafficGen}!ADDR\_TR\_TSTRB2@{ADDR\_TR\_TSTRB2}}
+\index{ADDR\_TR\_TSTRB2@{ADDR\_TR\_TSTRB2}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{ADDR\_TR\_TSTRB2}{ADDR\_TR\_TSTRB2}}
+{\footnotesize\ttfamily constexpr int Uio\+Traffic\+Gen\+::\+ADDR\+\_\+\+TR\+\_\+\+TSTRB2 = 0x48\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_uio_traffic_gen_a51f735b2d74bf9418acb3e55e2fa6f71}\label{class_uio_traffic_gen_a51f735b2d74bf9418acb3e55e2fa6f71}} 
+\index{UioTrafficGen@{UioTrafficGen}!ADDR\_TR\_TSTRB3@{ADDR\_TR\_TSTRB3}}
+\index{ADDR\_TR\_TSTRB3@{ADDR\_TR\_TSTRB3}!UioTrafficGen@{UioTrafficGen}}
+\doxysubsubsection{\texorpdfstring{ADDR\_TR\_TSTRB3}{ADDR\_TR\_TSTRB3}}
+{\footnotesize\ttfamily constexpr int Uio\+Traffic\+Gen\+::\+ADDR\+\_\+\+TR\+\_\+\+TSTRB3 = 0x4C\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_uio_traffic_gen_8hpp}{Uio\+Traffic\+Gen.\+hpp}}\item 
+\mbox{\hyperlink{_uio_traffic_gen_8cpp}{Uio\+Traffic\+Gen.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,91 @@
+\hypertarget{classudmaio_1_1_uio_config_base}{}\doxysection{udmaio\+::Uio\+Config\+Base Class Reference}
+\label{classudmaio_1_1_uio_config_base}\index{udmaio::UioConfigBase@{udmaio::UioConfigBase}}
+
+
+Base class for \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} configuration.  
+
+
+
+
+{\ttfamily \#include $<$Uio\+Config.\+hpp$>$}
+
+
+
+Inheritance diagram for udmaio\+::Uio\+Config\+Base\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \mbox{\hyperlink{classudmaio_1_1_uio_config_base_ad96712dac51d4dc4a8ac4780b2de6a8e}{dev\+\_\+path}} ()
+\begin{DoxyCompactList}\small\item\em Get device file path (if applicable) \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}{Dma\+Mode}} \mbox{\hyperlink{classudmaio_1_1_uio_config_base_a3662b6e5c9c2f391a9f02a54105d17d4}{mode}} ()=0
+\begin{DoxyCompactList}\small\item\em Mode of physical connection to the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} \mbox{\hyperlink{classudmaio_1_1_uio_config_base_abb84f646e4e513ed22614056850a12ad}{operator()}} (\mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} dev\+\_\+loc)=0
+\begin{DoxyCompactList}\small\item\em Make a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} configuration. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_uio_config_base_ad96712dac51d4dc4a8ac4780b2de6a8e}\label{classudmaio_1_1_uio_config_base_ad96712dac51d4dc4a8ac4780b2de6a8e}} 
+\index{udmaio::UioConfigBase@{udmaio::UioConfigBase}!dev\_path@{dev\_path}}
+\index{dev\_path@{dev\_path}!udmaio::UioConfigBase@{udmaio::UioConfigBase}}
+\doxysubsubsection{\texorpdfstring{dev\_path()}{dev\_path()}}
+{\footnotesize\ttfamily virtual std\+::string udmaio\+::\+Uio\+Config\+Base\+::dev\+\_\+path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get device file path (if applicable) 
+
+\begin{DoxyReturn}{Returns}
+Device file path 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a45640a91e84015734b8d02af66a8abce}{udmaio\+::\+Uio\+Config\+Xdma}}.
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_config_base_a3662b6e5c9c2f391a9f02a54105d17d4}\label{classudmaio_1_1_uio_config_base_a3662b6e5c9c2f391a9f02a54105d17d4}} 
+\index{udmaio::UioConfigBase@{udmaio::UioConfigBase}!mode@{mode}}
+\index{mode@{mode}!udmaio::UioConfigBase@{udmaio::UioConfigBase}}
+\doxysubsubsection{\texorpdfstring{mode()}{mode()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}{Dma\+Mode}} udmaio\+::\+Uio\+Config\+Base\+::mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Mode of physical connection to the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} object. 
+
+\begin{DoxyReturn}{Returns}
+Dma\+Mode enum 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classudmaio_1_1_uio_config_uio_ad07df0538d849b8ea02c67ee7e1b3575}{udmaio\+::\+Uio\+Config\+Uio}}, and \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a8e91341dbfe554dc57e6509e62f3ce35}{udmaio\+::\+Uio\+Config\+Xdma}}.
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_config_base_abb84f646e4e513ed22614056850a12ad}\label{classudmaio_1_1_uio_config_base_abb84f646e4e513ed22614056850a12ad}} 
+\index{udmaio::UioConfigBase@{udmaio::UioConfigBase}!operator()@{operator()}}
+\index{operator()@{operator()}!udmaio::UioConfigBase@{udmaio::UioConfigBase}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} udmaio\+::\+Uio\+Config\+Base\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}}}]{dev\+\_\+loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Make a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+\_\+loc} & Configuration data for a \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} for both XDMA and UIO \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} object to allow constructing the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classudmaio_1_1_uio_config_uio_aafd48c47331586053028f554a80b977f}{udmaio\+::\+Uio\+Config\+Uio}}, and \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a33fc547687ace9d054aa227d141ed3ea}{udmaio\+::\+Uio\+Config\+Xdma}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_uio_config_8hpp}{Uio\+Config.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="udmaio::UioDeviceInfo" name="udmaio::UioDeviceInfo">
+<area shape="rect" id="node1" title="Data needed to construct an UioIf; contains information how to connect to a device." alt="" coords="57,197,209,223"/>
+<area shape="rect" id="node2" title=" " alt="" coords="28,95,107,120"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,129,45"/>
+<area shape="rect" id="node4" href="$structudmaio_1_1_uio_region.html" title="General&#45;purpose struct to define a memory area." alt="" coords="131,95,262,120"/>
+</map>

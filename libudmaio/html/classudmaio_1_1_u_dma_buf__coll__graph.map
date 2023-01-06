@@ -1,0 +1,6 @@
+<map id="udmaio::UDmaBuf" name="udmaio::UDmaBuf">
+<area shape="rect" id="node1" title="DMA data buffer accessed over AXI/UIO, implemented w/ udmabuf (see https://github...." alt="" coords="121,168,248,193"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_dma_buffer_abstract.html" title="Base class for DMA data buffer." alt="" coords="5,80,185,105"/>
+<area shape="rect" id="node3" title=" " alt="" coords="29,5,161,31"/>
+<area shape="rect" id="node4" href="$structudmaio_1_1_uio_region.html" title="General&#45;purpose struct to define a memory area." alt="" coords="210,80,341,105"/>
+</map>
