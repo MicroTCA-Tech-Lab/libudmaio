@@ -17,6 +17,8 @@
 #include <queue>
 #include <thread>
 
+namespace udmaio {
+
 /// Helper class to implement a blocking FIFO between threads
 template <typename T>
 class ConcurrentQueue {
@@ -75,3 +77,5 @@ class ConcurrentQueue {
     constexpr static size_t MAX_ELEMS = 64;
     bool _abort = false;
 };
+
+}  // namespace udmaio
