@@ -159,3 +159,9 @@ The hardware is selected at runtime using a command line parameter.
 ./axi_dma_demo.py -H zup
 ./axi_dma_demo.py -H z7io
 ```
+
+# Source code documentation
+
+* To create the Doxygen documentation for the library, run `doxygen` in the source tree root.
+* To create the Doxygen documentation for the C++ example, run `doxygen` in the `example` directory.
+* The Doxygen documentation is created in `docs/libudmaio` and `docs/example`, respectively.
