@@ -31,6 +31,7 @@ class UDmaBuf : public DmaBufferAbstract {
 
     static size_t _get_size(int buf_idx);
     static uintptr_t _get_phys_addr(int buf_idx);
+    void copy_from_buf(uint8_t* dest, const UioRegion& buf_info) const override;
 
   public:
     /// @brief Constructs a UDmaBuf
@@ -41,8 +42,6 @@ class UDmaBuf : public DmaBufferAbstract {
 
     uintptr_t get_phys_addr() const override;
     uintptr_t get_phys_size() const override;
-
-    void append_from_buf(const UioRegion& buf_info, std::vector<uint8_t>& out) const override;
 };
 
 }  // namespace udmaio

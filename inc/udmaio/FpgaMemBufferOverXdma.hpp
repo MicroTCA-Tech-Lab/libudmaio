@@ -48,12 +48,10 @@ class FpgaMemBufferOverXdma : public DmaBufferAbstract {
         return 0;
     }
 
-    void append_from_buf(const UioRegion& buf_info, std::vector<uint8_t>& out) const override {
-        size_t old_size = out.size();
-        size_t new_size = old_size + buf_info.size;
-        out.resize(new_size);
+  protected:
+    void copy_from_buf(uint8_t* dest, const UioRegion& buf_info) const override {
         lseek(_dma_fd, buf_info.addr, SEEK_SET);
-        ssize_t rc = read(_dma_fd, out.data() + old_size, buf_info.size);
+        ssize_t rc = read(_dma_fd, dest, buf_info.size);
         if (rc < static_cast<ssize_t>(buf_info.size)) {
             // TODO: error handling
         }

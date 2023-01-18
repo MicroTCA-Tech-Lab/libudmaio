@@ -77,12 +77,9 @@ uintptr_t UDmaBuf::get_phys_size() const {
     return _phys.size;
 }
 
-void UDmaBuf::append_from_buf(const UioRegion& buf_info, std::vector<uint8_t>& out) const {
-    size_t old_size = out.size();
-    size_t new_size = old_size + buf_info.size;
+void UDmaBuf::copy_from_buf(uint8_t* dest, const UioRegion& buf_info) const {
     uintptr_t mmap_addr = buf_info.addr - _phys.addr;
-    out.resize(new_size);
-    std::memcpy(out.data() + old_size, static_cast<uint8_t*>(_mem) + mmap_addr, buf_info.size);
+    std::memcpy(dest, static_cast<uint8_t*>(_mem) + mmap_addr, buf_info.size);
 }
 
 }  // namespace udmaio

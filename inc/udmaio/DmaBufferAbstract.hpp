@@ -22,6 +22,9 @@ namespace udmaio {
 
 /// Base class for DMA data buffer
 class DmaBufferAbstract : private boost::noncopyable {
+  protected:
+    virtual void copy_from_buf(uint8_t* dest, const UioRegion& buf_info) const = 0;
+
   public:
     /// @brief Get physical address
     /// @return Physical address of DMA data buffer
@@ -31,10 +34,10 @@ class DmaBufferAbstract : private boost::noncopyable {
     /// @return Size of DMA data buffer
     virtual uintptr_t get_phys_size() const = 0;
 
-    /// @brief Get received DMA data
+    /// @brief Append received DMA data to vector
     /// @param buf_info Memory region of DMA buffer
-    /// @param out Received data
-    virtual void append_from_buf(const UioRegion& buf_info, std::vector<uint8_t>& out) const = 0;
+    /// @param out Vector to append received data to
+    void append_from_buf(const UioRegion& buf_info, std::vector<uint8_t>& out) const;
 };
 
 }  // namespace udmaio
