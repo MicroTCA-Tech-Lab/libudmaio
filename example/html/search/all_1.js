@@ -23,11 +23,12 @@ var searchData=
   ['addr_5ftr_5ftstrb2_20',['ADDR_TR_TSTRB2',['../class_uio_traffic_gen.html#a4787642a230cc7202673080a6610fab5',1,'UioTrafficGen']]],
   ['addr_5ftr_5ftstrb3_21',['ADDR_TR_TSTRB3',['../class_uio_traffic_gen.html#a51f735b2d74bf9418acb3e55e2fa6f71',1,'UioTrafficGen']]],
   ['advance_22',['advance',['../class_axi_traffic_gen_lfsr.html#a422fc57972e6e50787d103ee04af6d98',1,'AxiTrafficGenLfsr']]],
-  ['arm_5finterrupt_23',['arm_interrupt',['../classudmaio_1_1_uio_if.html#a6756aeb5ca3c013d0c4be22e3d573963',1,'udmaio::UioIf::arm_interrupt()'],['../classudmaio_1_1_uio_axi_dma_if.html#a6756aeb5ca3c013d0c4be22e3d573963',1,'udmaio::UioAxiDmaIf::arm_interrupt()']]],
-  ['axi_5fdma_5f0_24',['axi_dma_0',['../namespacetarget__hw__consts.html#ac63e44b8e3c76839ccd77671deed943a',1,'target_hw_consts']]],
-  ['axi_5fdma_5fdemo_2ecpp_25',['axi_dma_demo.cpp',['../axi__dma__demo_8cpp.html',1,'']]],
-  ['axi_5fgpio_5fstatus_26',['axi_gpio_status',['../namespacetarget__hw__consts.html#af897aedbe3077420656f27c4846f5244',1,'target_hw_consts']]],
-  ['axi_5ftraffic_5fgen_5f0_27',['axi_traffic_gen_0',['../namespacetarget__hw__consts.html#a51751ec42e24f2fbbb5e9fb5c42fc978',1,'target_hw_consts']]],
-  ['axitrafficgenlfsr_28',['AxiTrafficGenLfsr',['../class_axi_traffic_gen_lfsr.html#a4025e27f51784c851fdaeeeed2b00d95',1,'AxiTrafficGenLfsr::AxiTrafficGenLfsr()'],['../class_axi_traffic_gen_lfsr.html',1,'AxiTrafficGenLfsr']]],
-  ['axitrafficgenlfsr_2ehpp_29',['AxiTrafficGenLfsr.hpp',['../_axi_traffic_gen_lfsr_8hpp.html',1,'']]]
+  ['append_5ffrom_5fbuf_23',['append_from_buf',['../classudmaio_1_1_dma_buffer_abstract.html#a4dd3acc6d3b2f5c0994e6ac7451d25ea',1,'udmaio::DmaBufferAbstract']]],
+  ['arm_5finterrupt_24',['arm_interrupt',['../classudmaio_1_1_uio_if.html#a6756aeb5ca3c013d0c4be22e3d573963',1,'udmaio::UioIf::arm_interrupt()'],['../classudmaio_1_1_uio_axi_dma_if.html#a6756aeb5ca3c013d0c4be22e3d573963',1,'udmaio::UioAxiDmaIf::arm_interrupt()']]],
+  ['axi_5fdma_5f0_25',['axi_dma_0',['../namespacetarget__hw__consts.html#ac63e44b8e3c76839ccd77671deed943a',1,'target_hw_consts']]],
+  ['axi_5fdma_5fdemo_2ecpp_26',['axi_dma_demo.cpp',['../axi__dma__demo_8cpp.html',1,'']]],
+  ['axi_5fgpio_5fstatus_27',['axi_gpio_status',['../namespacetarget__hw__consts.html#af897aedbe3077420656f27c4846f5244',1,'target_hw_consts']]],
+  ['axi_5ftraffic_5fgen_5f0_28',['axi_traffic_gen_0',['../namespacetarget__hw__consts.html#a51751ec42e24f2fbbb5e9fb5c42fc978',1,'target_hw_consts']]],
+  ['axitrafficgenlfsr_29',['AxiTrafficGenLfsr',['../class_axi_traffic_gen_lfsr.html#a4025e27f51784c851fdaeeeed2b00d95',1,'AxiTrafficGenLfsr::AxiTrafficGenLfsr()'],['../class_axi_traffic_gen_lfsr.html',1,'AxiTrafficGenLfsr']]],
+  ['axitrafficgenlfsr_2ehpp_30',['AxiTrafficGenLfsr.hpp',['../_axi_traffic_gen_lfsr_8hpp.html',1,'']]]
 ];

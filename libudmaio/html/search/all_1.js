@@ -8,5 +8,6 @@ var searchData=
   ['addr_5fs2mm_5fdmasr_5',['ADDR_S2MM_DMASR',['../classudmaio_1_1_uio_axi_dma_if.html#a3ca6e5fd5ec37db24c94b39b8e76fe21',1,'udmaio::UioAxiDmaIf']]],
   ['addr_5fs2mm_5ftaildesc_6',['ADDR_S2MM_TAILDESC',['../classudmaio_1_1_uio_axi_dma_if.html#abc89355a02db6885aa901c72da5c3e50',1,'udmaio::UioAxiDmaIf']]],
   ['addr_5fs2mm_5ftaildesc_5fmsb_7',['ADDR_S2MM_TAILDESC_MSB',['../classudmaio_1_1_uio_axi_dma_if.html#aab861721e2d2a8c9cb48024a1b677cd3',1,'udmaio::UioAxiDmaIf']]],
-  ['arm_5finterrupt_8',['arm_interrupt',['../classudmaio_1_1_uio_if.html#a6756aeb5ca3c013d0c4be22e3d573963',1,'udmaio::UioIf::arm_interrupt()'],['../classudmaio_1_1_uio_axi_dma_if.html#a6756aeb5ca3c013d0c4be22e3d573963',1,'udmaio::UioAxiDmaIf::arm_interrupt()']]]
+  ['append_5ffrom_5fbuf_8',['append_from_buf',['../classudmaio_1_1_dma_buffer_abstract.html#a4dd3acc6d3b2f5c0994e6ac7451d25ea',1,'udmaio::DmaBufferAbstract']]],
+  ['arm_5finterrupt_9',['arm_interrupt',['../classudmaio_1_1_uio_if.html#a6756aeb5ca3c013d0c4be22e3d573963',1,'udmaio::UioIf::arm_interrupt()'],['../classudmaio_1_1_uio_axi_dma_if.html#a6756aeb5ca3c013d0c4be22e3d573963',1,'udmaio::UioAxiDmaIf::arm_interrupt()']]]
 ];

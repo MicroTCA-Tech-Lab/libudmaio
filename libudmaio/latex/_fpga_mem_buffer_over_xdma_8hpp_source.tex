@@ -48,18 +48,16 @@
 \DoxyCodeLine{48         \textcolor{keywordflow}{return} 0;}
 \DoxyCodeLine{49     \}}
 \DoxyCodeLine{50 }
-\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa0ec50d10a28a34bc7aeb09e02f43751}{copy\_from\_buf}}(\textcolor{keyword}{const} \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}}\& buf\_info, std::vector<uint8\_t>\& out)\textcolor{keyword}{ const override }\{}
-\DoxyCodeLine{52         \textcolor{keywordtype}{size\_t} old\_size = out.size();}
-\DoxyCodeLine{53         \textcolor{keywordtype}{size\_t} new\_size = old\_size + buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}};}
-\DoxyCodeLine{54         out.resize(new\_size);}
-\DoxyCodeLine{55         lseek(\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}}, buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_aeae3c222eaf007b2850693dfdfd3af9c}{addr}}, SEEK\_SET);}
-\DoxyCodeLine{56         ssize\_t rc = read(\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}}, out.data() + old\_size, buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}});}
-\DoxyCodeLine{57         \textcolor{keywordflow}{if} (rc < \textcolor{keyword}{static\_cast<}ssize\_t\textcolor{keyword}{>}(buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}})) \{}
-\DoxyCodeLine{58             \textcolor{comment}{// TODO: error handling}}
-\DoxyCodeLine{59         \}}
-\DoxyCodeLine{60     \}}
-\DoxyCodeLine{61 \};}
-\DoxyCodeLine{62 }
-\DoxyCodeLine{63 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{51   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_a0418e09aeafa2329d3222c562f71a79d}{copy\_from\_buf}}(uint8\_t* dest, \textcolor{keyword}{const} \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}}\& buf\_info)\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{53         lseek(\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}}, buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_aeae3c222eaf007b2850693dfdfd3af9c}{addr}}, SEEK\_SET);}
+\DoxyCodeLine{54         ssize\_t rc = read(\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}}, dest, buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}});}
+\DoxyCodeLine{55         \textcolor{keywordflow}{if} (rc < \textcolor{keyword}{static\_cast<}ssize\_t\textcolor{keyword}{>}(buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}})) \{}
+\DoxyCodeLine{56             \textcolor{comment}{// TODO: error handling}}
+\DoxyCodeLine{57         \}}
+\DoxyCodeLine{58     \}}
+\DoxyCodeLine{59 \};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}

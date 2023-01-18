@@ -101,6 +101,7 @@ $(document).ready(function(){initNavTree('classudmaio_1_1_dma_buffer_abstract.ht
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classudmaio_1_1_dma_buffer_abstract-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">udmaio::DmaBufferAbstract Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
@@ -131,24 +132,26 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a63369da47cbfa8c63d3a0269a2bffcad"><td class="memItemLeft" align="right" valign="top">virtual uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_dma_buffer_abstract.html#a63369da47cbfa8c63d3a0269a2bffcad">get_phys_size</a> () const =0</td></tr>
 <tr class="memdesc:a63369da47cbfa8c63d3a0269a2bffcad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get buffer size.  <a href="classudmaio_1_1_dma_buffer_abstract.html#a63369da47cbfa8c63d3a0269a2bffcad">More...</a><br /></td></tr>
 <tr class="separator:a63369da47cbfa8c63d3a0269a2bffcad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e934e32d10f3ecc818fa6c73c1eed81"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_dma_buffer_abstract.html#a8e934e32d10f3ecc818fa6c73c1eed81">copy_from_buf</a> (const <a class="el" href="structudmaio_1_1_uio_region.html">UioRegion</a> &amp;buf_info, std::vector&lt; uint8_t &gt; &amp;out) const =0</td></tr>
-<tr class="memdesc:a8e934e32d10f3ecc818fa6c73c1eed81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get received DMA data.  <a href="classudmaio_1_1_dma_buffer_abstract.html#a8e934e32d10f3ecc818fa6c73c1eed81">More...</a><br /></td></tr>
-<tr class="separator:a8e934e32d10f3ecc818fa6c73c1eed81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dd3acc6d3b2f5c0994e6ac7451d25ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_dma_buffer_abstract.html#a4dd3acc6d3b2f5c0994e6ac7451d25ea">append_from_buf</a> (const <a class="el" href="structudmaio_1_1_uio_region.html">UioRegion</a> &amp;buf_info, std::vector&lt; uint8_t &gt; &amp;out) const</td></tr>
+<tr class="memdesc:a4dd3acc6d3b2f5c0994e6ac7451d25ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append received DMA data to vector.  <a href="classudmaio_1_1_dma_buffer_abstract.html#a4dd3acc6d3b2f5c0994e6ac7451d25ea">More...</a><br /></td></tr>
+<tr class="separator:a4dd3acc6d3b2f5c0994e6ac7451d25ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a4b878534dcc75586ae7cd56a405395f7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_dma_buffer_abstract.html#a4b878534dcc75586ae7cd56a405395f7">copy_from_buf</a> (uint8_t *dest, const <a class="el" href="structudmaio_1_1_uio_region.html">UioRegion</a> &amp;buf_info) const =0</td></tr>
+<tr class="separator:a4b878534dcc75586ae7cd56a405395f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Base class for DMA data buffer. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8e934e32d10f3ecc818fa6c73c1eed81" name="a8e934e32d10f3ecc818fa6c73c1eed81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e934e32d10f3ecc818fa6c73c1eed81">&#9670;&#160;</a></span>copy_from_buf()</h2>
+<a id="a4dd3acc6d3b2f5c0994e6ac7451d25ea" name="a4dd3acc6d3b2f5c0994e6ac7451d25ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dd3acc6d3b2f5c0994e6ac7451d25ea">&#9670;&#160;</a></span>append_from_buf()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void udmaio::DmaBufferAbstract::copy_from_buf </td>
+          <td class="memname">void udmaio::DmaBufferAbstract::append_from_buf </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structudmaio_1_1_uio_region.html">UioRegion</a> &amp;&#160;</td>
           <td class="paramname"><em>buf_info</em>, </td>
@@ -165,23 +168,54 @@ Public Member Functions</h2></td></tr>
           <td></td><td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Get received DMA data. </p>
+<p>Append received DMA data to vector. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">buf_info</td><td>Memory region of DMA buffer </td></tr>
-    <tr><td class="paramname">out</td><td>Received data </td></tr>
+    <tr><td class="paramname">out</td><td>Vector to append received data to </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classudmaio_1_1_fpga_mem_buffer_over_axi.html#a141bf386389f4078b954ed9388925f03">udmaio::FpgaMemBufferOverAxi</a>, <a class="el" href="classudmaio_1_1_fpga_mem_buffer_over_xdma.html#aa0ec50d10a28a34bc7aeb09e02f43751">udmaio::FpgaMemBufferOverXdma</a>, and <a class="el" href="classudmaio_1_1_u_dma_buf.html#a9caac35a3b36445d04db027904b9ad39">udmaio::UDmaBuf</a>.</p>
+</div>
+</div>
+<a id="a4b878534dcc75586ae7cd56a405395f7" name="a4b878534dcc75586ae7cd56a405395f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b878534dcc75586ae7cd56a405395f7">&#9670;&#160;</a></span>copy_from_buf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void udmaio::DmaBufferAbstract::copy_from_buf </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structudmaio_1_1_uio_region.html">UioRegion</a> &amp;&#160;</td>
+          <td class="paramname"><em>buf_info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classudmaio_1_1_fpga_mem_buffer_over_axi.html#a8ddbb178a2a0b57ecf6ae54de9802c18">udmaio::FpgaMemBufferOverAxi</a>, <a class="el" href="classudmaio_1_1_fpga_mem_buffer_over_xdma.html#a0418e09aeafa2329d3222c562f71a79d">udmaio::FpgaMemBufferOverXdma</a>, and <a class="el" href="classudmaio_1_1_u_dma_buf.html#a5c00dbc20896e8554a4209c4f4e64061">udmaio::UDmaBuf</a>.</p>
 
 </div>
 </div>

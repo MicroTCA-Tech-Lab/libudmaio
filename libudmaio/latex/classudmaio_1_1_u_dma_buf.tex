@@ -27,9 +27,12 @@ virtual \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_ae76ea7e48d64a0d466ebb0e408d7
 uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_ae187f2139a3e5362d36dd8acd1993108}{get\+\_\+phys\+\_\+addr}} () const override
 \begin{DoxyCompactList}\small\item\em Get physical address. \end{DoxyCompactList}\item 
 uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_a97e7e45c979c01d31b6f6b81c3bc1095}{get\+\_\+phys\+\_\+size}} () const override
-\begin{DoxyCompactList}\small\item\em Get buffer size. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_a9caac35a3b36445d04db027904b9ad39}{copy\+\_\+from\+\_\+buf}} (const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \&buf\+\_\+info, std\+::vector$<$ uint8\+\_\+t $>$ \&out) const override
-\begin{DoxyCompactList}\small\item\em Get received DMA data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get buffer size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_a5c00dbc20896e8554a4209c4f4e64061}{copy\+\_\+from\+\_\+buf}} (uint8\+\_\+t $\ast$dest, const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \&buf\+\_\+info) const override
+\end{DoxyCompactItemize}
 \doxysubsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -48,6 +51,7 @@ const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \mbox{\hyperli
 \item 
 boost\+::log\+::sources\+::severity\+\_\+logger\+\_\+mt$<$ blt\+::severity\+\_\+level $>$ \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_a2eb9e4c106aabbf7dd7a8a8d7ace6e4d}{\+\_\+slg}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
@@ -90,26 +94,15 @@ Constructs a \mbox{\hyperlink{classudmaio_1_1_u_dma_buf}{UDma\+Buf}}.
 \doxysubsubsection{\texorpdfstring{\_get\_size()}{\_get\_size()}}
 {\footnotesize\ttfamily size\+\_\+t udmaio\+::\+UDma\+Buf\+::\+\_\+get\+\_\+size (\begin{DoxyParamCaption}\item[{int}]{buf\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
-\mbox{\Hypertarget{classudmaio_1_1_u_dma_buf_a9caac35a3b36445d04db027904b9ad39}\label{classudmaio_1_1_u_dma_buf_a9caac35a3b36445d04db027904b9ad39}} 
+\mbox{\Hypertarget{classudmaio_1_1_u_dma_buf_a5c00dbc20896e8554a4209c4f4e64061}\label{classudmaio_1_1_u_dma_buf_a5c00dbc20896e8554a4209c4f4e64061}} 
 \index{udmaio::UDmaBuf@{udmaio::UDmaBuf}!copy\_from\_buf@{copy\_from\_buf}}
 \index{copy\_from\_buf@{copy\_from\_buf}!udmaio::UDmaBuf@{udmaio::UDmaBuf}}
 \doxysubsubsection{\texorpdfstring{copy\_from\_buf()}{copy\_from\_buf()}}
-{\footnotesize\ttfamily void udmaio\+::\+UDma\+Buf\+::copy\+\_\+from\+\_\+buf (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \&}]{buf\+\_\+info,  }\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void udmaio\+::\+UDma\+Buf\+::copy\+\_\+from\+\_\+buf (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{dest,  }\item[{const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \&}]{buf\+\_\+info }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
 
 
 
-Get received DMA data. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em buf\+\_\+info} & Memory region of DMA buffer \\
-\hline
-{\em out} & Received data \\
-\hline
-\end{DoxyParams}
-
-
-Implements \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a8e934e32d10f3ecc818fa6c73c1eed81}{udmaio\+::\+Dma\+Buffer\+Abstract}}.
+Implements \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a4b878534dcc75586ae7cd56a405395f7}{udmaio\+::\+Dma\+Buffer\+Abstract}}.
 
 \mbox{\Hypertarget{classudmaio_1_1_u_dma_buf_ae187f2139a3e5362d36dd8acd1993108}\label{classudmaio_1_1_u_dma_buf_ae187f2139a3e5362d36dd8acd1993108}} 
 \index{udmaio::UDmaBuf@{udmaio::UDmaBuf}!get\_phys\_addr@{get\_phys\_addr}}

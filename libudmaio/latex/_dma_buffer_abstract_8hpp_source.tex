@@ -25,14 +25,17 @@
 \DoxyCodeLine{21 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}} \{}
 \DoxyCodeLine{22 }
 \DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{DmaBufferAbstract}} : \textcolor{keyword}{private} boost::noncopyable \{}
-\DoxyCodeLine{25   \textcolor{keyword}{public}:}
-\DoxyCodeLine{28     \textcolor{keyword}{virtual} uintptr\_t \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_abe52ba4c61d6a63e2024eb38f634f3bf}{get\_phys\_addr}}() \textcolor{keyword}{const} = 0;}
-\DoxyCodeLine{29 }
-\DoxyCodeLine{32     \textcolor{keyword}{virtual} uintptr\_t \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a63369da47cbfa8c63d3a0269a2bffcad}{get\_phys\_size}}() \textcolor{keyword}{const} = 0;}
-\DoxyCodeLine{33 }
-\DoxyCodeLine{37     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a8e934e32d10f3ecc818fa6c73c1eed81}{copy\_from\_buf}}(\textcolor{keyword}{const} \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}}\& buf\_info, std::vector<uint8\_t>\& out) \textcolor{keyword}{const} = 0;}
-\DoxyCodeLine{38 \};}
-\DoxyCodeLine{39 }
-\DoxyCodeLine{40 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{25   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a4b878534dcc75586ae7cd56a405395f7}{copy\_from\_buf}}(uint8\_t* dest, \textcolor{keyword}{const} \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}}\& buf\_info) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28   \textcolor{keyword}{public}:}
+\DoxyCodeLine{31     \textcolor{keyword}{virtual} uintptr\_t \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_abe52ba4c61d6a63e2024eb38f634f3bf}{get\_phys\_addr}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{35     \textcolor{keyword}{virtual} uintptr\_t \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a63369da47cbfa8c63d3a0269a2bffcad}{get\_phys\_size}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a4dd3acc6d3b2f5c0994e6ac7451d25ea}{append\_from\_buf}}(\textcolor{keyword}{const} \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}}\& buf\_info, std::vector<uint8\_t>\& out) \textcolor{keyword}{const};}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}

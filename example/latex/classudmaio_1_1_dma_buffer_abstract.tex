@@ -24,34 +24,45 @@ virtual uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_abe5
 \begin{DoxyCompactList}\small\item\em Get physical address. \end{DoxyCompactList}\item 
 virtual uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a63369da47cbfa8c63d3a0269a2bffcad}{get\+\_\+phys\+\_\+size}} () const =0
 \begin{DoxyCompactList}\small\item\em Get buffer size. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a8e934e32d10f3ecc818fa6c73c1eed81}{copy\+\_\+from\+\_\+buf}} (const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \&buf\+\_\+info, std\+::vector$<$ uint8\+\_\+t $>$ \&out) const =0
-\begin{DoxyCompactList}\small\item\em Get received DMA data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a4dd3acc6d3b2f5c0994e6ac7451d25ea}{append\+\_\+from\+\_\+buf}} (const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \&buf\+\_\+info, std\+::vector$<$ uint8\+\_\+t $>$ \&out) const
+\begin{DoxyCompactList}\small\item\em Append received DMA data to vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a4b878534dcc75586ae7cd56a405395f7}{copy\+\_\+from\+\_\+buf}} (uint8\+\_\+t $\ast$dest, const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \&buf\+\_\+info) const =0
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Base class for DMA data buffer. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classudmaio_1_1_dma_buffer_abstract_a8e934e32d10f3ecc818fa6c73c1eed81}\label{classudmaio_1_1_dma_buffer_abstract_a8e934e32d10f3ecc818fa6c73c1eed81}} 
-\index{udmaio::DmaBufferAbstract@{udmaio::DmaBufferAbstract}!copy\_from\_buf@{copy\_from\_buf}}
-\index{copy\_from\_buf@{copy\_from\_buf}!udmaio::DmaBufferAbstract@{udmaio::DmaBufferAbstract}}
-\doxysubsubsection{\texorpdfstring{copy\_from\_buf()}{copy\_from\_buf()}}
-{\footnotesize\ttfamily virtual void udmaio\+::\+Dma\+Buffer\+Abstract\+::copy\+\_\+from\+\_\+buf (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \&}]{buf\+\_\+info,  }\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+\mbox{\Hypertarget{classudmaio_1_1_dma_buffer_abstract_a4dd3acc6d3b2f5c0994e6ac7451d25ea}\label{classudmaio_1_1_dma_buffer_abstract_a4dd3acc6d3b2f5c0994e6ac7451d25ea}} 
+\index{udmaio::DmaBufferAbstract@{udmaio::DmaBufferAbstract}!append\_from\_buf@{append\_from\_buf}}
+\index{append\_from\_buf@{append\_from\_buf}!udmaio::DmaBufferAbstract@{udmaio::DmaBufferAbstract}}
+\doxysubsubsection{\texorpdfstring{append\_from\_buf()}{append\_from\_buf()}}
+{\footnotesize\ttfamily void udmaio\+::\+Dma\+Buffer\+Abstract\+::append\+\_\+from\+\_\+buf (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \&}]{buf\+\_\+info,  }\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{out }\end{DoxyParamCaption}) const}
 
 
 
-Get received DMA data. 
+Append received DMA data to vector. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em buf\+\_\+info} & Memory region of DMA buffer \\
 \hline
-{\em out} & Received data \\
+{\em out} & Vector to append received data to \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_dma_buffer_abstract_a4b878534dcc75586ae7cd56a405395f7}\label{classudmaio_1_1_dma_buffer_abstract_a4b878534dcc75586ae7cd56a405395f7}} 
+\index{udmaio::DmaBufferAbstract@{udmaio::DmaBufferAbstract}!copy\_from\_buf@{copy\_from\_buf}}
+\index{copy\_from\_buf@{copy\_from\_buf}!udmaio::DmaBufferAbstract@{udmaio::DmaBufferAbstract}}
+\doxysubsubsection{\texorpdfstring{copy\_from\_buf()}{copy\_from\_buf()}}
+{\footnotesize\ttfamily virtual void udmaio\+::\+Dma\+Buffer\+Abstract\+::copy\+\_\+from\+\_\+buf (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{dest,  }\item[{const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \&}]{buf\+\_\+info }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
 
 
-Implemented in \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a141bf386389f4078b954ed9388925f03}{udmaio\+::\+Fpga\+Mem\+Buffer\+Over\+Axi}}, \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa0ec50d10a28a34bc7aeb09e02f43751}{udmaio\+::\+Fpga\+Mem\+Buffer\+Over\+Xdma}}, and \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_a9caac35a3b36445d04db027904b9ad39}{udmaio\+::\+UDma\+Buf}}.
+
+Implemented in \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a8ddbb178a2a0b57ecf6ae54de9802c18}{udmaio\+::\+Fpga\+Mem\+Buffer\+Over\+Axi}}, \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_a0418e09aeafa2329d3222c562f71a79d}{udmaio\+::\+Fpga\+Mem\+Buffer\+Over\+Xdma}}, and \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_a5c00dbc20896e8554a4209c4f4e64061}{udmaio\+::\+UDma\+Buf}}.
 
 \mbox{\Hypertarget{classudmaio_1_1_dma_buffer_abstract_abe52ba4c61d6a63e2024eb38f634f3bf}\label{classudmaio_1_1_dma_buffer_abstract_abe52ba4c61d6a63e2024eb38f634f3bf}} 
 \index{udmaio::DmaBufferAbstract@{udmaio::DmaBufferAbstract}!get\_phys\_addr@{get\_phys\_addr}}

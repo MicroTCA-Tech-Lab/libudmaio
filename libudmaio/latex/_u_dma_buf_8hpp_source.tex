@@ -33,18 +33,17 @@
 \DoxyCodeLine{31 }
 \DoxyCodeLine{32     \textcolor{keyword}{static} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_ac47f0632fc277038cd93a4fb4adac1aa}{\_get\_size}}(\textcolor{keywordtype}{int} buf\_idx);}
 \DoxyCodeLine{33     \textcolor{keyword}{static} uintptr\_t \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_a3aad09ddb7fc78bcfebbfaea9576bfe1}{\_get\_phys\_addr}}(\textcolor{keywordtype}{int} buf\_idx);}
-\DoxyCodeLine{34 }
-\DoxyCodeLine{35   \textcolor{keyword}{public}:}
-\DoxyCodeLine{38     \textcolor{keyword}{explicit} \mbox{\hyperlink{classudmaio_1_1_u_dma_buf}{UDmaBuf}}(\textcolor{keywordtype}{int} buf\_idx = 0);}
-\DoxyCodeLine{39 }
-\DoxyCodeLine{40     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_ae76ea7e48d64a0d466ebb0e408d7da52}{\string~UDmaBuf}}();}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{42     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_ae187f2139a3e5362d36dd8acd1993108}{get\_phys\_addr}}() \textcolor{keyword}{const override};}
-\DoxyCodeLine{43     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_a97e7e45c979c01d31b6f6b81c3bc1095}{get\_phys\_size}}() \textcolor{keyword}{const override};}
-\DoxyCodeLine{44 }
-\DoxyCodeLine{45     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_a9caac35a3b36445d04db027904b9ad39}{copy\_from\_buf}}(\textcolor{keyword}{const} \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}}\& buf\_info, std::vector<uint8\_t>\& out) \textcolor{keyword}{const override};}
-\DoxyCodeLine{46 \};}
-\DoxyCodeLine{47 }
-\DoxyCodeLine{48 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_a5c00dbc20896e8554a4209c4f4e64061}{copy\_from\_buf}}(uint8\_t* dest, \textcolor{keyword}{const} \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}}\& buf\_info) \textcolor{keyword}{const override};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36   \textcolor{keyword}{public}:}
+\DoxyCodeLine{39     \textcolor{keyword}{explicit} \mbox{\hyperlink{classudmaio_1_1_u_dma_buf}{UDmaBuf}}(\textcolor{keywordtype}{int} buf\_idx = 0);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_ae76ea7e48d64a0d466ebb0e408d7da52}{\string~UDmaBuf}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_ae187f2139a3e5362d36dd8acd1993108}{get\_phys\_addr}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{44     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_a97e7e45c979c01d31b6f6b81c3bc1095}{get\_phys\_size}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{45 \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}

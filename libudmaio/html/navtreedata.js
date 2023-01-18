@@ -56,7 +56,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_boost_p_c_h_8hpp.html",
-"classudmaio_1_1_uio_if.html"
+"classudmaio_1_1_uio_config_xdma.html#ae57292575248142f2e15b0872c782953"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
