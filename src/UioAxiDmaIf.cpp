@@ -35,7 +35,7 @@ void UioAxiDmaIf::start(uintptr_t start_desc) {
 
     // 1.
     _wr32(ADDR_S2MM_CURDESC, start_desc & ((1ULL << 32) - 1));
-    _wr32(ADDR_S2MM_CURDESC_MSB, start_desc >> 32);
+    _wr32(ADDR_S2MM_CURDESC_MSB, (sizeof(start_desc) > sizeof(uint32_t)) ? start_desc >> 32 : 0);
 
     // 2.
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
@@ -52,8 +52,9 @@ void UioAxiDmaIf::start(uintptr_t start_desc) {
     BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name() << ": DMA control write";
 
     // 4.
-    _wr32(ADDR_S2MM_TAILDESC, 0x50);                  // for circular
-    _wr32(ADDR_S2MM_TAILDESC_MSB, start_desc >> 32);  // for circular
+    _wr32(ADDR_S2MM_TAILDESC, 0x50);  // for circular
+    _wr32(ADDR_S2MM_TAILDESC_MSB,
+          (sizeof(start_desc) > sizeof(uint32_t)) ? start_desc >> 32 : 0);  // for circular
 
     uint32_t tmp_ctrl_after = _rd32(ADDR_S2MM_DMACR);
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)

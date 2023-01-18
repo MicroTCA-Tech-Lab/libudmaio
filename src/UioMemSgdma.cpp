@@ -146,7 +146,8 @@ std::vector<UioRegion> UioMemSgdma::get_full_buffers() {
         desc.status.cmpit = 0;
         write_desc(_next_readable_buf, desc);
 
-        bufs.emplace_back(UioRegion{desc.buffer_addr, desc.status.buffer_len});
+        bufs.emplace_back(
+            UioRegion{static_cast<uintptr_t>(desc.buffer_addr), desc.status.buffer_len});
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
             << "save buf #" << _next_readable_buf << " @ 0x" << std::hex << desc.buffer_addr;
 
