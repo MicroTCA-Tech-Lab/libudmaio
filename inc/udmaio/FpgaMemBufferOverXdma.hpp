@@ -48,7 +48,7 @@ class FpgaMemBufferOverXdma : public DmaBufferAbstract {
         return 0;
     }
 
-    void copy_from_buf(const UioRegion& buf_info, std::vector<uint8_t>& out) const override {
+    void append_from_buf(const UioRegion& buf_info, std::vector<uint8_t>& out) const override {
         size_t old_size = out.size();
         size_t new_size = old_size + buf_info.size;
         out.resize(new_size);

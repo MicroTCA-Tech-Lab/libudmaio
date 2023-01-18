@@ -38,12 +38,12 @@ class FpgaMemBufferOverAxi : public DmaBufferAbstract, public UioIf {
 
     uintptr_t get_phys_size() const override { return _region.size; }
 
-    void copy_from_buf(const UioRegion& buf_info, std::vector<uint8_t>& out) const override {
+    void append_from_buf(const UioRegion& buf_info, std::vector<uint8_t>& out) const override {
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-            << "FpgaMemBufferOverAxi: copy_from_buf: buf_info.addr = 0x" << std::hex
+            << "FpgaMemBufferOverAxi: append_from_buf: buf_info.addr = 0x" << std::hex
             << buf_info.addr << std::dec;
         BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-            << "FpgaMemBufferOverAxi: copy_from_buf: buf_info.size = " << buf_info.size;
+            << "FpgaMemBufferOverAxi: append_from_buf: buf_info.size = " << buf_info.size;
         size_t old_size = out.size();
         size_t new_size = old_size + buf_info.size;
         uintptr_t mmap_addr = buf_info.addr - _region.addr;

@@ -58,7 +58,7 @@ py::array_t<uint8_t> DataHandlerPython::numpy_read_nb() {
     auto vec = new std::vector<uint8_t>();
 
     for (auto &buf : full_bufs) {
-        _mem_ptr->copy_from_buf(buf, *vec);
+        _mem_ptr->append_from_buf(buf, *vec);
     }
     // Callback for Python garbage collector
     py::capsule gc_callback(vec, [](void *f) {
