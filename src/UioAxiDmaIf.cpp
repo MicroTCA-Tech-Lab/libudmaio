@@ -31,41 +31,43 @@ void UioAxiDmaIf::start(uintptr_t start_desc) {
 
     // 0.
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
-    _wr_reg<S2mmDmaControlReg>(ADDR_S2MM_DMACR, {.Reset = 1});
+    s2mm_dmacr.wr({.reset = 1});
 
     // 1.
-    _wr32(ADDR_S2MM_CURDESC, start_desc & ((1ULL << 32) - 1));
-    _wr32(ADDR_S2MM_CURDESC_MSB, (sizeof(start_desc) > sizeof(uint32_t)) ? start_desc >> 32 : 0);
+    s2mm_curdesc.wr({.current_descriptor_pointer = static_cast<uint32_t>(start_desc) >> 6});
+    s2mm_curdesc_msb.wr(
+        (sizeof(start_desc) > sizeof(uint32_t)) ? static_cast<uint32_t>(start_desc >> 32) : 0);
 
     // 2.
+    auto ctrl_reg = s2mm_dmacr.rd();
+    reg_cast_t<axi_dma::s2mm_dmacr_t> tmp{.data = ctrl_reg};
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name() << ": DMA ctrl = 0x" << std::hex << _rd32(ADDR_S2MM_DMACR) << std::dec;
+        << _log_name() << ": DMA ctrl = 0x" << std::hex << tmp.raw << std::dec;
 
-    auto ctrl_reg = _rd_reg<S2mmDmaControlReg>(ADDR_S2MM_DMACR);
-    ctrl_reg.RS = 1;
-    ctrl_reg.Cyc_bd_en = 1;
-    ctrl_reg.IOC_IrqEn = 1;
+    ctrl_reg.rs = 1;
+    ctrl_reg.cyclic_bd_enable = 1;
+    ctrl_reg.ioc_irq_en = 1;
 
     // 3.
-    _wr_reg<S2mmDmaControlReg>(ADDR_S2MM_DMACR, ctrl_reg);
+    s2mm_dmacr.wr(ctrl_reg);
 
     BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name() << ": DMA control write";
 
     // 4.
-    _wr32(ADDR_S2MM_TAILDESC, 0x50);  // for circular
-    _wr32(ADDR_S2MM_TAILDESC_MSB,
-          (sizeof(start_desc) > sizeof(uint32_t)) ? start_desc >> 32 : 0);  // for circular
+    s2mm_taildesc.wr({.tail_descriptor_pointer = 0x50 >> 6});  // for circular
+    s2mm_taildesc_msb.wr(
+        (sizeof(start_desc) > sizeof(uint32_t)) ? static_cast<uint32_t>(start_desc >> 32) : 0);
 
-    uint32_t tmp_ctrl_after = _rd32(ADDR_S2MM_DMACR);
+    tmp.data = s2mm_dmacr.rd();
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name() << ": DMA ctrl = 0x" << std::hex << tmp_ctrl_after << std::dec;
+        << _log_name() << ": DMA ctrl = 0x" << std::hex << tmp.raw << std::dec;
 }
 
 uint32_t UioAxiDmaIf::clear_interrupt() {
     uint32_t irq_count = wait_for_interrupt();
 
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
-    _wr_reg<S2mmDmaStatusReg>(ADDR_S2MM_DMASR, {.IOC_Irq = 1});
+    s2mm_dmasr.wr({.ioc_irq = 1});
 
     BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name() << ": clear interrupt";
     return irq_count;
@@ -78,35 +80,35 @@ int UioAxiDmaIf::get_fd_int() const {
 bool UioAxiDmaIf::check_for_errors() {
     bool has_errors = false;
 
-    auto sr = _rd_reg<S2mmDmaStatusReg>(ADDR_S2MM_DMASR);
-    if (sr.DMAIntErr) {
+    auto sr = s2mm_dmasr.rd();
+    if (sr.dma_int_err) {
         has_errors = true;
         BOOST_LOG_SEV(_slg, blt::severity_level::fatal) << _log_name() << ": DMA Internal Error";
     }
 
-    if (sr.DMASlvErr) {
+    if (sr.dma_slv_err) {
         has_errors = true;
         BOOST_LOG_SEV(_slg, blt::severity_level::fatal) << _log_name() << ": DMA Slave Error";
     }
 
-    if (sr.DMADecErr) {
+    if (sr.dma_dec_err) {
         has_errors = true;
         BOOST_LOG_SEV(_slg, blt::severity_level::fatal) << _log_name() << ": DMA Decode Error";
     }
 
-    if (sr.SGIntErr) {
+    if (sr.sg_int_err) {
         has_errors = true;
         BOOST_LOG_SEV(_slg, blt::severity_level::fatal)
             << _log_name() << ": Scatter Gather Internal Error";
     }
 
-    if (sr.SGSlvErr) {
+    if (sr.sg_slv_err) {
         has_errors = true;
         BOOST_LOG_SEV(_slg, blt::severity_level::fatal)
             << _log_name() << ": Scatter Gather Slave Error";
     }
 
-    if (sr.SGDecErr) {
+    if (sr.sg_dec_err) {
         has_errors = true;
         BOOST_LOG_SEV(_slg, blt::severity_level::fatal)
             << _log_name() << ": Scatter Gather Decode Error";

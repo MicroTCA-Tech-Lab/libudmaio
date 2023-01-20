@@ -12,61 +12,19 @@
 #pragma once
 
 #include "UioIf.hpp"
+#include "rdl/AxiDma.hpp"
+#include "rdl/RegAccessor.hpp"
 
 namespace udmaio {
 
+using AxiDmaBlock = axi_dma::block<RegAccessor>;
+
 /// Interface to AXI DMA Core
-class UioAxiDmaIf : public UioIf {
-    static constexpr int ADDR_S2MM_DMACR = 0x30;
-    static constexpr int ADDR_S2MM_DMASR = 0x34;
-    static constexpr int ADDR_S2MM_CURDESC = 0x38;
-    static constexpr int ADDR_S2MM_CURDESC_MSB = 0x3C;
-    static constexpr int ADDR_S2MM_TAILDESC = 0x40;
-    static constexpr int ADDR_S2MM_TAILDESC_MSB = 0x44;
-
-    struct __attribute__((packed)) S2mmDmaControlReg {
-        bool RS : 1;
-        uint32_t rsvd1 : 1;
-        bool Reset : 1;
-        bool Keyhole : 1;
-        bool Cyc_bd_en : 1;
-        uint32_t rsvd11_5 : 7;
-        bool IOC_IrqEn : 1;
-        bool Dly_IrqEn : 1;
-        bool Err_IrqEn : 1;
-        uint32_t rsvd15 : 1;
-        uint32_t IRQThreshold : 8;
-        uint32_t IRQDelay : 8;
-    };
-
-    struct __attribute__((packed)) S2mmDmaStatusReg {
-        bool Halted : 1;
-        bool Idle : 1;
-        uint32_t rsvd2 : 1;
-        bool SGIncld : 1;
-        bool DMAIntErr : 1;
-        bool DMASlvErr : 1;
-        bool DMADecErr : 1;
-        uint32_t rsvd7 : 1;
-        bool SGIntErr : 1;
-        bool SGSlvErr : 1;
-        bool SGDecErr : 1;
-        uint32_t rsvd11 : 1;
-        bool IOC_Irq : 1;
-        bool Dly_Irq : 1;
-        bool Err_Irq : 1;
-        uint32_t rsvd15 : 1;
-        uint32_t RQThresholdSts : 8;
-        uint32_t IRQDelaySts : 8;
-    };
-
-    static_assert(sizeof(S2mmDmaControlReg) == 4);
-    static_assert(sizeof(S2mmDmaStatusReg) == 4);
-
+class UioAxiDmaIf : public UioIf, AxiDmaBlock {
     virtual const std::string_view _log_name() const override;
 
   public:
-    using UioIf::UioIf;
+    UioAxiDmaIf(UioDeviceLocation dev_loc) : UioIf(dev_loc), AxiDmaBlock(this) {}
 
     /// @brief Configure and start the AXI DMA controller
     /// @param start_desc Address of first SGDMA descriptor

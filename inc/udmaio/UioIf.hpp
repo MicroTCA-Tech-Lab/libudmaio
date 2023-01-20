@@ -39,6 +39,9 @@ namespace udmaio {
 
 /// Base class for UIO interfaces
 class UioIf : private boost::noncopyable {
+    template <typename C, uint32_t>
+    friend class RegAccessor;
+
   public:
     /// @brief Construct the UioIf from a UioDeviceInfo
     /// @param dev UioDeviceInfo describing the connection information
