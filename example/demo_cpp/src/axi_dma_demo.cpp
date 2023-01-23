@@ -102,9 +102,9 @@ int main(int argc, char* argv[]) {
     std::signal(SIGINT, signal_handler);
 
     if (mode == DmaMode::UIO) {
-        UioIf::setLinkAxi();
+        UioDeviceLocation::setLinkAxi();
     } else {
-        UioIf::setLinkXdma(dev_path, target_hw_consts::pcie_axi4l_offset);
+        UioDeviceLocation::setLinkXdma(dev_path, target_hw_consts::pcie_axi4l_offset);
     }
 
     auto gpio_status = std::make_unique<UioGpioStatus>(target_hw_consts::axi_gpio_status);

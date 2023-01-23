@@ -2,16 +2,6 @@
 
 namespace udmaio {
 
-std::unique_ptr<UioConfigBase> UioIf::_link_cfg{};
-
-void UioIf::setLinkAxi() {
-    _link_cfg = std::make_unique<UioConfigUio>();
-}
-
-void UioIf::setLinkXdma(std::string xdma_path, uintptr_t pcie_offs) {
-    _link_cfg = std::make_unique<UioConfigXdma>(xdma_path, pcie_offs);
-}
-
 UioIf::UioIf(UioDeviceInfo dev)
     : _region{dev.region}, _slg{}, _skip_write_to_arm_int{!dev.evt_path.empty()} {
     // Can't call virtual fn from ctor, so can't use _log_name()
@@ -46,21 +36,12 @@ UioIf::UioIf(UioDeviceInfo dev)
     }
 }
 
-UioIf::UioIf(UioDeviceLocation dev_loc) : UioIf(_dev_info_from_dev_loc(dev_loc)){};
-
 UioIf::~UioIf() {
     munmap(_mem, _region.size);
     if (_fd_int != _fd) {
         ::close(_fd_int);
     }
     ::close(_fd);
-}
-
-UioDeviceInfo UioIf::_dev_info_from_dev_loc(UioDeviceLocation dev_loc) {
-    if (!_link_cfg) {
-        throw std::runtime_error("UioIf link type not set (use setLinkAxi() or setLinkXdma())");
-    }
-    return _link_cfg->operator()(dev_loc);
 }
 
 void UioIf::arm_interrupt() {

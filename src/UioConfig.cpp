@@ -32,6 +32,23 @@ std::istream& operator>>(std::istream& in, DmaMode& mode) {
     return in;
 }
 
+std::unique_ptr<UioConfigBase> UioDeviceLocation::_link_cfg{};
+
+void UioDeviceLocation::setLinkAxi() {
+    _link_cfg = std::make_unique<UioConfigUio>();
+}
+
+void UioDeviceLocation::setLinkXdma(std::string xdma_path, uintptr_t pcie_offs) {
+    _link_cfg = std::make_unique<UioConfigXdma>(xdma_path, pcie_offs);
+}
+
+UioDeviceLocation::operator UioDeviceInfo() const {
+    if (!_link_cfg) {
+        throw std::runtime_error("UioIf link type not set (use setLinkAxi() or setLinkXdma())");
+    }
+    return _link_cfg->operator()(*this);
+}
+
 /** @brief gets a number of UIO device based on the name
  *
  * i.e. searches for the uio instance where "/sys/class/uio/uioX/name"

@@ -39,32 +39,13 @@ namespace udmaio {
 /// Base class for UIO interfaces
 class UioIf : private boost::noncopyable {
   public:
-    /// @brief Set UioIf's globally to use a AXI/UIO link
-    static void setLinkAxi();
-
-    /// @brief Set UioIf's globally to use a XDMA link
-    /// @param xdma_path XDMA device instance directory in `/dev`
-    /// @param pcie_offs XDMA core PCIe memory offset
-    static void setLinkXdma(std::string xdma_path, uintptr_t pcie_offs);
-
     /// @brief Construct the UioIf from a UioDeviceInfo
     /// @param dev UioDeviceInfo describing the connection information
-    explicit UioIf(UioDeviceInfo dev);
-
-    /// @brief Construct the UioIf from a UioDeviceLocation
-    /// Users MUST call setLinkAxi() or setLinkXdma() before using this
-    explicit UioIf(UioDeviceLocation dev_loc);
+    UioIf(UioDeviceInfo dev);
 
     virtual ~UioIf();
 
   protected:
-    static std::unique_ptr<UioConfigBase> _link_cfg;
-
-    /// @brief Get UioDeviceInfo from UioDeviceLocation
-    /// @param dev_loc UioDeviceLocation describing the device location on both AXI and XDMA links
-    /// @return UioDeviceInfo describing how to reach the device over the actually chosen link
-    static UioDeviceInfo _dev_info_from_dev_loc(UioDeviceLocation dev_loc);
-
     int _fd, _fd_int;
     void* _mem;
     UioRegion _region;

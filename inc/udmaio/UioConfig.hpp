@@ -12,6 +12,7 @@
 #pragma once
 
 #include <iostream>
+#include <memory>
 #include <stdexcept>
 #include <string>
 
@@ -31,8 +32,21 @@ struct UioRegion {
     size_t size;     ///< Size of region
 };
 
+/// Data needed to construct an UioIf; contains information how to connect to a device
+struct UioDeviceInfo {
+    std::string dev_path;
+    std::string evt_path;
+    UioRegion region;
+    uintptr_t mmap_offs;
+};
+
+class UioConfigBase;
+
 /// Holds information where a device can be found over both UIO and XDMA
-struct UioDeviceLocation {
+class UioDeviceLocation {
+    static std::unique_ptr<UioConfigBase> _link_cfg;
+
+  public:
     UioDeviceLocation(std::string uioname, UioRegion xdmaregion, std::string xdmaevtdev = "")
         : uio_name(uioname), xdma_region(xdmaregion), xdma_evt_dev(xdmaevtdev){};
     /// Device name (from device tree) for access through UIO
@@ -41,14 +55,16 @@ struct UioDeviceLocation {
     UioRegion xdma_region;
     /// optional: Event file for access through XDMA
     std::string xdma_evt_dev;
-};
 
-/// Data needed to construct an UioIf; contains information how to connect to a device
-struct UioDeviceInfo {
-    std::string dev_path;
-    std::string evt_path;
-    UioRegion region;
-    uintptr_t mmap_offs;
+    /// @brief Set UioIf's globally to use a AXI/UIO link
+    static void setLinkAxi();
+
+    /// @brief Set UioIf's globally to use a XDMA link
+    /// @param xdma_path XDMA device instance directory in `/dev`
+    /// @param pcie_offs XDMA core PCIe memory offset
+    static void setLinkXdma(std::string xdma_path, uintptr_t pcie_offs);
+
+    operator UioDeviceInfo() const;
 };
 
 /// Base class for UioDeviceInfo configuration
