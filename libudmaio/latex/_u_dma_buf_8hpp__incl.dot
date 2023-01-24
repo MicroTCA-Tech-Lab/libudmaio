@@ -25,7 +25,11 @@ digraph "UDmaBuf.hpp"
   Node9 -> Node10 [color="steelblue1",style="solid"];
   Node10 [label="iostream",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node9 -> Node11 [color="steelblue1",style="solid"];
-  Node11 [label="stdexcept",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node11 [label="memory",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node9 -> Node12 [color="steelblue1",style="solid"];
-  Node12 [label="string",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node12 [label="stdexcept",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node9 -> Node13 [color="steelblue1",style="solid"];
+  Node13 [label="string",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node9 -> Node14 [color="steelblue1",style="solid"];
+  Node14 [label="string_view",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
 }

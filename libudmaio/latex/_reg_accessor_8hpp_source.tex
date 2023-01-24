@@ -1,0 +1,53 @@
+\hypertarget{_reg_accessor_8hpp_source}{}\doxysection{Reg\+Accessor.\+hpp}
+\label{_reg_accessor_8hpp_source}\index{RegAccessor.hpp@{RegAccessor.hpp}}
+\mbox{\hyperlink{_reg_accessor_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_uio_if_8hpp}{udmaio/UioIf.hpp}}"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef REG\_PACKED\_ALIGNED}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define REG\_PACKED\_ALIGNED \_\_attribute\_\_((packed, aligned(4)))}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}} \{}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{19 \textcolor{keyword}{template} <\textcolor{keyword}{typename} C, u\textcolor{keywordtype}{int}32\_t offset>}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_reg_accessor}{RegAccessor}} \{}
+\DoxyCodeLine{21     \textcolor{keyword}{static\_assert}((\textcolor{keyword}{sizeof}(C) \% \textcolor{keyword}{sizeof}(uint32\_t)) == 0, \textcolor{stringliteral}{"{}Register size must be aligned to 32 bits"{}});}
+\DoxyCodeLine{22     \textcolor{keyword}{static\_assert}((offset \% \textcolor{keyword}{sizeof}(uint32\_t)) == 0, \textcolor{stringliteral}{"{}Register offset must be aligned to 32 bits"{}});}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}* \mbox{\hyperlink{classudmaio_1_1_reg_accessor_a8c434bbcd90ca59cd289879160c3cc6a}{\_if}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26   \textcolor{keyword}{public}:}
+\DoxyCodeLine{27     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if}{constructor\_arg\_type}} = \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}*;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_aba0604b0b73eb7ac6511715b0e852301}{RegAccessor}}(\mbox{\hyperlink{classudmaio_1_1_uio_if}{constructor\_arg\_type}} interface) : \mbox{\hyperlink{classudmaio_1_1_reg_accessor_a8c434bbcd90ca59cd289879160c3cc6a}{\_if}}\{interface\} \{\}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{36     C \mbox{\hyperlink{classudmaio_1_1_reg_accessor_a6e015e78a0bc745bffa73e4ced63e3f0}{rd}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{37         C result;}
+\DoxyCodeLine{38         uint32\_t* ptr = \textcolor{keyword}{reinterpret\_cast<}uint32\_t*\textcolor{keyword}{>}(\&result);}
+\DoxyCodeLine{39         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < \textcolor{keyword}{sizeof}(C); i += \textcolor{keyword}{sizeof}(uint32\_t)) \{}
+\DoxyCodeLine{40             *ptr++ = \mbox{\hyperlink{classudmaio_1_1_reg_accessor_a8c434bbcd90ca59cd289879160c3cc6a}{\_if}}-\/>\mbox{\hyperlink{classudmaio_1_1_uio_if_a9a7d60c6438b2d90e204bb5a456ed755}{\_rd32}}(offset + i);}
+\DoxyCodeLine{41         \}}
+\DoxyCodeLine{42         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{43     \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_a3b6b5f9b1898ef252b3de66e0342271d}{wr}}(\textcolor{keyword}{const} C\& value) \{}
+\DoxyCodeLine{51         \textcolor{keyword}{const} uint32\_t* ptr = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }uint32\_t*\textcolor{keyword}{>}(\&value);}
+\DoxyCodeLine{52         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < \textcolor{keyword}{sizeof}(C); i += \textcolor{keyword}{sizeof}(uint32\_t)) \{}
+\DoxyCodeLine{53             \mbox{\hyperlink{classudmaio_1_1_reg_accessor_a8c434bbcd90ca59cd289879160c3cc6a}{\_if}}-\/>\mbox{\hyperlink{classudmaio_1_1_uio_if_a493e161ddcaa28c256f075f45e687391}{\_wr32}}(offset + i, *ptr++);}
+\DoxyCodeLine{54         \}}
+\DoxyCodeLine{55     \}}
+\DoxyCodeLine{56 \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{65 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{66 std::string \mbox{\hyperlink{namespaceudmaio_a5c03c63d910348e26da90a894fc7242e}{field\_to\_str}}(\textcolor{keyword}{const} T\& chararray) \{}
+\DoxyCodeLine{67     \textcolor{keywordflow}{return} \{chararray, strnlen(chararray, \textcolor{keyword}{sizeof}(chararray))\};}
+\DoxyCodeLine{68 \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \}  \textcolor{comment}{// namespace udmaio}}
+
+\end{DoxyCode}

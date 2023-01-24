@@ -1,0 +1,38 @@
+\hypertarget{structaxi__dma_1_1s2mm__taildesc__t}{}\doxysection{axi\+\_\+dma\+::s2mm\+\_\+taildesc\+\_\+t Struct Reference}
+\label{structaxi__dma_1_1s2mm__taildesc__t}\index{axi\_dma::s2mm\_taildesc\_t@{axi\_dma::s2mm\_taildesc\_t}}
+
+
+{\ttfamily \#include $<$Axi\+Dma.\+hpp$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__taildesc__t_ad2e4d8813a8fc07bf517690e1ab8ee1d}{rsvd\+\_\+5\+\_\+0}}\+: 6
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__taildesc__t_a79b82804a563276e97f15ee15095ecb9}{tail\+\_\+descriptor\+\_\+pointer}}\+: 26
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+S2\+MM DMA Tail Descriptor Pointer Register
+
+S2\+MM DMA Tail Descriptor Pointer Register 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__taildesc__t_ad2e4d8813a8fc07bf517690e1ab8ee1d}\label{structaxi__dma_1_1s2mm__taildesc__t_ad2e4d8813a8fc07bf517690e1ab8ee1d}} 
+\index{axi\_dma::s2mm\_taildesc\_t@{axi\_dma::s2mm\_taildesc\_t}!rsvd\_5\_0@{rsvd\_5\_0}}
+\index{rsvd\_5\_0@{rsvd\_5\_0}!axi\_dma::s2mm\_taildesc\_t@{axi\_dma::s2mm\_taildesc\_t}}
+\doxysubsubsection{\texorpdfstring{rsvd\_5\_0}{rsvd\_5\_0}}
+{\footnotesize\ttfamily uint8\+\_\+t axi\+\_\+dma\+::s2mm\+\_\+taildesc\+\_\+t\+::rsvd\+\_\+5\+\_\+0}
+
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__taildesc__t_a79b82804a563276e97f15ee15095ecb9}\label{structaxi__dma_1_1s2mm__taildesc__t_a79b82804a563276e97f15ee15095ecb9}} 
+\index{axi\_dma::s2mm\_taildesc\_t@{axi\_dma::s2mm\_taildesc\_t}!tail\_descriptor\_pointer@{tail\_descriptor\_pointer}}
+\index{tail\_descriptor\_pointer@{tail\_descriptor\_pointer}!axi\_dma::s2mm\_taildesc\_t@{axi\_dma::s2mm\_taildesc\_t}}
+\doxysubsubsection{\texorpdfstring{tail\_descriptor\_pointer}{tail\_descriptor\_pointer}}
+{\footnotesize\ttfamily uint32\+\_\+t axi\+\_\+dma\+::s2mm\+\_\+taildesc\+\_\+t\+::tail\+\_\+descriptor\+\_\+pointer}
+
+Indicates the pause pointer in a descriptor chain. The AXI DMA SG Engine pauses descriptor fetching after completing operations on the descriptor whose current descriptor pointer matches the tail descriptor pointer. When AXI DMA Channel is not halted (DMASR.\+Halted = 0), a write by the CPU to the TAILDESC\+\_\+\+PTR register causes the AXI DMA SG Engine to start fetching descriptors or restart if it was idle (DMASR.\+Idle = 1). If it was not idle, writing TAILDESC\+\_\+\+PTR has no effect except to reposition the pause point. If the AXI DMA Channel DMACR.\+RS bit is set to 0 (DMASR.\+Halted = 1 and DMACR.\+RS = 0), a write by the CPU to the TAILDESC\+\_\+\+PTR register has no effect except to reposition the pause point. Note\+: The software must not move the tail pointer to a location that has not been updated. The software processes and reallocates all completed descriptors (Cmplted = 1), clears the completed bits and then moves the tail pointer. The software must move the pointer to the last descriptor it updated. Descriptors must be 16-\/word aligned, that is, 0x00, 0x40, 0x80, and so forth. Any other alignment has undefined results. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_axi_dma_8hpp}{Axi\+Dma.\+hpp}}\end{DoxyCompactItemize}

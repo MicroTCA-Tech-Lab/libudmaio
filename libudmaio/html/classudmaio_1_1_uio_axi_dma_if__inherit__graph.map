@@ -1,5 +1,6 @@
 <map id="udmaio::UioAxiDmaIf" name="udmaio::UioAxiDmaIf">
-<area shape="rect" id="node1" title="Interface to AXI DMA Core." alt="" coords="5,152,148,177"/>
-<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="27,79,126,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="11,5,143,31"/>
+<area shape="rect" id="node1" title="Interface to AXI DMA Core." alt="" coords="61,152,204,177"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="22,79,121,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,137,31"/>
+<area shape="rect" id="node4" href="$structaxi__dma_1_1block__template.html" title="Template class for the axi_dma block, containing accessors for all its registers." alt="" coords="145,79,245,104"/>
 </map>

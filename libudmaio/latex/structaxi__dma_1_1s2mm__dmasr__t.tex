@@ -1,0 +1,198 @@
+\hypertarget{structaxi__dma_1_1s2mm__dmasr__t}{}\doxysection{axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t Struct Reference}
+\label{structaxi__dma_1_1s2mm__dmasr__t}\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+
+
+{\ttfamily \#include $<$Axi\+Dma.\+hpp$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a5c72c3b8ed0a45272709e9e40d9565ee}{halted}}\+: 1
+\item 
+bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a92057fde9bd98a073d7f33a92f4b82c2}{idle}}\+: 1
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a62556927b34c37b002d42fcb0c71e7e9}{rsvd\+\_\+2\+\_\+2}}\+: 1
+\item 
+bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a50e15c1492e56ea3d8650467f252fa86}{sg\+\_\+incld}}\+: 1
+\begin{DoxyCompactList}\small\item\em Scatter Gather Engine Included. DMASR.\+SGIncld = 1 indicates the Scatter Gather engine is included and the AXI DMA is configured for Scatter Gather mode. DMASR.\+SGIncld = 0 indicates the Scatter Gather engine is excluded and the AXI DMA is configured for Direct Register Mode. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a56b0f54b3f359ee921b5f40c86450041}{dma\+\_\+int\+\_\+err}}\+: 1
+\item 
+bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_acf40ec7ef4667f4b7b475ef63d7753a4}{dma\+\_\+slv\+\_\+err}}\+: 1
+\begin{DoxyCompactList}\small\item\em DMA Slave Error. This error occurs if the slave read from the Memory Map interface issues a Slave Error. This error condition causes the AXI DMA to halt gracefully. The DMACR.\+RS bit is set to 0, and when the engine has completely shut down, the DMASR.\+Halted bit is set to 1. 0 -\/ No DMA Slave Errors. 1 -\/ DMA Slave Error detected. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a540fa65a440e901fdf6e3cf237337b94}{dma\+\_\+dec\+\_\+err}}\+: 1
+\begin{DoxyCompactList}\small\item\em DMA Decode Error. This error occurs if the address request points to an invalid address. This error condition causes the AXI DMA to halt gracefully. The DMACR.\+RS bit is set to 0, and when the engine has completely shut down, the DMASR.\+Halted bit is set to 1. 0 -\/ No DMA Decode Errors. 1 -\/ DMA Decode Error detected. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a9cc5d58666fe4d48b0b73995dd15cca4}{rsvd\+\_\+7\+\_\+7}}\+: 1
+\item 
+bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a2a7d67417f4a854666b47d19e8c748da}{sg\+\_\+int\+\_\+err}}\+: 1
+\begin{DoxyCompactList}\small\item\em Scatter Gather Internal Error. This error occurs if a descriptor with the “\+Complete bit” already set is fetched. This indicates to the SG Engine that the descriptor is a tail descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.\+RS bit is set to 0, and when the engine has completely shut down, the DMASR.\+Halted bit is set to 1. 0 -\/ No SG Internal Errors. 1 -\/ SG Internal Error detected. Note\+: Applicable only when Scatter Gather is enabled. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a441238a52583f7fafdb1dce4fdc8218c}{sg\+\_\+slv\+\_\+err}}\+: 1
+\begin{DoxyCompactList}\small\item\em Scatter Gather Slave Error. This error occurs if the slave read from on the Memory Map interface issues a Slave error. This error condition causes the AXI DMA to halt gracefully. The DMACR.\+RS bit is set to 0, and when the engine has completely shut down, the DMASR.\+Halted bit is set to 1. 0 -\/ No SG Slave Errors. 1 -\/ SG Slave Error detected. DMA Engine halts. Note\+: Applicable only when Scatter Gather is enabled. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a2b90322b3c2d36480781e8bfbaecad86}{sg\+\_\+dec\+\_\+err}}\+: 1
+\begin{DoxyCompactList}\small\item\em Scatter Gather Decode Error. This error occurs if CURDESC\+\_\+\+PTR and/or NXTDESC\+\_\+\+PTR points to an invalid address. This error condition causes the AXI DMA to halt gracefully. The DMACR.\+RS bit is set to 0, and when the engine has completely shut down, the DMASR.\+Halted bit is set to 1. 0 -\/ No SG Decode Errors. 1 -\/ SG Decode Error detected. DMA Engine halts. Note\+: Applicable only when Scatter Gather is enabled. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a1295c7e7846b91c9e3cd7a3e6dfa1536}{rsvd\+\_\+11\+\_\+11}}\+: 1
+\item 
+bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a54960d0adc24c41b31c8d2048ed2fd52}{ioc\+\_\+irq}}\+: 1
+\begin{DoxyCompactList}\small\item\em Interrupt on Complete. When set to 1 for Scatter/\+Gather Mode, indicates an interrupt event was generated on completion of a descriptor. This occurs for descriptors with the End of Frame (EOF) bit set. When set to 1 for Direct Register Mode, indicates an interrupt event was generated on completion of a transfer. If the corresponding bit in S2\+MM\+\_\+\+DMACR is enabled (IOC\+\_\+\+Irq\+En = 1) and if the interrupt threshold has been met, causes an interrupt out to be generated from the AXI DMA. 0 -\/ No IOC Interrupt. 1 -\/ IOC Interrupt detected. Writing a 1 to this bit will clear it. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_aa85339fca072373a9cf6c002ba812a6e}{dly\+\_\+irq}}\+: 1
+\begin{DoxyCompactList}\small\item\em Interrupt on Delay. When set to 1, indicates an interrupt event was generated on delay timer time out. If the corresponding bit is enabled in the S2\+MM\+\_\+\+DMACR (Dly\+\_\+\+Irq\+En = 1), an interrupt out is generated from the AXI DMA. 0 -\/ No Delay Interrupt. 1 -\/ Delay Interrupt detected.\+1 = IOC Interrupt detected. Writing a 1 to this bit will clear it. Note\+: Applicable only when Scatter Gather is enabled. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_aee844706dd045b45c12463ea1ffb0d46}{err\+\_\+irq}}\+: 1
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a0ca3c269d12f36bc28350a918c074c71}{rsvd\+\_\+15\+\_\+15}}\+: 1
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_adc9b4725b329a7eba3d5141d69a02c93}{irq\+\_\+threshold\+\_\+sts}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a5f8bf034f8ee3f971500cb641b756aba}{irq\+\_\+delay\+\_\+sts}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+S2\+MM DMA Status Register
+
+S2\+MM DMA Status Register 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_aa85339fca072373a9cf6c002ba812a6e}\label{structaxi__dma_1_1s2mm__dmasr__t_aa85339fca072373a9cf6c002ba812a6e}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!dly\_irq@{dly\_irq}}
+\index{dly\_irq@{dly\_irq}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{dly\_irq}{dly\_irq}}
+{\footnotesize\ttfamily bool axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::dly\+\_\+irq}
+
+
+
+Interrupt on Delay. When set to 1, indicates an interrupt event was generated on delay timer time out. If the corresponding bit is enabled in the S2\+MM\+\_\+\+DMACR (Dly\+\_\+\+Irq\+En = 1), an interrupt out is generated from the AXI DMA. 0 -\/ No Delay Interrupt. 1 -\/ Delay Interrupt detected.\+1 = IOC Interrupt detected. Writing a 1 to this bit will clear it. Note\+: Applicable only when Scatter Gather is enabled. 
+
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_a540fa65a440e901fdf6e3cf237337b94}\label{structaxi__dma_1_1s2mm__dmasr__t_a540fa65a440e901fdf6e3cf237337b94}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!dma\_dec\_err@{dma\_dec\_err}}
+\index{dma\_dec\_err@{dma\_dec\_err}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{dma\_dec\_err}{dma\_dec\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::dma\+\_\+dec\+\_\+err}
+
+
+
+DMA Decode Error. This error occurs if the address request points to an invalid address. This error condition causes the AXI DMA to halt gracefully. The DMACR.\+RS bit is set to 0, and when the engine has completely shut down, the DMASR.\+Halted bit is set to 1. 0 -\/ No DMA Decode Errors. 1 -\/ DMA Decode Error detected. 
+
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_a56b0f54b3f359ee921b5f40c86450041}\label{structaxi__dma_1_1s2mm__dmasr__t_a56b0f54b3f359ee921b5f40c86450041}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!dma\_int\_err@{dma\_int\_err}}
+\index{dma\_int\_err@{dma\_int\_err}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{dma\_int\_err}{dma\_int\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::dma\+\_\+int\+\_\+err}
+
+DMA Internal Error. This error occurs if the buffer length specified in the fetched descriptor is set to 0. Also, when in Scatter Gather Mode and using the status app length field, this error occurs when the Status AXI4-\/\+Stream packet Rx\+Length field does not match the S2\+MM packet being received by the S\+\_\+\+AXIS\+\_\+\+S2\+MM interface. When Scatter Gather is disabled, this error is flagged if any error occurs during Memory write or if the incoming packet is bigger than what is specified in the DMA length register. This error condition causes the AXI DMA to halt gracefully. The DMACR.\+RS bit is set to 0, and when the engine has completely shut down, the DMASR.\+Halted bit is set to 1. 0 -\/ No DMA Internal Errors 1 -\/ DMA Internal Error detected. \mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_acf40ec7ef4667f4b7b475ef63d7753a4}\label{structaxi__dma_1_1s2mm__dmasr__t_acf40ec7ef4667f4b7b475ef63d7753a4}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!dma\_slv\_err@{dma\_slv\_err}}
+\index{dma\_slv\_err@{dma\_slv\_err}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{dma\_slv\_err}{dma\_slv\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::dma\+\_\+slv\+\_\+err}
+
+
+
+DMA Slave Error. This error occurs if the slave read from the Memory Map interface issues a Slave Error. This error condition causes the AXI DMA to halt gracefully. The DMACR.\+RS bit is set to 0, and when the engine has completely shut down, the DMASR.\+Halted bit is set to 1. 0 -\/ No DMA Slave Errors. 1 -\/ DMA Slave Error detected. 
+
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_aee844706dd045b45c12463ea1ffb0d46}\label{structaxi__dma_1_1s2mm__dmasr__t_aee844706dd045b45c12463ea1ffb0d46}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!err\_irq@{err\_irq}}
+\index{err\_irq@{err\_irq}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{err\_irq}{err\_irq}}
+{\footnotesize\ttfamily bool axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::err\+\_\+irq}
+
+Interrupt on Error. When set to 1, indicates an interrupt event was generated on error. If the corresponding bit is enabled in the S2\+MM\+\_\+\+DMACR (Err\+\_\+\+Irq\+En = 1), an interrupt out is generated from the AXI DMA. Writing a 1 to this bit will clear it. 0 -\/ No error Interrupt. 1 -\/ Error interrupt detected. \mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_a5c72c3b8ed0a45272709e9e40d9565ee}\label{structaxi__dma_1_1s2mm__dmasr__t_a5c72c3b8ed0a45272709e9e40d9565ee}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!halted@{halted}}
+\index{halted@{halted}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{halted}{halted}}
+{\footnotesize\ttfamily bool axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::halted}
+
+DMA Channel Halted. Indicates the run/stop state of the DMA channel. 0 -\/ DMA channel running. 1 -\/ DMA channel halted. For Scatter/\+Gather Mode this bit gets set when DMACR.\+RS = 0 and DMA and SG operations have halted. For Direct Register Mode this bit gets set when DMACR.\+RS = 0 and DMA operations have halted. There can be a lag of time between when DMACR.\+RS = 0 and when DMASR.\+Halted = 1 Note\+: When halted (RS= 0 and Halted = 1), writing to CURDESC\+\_\+\+PTR or TAILDESC\+\_\+\+PTR pointer registers has no effect on DMA operations when in Scatter Gather Mode. For Direct Register Mode, writing to the LENGTH register has no effect on DMA operations. \mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_a92057fde9bd98a073d7f33a92f4b82c2}\label{structaxi__dma_1_1s2mm__dmasr__t_a92057fde9bd98a073d7f33a92f4b82c2}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!idle@{idle}}
+\index{idle@{idle}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{idle}{idle}}
+{\footnotesize\ttfamily bool axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::idle}
+
+DMA Channel Idle. Indicates the state of AXI DMA operations. For Scatter / Gather Mode when IDLE indicates the SG Engine has reached the tail pointer for the associated channel and all queued descriptors have been processed. Writing to the tail pointer register automatically restarts DMA operations. For Direct Register Mode when IDLE indicates the current transfer has completed. 0 -\/ Not Idle. 1 -\/ Idle. Note\+: This bit is 0 when channel is halted (DMASR.\+Halted=1). This bit is also 0 prior to initial transfer when AXI DMA configured for Direct Register Mode. \mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_a54960d0adc24c41b31c8d2048ed2fd52}\label{structaxi__dma_1_1s2mm__dmasr__t_a54960d0adc24c41b31c8d2048ed2fd52}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!ioc\_irq@{ioc\_irq}}
+\index{ioc\_irq@{ioc\_irq}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{ioc\_irq}{ioc\_irq}}
+{\footnotesize\ttfamily bool axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::ioc\+\_\+irq}
+
+
+
+Interrupt on Complete. When set to 1 for Scatter/\+Gather Mode, indicates an interrupt event was generated on completion of a descriptor. This occurs for descriptors with the End of Frame (EOF) bit set. When set to 1 for Direct Register Mode, indicates an interrupt event was generated on completion of a transfer. If the corresponding bit in S2\+MM\+\_\+\+DMACR is enabled (IOC\+\_\+\+Irq\+En = 1) and if the interrupt threshold has been met, causes an interrupt out to be generated from the AXI DMA. 0 -\/ No IOC Interrupt. 1 -\/ IOC Interrupt detected. Writing a 1 to this bit will clear it. 
+
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_a5f8bf034f8ee3f971500cb641b756aba}\label{structaxi__dma_1_1s2mm__dmasr__t_a5f8bf034f8ee3f971500cb641b756aba}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!irq\_delay\_sts@{irq\_delay\_sts}}
+\index{irq\_delay\_sts@{irq\_delay\_sts}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{irq\_delay\_sts}{irq\_delay\_sts}}
+{\footnotesize\ttfamily uint8\+\_\+t axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::irq\+\_\+delay\+\_\+sts}
+
+Interrupt Delay Time Status. Indicates current interrupt delay time value. Note\+: Applicable only when Scatter Gather is enabled. \mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_adc9b4725b329a7eba3d5141d69a02c93}\label{structaxi__dma_1_1s2mm__dmasr__t_adc9b4725b329a7eba3d5141d69a02c93}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!irq\_threshold\_sts@{irq\_threshold\_sts}}
+\index{irq\_threshold\_sts@{irq\_threshold\_sts}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{irq\_threshold\_sts}{irq\_threshold\_sts}}
+{\footnotesize\ttfamily uint8\+\_\+t axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::irq\+\_\+threshold\+\_\+sts}
+
+Interrupt Threshold Status. Indicates current interrupt threshold value. Note\+: Applicable only when Scatter Gather is enabled. \mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_a1295c7e7846b91c9e3cd7a3e6dfa1536}\label{structaxi__dma_1_1s2mm__dmasr__t_a1295c7e7846b91c9e3cd7a3e6dfa1536}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!rsvd\_11\_11@{rsvd\_11\_11}}
+\index{rsvd\_11\_11@{rsvd\_11\_11}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{rsvd\_11\_11}{rsvd\_11\_11}}
+{\footnotesize\ttfamily uint8\+\_\+t axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::rsvd\+\_\+11\+\_\+11}
+
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_a0ca3c269d12f36bc28350a918c074c71}\label{structaxi__dma_1_1s2mm__dmasr__t_a0ca3c269d12f36bc28350a918c074c71}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!rsvd\_15\_15@{rsvd\_15\_15}}
+\index{rsvd\_15\_15@{rsvd\_15\_15}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{rsvd\_15\_15}{rsvd\_15\_15}}
+{\footnotesize\ttfamily uint8\+\_\+t axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::rsvd\+\_\+15\+\_\+15}
+
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_a62556927b34c37b002d42fcb0c71e7e9}\label{structaxi__dma_1_1s2mm__dmasr__t_a62556927b34c37b002d42fcb0c71e7e9}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!rsvd\_2\_2@{rsvd\_2\_2}}
+\index{rsvd\_2\_2@{rsvd\_2\_2}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{rsvd\_2\_2}{rsvd\_2\_2}}
+{\footnotesize\ttfamily uint8\+\_\+t axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::rsvd\+\_\+2\+\_\+2}
+
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_a9cc5d58666fe4d48b0b73995dd15cca4}\label{structaxi__dma_1_1s2mm__dmasr__t_a9cc5d58666fe4d48b0b73995dd15cca4}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!rsvd\_7\_7@{rsvd\_7\_7}}
+\index{rsvd\_7\_7@{rsvd\_7\_7}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{rsvd\_7\_7}{rsvd\_7\_7}}
+{\footnotesize\ttfamily uint8\+\_\+t axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::rsvd\+\_\+7\+\_\+7}
+
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_a2b90322b3c2d36480781e8bfbaecad86}\label{structaxi__dma_1_1s2mm__dmasr__t_a2b90322b3c2d36480781e8bfbaecad86}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!sg\_dec\_err@{sg\_dec\_err}}
+\index{sg\_dec\_err@{sg\_dec\_err}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{sg\_dec\_err}{sg\_dec\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::sg\+\_\+dec\+\_\+err}
+
+
+
+Scatter Gather Decode Error. This error occurs if CURDESC\+\_\+\+PTR and/or NXTDESC\+\_\+\+PTR points to an invalid address. This error condition causes the AXI DMA to halt gracefully. The DMACR.\+RS bit is set to 0, and when the engine has completely shut down, the DMASR.\+Halted bit is set to 1. 0 -\/ No SG Decode Errors. 1 -\/ SG Decode Error detected. DMA Engine halts. Note\+: Applicable only when Scatter Gather is enabled. 
+
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_a50e15c1492e56ea3d8650467f252fa86}\label{structaxi__dma_1_1s2mm__dmasr__t_a50e15c1492e56ea3d8650467f252fa86}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!sg\_incld@{sg\_incld}}
+\index{sg\_incld@{sg\_incld}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{sg\_incld}{sg\_incld}}
+{\footnotesize\ttfamily bool axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::sg\+\_\+incld}
+
+
+
+Scatter Gather Engine Included. DMASR.\+SGIncld = 1 indicates the Scatter Gather engine is included and the AXI DMA is configured for Scatter Gather mode. DMASR.\+SGIncld = 0 indicates the Scatter Gather engine is excluded and the AXI DMA is configured for Direct Register Mode. 
+
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_a2a7d67417f4a854666b47d19e8c748da}\label{structaxi__dma_1_1s2mm__dmasr__t_a2a7d67417f4a854666b47d19e8c748da}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!sg\_int\_err@{sg\_int\_err}}
+\index{sg\_int\_err@{sg\_int\_err}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{sg\_int\_err}{sg\_int\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::sg\+\_\+int\+\_\+err}
+
+
+
+Scatter Gather Internal Error. This error occurs if a descriptor with the “\+Complete bit” already set is fetched. This indicates to the SG Engine that the descriptor is a tail descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.\+RS bit is set to 0, and when the engine has completely shut down, the DMASR.\+Halted bit is set to 1. 0 -\/ No SG Internal Errors. 1 -\/ SG Internal Error detected. Note\+: Applicable only when Scatter Gather is enabled. 
+
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmasr__t_a441238a52583f7fafdb1dce4fdc8218c}\label{structaxi__dma_1_1s2mm__dmasr__t_a441238a52583f7fafdb1dce4fdc8218c}} 
+\index{axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}!sg\_slv\_err@{sg\_slv\_err}}
+\index{sg\_slv\_err@{sg\_slv\_err}!axi\_dma::s2mm\_dmasr\_t@{axi\_dma::s2mm\_dmasr\_t}}
+\doxysubsubsection{\texorpdfstring{sg\_slv\_err}{sg\_slv\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t\+::sg\+\_\+slv\+\_\+err}
+
+
+
+Scatter Gather Slave Error. This error occurs if the slave read from on the Memory Map interface issues a Slave error. This error condition causes the AXI DMA to halt gracefully. The DMACR.\+RS bit is set to 0, and when the engine has completely shut down, the DMASR.\+Halted bit is set to 1. 0 -\/ No SG Slave Errors. 1 -\/ SG Slave Error detected. DMA Engine halts. Note\+: Applicable only when Scatter Gather is enabled. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_axi_dma_8hpp}{Axi\+Dma.\+hpp}}\end{DoxyCompactItemize}

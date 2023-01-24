@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['max_5felems_0',['MAX_ELEMS',['../classudmaio_1_1_concurrent_queue.html#afd6c990a383134f9c26082ff4d24b730',1,'udmaio::ConcurrentQueue']]],
-  ['mmap_5foffs_1',['mmap_offs',['../structudmaio_1_1_uio_device_info.html#a0a207d3b2a1a958a2ca43f1056b77cbd',1,'udmaio::UioDeviceInfo']]]
+  ['halted_0',['halted',['../structaxi__dma_1_1mm2s__dmasr__t.html#adb593de3d6cecf47f9bd5f0c85e77d3a',1,'axi_dma::mm2s_dmasr_t::halted()'],['../structaxi__dma_1_1s2mm__dmasr__t.html#a5c72c3b8ed0a45272709e9e40d9565ee',1,'axi_dma::s2mm_dmasr_t::halted()']]]
 ];

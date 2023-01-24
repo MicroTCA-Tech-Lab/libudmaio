@@ -17,6 +17,11 @@ Inheritance diagram for Uio\+Gpio\+Status\+:
 
 Collaboration diagram for Uio\+Gpio\+Status\+:
 % FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_uio_gpio_status_1_1_gpio_data}{Gpio\+Data}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,28 +30,19 @@ bool \mbox{\hyperlink{class_uio_gpio_status_acde661794a05eeeda4e6ed27dba4e951}{i
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{class_uio_gpio_status_a6c7234ba52e2b17e52afafd877f197b9}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((packed)) Gpio\+Data
-\item 
 virtual const std\+::string\+\_\+view \mbox{\hyperlink{class_uio_gpio_status_a70537c3b41b1ee737fd67945a9409125}{\+\_\+log\+\_\+name}} () const override
 \end{DoxyCompactItemize}
-\doxysubsection*{Static Private Attributes}
+\doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static constexpr int \mbox{\hyperlink{class_uio_gpio_status_a40708d4c8d29c042f448369093ae90c9}{ADDR\+\_\+\+GPIO\+\_\+\+DATA}} = 0
+\mbox{\hyperlink{classudmaio_1_1_reg_accessor}{Reg\+Accessor}}$<$ \mbox{\hyperlink{struct_uio_gpio_status_1_1_gpio_data}{Gpio\+Data}}, 0 $>$ \mbox{\hyperlink{class_uio_gpio_status_a3c3d0e9b18d4b0ed16524c32695d9c4f}{gpio}} \{this\}
 \end{DoxyCompactItemize}
-\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
 Interface to GPIO status port of the demo application. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_uio_gpio_status_a6c7234ba52e2b17e52afafd877f197b9}\label{class_uio_gpio_status_a6c7234ba52e2b17e52afafd877f197b9}} 
-\index{UioGpioStatus@{UioGpioStatus}!\_\_attribute\_\_@{\_\_attribute\_\_}}
-\index{\_\_attribute\_\_@{\_\_attribute\_\_}!UioGpioStatus@{UioGpioStatus}}
-\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}}
-{\footnotesize\ttfamily struct Uio\+Gpio\+Status\+::\+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(packed)}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
 \mbox{\Hypertarget{class_uio_gpio_status_a70537c3b41b1ee737fd67945a9409125}\label{class_uio_gpio_status_a70537c3b41b1ee737fd67945a9409125}} 
 \index{UioGpioStatus@{UioGpioStatus}!\_log\_name@{\_log\_name}}
 \index{\_log\_name@{\_log\_name}!UioGpioStatus@{UioGpioStatus}}
@@ -66,11 +62,11 @@ Implements \mbox{\hyperlink{classudmaio_1_1_uio_if_aebd339271c546d44575671edc7f7
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_uio_gpio_status_a40708d4c8d29c042f448369093ae90c9}\label{class_uio_gpio_status_a40708d4c8d29c042f448369093ae90c9}} 
-\index{UioGpioStatus@{UioGpioStatus}!ADDR\_GPIO\_DATA@{ADDR\_GPIO\_DATA}}
-\index{ADDR\_GPIO\_DATA@{ADDR\_GPIO\_DATA}!UioGpioStatus@{UioGpioStatus}}
-\doxysubsubsection{\texorpdfstring{ADDR\_GPIO\_DATA}{ADDR\_GPIO\_DATA}}
-{\footnotesize\ttfamily constexpr int Uio\+Gpio\+Status\+::\+ADDR\+\_\+\+GPIO\+\_\+\+DATA = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+\mbox{\Hypertarget{class_uio_gpio_status_a3c3d0e9b18d4b0ed16524c32695d9c4f}\label{class_uio_gpio_status_a3c3d0e9b18d4b0ed16524c32695d9c4f}} 
+\index{UioGpioStatus@{UioGpioStatus}!gpio@{gpio}}
+\index{gpio@{gpio}!UioGpioStatus@{UioGpioStatus}}
+\doxysubsubsection{\texorpdfstring{gpio}{gpio}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classudmaio_1_1_reg_accessor}{Reg\+Accessor}}$<$\mbox{\hyperlink{struct_uio_gpio_status_1_1_gpio_data}{Gpio\+Data}}, 0$>$ Uio\+Gpio\+Status\+::gpio \{this\}\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

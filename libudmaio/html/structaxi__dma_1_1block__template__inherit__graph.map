@@ -1,0 +1,4 @@
+<map id="axi_dma::block_template&lt; R_acc, R_acc_arg &gt;" name="axi_dma::block_template&lt; R_acc, R_acc_arg &gt;">
+<area shape="rect" id="node1" title="Template class for the axi_dma block, containing accessors for all its registers." alt="" coords="5,5,169,45"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_axi_dma_if.html" title="Interface to AXI DMA Core." alt="" coords="16,93,159,133"/>
+</map>

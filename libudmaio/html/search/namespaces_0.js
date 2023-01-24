@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['udmaio_0',['udmaio',['../namespaceudmaio.html',1,'']]]
+  ['axi_5fdma_0',['axi_dma',['../namespaceaxi__dma.html',1,'']]]
 ];

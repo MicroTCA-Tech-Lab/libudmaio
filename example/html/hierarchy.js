@@ -1,8 +1,18 @@
 var hierarchy =
 [
     [ "AxiTrafficGenLfsr", "class_axi_traffic_gen_lfsr.html", null ],
+    [ "axi_dma::block_template< R_acc, R_acc_arg >", "structaxi__dma_1_1block__template.html", [
+      [ "udmaio::UioAxiDmaIf", "classudmaio_1_1_uio_axi_dma_if.html", null ]
+    ] ],
     [ "udmaio::ConcurrentQueue< T >", "classudmaio_1_1_concurrent_queue.html", null ],
     [ "udmaio::ConcurrentQueue< std::vector< uint8_t > >", "classudmaio_1_1_concurrent_queue.html", null ],
+    [ "UioTrafficGen::ExtTrLength", "struct_uio_traffic_gen_1_1_ext_tr_length.html", null ],
+    [ "UioGpioStatus::GpioData", "struct_uio_gpio_status_1_1_gpio_data.html", null ],
+    [ "axi_dma::mm2s_curdesc_t", "structaxi__dma_1_1mm2s__curdesc__t.html", null ],
+    [ "axi_dma::mm2s_dmacr_t", "structaxi__dma_1_1mm2s__dmacr__t.html", null ],
+    [ "axi_dma::mm2s_dmasr_t", "structaxi__dma_1_1mm2s__dmasr__t.html", null ],
+    [ "axi_dma::mm2s_length_t", "structaxi__dma_1_1mm2s__length__t.html", null ],
+    [ "axi_dma::mm2s_taildesc_t", "structaxi__dma_1_1mm2s__taildesc__t.html", null ],
     [ "boost::noncopyable", null, [
       [ "udmaio::DataHandlerAbstract", "classudmaio_1_1_data_handler_abstract.html", [
         [ "DataHandlerPrint", "class_data_handler_print.html", null ],
@@ -21,12 +31,26 @@ var hierarchy =
         [ "udmaio::UioMemSgdma", "classudmaio_1_1_uio_mem_sgdma.html", null ]
       ] ]
     ] ],
-    [ "udmaio::UioIf::reg_cast_t< T >", "structudmaio_1_1_uio_if_1_1reg__cast__t.html", null ],
+    [ "udmaio::RegAccessor< C, offset >", "classudmaio_1_1_reg_accessor.html", null ],
+    [ "udmaio::RegAccessor< UioGpioStatus::GpioData, 0 >", "classudmaio_1_1_reg_accessor.html", null ],
+    [ "udmaio::RegAccessor< UioTrafficGen::ExtTrLength, 0x50 >", "classudmaio_1_1_reg_accessor.html", null ],
+    [ "udmaio::RegAccessor< UioTrafficGen::StConfig, 0x34 >", "classudmaio_1_1_reg_accessor.html", null ],
+    [ "udmaio::RegAccessor< UioTrafficGen::StControl, 0x30 >", "classudmaio_1_1_reg_accessor.html", null ],
+    [ "udmaio::RegAccessor< UioTrafficGen::TrLength, 0x38 >", "classudmaio_1_1_reg_accessor.html", null ],
+    [ "axi_dma::s2mm_curdesc_t", "structaxi__dma_1_1s2mm__curdesc__t.html", null ],
+    [ "axi_dma::s2mm_dmacr_t", "structaxi__dma_1_1s2mm__dmacr__t.html", null ],
+    [ "axi_dma::s2mm_dmasr_t", "structaxi__dma_1_1s2mm__dmasr__t.html", null ],
+    [ "axi_dma::s2mm_length_t", "structaxi__dma_1_1s2mm__length__t.html", null ],
+    [ "axi_dma::s2mm_taildesc_t", "structaxi__dma_1_1s2mm__taildesc__t.html", null ],
+    [ "axi_dma::sg_ctl_t", "structaxi__dma_1_1sg__ctl__t.html", null ],
+    [ "UioTrafficGen::StConfig", "struct_uio_traffic_gen_1_1_st_config.html", null ],
+    [ "UioTrafficGen::StControl", "struct_uio_traffic_gen_1_1_st_control.html", null ],
+    [ "UioTrafficGen::TrLength", "struct_uio_traffic_gen_1_1_tr_length.html", null ],
     [ "udmaio::UioConfigBase", "classudmaio_1_1_uio_config_base.html", [
       [ "udmaio::UioConfigUio", "classudmaio_1_1_uio_config_uio.html", null ],
       [ "udmaio::UioConfigXdma", "classudmaio_1_1_uio_config_xdma.html", null ]
     ] ],
     [ "udmaio::UioDeviceInfo", "structudmaio_1_1_uio_device_info.html", null ],
-    [ "udmaio::UioDeviceLocation", "structudmaio_1_1_uio_device_location.html", null ],
+    [ "udmaio::UioDeviceLocation", "classudmaio_1_1_uio_device_location.html", null ],
     [ "udmaio::UioRegion", "structudmaio_1_1_uio_region.html", null ]
 ];

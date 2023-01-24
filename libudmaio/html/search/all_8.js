@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['init_5fbuffers_0',['init_buffers',['../classudmaio_1_1_uio_mem_sgdma.html#ae0be4822f52dec3b56305cb37779401d',1,'udmaio::UioMemSgdma']]]
+  ['halted_0',['halted',['../structaxi__dma_1_1mm2s__dmasr__t.html#adb593de3d6cecf47f9bd5f0c85e77d3a',1,'axi_dma::mm2s_dmasr_t::halted()'],['../structaxi__dma_1_1s2mm__dmasr__t.html#a5c72c3b8ed0a45272709e9e40d9565ee',1,'axi_dma::s2mm_dmasr_t::halted()']]]
 ];

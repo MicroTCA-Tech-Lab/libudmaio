@@ -31,6 +31,7 @@ var NAVTREE =
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
+        [ "Typedefs", "namespacemembers_type.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ]
       ] ]
     ] ],
@@ -39,9 +40,11 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Variables", "functions_vars.html", null ],
+        [ "Typedefs", "functions_type.html", null ],
+        [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -58,8 +61,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_axi_traffic_gen_lfsr_8hpp.html",
-"classudmaio_1_1_uio_axi_dma_if.html#a4f18589ef11a139f2dfccd6f21e3f071"
+"_axi_dma_8hpp.html",
+"classudmaio_1_1_uio_axi_dma_if.html",
+"structaxi__dma_1_1block__template.html#a30745ce2f3104ebc13bee1c06b4404a6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

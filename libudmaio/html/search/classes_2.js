@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['fpgamembufferoveraxi_0',['FpgaMemBufferOverAxi',['../classudmaio_1_1_fpga_mem_buffer_over_axi.html',1,'udmaio']]],
-  ['fpgamembufferoverxdma_1',['FpgaMemBufferOverXdma',['../classudmaio_1_1_fpga_mem_buffer_over_xdma.html',1,'udmaio']]]
+  ['datahandlerabstract_0',['DataHandlerAbstract',['../classudmaio_1_1_data_handler_abstract.html',1,'udmaio']]],
+  ['datahandlersync_1',['DataHandlerSync',['../classudmaio_1_1_data_handler_sync.html',1,'udmaio']]],
+  ['dmabufferabstract_2',['DmaBufferAbstract',['../classudmaio_1_1_dma_buffer_abstract.html',1,'udmaio']]]
 ];

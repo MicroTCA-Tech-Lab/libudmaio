@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['lfsr_0',['lfsr',['../class_data_handler_print.html#aae9109b528b03fb6c458d708d92734de',1,'DataHandlerPrint']]],
-  ['lfsr_5fbytes_5fper_5fbeat_1',['lfsr_bytes_per_beat',['../namespacetarget__hw__consts.html#ac060e967c5b9564f8ec813cf94ebccfe',1,'target_hw_consts']]]
+  ['g_5fstop_5floop_0',['g_stop_loop',['../axi__dma__demo_8cpp.html#a9500273e36edf10300f1a97e86b1999e',1,'axi_dma_demo.cpp']]],
+  ['gpio_1',['gpio',['../class_uio_gpio_status.html#a3c3d0e9b18d4b0ed16524c32695d9c4f',1,'UioGpioStatus']]]
 ];

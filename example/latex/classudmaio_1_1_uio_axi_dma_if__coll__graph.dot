@@ -10,10 +10,8 @@ digraph "udmaio::UioAxiDmaIf"
   Node2 [label="udmaio::UioIf",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_if.html",tooltip="Base class for UIO interfaces."];
   Node3 -> Node2 [dir="back",color="firebrick4",style="solid"];
   Node3 [label="boost::noncopyable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
-  Node4 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" _link_cfg" ];
-  Node4 [label="std::unique_ptr\< udmaio\l::UioConfigBase \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
-  Node5 -> Node4 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
-  Node5 [label="udmaio::UioConfigBase",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_config_base.html",tooltip="Base class for UioDeviceInfo configuration."];
-  Node6 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" _region" ];
-  Node6 [label="udmaio::UioRegion",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structudmaio_1_1_uio_region.html",tooltip="General-purpose struct to define a memory area."];
+  Node4 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" _region" ];
+  Node4 [label="udmaio::UioRegion",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structudmaio_1_1_uio_region.html",tooltip="General-purpose struct to define a memory area."];
+  Node5 -> Node1 [dir="back",color="firebrick4",style="solid"];
+  Node5 [label="AxiDmaBlock",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structaxi__dma_1_1block__template.html",tooltip="Template class for the axi_dma block, containing accessors for all its registers."];
 }

@@ -1,0 +1,270 @@
+\hypertarget{_axi_dma_8hpp_source}{}\doxysection{Axi\+Dma.\+hpp}
+\label{_axi_dma_8hpp_source}\index{AxiDma.hpp@{AxiDma.hpp}}
+\mbox{\hyperlink{_axi_dma_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* This file was automatically generated with HECTARE v0.3.1}}
+\DoxyCodeLine{2 \textcolor{comment}{ *}}
+\DoxyCodeLine{3 \textcolor{comment}{ * DO NOT EDIT}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ *   input\_filename = /mnt/hd2/projects/damc-\/fmc2zup-\/example-\/project/project/damc\_fmc2zup\_project.gen/sources\_1/bd/system\_app/ip/system\_app\_axi\_dma\_1/system\_app\_axi\_dma\_1.xml}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef \_HECTARE\_PACKED}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define \_HECTARE\_PACKED \_\_attribute\_\_((packed, aligned(4)))}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// \_HECTARE\_PACKED}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{22 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceaxi__dma}{axi\_dma}} \{}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{// structs for hardware access}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{32 \textcolor{keyword}{struct }\mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t}{mm2s\_dmacr\_t}} \{}
+\DoxyCodeLine{39     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t_aacb21aafe5e18e9bf57cb85aa0f1a473}{rs}} : 1;}
+\DoxyCodeLine{40     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t_a3e197c8cd6e0a1288fa0767301159005}{rsvd\_1\_1}} : 1;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t_a1b5fdb7e9e56031279682cb0cfb88d14}{reset}} : 1;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{48     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t_ab8fb8ec78e43db3206bfb7cb0613fecf}{keyhole}} : 1;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t_ac3cb90fbffceca1f562f890bf2814146}{cyclic\_bd\_enable}} : 1;}
+\DoxyCodeLine{54     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t_a69d10cb3b5c2fdf85bb90c149cbe9877}{rsvd\_11\_5}} : 7;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{57     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t_a10ef9e065a02a0aabbb1c79f292f7f8c}{ioc\_irq\_en}} : 1;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t_a8e7bb27a9239ba13d19a17eed064215e}{dly\_irq\_en}} : 1;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t_ae054fbdffffed1a742aef7d0e5199087}{err\_irq\_en}} : 1;}
+\DoxyCodeLine{66     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t_a87cb6b0b02a43f04287ae2f622e9e995}{rsvd\_15\_15}} : 1;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{69     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t_a57d68758c2ce23ef7fd043b2b261f3cc}{irq\_threshold}};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{74     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t_aac14081472ac3584103d9a41b981da86}{irq\_delay}};}
+\DoxyCodeLine{75 \} \mbox{\hyperlink{namespaceaxi__dma_a0f3cabf491713f846b85c3544b02fae6}{\_HECTARE\_PACKED}};}
+\DoxyCodeLine{76 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(mm2s\_dmacr\_t) == 4, \textcolor{stringliteral}{"{}Contents of register mm2s\_dmacr must be 4 bytes"{}});}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{84 \textcolor{keyword}{struct }\mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t}{mm2s\_dmasr\_t}} \{}
+\DoxyCodeLine{86     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_adb593de3d6cecf47f9bd5f0c85e77d3a}{halted}} : 1;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{91     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_aa2d36bcedd3e9ebc795b28619a075594}{idle}} : 1;}
+\DoxyCodeLine{92     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_a6aa16e98955b3352a4bc8231152a498a}{rsvd\_2\_2}} : 1;}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{96     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_af439749d2d5e2774f656ac147b48ca9c}{sg\_incld}} : 1;}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{99     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_a2948bd39ad73c12fc5d3d86f76f6f98d}{dma\_int\_err}} : 1;}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{102     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_a3c543682d2de34cfd7256bba6ead28a9}{dma\_slv\_err}} : 1;}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{105     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_ae5ad7717bccc9225b9e2a1735fff4a80}{dma\_dec\_err}} : 1;}
+\DoxyCodeLine{106     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_ad486c4fac81edb2fd336bf38eadd52a2}{rsvd\_7\_7}} : 1;}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{109     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_ab385aaaf1985398b44bcc42c705e4769}{sg\_int\_err}} : 1;}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{112     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_ac1f432a2417e8c442ced9fc049f296c6}{sg\_slv\_err}} : 1;}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{115     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_afeac67244b15cd7cc853fac17e01712a}{sg\_dec\_err}} : 1;}
+\DoxyCodeLine{116     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_a3fbd5fc295c607e5f6f767d4ae4e9543}{rsvd\_11\_11}} : 1;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{119     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_a6abf8273e3f2567e7cb21e24db7e276a}{ioc\_irq}} : 1;}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{122     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_a7f53133591f057f9c4dd528e1b94381c}{dly\_irq}} : 1;}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{128     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_a852e46ae6f81b3499d5c1960c6bdac96}{err\_irq}} : 1;}
+\DoxyCodeLine{129     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_a75d4bf329337c9420cb3314ea5564725}{rsvd\_15\_15}} : 1;}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{133     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_ae1f52d83d9c033ddb75f4ddfbf445e04}{irq\_threshold\_sts}};}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{137     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t_a150f161709173bc328c9c3e963a099d7}{irq\_delay\_sts}};}
+\DoxyCodeLine{138 \} \mbox{\hyperlink{namespaceaxi__dma_a0f3cabf491713f846b85c3544b02fae6}{\_HECTARE\_PACKED}};}
+\DoxyCodeLine{139 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t}{mm2s\_dmasr\_t}}) == 4, \textcolor{stringliteral}{"{}Contents of register mm2s\_dmasr must be 4 bytes"{}});}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{147 \textcolor{keyword}{struct }\mbox{\hyperlink{structaxi__dma_1_1mm2s__curdesc__t}{mm2s\_curdesc\_t}} \{}
+\DoxyCodeLine{148     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__curdesc__t_af9119ddff7914dd23ddb16b5bf638635}{rsvd\_5\_0}} : 6;}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{154     uint32\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__curdesc__t_ac30c92823eaff74ad7d4f469cef29ba5}{current\_descriptor\_pointer}} : 26;}
+\DoxyCodeLine{155 \} \mbox{\hyperlink{namespaceaxi__dma_a0f3cabf491713f846b85c3544b02fae6}{\_HECTARE\_PACKED}};}
+\DoxyCodeLine{156 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structaxi__dma_1_1mm2s__curdesc__t}{mm2s\_curdesc\_t}}) == 4, \textcolor{stringliteral}{"{}Contents of register mm2s\_curdesc must be 4 bytes"{}});}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{164 \textcolor{keyword}{using }\mbox{\hyperlink{namespaceaxi__dma_a2ae842d1ceb021979533a6919ee58d4c}{mm2s\_curdesc\_msb\_t}} = uint32\_t;}
+\DoxyCodeLine{165 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceaxi__dma_a2ae842d1ceb021979533a6919ee58d4c}{mm2s\_curdesc\_msb\_t}}) == 4,}
+\DoxyCodeLine{166               \textcolor{stringliteral}{"{}Contents of register mm2s\_curdesc\_msb must be 4 bytes"{}});}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{174 \textcolor{keyword}{struct }\mbox{\hyperlink{structaxi__dma_1_1mm2s__taildesc__t}{mm2s\_taildesc\_t}} \{}
+\DoxyCodeLine{175     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__taildesc__t_a8cb04ba7987f24c7cd286585157067ed}{rsvd\_5\_0}} : 6;}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{181     uint32\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__taildesc__t_a57d1756171158ada1341580b34ea96e0}{tail\_descriptor\_pointer}} : 26;}
+\DoxyCodeLine{182 \} \mbox{\hyperlink{namespaceaxi__dma_a0f3cabf491713f846b85c3544b02fae6}{\_HECTARE\_PACKED}};}
+\DoxyCodeLine{183 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structaxi__dma_1_1mm2s__taildesc__t}{mm2s\_taildesc\_t}}) == 4, \textcolor{stringliteral}{"{}Contents of register mm2s\_taildesc must be 4 bytes"{}});}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{191 \textcolor{keyword}{using }\mbox{\hyperlink{namespaceaxi__dma_a486acdc4d7d6f7c8bb5f97470f8a04bd}{mm2s\_taildesc\_msb\_t}} = uint32\_t;}
+\DoxyCodeLine{192 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceaxi__dma_a486acdc4d7d6f7c8bb5f97470f8a04bd}{mm2s\_taildesc\_msb\_t}}) == 4,}
+\DoxyCodeLine{193               \textcolor{stringliteral}{"{}Contents of register mm2s\_taildesc\_msb must be 4 bytes"{}});}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{201 \textcolor{keyword}{using }\mbox{\hyperlink{namespaceaxi__dma_a526e2a3f81dc12f0b18e1ae2f1717162}{mm2s\_sa\_t}} = uint32\_t;}
+\DoxyCodeLine{202 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceaxi__dma_a526e2a3f81dc12f0b18e1ae2f1717162}{mm2s\_sa\_t}}) == 4, \textcolor{stringliteral}{"{}Contents of register mm2s\_sa must be 4 bytes"{}});}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{210 \textcolor{keyword}{using }\mbox{\hyperlink{namespaceaxi__dma_a22bc743f3eca423455f667afe6b94956}{mm2s\_sa\_msb\_t}} = uint32\_t;}
+\DoxyCodeLine{211 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceaxi__dma_a22bc743f3eca423455f667afe6b94956}{mm2s\_sa\_msb\_t}}) == 4, \textcolor{stringliteral}{"{}Contents of register mm2s\_sa\_msb must be 4 bytes"{}});}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{219 \textcolor{keyword}{struct }\mbox{\hyperlink{structaxi__dma_1_1mm2s__length__t}{mm2s\_length\_t}} \{}
+\DoxyCodeLine{221     uint32\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__length__t_a21adebad6ac35bb032a58984fd2641a9}{length}} : 26;}
+\DoxyCodeLine{222     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1mm2s__length__t_a2650a7aa6bda9dfb498029df0567cd2f}{rsvd\_31\_26}} : 6;}
+\DoxyCodeLine{223 \} \mbox{\hyperlink{namespaceaxi__dma_a0f3cabf491713f846b85c3544b02fae6}{\_HECTARE\_PACKED}};}
+\DoxyCodeLine{224 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structaxi__dma_1_1mm2s__length__t}{mm2s\_length\_t}}) == 4, \textcolor{stringliteral}{"{}Contents of register mm2s\_length must be 4 bytes"{}});}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{232 \textcolor{keyword}{struct }\mbox{\hyperlink{structaxi__dma_1_1sg__ctl__t}{sg\_ctl\_t}} \{}
+\DoxyCodeLine{234     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1sg__ctl__t_afcc84ccdbef6588afe519fecd2eb3c3a}{sg\_cache}} : 4;}
+\DoxyCodeLine{235     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1sg__ctl__t_ae37e665871d08e50fcbb2ef89f8c4ad7}{rsvd\_7\_4}} : 4;}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{238     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1sg__ctl__t_afc03d653d1570ef304280c77943039c6}{sg\_user}} : 4;}
+\DoxyCodeLine{239     uint32\_t \mbox{\hyperlink{structaxi__dma_1_1sg__ctl__t_ab99b86aff1317e7de770dc47f0e51e20}{rsvd\_31\_12}} : 20;}
+\DoxyCodeLine{240 \} \mbox{\hyperlink{namespaceaxi__dma_a0f3cabf491713f846b85c3544b02fae6}{\_HECTARE\_PACKED}};}
+\DoxyCodeLine{241 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structaxi__dma_1_1sg__ctl__t}{sg\_ctl\_t}}) == 4, \textcolor{stringliteral}{"{}Contents of register sg\_ctl must be 4 bytes"{}});}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{249 \textcolor{keyword}{struct }\mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t}{s2mm\_dmacr\_t}} \{}
+\DoxyCodeLine{256     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_a263a47afe1be52ed4e20c8b551ab5bb1}{rs}} : 1;}
+\DoxyCodeLine{257     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_a5a7b79212d4473013803c917ca005832}{rsvd\_1\_1}} : 1;}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{261     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_a323e2363c948e96bffa24fdf61abecaf}{reset}} : 1;}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{265     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_aeb537dee5d92f7068cf201638cf7a656}{keyhole}} : 1;}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{269     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_af6a76aa6092b8357b66bf53429c2e41c}{cyclic\_bd\_enable}} : 1;}
+\DoxyCodeLine{270     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_ade48fbe0524823238887ae2c3f64f569}{rsvd\_11\_5}} : 7;}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{273     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_ac0667d5942b371a6e0dc9f72f11137dd}{ioc\_irq\_en}} : 1;}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{276     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_aee7e95943db77cda4b4868c0c589b7f9}{dly\_irq\_en}} : 1;}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{279     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_a3f34e387ebcc296784bf00d0aa54961c}{err\_irq\_en}} : 1;}
+\DoxyCodeLine{280     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_a62653ac6334c14c4cfa5324fce3b9700}{rsvd\_15\_15}} : 1;}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{285     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_a652e3fc94c2d4fb4d2ff8d6b6859072b}{irq\_threshold}};}
+\DoxyCodeLine{286 }
+\DoxyCodeLine{290     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_a553a484bc1c7940f0599f8a8572225f7}{irq\_delay}};}
+\DoxyCodeLine{291 \} \mbox{\hyperlink{namespaceaxi__dma_a0f3cabf491713f846b85c3544b02fae6}{\_HECTARE\_PACKED}};}
+\DoxyCodeLine{292 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t}{s2mm\_dmacr\_t}}) == 4, \textcolor{stringliteral}{"{}Contents of register s2mm\_dmacr must be 4 bytes"{}});}
+\DoxyCodeLine{293 }
+\DoxyCodeLine{300 \textcolor{keyword}{struct }\mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t}{s2mm\_dmasr\_t}} \{}
+\DoxyCodeLine{303     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a5c72c3b8ed0a45272709e9e40d9565ee}{halted}} : 1;}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{308     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a92057fde9bd98a073d7f33a92f4b82c2}{idle}} : 1;}
+\DoxyCodeLine{309     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a62556927b34c37b002d42fcb0c71e7e9}{rsvd\_2\_2}} : 1;}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{312     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a50e15c1492e56ea3d8650467f252fa86}{sg\_incld}} : 1;}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{316     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a56b0f54b3f359ee921b5f40c86450041}{dma\_int\_err}} : 1;}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{319     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_acf40ec7ef4667f4b7b475ef63d7753a4}{dma\_slv\_err}} : 1;}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{322     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a540fa65a440e901fdf6e3cf237337b94}{dma\_dec\_err}} : 1;}
+\DoxyCodeLine{323     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a9cc5d58666fe4d48b0b73995dd15cca4}{rsvd\_7\_7}} : 1;}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{326     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a2a7d67417f4a854666b47d19e8c748da}{sg\_int\_err}} : 1;}
+\DoxyCodeLine{327 }
+\DoxyCodeLine{329     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a441238a52583f7fafdb1dce4fdc8218c}{sg\_slv\_err}} : 1;}
+\DoxyCodeLine{330 }
+\DoxyCodeLine{332     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a2b90322b3c2d36480781e8bfbaecad86}{sg\_dec\_err}} : 1;}
+\DoxyCodeLine{333     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a1295c7e7846b91c9e3cd7a3e6dfa1536}{rsvd\_11\_11}} : 1;}
+\DoxyCodeLine{334 }
+\DoxyCodeLine{336     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a54960d0adc24c41b31c8d2048ed2fd52}{ioc\_irq}} : 1;}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{339     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_aa85339fca072373a9cf6c002ba812a6e}{dly\_irq}} : 1;}
+\DoxyCodeLine{340 }
+\DoxyCodeLine{343     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_aee844706dd045b45c12463ea1ffb0d46}{err\_irq}} : 1;}
+\DoxyCodeLine{344     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a0ca3c269d12f36bc28350a918c074c71}{rsvd\_15\_15}} : 1;}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{348     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_adc9b4725b329a7eba3d5141d69a02c93}{irq\_threshold\_sts}};}
+\DoxyCodeLine{349 }
+\DoxyCodeLine{352     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t_a5f8bf034f8ee3f971500cb641b756aba}{irq\_delay\_sts}};}
+\DoxyCodeLine{353 \} \mbox{\hyperlink{namespaceaxi__dma_a0f3cabf491713f846b85c3544b02fae6}{\_HECTARE\_PACKED}};}
+\DoxyCodeLine{354 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t}{s2mm\_dmasr\_t}}) == 4, \textcolor{stringliteral}{"{}Contents of register s2mm\_dmasr must be 4 bytes"{}});}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{362 \textcolor{keyword}{struct }\mbox{\hyperlink{structaxi__dma_1_1s2mm__curdesc__t}{s2mm\_curdesc\_t}} \{}
+\DoxyCodeLine{363     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__curdesc__t_a748d2e4b2cd911c0bb5380bc06e4f99b}{rsvd\_5\_0}} : 6;}
+\DoxyCodeLine{364 }
+\DoxyCodeLine{370     uint32\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__curdesc__t_abf1afd490ffa6628e1abad925e53b63e}{current\_descriptor\_pointer}} : 26;}
+\DoxyCodeLine{371 \} \mbox{\hyperlink{namespaceaxi__dma_a0f3cabf491713f846b85c3544b02fae6}{\_HECTARE\_PACKED}};}
+\DoxyCodeLine{372 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structaxi__dma_1_1s2mm__curdesc__t}{s2mm\_curdesc\_t}}) == 4, \textcolor{stringliteral}{"{}Contents of register s2mm\_curdesc must be 4 bytes"{}});}
+\DoxyCodeLine{373 }
+\DoxyCodeLine{380 \textcolor{keyword}{using }\mbox{\hyperlink{namespaceaxi__dma_a1866ecfb6501c57e67511d7d4a65d2ec}{s2mm\_curdesc\_msb\_t}} = uint32\_t;}
+\DoxyCodeLine{381 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceaxi__dma_a1866ecfb6501c57e67511d7d4a65d2ec}{s2mm\_curdesc\_msb\_t}}) == 4,}
+\DoxyCodeLine{382               \textcolor{stringliteral}{"{}Contents of register s2mm\_curdesc\_msb must be 4 bytes"{}});}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{390 \textcolor{keyword}{struct }\mbox{\hyperlink{structaxi__dma_1_1s2mm__taildesc__t}{s2mm\_taildesc\_t}} \{}
+\DoxyCodeLine{391     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__taildesc__t_ad2e4d8813a8fc07bf517690e1ab8ee1d}{rsvd\_5\_0}} : 6;}
+\DoxyCodeLine{392 }
+\DoxyCodeLine{398     uint32\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__taildesc__t_a79b82804a563276e97f15ee15095ecb9}{tail\_descriptor\_pointer}} : 26;}
+\DoxyCodeLine{399 \} \mbox{\hyperlink{namespaceaxi__dma_a0f3cabf491713f846b85c3544b02fae6}{\_HECTARE\_PACKED}};}
+\DoxyCodeLine{400 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structaxi__dma_1_1s2mm__taildesc__t}{s2mm\_taildesc\_t}}) == 4, \textcolor{stringliteral}{"{}Contents of register s2mm\_taildesc must be 4 bytes"{}});}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{408 \textcolor{keyword}{using }\mbox{\hyperlink{namespaceaxi__dma_af96a46fee3cd5dbc6a78ecdc13f48320}{s2mm\_taildesc\_msb\_t}} = uint32\_t;}
+\DoxyCodeLine{409 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceaxi__dma_af96a46fee3cd5dbc6a78ecdc13f48320}{s2mm\_taildesc\_msb\_t}}) == 4,}
+\DoxyCodeLine{410               \textcolor{stringliteral}{"{}Contents of register s2mm\_taildesc\_msb must be 4 bytes"{}});}
+\DoxyCodeLine{411 }
+\DoxyCodeLine{418 \textcolor{keyword}{using }\mbox{\hyperlink{namespaceaxi__dma_a8054f0fece4e8539d6367f6560d021ac}{s2mm\_da\_t}} = uint32\_t;}
+\DoxyCodeLine{419 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceaxi__dma_a8054f0fece4e8539d6367f6560d021ac}{s2mm\_da\_t}}) == 4, \textcolor{stringliteral}{"{}Contents of register s2mm\_da must be 4 bytes"{}});}
+\DoxyCodeLine{420 }
+\DoxyCodeLine{427 \textcolor{keyword}{using }\mbox{\hyperlink{namespaceaxi__dma_a2e7fb45c7a845c74441f754211aed93f}{s2mm\_da\_msb\_t}} = uint32\_t;}
+\DoxyCodeLine{428 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{namespaceaxi__dma_a2e7fb45c7a845c74441f754211aed93f}{s2mm\_da\_msb\_t}}) == 4, \textcolor{stringliteral}{"{}Contents of register s2mm\_da\_msb must be 4 bytes"{}});}
+\DoxyCodeLine{429 }
+\DoxyCodeLine{436 \textcolor{keyword}{struct }\mbox{\hyperlink{structaxi__dma_1_1s2mm__length__t}{s2mm\_length\_t}} \{}
+\DoxyCodeLine{440     uint32\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__length__t_a68c4f9f91af2e0bfb36db934ec94b77e}{length}} : 26;}
+\DoxyCodeLine{441     uint8\_t \mbox{\hyperlink{structaxi__dma_1_1s2mm__length__t_a1a65b2a474e6335901b74e4efb0f3114}{rsvd\_31\_26}} : 6;}
+\DoxyCodeLine{442 \} \mbox{\hyperlink{namespaceaxi__dma_a0f3cabf491713f846b85c3544b02fae6}{\_HECTARE\_PACKED}};}
+\DoxyCodeLine{443 \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structaxi__dma_1_1s2mm__length__t}{s2mm\_length\_t}}) == 4, \textcolor{stringliteral}{"{}Contents of register s2mm\_length must be 4 bytes"{}});}
+\DoxyCodeLine{444 }
+\DoxyCodeLine{445 \textcolor{comment}{// Convenience template and wrapper}}
+\DoxyCodeLine{446 }
+\DoxyCodeLine{454 \textcolor{keyword}{template} <\textcolor{keyword}{template} <\textcolor{keyword}{typename}, u\textcolor{keywordtype}{int}32\_t> \textcolor{keyword}{typename} R\_acc, \textcolor{keyword}{typename} R\_acc\_arg>}
+\DoxyCodeLine{455 \textcolor{keyword}{struct }\mbox{\hyperlink{structaxi__dma_1_1block__template}{block\_template}} \{}
+\DoxyCodeLine{457     R\_acc<mm2s\_dmacr\_t, 0x0> \mbox{\hyperlink{structaxi__dma_1_1block__template_a96643da1c63584bde816feb8cf91a4a0}{mm2s\_dmacr}};}
+\DoxyCodeLine{459     R\_acc<mm2s\_dmasr\_t, 0x4> \mbox{\hyperlink{structaxi__dma_1_1block__template_ad00f7ffb1bfc221c07f62667975224e8}{mm2s\_dmasr}};}
+\DoxyCodeLine{461     R\_acc<mm2s\_curdesc\_t, 0x8> \mbox{\hyperlink{structaxi__dma_1_1block__template_a30745ce2f3104ebc13bee1c06b4404a6}{mm2s\_curdesc}};}
+\DoxyCodeLine{463     R\_acc<mm2s\_curdesc\_msb\_t, 0xc> \mbox{\hyperlink{structaxi__dma_1_1block__template_a9ffb765dd2c7038ae0a28fdce0d7c701}{mm2s\_curdesc\_msb}};}
+\DoxyCodeLine{465     R\_acc<mm2s\_taildesc\_t, 0x10> \mbox{\hyperlink{structaxi__dma_1_1block__template_a80533f7dfeb497c0a4fe997c6a247938}{mm2s\_taildesc}};}
+\DoxyCodeLine{467     R\_acc<mm2s\_taildesc\_msb\_t, 0x14> \mbox{\hyperlink{structaxi__dma_1_1block__template_adc1eb0034c9f27c34ab6f9fcfff15ca2}{mm2s\_taildesc\_msb}};}
+\DoxyCodeLine{469     R\_acc<mm2s\_sa\_t, 0x18> \mbox{\hyperlink{structaxi__dma_1_1block__template_ab9e96e495ae765dfa3fb1587eb0a79bf}{mm2s\_sa}};}
+\DoxyCodeLine{471     R\_acc<mm2s\_sa\_msb\_t, 0x1c> \mbox{\hyperlink{structaxi__dma_1_1block__template_a708282762ea34949adb5f1a208eabb51}{mm2s\_sa\_msb}};}
+\DoxyCodeLine{473     R\_acc<mm2s\_length\_t, 0x28> \mbox{\hyperlink{structaxi__dma_1_1block__template_ae4b44433fb2a937fd3cbfd6b6e0cfa1d}{mm2s\_length}};}
+\DoxyCodeLine{475     R\_acc<sg\_ctl\_t, 0x2c> \mbox{\hyperlink{structaxi__dma_1_1block__template_af421880b49ca991a13097aaabaef31b2}{sg\_ctl}};}
+\DoxyCodeLine{477     R\_acc<s2mm\_dmacr\_t, 0x30> \mbox{\hyperlink{structaxi__dma_1_1block__template_a6be27ab48bb216e28944ec90f4b45bf1}{s2mm\_dmacr}};}
+\DoxyCodeLine{479     R\_acc<s2mm\_dmasr\_t, 0x34> \mbox{\hyperlink{structaxi__dma_1_1block__template_a351c6c75665fa3793695f6b1e08fd5d5}{s2mm\_dmasr}};}
+\DoxyCodeLine{481     R\_acc<s2mm\_curdesc\_t, 0x38> \mbox{\hyperlink{structaxi__dma_1_1block__template_af31d187f7e6c3473c7b2bf29647fbee4}{s2mm\_curdesc}};}
+\DoxyCodeLine{483     R\_acc<s2mm\_curdesc\_msb\_t, 0x3c> \mbox{\hyperlink{structaxi__dma_1_1block__template_a84c24e624dae38d36135e354dbf45e5e}{s2mm\_curdesc\_msb}};}
+\DoxyCodeLine{485     R\_acc<s2mm\_taildesc\_t, 0x40> \mbox{\hyperlink{structaxi__dma_1_1block__template_ab1fea44ad317b2984bf9964e2642e8ca}{s2mm\_taildesc}};}
+\DoxyCodeLine{487     R\_acc<s2mm\_taildesc\_msb\_t, 0x44> \mbox{\hyperlink{structaxi__dma_1_1block__template_ab111b2d2834ede9ac0dfc51b16f91374}{s2mm\_taildesc\_msb}};}
+\DoxyCodeLine{489     R\_acc<s2mm\_da\_t, 0x48> \mbox{\hyperlink{structaxi__dma_1_1block__template_a3c2d86d2d08809ad52c7c5951820811c}{s2mm\_da}};}
+\DoxyCodeLine{491     R\_acc<s2mm\_da\_msb\_t, 0x4c> \mbox{\hyperlink{structaxi__dma_1_1block__template_a01dc47370d9fc22f86131a33f5e33385}{s2mm\_da\_msb}};}
+\DoxyCodeLine{493     R\_acc<s2mm\_length\_t, 0x58> \mbox{\hyperlink{structaxi__dma_1_1block__template_afedaa7bb05e0be57bb9a177253880bd7}{s2mm\_length}};}
+\DoxyCodeLine{494 }
+\DoxyCodeLine{495     \mbox{\hyperlink{structaxi__dma_1_1block__template_a41de7884e826cae51b55538c41174c19}{block\_template}}(R\_acc\_arg arg)}
+\DoxyCodeLine{496         : \mbox{\hyperlink{structaxi__dma_1_1block__template_a96643da1c63584bde816feb8cf91a4a0}{mm2s\_dmacr}}\{arg\}}
+\DoxyCodeLine{497         , \mbox{\hyperlink{structaxi__dma_1_1block__template_ad00f7ffb1bfc221c07f62667975224e8}{mm2s\_dmasr}}\{arg\}}
+\DoxyCodeLine{498         , \mbox{\hyperlink{structaxi__dma_1_1block__template_a30745ce2f3104ebc13bee1c06b4404a6}{mm2s\_curdesc}}\{arg\}}
+\DoxyCodeLine{499         , \mbox{\hyperlink{structaxi__dma_1_1block__template_a9ffb765dd2c7038ae0a28fdce0d7c701}{mm2s\_curdesc\_msb}}\{arg\}}
+\DoxyCodeLine{500         , \mbox{\hyperlink{structaxi__dma_1_1block__template_a80533f7dfeb497c0a4fe997c6a247938}{mm2s\_taildesc}}\{arg\}}
+\DoxyCodeLine{501         , \mbox{\hyperlink{structaxi__dma_1_1block__template_adc1eb0034c9f27c34ab6f9fcfff15ca2}{mm2s\_taildesc\_msb}}\{arg\}}
+\DoxyCodeLine{502         , \mbox{\hyperlink{structaxi__dma_1_1block__template_ab9e96e495ae765dfa3fb1587eb0a79bf}{mm2s\_sa}}\{arg\}}
+\DoxyCodeLine{503         , \mbox{\hyperlink{structaxi__dma_1_1block__template_a708282762ea34949adb5f1a208eabb51}{mm2s\_sa\_msb}}\{arg\}}
+\DoxyCodeLine{504         , \mbox{\hyperlink{structaxi__dma_1_1block__template_ae4b44433fb2a937fd3cbfd6b6e0cfa1d}{mm2s\_length}}\{arg\}}
+\DoxyCodeLine{505         , \mbox{\hyperlink{structaxi__dma_1_1block__template_af421880b49ca991a13097aaabaef31b2}{sg\_ctl}}\{arg\}}
+\DoxyCodeLine{506         , \mbox{\hyperlink{structaxi__dma_1_1block__template_a6be27ab48bb216e28944ec90f4b45bf1}{s2mm\_dmacr}}\{arg\}}
+\DoxyCodeLine{507         , \mbox{\hyperlink{structaxi__dma_1_1block__template_a351c6c75665fa3793695f6b1e08fd5d5}{s2mm\_dmasr}}\{arg\}}
+\DoxyCodeLine{508         , \mbox{\hyperlink{structaxi__dma_1_1block__template_af31d187f7e6c3473c7b2bf29647fbee4}{s2mm\_curdesc}}\{arg\}}
+\DoxyCodeLine{509         , \mbox{\hyperlink{structaxi__dma_1_1block__template_a84c24e624dae38d36135e354dbf45e5e}{s2mm\_curdesc\_msb}}\{arg\}}
+\DoxyCodeLine{510         , \mbox{\hyperlink{structaxi__dma_1_1block__template_ab1fea44ad317b2984bf9964e2642e8ca}{s2mm\_taildesc}}\{arg\}}
+\DoxyCodeLine{511         , \mbox{\hyperlink{structaxi__dma_1_1block__template_ab111b2d2834ede9ac0dfc51b16f91374}{s2mm\_taildesc\_msb}}\{arg\}}
+\DoxyCodeLine{512         , \mbox{\hyperlink{structaxi__dma_1_1block__template_a3c2d86d2d08809ad52c7c5951820811c}{s2mm\_da}}\{arg\}}
+\DoxyCodeLine{513         , \mbox{\hyperlink{structaxi__dma_1_1block__template_a01dc47370d9fc22f86131a33f5e33385}{s2mm\_da\_msb}}\{arg\}}
+\DoxyCodeLine{514         , \mbox{\hyperlink{structaxi__dma_1_1block__template_afedaa7bb05e0be57bb9a177253880bd7}{s2mm\_length}}\{arg\} \{\}}
+\DoxyCodeLine{515 \};}
+\DoxyCodeLine{516 }
+\DoxyCodeLine{524 \textcolor{keyword}{template} <\textcolor{keyword}{template} <\textcolor{keyword}{typename}, u\textcolor{keywordtype}{int}32\_t> \textcolor{keyword}{typename} R\_acc>}
+\DoxyCodeLine{525 \textcolor{keyword}{using }\mbox{\hyperlink{structaxi__dma_1_1block__template}{block}} = \mbox{\hyperlink{structaxi__dma_1_1block__template}{block\_template<R\_acc, typename R\_acc<mm2s\_dmacr\_t, 0>::constructor\_arg\_type}}>;}
+\DoxyCodeLine{526 }
+\DoxyCodeLine{527 \}  \textcolor{comment}{// namespace axi\_dma}}
+
+\end{DoxyCode}

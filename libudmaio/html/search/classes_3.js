@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['reg_5fcast_5ft_0',['reg_cast_t',['../structudmaio_1_1_uio_if_1_1reg__cast__t.html',1,'udmaio::UioIf']]]
+  ['fpgamembufferoveraxi_0',['FpgaMemBufferOverAxi',['../classudmaio_1_1_fpga_mem_buffer_over_axi.html',1,'udmaio']]],
+  ['fpgamembufferoverxdma_1',['FpgaMemBufferOverXdma',['../classudmaio_1_1_fpga_mem_buffer_over_xdma.html',1,'udmaio']]]
 ];

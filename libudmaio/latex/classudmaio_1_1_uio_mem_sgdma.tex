@@ -31,9 +31,7 @@ uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_ac86d786996e68219d
 std\+::vector$<$ \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} $>$ \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a34ffc4c13f92af1e5a99075fd7582f08}{get\+\_\+full\+\_\+buffers}} ()
 \begin{DoxyCompactList}\small\item\em Get full SGDMA buffers. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a9eab72c96cad2df0a438ef2fcf685e2e}{Uio\+If}} (\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} dev)
-\begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a93fbd9e04e08851d2588a9cbabb2d401}{Uio\+If}} (\mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} dev\+\_\+loc)
-\begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} Users MUST call \mbox{\hyperlink{classudmaio_1_1_uio_if_aae0cf01b853b680e992ce17efcf58366}{set\+Link\+Axi()}} or \mbox{\hyperlink{classudmaio_1_1_uio_if_a31ae8b684a5f4f9cc60d7caa7bdd7594}{set\+Link\+Xdma()}} before using this. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -196,8 +194,8 @@ Print all SGDMA descriptors.
 \mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_a9eab72c96cad2df0a438ef2fcf685e2e}\label{classudmaio_1_1_uio_mem_sgdma_a9eab72c96cad2df0a438ef2fcf685e2e}} 
 \index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!UioIf@{UioIf}}
 \index{UioIf@{UioIf}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
-\doxysubsubsection{\texorpdfstring{UioIf()}{UioIf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}}]{dev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+\doxysubsubsection{\texorpdfstring{UioIf()}{UioIf()}}
+{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}}]{dev }\end{DoxyParamCaption})}
 
 
 
@@ -208,16 +206,6 @@ Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\h
 {\em dev} & \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} describing the connection information \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_a93fbd9e04e08851d2588a9cbabb2d401}\label{classudmaio_1_1_uio_mem_sgdma_a93fbd9e04e08851d2588a9cbabb2d401}} 
-\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!UioIf@{UioIf}}
-\index{UioIf@{UioIf}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
-\doxysubsubsection{\texorpdfstring{UioIf()}{UioIf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}}}]{dev\+\_\+loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-
-
-Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} Users MUST call \mbox{\hyperlink{classudmaio_1_1_uio_if_aae0cf01b853b680e992ce17efcf58366}{set\+Link\+Axi()}} or \mbox{\hyperlink{classudmaio_1_1_uio_if_a31ae8b684a5f4f9cc60d7caa7bdd7594}{set\+Link\+Xdma()}} before using this. 
-
 \mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_ad1c770a8302c0f8c6838dca51efe5993}\label{classudmaio_1_1_uio_mem_sgdma_ad1c770a8302c0f8c6838dca51efe5993}} 
 \index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!write\_cyc\_mode@{write\_cyc\_mode}}
 \index{write\_cyc\_mode@{write\_cyc\_mode}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}

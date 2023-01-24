@@ -1,8 +1,8 @@
 var _uio_config_8hpp =
 [
     [ "udmaio::UioRegion", "structudmaio_1_1_uio_region.html", "structudmaio_1_1_uio_region" ],
-    [ "udmaio::UioDeviceLocation", "structudmaio_1_1_uio_device_location.html", "structudmaio_1_1_uio_device_location" ],
     [ "udmaio::UioDeviceInfo", "structudmaio_1_1_uio_device_info.html", "structudmaio_1_1_uio_device_info" ],
+    [ "udmaio::UioDeviceLocation", "classudmaio_1_1_uio_device_location.html", "classudmaio_1_1_uio_device_location" ],
     [ "udmaio::UioConfigBase", "classudmaio_1_1_uio_config_base.html", "classudmaio_1_1_uio_config_base" ],
     [ "udmaio::UioConfigUio", "classudmaio_1_1_uio_config_uio.html", "classudmaio_1_1_uio_config_uio" ],
     [ "udmaio::UioConfigXdma", "classudmaio_1_1_uio_config_xdma.html", "classudmaio_1_1_uio_config_xdma" ],

@@ -1,8 +1,7 @@
 <map id="udmaio::UioAxiDmaIf" name="udmaio::UioAxiDmaIf">
-<area shape="rect" id="node1" title="Interface to AXI DMA Core." alt="" coords="169,271,312,296"/>
-<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="191,196,290,221"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,101,137,126"/>
-<area shape="rect" id="node4" title=" " alt="" coords="161,93,320,133"/>
-<area shape="rect" id="node5" href="$classudmaio_1_1_uio_config_base.html" title="Base class for UioDeviceInfo configuration." alt="" coords="163,5,319,31"/>
-<area shape="rect" id="node6" href="$structudmaio_1_1_uio_region.html" title="General&#45;purpose struct to define a memory area." alt="" coords="345,101,475,126"/>
+<area shape="rect" id="node1" title="Interface to AXI DMA Core." alt="" coords="139,168,281,193"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="99,93,198,119"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,137,31"/>
+<area shape="rect" id="node4" href="$structudmaio_1_1_uio_region.html" title="General&#45;purpose struct to define a memory area." alt="" coords="162,5,293,31"/>
+<area shape="rect" id="node5" href="$structaxi__dma_1_1block__template.html" title="Template class for the axi_dma block, containing accessors for all its registers." alt="" coords="223,93,323,119"/>
 </map>

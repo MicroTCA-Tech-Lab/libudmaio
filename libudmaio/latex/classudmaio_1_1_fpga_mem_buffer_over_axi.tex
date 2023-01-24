@@ -25,9 +25,7 @@ uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a016fec
 uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a4d58cf3e554e6c357a4fe4cdb67e37d5}{get\+\_\+phys\+\_\+size}} () const override
 \begin{DoxyCompactList}\small\item\em Get buffer size. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a9eab72c96cad2df0a438ef2fcf685e2e}{Uio\+If}} (\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} dev)
-\begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a93fbd9e04e08851d2588a9cbabb2d401}{Uio\+If}} (\mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} dev\+\_\+loc)
-\begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} Users MUST call \mbox{\hyperlink{classudmaio_1_1_uio_if_aae0cf01b853b680e992ce17efcf58366}{set\+Link\+Axi()}} or \mbox{\hyperlink{classudmaio_1_1_uio_if_a31ae8b684a5f4f9cc60d7caa7bdd7594}{set\+Link\+Xdma()}} before using this. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -102,8 +100,8 @@ Implements \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a63369da47cbfa8c
 \mbox{\Hypertarget{classudmaio_1_1_fpga_mem_buffer_over_axi_a9eab72c96cad2df0a438ef2fcf685e2e}\label{classudmaio_1_1_fpga_mem_buffer_over_axi_a9eab72c96cad2df0a438ef2fcf685e2e}} 
 \index{udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}!UioIf@{UioIf}}
 \index{UioIf@{UioIf}!udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}}
-\doxysubsubsection{\texorpdfstring{UioIf()}{UioIf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}}]{dev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+\doxysubsubsection{\texorpdfstring{UioIf()}{UioIf()}}
+{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}}]{dev }\end{DoxyParamCaption})}
 
 
 
@@ -114,16 +112,6 @@ Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\h
 {\em dev} & \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} describing the connection information \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classudmaio_1_1_fpga_mem_buffer_over_axi_a93fbd9e04e08851d2588a9cbabb2d401}\label{classudmaio_1_1_fpga_mem_buffer_over_axi_a93fbd9e04e08851d2588a9cbabb2d401}} 
-\index{udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}!UioIf@{UioIf}}
-\index{UioIf@{UioIf}!udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}}
-\doxysubsubsection{\texorpdfstring{UioIf()}{UioIf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}}}]{dev\+\_\+loc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-
-
-Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} Users MUST call \mbox{\hyperlink{classudmaio_1_1_uio_if_aae0cf01b853b680e992ce17efcf58366}{set\+Link\+Axi()}} or \mbox{\hyperlink{classudmaio_1_1_uio_if_a31ae8b684a5f4f9cc60d7caa7bdd7594}{set\+Link\+Xdma()}} before using this. 
-
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

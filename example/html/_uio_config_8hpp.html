@@ -108,12 +108,14 @@ $(document).ready(function(){initNavTree('_uio_config_8hpp.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;stdexcept&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for UioConfig.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="_uio_config_8hpp__incl.svg" width="266" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="_uio_config_8hpp__incl.svg" width="470" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -130,20 +132,20 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structudmaio_1_1_uio_region.html">udmaio::UioRegion</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">General-purpose struct to define a memory area.  <a href="structudmaio_1_1_uio_region.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structudmaio_1_1_uio_device_location.html">udmaio::UioDeviceLocation</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds information where a device can be found over both UIO and XDMA.  <a href="structudmaio_1_1_uio_device_location.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structudmaio_1_1_uio_device_info.html">udmaio::UioDeviceInfo</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data needed to construct an <a class="el" href="classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces.">UioIf</a>; contains information how to connect to a device.  <a href="structudmaio_1_1_uio_device_info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_device_location.html">udmaio::UioDeviceLocation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds information where a device can be found over both UIO and XDMA.  <a href="classudmaio_1_1_uio_device_location.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_base.html">udmaio::UioConfigBase</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for <a class="el" href="structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device.">UioDeviceInfo</a> configuration.  <a href="classudmaio_1_1_uio_config_base.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_uio.html">udmaio::UioConfigUio</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates <a class="el" href="structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device.">UioDeviceInfo</a> from <a class="el" href="structudmaio_1_1_uio_device_location.html" title="Holds information where a device can be found over both UIO and XDMA.">UioDeviceLocation</a> (UIO version)  <a href="classudmaio_1_1_uio_config_uio.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates <a class="el" href="structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device.">UioDeviceInfo</a> from <a class="el" href="classudmaio_1_1_uio_device_location.html" title="Holds information where a device can be found over both UIO and XDMA.">UioDeviceLocation</a> (UIO version)  <a href="classudmaio_1_1_uio_config_uio.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_xdma.html">udmaio::UioConfigXdma</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates <a class="el" href="structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device.">UioDeviceInfo</a> from <a class="el" href="structudmaio_1_1_uio_device_location.html" title="Holds information where a device can be found over both UIO and XDMA.">UioDeviceLocation</a> (XDMA version)  <a href="classudmaio_1_1_uio_config_xdma.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates <a class="el" href="structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device.">UioDeviceInfo</a> from <a class="el" href="classudmaio_1_1_uio_device_location.html" title="Holds information where a device can be found over both UIO and XDMA.">UioDeviceLocation</a> (XDMA version)  <a href="classudmaio_1_1_uio_config_xdma.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
