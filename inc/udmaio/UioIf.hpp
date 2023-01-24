@@ -15,6 +15,7 @@
 #include <fstream>
 #include <iostream>
 #include <memory>
+#include <string_view>
 
 #include <boost/core/noncopyable.hpp>
 #include <boost/log/core/core.hpp>
