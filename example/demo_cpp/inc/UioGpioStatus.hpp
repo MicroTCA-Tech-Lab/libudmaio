@@ -11,25 +11,23 @@
 
 #pragma once
 
-#include "udmaio/UioIf.hpp"
+#include "udmaio/rdl/RegAccessor.hpp"
 
 using namespace udmaio;
 
 /// Interface to GPIO status port of the demo application
 class UioGpioStatus : UioIf {
-    static constexpr int ADDR_GPIO_DATA = 0;
-
-    struct __attribute__((packed)) GpioData {
+    struct REG_PACKED_ALIGNED GpioData {
         bool ddr4_init_calib_complete : 1;
         unsigned reserved : 31;
     };
+
+    RegAccessor<GpioData, 0> gpio{this};
 
     virtual const std::string_view _log_name() const override { return "UioGpioStatus"; };
 
   public:
     using UioIf::UioIf;
 
-    bool is_ddr4_init_calib_complete() const {
-        return _rd_reg<GpioData>(ADDR_GPIO_DATA).ddr4_init_calib_complete;
-    }
+    bool is_ddr4_init_calib_complete() const { return gpio.rd().ddr4_init_calib_complete; }
 };

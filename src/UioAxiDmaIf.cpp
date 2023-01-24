@@ -30,7 +30,6 @@ void UioAxiDmaIf::start(uintptr_t start_desc) {
         << _log_name() << ": start, start_desc = " << std::hex << start_desc << std::dec;
 
     // 0.
-#pragma GCC diagnostic ignored "-Wmissing-field-initializers"
     s2mm_dmacr.wr({.reset = 1});
 
     // 1.
@@ -40,9 +39,8 @@ void UioAxiDmaIf::start(uintptr_t start_desc) {
 
     // 2.
     auto ctrl_reg = s2mm_dmacr.rd();
-    reg_cast_t<axi_dma::s2mm_dmacr_t> tmp{.data = ctrl_reg};
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name() << ": DMA ctrl = 0x" << std::hex << tmp.raw << std::dec;
+        << _log_name() << ": DMA ctrl = 0x" << std::hex << reg_to_raw(ctrl_reg) << std::dec;
 
     ctrl_reg.rs = 1;
     ctrl_reg.cyclic_bd_enable = 1;
@@ -58,15 +56,13 @@ void UioAxiDmaIf::start(uintptr_t start_desc) {
     s2mm_taildesc_msb.wr(
         (sizeof(start_desc) > sizeof(uint32_t)) ? static_cast<uint32_t>(start_desc >> 32) : 0);
 
-    tmp.data = s2mm_dmacr.rd();
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name() << ": DMA ctrl = 0x" << std::hex << tmp.raw << std::dec;
+        << _log_name() << ": DMA ctrl = 0x" << std::hex << reg_to_raw(s2mm_dmacr.rd()) << std::dec;
 }
 
 uint32_t UioAxiDmaIf::clear_interrupt() {
     uint32_t irq_count = wait_for_interrupt();
 
-#pragma GCC diagnostic ignored "-Wmissing-field-initializers"
     s2mm_dmasr.wr({.ioc_irq = 1});
 
     BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name() << ": clear interrupt";

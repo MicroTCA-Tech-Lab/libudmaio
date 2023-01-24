@@ -11,41 +11,42 @@
 
 #pragma once
 
-#include "udmaio/UioIf.hpp"
+#include "udmaio/rdl/RegAccessor.hpp"
 
 using namespace udmaio;
 
 /// Interface to LFSR core of the demo application
 class UioTrafficGen : UioIf {
-    static constexpr int ADDR_ST_CTRL = 0x30;
-    static constexpr int ADDR_ST_CONFIG = 0x34;
-    static constexpr int ADDR_TR_LEN = 0x38;
-    static constexpr int ADDR_TR_COUNT = 0x3C;
-    static constexpr int ADDR_TR_TSTRB0 = 0x40;
-    static constexpr int ADDR_TR_TSTRB1 = 0x44;
-    static constexpr int ADDR_TR_TSTRB2 = 0x48;
-    static constexpr int ADDR_TR_TSTRB3 = 0x4C;
-    static constexpr int ADDR_EX_TR_LEN = 0x50;
-    static constexpr int ADDR_ST_ERR_STATUS = 0x70;
-    static constexpr int ADDR_ST_ERR_EN = 0x74;
-    static constexpr int ADDR_ST_ERR_INT_EN = 0x78;
-    static constexpr int ADDR_ST_ERR_CNT = 0x7C;
-
-    struct __attribute__((packed)) StControl {
+    struct REG_PACKED_ALIGNED StControl {
         bool stren : 1;
         bool done : 1;
-        uint32_t rsvd : 22;
-        uint32_t version : 8;
+        unsigned rsvd : 22;
+        unsigned version : 8;
     };
 
-    struct __attribute__((packed)) StConfig {
+    struct REG_PACKED_ALIGNED StConfig {
         bool ranlen : 1;
         bool randly : 1;
         bool etkts : 1;
-        uint32_t rsvd7_3 : 5;
-        uint32_t tdest : 8;
-        uint32_t pdly : 16;
+        unsigned rsvd7_3 : 5;
+        unsigned tdest : 8;
+        unsigned pdly : 16;
     };
+
+    struct REG_PACKED_ALIGNED TrLength {
+        unsigned tlen : 16;
+        unsigned tcnt : 16;
+    };
+
+    struct REG_PACKED_ALIGNED ExtTrLength {
+        unsigned ext_tlen : 8;
+        unsigned rsvd : 24;
+    };
+
+    RegAccessor<StControl, 0x30> stControl{this};
+    RegAccessor<StConfig, 0x34> stConfig{this};
+    RegAccessor<TrLength, 0x38> trLength{this};
+    RegAccessor<ExtTrLength, 0x50> extTrLength{this};
 
     virtual const std::string_view _log_name() const override;
 

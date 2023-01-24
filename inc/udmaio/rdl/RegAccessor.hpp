@@ -4,6 +4,10 @@
 
 #include "udmaio/UioIf.hpp"
 
+#ifndef REG_PACKED_ALIGNED
+#define REG_PACKED_ALIGNED __attribute__((packed, aligned(4)))
+#endif
+
 namespace udmaio {
 
 /**

@@ -65,8 +65,6 @@ void UioMemSgdma::write_cyc_mode(const std::vector<UioRegion>& dst_bufs) {
 
         uintptr_t nxtdesc = _region.addr + ((i + 1) % _nr_cyc_desc) * DESC_ADDR_STEP;
 
-#pragma GCC diagnostic push  // We're OK that everything not listed is zero-initialized.
-#pragma GCC diagnostic ignored "-Wmissing-field-initializers"
         S2mmDesc desc{
             .nxtdesc = nxtdesc,
             .buffer_addr = dst_buf.addr,
@@ -81,7 +79,6 @@ void UioMemSgdma::write_cyc_mode(const std::vector<UioRegion>& dst_bufs) {
             .app = {0},
         };
         write_desc(i++, desc);
-#pragma GCC diagnostic pop
     }
 }
 

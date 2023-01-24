@@ -61,25 +61,9 @@ class UioIf : private boost::noncopyable {
     }
 
     template <typename T>
-    struct reg_cast_t {
-        union {
-            uint32_t raw;
-            T data;
-        };
-    };
-
-    template <typename T>
-    T _rd_reg(uint32_t offs) const {
-        static_assert(sizeof(T) == 4, "register access must be 32 bit");
-        reg_cast_t<T> tmp = {.raw = _rd32(offs)};
-        return tmp.data;
-    }
-
-    template <typename T>
-    void _wr_reg(uint32_t offs, T data) {
-        static_assert(sizeof(T) == 4, "register access must be 32 bit");
-        reg_cast_t<T> tmp = {.data = data};
-        _wr32(offs, tmp.raw);
+    uint32_t reg_to_raw(T data) {
+        static_assert(sizeof(T) == 4, "register must be 32 bit");
+        return *reinterpret_cast<uint32_t*>(&data);
     }
 
     uint32_t _rd32(uint32_t offs) const;
