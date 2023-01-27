@@ -17,7 +17,7 @@
 
 namespace udmaio {
 
-using AxiDmaBlock = axi_dma::block<RegAccessor>;
+using AxiDmaBlock = axi_dma::block<RegAccessorArray>;
 
 /// Interface to AXI DMA Core
 class UioAxiDmaIf : public UioIf, AxiDmaBlock {

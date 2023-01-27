@@ -5,6 +5,7 @@ project(libudmaio VERSION 0.9.3)
 find_package(Boost 1.65 COMPONENTS log program_options REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # library
 file(GLOB SOURCES "src/*.cpp")
