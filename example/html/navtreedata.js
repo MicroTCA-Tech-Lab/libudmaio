@@ -63,7 +63,7 @@ var NAVTREEINDEX =
 [
 "_axi_dma_8hpp.html",
 "classudmaio_1_1_reg_accessor_base.html#ad878857665ec6cb11fb5133240a23e65",
-"pages.html",
+"struct_uio_gpio_status_1_1_gpio_data.html",
 "structudmaio_1_1_uio_region.html"
 ];
 

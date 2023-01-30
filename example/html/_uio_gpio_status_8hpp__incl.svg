@@ -67,8 +67,8 @@ var sectionId = 'dynsection-0';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="_reg_accessor_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="907.5,-195 766.5,-195 766.5,-176 907.5,-176 907.5,-195"/>
-<text text-anchor="middle" x="837" y="-183" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio/rdl/RegAccessor.hpp</text>
+<polygon fill="white" stroke="#666666" points="901,-195 773,-195 773,-176 901,-176 901,-195"/>
+<text text-anchor="middle" x="837" y="-183" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio/RegAccessor.hpp</text>
 </a>
 </g>
 </g>
