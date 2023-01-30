@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.15)
 
-project(libudmaio VERSION 0.9.3)
+project(libudmaio VERSION 1.0.0)
 
 find_package(Boost 1.65 COMPONENTS log program_options REQUIRED)
 
@@ -22,10 +22,29 @@ if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16.0")
 endif()
 
 include(GNUInstallDirs)
+include(CMakePackageConfigHelpers)
 
+configure_package_config_file(udmaio-config.cmake.in
+    ${CMAKE_CURRENT_BINARY_DIR}/udmaio-config.cmake
+    INSTALL_DESTINATION ${LIB_INSTALL_DIR}/cmake/udmaio
+    PATH_VARS CMAKE_INSTALL_LIBDIR CMAKE_INSTALL_INCLUDEDIR
+)
+
+write_basic_package_version_file(
+    ${CMAKE_CURRENT_BINARY_DIR}/udmaio-config-version.cmake
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY SameMajorVersion
+)
+    
 install(TARGETS udmaio
     PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/udmaio
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
+install(FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/udmaio-config.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/udmaio-config-version.cmake"
+    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/udmaio"
+)
 
 # Invoke cmake with -DTARGET_HW=ZUP or -DTARGET_HW=Z7IO. ZUP is the default
 if("${TARGET_HW}" STREQUAL "")
