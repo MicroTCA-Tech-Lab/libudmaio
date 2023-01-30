@@ -9,7 +9,7 @@ var structaxi__dma_1_1mm2s__dmacr__t =
     [ "keyhole", "structaxi__dma_1_1mm2s__dmacr__t.html#ab8fb8ec78e43db3206bfb7cb0613fecf", null ],
     [ "reset", "structaxi__dma_1_1mm2s__dmacr__t.html#a1b5fdb7e9e56031279682cb0cfb88d14", null ],
     [ "rs", "structaxi__dma_1_1mm2s__dmacr__t.html#aacb21aafe5e18e9bf57cb85aa0f1a473", null ],
-    [ "rsvd_11_5", "structaxi__dma_1_1mm2s__dmacr__t.html#a69d10cb3b5c2fdf85bb90c149cbe9877", null ],
-    [ "rsvd_15_15", "structaxi__dma_1_1mm2s__dmacr__t.html#a87cb6b0b02a43f04287ae2f622e9e995", null ],
-    [ "rsvd_1_1", "structaxi__dma_1_1mm2s__dmacr__t.html#a3e197c8cd6e0a1288fa0767301159005", null ]
+    [ "rsvd_11_5", "structaxi__dma_1_1mm2s__dmacr__t.html#a2da80659109d24439506c312492c5be9", null ],
+    [ "rsvd_15_15", "structaxi__dma_1_1mm2s__dmacr__t.html#a952297a57bc5285c476ac938165b076e", null ],
+    [ "rsvd_1_1", "structaxi__dma_1_1mm2s__dmacr__t.html#a37dcbb07606319c01554751e46e5f086", null ]
 ];

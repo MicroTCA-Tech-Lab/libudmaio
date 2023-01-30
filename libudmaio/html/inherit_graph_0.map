@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structaxi__dma_1_1block__template.html" title="Template class for the axi_dma block, containing accessors for all its registers." alt="" coords="199,195,363,235"/>
+<area shape="rect" id="node1" href="$structaxi__dma_1_1block__template.html" title="Template class for the axi_dma block, containing accessors for all its registers." alt="" coords="188,195,373,235"/>
 <area shape="rect" id="node2" href="$classudmaio_1_1_uio_axi_dma_if.html" title="Interface to AXI DMA Core." alt="" coords="465,203,607,228"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,145,137,171"/>
 <area shape="rect" id="node4" href="$classudmaio_1_1_data_handler_abstract.html" title="Base class to implement a DMA data reception handler." alt="" coords="185,260,376,285"/>

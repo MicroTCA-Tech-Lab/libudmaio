@@ -1,0 +1,6 @@
+<map id="udmaio::RegAccessorBase&lt; C &gt;" name="udmaio::RegAccessorBase&lt; C &gt;">
+<area shape="rect" id="node1" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="44,181,253,207"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="99,93,198,119"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,137,31"/>
+<area shape="rect" id="node4" href="$structudmaio_1_1_uio_region.html" title="General&#45;purpose struct to define a memory area." alt="" coords="162,5,293,31"/>
+</map>

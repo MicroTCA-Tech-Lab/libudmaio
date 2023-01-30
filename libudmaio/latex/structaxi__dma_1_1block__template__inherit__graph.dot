@@ -1,11 +1,11 @@
-digraph "axi_dma::block_template&lt; R_acc, R_acc_arg &gt;"
+digraph "axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;"
 {
  // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
   bgcolor="transparent";
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
-  Node1 [label="axi_dma::block_template\l\< R_acc, R_acc_arg \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Template class for the axi_dma block, containing accessors for all its registers."];
+  Node1 [label="axi_dma::block_template\l\< R_array_acc, R_acc_arg \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Template class for the axi_dma block, containing accessors for all its registers."];
   Node1 -> Node2 [dir="back",color="firebrick4",style="solid"];
-  Node2 [label="udmaio::UioAxiDmaIf\l\< RegAccessor \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_axi_dma_if.html",tooltip="Interface to AXI DMA Core."];
+  Node2 [label="udmaio::UioAxiDmaIf\l\< RegAccessorArray \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_axi_dma_if.html",tooltip="Interface to AXI DMA Core."];
 }

@@ -1,6 +1,6 @@
 var hierarchy =
 [
-    [ "axi_dma::block_template< R_acc, R_acc_arg >", "structaxi__dma_1_1block__template.html", [
+    [ "axi_dma::block_template< R_array_acc, R_acc_arg >", "structaxi__dma_1_1block__template.html", [
       [ "udmaio::UioAxiDmaIf", "classudmaio_1_1_uio_axi_dma_if.html", null ]
     ] ],
     [ "udmaio::ConcurrentQueue< T >", "classudmaio_1_1_concurrent_queue.html", null ],
@@ -25,7 +25,11 @@ var hierarchy =
         [ "udmaio::UioMemSgdma", "classudmaio_1_1_uio_mem_sgdma.html", null ]
       ] ]
     ] ],
-    [ "udmaio::RegAccessor< C, offset >", "classudmaio_1_1_reg_accessor.html", null ],
+    [ "udmaio::RegAccessorBase< C >", "classudmaio_1_1_reg_accessor_base.html", [
+      [ "udmaio::RegAccessorArray< C, offset, arr_size, arr_stride >", "classudmaio_1_1_reg_accessor_array.html", null ],
+      [ "udmaio::RegAccessorArray< C, offset, 0, 0 >", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html", null ],
+      [ "udmaio::RegAccessorArrayElement< C >", "classudmaio_1_1_reg_accessor_array_element.html", null ]
+    ] ],
     [ "axi_dma::s2mm_curdesc_t", "structaxi__dma_1_1s2mm__curdesc__t.html", null ],
     [ "axi_dma::s2mm_dmacr_t", "structaxi__dma_1_1s2mm__dmacr__t.html", null ],
     [ "axi_dma::s2mm_dmasr_t", "structaxi__dma_1_1s2mm__dmasr__t.html", null ],

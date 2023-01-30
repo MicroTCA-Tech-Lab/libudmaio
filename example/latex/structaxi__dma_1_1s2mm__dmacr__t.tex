@@ -9,7 +9,7 @@
 \item 
 bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_a263a47afe1be52ed4e20c8b551ab5bb1}{rs}}\+: 1
 \item 
-uint8\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_a5a7b79212d4473013803c917ca005832}{rsvd\+\_\+1\+\_\+1}}\+: 1
+unsigned \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_a5fa6ebbccf7af1663555c5e1d473bd1b}{rsvd\+\_\+1\+\_\+1}}\+: 1
 \item 
 bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_a323e2363c948e96bffa24fdf61abecaf}{reset}}\+: 1
 \item 
@@ -17,7 +17,7 @@ bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_aeb537dee5d92f7068cf20163
 \item 
 bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_af6a76aa6092b8357b66bf53429c2e41c}{cyclic\+\_\+bd\+\_\+enable}}\+: 1
 \item 
-uint8\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_ade48fbe0524823238887ae2c3f64f569}{rsvd\+\_\+11\+\_\+5}}\+: 7
+unsigned \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_a037e7d7c17f60e6026618a76aae97422}{rsvd\+\_\+11\+\_\+5}}\+: 7
 \item 
 bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_ac0667d5942b371a6e0dc9f72f11137dd}{ioc\+\_\+irq\+\_\+en}}\+: 1
 \begin{DoxyCompactList}\small\item\em Interrupt on Complete (IOC) Interrupt Enable. When set to 1, allows Interrupt On Complete events to generate an interrupt out for descriptors with the Complete bit set. 0 -\/ IOC Interrupt disabled 1 -\/ IOC Interrupt enabled. \end{DoxyCompactList}\item 
@@ -25,7 +25,7 @@ bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_aee7e95943db77cda4b4868c0
 \begin{DoxyCompactList}\small\item\em Interrupt on Delay Timer Interrupt Enable. When set to 1, allows error events to generate an interrupt out. 0 -\/ Delay Interrupt disabled 1 -\/ Delay Interrupt enabled Note\+: Applicable only when Scatter Gather is enabled. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_a3f34e387ebcc296784bf00d0aa54961c}{err\+\_\+irq\+\_\+en}}\+: 1
 \begin{DoxyCompactList}\small\item\em Interrupt on Error Interrupt Enable. When set to 1, allows error events to generate an interrupt out. 0 -\/ Error Interrupt disabled 1 -\/ Error Interrupt enabled. \end{DoxyCompactList}\item 
-uint8\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_a62653ac6334c14c4cfa5324fce3b9700}{rsvd\+\_\+15\+\_\+15}}\+: 1
+unsigned \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_aeb9e30564bfe5730efb1a268931acf2b}{rsvd\+\_\+15\+\_\+15}}\+: 1
 \item 
 uint8\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_a652e3fc94c2d4fb4d2ff8d6b6859072b}{irq\+\_\+threshold}}
 \item 
@@ -34,8 +34,6 @@ uint8\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t_a553a484bc1c7940f
 
 
 \doxysubsection{Detailed Description}
-S2\+MM DMA Control Register
-
 S2\+MM DMA Control Register 
 
 \doxysubsection{Member Data Documentation}
@@ -105,23 +103,23 @@ Soft reset for resetting the AXI DMA core. Setting this bit to a 1 causes the AX
 \doxysubsubsection{\texorpdfstring{rs}{rs}}
 {\footnotesize\ttfamily bool axi\+\_\+dma\+::s2mm\+\_\+dmacr\+\_\+t\+::rs}
 
-Run / Stop control for controlling running and stopping of the DMA channel. 0 -\/ Stop – DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. AXI4-\/\+Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt. For Direct Register mode pending commands/transfers are flushed or completed. AXI4-\/\+Stream outs are potentially terminated. Data integrity on S2\+MM AXI4 cannot be guaranteed. The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations. 1 -\/ Run – Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations. \mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmacr__t_ade48fbe0524823238887ae2c3f64f569}\label{structaxi__dma_1_1s2mm__dmacr__t_ade48fbe0524823238887ae2c3f64f569}} 
+Run / Stop control for controlling running and stopping of the DMA channel. 0 -\/ Stop – DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. AXI4-\/\+Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt. For Direct Register mode pending commands/transfers are flushed or completed. AXI4-\/\+Stream outs are potentially terminated. Data integrity on S2\+MM AXI4 cannot be guaranteed. The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations. 1 -\/ Run – Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations. \mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmacr__t_a037e7d7c17f60e6026618a76aae97422}\label{structaxi__dma_1_1s2mm__dmacr__t_a037e7d7c17f60e6026618a76aae97422}} 
 \index{axi\_dma::s2mm\_dmacr\_t@{axi\_dma::s2mm\_dmacr\_t}!rsvd\_11\_5@{rsvd\_11\_5}}
 \index{rsvd\_11\_5@{rsvd\_11\_5}!axi\_dma::s2mm\_dmacr\_t@{axi\_dma::s2mm\_dmacr\_t}}
 \doxysubsubsection{\texorpdfstring{rsvd\_11\_5}{rsvd\_11\_5}}
-{\footnotesize\ttfamily uint8\+\_\+t axi\+\_\+dma\+::s2mm\+\_\+dmacr\+\_\+t\+::rsvd\+\_\+11\+\_\+5}
+{\footnotesize\ttfamily unsigned axi\+\_\+dma\+::s2mm\+\_\+dmacr\+\_\+t\+::rsvd\+\_\+11\+\_\+5}
 
-\mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmacr__t_a62653ac6334c14c4cfa5324fce3b9700}\label{structaxi__dma_1_1s2mm__dmacr__t_a62653ac6334c14c4cfa5324fce3b9700}} 
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmacr__t_aeb9e30564bfe5730efb1a268931acf2b}\label{structaxi__dma_1_1s2mm__dmacr__t_aeb9e30564bfe5730efb1a268931acf2b}} 
 \index{axi\_dma::s2mm\_dmacr\_t@{axi\_dma::s2mm\_dmacr\_t}!rsvd\_15\_15@{rsvd\_15\_15}}
 \index{rsvd\_15\_15@{rsvd\_15\_15}!axi\_dma::s2mm\_dmacr\_t@{axi\_dma::s2mm\_dmacr\_t}}
 \doxysubsubsection{\texorpdfstring{rsvd\_15\_15}{rsvd\_15\_15}}
-{\footnotesize\ttfamily uint8\+\_\+t axi\+\_\+dma\+::s2mm\+\_\+dmacr\+\_\+t\+::rsvd\+\_\+15\+\_\+15}
+{\footnotesize\ttfamily unsigned axi\+\_\+dma\+::s2mm\+\_\+dmacr\+\_\+t\+::rsvd\+\_\+15\+\_\+15}
 
-\mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmacr__t_a5a7b79212d4473013803c917ca005832}\label{structaxi__dma_1_1s2mm__dmacr__t_a5a7b79212d4473013803c917ca005832}} 
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__dmacr__t_a5fa6ebbccf7af1663555c5e1d473bd1b}\label{structaxi__dma_1_1s2mm__dmacr__t_a5fa6ebbccf7af1663555c5e1d473bd1b}} 
 \index{axi\_dma::s2mm\_dmacr\_t@{axi\_dma::s2mm\_dmacr\_t}!rsvd\_1\_1@{rsvd\_1\_1}}
 \index{rsvd\_1\_1@{rsvd\_1\_1}!axi\_dma::s2mm\_dmacr\_t@{axi\_dma::s2mm\_dmacr\_t}}
 \doxysubsubsection{\texorpdfstring{rsvd\_1\_1}{rsvd\_1\_1}}
-{\footnotesize\ttfamily uint8\+\_\+t axi\+\_\+dma\+::s2mm\+\_\+dmacr\+\_\+t\+::rsvd\+\_\+1\+\_\+1}
+{\footnotesize\ttfamily unsigned axi\+\_\+dma\+::s2mm\+\_\+dmacr\+\_\+t\+::rsvd\+\_\+1\+\_\+1}
 
 
 

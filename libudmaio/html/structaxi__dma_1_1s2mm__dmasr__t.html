@@ -114,8 +114,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a5c72c3b8ed0a45272709e9e40d9565ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92057fde9bd98a073d7f33a92f4b82c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a92057fde9bd98a073d7f33a92f4b82c2">idle</a>: 1</td></tr>
 <tr class="separator:a92057fde9bd98a073d7f33a92f4b82c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62556927b34c37b002d42fcb0c71e7e9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a62556927b34c37b002d42fcb0c71e7e9">rsvd_2_2</a>: 1</td></tr>
-<tr class="separator:a62556927b34c37b002d42fcb0c71e7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4b9a67662fda8c31a2111495b2ade3d"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#ac4b9a67662fda8c31a2111495b2ade3d">rsvd_2_2</a>: 1</td></tr>
+<tr class="separator:ac4b9a67662fda8c31a2111495b2ade3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50e15c1492e56ea3d8650467f252fa86"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a50e15c1492e56ea3d8650467f252fa86">sg_incld</a>: 1</td></tr>
 <tr class="memdesc:a50e15c1492e56ea3d8650467f252fa86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scatter Gather Engine Included. DMASR.SGIncld = 1 indicates the Scatter Gather engine is included and the AXI DMA is configured for Scatter Gather mode. DMASR.SGIncld = 0 indicates the Scatter Gather engine is excluded and the AXI DMA is configured for Direct Register Mode.  <a href="structaxi__dma_1_1s2mm__dmasr__t.html#a50e15c1492e56ea3d8650467f252fa86">More...</a><br /></td></tr>
 <tr class="separator:a50e15c1492e56ea3d8650467f252fa86"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,8 +127,8 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a540fa65a440e901fdf6e3cf237337b94"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a540fa65a440e901fdf6e3cf237337b94">dma_dec_err</a>: 1</td></tr>
 <tr class="memdesc:a540fa65a440e901fdf6e3cf237337b94"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA Decode Error. This error occurs if the address request points to an invalid address. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1. 0 - No DMA Decode Errors. 1 - DMA Decode Error detected.  <a href="structaxi__dma_1_1s2mm__dmasr__t.html#a540fa65a440e901fdf6e3cf237337b94">More...</a><br /></td></tr>
 <tr class="separator:a540fa65a440e901fdf6e3cf237337b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cc5d58666fe4d48b0b73995dd15cca4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a9cc5d58666fe4d48b0b73995dd15cca4">rsvd_7_7</a>: 1</td></tr>
-<tr class="separator:a9cc5d58666fe4d48b0b73995dd15cca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43d04e62034d3f9538fc0d3906eb01ac"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a43d04e62034d3f9538fc0d3906eb01ac">rsvd_7_7</a>: 1</td></tr>
+<tr class="separator:a43d04e62034d3f9538fc0d3906eb01ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a7d67417f4a854666b47d19e8c748da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a2a7d67417f4a854666b47d19e8c748da">sg_int_err</a>: 1</td></tr>
 <tr class="memdesc:a2a7d67417f4a854666b47d19e8c748da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scatter Gather Internal Error. This error occurs if a descriptor with the “Complete bit” already set is fetched. This indicates to the SG Engine that the descriptor is a tail descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1. 0 - No SG Internal Errors. 1 - SG Internal Error detected. Note: Applicable only when Scatter Gather is enabled.  <a href="structaxi__dma_1_1s2mm__dmasr__t.html#a2a7d67417f4a854666b47d19e8c748da">More...</a><br /></td></tr>
 <tr class="separator:a2a7d67417f4a854666b47d19e8c748da"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,8 +138,8 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a2b90322b3c2d36480781e8bfbaecad86"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a2b90322b3c2d36480781e8bfbaecad86">sg_dec_err</a>: 1</td></tr>
 <tr class="memdesc:a2b90322b3c2d36480781e8bfbaecad86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scatter Gather Decode Error. This error occurs if CURDESC_PTR and/or NXTDESC_PTR points to an invalid address. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1. 0 - No SG Decode Errors. 1 - SG Decode Error detected. DMA Engine halts. Note: Applicable only when Scatter Gather is enabled.  <a href="structaxi__dma_1_1s2mm__dmasr__t.html#a2b90322b3c2d36480781e8bfbaecad86">More...</a><br /></td></tr>
 <tr class="separator:a2b90322b3c2d36480781e8bfbaecad86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1295c7e7846b91c9e3cd7a3e6dfa1536"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a1295c7e7846b91c9e3cd7a3e6dfa1536">rsvd_11_11</a>: 1</td></tr>
-<tr class="separator:a1295c7e7846b91c9e3cd7a3e6dfa1536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8db398cadde56c2a30715c82fe229fdb"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a8db398cadde56c2a30715c82fe229fdb">rsvd_11_11</a>: 1</td></tr>
+<tr class="separator:a8db398cadde56c2a30715c82fe229fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54960d0adc24c41b31c8d2048ed2fd52"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a54960d0adc24c41b31c8d2048ed2fd52">ioc_irq</a>: 1</td></tr>
 <tr class="memdesc:a54960d0adc24c41b31c8d2048ed2fd52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt on Complete. When set to 1 for Scatter/Gather Mode, indicates an interrupt event was generated on completion of a descriptor. This occurs for descriptors with the End of Frame (EOF) bit set. When set to 1 for Direct Register Mode, indicates an interrupt event was generated on completion of a transfer. If the corresponding bit in S2MM_DMACR is enabled (IOC_IrqEn = 1) and if the interrupt threshold has been met, causes an interrupt out to be generated from the AXI DMA. 0 - No IOC Interrupt. 1 - IOC Interrupt detected. Writing a 1 to this bit will clear it.  <a href="structaxi__dma_1_1s2mm__dmasr__t.html#a54960d0adc24c41b31c8d2048ed2fd52">More...</a><br /></td></tr>
 <tr class="separator:a54960d0adc24c41b31c8d2048ed2fd52"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,16 +148,15 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aa85339fca072373a9cf6c002ba812a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee844706dd045b45c12463ea1ffb0d46"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#aee844706dd045b45c12463ea1ffb0d46">err_irq</a>: 1</td></tr>
 <tr class="separator:aee844706dd045b45c12463ea1ffb0d46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ca3c269d12f36bc28350a918c074c71"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a0ca3c269d12f36bc28350a918c074c71">rsvd_15_15</a>: 1</td></tr>
-<tr class="separator:a0ca3c269d12f36bc28350a918c074c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3f8ebf6d0767dc7791280f9379f4b28"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#ab3f8ebf6d0767dc7791280f9379f4b28">rsvd_15_15</a>: 1</td></tr>
+<tr class="separator:ab3f8ebf6d0767dc7791280f9379f4b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc9b4725b329a7eba3d5141d69a02c93"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#adc9b4725b329a7eba3d5141d69a02c93">irq_threshold_sts</a></td></tr>
 <tr class="separator:adc9b4725b329a7eba3d5141d69a02c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f8bf034f8ee3f971500cb641b756aba"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a5f8bf034f8ee3f971500cb641b756aba">irq_delay_sts</a></td></tr>
 <tr class="separator:a5f8bf034f8ee3f971500cb641b756aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >S2MM DMA Status Register</p>
-<p >S2MM DMA Status Register </p>
+<div class="textblock"><p >S2MM DMA Status Register </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="aa85339fca072373a9cf6c002ba812a6e" name="aa85339fca072373a9cf6c002ba812a6e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa85339fca072373a9cf6c002ba812a6e">&#9670;&#160;</a></span>dly_irq</h2>
@@ -313,56 +312,56 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a1295c7e7846b91c9e3cd7a3e6dfa1536" name="a1295c7e7846b91c9e3cd7a3e6dfa1536"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1295c7e7846b91c9e3cd7a3e6dfa1536">&#9670;&#160;</a></span>rsvd_11_11</h2>
+<a id="a8db398cadde56c2a30715c82fe229fdb" name="a8db398cadde56c2a30715c82fe229fdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8db398cadde56c2a30715c82fe229fdb">&#9670;&#160;</a></span>rsvd_11_11</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t axi_dma::s2mm_dmasr_t::rsvd_11_11</td>
+          <td class="memname">unsigned axi_dma::s2mm_dmasr_t::rsvd_11_11</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a0ca3c269d12f36bc28350a918c074c71" name="a0ca3c269d12f36bc28350a918c074c71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ca3c269d12f36bc28350a918c074c71">&#9670;&#160;</a></span>rsvd_15_15</h2>
+<a id="ab3f8ebf6d0767dc7791280f9379f4b28" name="ab3f8ebf6d0767dc7791280f9379f4b28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3f8ebf6d0767dc7791280f9379f4b28">&#9670;&#160;</a></span>rsvd_15_15</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t axi_dma::s2mm_dmasr_t::rsvd_15_15</td>
+          <td class="memname">unsigned axi_dma::s2mm_dmasr_t::rsvd_15_15</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a62556927b34c37b002d42fcb0c71e7e9" name="a62556927b34c37b002d42fcb0c71e7e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62556927b34c37b002d42fcb0c71e7e9">&#9670;&#160;</a></span>rsvd_2_2</h2>
+<a id="ac4b9a67662fda8c31a2111495b2ade3d" name="ac4b9a67662fda8c31a2111495b2ade3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4b9a67662fda8c31a2111495b2ade3d">&#9670;&#160;</a></span>rsvd_2_2</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t axi_dma::s2mm_dmasr_t::rsvd_2_2</td>
+          <td class="memname">unsigned axi_dma::s2mm_dmasr_t::rsvd_2_2</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a9cc5d58666fe4d48b0b73995dd15cca4" name="a9cc5d58666fe4d48b0b73995dd15cca4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cc5d58666fe4d48b0b73995dd15cca4">&#9670;&#160;</a></span>rsvd_7_7</h2>
+<a id="a43d04e62034d3f9538fc0d3906eb01ac" name="a43d04e62034d3f9538fc0d3906eb01ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43d04e62034d3f9538fc0d3906eb01ac">&#9670;&#160;</a></span>rsvd_7_7</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t axi_dma::s2mm_dmasr_t::rsvd_7_7</td>
+          <td class="memname">unsigned axi_dma::s2mm_dmasr_t::rsvd_7_7</td>
         </tr>
       </table>
 </div><div class="memdoc">

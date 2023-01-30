@@ -12,7 +12,7 @@ var namespaceaxi__dma =
     [ "s2mm_length_t", "structaxi__dma_1_1s2mm__length__t.html", "structaxi__dma_1_1s2mm__length__t" ],
     [ "s2mm_taildesc_t", "structaxi__dma_1_1s2mm__taildesc__t.html", "structaxi__dma_1_1s2mm__taildesc__t" ],
     [ "sg_ctl_t", "structaxi__dma_1_1sg__ctl__t.html", "structaxi__dma_1_1sg__ctl__t" ],
-    [ "block", "namespaceaxi__dma.html#aae57607a088102829f976fd387c96340", null ],
+    [ "block", "namespaceaxi__dma.html#adf82eb6346eaa5e00fb4a043f95c3f40", null ],
     [ "mm2s_curdesc_msb_t", "namespaceaxi__dma.html#a2ae842d1ceb021979533a6919ee58d4c", null ],
     [ "mm2s_sa_msb_t", "namespaceaxi__dma.html#a22bc743f3eca423455f667afe6b94956", null ],
     [ "mm2s_sa_t", "namespaceaxi__dma.html#a526e2a3f81dc12f0b18e1ae2f1717162", null ],

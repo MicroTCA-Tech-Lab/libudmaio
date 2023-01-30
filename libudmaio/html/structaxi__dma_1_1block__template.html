@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <meta name="generator" content="Doxygen 1.9.5" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>libudmaio: axi_dma::block_template&lt; R_acc, R_acc_arg &gt; Struct Template Reference</title>
+    <title>libudmaio: axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt; Struct Template Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -100,10 +100,11 @@ $(document).ready(function(){initNavTree('structaxi__dma_1_1block__template.html
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structaxi__dma_1_1block__template-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">axi_dma::block_template&lt; R_acc, R_acc_arg &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -112,101 +113,126 @@ $(document).ready(function(){initNavTree('structaxi__dma_1_1block__template.html
 
 <p><code>#include &lt;<a class="el" href="_axi_dma_8hpp_source.html">AxiDma.hpp</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for axi_dma::block_template&lt; R_acc, R_acc_arg &gt;:</div>
+Inheritance diagram for axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structaxi__dma_1_1block__template__inherit__graph.svg" width="175" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structaxi__dma_1_1block__template__inherit__graph.svg" width="196" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:add283e1d75201d5ca7eae364538a2c4f"><td class="memTemplParams" colspan="2">template&lt;typename R , uint32_t O&gt; </td></tr>
+<tr class="memitem:add283e1d75201d5ca7eae364538a2c4f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a> = R_array_acc&lt; R, O, 0, 0 &gt;</td></tr>
+<tr class="separator:add283e1d75201d5ca7eae364538a2c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a41de7884e826cae51b55538c41174c19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a41de7884e826cae51b55538c41174c19">block_template</a> (R_acc_arg arg)</td></tr>
-<tr class="separator:a41de7884e826cae51b55538c41174c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a053033be75233e467c81b80d073b21d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a053033be75233e467c81b80d073b21d5">block_template</a> (R_acc_arg arg)</td></tr>
+<tr class="separator:a053033be75233e467c81b80d073b21d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a96643da1c63584bde816feb8cf91a4a0"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="structaxi__dma_1_1mm2s__dmacr__t.html">mm2s_dmacr_t</a>, 0x0 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a96643da1c63584bde816feb8cf91a4a0">mm2s_dmacr</a></td></tr>
-<tr class="memdesc:a96643da1c63584bde816feb8cf91a4a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S DMA Control Register.  <a href="structaxi__dma_1_1block__template.html#a96643da1c63584bde816feb8cf91a4a0">More...</a><br /></td></tr>
-<tr class="separator:a96643da1c63584bde816feb8cf91a4a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad00f7ffb1bfc221c07f62667975224e8"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="structaxi__dma_1_1mm2s__dmasr__t.html">mm2s_dmasr_t</a>, 0x4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#ad00f7ffb1bfc221c07f62667975224e8">mm2s_dmasr</a></td></tr>
-<tr class="memdesc:ad00f7ffb1bfc221c07f62667975224e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S DMA Status Register.  <a href="structaxi__dma_1_1block__template.html#ad00f7ffb1bfc221c07f62667975224e8">More...</a><br /></td></tr>
-<tr class="separator:ad00f7ffb1bfc221c07f62667975224e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30745ce2f3104ebc13bee1c06b4404a6"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="structaxi__dma_1_1mm2s__curdesc__t.html">mm2s_curdesc_t</a>, 0x8 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a30745ce2f3104ebc13bee1c06b4404a6">mm2s_curdesc</a></td></tr>
-<tr class="memdesc:a30745ce2f3104ebc13bee1c06b4404a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S DMA Current Descriptor Pointer Register.  <a href="structaxi__dma_1_1block__template.html#a30745ce2f3104ebc13bee1c06b4404a6">More...</a><br /></td></tr>
-<tr class="separator:a30745ce2f3104ebc13bee1c06b4404a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ffb765dd2c7038ae0a28fdce0d7c701"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="namespaceaxi__dma.html#a2ae842d1ceb021979533a6919ee58d4c">mm2s_curdesc_msb_t</a>, 0xc &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a9ffb765dd2c7038ae0a28fdce0d7c701">mm2s_curdesc_msb</a></td></tr>
-<tr class="memdesc:a9ffb765dd2c7038ae0a28fdce0d7c701"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S DMA Current Descriptor Pointer Register.  <a href="structaxi__dma_1_1block__template.html#a9ffb765dd2c7038ae0a28fdce0d7c701">More...</a><br /></td></tr>
-<tr class="separator:a9ffb765dd2c7038ae0a28fdce0d7c701"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80533f7dfeb497c0a4fe997c6a247938"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="structaxi__dma_1_1mm2s__taildesc__t.html">mm2s_taildesc_t</a>, 0x10 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a80533f7dfeb497c0a4fe997c6a247938">mm2s_taildesc</a></td></tr>
-<tr class="memdesc:a80533f7dfeb497c0a4fe997c6a247938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S DMA Tail Descriptor Pointer Register.  <a href="structaxi__dma_1_1block__template.html#a80533f7dfeb497c0a4fe997c6a247938">More...</a><br /></td></tr>
-<tr class="separator:a80533f7dfeb497c0a4fe997c6a247938"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc1eb0034c9f27c34ab6f9fcfff15ca2"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="namespaceaxi__dma.html#a486acdc4d7d6f7c8bb5f97470f8a04bd">mm2s_taildesc_msb_t</a>, 0x14 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#adc1eb0034c9f27c34ab6f9fcfff15ca2">mm2s_taildesc_msb</a></td></tr>
-<tr class="memdesc:adc1eb0034c9f27c34ab6f9fcfff15ca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S DMA Tail Descriptor Pointer Register.  <a href="structaxi__dma_1_1block__template.html#adc1eb0034c9f27c34ab6f9fcfff15ca2">More...</a><br /></td></tr>
-<tr class="separator:adc1eb0034c9f27c34ab6f9fcfff15ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9e96e495ae765dfa3fb1587eb0a79bf"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="namespaceaxi__dma.html#a526e2a3f81dc12f0b18e1ae2f1717162">mm2s_sa_t</a>, 0x18 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#ab9e96e495ae765dfa3fb1587eb0a79bf">mm2s_sa</a></td></tr>
-<tr class="memdesc:ab9e96e495ae765dfa3fb1587eb0a79bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S Source Address Register.  <a href="structaxi__dma_1_1block__template.html#ab9e96e495ae765dfa3fb1587eb0a79bf">More...</a><br /></td></tr>
-<tr class="separator:ab9e96e495ae765dfa3fb1587eb0a79bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a708282762ea34949adb5f1a208eabb51"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="namespaceaxi__dma.html#a22bc743f3eca423455f667afe6b94956">mm2s_sa_msb_t</a>, 0x1c &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a708282762ea34949adb5f1a208eabb51">mm2s_sa_msb</a></td></tr>
-<tr class="memdesc:a708282762ea34949adb5f1a208eabb51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S Source Address Register.  <a href="structaxi__dma_1_1block__template.html#a708282762ea34949adb5f1a208eabb51">More...</a><br /></td></tr>
-<tr class="separator:a708282762ea34949adb5f1a208eabb51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4b44433fb2a937fd3cbfd6b6e0cfa1d"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="structaxi__dma_1_1mm2s__length__t.html">mm2s_length_t</a>, 0x28 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#ae4b44433fb2a937fd3cbfd6b6e0cfa1d">mm2s_length</a></td></tr>
-<tr class="memdesc:ae4b44433fb2a937fd3cbfd6b6e0cfa1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S DMA Transfer Length Register.  <a href="structaxi__dma_1_1block__template.html#ae4b44433fb2a937fd3cbfd6b6e0cfa1d">More...</a><br /></td></tr>
-<tr class="separator:ae4b44433fb2a937fd3cbfd6b6e0cfa1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af421880b49ca991a13097aaabaef31b2"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="structaxi__dma_1_1sg__ctl__t.html">sg_ctl_t</a>, 0x2c &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#af421880b49ca991a13097aaabaef31b2">sg_ctl</a></td></tr>
-<tr class="memdesc:af421880b49ca991a13097aaabaef31b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for Scatter/Gather User and Cache Control Register.  <a href="structaxi__dma_1_1block__template.html#af421880b49ca991a13097aaabaef31b2">More...</a><br /></td></tr>
-<tr class="separator:af421880b49ca991a13097aaabaef31b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6be27ab48bb216e28944ec90f4b45bf1"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="structaxi__dma_1_1s2mm__dmacr__t.html">s2mm_dmacr_t</a>, 0x30 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a6be27ab48bb216e28944ec90f4b45bf1">s2mm_dmacr</a></td></tr>
-<tr class="memdesc:a6be27ab48bb216e28944ec90f4b45bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM DMA Control Register.  <a href="structaxi__dma_1_1block__template.html#a6be27ab48bb216e28944ec90f4b45bf1">More...</a><br /></td></tr>
-<tr class="separator:a6be27ab48bb216e28944ec90f4b45bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a351c6c75665fa3793695f6b1e08fd5d5"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html">s2mm_dmasr_t</a>, 0x34 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a351c6c75665fa3793695f6b1e08fd5d5">s2mm_dmasr</a></td></tr>
-<tr class="memdesc:a351c6c75665fa3793695f6b1e08fd5d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM DMA Status Register.  <a href="structaxi__dma_1_1block__template.html#a351c6c75665fa3793695f6b1e08fd5d5">More...</a><br /></td></tr>
-<tr class="separator:a351c6c75665fa3793695f6b1e08fd5d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af31d187f7e6c3473c7b2bf29647fbee4"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="structaxi__dma_1_1s2mm__curdesc__t.html">s2mm_curdesc_t</a>, 0x38 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#af31d187f7e6c3473c7b2bf29647fbee4">s2mm_curdesc</a></td></tr>
-<tr class="memdesc:af31d187f7e6c3473c7b2bf29647fbee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM DMA Current Descriptor Pointer Register.  <a href="structaxi__dma_1_1block__template.html#af31d187f7e6c3473c7b2bf29647fbee4">More...</a><br /></td></tr>
-<tr class="separator:af31d187f7e6c3473c7b2bf29647fbee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84c24e624dae38d36135e354dbf45e5e"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="namespaceaxi__dma.html#a1866ecfb6501c57e67511d7d4a65d2ec">s2mm_curdesc_msb_t</a>, 0x3c &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a84c24e624dae38d36135e354dbf45e5e">s2mm_curdesc_msb</a></td></tr>
-<tr class="memdesc:a84c24e624dae38d36135e354dbf45e5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM DMA Current Descriptor Pointer Register.  <a href="structaxi__dma_1_1block__template.html#a84c24e624dae38d36135e354dbf45e5e">More...</a><br /></td></tr>
-<tr class="separator:a84c24e624dae38d36135e354dbf45e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1fea44ad317b2984bf9964e2642e8ca"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="structaxi__dma_1_1s2mm__taildesc__t.html">s2mm_taildesc_t</a>, 0x40 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#ab1fea44ad317b2984bf9964e2642e8ca">s2mm_taildesc</a></td></tr>
-<tr class="memdesc:ab1fea44ad317b2984bf9964e2642e8ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM DMA Tail Descriptor Pointer Register.  <a href="structaxi__dma_1_1block__template.html#ab1fea44ad317b2984bf9964e2642e8ca">More...</a><br /></td></tr>
-<tr class="separator:ab1fea44ad317b2984bf9964e2642e8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab111b2d2834ede9ac0dfc51b16f91374"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="namespaceaxi__dma.html#af96a46fee3cd5dbc6a78ecdc13f48320">s2mm_taildesc_msb_t</a>, 0x44 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#ab111b2d2834ede9ac0dfc51b16f91374">s2mm_taildesc_msb</a></td></tr>
-<tr class="memdesc:ab111b2d2834ede9ac0dfc51b16f91374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM DMA Tail Descriptor Pointer Register.  <a href="structaxi__dma_1_1block__template.html#ab111b2d2834ede9ac0dfc51b16f91374">More...</a><br /></td></tr>
-<tr class="separator:ab111b2d2834ede9ac0dfc51b16f91374"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c2d86d2d08809ad52c7c5951820811c"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="namespaceaxi__dma.html#a8054f0fece4e8539d6367f6560d021ac">s2mm_da_t</a>, 0x48 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a3c2d86d2d08809ad52c7c5951820811c">s2mm_da</a></td></tr>
-<tr class="memdesc:a3c2d86d2d08809ad52c7c5951820811c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM DMA Destination Address Register.  <a href="structaxi__dma_1_1block__template.html#a3c2d86d2d08809ad52c7c5951820811c">More...</a><br /></td></tr>
-<tr class="separator:a3c2d86d2d08809ad52c7c5951820811c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01dc47370d9fc22f86131a33f5e33385"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="namespaceaxi__dma.html#a2e7fb45c7a845c74441f754211aed93f">s2mm_da_msb_t</a>, 0x4c &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a01dc47370d9fc22f86131a33f5e33385">s2mm_da_msb</a></td></tr>
-<tr class="memdesc:a01dc47370d9fc22f86131a33f5e33385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM Destination Address Register.  <a href="structaxi__dma_1_1block__template.html#a01dc47370d9fc22f86131a33f5e33385">More...</a><br /></td></tr>
-<tr class="separator:a01dc47370d9fc22f86131a33f5e33385"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afedaa7bb05e0be57bb9a177253880bd7"><td class="memItemLeft" align="right" valign="top">R_acc&lt; <a class="el" href="structaxi__dma_1_1s2mm__length__t.html">s2mm_length_t</a>, 0x58 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#afedaa7bb05e0be57bb9a177253880bd7">s2mm_length</a></td></tr>
-<tr class="memdesc:afedaa7bb05e0be57bb9a177253880bd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM DMA Transfer Length Register.  <a href="structaxi__dma_1_1block__template.html#afedaa7bb05e0be57bb9a177253880bd7">More...</a><br /></td></tr>
-<tr class="separator:afedaa7bb05e0be57bb9a177253880bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8050574a5c50711e6b8bcd7255e4f850"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="structaxi__dma_1_1mm2s__dmacr__t.html">mm2s_dmacr_t</a>, 0x0 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a8050574a5c50711e6b8bcd7255e4f850">mm2s_dmacr</a></td></tr>
+<tr class="memdesc:a8050574a5c50711e6b8bcd7255e4f850"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S DMA Control Register.  <a href="structaxi__dma_1_1block__template.html#a8050574a5c50711e6b8bcd7255e4f850">More...</a><br /></td></tr>
+<tr class="separator:a8050574a5c50711e6b8bcd7255e4f850"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad799627f3a208a6971bb5ff67823e7d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="structaxi__dma_1_1mm2s__dmasr__t.html">mm2s_dmasr_t</a>, 0x4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#ad799627f3a208a6971bb5ff67823e7d3">mm2s_dmasr</a></td></tr>
+<tr class="memdesc:ad799627f3a208a6971bb5ff67823e7d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S DMA Status Register.  <a href="structaxi__dma_1_1block__template.html#ad799627f3a208a6971bb5ff67823e7d3">More...</a><br /></td></tr>
+<tr class="separator:ad799627f3a208a6971bb5ff67823e7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac542de57d30568aea00c15ae69682efa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="structaxi__dma_1_1mm2s__curdesc__t.html">mm2s_curdesc_t</a>, 0x8 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#ac542de57d30568aea00c15ae69682efa">mm2s_curdesc</a></td></tr>
+<tr class="memdesc:ac542de57d30568aea00c15ae69682efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S DMA Current Descriptor Pointer Register.  <a href="structaxi__dma_1_1block__template.html#ac542de57d30568aea00c15ae69682efa">More...</a><br /></td></tr>
+<tr class="separator:ac542de57d30568aea00c15ae69682efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2604e3870af5acb50cb14faec6537ef3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="namespaceaxi__dma.html#a2ae842d1ceb021979533a6919ee58d4c">mm2s_curdesc_msb_t</a>, 0xc &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a2604e3870af5acb50cb14faec6537ef3">mm2s_curdesc_msb</a></td></tr>
+<tr class="memdesc:a2604e3870af5acb50cb14faec6537ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S DMA Current Descriptor Pointer Register.  <a href="structaxi__dma_1_1block__template.html#a2604e3870af5acb50cb14faec6537ef3">More...</a><br /></td></tr>
+<tr class="separator:a2604e3870af5acb50cb14faec6537ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2393368f3ca6a318e39945999a41d17c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="structaxi__dma_1_1mm2s__taildesc__t.html">mm2s_taildesc_t</a>, 0x10 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a2393368f3ca6a318e39945999a41d17c">mm2s_taildesc</a></td></tr>
+<tr class="memdesc:a2393368f3ca6a318e39945999a41d17c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S DMA Tail Descriptor Pointer Register.  <a href="structaxi__dma_1_1block__template.html#a2393368f3ca6a318e39945999a41d17c">More...</a><br /></td></tr>
+<tr class="separator:a2393368f3ca6a318e39945999a41d17c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad40e7d14eccc2a06bdbd09071f8c719b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="namespaceaxi__dma.html#a486acdc4d7d6f7c8bb5f97470f8a04bd">mm2s_taildesc_msb_t</a>, 0x14 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#ad40e7d14eccc2a06bdbd09071f8c719b">mm2s_taildesc_msb</a></td></tr>
+<tr class="memdesc:ad40e7d14eccc2a06bdbd09071f8c719b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S DMA Tail Descriptor Pointer Register.  <a href="structaxi__dma_1_1block__template.html#ad40e7d14eccc2a06bdbd09071f8c719b">More...</a><br /></td></tr>
+<tr class="separator:ad40e7d14eccc2a06bdbd09071f8c719b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab47dbeba9adb408155b8e724669e281d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="namespaceaxi__dma.html#a526e2a3f81dc12f0b18e1ae2f1717162">mm2s_sa_t</a>, 0x18 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#ab47dbeba9adb408155b8e724669e281d">mm2s_sa</a></td></tr>
+<tr class="memdesc:ab47dbeba9adb408155b8e724669e281d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S Source Address Register.  <a href="structaxi__dma_1_1block__template.html#ab47dbeba9adb408155b8e724669e281d">More...</a><br /></td></tr>
+<tr class="separator:ab47dbeba9adb408155b8e724669e281d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abffbaf76da2272779616e527ca935ea4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="namespaceaxi__dma.html#a22bc743f3eca423455f667afe6b94956">mm2s_sa_msb_t</a>, 0x1c &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#abffbaf76da2272779616e527ca935ea4">mm2s_sa_msb</a></td></tr>
+<tr class="memdesc:abffbaf76da2272779616e527ca935ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S Source Address Register.  <a href="structaxi__dma_1_1block__template.html#abffbaf76da2272779616e527ca935ea4">More...</a><br /></td></tr>
+<tr class="separator:abffbaf76da2272779616e527ca935ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a2c60d7340641bdf4a694afdf292a61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="structaxi__dma_1_1mm2s__length__t.html">mm2s_length_t</a>, 0x28 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a1a2c60d7340641bdf4a694afdf292a61">mm2s_length</a></td></tr>
+<tr class="memdesc:a1a2c60d7340641bdf4a694afdf292a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for MM2S DMA Transfer Length Register.  <a href="structaxi__dma_1_1block__template.html#a1a2c60d7340641bdf4a694afdf292a61">More...</a><br /></td></tr>
+<tr class="separator:a1a2c60d7340641bdf4a694afdf292a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b7bfd06858b1142b07b328660feee38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="structaxi__dma_1_1sg__ctl__t.html">sg_ctl_t</a>, 0x2c &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a5b7bfd06858b1142b07b328660feee38">sg_ctl</a></td></tr>
+<tr class="memdesc:a5b7bfd06858b1142b07b328660feee38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for Scatter/Gather User and Cache Control Register.  <a href="structaxi__dma_1_1block__template.html#a5b7bfd06858b1142b07b328660feee38">More...</a><br /></td></tr>
+<tr class="separator:a5b7bfd06858b1142b07b328660feee38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69e9298405f937bad9b79a65a290406f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="structaxi__dma_1_1s2mm__dmacr__t.html">s2mm_dmacr_t</a>, 0x30 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a69e9298405f937bad9b79a65a290406f">s2mm_dmacr</a></td></tr>
+<tr class="memdesc:a69e9298405f937bad9b79a65a290406f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM DMA Control Register.  <a href="structaxi__dma_1_1block__template.html#a69e9298405f937bad9b79a65a290406f">More...</a><br /></td></tr>
+<tr class="separator:a69e9298405f937bad9b79a65a290406f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a2d2f6a0cc4dd86e53b460d511e1d4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html">s2mm_dmasr_t</a>, 0x34 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a3a2d2f6a0cc4dd86e53b460d511e1d4a">s2mm_dmasr</a></td></tr>
+<tr class="memdesc:a3a2d2f6a0cc4dd86e53b460d511e1d4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM DMA Status Register.  <a href="structaxi__dma_1_1block__template.html#a3a2d2f6a0cc4dd86e53b460d511e1d4a">More...</a><br /></td></tr>
+<tr class="separator:a3a2d2f6a0cc4dd86e53b460d511e1d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa00a8b47e99eb7bae612ce0c7516127a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="structaxi__dma_1_1s2mm__curdesc__t.html">s2mm_curdesc_t</a>, 0x38 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#aa00a8b47e99eb7bae612ce0c7516127a">s2mm_curdesc</a></td></tr>
+<tr class="memdesc:aa00a8b47e99eb7bae612ce0c7516127a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM DMA Current Descriptor Pointer Register.  <a href="structaxi__dma_1_1block__template.html#aa00a8b47e99eb7bae612ce0c7516127a">More...</a><br /></td></tr>
+<tr class="separator:aa00a8b47e99eb7bae612ce0c7516127a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6645cf9feb7f89b69e0c45b79f0c6efe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="namespaceaxi__dma.html#a1866ecfb6501c57e67511d7d4a65d2ec">s2mm_curdesc_msb_t</a>, 0x3c &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a6645cf9feb7f89b69e0c45b79f0c6efe">s2mm_curdesc_msb</a></td></tr>
+<tr class="memdesc:a6645cf9feb7f89b69e0c45b79f0c6efe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM DMA Current Descriptor Pointer Register.  <a href="structaxi__dma_1_1block__template.html#a6645cf9feb7f89b69e0c45b79f0c6efe">More...</a><br /></td></tr>
+<tr class="separator:a6645cf9feb7f89b69e0c45b79f0c6efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a492c6fb6345daaea818f4720977192da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="structaxi__dma_1_1s2mm__taildesc__t.html">s2mm_taildesc_t</a>, 0x40 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a492c6fb6345daaea818f4720977192da">s2mm_taildesc</a></td></tr>
+<tr class="memdesc:a492c6fb6345daaea818f4720977192da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM DMA Tail Descriptor Pointer Register.  <a href="structaxi__dma_1_1block__template.html#a492c6fb6345daaea818f4720977192da">More...</a><br /></td></tr>
+<tr class="separator:a492c6fb6345daaea818f4720977192da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eb924e84187faab0447d23387c80ae0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="namespaceaxi__dma.html#af96a46fee3cd5dbc6a78ecdc13f48320">s2mm_taildesc_msb_t</a>, 0x44 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a0eb924e84187faab0447d23387c80ae0">s2mm_taildesc_msb</a></td></tr>
+<tr class="memdesc:a0eb924e84187faab0447d23387c80ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM DMA Tail Descriptor Pointer Register.  <a href="structaxi__dma_1_1block__template.html#a0eb924e84187faab0447d23387c80ae0">More...</a><br /></td></tr>
+<tr class="separator:a0eb924e84187faab0447d23387c80ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a230c9eae3e7eb67b1f6b6b280ba3332f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="namespaceaxi__dma.html#a8054f0fece4e8539d6367f6560d021ac">s2mm_da_t</a>, 0x48 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a230c9eae3e7eb67b1f6b6b280ba3332f">s2mm_da</a></td></tr>
+<tr class="memdesc:a230c9eae3e7eb67b1f6b6b280ba3332f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM DMA Destination Address Register.  <a href="structaxi__dma_1_1block__template.html#a230c9eae3e7eb67b1f6b6b280ba3332f">More...</a><br /></td></tr>
+<tr class="separator:a230c9eae3e7eb67b1f6b6b280ba3332f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee04c473dc0c413741c1a5091bd815d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="namespaceaxi__dma.html#a2e7fb45c7a845c74441f754211aed93f">s2mm_da_msb_t</a>, 0x4c &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#aee04c473dc0c413741c1a5091bd815d5">s2mm_da_msb</a></td></tr>
+<tr class="memdesc:aee04c473dc0c413741c1a5091bd815d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM Destination Address Register.  <a href="structaxi__dma_1_1block__template.html#aee04c473dc0c413741c1a5091bd815d5">More...</a><br /></td></tr>
+<tr class="separator:aee04c473dc0c413741c1a5091bd815d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45e558cc77d4dd819eb48ceb4eff3c93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt; <a class="el" href="structaxi__dma_1_1s2mm__length__t.html">s2mm_length_t</a>, 0x58 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaxi__dma_1_1block__template.html#a45e558cc77d4dd819eb48ceb4eff3c93">s2mm_length</a></td></tr>
+<tr class="memdesc:a45e558cc77d4dd819eb48ceb4eff3c93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register accessor for S2MM DMA Transfer Length Register.  <a href="structaxi__dma_1_1block__template.html#a45e558cc77d4dd819eb48ceb4eff3c93">More...</a><br /></td></tr>
+<tr class="separator:a45e558cc77d4dd819eb48ceb4eff3c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg&gt;<br />
-struct axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</div><p >Template class for the <a class="el" href="namespaceaxi__dma.html">axi_dma</a> block, containing accessors for all its registers. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg&gt;<br />
+struct axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</div><p >Template class for the <a class="el" href="namespaceaxi__dma.html">axi_dma</a> block, containing accessors for all its registers. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">R_acc</td><td>Register accessor template (provided by user), receiving the register type as parameter </td></tr>
+    <tr><td class="paramname">R_array_acc</td><td>Register accessor template (provided by user), receiving the register type as parameter </td></tr>
     <tr><td class="paramname">R_acc_arg</td><td>Constructor argument type for the register accessor (e.g. hardware-dependent information) </td></tr>
   </table>
   </dd>
 </dl>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a41de7884e826cae51b55538c41174c19" name="a41de7884e826cae51b55538c41174c19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41de7884e826cae51b55538c41174c19">&#9670;&#160;</a></span>block_template()</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="add283e1d75201d5ca7eae364538a2c4f" name="add283e1d75201d5ca7eae364538a2c4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add283e1d75201d5ca7eae364538a2c4f">&#9670;&#160;</a></span>R_acc</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
+<div class="memtemplate">
+template&lt;typename R , uint32_t O&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::R_acc =  R_array_acc&lt;R, O, 0, 0&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a053033be75233e467c81b80d073b21d5" name="a053033be75233e467c81b80d073b21d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a053033be75233e467c81b80d073b21d5">&#9670;&#160;</a></span>block_template()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::block_template </td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::block_template </td>
           <td>(</td>
           <td class="paramtype">R_acc_arg&#160;</td>
           <td class="paramname"><em>arg</em></td><td>)</td>
@@ -223,16 +249,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a30745ce2f3104ebc13bee1c06b4404a6" name="a30745ce2f3104ebc13bee1c06b4404a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30745ce2f3104ebc13bee1c06b4404a6">&#9670;&#160;</a></span>mm2s_curdesc</h2>
+<a id="ac542de57d30568aea00c15ae69682efa" name="ac542de57d30568aea00c15ae69682efa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac542de57d30568aea00c15ae69682efa">&#9670;&#160;</a></span>mm2s_curdesc</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="structaxi__dma_1_1mm2s__curdesc__t.html">mm2s_curdesc_t</a>, 0x8&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::mm2s_curdesc</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="structaxi__dma_1_1mm2s__curdesc__t.html">mm2s_curdesc_t</a>, 0x8&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::mm2s_curdesc</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -241,16 +267,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="a9ffb765dd2c7038ae0a28fdce0d7c701" name="a9ffb765dd2c7038ae0a28fdce0d7c701"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ffb765dd2c7038ae0a28fdce0d7c701">&#9670;&#160;</a></span>mm2s_curdesc_msb</h2>
+<a id="a2604e3870af5acb50cb14faec6537ef3" name="a2604e3870af5acb50cb14faec6537ef3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2604e3870af5acb50cb14faec6537ef3">&#9670;&#160;</a></span>mm2s_curdesc_msb</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="namespaceaxi__dma.html#a2ae842d1ceb021979533a6919ee58d4c">mm2s_curdesc_msb_t</a>, 0xc&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::mm2s_curdesc_msb</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="namespaceaxi__dma.html#a2ae842d1ceb021979533a6919ee58d4c">mm2s_curdesc_msb_t</a>, 0xc&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::mm2s_curdesc_msb</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -259,16 +285,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="a96643da1c63584bde816feb8cf91a4a0" name="a96643da1c63584bde816feb8cf91a4a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96643da1c63584bde816feb8cf91a4a0">&#9670;&#160;</a></span>mm2s_dmacr</h2>
+<a id="a8050574a5c50711e6b8bcd7255e4f850" name="a8050574a5c50711e6b8bcd7255e4f850"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8050574a5c50711e6b8bcd7255e4f850">&#9670;&#160;</a></span>mm2s_dmacr</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="structaxi__dma_1_1mm2s__dmacr__t.html">mm2s_dmacr_t</a>, 0x0&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::mm2s_dmacr</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="structaxi__dma_1_1mm2s__dmacr__t.html">mm2s_dmacr_t</a>, 0x0&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::mm2s_dmacr</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -277,16 +303,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="ad00f7ffb1bfc221c07f62667975224e8" name="ad00f7ffb1bfc221c07f62667975224e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad00f7ffb1bfc221c07f62667975224e8">&#9670;&#160;</a></span>mm2s_dmasr</h2>
+<a id="ad799627f3a208a6971bb5ff67823e7d3" name="ad799627f3a208a6971bb5ff67823e7d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad799627f3a208a6971bb5ff67823e7d3">&#9670;&#160;</a></span>mm2s_dmasr</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="structaxi__dma_1_1mm2s__dmasr__t.html">mm2s_dmasr_t</a>, 0x4&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::mm2s_dmasr</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="structaxi__dma_1_1mm2s__dmasr__t.html">mm2s_dmasr_t</a>, 0x4&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::mm2s_dmasr</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -295,16 +321,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="ae4b44433fb2a937fd3cbfd6b6e0cfa1d" name="ae4b44433fb2a937fd3cbfd6b6e0cfa1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4b44433fb2a937fd3cbfd6b6e0cfa1d">&#9670;&#160;</a></span>mm2s_length</h2>
+<a id="a1a2c60d7340641bdf4a694afdf292a61" name="a1a2c60d7340641bdf4a694afdf292a61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a2c60d7340641bdf4a694afdf292a61">&#9670;&#160;</a></span>mm2s_length</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="structaxi__dma_1_1mm2s__length__t.html">mm2s_length_t</a>, 0x28&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::mm2s_length</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="structaxi__dma_1_1mm2s__length__t.html">mm2s_length_t</a>, 0x28&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::mm2s_length</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -313,16 +339,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="ab9e96e495ae765dfa3fb1587eb0a79bf" name="ab9e96e495ae765dfa3fb1587eb0a79bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9e96e495ae765dfa3fb1587eb0a79bf">&#9670;&#160;</a></span>mm2s_sa</h2>
+<a id="ab47dbeba9adb408155b8e724669e281d" name="ab47dbeba9adb408155b8e724669e281d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab47dbeba9adb408155b8e724669e281d">&#9670;&#160;</a></span>mm2s_sa</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="namespaceaxi__dma.html#a526e2a3f81dc12f0b18e1ae2f1717162">mm2s_sa_t</a>, 0x18&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::mm2s_sa</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="namespaceaxi__dma.html#a526e2a3f81dc12f0b18e1ae2f1717162">mm2s_sa_t</a>, 0x18&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::mm2s_sa</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -331,16 +357,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="a708282762ea34949adb5f1a208eabb51" name="a708282762ea34949adb5f1a208eabb51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a708282762ea34949adb5f1a208eabb51">&#9670;&#160;</a></span>mm2s_sa_msb</h2>
+<a id="abffbaf76da2272779616e527ca935ea4" name="abffbaf76da2272779616e527ca935ea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abffbaf76da2272779616e527ca935ea4">&#9670;&#160;</a></span>mm2s_sa_msb</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="namespaceaxi__dma.html#a22bc743f3eca423455f667afe6b94956">mm2s_sa_msb_t</a>, 0x1c&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::mm2s_sa_msb</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="namespaceaxi__dma.html#a22bc743f3eca423455f667afe6b94956">mm2s_sa_msb_t</a>, 0x1c&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::mm2s_sa_msb</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -349,16 +375,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="a80533f7dfeb497c0a4fe997c6a247938" name="a80533f7dfeb497c0a4fe997c6a247938"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80533f7dfeb497c0a4fe997c6a247938">&#9670;&#160;</a></span>mm2s_taildesc</h2>
+<a id="a2393368f3ca6a318e39945999a41d17c" name="a2393368f3ca6a318e39945999a41d17c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2393368f3ca6a318e39945999a41d17c">&#9670;&#160;</a></span>mm2s_taildesc</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="structaxi__dma_1_1mm2s__taildesc__t.html">mm2s_taildesc_t</a>, 0x10&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::mm2s_taildesc</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="structaxi__dma_1_1mm2s__taildesc__t.html">mm2s_taildesc_t</a>, 0x10&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::mm2s_taildesc</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -367,16 +393,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="adc1eb0034c9f27c34ab6f9fcfff15ca2" name="adc1eb0034c9f27c34ab6f9fcfff15ca2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc1eb0034c9f27c34ab6f9fcfff15ca2">&#9670;&#160;</a></span>mm2s_taildesc_msb</h2>
+<a id="ad40e7d14eccc2a06bdbd09071f8c719b" name="ad40e7d14eccc2a06bdbd09071f8c719b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad40e7d14eccc2a06bdbd09071f8c719b">&#9670;&#160;</a></span>mm2s_taildesc_msb</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="namespaceaxi__dma.html#a486acdc4d7d6f7c8bb5f97470f8a04bd">mm2s_taildesc_msb_t</a>, 0x14&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::mm2s_taildesc_msb</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="namespaceaxi__dma.html#a486acdc4d7d6f7c8bb5f97470f8a04bd">mm2s_taildesc_msb_t</a>, 0x14&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::mm2s_taildesc_msb</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -385,16 +411,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="af31d187f7e6c3473c7b2bf29647fbee4" name="af31d187f7e6c3473c7b2bf29647fbee4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af31d187f7e6c3473c7b2bf29647fbee4">&#9670;&#160;</a></span>s2mm_curdesc</h2>
+<a id="aa00a8b47e99eb7bae612ce0c7516127a" name="aa00a8b47e99eb7bae612ce0c7516127a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa00a8b47e99eb7bae612ce0c7516127a">&#9670;&#160;</a></span>s2mm_curdesc</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="structaxi__dma_1_1s2mm__curdesc__t.html">s2mm_curdesc_t</a>, 0x38&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::s2mm_curdesc</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="structaxi__dma_1_1s2mm__curdesc__t.html">s2mm_curdesc_t</a>, 0x38&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::s2mm_curdesc</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -403,16 +429,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="a84c24e624dae38d36135e354dbf45e5e" name="a84c24e624dae38d36135e354dbf45e5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84c24e624dae38d36135e354dbf45e5e">&#9670;&#160;</a></span>s2mm_curdesc_msb</h2>
+<a id="a6645cf9feb7f89b69e0c45b79f0c6efe" name="a6645cf9feb7f89b69e0c45b79f0c6efe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6645cf9feb7f89b69e0c45b79f0c6efe">&#9670;&#160;</a></span>s2mm_curdesc_msb</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="namespaceaxi__dma.html#a1866ecfb6501c57e67511d7d4a65d2ec">s2mm_curdesc_msb_t</a>, 0x3c&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::s2mm_curdesc_msb</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="namespaceaxi__dma.html#a1866ecfb6501c57e67511d7d4a65d2ec">s2mm_curdesc_msb_t</a>, 0x3c&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::s2mm_curdesc_msb</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -421,16 +447,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="a3c2d86d2d08809ad52c7c5951820811c" name="a3c2d86d2d08809ad52c7c5951820811c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c2d86d2d08809ad52c7c5951820811c">&#9670;&#160;</a></span>s2mm_da</h2>
+<a id="a230c9eae3e7eb67b1f6b6b280ba3332f" name="a230c9eae3e7eb67b1f6b6b280ba3332f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a230c9eae3e7eb67b1f6b6b280ba3332f">&#9670;&#160;</a></span>s2mm_da</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="namespaceaxi__dma.html#a8054f0fece4e8539d6367f6560d021ac">s2mm_da_t</a>, 0x48&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::s2mm_da</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="namespaceaxi__dma.html#a8054f0fece4e8539d6367f6560d021ac">s2mm_da_t</a>, 0x48&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::s2mm_da</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -439,16 +465,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="a01dc47370d9fc22f86131a33f5e33385" name="a01dc47370d9fc22f86131a33f5e33385"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01dc47370d9fc22f86131a33f5e33385">&#9670;&#160;</a></span>s2mm_da_msb</h2>
+<a id="aee04c473dc0c413741c1a5091bd815d5" name="aee04c473dc0c413741c1a5091bd815d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee04c473dc0c413741c1a5091bd815d5">&#9670;&#160;</a></span>s2mm_da_msb</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="namespaceaxi__dma.html#a2e7fb45c7a845c74441f754211aed93f">s2mm_da_msb_t</a>, 0x4c&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::s2mm_da_msb</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="namespaceaxi__dma.html#a2e7fb45c7a845c74441f754211aed93f">s2mm_da_msb_t</a>, 0x4c&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::s2mm_da_msb</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -457,16 +483,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="a6be27ab48bb216e28944ec90f4b45bf1" name="a6be27ab48bb216e28944ec90f4b45bf1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6be27ab48bb216e28944ec90f4b45bf1">&#9670;&#160;</a></span>s2mm_dmacr</h2>
+<a id="a69e9298405f937bad9b79a65a290406f" name="a69e9298405f937bad9b79a65a290406f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69e9298405f937bad9b79a65a290406f">&#9670;&#160;</a></span>s2mm_dmacr</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="structaxi__dma_1_1s2mm__dmacr__t.html">s2mm_dmacr_t</a>, 0x30&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::s2mm_dmacr</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="structaxi__dma_1_1s2mm__dmacr__t.html">s2mm_dmacr_t</a>, 0x30&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::s2mm_dmacr</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -475,16 +501,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="a351c6c75665fa3793695f6b1e08fd5d5" name="a351c6c75665fa3793695f6b1e08fd5d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a351c6c75665fa3793695f6b1e08fd5d5">&#9670;&#160;</a></span>s2mm_dmasr</h2>
+<a id="a3a2d2f6a0cc4dd86e53b460d511e1d4a" name="a3a2d2f6a0cc4dd86e53b460d511e1d4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a2d2f6a0cc4dd86e53b460d511e1d4a">&#9670;&#160;</a></span>s2mm_dmasr</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html">s2mm_dmasr_t</a>, 0x34&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::s2mm_dmasr</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html">s2mm_dmasr_t</a>, 0x34&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::s2mm_dmasr</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -493,16 +519,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="afedaa7bb05e0be57bb9a177253880bd7" name="afedaa7bb05e0be57bb9a177253880bd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afedaa7bb05e0be57bb9a177253880bd7">&#9670;&#160;</a></span>s2mm_length</h2>
+<a id="a45e558cc77d4dd819eb48ceb4eff3c93" name="a45e558cc77d4dd819eb48ceb4eff3c93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e558cc77d4dd819eb48ceb4eff3c93">&#9670;&#160;</a></span>s2mm_length</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="structaxi__dma_1_1s2mm__length__t.html">s2mm_length_t</a>, 0x58&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::s2mm_length</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="structaxi__dma_1_1s2mm__length__t.html">s2mm_length_t</a>, 0x58&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::s2mm_length</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -511,16 +537,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="ab1fea44ad317b2984bf9964e2642e8ca" name="ab1fea44ad317b2984bf9964e2642e8ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1fea44ad317b2984bf9964e2642e8ca">&#9670;&#160;</a></span>s2mm_taildesc</h2>
+<a id="a492c6fb6345daaea818f4720977192da" name="a492c6fb6345daaea818f4720977192da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a492c6fb6345daaea818f4720977192da">&#9670;&#160;</a></span>s2mm_taildesc</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="structaxi__dma_1_1s2mm__taildesc__t.html">s2mm_taildesc_t</a>, 0x40&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::s2mm_taildesc</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="structaxi__dma_1_1s2mm__taildesc__t.html">s2mm_taildesc_t</a>, 0x40&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::s2mm_taildesc</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -529,16 +555,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="ab111b2d2834ede9ac0dfc51b16f91374" name="ab111b2d2834ede9ac0dfc51b16f91374"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab111b2d2834ede9ac0dfc51b16f91374">&#9670;&#160;</a></span>s2mm_taildesc_msb</h2>
+<a id="a0eb924e84187faab0447d23387c80ae0" name="a0eb924e84187faab0447d23387c80ae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eb924e84187faab0447d23387c80ae0">&#9670;&#160;</a></span>s2mm_taildesc_msb</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="namespaceaxi__dma.html#af96a46fee3cd5dbc6a78ecdc13f48320">s2mm_taildesc_msb_t</a>, 0x44&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::s2mm_taildesc_msb</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="namespaceaxi__dma.html#af96a46fee3cd5dbc6a78ecdc13f48320">s2mm_taildesc_msb_t</a>, 0x44&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::s2mm_taildesc_msb</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -547,16 +573,16 @@ template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_
 
 </div>
 </div>
-<a id="af421880b49ca991a13097aaabaef31b2" name="af421880b49ca991a13097aaabaef31b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af421880b49ca991a13097aaabaef31b2">&#9670;&#160;</a></span>sg_ctl</h2>
+<a id="a5b7bfd06858b1142b07b328660feee38" name="a5b7bfd06858b1142b07b328660feee38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b7bfd06858b1142b07b328660feee38">&#9670;&#160;</a></span>sg_ctl</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;template&lt; typename, uint32_t &gt; typename R_acc, typename R_acc_arg &gt; </div>
+template&lt;template&lt; typename, uint32_t, uint32_t, uint32_t &gt; typename R_array_acc, typename R_acc_arg &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">R_acc&lt;<a class="el" href="structaxi__dma_1_1sg__ctl__t.html">sg_ctl_t</a>, 0x2c&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_acc, R_acc_arg &gt;::sg_ctl</td>
+          <td class="memname"><a class="el" href="structaxi__dma_1_1block__template.html#add283e1d75201d5ca7eae364538a2c4f">R_acc</a>&lt;<a class="el" href="structaxi__dma_1_1sg__ctl__t.html">sg_ctl_t</a>, 0x2c&gt; <a class="el" href="structaxi__dma_1_1block__template.html">axi_dma::block_template</a>&lt; R_array_acc, R_acc_arg &gt;::sg_ctl</td>
         </tr>
       </table>
 </div><div class="memdoc">

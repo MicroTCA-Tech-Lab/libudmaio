@@ -1,5 +1,5 @@
-\hypertarget{structaxi__dma_1_1block__template}{}\doxysection{axi\+\_\+dma\+::block\+\_\+template\texorpdfstring{$<$}{<} R\+\_\+acc, R\+\_\+acc\+\_\+arg \texorpdfstring{$>$}{>} Struct Template Reference}
-\label{structaxi__dma_1_1block__template}\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\hypertarget{structaxi__dma_1_1block__template}{}\doxysection{axi\+\_\+dma\+::block\+\_\+template\texorpdfstring{$<$}{<} R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structaxi__dma_1_1block__template}\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 
 
 Template class for the \mbox{\hyperlink{namespaceaxi__dma}{axi\+\_\+dma}} block, containing accessors for all its registers.  
@@ -11,285 +11,301 @@ Template class for the \mbox{\hyperlink{namespaceaxi__dma}{axi\+\_\+dma}} block,
 
 
 
-Inheritance diagram for axi\+\_\+dma\+::block\+\_\+template\texorpdfstring{$<$}{<} R\+\_\+acc, R\+\_\+acc\+\_\+arg \texorpdfstring{$>$}{>}\+:
+Inheritance diagram for axi\+\_\+dma\+::block\+\_\+template\texorpdfstring{$<$}{<} R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg \texorpdfstring{$>$}{>}\+:
 % FIG 0
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename R , uint32\+\_\+t O$>$ }\\using \mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}} = R\+\_\+array\+\_\+acc$<$ R, O, 0, 0 $>$
+\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structaxi__dma_1_1block__template_a41de7884e826cae51b55538c41174c19}{block\+\_\+template}} (R\+\_\+acc\+\_\+arg arg)
+\mbox{\hyperlink{structaxi__dma_1_1block__template_a053033be75233e467c81b80d073b21d5}{block\+\_\+template}} (R\+\_\+acc\+\_\+arg arg)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-R\+\_\+acc$<$ \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t}{mm2s\+\_\+dmacr\+\_\+t}}, 0x0 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a96643da1c63584bde816feb8cf91a4a0}{mm2s\+\_\+dmacr}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t}{mm2s\+\_\+dmacr\+\_\+t}}, 0x0 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a8050574a5c50711e6b8bcd7255e4f850}{mm2s\+\_\+dmacr}}
 \begin{DoxyCompactList}\small\item\em Register accessor for MM2S DMA Control Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t}{mm2s\+\_\+dmasr\+\_\+t}}, 0x4 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_ad00f7ffb1bfc221c07f62667975224e8}{mm2s\+\_\+dmasr}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t}{mm2s\+\_\+dmasr\+\_\+t}}, 0x4 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_ad799627f3a208a6971bb5ff67823e7d3}{mm2s\+\_\+dmasr}}
 \begin{DoxyCompactList}\small\item\em Register accessor for MM2S DMA Status Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{structaxi__dma_1_1mm2s__curdesc__t}{mm2s\+\_\+curdesc\+\_\+t}}, 0x8 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a30745ce2f3104ebc13bee1c06b4404a6}{mm2s\+\_\+curdesc}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{structaxi__dma_1_1mm2s__curdesc__t}{mm2s\+\_\+curdesc\+\_\+t}}, 0x8 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_ac542de57d30568aea00c15ae69682efa}{mm2s\+\_\+curdesc}}
 \begin{DoxyCompactList}\small\item\em Register accessor for MM2S DMA Current Descriptor Pointer Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{namespaceaxi__dma_a2ae842d1ceb021979533a6919ee58d4c}{mm2s\+\_\+curdesc\+\_\+msb\+\_\+t}}, 0xc $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a9ffb765dd2c7038ae0a28fdce0d7c701}{mm2s\+\_\+curdesc\+\_\+msb}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{namespaceaxi__dma_a2ae842d1ceb021979533a6919ee58d4c}{mm2s\+\_\+curdesc\+\_\+msb\+\_\+t}}, 0xc $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a2604e3870af5acb50cb14faec6537ef3}{mm2s\+\_\+curdesc\+\_\+msb}}
 \begin{DoxyCompactList}\small\item\em Register accessor for MM2S DMA Current Descriptor Pointer Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{structaxi__dma_1_1mm2s__taildesc__t}{mm2s\+\_\+taildesc\+\_\+t}}, 0x10 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a80533f7dfeb497c0a4fe997c6a247938}{mm2s\+\_\+taildesc}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{structaxi__dma_1_1mm2s__taildesc__t}{mm2s\+\_\+taildesc\+\_\+t}}, 0x10 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a2393368f3ca6a318e39945999a41d17c}{mm2s\+\_\+taildesc}}
 \begin{DoxyCompactList}\small\item\em Register accessor for MM2S DMA Tail Descriptor Pointer Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{namespaceaxi__dma_a486acdc4d7d6f7c8bb5f97470f8a04bd}{mm2s\+\_\+taildesc\+\_\+msb\+\_\+t}}, 0x14 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_adc1eb0034c9f27c34ab6f9fcfff15ca2}{mm2s\+\_\+taildesc\+\_\+msb}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{namespaceaxi__dma_a486acdc4d7d6f7c8bb5f97470f8a04bd}{mm2s\+\_\+taildesc\+\_\+msb\+\_\+t}}, 0x14 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_ad40e7d14eccc2a06bdbd09071f8c719b}{mm2s\+\_\+taildesc\+\_\+msb}}
 \begin{DoxyCompactList}\small\item\em Register accessor for MM2S DMA Tail Descriptor Pointer Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{namespaceaxi__dma_a526e2a3f81dc12f0b18e1ae2f1717162}{mm2s\+\_\+sa\+\_\+t}}, 0x18 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_ab9e96e495ae765dfa3fb1587eb0a79bf}{mm2s\+\_\+sa}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{namespaceaxi__dma_a526e2a3f81dc12f0b18e1ae2f1717162}{mm2s\+\_\+sa\+\_\+t}}, 0x18 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_ab47dbeba9adb408155b8e724669e281d}{mm2s\+\_\+sa}}
 \begin{DoxyCompactList}\small\item\em Register accessor for MM2S Source Address Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{namespaceaxi__dma_a22bc743f3eca423455f667afe6b94956}{mm2s\+\_\+sa\+\_\+msb\+\_\+t}}, 0x1c $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a708282762ea34949adb5f1a208eabb51}{mm2s\+\_\+sa\+\_\+msb}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{namespaceaxi__dma_a22bc743f3eca423455f667afe6b94956}{mm2s\+\_\+sa\+\_\+msb\+\_\+t}}, 0x1c $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_abffbaf76da2272779616e527ca935ea4}{mm2s\+\_\+sa\+\_\+msb}}
 \begin{DoxyCompactList}\small\item\em Register accessor for MM2S Source Address Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{structaxi__dma_1_1mm2s__length__t}{mm2s\+\_\+length\+\_\+t}}, 0x28 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_ae4b44433fb2a937fd3cbfd6b6e0cfa1d}{mm2s\+\_\+length}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{structaxi__dma_1_1mm2s__length__t}{mm2s\+\_\+length\+\_\+t}}, 0x28 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a1a2c60d7340641bdf4a694afdf292a61}{mm2s\+\_\+length}}
 \begin{DoxyCompactList}\small\item\em Register accessor for MM2S DMA Transfer Length Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{structaxi__dma_1_1sg__ctl__t}{sg\+\_\+ctl\+\_\+t}}, 0x2c $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_af421880b49ca991a13097aaabaef31b2}{sg\+\_\+ctl}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{structaxi__dma_1_1sg__ctl__t}{sg\+\_\+ctl\+\_\+t}}, 0x2c $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a5b7bfd06858b1142b07b328660feee38}{sg\+\_\+ctl}}
 \begin{DoxyCompactList}\small\item\em Register accessor for Scatter/\+Gather User and Cache Control Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t}{s2mm\+\_\+dmacr\+\_\+t}}, 0x30 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a6be27ab48bb216e28944ec90f4b45bf1}{s2mm\+\_\+dmacr}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t}{s2mm\+\_\+dmacr\+\_\+t}}, 0x30 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a69e9298405f937bad9b79a65a290406f}{s2mm\+\_\+dmacr}}
 \begin{DoxyCompactList}\small\item\em Register accessor for S2\+MM DMA Control Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t}{s2mm\+\_\+dmasr\+\_\+t}}, 0x34 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a351c6c75665fa3793695f6b1e08fd5d5}{s2mm\+\_\+dmasr}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t}{s2mm\+\_\+dmasr\+\_\+t}}, 0x34 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a3a2d2f6a0cc4dd86e53b460d511e1d4a}{s2mm\+\_\+dmasr}}
 \begin{DoxyCompactList}\small\item\em Register accessor for S2\+MM DMA Status Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{structaxi__dma_1_1s2mm__curdesc__t}{s2mm\+\_\+curdesc\+\_\+t}}, 0x38 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_af31d187f7e6c3473c7b2bf29647fbee4}{s2mm\+\_\+curdesc}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{structaxi__dma_1_1s2mm__curdesc__t}{s2mm\+\_\+curdesc\+\_\+t}}, 0x38 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_aa00a8b47e99eb7bae612ce0c7516127a}{s2mm\+\_\+curdesc}}
 \begin{DoxyCompactList}\small\item\em Register accessor for S2\+MM DMA Current Descriptor Pointer Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{namespaceaxi__dma_a1866ecfb6501c57e67511d7d4a65d2ec}{s2mm\+\_\+curdesc\+\_\+msb\+\_\+t}}, 0x3c $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a84c24e624dae38d36135e354dbf45e5e}{s2mm\+\_\+curdesc\+\_\+msb}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{namespaceaxi__dma_a1866ecfb6501c57e67511d7d4a65d2ec}{s2mm\+\_\+curdesc\+\_\+msb\+\_\+t}}, 0x3c $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a6645cf9feb7f89b69e0c45b79f0c6efe}{s2mm\+\_\+curdesc\+\_\+msb}}
 \begin{DoxyCompactList}\small\item\em Register accessor for S2\+MM DMA Current Descriptor Pointer Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{structaxi__dma_1_1s2mm__taildesc__t}{s2mm\+\_\+taildesc\+\_\+t}}, 0x40 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_ab1fea44ad317b2984bf9964e2642e8ca}{s2mm\+\_\+taildesc}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{structaxi__dma_1_1s2mm__taildesc__t}{s2mm\+\_\+taildesc\+\_\+t}}, 0x40 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a492c6fb6345daaea818f4720977192da}{s2mm\+\_\+taildesc}}
 \begin{DoxyCompactList}\small\item\em Register accessor for S2\+MM DMA Tail Descriptor Pointer Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{namespaceaxi__dma_af96a46fee3cd5dbc6a78ecdc13f48320}{s2mm\+\_\+taildesc\+\_\+msb\+\_\+t}}, 0x44 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_ab111b2d2834ede9ac0dfc51b16f91374}{s2mm\+\_\+taildesc\+\_\+msb}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{namespaceaxi__dma_af96a46fee3cd5dbc6a78ecdc13f48320}{s2mm\+\_\+taildesc\+\_\+msb\+\_\+t}}, 0x44 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a0eb924e84187faab0447d23387c80ae0}{s2mm\+\_\+taildesc\+\_\+msb}}
 \begin{DoxyCompactList}\small\item\em Register accessor for S2\+MM DMA Tail Descriptor Pointer Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{namespaceaxi__dma_a8054f0fece4e8539d6367f6560d021ac}{s2mm\+\_\+da\+\_\+t}}, 0x48 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a3c2d86d2d08809ad52c7c5951820811c}{s2mm\+\_\+da}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{namespaceaxi__dma_a8054f0fece4e8539d6367f6560d021ac}{s2mm\+\_\+da\+\_\+t}}, 0x48 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a230c9eae3e7eb67b1f6b6b280ba3332f}{s2mm\+\_\+da}}
 \begin{DoxyCompactList}\small\item\em Register accessor for S2\+MM DMA Destination Address Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{namespaceaxi__dma_a2e7fb45c7a845c74441f754211aed93f}{s2mm\+\_\+da\+\_\+msb\+\_\+t}}, 0x4c $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a01dc47370d9fc22f86131a33f5e33385}{s2mm\+\_\+da\+\_\+msb}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{namespaceaxi__dma_a2e7fb45c7a845c74441f754211aed93f}{s2mm\+\_\+da\+\_\+msb\+\_\+t}}, 0x4c $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_aee04c473dc0c413741c1a5091bd815d5}{s2mm\+\_\+da\+\_\+msb}}
 \begin{DoxyCompactList}\small\item\em Register accessor for S2\+MM Destination Address Register. \end{DoxyCompactList}\item 
-R\+\_\+acc$<$ \mbox{\hyperlink{structaxi__dma_1_1s2mm__length__t}{s2mm\+\_\+length\+\_\+t}}, 0x58 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_afedaa7bb05e0be57bb9a177253880bd7}{s2mm\+\_\+length}}
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$ \mbox{\hyperlink{structaxi__dma_1_1s2mm__length__t}{s2mm\+\_\+length\+\_\+t}}, 0x58 $>$ \mbox{\hyperlink{structaxi__dma_1_1block__template_a45e558cc77d4dd819eb48ceb4eff3c93}{s2mm\+\_\+length}}
 \begin{DoxyCompactList}\small\item\em Register accessor for S2\+MM DMA Transfer Length Register. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\subsubsection*{template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg$>$\newline
-struct axi\+\_\+dma\+::block\+\_\+template$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$}
+\subsubsection*{template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg$>$\newline
+struct axi\+\_\+dma\+::block\+\_\+template$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$}
 Template class for the \mbox{\hyperlink{namespaceaxi__dma}{axi\+\_\+dma}} block, containing accessors for all its registers. 
 
 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em R\+\_\+acc} & Register accessor template (provided by user), receiving the register type as parameter \\
+{\em R\+\_\+array\+\_\+acc} & Register accessor template (provided by user), receiving the register type as parameter \\
 \hline
 {\em R\+\_\+acc\+\_\+arg} & Constructor argument type for the register accessor (e.\+g. hardware-\/dependent information) \\
 \hline
 \end{DoxyTemplParams}
 
 
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}\label{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!R\_acc@{R\_acc}}
+\index{R\_acc@{R\_acc}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
+\doxysubsubsection{\texorpdfstring{R\_acc}{R\_acc}}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+template$<$typename R , uint32\+\_\+t O$>$ \\
+using \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::\+R\+\_\+acc =  R\+\_\+array\+\_\+acc$<$R, O, 0, 0$>$}
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_a41de7884e826cae51b55538c41174c19}\label{structaxi__dma_1_1block__template_a41de7884e826cae51b55538c41174c19}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!block\_template@{block\_template}}
-\index{block\_template@{block\_template}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_a053033be75233e467c81b80d073b21d5}\label{structaxi__dma_1_1block__template_a053033be75233e467c81b80d073b21d5}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!block\_template@{block\_template}}
+\index{block\_template@{block\_template}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{block\_template()}{block\_template()}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-\mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::block\+\_\+template (\begin{DoxyParamCaption}\item[{R\+\_\+acc\+\_\+arg}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::block\+\_\+template (\begin{DoxyParamCaption}\item[{R\+\_\+acc\+\_\+arg}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_a30745ce2f3104ebc13bee1c06b4404a6}\label{structaxi__dma_1_1block__template_a30745ce2f3104ebc13bee1c06b4404a6}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!mm2s\_curdesc@{mm2s\_curdesc}}
-\index{mm2s\_curdesc@{mm2s\_curdesc}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_ac542de57d30568aea00c15ae69682efa}\label{structaxi__dma_1_1block__template_ac542de57d30568aea00c15ae69682efa}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!mm2s\_curdesc@{mm2s\_curdesc}}
+\index{mm2s\_curdesc@{mm2s\_curdesc}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{mm2s\_curdesc}{mm2s\_curdesc}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{structaxi__dma_1_1mm2s__curdesc__t}{mm2s\+\_\+curdesc\+\_\+t}}, 0x8$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+curdesc}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{structaxi__dma_1_1mm2s__curdesc__t}{mm2s\+\_\+curdesc\+\_\+t}}, 0x8$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+curdesc}
 
 
 
 Register accessor for MM2S DMA Current Descriptor Pointer Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_a9ffb765dd2c7038ae0a28fdce0d7c701}\label{structaxi__dma_1_1block__template_a9ffb765dd2c7038ae0a28fdce0d7c701}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!mm2s\_curdesc\_msb@{mm2s\_curdesc\_msb}}
-\index{mm2s\_curdesc\_msb@{mm2s\_curdesc\_msb}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_a2604e3870af5acb50cb14faec6537ef3}\label{structaxi__dma_1_1block__template_a2604e3870af5acb50cb14faec6537ef3}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!mm2s\_curdesc\_msb@{mm2s\_curdesc\_msb}}
+\index{mm2s\_curdesc\_msb@{mm2s\_curdesc\_msb}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{mm2s\_curdesc\_msb}{mm2s\_curdesc\_msb}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{namespaceaxi__dma_a2ae842d1ceb021979533a6919ee58d4c}{mm2s\+\_\+curdesc\+\_\+msb\+\_\+t}}, 0xc$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+curdesc\+\_\+msb}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{namespaceaxi__dma_a2ae842d1ceb021979533a6919ee58d4c}{mm2s\+\_\+curdesc\+\_\+msb\+\_\+t}}, 0xc$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+curdesc\+\_\+msb}
 
 
 
 Register accessor for MM2S DMA Current Descriptor Pointer Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_a96643da1c63584bde816feb8cf91a4a0}\label{structaxi__dma_1_1block__template_a96643da1c63584bde816feb8cf91a4a0}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!mm2s\_dmacr@{mm2s\_dmacr}}
-\index{mm2s\_dmacr@{mm2s\_dmacr}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_a8050574a5c50711e6b8bcd7255e4f850}\label{structaxi__dma_1_1block__template_a8050574a5c50711e6b8bcd7255e4f850}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!mm2s\_dmacr@{mm2s\_dmacr}}
+\index{mm2s\_dmacr@{mm2s\_dmacr}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{mm2s\_dmacr}{mm2s\_dmacr}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t}{mm2s\+\_\+dmacr\+\_\+t}}, 0x0$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+dmacr}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t}{mm2s\+\_\+dmacr\+\_\+t}}, 0x0$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+dmacr}
 
 
 
 Register accessor for MM2S DMA Control Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_ad00f7ffb1bfc221c07f62667975224e8}\label{structaxi__dma_1_1block__template_ad00f7ffb1bfc221c07f62667975224e8}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!mm2s\_dmasr@{mm2s\_dmasr}}
-\index{mm2s\_dmasr@{mm2s\_dmasr}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_ad799627f3a208a6971bb5ff67823e7d3}\label{structaxi__dma_1_1block__template_ad799627f3a208a6971bb5ff67823e7d3}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!mm2s\_dmasr@{mm2s\_dmasr}}
+\index{mm2s\_dmasr@{mm2s\_dmasr}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{mm2s\_dmasr}{mm2s\_dmasr}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t}{mm2s\+\_\+dmasr\+\_\+t}}, 0x4$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+dmasr}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t}{mm2s\+\_\+dmasr\+\_\+t}}, 0x4$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+dmasr}
 
 
 
 Register accessor for MM2S DMA Status Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_ae4b44433fb2a937fd3cbfd6b6e0cfa1d}\label{structaxi__dma_1_1block__template_ae4b44433fb2a937fd3cbfd6b6e0cfa1d}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!mm2s\_length@{mm2s\_length}}
-\index{mm2s\_length@{mm2s\_length}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_a1a2c60d7340641bdf4a694afdf292a61}\label{structaxi__dma_1_1block__template_a1a2c60d7340641bdf4a694afdf292a61}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!mm2s\_length@{mm2s\_length}}
+\index{mm2s\_length@{mm2s\_length}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{mm2s\_length}{mm2s\_length}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{structaxi__dma_1_1mm2s__length__t}{mm2s\+\_\+length\+\_\+t}}, 0x28$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+length}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{structaxi__dma_1_1mm2s__length__t}{mm2s\+\_\+length\+\_\+t}}, 0x28$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+length}
 
 
 
 Register accessor for MM2S DMA Transfer Length Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_ab9e96e495ae765dfa3fb1587eb0a79bf}\label{structaxi__dma_1_1block__template_ab9e96e495ae765dfa3fb1587eb0a79bf}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!mm2s\_sa@{mm2s\_sa}}
-\index{mm2s\_sa@{mm2s\_sa}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_ab47dbeba9adb408155b8e724669e281d}\label{structaxi__dma_1_1block__template_ab47dbeba9adb408155b8e724669e281d}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!mm2s\_sa@{mm2s\_sa}}
+\index{mm2s\_sa@{mm2s\_sa}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{mm2s\_sa}{mm2s\_sa}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{namespaceaxi__dma_a526e2a3f81dc12f0b18e1ae2f1717162}{mm2s\+\_\+sa\+\_\+t}}, 0x18$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+sa}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{namespaceaxi__dma_a526e2a3f81dc12f0b18e1ae2f1717162}{mm2s\+\_\+sa\+\_\+t}}, 0x18$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+sa}
 
 
 
 Register accessor for MM2S Source Address Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_a708282762ea34949adb5f1a208eabb51}\label{structaxi__dma_1_1block__template_a708282762ea34949adb5f1a208eabb51}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!mm2s\_sa\_msb@{mm2s\_sa\_msb}}
-\index{mm2s\_sa\_msb@{mm2s\_sa\_msb}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_abffbaf76da2272779616e527ca935ea4}\label{structaxi__dma_1_1block__template_abffbaf76da2272779616e527ca935ea4}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!mm2s\_sa\_msb@{mm2s\_sa\_msb}}
+\index{mm2s\_sa\_msb@{mm2s\_sa\_msb}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{mm2s\_sa\_msb}{mm2s\_sa\_msb}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{namespaceaxi__dma_a22bc743f3eca423455f667afe6b94956}{mm2s\+\_\+sa\+\_\+msb\+\_\+t}}, 0x1c$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+sa\+\_\+msb}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{namespaceaxi__dma_a22bc743f3eca423455f667afe6b94956}{mm2s\+\_\+sa\+\_\+msb\+\_\+t}}, 0x1c$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+sa\+\_\+msb}
 
 
 
 Register accessor for MM2S Source Address Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_a80533f7dfeb497c0a4fe997c6a247938}\label{structaxi__dma_1_1block__template_a80533f7dfeb497c0a4fe997c6a247938}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!mm2s\_taildesc@{mm2s\_taildesc}}
-\index{mm2s\_taildesc@{mm2s\_taildesc}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_a2393368f3ca6a318e39945999a41d17c}\label{structaxi__dma_1_1block__template_a2393368f3ca6a318e39945999a41d17c}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!mm2s\_taildesc@{mm2s\_taildesc}}
+\index{mm2s\_taildesc@{mm2s\_taildesc}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{mm2s\_taildesc}{mm2s\_taildesc}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{structaxi__dma_1_1mm2s__taildesc__t}{mm2s\+\_\+taildesc\+\_\+t}}, 0x10$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+taildesc}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{structaxi__dma_1_1mm2s__taildesc__t}{mm2s\+\_\+taildesc\+\_\+t}}, 0x10$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+taildesc}
 
 
 
 Register accessor for MM2S DMA Tail Descriptor Pointer Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_adc1eb0034c9f27c34ab6f9fcfff15ca2}\label{structaxi__dma_1_1block__template_adc1eb0034c9f27c34ab6f9fcfff15ca2}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!mm2s\_taildesc\_msb@{mm2s\_taildesc\_msb}}
-\index{mm2s\_taildesc\_msb@{mm2s\_taildesc\_msb}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_ad40e7d14eccc2a06bdbd09071f8c719b}\label{structaxi__dma_1_1block__template_ad40e7d14eccc2a06bdbd09071f8c719b}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!mm2s\_taildesc\_msb@{mm2s\_taildesc\_msb}}
+\index{mm2s\_taildesc\_msb@{mm2s\_taildesc\_msb}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{mm2s\_taildesc\_msb}{mm2s\_taildesc\_msb}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{namespaceaxi__dma_a486acdc4d7d6f7c8bb5f97470f8a04bd}{mm2s\+\_\+taildesc\+\_\+msb\+\_\+t}}, 0x14$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+taildesc\+\_\+msb}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{namespaceaxi__dma_a486acdc4d7d6f7c8bb5f97470f8a04bd}{mm2s\+\_\+taildesc\+\_\+msb\+\_\+t}}, 0x14$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::mm2s\+\_\+taildesc\+\_\+msb}
 
 
 
 Register accessor for MM2S DMA Tail Descriptor Pointer Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_af31d187f7e6c3473c7b2bf29647fbee4}\label{structaxi__dma_1_1block__template_af31d187f7e6c3473c7b2bf29647fbee4}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!s2mm\_curdesc@{s2mm\_curdesc}}
-\index{s2mm\_curdesc@{s2mm\_curdesc}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_aa00a8b47e99eb7bae612ce0c7516127a}\label{structaxi__dma_1_1block__template_aa00a8b47e99eb7bae612ce0c7516127a}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!s2mm\_curdesc@{s2mm\_curdesc}}
+\index{s2mm\_curdesc@{s2mm\_curdesc}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{s2mm\_curdesc}{s2mm\_curdesc}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{structaxi__dma_1_1s2mm__curdesc__t}{s2mm\+\_\+curdesc\+\_\+t}}, 0x38$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+curdesc}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{structaxi__dma_1_1s2mm__curdesc__t}{s2mm\+\_\+curdesc\+\_\+t}}, 0x38$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+curdesc}
 
 
 
 Register accessor for S2\+MM DMA Current Descriptor Pointer Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_a84c24e624dae38d36135e354dbf45e5e}\label{structaxi__dma_1_1block__template_a84c24e624dae38d36135e354dbf45e5e}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!s2mm\_curdesc\_msb@{s2mm\_curdesc\_msb}}
-\index{s2mm\_curdesc\_msb@{s2mm\_curdesc\_msb}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_a6645cf9feb7f89b69e0c45b79f0c6efe}\label{structaxi__dma_1_1block__template_a6645cf9feb7f89b69e0c45b79f0c6efe}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!s2mm\_curdesc\_msb@{s2mm\_curdesc\_msb}}
+\index{s2mm\_curdesc\_msb@{s2mm\_curdesc\_msb}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{s2mm\_curdesc\_msb}{s2mm\_curdesc\_msb}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{namespaceaxi__dma_a1866ecfb6501c57e67511d7d4a65d2ec}{s2mm\+\_\+curdesc\+\_\+msb\+\_\+t}}, 0x3c$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+curdesc\+\_\+msb}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{namespaceaxi__dma_a1866ecfb6501c57e67511d7d4a65d2ec}{s2mm\+\_\+curdesc\+\_\+msb\+\_\+t}}, 0x3c$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+curdesc\+\_\+msb}
 
 
 
 Register accessor for S2\+MM DMA Current Descriptor Pointer Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_a3c2d86d2d08809ad52c7c5951820811c}\label{structaxi__dma_1_1block__template_a3c2d86d2d08809ad52c7c5951820811c}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!s2mm\_da@{s2mm\_da}}
-\index{s2mm\_da@{s2mm\_da}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_a230c9eae3e7eb67b1f6b6b280ba3332f}\label{structaxi__dma_1_1block__template_a230c9eae3e7eb67b1f6b6b280ba3332f}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!s2mm\_da@{s2mm\_da}}
+\index{s2mm\_da@{s2mm\_da}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{s2mm\_da}{s2mm\_da}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{namespaceaxi__dma_a8054f0fece4e8539d6367f6560d021ac}{s2mm\+\_\+da\+\_\+t}}, 0x48$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+da}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{namespaceaxi__dma_a8054f0fece4e8539d6367f6560d021ac}{s2mm\+\_\+da\+\_\+t}}, 0x48$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+da}
 
 
 
 Register accessor for S2\+MM DMA Destination Address Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_a01dc47370d9fc22f86131a33f5e33385}\label{structaxi__dma_1_1block__template_a01dc47370d9fc22f86131a33f5e33385}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!s2mm\_da\_msb@{s2mm\_da\_msb}}
-\index{s2mm\_da\_msb@{s2mm\_da\_msb}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_aee04c473dc0c413741c1a5091bd815d5}\label{structaxi__dma_1_1block__template_aee04c473dc0c413741c1a5091bd815d5}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!s2mm\_da\_msb@{s2mm\_da\_msb}}
+\index{s2mm\_da\_msb@{s2mm\_da\_msb}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{s2mm\_da\_msb}{s2mm\_da\_msb}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{namespaceaxi__dma_a2e7fb45c7a845c74441f754211aed93f}{s2mm\+\_\+da\+\_\+msb\+\_\+t}}, 0x4c$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+da\+\_\+msb}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{namespaceaxi__dma_a2e7fb45c7a845c74441f754211aed93f}{s2mm\+\_\+da\+\_\+msb\+\_\+t}}, 0x4c$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+da\+\_\+msb}
 
 
 
 Register accessor for S2\+MM Destination Address Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_a6be27ab48bb216e28944ec90f4b45bf1}\label{structaxi__dma_1_1block__template_a6be27ab48bb216e28944ec90f4b45bf1}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!s2mm\_dmacr@{s2mm\_dmacr}}
-\index{s2mm\_dmacr@{s2mm\_dmacr}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_a69e9298405f937bad9b79a65a290406f}\label{structaxi__dma_1_1block__template_a69e9298405f937bad9b79a65a290406f}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!s2mm\_dmacr@{s2mm\_dmacr}}
+\index{s2mm\_dmacr@{s2mm\_dmacr}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{s2mm\_dmacr}{s2mm\_dmacr}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t}{s2mm\+\_\+dmacr\+\_\+t}}, 0x30$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+dmacr}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t}{s2mm\+\_\+dmacr\+\_\+t}}, 0x30$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+dmacr}
 
 
 
 Register accessor for S2\+MM DMA Control Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_a351c6c75665fa3793695f6b1e08fd5d5}\label{structaxi__dma_1_1block__template_a351c6c75665fa3793695f6b1e08fd5d5}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!s2mm\_dmasr@{s2mm\_dmasr}}
-\index{s2mm\_dmasr@{s2mm\_dmasr}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_a3a2d2f6a0cc4dd86e53b460d511e1d4a}\label{structaxi__dma_1_1block__template_a3a2d2f6a0cc4dd86e53b460d511e1d4a}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!s2mm\_dmasr@{s2mm\_dmasr}}
+\index{s2mm\_dmasr@{s2mm\_dmasr}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{s2mm\_dmasr}{s2mm\_dmasr}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t}{s2mm\+\_\+dmasr\+\_\+t}}, 0x34$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+dmasr}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t}{s2mm\+\_\+dmasr\+\_\+t}}, 0x34$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+dmasr}
 
 
 
 Register accessor for S2\+MM DMA Status Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_afedaa7bb05e0be57bb9a177253880bd7}\label{structaxi__dma_1_1block__template_afedaa7bb05e0be57bb9a177253880bd7}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!s2mm\_length@{s2mm\_length}}
-\index{s2mm\_length@{s2mm\_length}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_a45e558cc77d4dd819eb48ceb4eff3c93}\label{structaxi__dma_1_1block__template_a45e558cc77d4dd819eb48ceb4eff3c93}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!s2mm\_length@{s2mm\_length}}
+\index{s2mm\_length@{s2mm\_length}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{s2mm\_length}{s2mm\_length}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{structaxi__dma_1_1s2mm__length__t}{s2mm\+\_\+length\+\_\+t}}, 0x58$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+length}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{structaxi__dma_1_1s2mm__length__t}{s2mm\+\_\+length\+\_\+t}}, 0x58$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+length}
 
 
 
 Register accessor for S2\+MM DMA Transfer Length Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_ab1fea44ad317b2984bf9964e2642e8ca}\label{structaxi__dma_1_1block__template_ab1fea44ad317b2984bf9964e2642e8ca}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!s2mm\_taildesc@{s2mm\_taildesc}}
-\index{s2mm\_taildesc@{s2mm\_taildesc}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_a492c6fb6345daaea818f4720977192da}\label{structaxi__dma_1_1block__template_a492c6fb6345daaea818f4720977192da}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!s2mm\_taildesc@{s2mm\_taildesc}}
+\index{s2mm\_taildesc@{s2mm\_taildesc}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{s2mm\_taildesc}{s2mm\_taildesc}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{structaxi__dma_1_1s2mm__taildesc__t}{s2mm\+\_\+taildesc\+\_\+t}}, 0x40$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+taildesc}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{structaxi__dma_1_1s2mm__taildesc__t}{s2mm\+\_\+taildesc\+\_\+t}}, 0x40$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+taildesc}
 
 
 
 Register accessor for S2\+MM DMA Tail Descriptor Pointer Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_ab111b2d2834ede9ac0dfc51b16f91374}\label{structaxi__dma_1_1block__template_ab111b2d2834ede9ac0dfc51b16f91374}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!s2mm\_taildesc\_msb@{s2mm\_taildesc\_msb}}
-\index{s2mm\_taildesc\_msb@{s2mm\_taildesc\_msb}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_a0eb924e84187faab0447d23387c80ae0}\label{structaxi__dma_1_1block__template_a0eb924e84187faab0447d23387c80ae0}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!s2mm\_taildesc\_msb@{s2mm\_taildesc\_msb}}
+\index{s2mm\_taildesc\_msb@{s2mm\_taildesc\_msb}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{s2mm\_taildesc\_msb}{s2mm\_taildesc\_msb}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{namespaceaxi__dma_af96a46fee3cd5dbc6a78ecdc13f48320}{s2mm\+\_\+taildesc\+\_\+msb\+\_\+t}}, 0x44$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+taildesc\+\_\+msb}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{namespaceaxi__dma_af96a46fee3cd5dbc6a78ecdc13f48320}{s2mm\+\_\+taildesc\+\_\+msb\+\_\+t}}, 0x44$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::s2mm\+\_\+taildesc\+\_\+msb}
 
 
 
 Register accessor for S2\+MM DMA Tail Descriptor Pointer Register. 
 
-\mbox{\Hypertarget{structaxi__dma_1_1block__template_af421880b49ca991a13097aaabaef31b2}\label{structaxi__dma_1_1block__template_af421880b49ca991a13097aaabaef31b2}} 
-\index{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}!sg\_ctl@{sg\_ctl}}
-\index{sg\_ctl@{sg\_ctl}!axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_acc, R\_acc\_arg $>$}}
+\mbox{\Hypertarget{structaxi__dma_1_1block__template_a5b7bfd06858b1142b07b328660feee38}\label{structaxi__dma_1_1block__template_a5b7bfd06858b1142b07b328660feee38}} 
+\index{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}!sg\_ctl@{sg\_ctl}}
+\index{sg\_ctl@{sg\_ctl}!axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$@{axi\_dma::block\_template$<$ R\_array\_acc, R\_acc\_arg $>$}}
 \doxysubsubsection{\texorpdfstring{sg\_ctl}{sg\_ctl}}
-{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
-R\+\_\+acc$<$\mbox{\hyperlink{structaxi__dma_1_1sg__ctl__t}{sg\+\_\+ctl\+\_\+t}}, 0x2c$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::sg\+\_\+ctl}
+{\footnotesize\ttfamily template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc, typename R\+\_\+acc\+\_\+arg $>$ \\
+\mbox{\hyperlink{structaxi__dma_1_1block__template_add283e1d75201d5ca7eae364538a2c4f}{R\+\_\+acc}}$<$\mbox{\hyperlink{structaxi__dma_1_1sg__ctl__t}{sg\+\_\+ctl\+\_\+t}}, 0x2c$>$ \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template}}$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$\+::sg\+\_\+ctl}
 
 
 

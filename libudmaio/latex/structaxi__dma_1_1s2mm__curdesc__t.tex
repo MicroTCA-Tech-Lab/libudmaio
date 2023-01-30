@@ -7,29 +7,27 @@
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-uint8\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__curdesc__t_a748d2e4b2cd911c0bb5380bc06e4f99b}{rsvd\+\_\+5\+\_\+0}}\+: 6
+unsigned \mbox{\hyperlink{structaxi__dma_1_1s2mm__curdesc__t_a6ea905eb86d547545f876ad35b6094ca}{rsvd\+\_\+5\+\_\+0}}\+: 6
 \item 
-uint32\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__curdesc__t_abf1afd490ffa6628e1abad925e53b63e}{current\+\_\+descriptor\+\_\+pointer}}\+: 26
+unsigned \mbox{\hyperlink{structaxi__dma_1_1s2mm__curdesc__t_a19e772094021dea2fc71d9a4e4a2f564}{current\+\_\+descriptor\+\_\+pointer}}\+: 26
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-S2\+MM DMA Current Descriptor Pointer Register
-
 S2\+MM DMA Current Descriptor Pointer Register 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{structaxi__dma_1_1s2mm__curdesc__t_abf1afd490ffa6628e1abad925e53b63e}\label{structaxi__dma_1_1s2mm__curdesc__t_abf1afd490ffa6628e1abad925e53b63e}} 
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__curdesc__t_a19e772094021dea2fc71d9a4e4a2f564}\label{structaxi__dma_1_1s2mm__curdesc__t_a19e772094021dea2fc71d9a4e4a2f564}} 
 \index{axi\_dma::s2mm\_curdesc\_t@{axi\_dma::s2mm\_curdesc\_t}!current\_descriptor\_pointer@{current\_descriptor\_pointer}}
 \index{current\_descriptor\_pointer@{current\_descriptor\_pointer}!axi\_dma::s2mm\_curdesc\_t@{axi\_dma::s2mm\_curdesc\_t}}
 \doxysubsubsection{\texorpdfstring{current\_descriptor\_pointer}{current\_descriptor\_pointer}}
-{\footnotesize\ttfamily uint32\+\_\+t axi\+\_\+dma\+::s2mm\+\_\+curdesc\+\_\+t\+::current\+\_\+descriptor\+\_\+pointer}
+{\footnotesize\ttfamily unsigned axi\+\_\+dma\+::s2mm\+\_\+curdesc\+\_\+t\+::current\+\_\+descriptor\+\_\+pointer}
 
-Indicates the pointer of the current descriptor being worked on. This register must contain a pointer to a valid descriptor prior to writing the TAILDESC\+\_\+\+PTR register. Otherwise, undefined results occur. When DMACR.\+RS is 1, CURDESC\+\_\+\+PTR becomes Read Only (RO) and is used to fetch the first descriptor. When the DMA Engine is running (DMACR.\+RS=1), CURDESC\+\_\+\+PTR registers are updated by AXI DMA to indicate the current descriptor being worked on. On error detection, CURDESC\+\_\+\+PTR is updated to reflect the descriptor associated with the detected error. Note\+: The register can only be written to by the CPU when the DMA Engine is Halted (DMACR.\+RS=0 and DMASR.\+Halted =1). At all other times, this register is Read Only (RO). Buffer Descriptors must be 16 word aligned, that is, 0x00, 0x40, 0x80 and so forth. Any other alignment has undefined results. \mbox{\Hypertarget{structaxi__dma_1_1s2mm__curdesc__t_a748d2e4b2cd911c0bb5380bc06e4f99b}\label{structaxi__dma_1_1s2mm__curdesc__t_a748d2e4b2cd911c0bb5380bc06e4f99b}} 
+Indicates the pointer of the current descriptor being worked on. This register must contain a pointer to a valid descriptor prior to writing the TAILDESC\+\_\+\+PTR register. Otherwise, undefined results occur. When DMACR.\+RS is 1, CURDESC\+\_\+\+PTR becomes Read Only (RO) and is used to fetch the first descriptor. When the DMA Engine is running (DMACR.\+RS=1), CURDESC\+\_\+\+PTR registers are updated by AXI DMA to indicate the current descriptor being worked on. On error detection, CURDESC\+\_\+\+PTR is updated to reflect the descriptor associated with the detected error. Note\+: The register can only be written to by the CPU when the DMA Engine is Halted (DMACR.\+RS=0 and DMASR.\+Halted =1). At all other times, this register is Read Only (RO). Buffer Descriptors must be 16 word aligned, that is, 0x00, 0x40, 0x80 and so forth. Any other alignment has undefined results. \mbox{\Hypertarget{structaxi__dma_1_1s2mm__curdesc__t_a6ea905eb86d547545f876ad35b6094ca}\label{structaxi__dma_1_1s2mm__curdesc__t_a6ea905eb86d547545f876ad35b6094ca}} 
 \index{axi\_dma::s2mm\_curdesc\_t@{axi\_dma::s2mm\_curdesc\_t}!rsvd\_5\_0@{rsvd\_5\_0}}
 \index{rsvd\_5\_0@{rsvd\_5\_0}!axi\_dma::s2mm\_curdesc\_t@{axi\_dma::s2mm\_curdesc\_t}}
 \doxysubsubsection{\texorpdfstring{rsvd\_5\_0}{rsvd\_5\_0}}
-{\footnotesize\ttfamily uint8\+\_\+t axi\+\_\+dma\+::s2mm\+\_\+curdesc\+\_\+t\+::rsvd\+\_\+5\+\_\+0}
+{\footnotesize\ttfamily unsigned axi\+\_\+dma\+::s2mm\+\_\+curdesc\+\_\+t\+::rsvd\+\_\+5\+\_\+0}
 
 
 

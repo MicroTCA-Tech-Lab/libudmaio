@@ -7,29 +7,27 @@
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-uint8\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1mm2s__taildesc__t_a8cb04ba7987f24c7cd286585157067ed}{rsvd\+\_\+5\+\_\+0}}\+: 6
+unsigned \mbox{\hyperlink{structaxi__dma_1_1mm2s__taildesc__t_a08c12c90d514e3f9f3021d817e31d112}{rsvd\+\_\+5\+\_\+0}}\+: 6
 \item 
-uint32\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1mm2s__taildesc__t_a57d1756171158ada1341580b34ea96e0}{tail\+\_\+descriptor\+\_\+pointer}}\+: 26
+unsigned \mbox{\hyperlink{structaxi__dma_1_1mm2s__taildesc__t_a37cc984b2cb8c42032baa92a293f2b7f}{tail\+\_\+descriptor\+\_\+pointer}}\+: 26
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-MM2S DMA Tail Descriptor Pointer Register
-
 MM2S DMA Tail Descriptor Pointer Register 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{structaxi__dma_1_1mm2s__taildesc__t_a8cb04ba7987f24c7cd286585157067ed}\label{structaxi__dma_1_1mm2s__taildesc__t_a8cb04ba7987f24c7cd286585157067ed}} 
+\mbox{\Hypertarget{structaxi__dma_1_1mm2s__taildesc__t_a08c12c90d514e3f9f3021d817e31d112}\label{structaxi__dma_1_1mm2s__taildesc__t_a08c12c90d514e3f9f3021d817e31d112}} 
 \index{axi\_dma::mm2s\_taildesc\_t@{axi\_dma::mm2s\_taildesc\_t}!rsvd\_5\_0@{rsvd\_5\_0}}
 \index{rsvd\_5\_0@{rsvd\_5\_0}!axi\_dma::mm2s\_taildesc\_t@{axi\_dma::mm2s\_taildesc\_t}}
 \doxysubsubsection{\texorpdfstring{rsvd\_5\_0}{rsvd\_5\_0}}
-{\footnotesize\ttfamily uint8\+\_\+t axi\+\_\+dma\+::mm2s\+\_\+taildesc\+\_\+t\+::rsvd\+\_\+5\+\_\+0}
+{\footnotesize\ttfamily unsigned axi\+\_\+dma\+::mm2s\+\_\+taildesc\+\_\+t\+::rsvd\+\_\+5\+\_\+0}
 
-\mbox{\Hypertarget{structaxi__dma_1_1mm2s__taildesc__t_a57d1756171158ada1341580b34ea96e0}\label{structaxi__dma_1_1mm2s__taildesc__t_a57d1756171158ada1341580b34ea96e0}} 
+\mbox{\Hypertarget{structaxi__dma_1_1mm2s__taildesc__t_a37cc984b2cb8c42032baa92a293f2b7f}\label{structaxi__dma_1_1mm2s__taildesc__t_a37cc984b2cb8c42032baa92a293f2b7f}} 
 \index{axi\_dma::mm2s\_taildesc\_t@{axi\_dma::mm2s\_taildesc\_t}!tail\_descriptor\_pointer@{tail\_descriptor\_pointer}}
 \index{tail\_descriptor\_pointer@{tail\_descriptor\_pointer}!axi\_dma::mm2s\_taildesc\_t@{axi\_dma::mm2s\_taildesc\_t}}
 \doxysubsubsection{\texorpdfstring{tail\_descriptor\_pointer}{tail\_descriptor\_pointer}}
-{\footnotesize\ttfamily uint32\+\_\+t axi\+\_\+dma\+::mm2s\+\_\+taildesc\+\_\+t\+::tail\+\_\+descriptor\+\_\+pointer}
+{\footnotesize\ttfamily unsigned axi\+\_\+dma\+::mm2s\+\_\+taildesc\+\_\+t\+::tail\+\_\+descriptor\+\_\+pointer}
 
 Indicates the pause pointer in a descriptor chain. The AXI DMA SG Engine pauses descriptor fetching after completing operations on the descriptor whose current descriptor pointer matches the tail descriptor pointer. When AXI DMA Channel is not halted (DMASR.\+Halted = 0), a write by the CPU to the TAILDESC\+\_\+\+PTR register causes the AXI DMA SG Engine to start fetching descriptors or restart if it was idle (DMASR.\+Idle = 1). If it was not idle, writing TAILDESC\+\_\+\+PTR has no effect except to reposition the pause point. If the AXI DMA Channel is halted (DMASR.\+Halted = 1 and DMACR.\+RS = 0), a write by the CPU to the TAILDESC\+\_\+\+PTR register has no effect except to reposition the pause point. Note\+: The software must not move the tail pointer to a location that has not been updated. The software processes and reallocates all completed descriptors (Cmplted = 1), clears the completed bits and then moves the tail pointer. The software must move the pointer to the last descriptor it updated. Descriptors must be 16-\/word aligned, that is, 0x00, 0x40, 0x80, and so forth. Any other alignment has undefined results. 
 

@@ -6,7 +6,10 @@ var namespaceudmaio =
     [ "DmaBufferAbstract", "classudmaio_1_1_dma_buffer_abstract.html", "classudmaio_1_1_dma_buffer_abstract" ],
     [ "FpgaMemBufferOverAxi", "classudmaio_1_1_fpga_mem_buffer_over_axi.html", "classudmaio_1_1_fpga_mem_buffer_over_axi" ],
     [ "FpgaMemBufferOverXdma", "classudmaio_1_1_fpga_mem_buffer_over_xdma.html", "classudmaio_1_1_fpga_mem_buffer_over_xdma" ],
-    [ "RegAccessor", "classudmaio_1_1_reg_accessor.html", "classudmaio_1_1_reg_accessor" ],
+    [ "RegAccessorArray", "classudmaio_1_1_reg_accessor_array.html", "classudmaio_1_1_reg_accessor_array" ],
+    [ "RegAccessorArray< C, offset, 0, 0 >", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4" ],
+    [ "RegAccessorArrayElement", "classudmaio_1_1_reg_accessor_array_element.html", "classudmaio_1_1_reg_accessor_array_element" ],
+    [ "RegAccessorBase", "classudmaio_1_1_reg_accessor_base.html", "classudmaio_1_1_reg_accessor_base" ],
     [ "UDmaBuf", "classudmaio_1_1_u_dma_buf.html", "classudmaio_1_1_u_dma_buf" ],
     [ "UioAxiDmaIf", "classudmaio_1_1_uio_axi_dma_if.html", "classudmaio_1_1_uio_axi_dma_if" ],
     [ "UioConfigBase", "classudmaio_1_1_uio_config_base.html", "classudmaio_1_1_uio_config_base" ],
@@ -17,7 +20,8 @@ var namespaceudmaio =
     [ "UioIf", "classudmaio_1_1_uio_if.html", "classudmaio_1_1_uio_if" ],
     [ "UioMemSgdma", "classudmaio_1_1_uio_mem_sgdma.html", "classudmaio_1_1_uio_mem_sgdma" ],
     [ "UioRegion", "structudmaio_1_1_uio_region.html", "structudmaio_1_1_uio_region" ],
-    [ "AxiDmaBlock", "namespaceudmaio.html#a4b31d6757a01d58c159d0640b86edbd4", null ],
+    [ "AxiDmaBlock", "namespaceudmaio.html#a681a7289ae1db6b3e4fdef3a0602ebff", null ],
+    [ "RegAccessor", "namespaceudmaio.html#a05b519f65a300d1cd8f0c150fae1e71c", null ],
     [ "DmaMode", "namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080cec", [
       [ "XDMA", "namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080cecaf3dac949aa62d490afa1ac577a5fc028", null ],
       [ "UIO", "namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080ceca910a3bb55574645cc3d46b715f097eb0", null ]

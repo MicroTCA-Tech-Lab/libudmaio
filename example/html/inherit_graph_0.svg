@@ -12,9 +12,9 @@
 <g id="node1" class="node">
 <title>Node0</title>
 <g id="a_node1"><a xlink:href="structaxi__dma_1_1block__template.html" target="_top" xlink:title="Template class for the axi_dma block, containing accessors for all its registers.">
-<polygon fill="white" stroke="#666666" points="268,-320.5 145,-320.5 145,-290.5 268,-290.5 268,-320.5"/>
-<text text-anchor="start" x="153" y="-308.5" font-family="Helvetica,sans-Serif" font-size="10.00">axi_dma::block_template</text>
-<text text-anchor="middle" x="206.5" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; R_acc, R_acc_arg &gt;</text>
+<polygon fill="white" stroke="#666666" points="276,-320.5 137,-320.5 137,-290.5 276,-290.5 276,-320.5"/>
+<text text-anchor="start" x="145" y="-308.5" font-family="Helvetica,sans-Serif" font-size="10.00">axi_dma::block_template</text>
+<text text-anchor="middle" x="206.5" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; R_array_acc, R_acc_arg &gt;</text>
 </a>
 </g>
 </g>
@@ -30,8 +30,8 @@
 <!-- Node0&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node0&#45;&gt;Node1</title>
-<path fill="none" stroke="#8b1a1a" d="M279.64,-305.5C301.12,-305.5 324.26,-305.5 344.26,-305.5"/>
-<polygon fill="#8b1a1a" stroke="#8b1a1a" points="279.75,-302 269.75,-305.5 279.75,-309 279.75,-302"/>
+<path fill="none" stroke="#8b1a1a" d="M287.85,-305.5C306.88,-305.5 326.7,-305.5 344.15,-305.5"/>
+<polygon fill="#8b1a1a" stroke="#8b1a1a" points="287.96,-302 277.96,-305.5 287.96,-309 287.96,-302"/>
 </g>
 <!-- Node9 -->
 <g id="node3" class="node">

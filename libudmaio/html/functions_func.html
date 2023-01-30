@@ -110,9 +110,11 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>_get_uio_number()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_config_uio.html#a7c954f5648778cd3e19c8b851aa0d9e5">udmaio::UioConfigUio</a></li>
 <li>_handle_input()&#160;:&#160;<a class="el" href="classudmaio_1_1_data_handler_abstract.html#a03d3679ad7b54a8c3791005ea69ff711">udmaio::DataHandlerAbstract</a></li>
 <li>_log_name()&#160;:&#160;<a class="el" href="classudmaio_1_1_fpga_mem_buffer_over_axi.html#acbd47202c8325118dfef3e26b7020de4">udmaio::FpgaMemBufferOverAxi</a>, <a class="el" href="classudmaio_1_1_uio_axi_dma_if.html#a5627fbf50a2475b9288e0a464d5f1672">udmaio::UioAxiDmaIf</a>, <a class="el" href="classudmaio_1_1_uio_if.html#aebd339271c546d44575671edc7f7daf9">udmaio::UioIf</a>, <a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#ac69f5bbe51aebc5cd598ddc0e39b13fe">udmaio::UioMemSgdma</a></li>
+<li>_rd()&#160;:&#160;<a class="el" href="classudmaio_1_1_reg_accessor_base.html#ac48b43f437837cd965706d4c7626b2b9">udmaio::RegAccessorBase&lt; C &gt;</a></li>
 <li>_rd32()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_if.html#a9a7d60c6438b2d90e204bb5a456ed755">udmaio::UioIf</a></li>
 <li>_reg_ptr()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_if.html#a95119dca4278edac9d6a8b1109ca58d1">udmaio::UioIf</a></li>
 <li>_start_read()&#160;:&#160;<a class="el" href="classudmaio_1_1_data_handler_abstract.html#a90d25df268b70ea580559fd0ad7aaa0a">udmaio::DataHandlerAbstract</a></li>
+<li>_wr()&#160;:&#160;<a class="el" href="classudmaio_1_1_reg_accessor_base.html#a7107c7f25cb16b638ae56903c7803837">udmaio::RegAccessorBase&lt; C &gt;</a></li>
 <li>_wr32()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_if.html#a493e161ddcaa28c256f075f45e687391">udmaio::UioIf</a></li>
 </ul>
 
@@ -125,7 +127,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 
 <h3><a id="index_b" name="index_b"></a>- b -</h3><ul>
-<li>block_template()&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a41de7884e826cae51b55538c41174c19">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
+<li>block_template()&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a053033be75233e467c81b80d073b21d5">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
 </ul>
 
 
@@ -173,6 +175,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>operator UioDeviceInfo()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_device_location.html#a234bc413c497d442848ae2f4b431c659">udmaio::UioDeviceLocation</a></li>
 <li>operator()()&#160;:&#160;<a class="el" href="classudmaio_1_1_data_handler_abstract.html#a8b3ef758d72527ef0f7f3e4f1d9a068d">udmaio::DataHandlerAbstract</a>, <a class="el" href="classudmaio_1_1_data_handler_sync.html#af9ef2065d6dcda7af1a6fbf64f2f24ca">udmaio::DataHandlerSync</a>, <a class="el" href="classudmaio_1_1_uio_config_base.html#abb84f646e4e513ed22614056850a12ad">udmaio::UioConfigBase</a>, <a class="el" href="classudmaio_1_1_uio_config_uio.html#a5e713ecbd68672ecb35e589ab260d06a">udmaio::UioConfigUio</a>, <a class="el" href="classudmaio_1_1_uio_config_xdma.html#a0db17013b646dbe71a69cc4dc6fec1db">udmaio::UioConfigXdma</a></li>
 <li>operator=()&#160;:&#160;<a class="el" href="classudmaio_1_1_concurrent_queue.html#ab86afd4013a112387ffe213a56fb1f05">udmaio::ConcurrentQueue&lt; T &gt;</a></li>
+<li>operator[]()&#160;:&#160;<a class="el" href="classudmaio_1_1_reg_accessor_array.html#a4b8a2afd9ba4baefa3f4e218bc0dc020">udmaio::RegAccessorArray&lt; C, offset, arr_size, arr_stride &gt;</a></li>
 </ul>
 
 
@@ -186,17 +189,19 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
-<li>rd()&#160;:&#160;<a class="el" href="classudmaio_1_1_reg_accessor.html#a6e015e78a0bc745bffa73e4ced63e3f0">udmaio::RegAccessor&lt; C, offset &gt;</a></li>
+<li>rd()&#160;:&#160;<a class="el" href="classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html#ab7a42dc9e810b80b4ed294730414ec11">udmaio::RegAccessorArray&lt; C, offset, 0, 0 &gt;</a>, <a class="el" href="classudmaio_1_1_reg_accessor_array_element.html#ae54bc577dd3b1006870b046116278d96">udmaio::RegAccessorArrayElement&lt; C &gt;</a></li>
 <li>read()&#160;:&#160;<a class="el" href="classudmaio_1_1_data_handler_sync.html#a605fd0316d366ec4935583b4dce91795">udmaio::DataHandlerSync</a></li>
 <li>read_desc()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#a48b557a66323016bc124caa6f048827b">udmaio::UioMemSgdma</a></li>
 <li>reg_to_raw()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_if.html#a9d8ff52701b750c68bb891529470768f">udmaio::UioIf</a></li>
-<li>RegAccessor()&#160;:&#160;<a class="el" href="classudmaio_1_1_reg_accessor.html#aba0604b0b73eb7ac6511715b0e852301">udmaio::RegAccessor&lt; C, offset &gt;</a></li>
+<li>RegAccessorArrayElement()&#160;:&#160;<a class="el" href="classudmaio_1_1_reg_accessor_array_element.html#aaa4e2dac359c1b0ed94316ca5a24727b">udmaio::RegAccessorArrayElement&lt; C &gt;</a></li>
+<li>RegAccessorBase()&#160;:&#160;<a class="el" href="classudmaio_1_1_reg_accessor_base.html#ad878857665ec6cb11fb5133240a23e65">udmaio::RegAccessorBase&lt; C &gt;</a></li>
 </ul>
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>setLinkAxi()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_device_location.html#abd778cecc780217fabc8e0ffa8081091">udmaio::UioDeviceLocation</a></li>
 <li>setLinkXdma()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_device_location.html#acafeb86cff39d723db231b40862bbb9a">udmaio::UioDeviceLocation</a></li>
+<li>size()&#160;:&#160;<a class="el" href="classudmaio_1_1_reg_accessor_array.html#a488582212ef79d90b08842feb6ec876b">udmaio::RegAccessorArray&lt; C, offset, arr_size, arr_stride &gt;</a></li>
 <li>start()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_axi_dma_if.html#a00bfa497dcdb7fba7c9d30ea0949675d">udmaio::UioAxiDmaIf</a></li>
 <li>stop()&#160;:&#160;<a class="el" href="classudmaio_1_1_data_handler_abstract.html#ad3f588a2ecfa1f89cb80c17c4a46c49e">udmaio::DataHandlerAbstract</a>, <a class="el" href="classudmaio_1_1_data_handler_sync.html#ac7e05b28f78eb8e086759dd39eb62b8f">udmaio::DataHandlerSync</a></li>
 </ul>
@@ -213,7 +218,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 <h3><a id="index_w" name="index_w"></a>- w -</h3><ul>
 <li>wait_for_interrupt()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_if.html#a7035fb19bfd190fe5b482d27cc528b0a">udmaio::UioIf</a></li>
-<li>wr()&#160;:&#160;<a class="el" href="classudmaio_1_1_reg_accessor.html#a3b6b5f9b1898ef252b3de66e0342271d">udmaio::RegAccessor&lt; C, offset &gt;</a></li>
+<li>wr()&#160;:&#160;<a class="el" href="classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html#a39bd8f92c5a373086119460ccde63746">udmaio::RegAccessorArray&lt; C, offset, 0, 0 &gt;</a>, <a class="el" href="classudmaio_1_1_reg_accessor_array_element.html#adab9bc37d421d67e94015a8a5f0ee9d3">udmaio::RegAccessorArrayElement&lt; C &gt;</a></li>
 <li>write_cyc_mode()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#ad1c770a8302c0f8c6838dca51efe5993">udmaio::UioMemSgdma</a></li>
 <li>write_desc()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#aa6ef679ce983f46e1e4a13ed696cda81">udmaio::UioMemSgdma</a></li>
 </ul>

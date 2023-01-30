@@ -30,7 +30,7 @@ struct \mbox{\hyperlink{structaxi__dma_1_1s2mm__taildesc__t}{axi\+\_\+dma\+::s2m
 \item 
 struct \mbox{\hyperlink{structaxi__dma_1_1s2mm__length__t}{axi\+\_\+dma\+::s2mm\+\_\+length\+\_\+t}}
 \item 
-struct \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template$<$ R\+\_\+acc, R\+\_\+acc\+\_\+arg $>$}}
+struct \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$}}
 \begin{DoxyCompactList}\small\item\em Template class for the \mbox{\hyperlink{namespaceaxi__dma}{axi\+\_\+dma}} block, containing accessors for all its registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
@@ -61,7 +61,7 @@ using \mbox{\hyperlink{namespaceaxi__dma_a8054f0fece4e8539d6367f6560d021ac}{axi\
 \item 
 using \mbox{\hyperlink{namespaceaxi__dma_a2e7fb45c7a845c74441f754211aed93f}{axi\+\_\+dma\+::s2mm\+\_\+da\+\_\+msb\+\_\+t}} = uint32\+\_\+t
 \item 
-{\footnotesize template$<$template$<$ typename, uint32\+\_\+t $>$ typename R\+\_\+acc$>$ }\\using \mbox{\hyperlink{namespaceaxi__dma_aae57607a088102829f976fd387c96340}{axi\+\_\+dma\+::block}} = block\+\_\+template$<$ R\+\_\+acc, typename R\+\_\+acc$<$ mm2s\+\_\+dmacr\+\_\+t, 0 $>$\+::constructor\+\_\+arg\+\_\+type $>$
+{\footnotesize template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc$>$ }\\using \mbox{\hyperlink{namespaceaxi__dma_adf82eb6346eaa5e00fb4a043f95c3f40}{axi\+\_\+dma\+::block}} = block\+\_\+template$<$ R\+\_\+array\+\_\+acc, typename R\+\_\+array\+\_\+acc$<$ mm2s\+\_\+dmacr\+\_\+t, 0, 0, 0 $>$\+::constructor\+\_\+arg\+\_\+type $>$
 \begin{DoxyCompactList}\small\item\em Convenience wrapper for \mbox{\hyperlink{structaxi__dma_1_1block__template}{block\+\_\+template}} to omit the explicit naming of the constructor argument. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}

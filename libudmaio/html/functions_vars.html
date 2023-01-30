@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>_dma_fd&#160;:&#160;<a class="el" href="classudmaio_1_1_fpga_mem_buffer_over_xdma.html#aa7e29797f2131b05eb89a98bbbf931a3">udmaio::FpgaMemBufferOverXdma</a></li>
 <li>_fd&#160;:&#160;<a class="el" href="classudmaio_1_1_u_dma_buf.html#a1456154b2dc5cbfcaf4497dfd91a198e">udmaio::UDmaBuf</a>, <a class="el" href="classudmaio_1_1_uio_if.html#a2a9abc749581164881422f771d81e77c">udmaio::UioIf</a></li>
 <li>_fd_int&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_if.html#afb95a4e415ecce2ecf99bfd8baebc670">udmaio::UioIf</a></li>
-<li>_if&#160;:&#160;<a class="el" href="classudmaio_1_1_reg_accessor.html#a8c434bbcd90ca59cd289879160c3cc6a">udmaio::RegAccessor&lt; C, offset &gt;</a></li>
+<li>_if&#160;:&#160;<a class="el" href="classudmaio_1_1_reg_accessor_base.html#a4067a4efbfab68504bf00063b389eb93">udmaio::RegAccessorBase&lt; C &gt;</a></li>
 <li>_ioThread&#160;:&#160;<a class="el" href="classudmaio_1_1_data_handler_sync.html#ac2229f46ef9580c91470316faf836276">udmaio::DataHandlerSync</a></li>
 <li>_link_cfg&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_device_location.html#ae572549b49ffaaed58353abd077d5d13">udmaio::UioDeviceLocation</a></li>
 <li>_mem&#160;:&#160;<a class="el" href="classudmaio_1_1_data_handler_abstract.html#a9a1b6c27b1a44b24938146f6ff7c648b">udmaio::DataHandlerAbstract</a>, <a class="el" href="classudmaio_1_1_u_dma_buf.html#a4ca2fcaa9f65e16d9f5474a53ebcb537">udmaio::UDmaBuf</a>, <a class="el" href="classudmaio_1_1_uio_if.html#a9284f47ea82fd29ee29b3dfd9f465a73">udmaio::UioIf</a></li>
@@ -120,6 +120,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>_phys&#160;:&#160;<a class="el" href="classudmaio_1_1_u_dma_buf.html#af46c0be580c25090c0a9b2fe06ce919e">udmaio::UDmaBuf</a></li>
 <li>_phys_addr&#160;:&#160;<a class="el" href="classudmaio_1_1_fpga_mem_buffer_over_xdma.html#a3427375448cf17f23407dcf4536b86ec">udmaio::FpgaMemBufferOverXdma</a></li>
 <li>_queue&#160;:&#160;<a class="el" href="classudmaio_1_1_concurrent_queue.html#aa5b3c888ba18a51132f6c68006b7bea5">udmaio::ConcurrentQueue&lt; T &gt;</a>, <a class="el" href="classudmaio_1_1_data_handler_sync.html#aaf38b90916bf263efee4ee575fb8da09">udmaio::DataHandlerSync</a></li>
+<li>_reg_offs&#160;:&#160;<a class="el" href="classudmaio_1_1_reg_accessor_array_element.html#a03956a268d070b2be79f9c1dd4173ce5">udmaio::RegAccessorArrayElement&lt; C &gt;</a></li>
 <li>_region&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_if.html#a7b9d1b5562353fb0df19cc5c4c447458">udmaio::UioIf</a></li>
 <li>_sd&#160;:&#160;<a class="el" href="classudmaio_1_1_data_handler_abstract.html#a6dfd98d26b983dbee80af2e8c2f4c8e8">udmaio::DataHandlerAbstract</a></li>
 <li>_skip_write_to_arm_int&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_if.html#ac1aa2dbf3f67dbcc0d77a8e346ca2339">udmaio::UioIf</a></li>
@@ -135,7 +136,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
-<li>current_descriptor_pointer&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__curdesc__t.html#ac30c92823eaff74ad7d4f469cef29ba5">axi_dma::mm2s_curdesc_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__curdesc__t.html#abf1afd490ffa6628e1abad925e53b63e">axi_dma::s2mm_curdesc_t</a></li>
+<li>current_descriptor_pointer&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__curdesc__t.html#a1cef19fe26a2b26e0db06126c6298a8f">axi_dma::mm2s_curdesc_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__curdesc__t.html#a19e772094021dea2fc71d9a4e4a2f564">axi_dma::s2mm_curdesc_t</a></li>
 <li>cyclic_bd_enable&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmacr__t.html#ac3cb90fbffceca1f562f890bf2814146">axi_dma::mm2s_dmacr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmacr__t.html#af6a76aa6092b8357b66bf53429c2e41c">axi_dma::s2mm_dmacr_t</a></li>
 </ul>
 
@@ -180,21 +181,21 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 
 
 <h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
-<li>length&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__length__t.html#a21adebad6ac35bb032a58984fd2641a9">axi_dma::mm2s_length_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__length__t.html#a68c4f9f91af2e0bfb36db934ec94b77e">axi_dma::s2mm_length_t</a></li>
+<li>length&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__length__t.html#a3401c7bb61273d7faa3596f320a4a1f9">axi_dma::mm2s_length_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__length__t.html#a0d1b0c2e0dc342443a982f0e6b51e6d6">axi_dma::s2mm_length_t</a></li>
 </ul>
 
 
 <h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
 <li>MAX_ELEMS&#160;:&#160;<a class="el" href="classudmaio_1_1_concurrent_queue.html#afd6c990a383134f9c26082ff4d24b730">udmaio::ConcurrentQueue&lt; T &gt;</a></li>
-<li>mm2s_curdesc&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a30745ce2f3104ebc13bee1c06b4404a6">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>mm2s_curdesc_msb&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a9ffb765dd2c7038ae0a28fdce0d7c701">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>mm2s_dmacr&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a96643da1c63584bde816feb8cf91a4a0">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>mm2s_dmasr&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#ad00f7ffb1bfc221c07f62667975224e8">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>mm2s_length&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#ae4b44433fb2a937fd3cbfd6b6e0cfa1d">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>mm2s_sa&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#ab9e96e495ae765dfa3fb1587eb0a79bf">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>mm2s_sa_msb&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a708282762ea34949adb5f1a208eabb51">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>mm2s_taildesc&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a80533f7dfeb497c0a4fe997c6a247938">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>mm2s_taildesc_msb&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#adc1eb0034c9f27c34ab6f9fcfff15ca2">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
+<li>mm2s_curdesc&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#ac542de57d30568aea00c15ae69682efa">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>mm2s_curdesc_msb&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a2604e3870af5acb50cb14faec6537ef3">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>mm2s_dmacr&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a8050574a5c50711e6b8bcd7255e4f850">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>mm2s_dmasr&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#ad799627f3a208a6971bb5ff67823e7d3">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>mm2s_length&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a1a2c60d7340641bdf4a694afdf292a61">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>mm2s_sa&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#ab47dbeba9adb408155b8e724669e281d">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>mm2s_sa_msb&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#abffbaf76da2272779616e527ca935ea4">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>mm2s_taildesc&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a2393368f3ca6a318e39945999a41d17c">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>mm2s_taildesc_msb&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#ad40e7d14eccc2a06bdbd09071f8c719b">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
 <li>mmap_offs&#160;:&#160;<a class="el" href="structudmaio_1_1_uio_device_info.html#a0a207d3b2a1a958a2ca43f1056b77cbd">udmaio::UioDeviceInfo</a></li>
 </ul>
 
@@ -203,42 +204,42 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>region&#160;:&#160;<a class="el" href="structudmaio_1_1_uio_device_info.html#a093747ff1f89ca9924969c11903e2d7d">udmaio::UioDeviceInfo</a></li>
 <li>reset&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmacr__t.html#a1b5fdb7e9e56031279682cb0cfb88d14">axi_dma::mm2s_dmacr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmacr__t.html#a323e2363c948e96bffa24fdf61abecaf">axi_dma::s2mm_dmacr_t</a></li>
 <li>rs&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmacr__t.html#aacb21aafe5e18e9bf57cb85aa0f1a473">axi_dma::mm2s_dmacr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmacr__t.html#a263a47afe1be52ed4e20c8b551ab5bb1">axi_dma::s2mm_dmacr_t</a></li>
-<li>rsvd_11_11&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmasr__t.html#a3fbd5fc295c607e5f6f767d4ae4e9543">axi_dma::mm2s_dmasr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a1295c7e7846b91c9e3cd7a3e6dfa1536">axi_dma::s2mm_dmasr_t</a></li>
-<li>rsvd_11_5&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmacr__t.html#a69d10cb3b5c2fdf85bb90c149cbe9877">axi_dma::mm2s_dmacr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmacr__t.html#ade48fbe0524823238887ae2c3f64f569">axi_dma::s2mm_dmacr_t</a></li>
-<li>rsvd_15_15&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmacr__t.html#a87cb6b0b02a43f04287ae2f622e9e995">axi_dma::mm2s_dmacr_t</a>, <a class="el" href="structaxi__dma_1_1mm2s__dmasr__t.html#a75d4bf329337c9420cb3314ea5564725">axi_dma::mm2s_dmasr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmacr__t.html#a62653ac6334c14c4cfa5324fce3b9700">axi_dma::s2mm_dmacr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a0ca3c269d12f36bc28350a918c074c71">axi_dma::s2mm_dmasr_t</a></li>
-<li>rsvd_1_1&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmacr__t.html#a3e197c8cd6e0a1288fa0767301159005">axi_dma::mm2s_dmacr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmacr__t.html#a5a7b79212d4473013803c917ca005832">axi_dma::s2mm_dmacr_t</a></li>
-<li>rsvd_2_2&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmasr__t.html#a6aa16e98955b3352a4bc8231152a498a">axi_dma::mm2s_dmasr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a62556927b34c37b002d42fcb0c71e7e9">axi_dma::s2mm_dmasr_t</a></li>
-<li>rsvd_31_12&#160;:&#160;<a class="el" href="structaxi__dma_1_1sg__ctl__t.html#ab99b86aff1317e7de770dc47f0e51e20">axi_dma::sg_ctl_t</a></li>
-<li>rsvd_31_26&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__length__t.html#a2650a7aa6bda9dfb498029df0567cd2f">axi_dma::mm2s_length_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__length__t.html#a1a65b2a474e6335901b74e4efb0f3114">axi_dma::s2mm_length_t</a></li>
-<li>rsvd_5_0&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__curdesc__t.html#af9119ddff7914dd23ddb16b5bf638635">axi_dma::mm2s_curdesc_t</a>, <a class="el" href="structaxi__dma_1_1mm2s__taildesc__t.html#a8cb04ba7987f24c7cd286585157067ed">axi_dma::mm2s_taildesc_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__curdesc__t.html#a748d2e4b2cd911c0bb5380bc06e4f99b">axi_dma::s2mm_curdesc_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__taildesc__t.html#ad2e4d8813a8fc07bf517690e1ab8ee1d">axi_dma::s2mm_taildesc_t</a></li>
-<li>rsvd_7_4&#160;:&#160;<a class="el" href="structaxi__dma_1_1sg__ctl__t.html#ae37e665871d08e50fcbb2ef89f8c4ad7">axi_dma::sg_ctl_t</a></li>
-<li>rsvd_7_7&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmasr__t.html#ad486c4fac81edb2fd336bf38eadd52a2">axi_dma::mm2s_dmasr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a9cc5d58666fe4d48b0b73995dd15cca4">axi_dma::s2mm_dmasr_t</a></li>
+<li>rsvd_11_11&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmasr__t.html#a2a96a06f26fae78077b5592aef4b82bb">axi_dma::mm2s_dmasr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a8db398cadde56c2a30715c82fe229fdb">axi_dma::s2mm_dmasr_t</a></li>
+<li>rsvd_11_5&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmacr__t.html#a2da80659109d24439506c312492c5be9">axi_dma::mm2s_dmacr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmacr__t.html#a037e7d7c17f60e6026618a76aae97422">axi_dma::s2mm_dmacr_t</a></li>
+<li>rsvd_15_15&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmacr__t.html#a952297a57bc5285c476ac938165b076e">axi_dma::mm2s_dmacr_t</a>, <a class="el" href="structaxi__dma_1_1mm2s__dmasr__t.html#a50c28cb3bf4220ee397fbfe3a513cd0b">axi_dma::mm2s_dmasr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmacr__t.html#aeb9e30564bfe5730efb1a268931acf2b">axi_dma::s2mm_dmacr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#ab3f8ebf6d0767dc7791280f9379f4b28">axi_dma::s2mm_dmasr_t</a></li>
+<li>rsvd_1_1&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmacr__t.html#a37dcbb07606319c01554751e46e5f086">axi_dma::mm2s_dmacr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmacr__t.html#a5fa6ebbccf7af1663555c5e1d473bd1b">axi_dma::s2mm_dmacr_t</a></li>
+<li>rsvd_2_2&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmasr__t.html#a9a214849beacbbd6bcc9a83065dc77db">axi_dma::mm2s_dmasr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#ac4b9a67662fda8c31a2111495b2ade3d">axi_dma::s2mm_dmasr_t</a></li>
+<li>rsvd_31_12&#160;:&#160;<a class="el" href="structaxi__dma_1_1sg__ctl__t.html#a2fca4f6f2869762fbb63af3a7c7b5c6b">axi_dma::sg_ctl_t</a></li>
+<li>rsvd_31_26&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__length__t.html#ad40a66f3a0309961f79d696ceb5dde89">axi_dma::mm2s_length_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__length__t.html#a6fafa1d88b31e784c5c341504ede3b20">axi_dma::s2mm_length_t</a></li>
+<li>rsvd_5_0&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__curdesc__t.html#a9881301725f64087ca00fe8098fb5a47">axi_dma::mm2s_curdesc_t</a>, <a class="el" href="structaxi__dma_1_1mm2s__taildesc__t.html#a08c12c90d514e3f9f3021d817e31d112">axi_dma::mm2s_taildesc_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__curdesc__t.html#a6ea905eb86d547545f876ad35b6094ca">axi_dma::s2mm_curdesc_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__taildesc__t.html#a32e9e50d0045f41a3befa8a4e4236e26">axi_dma::s2mm_taildesc_t</a></li>
+<li>rsvd_7_4&#160;:&#160;<a class="el" href="structaxi__dma_1_1sg__ctl__t.html#aecea7118f8c463ff480ab0fc1de8f459">axi_dma::sg_ctl_t</a></li>
+<li>rsvd_7_7&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmasr__t.html#aa40d90eb17dfcc2a37762dbdf0a9d447">axi_dma::mm2s_dmasr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a43d04e62034d3f9538fc0d3906eb01ac">axi_dma::s2mm_dmasr_t</a></li>
 </ul>
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
-<li>s2mm_curdesc&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#af31d187f7e6c3473c7b2bf29647fbee4">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>s2mm_curdesc_msb&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a84c24e624dae38d36135e354dbf45e5e">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>s2mm_da&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a3c2d86d2d08809ad52c7c5951820811c">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>s2mm_da_msb&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a01dc47370d9fc22f86131a33f5e33385">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>s2mm_dmacr&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a6be27ab48bb216e28944ec90f4b45bf1">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>s2mm_dmasr&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a351c6c75665fa3793695f6b1e08fd5d5">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>s2mm_length&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#afedaa7bb05e0be57bb9a177253880bd7">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>s2mm_taildesc&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#ab1fea44ad317b2984bf9964e2642e8ca">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>s2mm_taildesc_msb&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#ab111b2d2834ede9ac0dfc51b16f91374">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
-<li>sg_cache&#160;:&#160;<a class="el" href="structaxi__dma_1_1sg__ctl__t.html#afcc84ccdbef6588afe519fecd2eb3c3a">axi_dma::sg_ctl_t</a></li>
-<li>sg_ctl&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#af421880b49ca991a13097aaabaef31b2">axi_dma::block_template&lt; R_acc, R_acc_arg &gt;</a></li>
+<li>s2mm_curdesc&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#aa00a8b47e99eb7bae612ce0c7516127a">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>s2mm_curdesc_msb&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a6645cf9feb7f89b69e0c45b79f0c6efe">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>s2mm_da&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a230c9eae3e7eb67b1f6b6b280ba3332f">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>s2mm_da_msb&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#aee04c473dc0c413741c1a5091bd815d5">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>s2mm_dmacr&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a69e9298405f937bad9b79a65a290406f">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>s2mm_dmasr&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a3a2d2f6a0cc4dd86e53b460d511e1d4a">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>s2mm_length&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a45e558cc77d4dd819eb48ceb4eff3c93">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>s2mm_taildesc&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a492c6fb6345daaea818f4720977192da">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>s2mm_taildesc_msb&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a0eb924e84187faab0447d23387c80ae0">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
+<li>sg_cache&#160;:&#160;<a class="el" href="structaxi__dma_1_1sg__ctl__t.html#a9dee3d616e2c81426e9ea71d80d705d3">axi_dma::sg_ctl_t</a></li>
+<li>sg_ctl&#160;:&#160;<a class="el" href="structaxi__dma_1_1block__template.html#a5b7bfd06858b1142b07b328660feee38">axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;</a></li>
 <li>sg_dec_err&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmasr__t.html#afeac67244b15cd7cc853fac17e01712a">axi_dma::mm2s_dmasr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a2b90322b3c2d36480781e8bfbaecad86">axi_dma::s2mm_dmasr_t</a></li>
 <li>sg_incld&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmasr__t.html#af439749d2d5e2774f656ac147b48ca9c">axi_dma::mm2s_dmasr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a50e15c1492e56ea3d8650467f252fa86">axi_dma::s2mm_dmasr_t</a></li>
 <li>sg_int_err&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmasr__t.html#ab385aaaf1985398b44bcc42c705e4769">axi_dma::mm2s_dmasr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a2a7d67417f4a854666b47d19e8c748da">axi_dma::s2mm_dmasr_t</a></li>
 <li>sg_slv_err&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__dmasr__t.html#ac1f432a2417e8c442ced9fc049f296c6">axi_dma::mm2s_dmasr_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__dmasr__t.html#a441238a52583f7fafdb1dce4fdc8218c">axi_dma::s2mm_dmasr_t</a></li>
-<li>sg_user&#160;:&#160;<a class="el" href="structaxi__dma_1_1sg__ctl__t.html#afc03d653d1570ef304280c77943039c6">axi_dma::sg_ctl_t</a></li>
+<li>sg_user&#160;:&#160;<a class="el" href="structaxi__dma_1_1sg__ctl__t.html#aa4a87d97ef6d7896f69aecf581a1834d">axi_dma::sg_ctl_t</a></li>
 <li>size&#160;:&#160;<a class="el" href="structudmaio_1_1_uio_region.html#ac820f3588c55f13155345aae9e198a32">udmaio::UioRegion</a></li>
 </ul>
 
 
 <h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
-<li>tail_descriptor_pointer&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__taildesc__t.html#a57d1756171158ada1341580b34ea96e0">axi_dma::mm2s_taildesc_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__taildesc__t.html#a79b82804a563276e97f15ee15095ecb9">axi_dma::s2mm_taildesc_t</a></li>
+<li>tail_descriptor_pointer&#160;:&#160;<a class="el" href="structaxi__dma_1_1mm2s__taildesc__t.html#a37cc984b2cb8c42032baa92a293f2b7f">axi_dma::mm2s_taildesc_t</a>, <a class="el" href="structaxi__dma_1_1s2mm__taildesc__t.html#ac35361ae34c169d337d279834bfa73dc">axi_dma::s2mm_taildesc_t</a></li>
 </ul>
 
 

@@ -9,7 +9,7 @@ var classudmaio_1_1_uio_if =
     [ "arm_interrupt", "classudmaio_1_1_uio_if.html#a6756aeb5ca3c013d0c4be22e3d573963", null ],
     [ "reg_to_raw", "classudmaio_1_1_uio_if.html#a9d8ff52701b750c68bb891529470768f", null ],
     [ "wait_for_interrupt", "classudmaio_1_1_uio_if.html#a7035fb19bfd190fe5b482d27cc528b0a", null ],
-    [ "RegAccessor", "classudmaio_1_1_uio_if.html#a17da7a83c39062d0f9ea98170e41e4a4", null ],
+    [ "RegAccessorBase", "classudmaio_1_1_uio_if.html#a55fe8d02d0291443c9351b5be423747f", null ],
     [ "_fd", "classudmaio_1_1_uio_if.html#a2a9abc749581164881422f771d81e77c", null ],
     [ "_fd_int", "classudmaio_1_1_uio_if.html#afb95a4e415ecce2ecf99bfd8baebc670", null ],
     [ "_mem", "classudmaio_1_1_uio_if.html#a9284f47ea82fd29ee29b3dfd9f465a73", null ],

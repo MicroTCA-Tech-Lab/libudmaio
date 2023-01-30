@@ -1,0 +1,115 @@
+\hypertarget{classudmaio_1_1_reg_accessor_array_element}{}\doxysection{udmaio\+::Reg\+Accessor\+Array\+Element\texorpdfstring{$<$}{<} C \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classudmaio_1_1_reg_accessor_array_element}\index{udmaio::RegAccessorArrayElement$<$ C $>$@{udmaio::RegAccessorArrayElement$<$ C $>$}}
+
+
+Accessor for register array element. Returned by \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_a4b8a2afd9ba4baefa3f4e218bc0dc020}{Reg\+Accessor\+Array$<$\+C$>$\+::operator\mbox{[}$\,$\mbox{]}}}.  
+
+
+
+
+{\ttfamily \#include $<$Reg\+Accessor.\+hpp$>$}
+
+
+
+Inheritance diagram for udmaio\+::Reg\+Accessor\+Array\+Element\texorpdfstring{$<$}{<} C \texorpdfstring{$>$}{>}\+:
+% FIG 0
+
+
+Collaboration diagram for udmaio\+::Reg\+Accessor\+Array\+Element\texorpdfstring{$<$}{<} C \texorpdfstring{$>$}{>}\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_aaa4e2dac359c1b0ed94316ca5a24727b}{Reg\+Accessor\+Array\+Element}} (typename \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{Reg\+Accessor\+Base}}$<$ C $>$\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a720b0f4161557a10c3e97e4460b4156c}{\+::constructor\+\_\+arg\+\_\+type}} c, uint32\+\_\+t reg\+\_\+offs)
+\begin{DoxyCompactList}\small\item\em Construct a new register array element accessor. \end{DoxyCompactList}\item 
+C \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_ae54bc577dd3b1006870b046116278d96}{rd}} () const
+\begin{DoxyCompactList}\small\item\em Read register array element. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_adab9bc37d421d67e94015a8a5f0ee9d3}{wr}} (const C \&value)
+\begin{DoxyCompactList}\small\item\em Write register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const uint32\+\_\+t \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_a03956a268d070b2be79f9c1dd4173ce5}{\+\_\+reg\+\_\+offs}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename C$>$\newline
+class udmaio\+::\+Reg\+Accessor\+Array\+Element$<$ C $>$}
+Accessor for register array element. Returned by \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_a4b8a2afd9ba4baefa3f4e218bc0dc020}{Reg\+Accessor\+Array$<$\+C$>$\+::operator\mbox{[}$\,$\mbox{]}}}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em C} & Register content type \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_reg_accessor_array_element_aaa4e2dac359c1b0ed94316ca5a24727b}\label{classudmaio_1_1_reg_accessor_array_element_aaa4e2dac359c1b0ed94316ca5a24727b}} 
+\index{udmaio::RegAccessorArrayElement$<$ C $>$@{udmaio::RegAccessorArrayElement$<$ C $>$}!RegAccessorArrayElement@{RegAccessorArrayElement}}
+\index{RegAccessorArrayElement@{RegAccessorArrayElement}!udmaio::RegAccessorArrayElement$<$ C $>$@{udmaio::RegAccessorArrayElement$<$ C $>$}}
+\doxysubsubsection{\texorpdfstring{RegAccessorArrayElement()}{RegAccessorArrayElement()}}
+{\footnotesize\ttfamily template$<$typename C $>$ \\
+\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element}{udmaio\+::\+Reg\+Accessor\+Array\+Element}}$<$ C $>$\+::\+Reg\+Accessor\+Array\+Element (\begin{DoxyParamCaption}\item[{typename \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{Reg\+Accessor\+Base}}$<$ C $>$\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a720b0f4161557a10c3e97e4460b4156c}{\+::constructor\+\_\+arg\+\_\+type}}}]{c,  }\item[{uint32\+\_\+t}]{reg\+\_\+offs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new register array element accessor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Hardware interface \\
+\hline
+{\em reg\+\_\+offs} & Offset of array element into address space \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_reg_accessor_array_element_ae54bc577dd3b1006870b046116278d96}\label{classudmaio_1_1_reg_accessor_array_element_ae54bc577dd3b1006870b046116278d96}} 
+\index{udmaio::RegAccessorArrayElement$<$ C $>$@{udmaio::RegAccessorArrayElement$<$ C $>$}!rd@{rd}}
+\index{rd@{rd}!udmaio::RegAccessorArrayElement$<$ C $>$@{udmaio::RegAccessorArrayElement$<$ C $>$}}
+\doxysubsubsection{\texorpdfstring{rd()}{rd()}}
+{\footnotesize\ttfamily template$<$typename C $>$ \\
+C \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element}{udmaio\+::\+Reg\+Accessor\+Array\+Element}}$<$ C $>$\+::rd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read register array element. 
+
+\begin{DoxyReturn}{Returns}
+T Register content 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classudmaio_1_1_reg_accessor_array_element_adab9bc37d421d67e94015a8a5f0ee9d3}\label{classudmaio_1_1_reg_accessor_array_element_adab9bc37d421d67e94015a8a5f0ee9d3}} 
+\index{udmaio::RegAccessorArrayElement$<$ C $>$@{udmaio::RegAccessorArrayElement$<$ C $>$}!wr@{wr}}
+\index{wr@{wr}!udmaio::RegAccessorArrayElement$<$ C $>$@{udmaio::RegAccessorArrayElement$<$ C $>$}}
+\doxysubsubsection{\texorpdfstring{wr()}{wr()}}
+{\footnotesize\ttfamily template$<$typename C $>$ \\
+void \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element}{udmaio\+::\+Reg\+Accessor\+Array\+Element}}$<$ C $>$\+::wr (\begin{DoxyParamCaption}\item[{const C \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Content to write to register \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_reg_accessor_array_element_a03956a268d070b2be79f9c1dd4173ce5}\label{classudmaio_1_1_reg_accessor_array_element_a03956a268d070b2be79f9c1dd4173ce5}} 
+\index{udmaio::RegAccessorArrayElement$<$ C $>$@{udmaio::RegAccessorArrayElement$<$ C $>$}!\_reg\_offs@{\_reg\_offs}}
+\index{\_reg\_offs@{\_reg\_offs}!udmaio::RegAccessorArrayElement$<$ C $>$@{udmaio::RegAccessorArrayElement$<$ C $>$}}
+\doxysubsubsection{\texorpdfstring{\_reg\_offs}{\_reg\_offs}}
+{\footnotesize\ttfamily template$<$typename C $>$ \\
+const uint32\+\_\+t \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element}{udmaio\+::\+Reg\+Accessor\+Array\+Element}}$<$ C $>$\+::\+\_\+reg\+\_\+offs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_reg_accessor_8hpp}{Reg\+Accessor.\+hpp}}\end{DoxyCompactItemize}

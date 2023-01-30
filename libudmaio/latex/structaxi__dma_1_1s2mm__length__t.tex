@@ -7,29 +7,27 @@
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-uint32\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__length__t_a68c4f9f91af2e0bfb36db934ec94b77e}{length}}\+: 26
+unsigned \mbox{\hyperlink{structaxi__dma_1_1s2mm__length__t_a0d1b0c2e0dc342443a982f0e6b51e6d6}{length}}\+: 26
 \item 
-uint8\+\_\+t \mbox{\hyperlink{structaxi__dma_1_1s2mm__length__t_a1a65b2a474e6335901b74e4efb0f3114}{rsvd\+\_\+31\+\_\+26}}\+: 6
+unsigned \mbox{\hyperlink{structaxi__dma_1_1s2mm__length__t_a6fafa1d88b31e784c5c341504ede3b20}{rsvd\+\_\+31\+\_\+26}}\+: 6
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-S2\+MM DMA Transfer Length Register
-
 S2\+MM DMA Transfer Length Register 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{structaxi__dma_1_1s2mm__length__t_a68c4f9f91af2e0bfb36db934ec94b77e}\label{structaxi__dma_1_1s2mm__length__t_a68c4f9f91af2e0bfb36db934ec94b77e}} 
+\mbox{\Hypertarget{structaxi__dma_1_1s2mm__length__t_a0d1b0c2e0dc342443a982f0e6b51e6d6}\label{structaxi__dma_1_1s2mm__length__t_a0d1b0c2e0dc342443a982f0e6b51e6d6}} 
 \index{axi\_dma::s2mm\_length\_t@{axi\_dma::s2mm\_length\_t}!length@{length}}
 \index{length@{length}!axi\_dma::s2mm\_length\_t@{axi\_dma::s2mm\_length\_t}}
 \doxysubsubsection{\texorpdfstring{length}{length}}
-{\footnotesize\ttfamily uint32\+\_\+t axi\+\_\+dma\+::s2mm\+\_\+length\+\_\+t\+::length}
+{\footnotesize\ttfamily unsigned axi\+\_\+dma\+::s2mm\+\_\+length\+\_\+t\+::length}
 
-Indicates the length in bytes of the S2\+MM buffer available to write receive data from the S2\+MM channel. Writing a non-\/zero value to this register enables S2\+MM channel to receive packet data. At the completion of the S2\+MM transfer, the number of actual bytes written on the S2\+MM AXI4 interface is updated to the S2\+MM\+\_\+\+LENGTH register. Note\+: This value must be greater than or equal to the largest expected packet to be received on S2\+MM AXI4-\/\+Stream. Values smaller than the received packet result in undefined behavior. \mbox{\Hypertarget{structaxi__dma_1_1s2mm__length__t_a1a65b2a474e6335901b74e4efb0f3114}\label{structaxi__dma_1_1s2mm__length__t_a1a65b2a474e6335901b74e4efb0f3114}} 
+Indicates the length in bytes of the S2\+MM buffer available to write receive data from the S2\+MM channel. Writing a non-\/zero value to this register enables S2\+MM channel to receive packet data. At the completion of the S2\+MM transfer, the number of actual bytes written on the S2\+MM AXI4 interface is updated to the S2\+MM\+\_\+\+LENGTH register. Note\+: This value must be greater than or equal to the largest expected packet to be received on S2\+MM AXI4-\/\+Stream. Values smaller than the received packet result in undefined behavior. \mbox{\Hypertarget{structaxi__dma_1_1s2mm__length__t_a6fafa1d88b31e784c5c341504ede3b20}\label{structaxi__dma_1_1s2mm__length__t_a6fafa1d88b31e784c5c341504ede3b20}} 
 \index{axi\_dma::s2mm\_length\_t@{axi\_dma::s2mm\_length\_t}!rsvd\_31\_26@{rsvd\_31\_26}}
 \index{rsvd\_31\_26@{rsvd\_31\_26}!axi\_dma::s2mm\_length\_t@{axi\_dma::s2mm\_length\_t}}
 \doxysubsubsection{\texorpdfstring{rsvd\_31\_26}{rsvd\_31\_26}}
-{\footnotesize\ttfamily uint8\+\_\+t axi\+\_\+dma\+::s2mm\+\_\+length\+\_\+t\+::rsvd\+\_\+31\+\_\+26}
+{\footnotesize\ttfamily unsigned axi\+\_\+dma\+::s2mm\+\_\+length\+\_\+t\+::rsvd\+\_\+31\+\_\+26}
 
 
 
