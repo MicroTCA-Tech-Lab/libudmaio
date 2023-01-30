@@ -11,9 +11,9 @@
 
 #pragma once
 
+#include "AxiDma.hpp"
+#include "RegAccessor.hpp"
 #include "UioIf.hpp"
-#include "rdl/AxiDma.hpp"
-#include "rdl/RegAccessor.hpp"
 
 namespace udmaio {
 

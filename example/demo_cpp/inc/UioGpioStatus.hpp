@@ -11,7 +11,7 @@
 
 #pragma once
 
-#include "udmaio/rdl/RegAccessor.hpp"
+#include "udmaio/RegAccessor.hpp"
 
 using namespace udmaio;
 
