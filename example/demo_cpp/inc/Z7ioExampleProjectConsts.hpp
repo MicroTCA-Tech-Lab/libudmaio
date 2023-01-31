@@ -15,14 +15,28 @@ using udmaio::UioDeviceLocation;
 
 // this information comes from the FPGA project
 namespace target_hw_consts {
-const UioDeviceLocation axi_gpio_status{"hier_interconnect_axi_gpio_status",
-                                        {0x00850000, 4 * 1024}};
-const UioDeviceLocation axi_dma_0{"hier_daq_axi_dma_0", {0x00922000, 4 * 1024}, "events0"};
-const UioDeviceLocation bram_ctrl_0{"hier_daq_axi_bram_ctrl_0", {0x00920000, 8 * 1024}};
-const UioDeviceLocation axi_traffic_gen_0{"hier_daq_axi_traffic_gen_0", {0x00910000, 64 * 1024}};
+
+const UioDeviceLocation axi_gpio_status{
+    "hier_interconnect_axi_gpio_status",
+    {0x0005'0000, 4 * 1024},
+};
+const UioDeviceLocation axi_dma_0{
+    "hier_daq_axi_dma_0",
+    {0x0022'2000, 4 * 1024},
+    "events0",
+};
+const UioDeviceLocation bram_ctrl_0{
+    "hier_daq_axi_bram_ctrl_0",
+    {0x0012'0000, 8 * 1024},
+};
+const UioDeviceLocation axi_traffic_gen_0{
+    "hier_daq_axi_traffic_gen_0",
+    {0x0021'0000, 64 * 1024},
+};
 
 constexpr uint16_t lfsr_bytes_per_beat = 8;
 
-constexpr uintptr_t fpga_mem_phys_addr = 0x03c000000UL;
-constexpr uintptr_t pcie_axi4l_offset = 0x44000000;
+constexpr uintptr_t fpga_mem_phys_addr = 0x0'3c00'0000UL;
+constexpr uintptr_t pcie_axi4l_offset = 0x0'4400'0000UL;
+
 }  // namespace target_hw_consts
