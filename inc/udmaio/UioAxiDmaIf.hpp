@@ -24,7 +24,7 @@ class UioAxiDmaIf : public UioIf, AxiDmaBlock {
     virtual const std::string_view _log_name() const override;
 
   public:
-    UioAxiDmaIf(UioDeviceLocation dev_loc) : UioIf(dev_loc), AxiDmaBlock(this) {}
+    UioAxiDmaIf(UioDeviceInfo dev_loc) : UioIf(dev_loc), AxiDmaBlock(this) {}
 
     /// @brief Configure and start the AXI DMA controller
     /// @param start_desc Address of first SGDMA descriptor
