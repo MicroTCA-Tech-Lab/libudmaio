@@ -78,11 +78,6 @@ def main():
                         default=10,
                         help='Pause between packets, default 10'
     )
-    parser.add_argument('-b', '--blk_len',
-                        type=int,
-                        default=8,
-                        help='LFSR block length / words per beat, default 8'
-    )
     parser.add_argument('-d', '--dev_path',
                         type=str,
                         help='Path to xdma device nodes'
@@ -151,7 +146,7 @@ def main():
     print('Starting TrafficGen')
     traffic_gen.start(args.nr_pkts, args.pkt_len, args.pkt_pause)
 
-    checker = LfsrChecker(args.blk_len)
+    checker = LfsrChecker(consts.LFSR_BYTES_PER_BEAT // 2) # 2 bytes per word
     words_total = 0
 
     while True:
