@@ -5,17 +5,17 @@
 \item 
 const \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} \mbox{\hyperlink{namespacetarget__hw__consts_af897aedbe3077420656f27c4846f5244}{axi\+\_\+gpio\+\_\+status}}
 \item 
-const \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} \mbox{\hyperlink{namespacetarget__hw__consts_ac63e44b8e3c76839ccd77671deed943a}{axi\+\_\+dma\+\_\+0}} \{\char`\"{}hier\+\_\+daq\+\_\+axi\+\_\+dma\+\_\+0\char`\"{}, \{0x00922000, 4 $\ast$ 1024\}, \char`\"{}events0\char`\"{}\}
+const \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} \mbox{\hyperlink{namespacetarget__hw__consts_ac63e44b8e3c76839ccd77671deed943a}{axi\+\_\+dma\+\_\+0}}
 \item 
-const \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} \mbox{\hyperlink{namespacetarget__hw__consts_ab7306a3d158ac53c959b48b0fd43824e}{bram\+\_\+ctrl\+\_\+0}} \{\char`\"{}hier\+\_\+daq\+\_\+axi\+\_\+bram\+\_\+ctrl\+\_\+0\char`\"{}, \{0x00920000, 8 $\ast$ 1024\}\}
+const \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} \mbox{\hyperlink{namespacetarget__hw__consts_ab7306a3d158ac53c959b48b0fd43824e}{bram\+\_\+ctrl\+\_\+0}}
 \item 
-const \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} \mbox{\hyperlink{namespacetarget__hw__consts_a51751ec42e24f2fbbb5e9fb5c42fc978}{axi\+\_\+traffic\+\_\+gen\+\_\+0}} \{\char`\"{}hier\+\_\+daq\+\_\+axi\+\_\+traffic\+\_\+gen\+\_\+0\char`\"{}, \{0x00910000, 64 $\ast$ 1024\}\}
+const \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} \mbox{\hyperlink{namespacetarget__hw__consts_a51751ec42e24f2fbbb5e9fb5c42fc978}{axi\+\_\+traffic\+\_\+gen\+\_\+0}}
 \item 
 constexpr uint16\+\_\+t \mbox{\hyperlink{namespacetarget__hw__consts_ac060e967c5b9564f8ec813cf94ebccfe}{lfsr\+\_\+bytes\+\_\+per\+\_\+beat}} = 8
 \item 
-constexpr uintptr\+\_\+t \mbox{\hyperlink{namespacetarget__hw__consts_a628c21cb03d8a3384076c74c38b88787}{fpga\+\_\+mem\+\_\+phys\+\_\+addr}} = 0x03c000000\+UL
+constexpr uintptr\+\_\+t \mbox{\hyperlink{namespacetarget__hw__consts_a628c21cb03d8a3384076c74c38b88787}{fpga\+\_\+mem\+\_\+phys\+\_\+addr}} = 0x0\textquotesingle{}3c00\textquotesingle{}0000\+UL
 \item 
-constexpr uintptr\+\_\+t \mbox{\hyperlink{namespacetarget__hw__consts_a33c3a968ec933e48d8001caa3720c98c}{pcie\+\_\+axi4l\+\_\+offset}} = 0x44000000
+constexpr uintptr\+\_\+t \mbox{\hyperlink{namespacetarget__hw__consts_a33c3a968ec933e48d8001caa3720c98c}{pcie\+\_\+axi4l\+\_\+offset}} = 0x0\textquotesingle{}4400\textquotesingle{}0000\+UL
 \end{DoxyCompactItemize}
 
 
@@ -24,8 +24,17 @@ constexpr uintptr\+\_\+t \mbox{\hyperlink{namespacetarget__hw__consts_a33c3a968e
 \index{target\_hw\_consts@{target\_hw\_consts}!axi\_dma\_0@{axi\_dma\_0}}
 \index{axi\_dma\_0@{axi\_dma\_0}!target\_hw\_consts@{target\_hw\_consts}}
 \doxysubsubsection{\texorpdfstring{axi\_dma\_0}{axi\_dma\_0}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} target\+\_\+hw\+\_\+consts\+::axi\+\_\+dma\+\_\+0 \{\char`\"{}hier\+\_\+daq\+\_\+axi\+\_\+dma\+\_\+0\char`\"{}, \{0x00922000, 4 $\ast$ 1024\}, \char`\"{}events0\char`\"{}\}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} target\+\_\+hw\+\_\+consts\+::axi\+\_\+dma\+\_\+0}
 
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}hier\_daq\_axi\_dma\_0"{}},}
+\DoxyCodeLine{    \{0x0022'2000, 4 * 1024\},}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}events0"{}},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacetarget__hw__consts_af897aedbe3077420656f27c4846f5244}\label{namespacetarget__hw__consts_af897aedbe3077420656f27c4846f5244}} 
 \index{target\_hw\_consts@{target\_hw\_consts}!axi\_gpio\_status@{axi\_gpio\_status}}
 \index{axi\_gpio\_status@{axi\_gpio\_status}!target\_hw\_consts@{target\_hw\_consts}}
@@ -34,27 +43,45 @@ constexpr uintptr\+\_\+t \mbox{\hyperlink{namespacetarget__hw__consts_a33c3a968e
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\{\textcolor{stringliteral}{"{}hier\_interconnect\_axi\_gpio\_status"{}},}
-\DoxyCodeLine{                                        \{0x00850000, 4 * 1024\}\}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}hier\_interconnect\_axi\_gpio\_status"{}},}
+\DoxyCodeLine{    \{0x0005'0000, 4 * 1024\},}
+\DoxyCodeLine{\}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacetarget__hw__consts_a51751ec42e24f2fbbb5e9fb5c42fc978}\label{namespacetarget__hw__consts_a51751ec42e24f2fbbb5e9fb5c42fc978}} 
 \index{target\_hw\_consts@{target\_hw\_consts}!axi\_traffic\_gen\_0@{axi\_traffic\_gen\_0}}
 \index{axi\_traffic\_gen\_0@{axi\_traffic\_gen\_0}!target\_hw\_consts@{target\_hw\_consts}}
 \doxysubsubsection{\texorpdfstring{axi\_traffic\_gen\_0}{axi\_traffic\_gen\_0}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} target\+\_\+hw\+\_\+consts\+::axi\+\_\+traffic\+\_\+gen\+\_\+0 \{\char`\"{}hier\+\_\+daq\+\_\+axi\+\_\+traffic\+\_\+gen\+\_\+0\char`\"{}, \{0x00910000, 64 $\ast$ 1024\}\}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} target\+\_\+hw\+\_\+consts\+::axi\+\_\+traffic\+\_\+gen\+\_\+0}
 
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}hier\_daq\_axi\_traffic\_gen\_0"{}},}
+\DoxyCodeLine{    \{0x0021'0000, 64 * 1024\},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacetarget__hw__consts_ab7306a3d158ac53c959b48b0fd43824e}\label{namespacetarget__hw__consts_ab7306a3d158ac53c959b48b0fd43824e}} 
 \index{target\_hw\_consts@{target\_hw\_consts}!bram\_ctrl\_0@{bram\_ctrl\_0}}
 \index{bram\_ctrl\_0@{bram\_ctrl\_0}!target\_hw\_consts@{target\_hw\_consts}}
 \doxysubsubsection{\texorpdfstring{bram\_ctrl\_0}{bram\_ctrl\_0}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} target\+\_\+hw\+\_\+consts\+::bram\+\_\+ctrl\+\_\+0 \{\char`\"{}hier\+\_\+daq\+\_\+axi\+\_\+bram\+\_\+ctrl\+\_\+0\char`\"{}, \{0x00920000, 8 $\ast$ 1024\}\}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} target\+\_\+hw\+\_\+consts\+::bram\+\_\+ctrl\+\_\+0}
 
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}hier\_daq\_axi\_bram\_ctrl\_0"{}},}
+\DoxyCodeLine{    \{0x0012'0000, 8 * 1024\},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacetarget__hw__consts_a628c21cb03d8a3384076c74c38b88787}\label{namespacetarget__hw__consts_a628c21cb03d8a3384076c74c38b88787}} 
 \index{target\_hw\_consts@{target\_hw\_consts}!fpga\_mem\_phys\_addr@{fpga\_mem\_phys\_addr}}
 \index{fpga\_mem\_phys\_addr@{fpga\_mem\_phys\_addr}!target\_hw\_consts@{target\_hw\_consts}}
 \doxysubsubsection{\texorpdfstring{fpga\_mem\_phys\_addr}{fpga\_mem\_phys\_addr}}
-{\footnotesize\ttfamily constexpr uintptr\+\_\+t target\+\_\+hw\+\_\+consts\+::fpga\+\_\+mem\+\_\+phys\+\_\+addr = 0x03c000000\+UL\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily constexpr uintptr\+\_\+t target\+\_\+hw\+\_\+consts\+::fpga\+\_\+mem\+\_\+phys\+\_\+addr = 0x0\textquotesingle{}3c00\textquotesingle{}0000\+UL\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 \mbox{\Hypertarget{namespacetarget__hw__consts_ac060e967c5b9564f8ec813cf94ebccfe}\label{namespacetarget__hw__consts_ac060e967c5b9564f8ec813cf94ebccfe}} 
 \index{target\_hw\_consts@{target\_hw\_consts}!lfsr\_bytes\_per\_beat@{lfsr\_bytes\_per\_beat}}
@@ -66,5 +93,5 @@ constexpr uintptr\+\_\+t \mbox{\hyperlink{namespacetarget__hw__consts_a33c3a968e
 \index{target\_hw\_consts@{target\_hw\_consts}!pcie\_axi4l\_offset@{pcie\_axi4l\_offset}}
 \index{pcie\_axi4l\_offset@{pcie\_axi4l\_offset}!target\_hw\_consts@{target\_hw\_consts}}
 \doxysubsubsection{\texorpdfstring{pcie\_axi4l\_offset}{pcie\_axi4l\_offset}}
-{\footnotesize\ttfamily constexpr uintptr\+\_\+t target\+\_\+hw\+\_\+consts\+::pcie\+\_\+axi4l\+\_\+offset = 0x44000000\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily constexpr uintptr\+\_\+t target\+\_\+hw\+\_\+consts\+::pcie\+\_\+axi4l\+\_\+offset = 0x0\textquotesingle{}4400\textquotesingle{}0000\+UL\hspace{0.3cm}{\ttfamily [constexpr]}}
 
