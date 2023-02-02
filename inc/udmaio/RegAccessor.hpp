@@ -19,9 +19,9 @@ class RegAccessorBase {
     static_assert((sizeof(C) % sizeof(uint32_t)) == 0,
                   "Register size must be a aligned to 32 bits");
 
+  protected:
     UioIf* _if;
 
-  protected:
     /**
      * @brief Read register
      * @param offs Offset into address space
@@ -119,7 +119,7 @@ class RegAccessorArray : public RegAccessorBase<C> {
     RegAccessorArrayElement<C> operator[](uint32_t idx) {
         assert(idx < arr_size);
         const uint32_t reg_offs = offset + idx * arr_stride;
-        return RegAccessorArrayElement<C>{RegAccessorBase<C>::_cfg, reg_offs};
+        return RegAccessorArrayElement<C>{RegAccessorBase<C>::_if, reg_offs};
     }
 
     /**
