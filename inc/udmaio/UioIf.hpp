@@ -56,8 +56,11 @@ class UioIf : private boost::noncopyable {
     mutable boost::log::sources::severity_logger_mt<blt::severity_level> _slg;
     bool _skip_write_to_arm_int;
 
-    volatile uint32_t* _reg_ptr(uint32_t offs) const {
+    volatile uint32_t* _reg_ptr32(uint32_t offs) const {
         return static_cast<volatile uint32_t*>(_mem) + offs / 4;
+    }
+    volatile uint64_t* _reg_ptr64(uint32_t offs) const {
+        return static_cast<volatile uint64_t*>(_mem) + offs / 8;
     }
 
     template <typename T>
@@ -67,7 +70,9 @@ class UioIf : private boost::noncopyable {
     }
 
     uint32_t _rd32(uint32_t offs) const;
+    uint64_t _rd64(uint32_t offs) const;
     void _wr32(uint32_t offs, uint32_t data);
+    void _wr64(uint32_t offs, uint64_t data);
 
     void arm_interrupt();
     uint32_t wait_for_interrupt();

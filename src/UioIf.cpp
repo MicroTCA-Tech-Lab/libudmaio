@@ -64,7 +64,14 @@ uint32_t UioIf::wait_for_interrupt() {
 }
 
 uint32_t UioIf::_rd32(uint32_t offs) const {
-    uint32_t tmp = *_reg_ptr(offs);
+    uint32_t tmp = *_reg_ptr32(offs);
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+        << _log_name() << ": read at 0x" << std::hex << offs << " = 0x" << tmp << std::dec;
+    return tmp;
+}
+
+uint64_t UioIf::_rd64(uint32_t offs) const {
+    uint64_t tmp = *_reg_ptr64(offs);
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
         << _log_name() << ": read at 0x" << std::hex << offs << " = 0x" << tmp << std::dec;
     return tmp;
@@ -73,7 +80,13 @@ uint32_t UioIf::_rd32(uint32_t offs) const {
 void UioIf::_wr32(uint32_t offs, uint32_t data) {
     BOOST_LOG_SEV(_slg, blt::severity_level::trace)
         << _log_name() << ": write at 0x" << std::hex << offs << " = 0x" << data << std::dec;
-    *_reg_ptr(offs) = data;
+    *_reg_ptr32(offs) = data;
+}
+
+void UioIf::_wr64(uint32_t offs, uint64_t data) {
+    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+        << _log_name() << ": write at 0x" << std::hex << offs << " = 0x" << data << std::dec;
+    *_reg_ptr64(offs) = data;
 }
 
 }  // namespace udmaio
