@@ -24,10 +24,8 @@ class UioGpioStatus : UioIf {
 
     RegAccessor<GpioData, 0> gpio{this};
 
-    virtual const std::string_view _log_name() const override { return "UioGpioStatus"; };
-
   public:
-    using UioIf::UioIf;
+    UioGpioStatus(UioDeviceInfo dev) : UioIf("UioGpioStatus", dev) {}
 
     bool is_ddr4_init_calib_complete() const { return gpio.rd().ddr4_init_calib_complete; }
 };

@@ -13,19 +13,8 @@
 
 #include <ios>
 
-#include <boost/log/core/core.hpp>
-#include <boost/log/sources/logger.hpp>
-#include <boost/log/trivial.hpp>
-
-namespace blt = boost::log::trivial;
-
-const std::string_view UioTrafficGen::_log_name() const {
-    return "UioTrafficGen";
-}
-
 void UioTrafficGen::start(uint16_t nr_pkts, uint32_t pkt_size, uint16_t pkt_pause) {
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name() << ": start, nr pkts = " << nr_pkts << ", pkt size = " << pkt_size;
+    BOOST_LOG_SEV(_lg, bls::trace) << "start, nr pkts = " << nr_pkts << ", pkt size = " << pkt_size;
 
     stop();
 
@@ -57,7 +46,7 @@ void UioTrafficGen::stop() {
     auto st_ctrl = stControl.rd();
     st_ctrl.stren = 0;
     if (st_ctrl.done) {
-        BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name() << ": clearing done bit";
+        BOOST_LOG_SEV(_lg, bls::trace) << "clearing done bit";
         // W1C – Write 1 to Clear
         st_ctrl.done = 1;
     }
@@ -65,6 +54,6 @@ void UioTrafficGen::stop() {
 }
 
 void UioTrafficGen::print_version() const {
-    BOOST_LOG_SEV(_slg, blt::severity_level::info)
-        << _log_name() << ": version = 0x" << std::hex << stControl.rd().version << std::dec;
+    BOOST_LOG_SEV(_lg, bls::info) << "version = 0x" << std::hex << stControl.rd().version
+                                  << std::dec;
 }

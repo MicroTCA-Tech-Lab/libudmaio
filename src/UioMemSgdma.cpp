@@ -13,13 +13,7 @@
 
 #include <bitset>
 
-namespace blt = boost::log::trivial;
-
 namespace udmaio {
-
-const std::string_view UioMemSgdma::_log_name() const {
-    return "UioMemSgdma";
-}
 
 // Workaround for limited PCIe memory access to certain devices:
 // "For 7 series Gen2 IP, PCIe access from the Host system must be limited to 1DW (4 Bytes)
@@ -60,8 +54,8 @@ void UioMemSgdma::write_cyc_mode(const std::vector<UioRegion>& dst_bufs) {
     _next_readable_buf = 0;
     size_t i = 0;
     for (auto dst_buf : dst_bufs) {
-        BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-            << _log_name() << ": dest buf addr = 0x" << std::hex << dst_buf.addr << std::dec;
+        BOOST_LOG_SEV(_lg, bls::trace)
+            << "dest buf addr = 0x" << std::hex << dst_buf.addr << std::dec;
 
         uintptr_t nxtdesc = _region.addr + ((i + 1) % _nr_cyc_desc) * DESC_ADDR_STEP;
 
@@ -96,7 +90,7 @@ void UioMemSgdma::init_buffers(DmaBufferAbstract& mem, size_t num_buffers, size_
 }
 
 void UioMemSgdma::print_desc(const S2mmDesc& desc) const {
-#define BLI BOOST_LOG_SEV(_slg, blt::severity_level::info) << _log_name() << ": "
+#define BLI BOOST_LOG_SEV(_lg, bls::info) << ""
     BLI << "S2mmDesc {";
     BLI << "  next desc   = 0x" << std::hex << desc.nxtdesc;
     BLI << "  buffer addr = 0x" << std::hex << desc.buffer_addr;
@@ -145,7 +139,7 @@ std::vector<UioRegion> UioMemSgdma::get_full_buffers() {
 
         bufs.emplace_back(
             UioRegion{static_cast<uintptr_t>(desc.buffer_addr), desc.status.buffer_len});
-        BOOST_LOG_SEV(_slg, blt::severity_level::trace)
+        BOOST_LOG_SEV(_lg, bls::trace)
             << "save buf #" << _next_readable_buf << " @ 0x" << std::hex << desc.buffer_addr;
 
         _next_readable_buf++;

@@ -21,10 +21,8 @@ using AxiDmaBlock = axi_dma::block<RegAccessorArray>;
 
 /// Interface to AXI DMA Core
 class UioAxiDmaIf : public UioIf, AxiDmaBlock {
-    virtual const std::string_view _log_name() const override;
-
   public:
-    UioAxiDmaIf(UioDeviceInfo dev_loc) : UioIf(dev_loc), AxiDmaBlock(this) {}
+    UioAxiDmaIf(UioDeviceInfo dev_loc) : UioIf("AxiDma", dev_loc), AxiDmaBlock(this) {}
 
     /// @brief Configure and start the AXI DMA controller
     /// @param start_desc Address of first SGDMA descriptor

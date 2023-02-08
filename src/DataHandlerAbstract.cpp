@@ -18,19 +18,20 @@
 
 namespace udmaio {
 
-DataHandlerAbstract::DataHandlerAbstract(UioAxiDmaIf& dma,
+DataHandlerAbstract::DataHandlerAbstract(std::string name,
+                                         UioAxiDmaIf& dma,
                                          UioMemSgdma& desc,
                                          DmaBufferAbstract& mem)
-    : _dma{dma}, _desc{desc}, _mem{mem}, _svc{}, _sd{_svc, _dma.get_fd_int()} {
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: ctor";
+    : Logger(name), _dma{dma}, _desc{desc}, _mem{mem}, _svc{}, _sd{_svc, _dma.get_fd_int()} {
+    BOOST_LOG_SEV(_lg, bls::trace) << "ctor";
 };
 
 DataHandlerAbstract::~DataHandlerAbstract() {
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: dtor";
+    BOOST_LOG_SEV(_lg, bls::trace) << "dtor";
 }
 
 void DataHandlerAbstract::stop() {
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: stop";
+    BOOST_LOG_SEV(_lg, bls::trace) << "stop";
     _svc.stop();
 }
 
@@ -47,20 +48,18 @@ void DataHandlerAbstract::_start_read() {
 
 void DataHandlerAbstract::_handle_input(const boost::system::error_code& ec) {
     if (ec) {
-        BOOST_LOG_SEV(_slg, blt::severity_level::error)
-            << "DataHandler: I/O error: " << ec.message();
+        BOOST_LOG_SEV(_lg, bls::error) << "I/O error: " << ec.message();
         return;
     }
 
     uint32_t irq_count = _dma.clear_interrupt();
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: irq count = " << irq_count;
+    BOOST_LOG_SEV(_lg, bls::trace) << "irq count = " << irq_count;
 
     std::vector<UioRegion> full_bufs = _desc.get_full_buffers();
     std::vector<uint8_t> bytes;
 
     if (full_bufs.empty()) {
-        BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-            << "DataHandler: spurious event, got no data";
+        BOOST_LOG_SEV(_lg, bls::trace) << "spurious event, got no data";
         goto done;
     }
 
@@ -79,12 +78,12 @@ done:
 }
 
 void DataHandlerAbstract::operator()() {
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: started";
+    BOOST_LOG_SEV(_lg, bls::trace) << "started";
 
     _start_read();
     _svc.run();
 
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "DataHandler: finished";
+    BOOST_LOG_SEV(_lg, bls::trace) << "finished";
 }
 
 }  // namespace udmaio

@@ -23,20 +23,19 @@
 
 namespace udmaio {
 
-UDmaBuf::UDmaBuf(int buf_idx) : _phys{_get_phys_addr(buf_idx), _get_size(buf_idx)} {
-    BOOST_LOG_SEV(_slg, blt::severity_level::debug) << "UDmaBuf: size      = " << _phys.size;
-    BOOST_LOG_SEV(_slg, blt::severity_level::debug)
-        << "UDmaBuf: phys addr = " << std::hex << _phys.addr << std::dec;
+UDmaBuf::UDmaBuf(int buf_idx)
+    : Logger("UDmaBuf"), _phys{_get_phys_addr(buf_idx), _get_size(buf_idx)} {
+    BOOST_LOG_SEV(_lg, bls::debug) << "size      = " << _phys.size;
+    BOOST_LOG_SEV(_lg, bls::debug) << "phys addr = " << std::hex << _phys.addr << std::dec;
 
     std::string dev_path{"/dev/udmabuf" + std::to_string(buf_idx)};
     _fd = ::open(dev_path.c_str(), O_RDWR | O_SYNC);
     if (_fd < 0) {
         throw std::runtime_error("could not open " + dev_path);
     }
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << "UDmaBuf: fd =  " << _fd << ", size = " << _phys.size;
+    BOOST_LOG_SEV(_lg, bls::trace) << "fd =  " << _fd << ", size = " << _phys.size;
     _mem = mmap(NULL, _phys.size, PROT_READ | PROT_WRITE, MAP_SHARED, _fd, 0);
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << "UDmaBuf: mmap = " << _mem;
+    BOOST_LOG_SEV(_lg, bls::trace) << "mmap = " << _mem;
     if (_mem == MAP_FAILED) {
         throw std::runtime_error("mmap failed for " + dev_path);
     }

@@ -11,23 +11,17 @@
 
 #pragma once
 
-#include <boost/log/core/core.hpp>
-#include <boost/log/sources/logger.hpp>
-#include <boost/log/trivial.hpp>
-
 #include "DmaBufferAbstract.hpp"
-
-namespace blt = boost::log::trivial;
+#include "Logging.hpp"
 
 namespace udmaio {
 
 /// @brief DMA data buffer accessed over AXI/UIO, implemented w/ udmabuf
 /// (see https://github.com/ikwzm/udmabuf)
-class UDmaBuf : public DmaBufferAbstract {
+class UDmaBuf : public DmaBufferAbstract, public Logger {
     int _fd;
     void* _mem;
     const UioRegion _phys;
-    boost::log::sources::severity_logger_mt<blt::severity_level> _slg;
 
     static size_t _get_size(int buf_idx);
     static uintptr_t _get_phys_addr(int buf_idx);

@@ -11,9 +11,6 @@
 
 #pragma once
 
-#include <boost/log/core/core.hpp>
-#include <boost/log/sources/logger.hpp>
-#include <boost/log/trivial.hpp>
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/types.h>
