@@ -128,6 +128,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_fpga_mem_buffer_over_xdma.html">FpgaMemBufferOverXdma</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA data buffer accessed over XDMA using the xdma c2h0 stream channel.  <a href="classudmaio_1_1_fpga_mem_buffer_over_xdma.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structudmaio_1_1_logger.html">Logger</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_reg_accessor_array.html">RegAccessorArray</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for register array.  <a href="classudmaio_1_1_reg_accessor_array.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,6 +175,10 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:ac339aa8ef598624de4b25e29aeff7e19"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceudmaio.html#ac339aa8ef598624de4b25e29aeff7e19">bls</a> = boost::log::trivial::severity_level</td></tr>
+<tr class="separator:ac339aa8ef598624de4b25e29aeff7e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03d59114e0370739fb2989fedeed3ffc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceudmaio.html#a03d59114e0370739fb2989fedeed3ffc">boost_logger</a> = boost::log::sources::severity_channel_logger_mt&lt; <a class="el" href="namespaceudmaio.html#ac339aa8ef598624de4b25e29aeff7e19">bls</a>, std::string &gt;</td></tr>
+<tr class="separator:a03d59114e0370739fb2989fedeed3ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05b519f65a300d1cd8f0c150fae1e71c"><td class="memTemplParams" colspan="2">template&lt;typename C , uint32_t offset&gt; </td></tr>
 <tr class="memitem:a05b519f65a300d1cd8f0c150fae1e71c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceudmaio.html#a05b519f65a300d1cd8f0c150fae1e71c">RegAccessor</a> = <a class="el" href="classudmaio_1_1_reg_accessor_array.html">RegAccessorArray</a>&lt; C, offset, 0, 0 &gt;</td></tr>
 <tr class="memdesc:a05b519f65a300d1cd8f0c150fae1e71c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience wrapper for single (i.e. non-array) register.  <a href="namespaceudmaio.html#a05b519f65a300d1cd8f0c150fae1e71c">More...</a><br /></td></tr>
@@ -208,6 +214,34 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="namespaceudmaio.html#a681a7289ae1db6b3e4fdef3a0602ebff">udmaio::AxiDmaBlock</a> = typedef <a class="el" href="namespaceaxi__dma.html#adf82eb6346eaa5e00fb4a043f95c3f40">axi_dma::block</a>&lt;<a class="el" href="classudmaio_1_1_reg_accessor_array.html">RegAccessorArray</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac339aa8ef598624de4b25e29aeff7e19" name="ac339aa8ef598624de4b25e29aeff7e19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac339aa8ef598624de4b25e29aeff7e19">&#9670;&#160;</a></span>bls</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceudmaio.html#ac339aa8ef598624de4b25e29aeff7e19">udmaio::bls</a> = typedef boost::log::trivial::severity_level</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03d59114e0370739fb2989fedeed3ffc" name="a03d59114e0370739fb2989fedeed3ffc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03d59114e0370739fb2989fedeed3ffc">&#9670;&#160;</a></span>boost_logger</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceudmaio.html#a03d59114e0370739fb2989fedeed3ffc">udmaio::boost_logger</a> = typedef boost::log::sources::severity_channel_logger_mt&lt;<a class="el" href="namespaceudmaio.html#ac339aa8ef598624de4b25e29aeff7e19">bls</a>, std::string&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">

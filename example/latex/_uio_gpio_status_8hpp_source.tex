@@ -27,12 +27,10 @@
 \DoxyCodeLine{24 }
 \DoxyCodeLine{25     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{RegAccessor<GpioData, 0>}} \mbox{\hyperlink{class_uio_gpio_status_a3c3d0e9b18d4b0ed16524c32695d9c4f}{gpio}}\{\textcolor{keyword}{this}\};}
 \DoxyCodeLine{26 }
-\DoxyCodeLine{27     \textcolor{keyword}{virtual} \textcolor{keyword}{const} std::string\_view \mbox{\hyperlink{class_uio_gpio_status_a70537c3b41b1ee737fd67945a9409125}{\_log\_name}}()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}UioGpioStatus"{}}; \};}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29   \textcolor{keyword}{public}:}
-\DoxyCodeLine{30     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if_a9eab72c96cad2df0a438ef2fcf685e2e}{UioIf::UioIf}};}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_uio_gpio_status_acde661794a05eeeda4e6ed27dba4e951}{is\_ddr4\_init\_calib\_complete}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_uio_gpio_status_a3c3d0e9b18d4b0ed16524c32695d9c4f}{gpio}}.rd().ddr4\_init\_calib\_complete; \}}
-\DoxyCodeLine{33 \};}
+\DoxyCodeLine{27   \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_uio_gpio_status_acf034e2ebeecd7364d426ad79f8be94e}{UioGpioStatus}}(\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{UioDeviceInfo}} dev) : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}(\textcolor{stringliteral}{"{}UioGpioStatus"{}}, dev) \{\}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_uio_gpio_status_acde661794a05eeeda4e6ed27dba4e951}{is\_ddr4\_init\_calib\_complete}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_uio_gpio_status_a3c3d0e9b18d4b0ed16524c32695d9c4f}{gpio}}.rd().ddr4\_init\_calib\_complete; \}}
+\DoxyCodeLine{31 \};}
 
 \end{DoxyCode}

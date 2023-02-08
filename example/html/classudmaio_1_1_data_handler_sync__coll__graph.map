@@ -1,15 +1,16 @@
 <map id="udmaio::DataHandlerSync" name="udmaio::DataHandlerSync">
-<area shape="rect" id="node1" title="Synchronous data handler with blocking read interface." alt="" coords="1139,167,1309,192"/>
-<area shape="rect" id="node2" href="$classudmaio_1_1_data_handler_abstract.html" title="Base class to implement a DMA data reception handler." alt="" coords="855,115,1045,140"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,64,137,89"/>
-<area shape="rect" id="node5" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="253,123,351,148"/>
-<area shape="rect" id="node9" href="$classudmaio_1_1_dma_buffer_abstract.html" title="Base class for DMA data buffer." alt="" coords="397,5,577,31"/>
-<area shape="rect" id="node4" href="$classudmaio_1_1_uio_axi_dma_if.html" title="Interface to AXI DMA Core." alt="" coords="610,164,753,189"/>
-<area shape="rect" id="node8" href="$classudmaio_1_1_uio_mem_sgdma.html" title="Interface to AXI DMA scatter&#45;gather buffers &amp; descriptors Uses a UioIf to access DMA descriptor memor..." alt="" coords="601,115,761,140"/>
-<area shape="rect" id="node6" href="$structudmaio_1_1_uio_region.html" title="General&#45;purpose struct to define a memory area." alt="" coords="6,132,137,157"/>
-<area shape="rect" id="node7" href="$structaxi__dma_1_1block__template.html" title="Template class for the axi_dma block, containing accessors for all its registers." alt="" coords="252,179,352,204"/>
-<area shape="rect" id="node10" href="$classudmaio_1_1_concurrent_queue.html" title=" " alt="" coords="865,217,1035,257"/>
-<area shape="rect" id="node11" title=" " alt="" coords="605,217,757,257"/>
-<area shape="rect" id="node12" title=" " alt="" coords="231,228,373,253"/>
-<area shape="rect" id="node13" title=" " alt="" coords="641,281,722,307"/>
+<area shape="rect" id="node1" title="Synchronous data handler with blocking read interface." alt="" coords="1139,213,1309,239"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_data_handler_abstract.html" title="Base class to implement a DMA data reception handler." alt="" coords="855,133,1045,159"/>
+<area shape="rect" id="node3" href="$structudmaio_1_1_logger.html" title=" " alt="" coords="16,15,127,40"/>
+<area shape="rect" id="node6" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="253,68,351,93"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,168,137,193"/>
+<area shape="rect" id="node10" href="$classudmaio_1_1_dma_buffer_abstract.html" title="Base class for DMA data buffer." alt="" coords="397,163,577,188"/>
+<area shape="rect" id="node5" href="$classudmaio_1_1_uio_axi_dma_if.html" title="Interface to AXI DMA Core." alt="" coords="610,105,753,131"/>
+<area shape="rect" id="node9" href="$classudmaio_1_1_uio_mem_sgdma.html" title="Interface to AXI DMA scatter&#45;gather buffers &amp; descriptors Uses a UioIf to access DMA descriptor memor..." alt="" coords="601,56,761,81"/>
+<area shape="rect" id="node7" href="$structudmaio_1_1_uio_region.html" title="General&#45;purpose struct to define a memory area." alt="" coords="6,73,137,99"/>
+<area shape="rect" id="node8" href="$structaxi__dma_1_1block__template.html" title="Template class for the axi_dma block, containing accessors for all its registers." alt="" coords="252,117,352,143"/>
+<area shape="rect" id="node11" href="$classudmaio_1_1_concurrent_queue.html" title=" " alt="" coords="865,262,1035,302"/>
+<area shape="rect" id="node12" title=" " alt="" coords="605,319,757,359"/>
+<area shape="rect" id="node13" title=" " alt="" coords="231,327,373,352"/>
+<area shape="rect" id="node14" title=" " alt="" coords="641,269,722,295"/>
 </map>

@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['wait_5ffor_5finterrupt_0',['wait_for_interrupt',['../classudmaio_1_1_uio_if.html#a7035fb19bfd190fe5b482d27cc528b0a',1,'udmaio::UioIf']]],
-  ['wr_1',['wr',['../classudmaio_1_1_reg_accessor_array_element.html#adab9bc37d421d67e94015a8a5f0ee9d3',1,'udmaio::RegAccessorArrayElement::wr()'],['../classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html#a39bd8f92c5a373086119460ccde63746',1,'udmaio::RegAccessorArray&lt; C, offset, 0, 0 &gt;::wr()']]],
-  ['write_5fcyc_5fmode_2',['write_cyc_mode',['../classudmaio_1_1_uio_mem_sgdma.html#ad1c770a8302c0f8c6838dca51efe5993',1,'udmaio::UioMemSgdma']]],
-  ['write_5fdesc_3',['write_desc',['../classudmaio_1_1_uio_mem_sgdma.html#aa6ef679ce983f46e1e4a13ed696cda81',1,'udmaio::UioMemSgdma']]]
+  ['udmabuf_0',['UDmaBuf',['../classudmaio_1_1_u_dma_buf.html#a57b59a0df1def9f42a4d76763960ab6d',1,'udmaio::UDmaBuf']]],
+  ['uioaxidmaif_1',['UioAxiDmaIf',['../classudmaio_1_1_uio_axi_dma_if.html#abd92168c528e68ee5ba19a88b0bbc271',1,'udmaio::UioAxiDmaIf']]],
+  ['uioconfigxdma_2',['UioConfigXdma',['../classudmaio_1_1_uio_config_xdma.html#ae57292575248142f2e15b0872c782953',1,'udmaio::UioConfigXdma::UioConfigXdma()=delete'],['../classudmaio_1_1_uio_config_xdma.html#a196df351db3d69f3605bcb89131f02cc',1,'udmaio::UioConfigXdma::UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs)']]],
+  ['uiodevicelocation_3',['UioDeviceLocation',['../classudmaio_1_1_uio_device_location.html#a54abcabef821b45fc19a628677d56ba2',1,'udmaio::UioDeviceLocation']]],
+  ['uiogpiostatus_4',['UioGpioStatus',['../class_uio_gpio_status.html#acf034e2ebeecd7364d426ad79f8be94e',1,'UioGpioStatus']]],
+  ['uioif_5',['UioIf',['../classudmaio_1_1_uio_if.html#a0f7da784db20d6de5cb16e735bde3e91',1,'udmaio::UioIf']]],
+  ['uiomemsgdma_6',['UioMemSgdma',['../classudmaio_1_1_uio_mem_sgdma.html#acdcd0d351136e23acacca576eaec047e',1,'udmaio::UioMemSgdma']]],
+  ['uiotrafficgen_7',['UioTrafficGen',['../class_uio_traffic_gen.html#a0a9f6c3a70d920dc556478332b1e4d4d',1,'UioTrafficGen']]]
 ];

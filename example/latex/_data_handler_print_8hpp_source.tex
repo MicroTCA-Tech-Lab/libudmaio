@@ -26,23 +26,22 @@
 \DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{class_data_handler_print}{DataHandlerPrint}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract}{DataHandlerAbstract}} \{}
 \DoxyCodeLine{24     std::optional<AxiTrafficGenLfsr> \mbox{\hyperlink{class_data_handler_print_aae9109b528b03fb6c458d708d92734de}{lfsr}};}
 \DoxyCodeLine{25 }
-\DoxyCodeLine{26     boost::log::sources::severity\_logger\_mt<blt::severity\_level> \mbox{\hyperlink{class_data_handler_print_a96c5faa0653dbde9612192c30445f1be}{\_slg}};}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_data_handler_print_aa3bc74f37259997bd5c538f4eddedf9a}{process\_data}}(std::vector<uint8\_t> bytes) \textcolor{keyword}{override};}
 \DoxyCodeLine{27 }
-\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_data_handler_print_aa3bc74f37259997bd5c538f4eddedf9a}{process\_data}}(std::vector<uint8\_t> bytes) \textcolor{keyword}{override};}
-\DoxyCodeLine{29 }
-\DoxyCodeLine{30     uint64\_t \mbox{\hyperlink{class_data_handler_print_a9cb0bb441af9f111f8570c3c69e39321}{\_counter\_ok}};}
-\DoxyCodeLine{31     uint64\_t \mbox{\hyperlink{class_data_handler_print_a58859aa288fa457de477dc4415d88de2}{\_counter\_total}};}
-\DoxyCodeLine{32     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_handler_print_a1b14fbe017cdfa21710819af2bfb1653}{\_num\_bytes\_per\_beat}};}
-\DoxyCodeLine{33     \textcolor{keyword}{const} uint64\_t \mbox{\hyperlink{class_data_handler_print_a58230ecb389f06ec15ea3e4c3d40009c}{\_num\_bytes\_expected}};}
-\DoxyCodeLine{34     uint64\_t \mbox{\hyperlink{class_data_handler_print_a5e550f148177832ff116f8aececc28ab}{\_num\_bytes\_rcvd}};}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{36   \textcolor{keyword}{public}:}
-\DoxyCodeLine{37     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_data_handler_print}{DataHandlerPrint}}(\mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{UioAxiDmaIf}}\& dma,}
-\DoxyCodeLine{38                               \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{UioMemSgdma}}\& desc,}
-\DoxyCodeLine{39                               \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{DmaBufferAbstract}}\& mem,}
-\DoxyCodeLine{40                               \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} num\_bytes\_per\_beat,}
-\DoxyCodeLine{41                               uint64\_t num\_bytes\_expected);}
-\DoxyCodeLine{42     std::pair<uint64\_t, uint64\_t> \mbox{\hyperlink{class_data_handler_print_ae23acb144c1bfa02e7697187410d9d6b}{operator()}}();}
-\DoxyCodeLine{43 \};}
+\DoxyCodeLine{28     uint64\_t \mbox{\hyperlink{class_data_handler_print_a9cb0bb441af9f111f8570c3c69e39321}{\_counter\_ok}};}
+\DoxyCodeLine{29     uint64\_t \mbox{\hyperlink{class_data_handler_print_a58859aa288fa457de477dc4415d88de2}{\_counter\_total}};}
+\DoxyCodeLine{30     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_data_handler_print_a1b14fbe017cdfa21710819af2bfb1653}{\_num\_bytes\_per\_beat}};}
+\DoxyCodeLine{31     \textcolor{keyword}{const} uint64\_t \mbox{\hyperlink{class_data_handler_print_a58230ecb389f06ec15ea3e4c3d40009c}{\_num\_bytes\_expected}};}
+\DoxyCodeLine{32     uint64\_t \mbox{\hyperlink{class_data_handler_print_a5e550f148177832ff116f8aececc28ab}{\_num\_bytes\_rcvd}};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34   \textcolor{keyword}{public}:}
+\DoxyCodeLine{35     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_data_handler_print}{DataHandlerPrint}}(\mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{UioAxiDmaIf}}\& dma,}
+\DoxyCodeLine{36                               \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{UioMemSgdma}}\& desc,}
+\DoxyCodeLine{37                               \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{DmaBufferAbstract}}\& mem,}
+\DoxyCodeLine{38                               \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} num\_bytes\_per\_beat,}
+\DoxyCodeLine{39                               uint64\_t num\_bytes\_expected);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     std::pair<uint64\_t, uint64\_t> \mbox{\hyperlink{class_data_handler_print_ae23acb144c1bfa02e7697187410d9d6b}{operator()}}();}
+\DoxyCodeLine{42 \};}
 
 \end{DoxyCode}

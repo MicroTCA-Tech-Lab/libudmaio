@@ -8,6 +8,5 @@ var class_data_handler_print =
     [ "_num_bytes_expected", "class_data_handler_print.html#a58230ecb389f06ec15ea3e4c3d40009c", null ],
     [ "_num_bytes_per_beat", "class_data_handler_print.html#a1b14fbe017cdfa21710819af2bfb1653", null ],
     [ "_num_bytes_rcvd", "class_data_handler_print.html#a5e550f148177832ff116f8aececc28ab", null ],
-    [ "_slg", "class_data_handler_print.html#a96c5faa0653dbde9612192c30445f1be", null ],
     [ "lfsr", "class_data_handler_print.html#aae9109b528b03fb6c458d708d92734de", null ]
 ];

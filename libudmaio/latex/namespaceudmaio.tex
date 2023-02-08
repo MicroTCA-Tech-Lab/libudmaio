@@ -15,6 +15,8 @@ class \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi}{Fpga\+Mem\+Buff
 \begin{DoxyCompactList}\small\item\em DMA data buffer accessed over AXI/\+UIO, described w/ explicit address \& size. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma}{Fpga\+Mem\+Buffer\+Over\+Xdma}}
 \begin{DoxyCompactList}\small\item\em DMA data buffer accessed over XDMA using the xdma c2h0 stream channel. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structudmaio_1_1_logger}{Logger}}
+\item 
 class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}}
 \begin{DoxyCompactList}\small\item\em Accessor for register array. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{Reg\+Accessor\+Array$<$ C, offset, 0, 0 $>$}}
@@ -46,6 +48,10 @@ struct \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
+using \mbox{\hyperlink{namespaceudmaio_ac339aa8ef598624de4b25e29aeff7e19}{bls}} = boost\+::log\+::trivial\+::severity\+\_\+level
+\item 
+using \mbox{\hyperlink{namespaceudmaio_a03d59114e0370739fb2989fedeed3ffc}{boost\+\_\+logger}} = boost\+::log\+::sources\+::severity\+\_\+channel\+\_\+logger\+\_\+mt$<$ \mbox{\hyperlink{namespaceudmaio_ac339aa8ef598624de4b25e29aeff7e19}{bls}}, std\+::string $>$
+\item 
 {\footnotesize template$<$typename C , uint32\+\_\+t offset$>$ }\\using \mbox{\hyperlink{namespaceudmaio_a05b519f65a300d1cd8f0c150fae1e71c}{Reg\+Accessor}} = \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}}$<$ C, offset, 0, 0 $>$
 \begin{DoxyCompactList}\small\item\em Convenience wrapper for single (i.\+e. non-\/array) register. \end{DoxyCompactList}\item 
 using \mbox{\hyperlink{namespaceudmaio_a681a7289ae1db6b3e4fdef3a0602ebff}{Axi\+Dma\+Block}} = \mbox{\hyperlink{namespaceaxi__dma_adf82eb6346eaa5e00fb4a043f95c3f40}{axi\+\_\+dma\+::block}}$<$ \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}} $>$
@@ -74,6 +80,18 @@ std\+::ostream \& \mbox{\hyperlink{namespaceudmaio_ac25c553cf3256b7c5d7cd731d182
 \index{AxiDmaBlock@{AxiDmaBlock}!udmaio@{udmaio}}
 \doxysubsubsection{\texorpdfstring{AxiDmaBlock}{AxiDmaBlock}}
 {\footnotesize\ttfamily using \mbox{\hyperlink{namespaceudmaio_a681a7289ae1db6b3e4fdef3a0602ebff}{udmaio\+::\+Axi\+Dma\+Block}} = typedef \mbox{\hyperlink{namespaceaxi__dma_adf82eb6346eaa5e00fb4a043f95c3f40}{axi\+\_\+dma\+::block}}$<$\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}}$>$}
+
+\mbox{\Hypertarget{namespaceudmaio_ac339aa8ef598624de4b25e29aeff7e19}\label{namespaceudmaio_ac339aa8ef598624de4b25e29aeff7e19}} 
+\index{udmaio@{udmaio}!bls@{bls}}
+\index{bls@{bls}!udmaio@{udmaio}}
+\doxysubsubsection{\texorpdfstring{bls}{bls}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceudmaio_ac339aa8ef598624de4b25e29aeff7e19}{udmaio\+::bls}} = typedef boost\+::log\+::trivial\+::severity\+\_\+level}
+
+\mbox{\Hypertarget{namespaceudmaio_a03d59114e0370739fb2989fedeed3ffc}\label{namespaceudmaio_a03d59114e0370739fb2989fedeed3ffc}} 
+\index{udmaio@{udmaio}!boost\_logger@{boost\_logger}}
+\index{boost\_logger@{boost\_logger}!udmaio@{udmaio}}
+\doxysubsubsection{\texorpdfstring{boost\_logger}{boost\_logger}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceudmaio_a03d59114e0370739fb2989fedeed3ffc}{udmaio\+::boost\+\_\+logger}} = typedef boost\+::log\+::sources\+::severity\+\_\+channel\+\_\+logger\+\_\+mt$<$\mbox{\hyperlink{namespaceudmaio_ac339aa8ef598624de4b25e29aeff7e19}{bls}}, std\+::string$>$}
 
 \mbox{\Hypertarget{namespaceudmaio_a05b519f65a300d1cd8f0c150fae1e71c}\label{namespaceudmaio_a05b519f65a300d1cd8f0c150fae1e71c}} 
 \index{udmaio@{udmaio}!RegAccessor@{RegAccessor}}

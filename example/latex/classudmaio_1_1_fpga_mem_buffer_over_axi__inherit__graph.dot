@@ -12,5 +12,7 @@ digraph "udmaio::FpgaMemBufferOverAxi"
   Node3 [label="boost::noncopyable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
   Node4 -> Node1 [dir="back",color="steelblue1",style="solid"];
   Node4 [label="udmaio::UioIf",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_if.html",tooltip="Base class for UIO interfaces."];
+  Node5 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="udmaio::Logger",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structudmaio_1_1_logger.html",tooltip=" "];
   Node3 -> Node4 [dir="back",color="firebrick4",style="solid"];
 }

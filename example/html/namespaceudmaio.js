@@ -6,6 +6,7 @@ var namespaceudmaio =
     [ "DmaBufferAbstract", "classudmaio_1_1_dma_buffer_abstract.html", "classudmaio_1_1_dma_buffer_abstract" ],
     [ "FpgaMemBufferOverAxi", "classudmaio_1_1_fpga_mem_buffer_over_axi.html", "classudmaio_1_1_fpga_mem_buffer_over_axi" ],
     [ "FpgaMemBufferOverXdma", "classudmaio_1_1_fpga_mem_buffer_over_xdma.html", "classudmaio_1_1_fpga_mem_buffer_over_xdma" ],
+    [ "Logger", "structudmaio_1_1_logger.html", "structudmaio_1_1_logger" ],
     [ "RegAccessorArray", "classudmaio_1_1_reg_accessor_array.html", "classudmaio_1_1_reg_accessor_array" ],
     [ "RegAccessorArray< C, offset, 0, 0 >", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4" ],
     [ "RegAccessorArrayElement", "classudmaio_1_1_reg_accessor_array_element.html", "classudmaio_1_1_reg_accessor_array_element" ],
@@ -21,6 +22,8 @@ var namespaceudmaio =
     [ "UioMemSgdma", "classudmaio_1_1_uio_mem_sgdma.html", "classudmaio_1_1_uio_mem_sgdma" ],
     [ "UioRegion", "structudmaio_1_1_uio_region.html", "structudmaio_1_1_uio_region" ],
     [ "AxiDmaBlock", "namespaceudmaio.html#a681a7289ae1db6b3e4fdef3a0602ebff", null ],
+    [ "bls", "namespaceudmaio.html#ac339aa8ef598624de4b25e29aeff7e19", null ],
+    [ "boost_logger", "namespaceudmaio.html#a03d59114e0370739fb2989fedeed3ffc", null ],
     [ "RegAccessor", "namespaceudmaio.html#a05b519f65a300d1cd8f0c150fae1e71c", null ],
     [ "DmaMode", "namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080cec", [
       [ "XDMA", "namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080cecaf3dac949aa62d490afa1ac577a5fc028", null ],

@@ -1,5 +1,6 @@
 <map id="UioTrafficGen" name="UioTrafficGen">
-<area shape="rect" id="node1" title="Interface to LFSR core of the demo application." alt="" coords="21,152,122,177"/>
-<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="22,79,121,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,137,31"/>
+<area shape="rect" id="node1" title="Interface to LFSR core of the demo application." alt="" coords="82,152,183,177"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="83,79,182,104"/>
+<area shape="rect" id="node3" href="$structudmaio_1_1_logger.html" title=" " alt="" coords="5,5,116,31"/>
+<area shape="rect" id="node4" title=" " alt="" coords="140,5,272,31"/>
 </map>

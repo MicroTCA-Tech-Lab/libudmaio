@@ -1,8 +1,7 @@
 var classudmaio_1_1_uio_if =
 [
-    [ "UioIf", "classudmaio_1_1_uio_if.html#a9eab72c96cad2df0a438ef2fcf685e2e", null ],
+    [ "UioIf", "classudmaio_1_1_uio_if.html#a0f7da784db20d6de5cb16e735bde3e91", null ],
     [ "~UioIf", "classudmaio_1_1_uio_if.html#abecdae6ece38df3bdd0a1797787a2487", null ],
-    [ "_log_name", "classudmaio_1_1_uio_if.html#aebd339271c546d44575671edc7f7daf9", null ],
     [ "_rd32", "classudmaio_1_1_uio_if.html#a9a7d60c6438b2d90e204bb5a456ed755", null ],
     [ "_reg_ptr", "classudmaio_1_1_uio_if.html#a95119dca4278edac9d6a8b1109ca58d1", null ],
     [ "_wr32", "classudmaio_1_1_uio_if.html#a493e161ddcaa28c256f075f45e687391", null ],
@@ -14,6 +13,5 @@ var classudmaio_1_1_uio_if =
     [ "_fd_int", "classudmaio_1_1_uio_if.html#afb95a4e415ecce2ecf99bfd8baebc670", null ],
     [ "_mem", "classudmaio_1_1_uio_if.html#a9284f47ea82fd29ee29b3dfd9f465a73", null ],
     [ "_region", "classudmaio_1_1_uio_if.html#a7b9d1b5562353fb0df19cc5c4c447458", null ],
-    [ "_skip_write_to_arm_int", "classudmaio_1_1_uio_if.html#ac1aa2dbf3f67dbcc0d77a8e346ca2339", null ],
-    [ "_slg", "classudmaio_1_1_uio_if.html#a455a6630db927accf88d12d5b838d90f", null ]
+    [ "_skip_write_to_arm_int", "classudmaio_1_1_uio_if.html#ac1aa2dbf3f67dbcc0d77a8e346ca2339", null ]
 ];

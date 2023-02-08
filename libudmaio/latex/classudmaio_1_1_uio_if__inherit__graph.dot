@@ -6,12 +6,14 @@ digraph "udmaio::UioIf"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   Node1 [label="udmaio::UioIf",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Base class for UIO interfaces."];
-  Node2 -> Node1 [dir="back",color="firebrick4",style="solid"];
-  Node2 [label="boost::noncopyable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
-  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
-  Node3 [label="udmaio::FpgaMemBufferOverAxi",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_fpga_mem_buffer_over_axi.html",tooltip="DMA data buffer accessed over AXI/UIO, described w/ explicit address & size."];
+  Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="udmaio::Logger",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structudmaio_1_1_logger.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="firebrick4",style="solid"];
+  Node3 [label="boost::noncopyable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
   Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
-  Node4 [label="udmaio::UioAxiDmaIf",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_axi_dma_if.html",tooltip="Interface to AXI DMA Core."];
+  Node4 [label="udmaio::FpgaMemBufferOverAxi",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_fpga_mem_buffer_over_axi.html",tooltip="DMA data buffer accessed over AXI/UIO, described w/ explicit address & size."];
   Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
-  Node5 [label="udmaio::UioMemSgdma",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_mem_sgdma.html",tooltip="Interface to AXI DMA scatter-gather buffers & descriptors Uses a UioIf to access DMA descriptor memor..."];
+  Node5 [label="udmaio::UioAxiDmaIf",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_axi_dma_if.html",tooltip="Interface to AXI DMA Core."];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="udmaio::UioMemSgdma",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_mem_sgdma.html",tooltip="Interface to AXI DMA scatter-gather buffers & descriptors Uses a UioIf to access DMA descriptor memor..."];
 }

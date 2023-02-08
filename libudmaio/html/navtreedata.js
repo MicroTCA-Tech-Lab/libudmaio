@@ -60,8 +60,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_axi_dma_8hpp.html",
-"classudmaio_1_1_uio_config_base.html#a3662b6e5c9c2f391a9f02a54105d17d4",
-"structaxi__dma_1_1mm2s__dmacr__t.html#a57d68758c2ce23ef7fd043b2b261f3cc"
+"classudmaio_1_1_uio_config_base.html#ad96712dac51d4dc4a8ac4780b2de6a8e",
+"structaxi__dma_1_1mm2s__dmacr__t.html#aacb21aafe5e18e9bf57cb85aa0f1a473"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

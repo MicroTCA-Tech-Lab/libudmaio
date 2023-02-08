@@ -21,6 +21,7 @@ var annotated_dup =
       [ "DmaBufferAbstract", "classudmaio_1_1_dma_buffer_abstract.html", "classudmaio_1_1_dma_buffer_abstract" ],
       [ "FpgaMemBufferOverAxi", "classudmaio_1_1_fpga_mem_buffer_over_axi.html", "classudmaio_1_1_fpga_mem_buffer_over_axi" ],
       [ "FpgaMemBufferOverXdma", "classudmaio_1_1_fpga_mem_buffer_over_xdma.html", "classudmaio_1_1_fpga_mem_buffer_over_xdma" ],
+      [ "Logger", "structudmaio_1_1_logger.html", "structudmaio_1_1_logger" ],
       [ "RegAccessorArray", "classudmaio_1_1_reg_accessor_array.html", "classudmaio_1_1_reg_accessor_array" ],
       [ "RegAccessorArray< C, offset, 0, 0 >", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4" ],
       [ "RegAccessorArrayElement", "classudmaio_1_1_reg_accessor_array_element.html", "classudmaio_1_1_reg_accessor_array_element" ],

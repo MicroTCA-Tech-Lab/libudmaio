@@ -8,21 +8,12 @@ var hierarchy =
     [ "udmaio::ConcurrentQueue< std::vector< uint8_t > >", "classudmaio_1_1_concurrent_queue.html", null ],
     [ "UioTrafficGen::ExtTrLength", "struct_uio_traffic_gen_1_1_ext_tr_length.html", null ],
     [ "UioGpioStatus::GpioData", "struct_uio_gpio_status_1_1_gpio_data.html", null ],
-    [ "axi_dma::mm2s_curdesc_t", "structaxi__dma_1_1mm2s__curdesc__t.html", null ],
-    [ "axi_dma::mm2s_dmacr_t", "structaxi__dma_1_1mm2s__dmacr__t.html", null ],
-    [ "axi_dma::mm2s_dmasr_t", "structaxi__dma_1_1mm2s__dmasr__t.html", null ],
-    [ "axi_dma::mm2s_length_t", "structaxi__dma_1_1mm2s__length__t.html", null ],
-    [ "axi_dma::mm2s_taildesc_t", "structaxi__dma_1_1mm2s__taildesc__t.html", null ],
-    [ "boost::noncopyable", null, [
+    [ "udmaio::Logger", "structudmaio_1_1_logger.html", [
       [ "udmaio::DataHandlerAbstract", "classudmaio_1_1_data_handler_abstract.html", [
         [ "DataHandlerPrint", "class_data_handler_print.html", null ],
         [ "udmaio::DataHandlerSync", "classudmaio_1_1_data_handler_sync.html", null ]
       ] ],
-      [ "udmaio::DmaBufferAbstract", "classudmaio_1_1_dma_buffer_abstract.html", [
-        [ "udmaio::FpgaMemBufferOverAxi", "classudmaio_1_1_fpga_mem_buffer_over_axi.html", null ],
-        [ "udmaio::FpgaMemBufferOverXdma", "classudmaio_1_1_fpga_mem_buffer_over_xdma.html", null ],
-        [ "udmaio::UDmaBuf", "classudmaio_1_1_u_dma_buf.html", null ]
-      ] ],
+      [ "udmaio::UDmaBuf", "classudmaio_1_1_u_dma_buf.html", null ],
       [ "udmaio::UioIf", "classudmaio_1_1_uio_if.html", [
         [ "UioGpioStatus", "class_uio_gpio_status.html", null ],
         [ "UioTrafficGen", "class_uio_traffic_gen.html", null ],
@@ -30,6 +21,20 @@ var hierarchy =
         [ "udmaio::UioAxiDmaIf", "classudmaio_1_1_uio_axi_dma_if.html", null ],
         [ "udmaio::UioMemSgdma", "classudmaio_1_1_uio_mem_sgdma.html", null ]
       ] ]
+    ] ],
+    [ "axi_dma::mm2s_curdesc_t", "structaxi__dma_1_1mm2s__curdesc__t.html", null ],
+    [ "axi_dma::mm2s_dmacr_t", "structaxi__dma_1_1mm2s__dmacr__t.html", null ],
+    [ "axi_dma::mm2s_dmasr_t", "structaxi__dma_1_1mm2s__dmasr__t.html", null ],
+    [ "axi_dma::mm2s_length_t", "structaxi__dma_1_1mm2s__length__t.html", null ],
+    [ "axi_dma::mm2s_taildesc_t", "structaxi__dma_1_1mm2s__taildesc__t.html", null ],
+    [ "boost::noncopyable", null, [
+      [ "udmaio::DataHandlerAbstract", "classudmaio_1_1_data_handler_abstract.html", null ],
+      [ "udmaio::DmaBufferAbstract", "classudmaio_1_1_dma_buffer_abstract.html", [
+        [ "udmaio::FpgaMemBufferOverAxi", "classudmaio_1_1_fpga_mem_buffer_over_axi.html", null ],
+        [ "udmaio::FpgaMemBufferOverXdma", "classudmaio_1_1_fpga_mem_buffer_over_xdma.html", null ],
+        [ "udmaio::UDmaBuf", "classudmaio_1_1_u_dma_buf.html", null ]
+      ] ],
+      [ "udmaio::UioIf", "classudmaio_1_1_uio_if.html", null ]
     ] ],
     [ "udmaio::RegAccessorBase< C >", "classudmaio_1_1_reg_accessor_base.html", [
       [ "udmaio::RegAccessorArray< C, offset, 0, 0 >< UioGpioStatus::GpioData, 0 >", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html", null ],

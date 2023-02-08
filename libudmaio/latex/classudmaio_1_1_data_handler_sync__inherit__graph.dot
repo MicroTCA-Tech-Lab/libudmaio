@@ -8,6 +8,8 @@ digraph "udmaio::DataHandlerSync"
   Node1 [label="udmaio::DataHandlerSync",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Synchronous data handler with blocking read interface."];
   Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
   Node2 [label="udmaio::DataHandlerAbstract",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_data_handler_abstract.html",tooltip="Base class to implement a DMA data reception handler."];
-  Node3 -> Node2 [dir="back",color="firebrick4",style="solid"];
-  Node3 [label="boost::noncopyable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="udmaio::Logger",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structudmaio_1_1_logger.html",tooltip=" "];
+  Node4 -> Node2 [dir="back",color="firebrick4",style="solid"];
+  Node4 [label="boost::noncopyable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
 }

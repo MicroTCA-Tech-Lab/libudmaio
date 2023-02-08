@@ -1,0 +1,10 @@
+<map id="udmaio::Logger" name="udmaio::Logger">
+<area shape="rect" id="node1" title=" " alt="" coords="5,55,116,80"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_data_handler_abstract.html" title="Base class to implement a DMA data reception handler." alt="" coords="164,5,355,31"/>
+<area shape="rect" id="node4" href="$classudmaio_1_1_u_dma_buf.html" title="DMA data buffer accessed over AXI/UIO, implemented w/ udmabuf (see https://github...." alt="" coords="196,55,323,80"/>
+<area shape="rect" id="node5" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="210,104,309,129"/>
+<area shape="rect" id="node3" href="$classudmaio_1_1_data_handler_sync.html" title="Synchronous data handler with blocking read interface." alt="" coords="421,5,592,31"/>
+<area shape="rect" id="node6" href="$classudmaio_1_1_fpga_mem_buffer_over_axi.html" title="DMA data buffer accessed over AXI/UIO, described w/ explicit address &amp; size." alt="" coords="403,55,611,80"/>
+<area shape="rect" id="node7" href="$classudmaio_1_1_uio_axi_dma_if.html" title="Interface to AXI DMA Core." alt="" coords="435,104,578,129"/>
+<area shape="rect" id="node8" href="$classudmaio_1_1_uio_mem_sgdma.html" title="Interface to AXI DMA scatter&#45;gather buffers &amp; descriptors Uses a UioIf to access DMA descriptor memor..." alt="" coords="427,153,587,179"/>
+</map>

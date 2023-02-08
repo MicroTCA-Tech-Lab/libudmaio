@@ -51,15 +51,13 @@
 \DoxyCodeLine{48     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{RegAccessor<TrLength, 0x38>}} \mbox{\hyperlink{class_uio_traffic_gen_ac23297128999e2f8c1ace2cb55c1c80f}{trLength}}\{\textcolor{keyword}{this}\};}
 \DoxyCodeLine{49     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{RegAccessor<ExtTrLength, 0x50>}} \mbox{\hyperlink{class_uio_traffic_gen_a2f9eeafe6748fcdfcb8f290ed7b16311}{extTrLength}}\{\textcolor{keyword}{this}\};}
 \DoxyCodeLine{50 }
-\DoxyCodeLine{51     \textcolor{keyword}{virtual} \textcolor{keyword}{const} std::string\_view \mbox{\hyperlink{class_uio_traffic_gen_acb4f1ec3084398f6bcda00ed3f25e6ab}{\_log\_name}}() \textcolor{keyword}{const override};}
-\DoxyCodeLine{52 }
-\DoxyCodeLine{53   \textcolor{keyword}{public}:}
-\DoxyCodeLine{54     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if_a9eab72c96cad2df0a438ef2fcf685e2e}{UioIf::UioIf}};}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_ad56c154d7266ccfda625c0da9c985862}{start}}(uint16\_t nr\_pkts, uint32\_t pkt\_size, uint16\_t pkt\_pause);}
-\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_a91a7c2c7c803d3d2c2ec3ec704adcd23}{stop}}();}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_a750caba91e833c09f3eb2b928bebf40d}{print\_version}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{60 \};}
+\DoxyCodeLine{51   \textcolor{keyword}{public}:}
+\DoxyCodeLine{52     \mbox{\hyperlink{class_uio_traffic_gen_a0a9f6c3a70d920dc556478332b1e4d4d}{UioTrafficGen}}(\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{UioDeviceInfo}} dev) : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}(\textcolor{stringliteral}{"{}UioTrafficGen"{}}, dev) \{\}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_ad56c154d7266ccfda625c0da9c985862}{start}}(uint16\_t nr\_pkts, uint32\_t pkt\_size, uint16\_t pkt\_pause);}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_a91a7c2c7c803d3d2c2ec3ec704adcd23}{stop}}();}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_a750caba91e833c09f3eb2b928bebf40d}{print\_version}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{58 \};}
 
 \end{DoxyCode}

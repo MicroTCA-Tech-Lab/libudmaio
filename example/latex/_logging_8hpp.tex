@@ -1,0 +1,31 @@
+\hypertarget{_logging_8hpp}{}\doxysection{Logging.\+hpp File Reference}
+\label{_logging_8hpp}\index{Logging.hpp@{Logging.hpp}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$boost/log/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/expressions.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/trivial.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/utility/setup/console.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/sources/severity\+\_\+channel\+\_\+logger.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/support/date\+\_\+time.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/utility/setup/common\+\_\+attributes.\+hpp$>$}\newline
+Include dependency graph for Logging.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structudmaio_1_1_logger}{udmaio\+::\+Logger}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceudmaio}{udmaio}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceudmaio_ac339aa8ef598624de4b25e29aeff7e19}{udmaio\+::bls}} = boost\+::log\+::trivial\+::severity\+\_\+level
+\item 
+using \mbox{\hyperlink{namespaceudmaio_a03d59114e0370739fb2989fedeed3ffc}{udmaio\+::boost\+\_\+logger}} = boost\+::log\+::sources\+::severity\+\_\+channel\+\_\+logger\+\_\+mt$<$ bls, std\+::string $>$
+\end{DoxyCompactItemize}

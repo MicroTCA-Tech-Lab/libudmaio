@@ -1,0 +1,33 @@
+\hypertarget{_logging_8hpp_source}{}\doxysection{Logging.\+hpp}
+\label{_logging_8hpp_source}\index{Logging.hpp@{Logging.hpp}}
+\mbox{\hyperlink{_logging_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <boost/log/core.hpp>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <boost/log/expressions.hpp>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <boost/log/trivial.hpp>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <boost/log/utility/setup/console.hpp>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <boost/log/sources/severity\_channel\_logger.hpp>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <boost/log/support/date\_time.hpp>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <boost/log/utility/setup/common\_attributes.hpp>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}} \{}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{using }\mbox{\hyperlink{namespaceudmaio_ac339aa8ef598624de4b25e29aeff7e19}{bls}} = boost::log::trivial::severity\_level;}
+\DoxyCodeLine{17 \textcolor{keyword}{using }\mbox{\hyperlink{namespaceudmaio_a03d59114e0370739fb2989fedeed3ffc}{boost\_logger}} = boost::log::sources::severity\_channel\_logger\_mt<bls, std::string>;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{struct }\mbox{\hyperlink{structudmaio_1_1_logger}{Logger}} \{}
+\DoxyCodeLine{20     \textcolor{keyword}{mutable} \mbox{\hyperlink{namespaceudmaio_a03d59114e0370739fb2989fedeed3ffc}{boost\_logger}} \mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \mbox{\hyperlink{structudmaio_1_1_logger_aa7a950db13e990cd7b63a3ec3f596826}{Logger}}(std::string name) : \mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}\{boost::log::keywords::channel = name\} \{\};}
+\DoxyCodeLine{23     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{structudmaio_1_1_logger_a019b14e9d103ef5a9443b9581321225e}{set\_level}}(\mbox{\hyperlink{namespaceudmaio_ac339aa8ef598624de4b25e29aeff7e19}{bls}} lvl);}
+\DoxyCodeLine{24     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{structudmaio_1_1_logger_ab3d76dd0720be017764b863b592379f2}{init}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} channel\_padding);}
+\DoxyCodeLine{25 \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \};  \textcolor{comment}{// namespace udmaio}}
+
+\end{DoxyCode}

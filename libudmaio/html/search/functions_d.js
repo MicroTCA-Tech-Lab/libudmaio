@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['udmabuf_0',['UDmaBuf',['../classudmaio_1_1_u_dma_buf.html#a57b59a0df1def9f42a4d76763960ab6d',1,'udmaio::UDmaBuf']]],
-  ['uioaxidmaif_1',['UioAxiDmaIf',['../classudmaio_1_1_uio_axi_dma_if.html#abd92168c528e68ee5ba19a88b0bbc271',1,'udmaio::UioAxiDmaIf']]],
-  ['uioconfigxdma_2',['UioConfigXdma',['../classudmaio_1_1_uio_config_xdma.html#ae57292575248142f2e15b0872c782953',1,'udmaio::UioConfigXdma::UioConfigXdma()=delete'],['../classudmaio_1_1_uio_config_xdma.html#a196df351db3d69f3605bcb89131f02cc',1,'udmaio::UioConfigXdma::UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs)']]],
-  ['uiodevicelocation_3',['UioDeviceLocation',['../classudmaio_1_1_uio_device_location.html#a54abcabef821b45fc19a628677d56ba2',1,'udmaio::UioDeviceLocation']]],
-  ['uioif_4',['UioIf',['../classudmaio_1_1_uio_if.html#a9eab72c96cad2df0a438ef2fcf685e2e',1,'udmaio::UioIf::UioIf()'],['../classudmaio_1_1_fpga_mem_buffer_over_axi.html#a9eab72c96cad2df0a438ef2fcf685e2e',1,'udmaio::FpgaMemBufferOverAxi::UioIf()'],['../classudmaio_1_1_uio_mem_sgdma.html#a9eab72c96cad2df0a438ef2fcf685e2e',1,'udmaio::UioMemSgdma::UioIf()']]]
+  ['set_5flevel_0',['set_level',['../structudmaio_1_1_logger.html#af5ef91d7b87172e7f04b27f66ed675f5',1,'udmaio::Logger']]],
+  ['setlinkaxi_1',['setLinkAxi',['../classudmaio_1_1_uio_device_location.html#abd778cecc780217fabc8e0ffa8081091',1,'udmaio::UioDeviceLocation']]],
+  ['setlinkxdma_2',['setLinkXdma',['../classudmaio_1_1_uio_device_location.html#acafeb86cff39d723db231b40862bbb9a',1,'udmaio::UioDeviceLocation']]],
+  ['size_3',['size',['../classudmaio_1_1_reg_accessor_array.html#a488582212ef79d90b08842feb6ec876b',1,'udmaio::RegAccessorArray']]],
+  ['start_4',['start',['../classudmaio_1_1_uio_axi_dma_if.html#a00bfa497dcdb7fba7c9d30ea0949675d',1,'udmaio::UioAxiDmaIf']]],
+  ['stop_5',['stop',['../classudmaio_1_1_data_handler_abstract.html#ad3f588a2ecfa1f89cb80c17c4a46c49e',1,'udmaio::DataHandlerAbstract::stop()'],['../classudmaio_1_1_data_handler_sync.html#ac7e05b28f78eb8e086759dd39eb62b8f',1,'udmaio::DataHandlerSync::stop()']]]
 ];

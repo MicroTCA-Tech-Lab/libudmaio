@@ -13,14 +13,14 @@ var searchData=
   ['uioconfigxdma_10',['UioConfigXdma',['../classudmaio_1_1_uio_config_xdma.html',1,'udmaio::UioConfigXdma'],['../classudmaio_1_1_uio_config_xdma.html#a196df351db3d69f3605bcb89131f02cc',1,'udmaio::UioConfigXdma::UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs)'],['../classudmaio_1_1_uio_config_xdma.html#ae57292575248142f2e15b0872c782953',1,'udmaio::UioConfigXdma::UioConfigXdma()=delete']]],
   ['uiodeviceinfo_11',['UioDeviceInfo',['../structudmaio_1_1_uio_device_info.html',1,'udmaio']]],
   ['uiodevicelocation_12',['UioDeviceLocation',['../classudmaio_1_1_uio_device_location.html',1,'udmaio::UioDeviceLocation'],['../classudmaio_1_1_uio_device_location.html#a54abcabef821b45fc19a628677d56ba2',1,'udmaio::UioDeviceLocation::UioDeviceLocation()']]],
-  ['uiogpiostatus_13',['UioGpioStatus',['../class_uio_gpio_status.html',1,'']]],
+  ['uiogpiostatus_13',['UioGpioStatus',['../class_uio_gpio_status.html',1,'UioGpioStatus'],['../class_uio_gpio_status.html#acf034e2ebeecd7364d426ad79f8be94e',1,'UioGpioStatus::UioGpioStatus()']]],
   ['uiogpiostatus_2ehpp_14',['UioGpioStatus.hpp',['../_uio_gpio_status_8hpp.html',1,'']]],
-  ['uioif_15',['UioIf',['../classudmaio_1_1_uio_if.html',1,'udmaio::UioIf'],['../classudmaio_1_1_uio_if.html#a9eab72c96cad2df0a438ef2fcf685e2e',1,'udmaio::UioIf::UioIf()'],['../classudmaio_1_1_fpga_mem_buffer_over_axi.html#a9eab72c96cad2df0a438ef2fcf685e2e',1,'udmaio::FpgaMemBufferOverAxi::UioIf()'],['../classudmaio_1_1_uio_mem_sgdma.html#a9eab72c96cad2df0a438ef2fcf685e2e',1,'udmaio::UioMemSgdma::UioIf()']]],
+  ['uioif_15',['UioIf',['../classudmaio_1_1_uio_if.html',1,'udmaio::UioIf'],['../classudmaio_1_1_uio_if.html#a0f7da784db20d6de5cb16e735bde3e91',1,'udmaio::UioIf::UioIf()']]],
   ['uioif_2ehpp_16',['UioIf.hpp',['../_uio_if_8hpp.html',1,'']]],
-  ['uiomemsgdma_17',['UioMemSgdma',['../classudmaio_1_1_uio_mem_sgdma.html',1,'udmaio']]],
+  ['uiomemsgdma_17',['UioMemSgdma',['../classudmaio_1_1_uio_mem_sgdma.html',1,'udmaio::UioMemSgdma'],['../classudmaio_1_1_uio_mem_sgdma.html#acdcd0d351136e23acacca576eaec047e',1,'udmaio::UioMemSgdma::UioMemSgdma()']]],
   ['uiomemsgdma_2ehpp_18',['UioMemSgdma.hpp',['../_uio_mem_sgdma_8hpp.html',1,'']]],
   ['uioregion_19',['UioRegion',['../structudmaio_1_1_uio_region.html',1,'udmaio']]],
-  ['uiotrafficgen_20',['UioTrafficGen',['../class_uio_traffic_gen.html',1,'']]],
+  ['uiotrafficgen_20',['UioTrafficGen',['../class_uio_traffic_gen.html',1,'UioTrafficGen'],['../class_uio_traffic_gen.html#a0a9f6c3a70d920dc556478332b1e4d4d',1,'UioTrafficGen::UioTrafficGen()']]],
   ['uiotrafficgen_2ecpp_21',['UioTrafficGen.cpp',['../_uio_traffic_gen_8cpp.html',1,'']]],
   ['uiotrafficgen_2ehpp_22',['UioTrafficGen.hpp',['../_uio_traffic_gen_8hpp.html',1,'']]]
 ];

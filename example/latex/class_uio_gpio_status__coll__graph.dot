@@ -9,13 +9,15 @@ digraph "UioGpioStatus"
   Node1 [label="UioGpioStatus",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Interface to GPIO status port of the demo application."];
   Node2 -> Node1 [dir="back",color="firebrick4",style="solid"];
   Node2 [label="udmaio::UioIf",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_if.html",tooltip="Base class for UIO interfaces."];
-  Node3 -> Node2 [dir="back",color="firebrick4",style="solid"];
-  Node3 [label="boost::noncopyable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
-  Node4 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" _region" ];
-  Node4 [label="udmaio::UioRegion",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structudmaio_1_1_uio_region.html",tooltip="General-purpose struct to define a memory area."];
-  Node5 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" gpio" ];
-  Node5 [label="udmaio::RegAccessorArray\l\< C, offset, 0, 0 \>\< UioGpioStatus\l::GpioData, 0 \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html",tooltip=" "];
-  Node6 -> Node5 [dir="back",color="steelblue1",style="solid"];
-  Node6 [label="udmaio::RegAccessorBase\< C \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_base.html",tooltip="Base class implementing register access. Only used by subclasses, not used directly."];
-  Node2 -> Node6 [dir="back",color="darkorchid3",style="dashed",label=" _if" ];
+  Node3 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="udmaio::Logger",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structudmaio_1_1_logger.html",tooltip=" "];
+  Node4 -> Node2 [dir="back",color="firebrick4",style="solid"];
+  Node4 [label="boost::noncopyable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" _region" ];
+  Node5 [label="udmaio::UioRegion",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structudmaio_1_1_uio_region.html",tooltip="General-purpose struct to define a memory area."];
+  Node6 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" gpio" ];
+  Node6 [label="udmaio::RegAccessorArray\l\< C, offset, 0, 0 \>\< UioGpioStatus\l::GpioData, 0 \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="udmaio::RegAccessorBase\< C \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_base.html",tooltip="Base class implementing register access. Only used by subclasses, not used directly."];
+  Node2 -> Node7 [dir="back",color="darkorchid3",style="dashed",label=" _if" ];
 }

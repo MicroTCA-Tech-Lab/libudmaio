@@ -20,7 +20,7 @@ Collaboration diagram for udmaio\+::Uio\+If\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classudmaio_1_1_uio_if_a9eab72c96cad2df0a438ef2fcf685e2e}{Uio\+If}} (\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} dev)
+\mbox{\hyperlink{classudmaio_1_1_uio_if_a0f7da784db20d6de5cb16e735bde3e91}{Uio\+If}} (std\+::string name, \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} dev)
 \begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classudmaio_1_1_uio_if_abecdae6ece38df3bdd0a1797787a2487}{$\sim$\+Uio\+If}} ()
 \end{DoxyCompactItemize}
@@ -38,8 +38,6 @@ void \mbox{\hyperlink{classudmaio_1_1_uio_if_a493e161ddcaa28c256f075f45e687391}{
 void \mbox{\hyperlink{classudmaio_1_1_uio_if_a6756aeb5ca3c013d0c4be22e3d573963}{arm\+\_\+interrupt}} ()
 \item 
 uint32\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_if_a7035fb19bfd190fe5b482d27cc528b0a}{wait\+\_\+for\+\_\+interrupt}} ()
-\item 
-virtual const std\+::string\+\_\+view \mbox{\hyperlink{classudmaio_1_1_uio_if_aebd339271c546d44575671edc7f7daf9}{\+\_\+log\+\_\+name}} () const =0
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -52,8 +50,6 @@ void $\ast$ \mbox{\hyperlink{classudmaio_1_1_uio_if_a9284f47ea82fd29ee29b3dfd9f4
 \item 
 \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \mbox{\hyperlink{classudmaio_1_1_uio_if_a7b9d1b5562353fb0df19cc5c4c447458}{\+\_\+region}}
 \item 
-boost\+::log\+::sources\+::severity\+\_\+logger\+\_\+mt$<$ blt\+::severity\+\_\+level $>$ \mbox{\hyperlink{classudmaio_1_1_uio_if_a455a6630db927accf88d12d5b838d90f}{\+\_\+slg}}
-\item 
 bool \mbox{\hyperlink{classudmaio_1_1_uio_if_ac1aa2dbf3f67dbcc0d77a8e346ca2339}{\+\_\+skip\+\_\+write\+\_\+to\+\_\+arm\+\_\+int}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Friends}
@@ -61,17 +57,18 @@ bool \mbox{\hyperlink{classudmaio_1_1_uio_if_ac1aa2dbf3f67dbcc0d77a8e346ca2339}{
 \item 
 {\footnotesize template$<$typename C $>$ }\\class \mbox{\hyperlink{classudmaio_1_1_uio_if_a55fe8d02d0291443c9351b5be423747f}{Reg\+Accessor\+Base}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
 Base class for UIO interfaces. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_a9eab72c96cad2df0a438ef2fcf685e2e}\label{classudmaio_1_1_uio_if_a9eab72c96cad2df0a438ef2fcf685e2e}} 
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_a0f7da784db20d6de5cb16e735bde3e91}\label{classudmaio_1_1_uio_if_a0f7da784db20d6de5cb16e735bde3e91}} 
 \index{udmaio::UioIf@{udmaio::UioIf}!UioIf@{UioIf}}
 \index{UioIf@{UioIf}!udmaio::UioIf@{udmaio::UioIf}}
 \doxysubsubsection{\texorpdfstring{UioIf()}{UioIf()}}
-{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}}]{dev }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}}]{dev }\end{DoxyParamCaption})}
 
 
 
@@ -91,16 +88,6 @@ Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\h
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_aebd339271c546d44575671edc7f7daf9}\label{classudmaio_1_1_uio_if_aebd339271c546d44575671edc7f7daf9}} 
-\index{udmaio::UioIf@{udmaio::UioIf}!\_log\_name@{\_log\_name}}
-\index{\_log\_name@{\_log\_name}!udmaio::UioIf@{udmaio::UioIf}}
-\doxysubsubsection{\texorpdfstring{\_log\_name()}{\_log\_name()}}
-{\footnotesize\ttfamily virtual const std\+::string\+\_\+view udmaio\+::\+Uio\+If\+::\+\_\+log\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
-
-
-
-Implemented in \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_acbd47202c8325118dfef3e26b7020de4}{udmaio\+::\+Fpga\+Mem\+Buffer\+Over\+Axi}}, \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a5627fbf50a2475b9288e0a464d5f1672}{udmaio\+::\+Uio\+Axi\+Dma\+If}}, and \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_ac69f5bbe51aebc5cd598ddc0e39b13fe}{udmaio\+::\+Uio\+Mem\+Sgdma}}.
-
 \mbox{\Hypertarget{classudmaio_1_1_uio_if_a9a7d60c6438b2d90e204bb5a456ed755}\label{classudmaio_1_1_uio_if_a9a7d60c6438b2d90e204bb5a456ed755}} 
 \index{udmaio::UioIf@{udmaio::UioIf}!\_rd32@{\_rd32}}
 \index{\_rd32@{\_rd32}!udmaio::UioIf@{udmaio::UioIf}}
@@ -180,12 +167,6 @@ friend class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{Reg\+Accessor\+
 \index{\_skip\_write\_to\_arm\_int@{\_skip\_write\_to\_arm\_int}!udmaio::UioIf@{udmaio::UioIf}}
 \doxysubsubsection{\texorpdfstring{\_skip\_write\_to\_arm\_int}{\_skip\_write\_to\_arm\_int}}
 {\footnotesize\ttfamily bool udmaio\+::\+Uio\+If\+::\+\_\+skip\+\_\+write\+\_\+to\+\_\+arm\+\_\+int\hspace{0.3cm}{\ttfamily [protected]}}
-
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_a455a6630db927accf88d12d5b838d90f}\label{classudmaio_1_1_uio_if_a455a6630db927accf88d12d5b838d90f}} 
-\index{udmaio::UioIf@{udmaio::UioIf}!\_slg@{\_slg}}
-\index{\_slg@{\_slg}!udmaio::UioIf@{udmaio::UioIf}}
-\doxysubsubsection{\texorpdfstring{\_slg}{\_slg}}
-{\footnotesize\ttfamily boost\+::log\+::sources\+::severity\+\_\+logger\+\_\+mt$<$blt\+::severity\+\_\+level$>$ udmaio\+::\+Uio\+If\+::\+\_\+slg\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
 
 
 

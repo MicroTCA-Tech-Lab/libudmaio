@@ -1,6 +1,6 @@
 var classudmaio_1_1_data_handler_abstract =
 [
-    [ "DataHandlerAbstract", "classudmaio_1_1_data_handler_abstract.html#aa5dae4a59e03dc2af6d9fb1bc524395b", null ],
+    [ "DataHandlerAbstract", "classudmaio_1_1_data_handler_abstract.html#a5228c5ea1c6a7a4d9f9aad4c38b03f2b", null ],
     [ "~DataHandlerAbstract", "classudmaio_1_1_data_handler_abstract.html#aad33dd6ad2e4c30ab2da27088c61053b", null ],
     [ "_handle_input", "classudmaio_1_1_data_handler_abstract.html#a03d3679ad7b54a8c3791005ea69ff711", null ],
     [ "_start_read", "classudmaio_1_1_data_handler_abstract.html#a90d25df268b70ea580559fd0ad7aaa0a", null ],
@@ -11,6 +11,5 @@ var classudmaio_1_1_data_handler_abstract =
     [ "_dma", "classudmaio_1_1_data_handler_abstract.html#aac65303521a1386f18b9492938d7768d", null ],
     [ "_mem", "classudmaio_1_1_data_handler_abstract.html#a9a1b6c27b1a44b24938146f6ff7c648b", null ],
     [ "_sd", "classudmaio_1_1_data_handler_abstract.html#a6dfd98d26b983dbee80af2e8c2f4c8e8", null ],
-    [ "_slg", "classudmaio_1_1_data_handler_abstract.html#ad1ea8a3aead868c6928983a3f35a0de8", null ],
     [ "_svc", "classudmaio_1_1_data_handler_abstract.html#aa2df2042238f57a4d0369af1f1093663", null ]
 ];
