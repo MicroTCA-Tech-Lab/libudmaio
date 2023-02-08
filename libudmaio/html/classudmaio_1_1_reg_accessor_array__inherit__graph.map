@@ -1,4 +1,4 @@
-<map id="udmaio::RegAccessorArray&lt; C, offset, arr_size, arr_stride &gt;" name="udmaio::RegAccessorArray&lt; C, offset, arr_size, arr_stride &gt;">
-<area shape="rect" id="node1" title="Accessor for register array." alt="" coords="21,79,199,133"/>
-<area shape="rect" id="node2" href="$classudmaio_1_1_reg_accessor_base.html" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="5,5,215,31"/>
+<map id="udmaio::RegAccessorArray&lt; C, U, offset, arr_size, arr_stride &gt;" name="udmaio::RegAccessorArray&lt; C, U, offset, arr_size, arr_stride &gt;">
+<area shape="rect" id="node1" title="Accessor for register array." alt="" coords="5,93,184,148"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_reg_accessor_base.html" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="5,5,184,45"/>
 </map>

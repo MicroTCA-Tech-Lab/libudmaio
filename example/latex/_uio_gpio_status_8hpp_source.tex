@@ -19,20 +19,20 @@
 \DoxyCodeLine{15 }
 \DoxyCodeLine{16 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}};}
 \DoxyCodeLine{17 }
-\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_uio_gpio_status}{UioGpioStatus}} : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}} \{}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_uio_gpio_status}{UioGpioStatus}} : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf32}} \{}
 \DoxyCodeLine{20     \textcolor{keyword}{struct }\mbox{\hyperlink{_reg_accessor_8hpp_acc0a1ca2ff7aa6ea7e505d8c7e018368}{REG\_PACKED\_ALIGNED}} \mbox{\hyperlink{struct_uio_gpio_status_1_1_gpio_data}{GpioData}} \{}
 \DoxyCodeLine{21         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_uio_gpio_status_1_1_gpio_data_a4cba73281f2eafe69f6f862fbd9d94e0}{ddr4\_init\_calib\_complete}} : 1;}
 \DoxyCodeLine{22         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_gpio_status_1_1_gpio_data_ae4f1c0742f4381c34cc81772b4a65871}{reserved}} : 31;}
 \DoxyCodeLine{23     \};}
 \DoxyCodeLine{24 }
-\DoxyCodeLine{25     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{RegAccessor<GpioData, 0>}} \mbox{\hyperlink{class_uio_gpio_status_a3c3d0e9b18d4b0ed16524c32695d9c4f}{gpio}}\{\textcolor{keyword}{this}\};}
+\DoxyCodeLine{25     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessor32<GpioData, 0>}} \mbox{\hyperlink{class_uio_gpio_status_a127480ddc263de1c9128232f2dbd6c4f}{gpio}}\{\textcolor{keyword}{this}\};}
 \DoxyCodeLine{26 }
 \DoxyCodeLine{27     \textcolor{keyword}{virtual} \textcolor{keyword}{const} std::string\_view \mbox{\hyperlink{class_uio_gpio_status_a70537c3b41b1ee737fd67945a9409125}{\_log\_name}}()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}UioGpioStatus"{}}; \};}
 \DoxyCodeLine{28 }
 \DoxyCodeLine{29   \textcolor{keyword}{public}:}
-\DoxyCodeLine{30     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if_a9eab72c96cad2df0a438ef2fcf685e2e}{UioIf::UioIf}};}
+\DoxyCodeLine{30     \textcolor{keyword}{using }UioIf::UioIf;}
 \DoxyCodeLine{31 }
-\DoxyCodeLine{32     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_uio_gpio_status_acde661794a05eeeda4e6ed27dba4e951}{is\_ddr4\_init\_calib\_complete}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_uio_gpio_status_a3c3d0e9b18d4b0ed16524c32695d9c4f}{gpio}}.rd().ddr4\_init\_calib\_complete; \}}
+\DoxyCodeLine{32     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_uio_gpio_status_acde661794a05eeeda4e6ed27dba4e951}{is\_ddr4\_init\_calib\_complete}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_uio_gpio_status_a127480ddc263de1c9128232f2dbd6c4f}{gpio}}.rd().ddr4\_init\_calib\_complete; \}}
 \DoxyCodeLine{33 \};}
 
 \end{DoxyCode}

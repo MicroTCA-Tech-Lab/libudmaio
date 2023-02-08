@@ -13,5 +13,6 @@ var dir_2eef1102eac834eaab345b18b522726b =
     [ "UioAxiDmaIf.hpp", "_uio_axi_dma_if_8hpp.html", "_uio_axi_dma_if_8hpp" ],
     [ "UioConfig.hpp", "_uio_config_8hpp.html", "_uio_config_8hpp" ],
     [ "UioIf.hpp", "_uio_if_8hpp.html", "_uio_if_8hpp" ],
+    [ "UioIfBase.hpp", "_uio_if_base_8hpp.html", "_uio_if_base_8hpp" ],
     [ "UioMemSgdma.hpp", "_uio_mem_sgdma_8hpp.html", "_uio_mem_sgdma_8hpp" ]
 ];

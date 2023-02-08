@@ -141,13 +141,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a45640a91e84015734b8d02af66a8abce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device file path (if applicable)  <a href="classudmaio_1_1_uio_config_xdma.html#a45640a91e84015734b8d02af66a8abce">More...</a><br /></td></tr>
 <tr class="separator:a45640a91e84015734b8d02af66a8abce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e91341dbfe554dc57e6509e62f3ce35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080cec">DmaMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_xdma.html#a8e91341dbfe554dc57e6509e62f3ce35">mode</a> () override</td></tr>
-<tr class="memdesc:a8e91341dbfe554dc57e6509e62f3ce35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of physical connection to the <a class="el" href="classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces.">UioIf</a> object.  <a href="classudmaio_1_1_uio_config_xdma.html#a8e91341dbfe554dc57e6509e62f3ce35">More...</a><br /></td></tr>
+<tr class="memdesc:a8e91341dbfe554dc57e6509e62f3ce35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of physical connection to the <a class="el" href="classudmaio_1_1_uio_if.html" title="UIO Interface implementing bus access.">UioIf</a> object.  <a href="classudmaio_1_1_uio_config_xdma.html#a8e91341dbfe554dc57e6509e62f3ce35">More...</a><br /></td></tr>
 <tr class="separator:a8e91341dbfe554dc57e6509e62f3ce35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad96712dac51d4dc4a8ac4780b2de6a8e"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_base.html#ad96712dac51d4dc4a8ac4780b2de6a8e">dev_path</a> ()</td></tr>
 <tr class="memdesc:ad96712dac51d4dc4a8ac4780b2de6a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device file path (if applicable)  <a href="classudmaio_1_1_uio_config_base.html#ad96712dac51d4dc4a8ac4780b2de6a8e">More...</a><br /></td></tr>
 <tr class="separator:ad96712dac51d4dc4a8ac4780b2de6a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3662b6e5c9c2f391a9f02a54105d17d4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080cec">DmaMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_base.html#a3662b6e5c9c2f391a9f02a54105d17d4">mode</a> ()=0</td></tr>
-<tr class="memdesc:a3662b6e5c9c2f391a9f02a54105d17d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of physical connection to the <a class="el" href="classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces.">UioIf</a> object.  <a href="classudmaio_1_1_uio_config_base.html#a3662b6e5c9c2f391a9f02a54105d17d4">More...</a><br /></td></tr>
+<tr class="memdesc:a3662b6e5c9c2f391a9f02a54105d17d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of physical connection to the <a class="el" href="classudmaio_1_1_uio_if.html" title="UIO Interface implementing bus access.">UioIf</a> object.  <a href="classudmaio_1_1_uio_config_base.html#a3662b6e5c9c2f391a9f02a54105d17d4">More...</a><br /></td></tr>
 <tr class="separator:a3662b6e5c9c2f391a9f02a54105d17d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb84f646e4e513ed22614056850a12ad"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structudmaio_1_1_uio_device_info.html">UioDeviceInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_base.html#abb84f646e4e513ed22614056850a12ad">operator()</a> (<a class="el" href="classudmaio_1_1_uio_device_location.html">UioDeviceLocation</a> dev_loc)=0</td></tr>
 <tr class="memdesc:abb84f646e4e513ed22614056850a12ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a <a class="el" href="structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device.">UioDeviceInfo</a> from a <a class="el" href="classudmaio_1_1_uio_device_location.html" title="Holds information where a device can be found over both UIO and XDMA.">UioDeviceLocation</a>.  <a href="classudmaio_1_1_uio_config_base.html#abb84f646e4e513ed22614056850a12ad">More...</a><br /></td></tr>
@@ -279,7 +279,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Mode of physical connection to the <a class="el" href="classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces.">UioIf</a> object. </p>
+<p>Mode of physical connection to the <a class="el" href="classudmaio_1_1_uio_if.html" title="UIO Interface implementing bus access.">UioIf</a> object. </p>
 <dl class="section return"><dt>Returns</dt><dd>DmaMode enum </dd></dl>
 
 <p>Implements <a class="el" href="classudmaio_1_1_uio_config_base.html#a3662b6e5c9c2f391a9f02a54105d17d4">udmaio::UioConfigBase</a>.</p>
@@ -313,11 +313,11 @@ Private Attributes</h2></td></tr>
 <p>Make a <a class="el" href="structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device.">UioDeviceInfo</a> from a <a class="el" href="classudmaio_1_1_uio_device_location.html" title="Holds information where a device can be found over both UIO and XDMA.">UioDeviceLocation</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dev_loc</td><td>Configuration data for a <a class="el" href="classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces.">UioIf</a> for both XDMA and UIO </td></tr>
+    <tr><td class="paramname">dev_loc</td><td>Configuration data for a <a class="el" href="classudmaio_1_1_uio_if.html" title="UIO Interface implementing bus access.">UioIf</a> for both XDMA and UIO </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device.">UioDeviceInfo</a> object to allow constructing the <a class="el" href="classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces.">UioIf</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device.">UioDeviceInfo</a> object to allow constructing the <a class="el" href="classudmaio_1_1_uio_if.html" title="UIO Interface implementing bus access.">UioIf</a> </dd></dl>
 
 <p>Implements <a class="el" href="classudmaio_1_1_uio_config_base.html#abb84f646e4e513ed22614056850a12ad">udmaio::UioConfigBase</a>.</p>
 
@@ -352,12 +352,12 @@ Private Attributes</h2></td></tr>
 <p>Create <a class="el" href="structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device.">UioDeviceInfo</a> from memory region. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dev_region</td><td>Memory region for the <a class="el" href="classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces.">UioIf</a> </td></tr>
+    <tr><td class="paramname">dev_region</td><td>Memory region for the <a class="el" href="classudmaio_1_1_uio_if.html" title="UIO Interface implementing bus access.">UioIf</a> </td></tr>
     <tr><td class="paramname">evt_dev</td><td>(optional) Event file for interrupts </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device.">UioDeviceInfo</a> object to allow constructing the <a class="el" href="classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces.">UioIf</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device.">UioDeviceInfo</a> object to allow constructing the <a class="el" href="classudmaio_1_1_uio_if.html" title="UIO Interface implementing bus access.">UioIf</a> </dd></dl>
 
 </div>
 </div>

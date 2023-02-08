@@ -8,8 +8,8 @@ var class_uio_traffic_gen =
     [ "print_version", "class_uio_traffic_gen.html#a750caba91e833c09f3eb2b928bebf40d", null ],
     [ "start", "class_uio_traffic_gen.html#ad56c154d7266ccfda625c0da9c985862", null ],
     [ "stop", "class_uio_traffic_gen.html#a91a7c2c7c803d3d2c2ec3ec704adcd23", null ],
-    [ "extTrLength", "class_uio_traffic_gen.html#a2f9eeafe6748fcdfcb8f290ed7b16311", null ],
-    [ "stConfig", "class_uio_traffic_gen.html#aad03e4e1d3061f2fe52cbcdf94f6d2d7", null ],
-    [ "stControl", "class_uio_traffic_gen.html#a551eb0a5cc23e2a73c4cd6556ef6eaa7", null ],
-    [ "trLength", "class_uio_traffic_gen.html#ac23297128999e2f8c1ace2cb55c1c80f", null ]
+    [ "extTrLength", "class_uio_traffic_gen.html#ad64e5dbeec05a17f40fe773139e409f9", null ],
+    [ "stConfig", "class_uio_traffic_gen.html#a960fff4b66b340dc92ac9c4336a3ef40", null ],
+    [ "stControl", "class_uio_traffic_gen.html#ac91d4d44432c2dcae7b9771cd4ea6fe1", null ],
+    [ "trLength", "class_uio_traffic_gen.html#a791c67feef5cc728feb8413dc8061c9e", null ]
 ];

@@ -14,95 +14,101 @@
 \DoxyCodeLine{10 }
 \DoxyCodeLine{11 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}} \{}
 \DoxyCodeLine{12 }
-\DoxyCodeLine{17 \textcolor{keyword}{template} <\textcolor{keyword}{typename} C>}
-\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase}} \{}
-\DoxyCodeLine{19     \textcolor{keyword}{static\_assert}((\textcolor{keyword}{sizeof}(C) \% \textcolor{keyword}{sizeof}(uint32\_t)) == 0,}
-\DoxyCodeLine{20                   \textcolor{stringliteral}{"{}Register size must be a aligned to 32 bits"{}});}
-\DoxyCodeLine{21 }
-\DoxyCodeLine{22   \textcolor{keyword}{protected}:}
-\DoxyCodeLine{23     \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}* \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a4067a4efbfab68504bf00063b389eb93}{\_if}};}
+\DoxyCodeLine{18 \textcolor{keyword}{template} <\textcolor{keyword}{typename} C, \textcolor{keyword}{typename} U>}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase}} \{}
+\DoxyCodeLine{20   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{21     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a15e3cc0b449b7630cbee38f95714c2ce}{bus\_type\_t}} = \textcolor{keyword}{typename} U::UioIfBusType;}
+\DoxyCodeLine{22     \textcolor{keyword}{static\_assert}((\textcolor{keyword}{sizeof}(C) \% \textcolor{keyword}{sizeof}(\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a15e3cc0b449b7630cbee38f95714c2ce}{bus\_type\_t}})) == 0,}
+\DoxyCodeLine{23                   \textcolor{stringliteral}{"{}Register size must be a aligned to bus access width"{}});}
 \DoxyCodeLine{24 }
-\DoxyCodeLine{30     C \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_ac48b43f437837cd965706d4c7626b2b9}{\_rd}}(uint32\_t offs)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{31         C result;}
-\DoxyCodeLine{32         uint32\_t* ptr = \textcolor{keyword}{reinterpret\_cast<}uint32\_t*\textcolor{keyword}{>}(\&result);}
-\DoxyCodeLine{33         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < \textcolor{keyword}{sizeof}(C); i += \textcolor{keyword}{sizeof}(uint32\_t)) \{}
-\DoxyCodeLine{34             *ptr++ = \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a4067a4efbfab68504bf00063b389eb93}{\_if}}-\/>\mbox{\hyperlink{classudmaio_1_1_uio_if_a9a7d60c6438b2d90e204bb5a456ed755}{\_rd32}}(offs + i);}
-\DoxyCodeLine{35         \}}
-\DoxyCodeLine{36         \textcolor{keywordflow}{return} result;}
-\DoxyCodeLine{37     \}}
-\DoxyCodeLine{38 }
-\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a7107c7f25cb16b638ae56903c7803837}{\_wr}}(uint32\_t offs, \textcolor{keyword}{const} C\& value) \{}
-\DoxyCodeLine{45         \textcolor{keyword}{const} uint32\_t* ptr = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }uint32\_t*\textcolor{keyword}{>}(\&value);}
-\DoxyCodeLine{46         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < \textcolor{keyword}{sizeof}(C); i += \textcolor{keyword}{sizeof}(uint32\_t)) \{}
-\DoxyCodeLine{47             \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a4067a4efbfab68504bf00063b389eb93}{\_if}}-\/>\mbox{\hyperlink{classudmaio_1_1_uio_if_a493e161ddcaa28c256f075f45e687391}{\_wr32}}(offs + i, *ptr++);}
-\DoxyCodeLine{48         \}}
-\DoxyCodeLine{49     \}}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51   \textcolor{keyword}{public}:}
-\DoxyCodeLine{52     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if}{constructor\_arg\_type}} = \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}*;}
-\DoxyCodeLine{53 }
-\DoxyCodeLine{54     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_ad878857665ec6cb11fb5133240a23e65}{RegAccessorBase}}() = \textcolor{keyword}{delete};}
+\DoxyCodeLine{25     U* \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_aacad53049524692810e6f78545bb4ae9}{\_if}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{32     C \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a6533971f0b802d7a96e57621e1e585c7}{\_rd}}(uint32\_t offs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{33         C result;}
+\DoxyCodeLine{34         \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a15e3cc0b449b7630cbee38f95714c2ce}{bus\_type\_t}}* ptr = \textcolor{keyword}{reinterpret\_cast<}\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a15e3cc0b449b7630cbee38f95714c2ce}{bus\_type\_t}}*\textcolor{keyword}{>}(\&result);}
+\DoxyCodeLine{35         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < \textcolor{keyword}{sizeof}(C); i += \textcolor{keyword}{sizeof}(\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a15e3cc0b449b7630cbee38f95714c2ce}{bus\_type\_t}})) \{}
+\DoxyCodeLine{36             *ptr++ = \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_aacad53049524692810e6f78545bb4ae9}{\_if}}-\/>\_rd(offs + i);}
+\DoxyCodeLine{37         \}}
+\DoxyCodeLine{38         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{39     \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_ac341f9545ab4777642db8b1b04616b36}{\_wr}}(uint32\_t offs, \textcolor{keyword}{const} C\& value) \{}
+\DoxyCodeLine{47         \textcolor{keyword}{const} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a15e3cc0b449b7630cbee38f95714c2ce}{bus\_type\_t}}* ptr = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a15e3cc0b449b7630cbee38f95714c2ce}{bus\_type\_t}}*\textcolor{keyword}{>}(\&value);}
+\DoxyCodeLine{48         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < \textcolor{keyword}{sizeof}(C); i += \textcolor{keyword}{sizeof}(\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a15e3cc0b449b7630cbee38f95714c2ce}{bus\_type\_t}})) \{}
+\DoxyCodeLine{49             \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_aacad53049524692810e6f78545bb4ae9}{\_if}}-\/>\_wr(offs + i, *ptr++);}
+\DoxyCodeLine{50         \}}
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keyword}{public}:}
+\DoxyCodeLine{54     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a9f25adb8e63a3643c3759a70c55e9b60}{constructor\_arg\_type}} = U*;}
 \DoxyCodeLine{55 }
-\DoxyCodeLine{60     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a7298226a53b233dd99ca2dec3e41d109}{RegAccessorBase}}(\mbox{\hyperlink{classudmaio_1_1_uio_if}{constructor\_arg\_type}} interface) : \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a4067a4efbfab68504bf00063b389eb93}{\_if}}\{interface\} \{\}}
-\DoxyCodeLine{61 \};}
-\DoxyCodeLine{62 }
-\DoxyCodeLine{67 \textcolor{keyword}{template} <\textcolor{keyword}{typename} C>}
-\DoxyCodeLine{68 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element}{RegAccessorArrayElement}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase}}<C> \{}
-\DoxyCodeLine{69     \textcolor{keyword}{static\_assert}((\textcolor{keyword}{sizeof}(C) \% \textcolor{keyword}{sizeof}(uint32\_t)) == 0, \textcolor{stringliteral}{"{}Register size must be aligned to 32 bits"{}});}
-\DoxyCodeLine{70 }
-\DoxyCodeLine{71     \textcolor{keyword}{const} uint32\_t \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_a03956a268d070b2be79f9c1dd4173ce5}{\_reg\_offs}};}
-\DoxyCodeLine{72 }
-\DoxyCodeLine{73   \textcolor{keyword}{public}:}
-\DoxyCodeLine{79     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_aaa4e2dac359c1b0ed94316ca5a24727b}{RegAccessorArrayElement}}(\textcolor{keyword}{typename} \mbox{\hyperlink{classudmaio_1_1_uio_if}{RegAccessorBase<C>::constructor\_arg\_type}} c, uint32\_t reg\_offs)}
-\DoxyCodeLine{80         : \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase}}<C>\{c\}, \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_a03956a268d070b2be79f9c1dd4173ce5}{\_reg\_offs}}\{reg\_offs\} \{\}}
-\DoxyCodeLine{81 }
-\DoxyCodeLine{86     C \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_ae54bc577dd3b1006870b046116278d96}{rd}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_ac48b43f437837cd965706d4c7626b2b9}{RegAccessorBase<C>::\_rd}}(\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_a03956a268d070b2be79f9c1dd4173ce5}{\_reg\_offs}}); \}}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{92     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_adab9bc37d421d67e94015a8a5f0ee9d3}{wr}}(\textcolor{keyword}{const} C\& value) \{ \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a7107c7f25cb16b638ae56903c7803837}{RegAccessorBase<C>::\_wr}}(\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_a03956a268d070b2be79f9c1dd4173ce5}{\_reg\_offs}}, value); \}}
-\DoxyCodeLine{93 \};}
-\DoxyCodeLine{94 }
-\DoxyCodeLine{102 \textcolor{keyword}{template} <\textcolor{keyword}{typename} C, u\textcolor{keywordtype}{int}32\_t offset, u\textcolor{keywordtype}{int}32\_t arr\_size, u\textcolor{keywordtype}{int}32\_t arr\_str\textcolor{keywordtype}{id}e>}
-\DoxyCodeLine{103 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessorArray}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase}}<C> \{}
-\DoxyCodeLine{104     \textcolor{keyword}{static\_assert}((\textcolor{keyword}{sizeof}(C) \% \textcolor{keyword}{sizeof}(uint32\_t)) == 0, \textcolor{stringliteral}{"{}Register size must be aligned to 32 bits"{}});}
-\DoxyCodeLine{105     \textcolor{keyword}{static\_assert}((offset \% \textcolor{keyword}{sizeof}(uint32\_t)) == 0,}
-\DoxyCodeLine{106                   \textcolor{stringliteral}{"{}Register array offset must be aligned to 32 bits"{}});}
-\DoxyCodeLine{107     \textcolor{keyword}{static\_assert}(arr\_size > 0, \textcolor{stringliteral}{"{}Register array size must be non-\/zero"{}});}
-\DoxyCodeLine{108     \textcolor{keyword}{static\_assert}((arr\_stride \% \textcolor{keyword}{sizeof}(uint32\_t)) == 0,}
-\DoxyCodeLine{109                   \textcolor{stringliteral}{"{}Register array stride must be aligned to 32 bits"{}});}
-\DoxyCodeLine{110 }
-\DoxyCodeLine{111   \textcolor{keyword}{public}:}
-\DoxyCodeLine{112     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase}}<C>\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_ad878857665ec6cb11fb5133240a23e65}{::RegAccessorBase}};}
-\DoxyCodeLine{113 }
-\DoxyCodeLine{119     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element}{RegAccessorArrayElement<C>}} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_a4b8a2afd9ba4baefa3f4e218bc0dc020}{operator[]}}(uint32\_t idx) \{}
-\DoxyCodeLine{120         assert(idx < arr\_size);}
-\DoxyCodeLine{121         \textcolor{keyword}{const} uint32\_t reg\_offs = offset + idx * arr\_stride;}
-\DoxyCodeLine{122         \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element}{RegAccessorArrayElement<C>}}\{\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase<C>::\_if}}, reg\_offs\};}
-\DoxyCodeLine{123     \}}
-\DoxyCodeLine{124 }
-\DoxyCodeLine{129     \textcolor{keyword}{constexpr} uint32\_t \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_a488582212ef79d90b08842feb6ec876b}{size}}() \{ \textcolor{keywordflow}{return} arr\_size; \}}
-\DoxyCodeLine{130 \};}
-\DoxyCodeLine{131 }
-\DoxyCodeLine{137 \textcolor{keyword}{template} <\textcolor{keyword}{typename} C, u\textcolor{keywordtype}{int}32\_t offset>}
-\DoxyCodeLine{138 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessorArray}}<C, offset, 0, 0> : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase}}<C> \{}
-\DoxyCodeLine{139     \textcolor{keyword}{static\_assert}((\textcolor{keyword}{sizeof}(C) \% \textcolor{keyword}{sizeof}(uint32\_t)) == 0, \textcolor{stringliteral}{"{}Register size must be aligned to 32 bits"{}});}
-\DoxyCodeLine{140     \textcolor{keyword}{static\_assert}((offset \% \textcolor{keyword}{sizeof}(uint32\_t)) == 0, \textcolor{stringliteral}{"{}Register offset must be aligned to 32 bits"{}});}
-\DoxyCodeLine{141 }
-\DoxyCodeLine{142   \textcolor{keyword}{public}:}
-\DoxyCodeLine{143     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase}}<C>\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_ad878857665ec6cb11fb5133240a23e65}{::RegAccessorBase}};}
+\DoxyCodeLine{56     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_ae9f59e8700168bf999053944c48cc340}{RegAccessorBase}}() = \textcolor{keyword}{delete};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{62     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a9b6f5d7b942e57fc42d0de842cfcd514}{RegAccessorBase}}(\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a9f25adb8e63a3643c3759a70c55e9b60}{constructor\_arg\_type}} interface) : \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_aacad53049524692810e6f78545bb4ae9}{\_if}}\{interface\} \{\}}
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{70 \textcolor{keyword}{template} <\textcolor{keyword}{typename} C, \textcolor{keyword}{typename} U>}
+\DoxyCodeLine{71 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element}{RegAccessorArrayElement}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase}}<C, U> \{}
+\DoxyCodeLine{72     \textcolor{keyword}{const} uint32\_t \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_a51743efe3039af2247498ba649d4dd7c}{\_reg\_offs}};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   \textcolor{keyword}{public}:}
+\DoxyCodeLine{80     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_ac47f6a38fe9b22c973e3a59647c60f33}{RegAccessorArrayElement}}(\textcolor{keyword}{typename} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a9f25adb8e63a3643c3759a70c55e9b60}{RegAccessorBase<C, U>::constructor\_arg\_type}} c,}
+\DoxyCodeLine{81                             uint32\_t reg\_offs)}
+\DoxyCodeLine{82         : \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase}}<C, U>\{c\}, \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_a51743efe3039af2247498ba649d4dd7c}{\_reg\_offs}}\{reg\_offs\} \{\}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{88     C \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_a363921e50105a6e629a731a809d432d8}{rd}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a6533971f0b802d7a96e57621e1e585c7}{RegAccessorBase<C, U>::\_rd}}(\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_a51743efe3039af2247498ba649d4dd7c}{\_reg\_offs}}); \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{94     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_a00d22a593d3505ad3d395ee015a42ff4}{wr}}(\textcolor{keyword}{const} C\& value) \{ \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_ac341f9545ab4777642db8b1b04616b36}{RegAccessorBase<C, U>::\_wr}}(\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element_a51743efe3039af2247498ba649d4dd7c}{\_reg\_offs}}, value); \}}
+\DoxyCodeLine{95 \};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{105 \textcolor{keyword}{template} <\textcolor{keyword}{typename} C, \textcolor{keyword}{typename} U, u\textcolor{keywordtype}{int}32\_t offset, u\textcolor{keywordtype}{int}32\_t arr\_size, u\textcolor{keywordtype}{int}32\_t arr\_str\textcolor{keywordtype}{id}e>}
+\DoxyCodeLine{106 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessorArray}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase}}<C, U> \{}
+\DoxyCodeLine{107     \textcolor{keyword}{static\_assert}((offset \% \textcolor{keyword}{sizeof}(\textcolor{keyword}{typename} U::UioIfBusType)) == 0,}
+\DoxyCodeLine{108                   \textcolor{stringliteral}{"{}Register array offset must be aligned to bus access width"{}});}
+\DoxyCodeLine{109     \textcolor{keyword}{static\_assert}(arr\_size > 0, \textcolor{stringliteral}{"{}Register array size must be non-\/zero"{}});}
+\DoxyCodeLine{110     \textcolor{keyword}{static\_assert}((arr\_stride \% \textcolor{keyword}{sizeof}(\textcolor{keyword}{typename} U::UioIfBusType)) == 0,}
+\DoxyCodeLine{111                   \textcolor{stringliteral}{"{}Register array stride must be aligned to bus access width"{}});}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113   \textcolor{keyword}{public}:}
+\DoxyCodeLine{114     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase}}<C, U>\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_ae9f59e8700168bf999053944c48cc340}{::RegAccessorBase}};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{121     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element}{RegAccessorArrayElement<C, U>}} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_aaeb9c859634ac7899ca8dfbbd9bf2653}{operator[]}}(uint32\_t idx) \{}
+\DoxyCodeLine{122         assert(idx < arr\_size);}
+\DoxyCodeLine{123         \textcolor{keyword}{const} uint32\_t reg\_offs = offset + idx * arr\_stride;}
+\DoxyCodeLine{124         \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element}{RegAccessorArrayElement<C, U>}}\{\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase<C, U>::\_if}}, reg\_offs\};}
+\DoxyCodeLine{125     \}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{131     \textcolor{keyword}{constexpr} uint32\_t \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_a89a77f0790dc9d269e3a428f1b858d60}{size}}() \{ \textcolor{keywordflow}{return} arr\_size; \}}
+\DoxyCodeLine{132 \};}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{140 \textcolor{keyword}{template} <\textcolor{keyword}{typename} C, \textcolor{keyword}{typename} U, u\textcolor{keywordtype}{int}32\_t offset>}
+\DoxyCodeLine{141 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessorArray}}<C, U, offset, 0, 0> : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase}}<C, U> \{}
+\DoxyCodeLine{142     \textcolor{keyword}{static\_assert}((offset \% \textcolor{keyword}{sizeof}(\textcolor{keyword}{typename} U::UioIfBusType)) == 0,}
+\DoxyCodeLine{143                   \textcolor{stringliteral}{"{}Register offset must be aligned to bus width"{}});}
 \DoxyCodeLine{144 }
-\DoxyCodeLine{149     C \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4_ab7a42dc9e810b80b4ed294730414ec11}{rd}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_ac48b43f437837cd965706d4c7626b2b9}{RegAccessorBase<C>::\_rd}}(offset); \}}
-\DoxyCodeLine{150 }
-\DoxyCodeLine{155     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4_a39bd8f92c5a373086119460ccde63746}{wr}}(\textcolor{keyword}{const} C\& value) \{ \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a7107c7f25cb16b638ae56903c7803837}{RegAccessorBase<C>::\_wr}}(offset, value); \}}
-\DoxyCodeLine{156 \};}
-\DoxyCodeLine{157 }
-\DoxyCodeLine{163 \textcolor{keyword}{template} <\textcolor{keyword}{typename} C, u\textcolor{keywordtype}{int}32\_t offset>}
-\DoxyCodeLine{164 \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{RegAccessor}} = \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessorArray<C, offset, 0, 0>}};}
-\DoxyCodeLine{165 }
-\DoxyCodeLine{173 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{174 std::string \mbox{\hyperlink{namespaceudmaio_a5c03c63d910348e26da90a894fc7242e}{field\_to\_str}}(\textcolor{keyword}{const} T\& chararray) \{}
-\DoxyCodeLine{175     \textcolor{keywordflow}{return} \{chararray, strnlen(chararray, \textcolor{keyword}{sizeof}(chararray))\};}
-\DoxyCodeLine{176 \}}
-\DoxyCodeLine{177 }
-\DoxyCodeLine{178 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{145   \textcolor{keyword}{public}:}
+\DoxyCodeLine{146     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase}}<C, U>\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_ae9f59e8700168bf999053944c48cc340}{::RegAccessorBase}};}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{152     C \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01_u_00_01offset_00_010_00_010_01_4_aaa375c468ba48448a76c43cbea2e6ebe}{rd}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_a6533971f0b802d7a96e57621e1e585c7}{RegAccessorBase<C, U>::\_rd}}(offset); \}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{158     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01_u_00_01offset_00_010_00_010_01_4_a70daf4b61a25927ff34b55d10fb53aa9}{wr}}(\textcolor{keyword}{const} C\& value) \{ \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base_ac341f9545ab4777642db8b1b04616b36}{RegAccessorBase<C, U>::\_wr}}(offset, value); \}}
+\DoxyCodeLine{159 \};}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{166 \textcolor{keyword}{template} <\textcolor{keyword}{typename} C, u\textcolor{keywordtype}{int}32\_t offset>}
+\DoxyCodeLine{167 \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessor32}} = \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessorArray<C, UioIf<uint32\_t>}}, offset, 0, 0>;}
+\DoxyCodeLine{168 \textcolor{keyword}{template} <\textcolor{keyword}{typename} C, u\textcolor{keywordtype}{int}32\_t offset>}
+\DoxyCodeLine{169 \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessor64}} = \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessorArray<C, UioIf<uint64\_t>}}, offset, 0, 0>;}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 \textcolor{keyword}{template} <\textcolor{keyword}{typename} C, u\textcolor{keywordtype}{int}32\_t offset, u\textcolor{keywordtype}{int}32\_t arr\_size, u\textcolor{keywordtype}{int}32\_t arr\_str\textcolor{keywordtype}{id}e>}
+\DoxyCodeLine{172 \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessorArray32}} = \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessorArray<C, UioIf<uint32\_t>}}, offset, arr\_size, arr\_stride>;}
+\DoxyCodeLine{173 \textcolor{keyword}{template} <\textcolor{keyword}{typename} C, u\textcolor{keywordtype}{int}32\_t offset, u\textcolor{keywordtype}{int}32\_t arr\_size, u\textcolor{keywordtype}{int}32\_t arr\_str\textcolor{keywordtype}{id}e>}
+\DoxyCodeLine{174 \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessorArray64}} = \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessorArray<C, UioIf<uint64\_t>}}, offset, arr\_size, arr\_stride>;}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{183 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{184 std::string \mbox{\hyperlink{namespaceudmaio_a5c03c63d910348e26da90a894fc7242e}{field\_to\_str}}(\textcolor{keyword}{const} T\& chararray) \{}
+\DoxyCodeLine{185     \textcolor{keywordflow}{return} \{chararray, strnlen(chararray, \textcolor{keyword}{sizeof}(chararray))\};}
+\DoxyCodeLine{186 \}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}

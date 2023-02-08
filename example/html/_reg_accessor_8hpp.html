@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('_reg_accessor_8hpp.html',''); initResi
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for RegAccessor.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_reg_accessor_8hpp__incl.svg" width="100%" height="503"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_reg_accessor_8hpp__incl.svg" width="100%" height="558"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -127,17 +127,17 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_reg_accessor_base.html">udmaio::RegAccessorBase&lt; C &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_reg_accessor_base.html">udmaio::RegAccessorBase&lt; C, U &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class implementing register access. Only used by subclasses, not used directly.  <a href="classudmaio_1_1_reg_accessor_base.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_reg_accessor_array_element.html">udmaio::RegAccessorArrayElement&lt; C &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for register array element. Returned by <a class="el" href="classudmaio_1_1_reg_accessor_array.html#a4b8a2afd9ba4baefa3f4e218bc0dc020" title="Return element accessor.">RegAccessorArray&lt;C&gt;::operator[]</a>.  <a href="classudmaio_1_1_reg_accessor_array_element.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_reg_accessor_array_element.html">udmaio::RegAccessorArrayElement&lt; C, U &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for register array element. Returned by <a class="el" href="classudmaio_1_1_reg_accessor_array.html#aaeb9c859634ac7899ca8dfbbd9bf2653" title="Return element accessor.">RegAccessorArray&lt;C&gt;::operator[]</a>.  <a href="classudmaio_1_1_reg_accessor_array_element.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_reg_accessor_array.html">udmaio::RegAccessorArray&lt; C, offset, arr_size, arr_stride &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_reg_accessor_array.html">udmaio::RegAccessorArray&lt; C, U, offset, arr_size, arr_stride &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for register array.  <a href="classudmaio_1_1_reg_accessor_array.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html">udmaio::RegAccessorArray&lt; C, offset, 0, 0 &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for single register.  <a href="classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_reg_accessor_array_3_01_c_00_01_u_00_01offset_00_010_00_010_01_4.html">udmaio::RegAccessorArray&lt; C, U, offset, 0, 0 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor for single register.  <a href="classudmaio_1_1_reg_accessor_array_3_01_c_00_01_u_00_01offset_00_010_00_010_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -152,10 +152,19 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a05b519f65a300d1cd8f0c150fae1e71c"><td class="memTemplParams" colspan="2">template&lt;typename C , uint32_t offset&gt; </td></tr>
-<tr class="memitem:a05b519f65a300d1cd8f0c150fae1e71c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceudmaio.html#a05b519f65a300d1cd8f0c150fae1e71c">udmaio::RegAccessor</a> = RegAccessorArray&lt; C, offset, 0, 0 &gt;</td></tr>
-<tr class="memdesc:a05b519f65a300d1cd8f0c150fae1e71c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience wrapper for single (i.e. non-array) register.  <a href="namespaceudmaio.html#a05b519f65a300d1cd8f0c150fae1e71c">More...</a><br /></td></tr>
-<tr class="separator:a05b519f65a300d1cd8f0c150fae1e71c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75eaebb71b21ce892c7a054046541e42"><td class="memTemplParams" colspan="2">template&lt;typename C , uint32_t offset&gt; </td></tr>
+<tr class="memitem:a75eaebb71b21ce892c7a054046541e42"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceudmaio.html#a75eaebb71b21ce892c7a054046541e42">udmaio::RegAccessor32</a> = RegAccessorArray&lt; C, UioIf&lt; uint32_t &gt;, offset, 0, 0 &gt;</td></tr>
+<tr class="memdesc:a75eaebb71b21ce892c7a054046541e42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience wrappers for single (i.e. non-array) register (32-bit bus access)  <a href="namespaceudmaio.html#a75eaebb71b21ce892c7a054046541e42">More...</a><br /></td></tr>
+<tr class="separator:a75eaebb71b21ce892c7a054046541e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb018eb4da7111faae1a6ff44fffbdb"><td class="memTemplParams" colspan="2">template&lt;typename C , uint32_t offset&gt; </td></tr>
+<tr class="memitem:a2eb018eb4da7111faae1a6ff44fffbdb"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceudmaio.html#a2eb018eb4da7111faae1a6ff44fffbdb">udmaio::RegAccessor64</a> = RegAccessorArray&lt; C, UioIf&lt; uint64_t &gt;, offset, 0, 0 &gt;</td></tr>
+<tr class="separator:a2eb018eb4da7111faae1a6ff44fffbdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacbc0e6166cc87d392b9eb95aa47240a"><td class="memTemplParams" colspan="2">template&lt;typename C , uint32_t offset, uint32_t arr_size, uint32_t arr_stride&gt; </td></tr>
+<tr class="memitem:aacbc0e6166cc87d392b9eb95aa47240a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceudmaio.html#aacbc0e6166cc87d392b9eb95aa47240a">udmaio::RegAccessorArray32</a> = RegAccessorArray&lt; C, UioIf&lt; uint32_t &gt;, offset, arr_size, arr_stride &gt;</td></tr>
+<tr class="separator:aacbc0e6166cc87d392b9eb95aa47240a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ebe79e0203213ef066428a8c8eee7e"><td class="memTemplParams" colspan="2">template&lt;typename C , uint32_t offset, uint32_t arr_size, uint32_t arr_stride&gt; </td></tr>
+<tr class="memitem:a60ebe79e0203213ef066428a8c8eee7e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceudmaio.html#a60ebe79e0203213ef066428a8c8eee7e">udmaio::RegAccessorArray64</a> = RegAccessorArray&lt; C, UioIf&lt; uint64_t &gt;, offset, arr_size, arr_stride &gt;</td></tr>
+<tr class="separator:a60ebe79e0203213ef066428a8c8eee7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>

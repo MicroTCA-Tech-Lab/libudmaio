@@ -19,16 +19,18 @@ var hierarchy =
         [ "udmaio::FpgaMemBufferOverXdma", "classudmaio_1_1_fpga_mem_buffer_over_xdma.html", null ],
         [ "udmaio::UDmaBuf", "classudmaio_1_1_u_dma_buf.html", null ]
       ] ],
-      [ "udmaio::UioIf", "classudmaio_1_1_uio_if.html", [
-        [ "udmaio::FpgaMemBufferOverAxi", "classudmaio_1_1_fpga_mem_buffer_over_axi.html", null ],
-        [ "udmaio::UioAxiDmaIf", "classudmaio_1_1_uio_axi_dma_if.html", null ],
-        [ "udmaio::UioMemSgdma", "classudmaio_1_1_uio_mem_sgdma.html", null ]
+      [ "udmaio::UioIfBase", "classudmaio_1_1_uio_if_base.html", [
+        [ "udmaio::UioIf< bus_type_t >", "classudmaio_1_1_uio_if.html", [
+          [ "udmaio::FpgaMemBufferOverAxi", "classudmaio_1_1_fpga_mem_buffer_over_axi.html", null ],
+          [ "udmaio::UioAxiDmaIf", "classudmaio_1_1_uio_axi_dma_if.html", null ],
+          [ "udmaio::UioMemSgdma", "classudmaio_1_1_uio_mem_sgdma.html", null ]
+        ] ]
       ] ]
     ] ],
-    [ "udmaio::RegAccessorBase< C >", "classudmaio_1_1_reg_accessor_base.html", [
-      [ "udmaio::RegAccessorArray< C, offset, arr_size, arr_stride >", "classudmaio_1_1_reg_accessor_array.html", null ],
-      [ "udmaio::RegAccessorArray< C, offset, 0, 0 >", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html", null ],
-      [ "udmaio::RegAccessorArrayElement< C >", "classudmaio_1_1_reg_accessor_array_element.html", null ]
+    [ "udmaio::RegAccessorBase< C, U >", "classudmaio_1_1_reg_accessor_base.html", [
+      [ "udmaio::RegAccessorArray< C, U, offset, arr_size, arr_stride >", "classudmaio_1_1_reg_accessor_array.html", null ],
+      [ "udmaio::RegAccessorArray< C, U, offset, 0, 0 >", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01_u_00_01offset_00_010_00_010_01_4.html", null ],
+      [ "udmaio::RegAccessorArrayElement< C, U >", "classudmaio_1_1_reg_accessor_array_element.html", null ]
     ] ],
     [ "axi_dma::s2mm_curdesc_t", "structaxi__dma_1_1s2mm__curdesc__t.html", null ],
     [ "axi_dma::s2mm_dmacr_t", "structaxi__dma_1_1s2mm__dmacr__t.html", null ],

@@ -22,7 +22,7 @@ var annotated_dup =
       [ "FpgaMemBufferOverAxi", "classudmaio_1_1_fpga_mem_buffer_over_axi.html", "classudmaio_1_1_fpga_mem_buffer_over_axi" ],
       [ "FpgaMemBufferOverXdma", "classudmaio_1_1_fpga_mem_buffer_over_xdma.html", "classudmaio_1_1_fpga_mem_buffer_over_xdma" ],
       [ "RegAccessorArray", "classudmaio_1_1_reg_accessor_array.html", "classudmaio_1_1_reg_accessor_array" ],
-      [ "RegAccessorArray< C, offset, 0, 0 >", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4" ],
+      [ "RegAccessorArray< C, U, offset, 0, 0 >", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01_u_00_01offset_00_010_00_010_01_4.html", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01_u_00_01offset_00_010_00_010_01_4" ],
       [ "RegAccessorArrayElement", "classudmaio_1_1_reg_accessor_array_element.html", "classudmaio_1_1_reg_accessor_array_element" ],
       [ "RegAccessorBase", "classudmaio_1_1_reg_accessor_base.html", "classudmaio_1_1_reg_accessor_base" ],
       [ "UDmaBuf", "classudmaio_1_1_u_dma_buf.html", "classudmaio_1_1_u_dma_buf" ],
@@ -33,6 +33,7 @@ var annotated_dup =
       [ "UioDeviceInfo", "structudmaio_1_1_uio_device_info.html", "structudmaio_1_1_uio_device_info" ],
       [ "UioDeviceLocation", "classudmaio_1_1_uio_device_location.html", "classudmaio_1_1_uio_device_location" ],
       [ "UioIf", "classudmaio_1_1_uio_if.html", "classudmaio_1_1_uio_if" ],
+      [ "UioIfBase", "classudmaio_1_1_uio_if_base.html", "classudmaio_1_1_uio_if_base" ],
       [ "UioMemSgdma", "classudmaio_1_1_uio_mem_sgdma.html", "classudmaio_1_1_uio_mem_sgdma" ],
       [ "UioRegion", "structudmaio_1_1_uio_region.html", "structudmaio_1_1_uio_region" ]
     ] ]

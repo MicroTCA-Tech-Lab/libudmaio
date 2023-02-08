@@ -9,13 +9,13 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{udmaio\+::\+Reg\+Accessor\+Base$<$ C $>$}}
+class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{udmaio\+::\+Reg\+Accessor\+Base$<$ C, U $>$}}
 \begin{DoxyCompactList}\small\item\em Base class implementing register access. Only used by subclasses, not used directly. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element}{udmaio\+::\+Reg\+Accessor\+Array\+Element$<$ C $>$}}
-\begin{DoxyCompactList}\small\item\em Accessor for register array element. Returned by \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_a4b8a2afd9ba4baefa3f4e218bc0dc020}{Reg\+Accessor\+Array$<$\+C$>$\+::operator\mbox{[}$\,$\mbox{]}}}. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{udmaio\+::\+Reg\+Accessor\+Array$<$ C, offset, arr\+\_\+size, arr\+\_\+stride $>$}}
+class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element}{udmaio\+::\+Reg\+Accessor\+Array\+Element$<$ C, U $>$}}
+\begin{DoxyCompactList}\small\item\em Accessor for register array element. Returned by \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_aaeb9c859634ac7899ca8dfbbd9bf2653}{Reg\+Accessor\+Array$<$\+C$>$\+::operator\mbox{[}$\,$\mbox{]}}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{udmaio\+::\+Reg\+Accessor\+Array$<$ C, U, offset, arr\+\_\+size, arr\+\_\+stride $>$}}
 \begin{DoxyCompactList}\small\item\em Accessor for register array. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{udmaio\+::\+Reg\+Accessor\+Array$<$ C, offset, 0, 0 $>$}}
+class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01_u_00_01offset_00_010_00_010_01_4}{udmaio\+::\+Reg\+Accessor\+Array$<$ C, U, offset, 0, 0 $>$}}
 \begin{DoxyCompactList}\small\item\em Accessor for single register. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
@@ -30,8 +30,14 @@ namespace \mbox{\hyperlink{namespaceudmaio}{udmaio}}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename C , uint32\+\_\+t offset$>$ }\\using \mbox{\hyperlink{namespaceudmaio_a05b519f65a300d1cd8f0c150fae1e71c}{udmaio\+::\+Reg\+Accessor}} = Reg\+Accessor\+Array$<$ C, offset, 0, 0 $>$
-\begin{DoxyCompactList}\small\item\em Convenience wrapper for single (i.\+e. non-\/array) register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$typename C , uint32\+\_\+t offset$>$ }\\using \mbox{\hyperlink{namespaceudmaio_a75eaebb71b21ce892c7a054046541e42}{udmaio\+::\+Reg\+Accessor32}} = Reg\+Accessor\+Array$<$ C, Uio\+If$<$ uint32\+\_\+t $>$, offset, 0, 0 $>$
+\begin{DoxyCompactList}\small\item\em Convenience wrappers for single (i.\+e. non-\/array) register (32-\/bit bus access) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename C , uint32\+\_\+t offset$>$ }\\using \mbox{\hyperlink{namespaceudmaio_a2eb018eb4da7111faae1a6ff44fffbdb}{udmaio\+::\+Reg\+Accessor64}} = Reg\+Accessor\+Array$<$ C, Uio\+If$<$ uint64\+\_\+t $>$, offset, 0, 0 $>$
+\item 
+{\footnotesize template$<$typename C , uint32\+\_\+t offset, uint32\+\_\+t arr\+\_\+size, uint32\+\_\+t arr\+\_\+stride$>$ }\\using \mbox{\hyperlink{namespaceudmaio_aacbc0e6166cc87d392b9eb95aa47240a}{udmaio\+::\+Reg\+Accessor\+Array32}} = Reg\+Accessor\+Array$<$ C, Uio\+If$<$ uint32\+\_\+t $>$, offset, arr\+\_\+size, arr\+\_\+stride $>$
+\item 
+{\footnotesize template$<$typename C , uint32\+\_\+t offset, uint32\+\_\+t arr\+\_\+size, uint32\+\_\+t arr\+\_\+stride$>$ }\\using \mbox{\hyperlink{namespaceudmaio_a60ebe79e0203213ef066428a8c8eee7e}{udmaio\+::\+Reg\+Accessor\+Array64}} = Reg\+Accessor\+Array$<$ C, Uio\+If$<$ uint64\+\_\+t $>$, offset, arr\+\_\+size, arr\+\_\+stride $>$
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 

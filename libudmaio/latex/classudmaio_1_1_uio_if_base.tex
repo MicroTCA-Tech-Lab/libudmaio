@@ -1,0 +1,156 @@
+\hypertarget{classudmaio_1_1_uio_if_base}{}\doxysection{udmaio\+::Uio\+If\+Base Class Reference}
+\label{classudmaio_1_1_uio_if_base}\index{udmaio::UioIfBase@{udmaio::UioIfBase}}
+
+
+Base class for UIO interfaces.  
+
+
+
+
+{\ttfamily \#include $<$Uio\+If\+Base.\+hpp$>$}
+
+
+
+Inheritance diagram for udmaio\+::Uio\+If\+Base\+:
+% FIG 0
+
+
+Collaboration diagram for udmaio\+::Uio\+If\+Base\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classudmaio_1_1_uio_if_base_a594dc74763500f1162c98d23fc66b589}{Uio\+If\+Base}} (\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} dev)
+\begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a01b385d151e19e41594561d108b10de3}{$\sim$\+Uio\+If\+Base}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\uint32\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_if_base_af4c44361fd1a35ff62d5a115098104d6}{reg\+\_\+to\+\_\+raw}} (T data)
+\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a30eb71a35815af73d2efe1425f2a7320}{arm\+\_\+interrupt}} ()
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a4f856e9923d8cead9dcab50be856f30e}{wait\+\_\+for\+\_\+interrupt}} ()
+\item 
+virtual const std\+::string\+\_\+view \mbox{\hyperlink{classudmaio_1_1_uio_if_base_adc4c1d9a03e87af0b9a853bb45c5bd62}{\+\_\+log\+\_\+name}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classudmaio_1_1_uio_if_base_aa113b7a18b1849586386e4a92441792f}{\+\_\+fd}}
+\item 
+int \mbox{\hyperlink{classudmaio_1_1_uio_if_base_aa26e0944f7834ee3e432084bf3f64f7c}{\+\_\+fd\+\_\+int}}
+\item 
+void $\ast$ \mbox{\hyperlink{classudmaio_1_1_uio_if_base_af085ebb3a6eb65d5b97e12c11eb976e0}{\+\_\+mem}}
+\item 
+\mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \mbox{\hyperlink{classudmaio_1_1_uio_if_base_aee06d2ff49df493a8861054ed2d41f42}{\+\_\+region}}
+\item 
+boost\+::log\+::sources\+::severity\+\_\+logger\+\_\+mt$<$ blt\+::severity\+\_\+level $>$ \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a5076f78b2e6d1417e56bee0fb5e2d0de}{\+\_\+slg}}
+\item 
+bool \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a46736b2688618710640f162aba687007}{\+\_\+skip\+\_\+write\+\_\+to\+\_\+arm\+\_\+int}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for UIO interfaces. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_base_a594dc74763500f1162c98d23fc66b589}\label{classudmaio_1_1_uio_if_base_a594dc74763500f1162c98d23fc66b589}} 
+\index{udmaio::UioIfBase@{udmaio::UioIfBase}!UioIfBase@{UioIfBase}}
+\index{UioIfBase@{UioIfBase}!udmaio::UioIfBase@{udmaio::UioIfBase}}
+\doxysubsubsection{\texorpdfstring{UioIfBase()}{UioIfBase()}}
+{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+Base\+::\+Uio\+If\+Base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}}]{dev }\end{DoxyParamCaption})}
+
+
+
+Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} describing the connection information \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_base_a01b385d151e19e41594561d108b10de3}\label{classudmaio_1_1_uio_if_base_a01b385d151e19e41594561d108b10de3}} 
+\index{udmaio::UioIfBase@{udmaio::UioIfBase}!````~UioIfBase@{$\sim$UioIfBase}}
+\index{````~UioIfBase@{$\sim$UioIfBase}!udmaio::UioIfBase@{udmaio::UioIfBase}}
+\doxysubsubsection{\texorpdfstring{$\sim$UioIfBase()}{~UioIfBase()}}
+{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+Base\+::$\sim$\+Uio\+If\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_base_adc4c1d9a03e87af0b9a853bb45c5bd62}\label{classudmaio_1_1_uio_if_base_adc4c1d9a03e87af0b9a853bb45c5bd62}} 
+\index{udmaio::UioIfBase@{udmaio::UioIfBase}!\_log\_name@{\_log\_name}}
+\index{\_log\_name@{\_log\_name}!udmaio::UioIfBase@{udmaio::UioIfBase}}
+\doxysubsubsection{\texorpdfstring{\_log\_name()}{\_log\_name()}}
+{\footnotesize\ttfamily virtual const std\+::string\+\_\+view udmaio\+::\+Uio\+If\+Base\+::\+\_\+log\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_acbd47202c8325118dfef3e26b7020de4}{udmaio\+::\+Fpga\+Mem\+Buffer\+Over\+Axi}}, \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a5627fbf50a2475b9288e0a464d5f1672}{udmaio\+::\+Uio\+Axi\+Dma\+If}}, and \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_ac69f5bbe51aebc5cd598ddc0e39b13fe}{udmaio\+::\+Uio\+Mem\+Sgdma}}.
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_base_a30eb71a35815af73d2efe1425f2a7320}\label{classudmaio_1_1_uio_if_base_a30eb71a35815af73d2efe1425f2a7320}} 
+\index{udmaio::UioIfBase@{udmaio::UioIfBase}!arm\_interrupt@{arm\_interrupt}}
+\index{arm\_interrupt@{arm\_interrupt}!udmaio::UioIfBase@{udmaio::UioIfBase}}
+\doxysubsubsection{\texorpdfstring{arm\_interrupt()}{arm\_interrupt()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+If\+Base\+::arm\+\_\+interrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_base_af4c44361fd1a35ff62d5a115098104d6}\label{classudmaio_1_1_uio_if_base_af4c44361fd1a35ff62d5a115098104d6}} 
+\index{udmaio::UioIfBase@{udmaio::UioIfBase}!reg\_to\_raw@{reg\_to\_raw}}
+\index{reg\_to\_raw@{reg\_to\_raw}!udmaio::UioIfBase@{udmaio::UioIfBase}}
+\doxysubsubsection{\texorpdfstring{reg\_to\_raw()}{reg\_to\_raw()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+uint32\+\_\+t udmaio\+::\+Uio\+If\+Base\+::reg\+\_\+to\+\_\+raw (\begin{DoxyParamCaption}\item[{T}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_base_a4f856e9923d8cead9dcab50be856f30e}\label{classudmaio_1_1_uio_if_base_a4f856e9923d8cead9dcab50be856f30e}} 
+\index{udmaio::UioIfBase@{udmaio::UioIfBase}!wait\_for\_interrupt@{wait\_for\_interrupt}}
+\index{wait\_for\_interrupt@{wait\_for\_interrupt}!udmaio::UioIfBase@{udmaio::UioIfBase}}
+\doxysubsubsection{\texorpdfstring{wait\_for\_interrupt()}{wait\_for\_interrupt()}}
+{\footnotesize\ttfamily uint32\+\_\+t udmaio\+::\+Uio\+If\+Base\+::wait\+\_\+for\+\_\+interrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_base_aa113b7a18b1849586386e4a92441792f}\label{classudmaio_1_1_uio_if_base_aa113b7a18b1849586386e4a92441792f}} 
+\index{udmaio::UioIfBase@{udmaio::UioIfBase}!\_fd@{\_fd}}
+\index{\_fd@{\_fd}!udmaio::UioIfBase@{udmaio::UioIfBase}}
+\doxysubsubsection{\texorpdfstring{\_fd}{\_fd}}
+{\footnotesize\ttfamily int udmaio\+::\+Uio\+If\+Base\+::\+\_\+fd\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_base_aa26e0944f7834ee3e432084bf3f64f7c}\label{classudmaio_1_1_uio_if_base_aa26e0944f7834ee3e432084bf3f64f7c}} 
+\index{udmaio::UioIfBase@{udmaio::UioIfBase}!\_fd\_int@{\_fd\_int}}
+\index{\_fd\_int@{\_fd\_int}!udmaio::UioIfBase@{udmaio::UioIfBase}}
+\doxysubsubsection{\texorpdfstring{\_fd\_int}{\_fd\_int}}
+{\footnotesize\ttfamily int udmaio\+::\+Uio\+If\+Base\+::\+\_\+fd\+\_\+int\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_base_af085ebb3a6eb65d5b97e12c11eb976e0}\label{classudmaio_1_1_uio_if_base_af085ebb3a6eb65d5b97e12c11eb976e0}} 
+\index{udmaio::UioIfBase@{udmaio::UioIfBase}!\_mem@{\_mem}}
+\index{\_mem@{\_mem}!udmaio::UioIfBase@{udmaio::UioIfBase}}
+\doxysubsubsection{\texorpdfstring{\_mem}{\_mem}}
+{\footnotesize\ttfamily void$\ast$ udmaio\+::\+Uio\+If\+Base\+::\+\_\+mem\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_base_aee06d2ff49df493a8861054ed2d41f42}\label{classudmaio_1_1_uio_if_base_aee06d2ff49df493a8861054ed2d41f42}} 
+\index{udmaio::UioIfBase@{udmaio::UioIfBase}!\_region@{\_region}}
+\index{\_region@{\_region}!udmaio::UioIfBase@{udmaio::UioIfBase}}
+\doxysubsubsection{\texorpdfstring{\_region}{\_region}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} udmaio\+::\+Uio\+If\+Base\+::\+\_\+region\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_base_a46736b2688618710640f162aba687007}\label{classudmaio_1_1_uio_if_base_a46736b2688618710640f162aba687007}} 
+\index{udmaio::UioIfBase@{udmaio::UioIfBase}!\_skip\_write\_to\_arm\_int@{\_skip\_write\_to\_arm\_int}}
+\index{\_skip\_write\_to\_arm\_int@{\_skip\_write\_to\_arm\_int}!udmaio::UioIfBase@{udmaio::UioIfBase}}
+\doxysubsubsection{\texorpdfstring{\_skip\_write\_to\_arm\_int}{\_skip\_write\_to\_arm\_int}}
+{\footnotesize\ttfamily bool udmaio\+::\+Uio\+If\+Base\+::\+\_\+skip\+\_\+write\+\_\+to\+\_\+arm\+\_\+int\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_base_a5076f78b2e6d1417e56bee0fb5e2d0de}\label{classudmaio_1_1_uio_if_base_a5076f78b2e6d1417e56bee0fb5e2d0de}} 
+\index{udmaio::UioIfBase@{udmaio::UioIfBase}!\_slg@{\_slg}}
+\index{\_slg@{\_slg}!udmaio::UioIfBase@{udmaio::UioIfBase}}
+\doxysubsubsection{\texorpdfstring{\_slg}{\_slg}}
+{\footnotesize\ttfamily boost\+::log\+::sources\+::severity\+\_\+logger\+\_\+mt$<$blt\+::severity\+\_\+level$>$ udmaio\+::\+Uio\+If\+Base\+::\+\_\+slg\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_uio_if_base_8hpp}{Uio\+If\+Base.\+hpp}}\item 
+\mbox{\hyperlink{_uio_if_base_8cpp}{Uio\+If\+Base.\+cpp}}\end{DoxyCompactItemize}

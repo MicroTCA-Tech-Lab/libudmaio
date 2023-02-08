@@ -17,7 +17,7 @@ var searchData=
   ['sg_5fslv_5ferr_14',['sg_slv_err',['../structaxi__dma_1_1mm2s__dmasr__t.html#ac1f432a2417e8c442ced9fc049f296c6',1,'axi_dma::mm2s_dmasr_t::sg_slv_err()'],['../structaxi__dma_1_1s2mm__dmasr__t.html#a441238a52583f7fafdb1dce4fdc8218c',1,'axi_dma::s2mm_dmasr_t::sg_slv_err()']]],
   ['sg_5fuser_15',['sg_user',['../structaxi__dma_1_1sg__ctl__t.html#aa4a87d97ef6d7896f69aecf581a1834d',1,'axi_dma::sg_ctl_t']]],
   ['size_16',['size',['../structudmaio_1_1_uio_region.html#ac820f3588c55f13155345aae9e198a32',1,'udmaio::UioRegion']]],
-  ['stconfig_17',['stConfig',['../class_uio_traffic_gen.html#aad03e4e1d3061f2fe52cbcdf94f6d2d7',1,'UioTrafficGen']]],
-  ['stcontrol_18',['stControl',['../class_uio_traffic_gen.html#a551eb0a5cc23e2a73c4cd6556ef6eaa7',1,'UioTrafficGen']]],
+  ['stconfig_17',['stConfig',['../class_uio_traffic_gen.html#a960fff4b66b340dc92ac9c4336a3ef40',1,'UioTrafficGen']]],
+  ['stcontrol_18',['stControl',['../class_uio_traffic_gen.html#ac91d4d44432c2dcae7b9771cd4ea6fe1',1,'UioTrafficGen']]],
   ['stren_19',['stren',['../struct_uio_traffic_gen_1_1_st_control.html#ab0d8563c37df39c9a43eada72b1cf416',1,'UioTrafficGen::StControl']]]
 ];
