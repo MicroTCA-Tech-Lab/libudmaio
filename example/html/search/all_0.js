@@ -33,7 +33,7 @@ var searchData=
   ['_5fphys_5faddr_30',['_phys_addr',['../classudmaio_1_1_fpga_mem_buffer_over_xdma.html#a3427375448cf17f23407dcf4536b86ec',1,'udmaio::FpgaMemBufferOverXdma']]],
   ['_5fqueue_31',['_queue',['../classudmaio_1_1_data_handler_sync.html#aaf38b90916bf263efee4ee575fb8da09',1,'udmaio::DataHandlerSync::_queue()'],['../classudmaio_1_1_concurrent_queue.html#aa5b3c888ba18a51132f6c68006b7bea5',1,'udmaio::ConcurrentQueue::_queue()']]],
   ['_5frd_32',['_rd',['../classudmaio_1_1_uio_if.html#af4c53f60c84950f770eb8ae9ecbe9ca1',1,'udmaio::UioIf::_rd()'],['../classudmaio_1_1_reg_accessor_base.html#ac48b43f437837cd965706d4c7626b2b9',1,'udmaio::RegAccessorBase::_rd()']]],
-  ['_5frd_5fmem_33',['_rd_mem',['../classudmaio_1_1_uio_if.html#a12db9c7207830ef4b9c5b156a863f408',1,'udmaio::UioIf::_rd_mem()'],['../classudmaio_1_1_uio_if_base.html#ad1a78c39eec58b2cc46a479f0cbf0048',1,'udmaio::UioIfBase::_rd_mem(uint32_t offs, void *mem, size_t size) const =0']]],
+  ['_5frd_5fmem_33',['_rd_mem',['../classudmaio_1_1_uio_if.html#a4ac244b81986fd286e1ae116bda56644',1,'udmaio::UioIf::_rd_mem()'],['../classudmaio_1_1_uio_if_base.html#a272bbb69bedffb0d12165f8b3d975020',1,'udmaio::UioIfBase::_rd_mem(uint32_t offs, void *__restrict__ mem, size_t size) const =0']]],
   ['_5frd_5freg_34',['_rd_reg',['../classudmaio_1_1_uio_if_base.html#a69d4ff72db3ffa3d42cbd85ba57a2657',1,'udmaio::UioIfBase']]],
   ['_5freg_5foffs_35',['_reg_offs',['../classudmaio_1_1_reg_accessor_array_element.html#a03956a268d070b2be79f9c1dd4173ce5',1,'udmaio::RegAccessorArrayElement']]],
   ['_5freg_5fptr_36',['_reg_ptr',['../classudmaio_1_1_uio_if.html#a3ba493c5afb7aa69dedd68f2d235146a',1,'udmaio::UioIf']]],
@@ -44,7 +44,7 @@ var searchData=
   ['_5fstart_5fread_41',['_start_read',['../classudmaio_1_1_data_handler_abstract.html#a90d25df268b70ea580559fd0ad7aaa0a',1,'udmaio::DataHandlerAbstract']]],
   ['_5fsvc_42',['_svc',['../classudmaio_1_1_data_handler_abstract.html#aa2df2042238f57a4d0369af1f1093663',1,'udmaio::DataHandlerAbstract']]],
   ['_5fwr_43',['_wr',['../classudmaio_1_1_reg_accessor_base.html#a7107c7f25cb16b638ae56903c7803837',1,'udmaio::RegAccessorBase::_wr()'],['../classudmaio_1_1_uio_if.html#af98e8c2719202c10ab29d9eddfa37bb8',1,'udmaio::UioIf::_wr(uint32_t offs, bus_type_t data)']]],
-  ['_5fwr_5fmem_44',['_wr_mem',['../classudmaio_1_1_uio_if.html#a99f0cc1db2c3b5ad3dac80e6e55354ea',1,'udmaio::UioIf::_wr_mem()'],['../classudmaio_1_1_uio_if_base.html#a328ae1fe07b1d86684bbe254e87cd202',1,'udmaio::UioIfBase::_wr_mem(uint32_t offs, const void *mem, size_t size)=0']]],
+  ['_5fwr_5fmem_44',['_wr_mem',['../classudmaio_1_1_uio_if.html#a92b5d432aee1faa8477d1f4c71c2bbc4',1,'udmaio::UioIf::_wr_mem()'],['../classudmaio_1_1_uio_if_base.html#a2101c4e2a099a030ca0a06b11f5915b7',1,'udmaio::UioIfBase::_wr_mem(uint32_t offs, const void *__restrict__ mem, size_t size)=0']]],
   ['_5fwr_5freg_45',['_wr_reg',['../classudmaio_1_1_uio_if_base.html#a14a796d071b4fd9ce42a5d24823f3520',1,'udmaio::UioIfBase']]],
   ['_5fxdma_5fpath_46',['_xdma_path',['../classudmaio_1_1_uio_config_xdma.html#a36bed740a1bf141c196f9716b5379a57',1,'udmaio::UioConfigXdma']]]
 ];

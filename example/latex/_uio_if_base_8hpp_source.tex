@@ -68,19 +68,19 @@
 \DoxyCodeLine{67 }
 \DoxyCodeLine{68     \textcolor{keyword}{virtual} \textcolor{keyword}{const} std::string\_view \mbox{\hyperlink{classudmaio_1_1_uio_if_base_adc4c1d9a03e87af0b9a853bb45c5bd62}{\_log\_name}}() \textcolor{keyword}{const} = 0;}
 \DoxyCodeLine{69 }
-\DoxyCodeLine{70     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_base_ad1a78c39eec58b2cc46a479f0cbf0048}{\_rd\_mem}}(uint32\_t offs, \textcolor{keywordtype}{void}* mem, \textcolor{keywordtype}{size\_t} size) \textcolor{keyword}{const} = 0;}
-\DoxyCodeLine{71     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a328ae1fe07b1d86684bbe254e87cd202}{\_wr\_mem}}(uint32\_t offs, \textcolor{keyword}{const} \textcolor{keywordtype}{void}* mem, \textcolor{keywordtype}{size\_t} size) = 0;}
+\DoxyCodeLine{70     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a272bbb69bedffb0d12165f8b3d975020}{\_rd\_mem}}(uint32\_t offs, \textcolor{keywordtype}{void}* \_\_restrict\_\_ mem, \textcolor{keywordtype}{size\_t} size) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{71     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a2101c4e2a099a030ca0a06b11f5915b7}{\_wr\_mem}}(uint32\_t offs, \textcolor{keyword}{const} \textcolor{keywordtype}{void}* \_\_restrict\_\_ mem, \textcolor{keywordtype}{size\_t} size) = 0;}
 \DoxyCodeLine{72 }
 \DoxyCodeLine{73     \textcolor{keyword}{template} <\textcolor{keyword}{typename} C>}
 \DoxyCodeLine{74     C \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a69d4ff72db3ffa3d42cbd85ba57a2657}{\_rd\_reg}}(uint32\_t offs)\textcolor{keyword}{ const }\{}
 \DoxyCodeLine{75         C result;}
-\DoxyCodeLine{76         \mbox{\hyperlink{classudmaio_1_1_uio_if_base_ad1a78c39eec58b2cc46a479f0cbf0048}{\_rd\_mem}}(offs, \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(\&result), \textcolor{keyword}{sizeof}(result));}
+\DoxyCodeLine{76         \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a272bbb69bedffb0d12165f8b3d975020}{\_rd\_mem}}(offs, \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(\&result), \textcolor{keyword}{sizeof}(result));}
 \DoxyCodeLine{77         \textcolor{keywordflow}{return} result;}
 \DoxyCodeLine{78     \}}
 \DoxyCodeLine{79 }
 \DoxyCodeLine{80     \textcolor{keyword}{template} <\textcolor{keyword}{typename} C>}
 \DoxyCodeLine{81     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a14a796d071b4fd9ce42a5d24823f3520}{\_wr\_reg}}(uint32\_t offs, \textcolor{keyword}{const} C\& value) \{}
-\DoxyCodeLine{82         \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a328ae1fe07b1d86684bbe254e87cd202}{\_wr\_mem}}(offs, \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(\&value), \textcolor{keyword}{sizeof}(value));}
+\DoxyCodeLine{82         \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a2101c4e2a099a030ca0a06b11f5915b7}{\_wr\_mem}}(offs, \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(\&value), \textcolor{keyword}{sizeof}(value));}
 \DoxyCodeLine{83     \}}
 \DoxyCodeLine{84 \};}
 \DoxyCodeLine{85 }

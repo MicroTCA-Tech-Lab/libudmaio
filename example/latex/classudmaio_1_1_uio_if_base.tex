@@ -35,9 +35,9 @@ uint32\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a4f856e9923d8cead9dca
 \item 
 virtual const std\+::string\+\_\+view \mbox{\hyperlink{classudmaio_1_1_uio_if_base_adc4c1d9a03e87af0b9a853bb45c5bd62}{\+\_\+log\+\_\+name}} () const =0
 \item 
-virtual void \mbox{\hyperlink{classudmaio_1_1_uio_if_base_ad1a78c39eec58b2cc46a479f0cbf0048}{\+\_\+rd\+\_\+mem}} (uint32\+\_\+t offs, void $\ast$mem, size\+\_\+t size) const =0
+virtual void \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a272bbb69bedffb0d12165f8b3d975020}{\+\_\+rd\+\_\+mem}} (uint32\+\_\+t offs, void $\ast$\+\_\+\+\_\+restrict\+\_\+\+\_\+ mem, size\+\_\+t size) const =0
 \item 
-virtual void \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a328ae1fe07b1d86684bbe254e87cd202}{\+\_\+wr\+\_\+mem}} (uint32\+\_\+t offs, const void $\ast$mem, size\+\_\+t size)=0
+virtual void \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a2101c4e2a099a030ca0a06b11f5915b7}{\+\_\+wr\+\_\+mem}} (uint32\+\_\+t offs, const void $\ast$\+\_\+\+\_\+restrict\+\_\+\+\_\+ mem, size\+\_\+t size)=0
 \item 
 {\footnotesize template$<$typename C $>$ }\\C \mbox{\hyperlink{classudmaio_1_1_uio_if_base_a69d4ff72db3ffa3d42cbd85ba57a2657}{\+\_\+rd\+\_\+reg}} (uint32\+\_\+t offs) const
 \item 
@@ -103,15 +103,15 @@ Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\h
 
 Implemented in \mbox{\hyperlink{class_uio_gpio_status_a70537c3b41b1ee737fd67945a9409125}{Uio\+Gpio\+Status}}, \mbox{\hyperlink{class_uio_traffic_gen_acb4f1ec3084398f6bcda00ed3f25e6ab}{Uio\+Traffic\+Gen}}, \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_acbd47202c8325118dfef3e26b7020de4}{udmaio\+::\+Fpga\+Mem\+Buffer\+Over\+Axi}}, \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a01c8446d9c1cfb9a2d25c0ebac0f5cb2}{udmaio\+::\+Uio\+Axi\+Dma\+If}}, and \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a9ca19d2561b8c8fa25f627ac4d27e0d7}{udmaio\+::\+Uio\+Mem\+Sgdma}}.
 
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_base_ad1a78c39eec58b2cc46a479f0cbf0048}\label{classudmaio_1_1_uio_if_base_ad1a78c39eec58b2cc46a479f0cbf0048}} 
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_base_a272bbb69bedffb0d12165f8b3d975020}\label{classudmaio_1_1_uio_if_base_a272bbb69bedffb0d12165f8b3d975020}} 
 \index{udmaio::UioIfBase@{udmaio::UioIfBase}!\_rd\_mem@{\_rd\_mem}}
 \index{\_rd\_mem@{\_rd\_mem}!udmaio::UioIfBase@{udmaio::UioIfBase}}
 \doxysubsubsection{\texorpdfstring{\_rd\_mem()}{\_rd\_mem()}}
-{\footnotesize\ttfamily virtual void udmaio\+::\+Uio\+If\+Base\+::\+\_\+rd\+\_\+mem (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{offs,  }\item[{void $\ast$}]{mem,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual void udmaio\+::\+Uio\+If\+Base\+::\+\_\+rd\+\_\+mem (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{offs,  }\item[{void $\ast$\+\_\+\+\_\+restrict\+\_\+\+\_\+}]{mem,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
 
 
 
-Implemented in \mbox{\hyperlink{classudmaio_1_1_uio_if_a12db9c7207830ef4b9c5b156a863f408}{udmaio\+::\+Uio\+If$<$ bus\+\_\+type\+\_\+t $>$}}.
+Implemented in \mbox{\hyperlink{classudmaio_1_1_uio_if_a4ac244b81986fd286e1ae116bda56644}{udmaio\+::\+Uio\+If$<$ bus\+\_\+type\+\_\+t $>$}}.
 
 \mbox{\Hypertarget{classudmaio_1_1_uio_if_base_a69d4ff72db3ffa3d42cbd85ba57a2657}\label{classudmaio_1_1_uio_if_base_a69d4ff72db3ffa3d42cbd85ba57a2657}} 
 \index{udmaio::UioIfBase@{udmaio::UioIfBase}!\_rd\_reg@{\_rd\_reg}}
@@ -120,15 +120,15 @@ Implemented in \mbox{\hyperlink{classudmaio_1_1_uio_if_a12db9c7207830ef4b9c5b156
 {\footnotesize\ttfamily template$<$typename C $>$ \\
 C udmaio\+::\+Uio\+If\+Base\+::\+\_\+rd\+\_\+reg (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{offs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_base_a328ae1fe07b1d86684bbe254e87cd202}\label{classudmaio_1_1_uio_if_base_a328ae1fe07b1d86684bbe254e87cd202}} 
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_base_a2101c4e2a099a030ca0a06b11f5915b7}\label{classudmaio_1_1_uio_if_base_a2101c4e2a099a030ca0a06b11f5915b7}} 
 \index{udmaio::UioIfBase@{udmaio::UioIfBase}!\_wr\_mem@{\_wr\_mem}}
 \index{\_wr\_mem@{\_wr\_mem}!udmaio::UioIfBase@{udmaio::UioIfBase}}
 \doxysubsubsection{\texorpdfstring{\_wr\_mem()}{\_wr\_mem()}}
-{\footnotesize\ttfamily virtual void udmaio\+::\+Uio\+If\+Base\+::\+\_\+wr\+\_\+mem (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{offs,  }\item[{const void $\ast$}]{mem,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual void udmaio\+::\+Uio\+If\+Base\+::\+\_\+wr\+\_\+mem (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{offs,  }\item[{const void $\ast$\+\_\+\+\_\+restrict\+\_\+\+\_\+}]{mem,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
 
 
 
-Implemented in \mbox{\hyperlink{classudmaio_1_1_uio_if_a99f0cc1db2c3b5ad3dac80e6e55354ea}{udmaio\+::\+Uio\+If$<$ bus\+\_\+type\+\_\+t $>$}}.
+Implemented in \mbox{\hyperlink{classudmaio_1_1_uio_if_a92b5d432aee1faa8477d1f4c71c2bbc4}{udmaio\+::\+Uio\+If$<$ bus\+\_\+type\+\_\+t $>$}}.
 
 \mbox{\Hypertarget{classudmaio_1_1_uio_if_base_a14a796d071b4fd9ce42a5d24823f3520}\label{classudmaio_1_1_uio_if_base_a14a796d071b4fd9ce42a5d24823f3520}} 
 \index{udmaio::UioIfBase@{udmaio::UioIfBase}!\_wr\_reg@{\_wr\_reg}}

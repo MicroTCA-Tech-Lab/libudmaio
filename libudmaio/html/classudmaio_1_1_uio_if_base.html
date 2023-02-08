@@ -145,10 +145,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a4f856e9923d8cead9dcab50be856f30e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc4c1d9a03e87af0b9a853bb45c5bd62"><td class="memItemLeft" align="right" valign="top">virtual const std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#adc4c1d9a03e87af0b9a853bb45c5bd62">_log_name</a> () const =0</td></tr>
 <tr class="separator:adc4c1d9a03e87af0b9a853bb45c5bd62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1a78c39eec58b2cc46a479f0cbf0048"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#ad1a78c39eec58b2cc46a479f0cbf0048">_rd_mem</a> (uint32_t offs, void *mem, size_t size) const =0</td></tr>
-<tr class="separator:ad1a78c39eec58b2cc46a479f0cbf0048"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a328ae1fe07b1d86684bbe254e87cd202"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#a328ae1fe07b1d86684bbe254e87cd202">_wr_mem</a> (uint32_t offs, const void *mem, size_t size)=0</td></tr>
-<tr class="separator:a328ae1fe07b1d86684bbe254e87cd202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a272bbb69bedffb0d12165f8b3d975020"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#a272bbb69bedffb0d12165f8b3d975020">_rd_mem</a> (uint32_t offs, void *__restrict__ mem, size_t size) const =0</td></tr>
+<tr class="separator:a272bbb69bedffb0d12165f8b3d975020"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2101c4e2a099a030ca0a06b11f5915b7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#a2101c4e2a099a030ca0a06b11f5915b7">_wr_mem</a> (uint32_t offs, const void *__restrict__ mem, size_t size)=0</td></tr>
+<tr class="separator:a2101c4e2a099a030ca0a06b11f5915b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69d4ff72db3ffa3d42cbd85ba57a2657"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
 <tr class="memitem:a69d4ff72db3ffa3d42cbd85ba57a2657"><td class="memTemplItemLeft" align="right" valign="top">C&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#a69d4ff72db3ffa3d42cbd85ba57a2657">_rd_reg</a> (uint32_t offs) const</td></tr>
 <tr class="separator:a69d4ff72db3ffa3d42cbd85ba57a2657"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -259,8 +259,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="ad1a78c39eec58b2cc46a479f0cbf0048" name="ad1a78c39eec58b2cc46a479f0cbf0048"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1a78c39eec58b2cc46a479f0cbf0048">&#9670;&#160;</a></span>_rd_mem()</h2>
+<a id="a272bbb69bedffb0d12165f8b3d975020" name="a272bbb69bedffb0d12165f8b3d975020"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a272bbb69bedffb0d12165f8b3d975020">&#9670;&#160;</a></span>_rd_mem()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -277,7 +277,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype">void *__restrict__&#160;</td>
           <td class="paramname"><em>mem</em>, </td>
         </tr>
         <tr>
@@ -299,7 +299,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classudmaio_1_1_uio_if.html#a12db9c7207830ef4b9c5b156a863f408">udmaio::UioIf&lt; bus_type_t &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classudmaio_1_1_uio_if.html#a4ac244b81986fd286e1ae116bda56644">udmaio::UioIf&lt; bus_type_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -331,8 +331,8 @@ template&lt;typename C &gt; </div>
 
 </div>
 </div>
-<a id="a328ae1fe07b1d86684bbe254e87cd202" name="a328ae1fe07b1d86684bbe254e87cd202"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a328ae1fe07b1d86684bbe254e87cd202">&#9670;&#160;</a></span>_wr_mem()</h2>
+<a id="a2101c4e2a099a030ca0a06b11f5915b7" name="a2101c4e2a099a030ca0a06b11f5915b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2101c4e2a099a030ca0a06b11f5915b7">&#9670;&#160;</a></span>_wr_mem()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -349,7 +349,7 @@ template&lt;typename C &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const void *&#160;</td>
+          <td class="paramtype">const void *__restrict__&#160;</td>
           <td class="paramname"><em>mem</em>, </td>
         </tr>
         <tr>
@@ -371,7 +371,7 @@ template&lt;typename C &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classudmaio_1_1_uio_if.html#a99f0cc1db2c3b5ad3dac80e6e55354ea">udmaio::UioIf&lt; bus_type_t &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classudmaio_1_1_uio_if.html#a92b5d432aee1faa8477d1f4c71c2bbc4">udmaio::UioIf&lt; bus_type_t &gt;</a>.</p>
 
 </div>
 </div>

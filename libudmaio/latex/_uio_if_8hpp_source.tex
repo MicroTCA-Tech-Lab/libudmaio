@@ -48,19 +48,19 @@
 \DoxyCodeLine{48         *\mbox{\hyperlink{classudmaio_1_1_uio_if_a3ba493c5afb7aa69dedd68f2d235146a}{\_reg\_ptr}}(offs) = data;}
 \DoxyCodeLine{49     \}}
 \DoxyCodeLine{50 }
-\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_a12db9c7207830ef4b9c5b156a863f408}{\_rd\_mem}}(uint32\_t offs, \textcolor{keywordtype}{void}* mem, \textcolor{keywordtype}{size\_t} size)\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_a4ac244b81986fd286e1ae116bda56644}{\_rd\_mem}}(uint32\_t offs, \textcolor{keywordtype}{void}* \_\_restrict\_\_ mem, \textcolor{keywordtype}{size\_t} size)\textcolor{keyword}{ const override }\{}
 \DoxyCodeLine{52         assert((offs \% \textcolor{keyword}{sizeof}(bus\_type\_t)) == 0);}
 \DoxyCodeLine{53         assert((size \% \textcolor{keyword}{sizeof}(bus\_type\_t)) == 0);}
-\DoxyCodeLine{54         bus\_type\_t* ptr = \textcolor{keyword}{reinterpret\_cast<}bus\_type\_t*\textcolor{keyword}{>}(mem);}
+\DoxyCodeLine{54         bus\_type\_t* \_\_restrict\_\_ ptr = \textcolor{keyword}{reinterpret\_cast<}bus\_type\_t*\textcolor{keyword}{>}(mem);}
 \DoxyCodeLine{55         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < size; i += \textcolor{keyword}{sizeof}(bus\_type\_t)) \{}
 \DoxyCodeLine{56             *ptr++ = \mbox{\hyperlink{classudmaio_1_1_uio_if_af4c53f60c84950f770eb8ae9ecbe9ca1}{\_rd}}(offs + i);}
 \DoxyCodeLine{57         \}}
 \DoxyCodeLine{58     \}}
 \DoxyCodeLine{59 }
-\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_a99f0cc1db2c3b5ad3dac80e6e55354ea}{\_wr\_mem}}(uint32\_t offs, \textcolor{keyword}{const} \textcolor{keywordtype}{void}* mem, \textcolor{keywordtype}{size\_t} size)\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_a92b5d432aee1faa8477d1f4c71c2bbc4}{\_wr\_mem}}(uint32\_t offs, \textcolor{keyword}{const} \textcolor{keywordtype}{void}* \_\_restrict\_\_ mem, \textcolor{keywordtype}{size\_t} size)\textcolor{keyword}{ override }\{}
 \DoxyCodeLine{61         assert((offs \% \textcolor{keyword}{sizeof}(bus\_type\_t)) == 0);}
 \DoxyCodeLine{62         assert((size \% \textcolor{keyword}{sizeof}(bus\_type\_t)) == 0);}
-\DoxyCodeLine{63         \textcolor{keyword}{const} bus\_type\_t* ptr = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }bus\_type\_t*\textcolor{keyword}{>}(mem);}
+\DoxyCodeLine{63         \textcolor{keyword}{const} bus\_type\_t* \_\_restrict\_\_ ptr = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }bus\_type\_t*\textcolor{keyword}{>}(mem);}
 \DoxyCodeLine{64         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < size; i += \textcolor{keyword}{sizeof}(bus\_type\_t)) \{}
 \DoxyCodeLine{65             \mbox{\hyperlink{classudmaio_1_1_uio_if_af98e8c2719202c10ab29d9eddfa37bb8}{\_wr}}(offs + i, *ptr++);}
 \DoxyCodeLine{66         \}}
