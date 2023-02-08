@@ -1,9 +1,8 @@
 <map id="UioGpioStatus" name="UioGpioStatus">
-<area shape="rect" id="node1" title="Interface to GPIO status port of the demo application." alt="" coords="94,397,201,423"/>
-<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="UIO Interface implementing bus access." alt="" coords="94,231,158,256"/>
-<area shape="rect" id="node3" href="$classudmaio_1_1_uio_if_base.html" title="Base class for UIO interfaces." alt="" coords="85,93,213,119"/>
-<area shape="rect" id="node7" href="$classudmaio_1_1_reg_accessor_base.html" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="165,181,375,207"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,5,137,31"/>
-<area shape="rect" id="node5" href="$structudmaio_1_1_uio_region.html" title="General&#45;purpose struct to define a memory area." alt="" coords="162,5,293,31"/>
-<area shape="rect" id="node6" href="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html" title=" " alt="" coords="163,280,379,335"/>
+<area shape="rect" id="node1" title="Interface to GPIO status port of the demo application." alt="" coords="945,36,1052,61"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="231,31,329,56"/>
+<area shape="rect" id="node6" href="$classudmaio_1_1_reg_accessor_base.html" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="395,59,604,84"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,137,31"/>
+<area shape="rect" id="node4" href="$structudmaio_1_1_uio_region.html" title="General&#45;purpose struct to define a memory area." alt="" coords="6,55,137,80"/>
+<area shape="rect" id="node5" href="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html" title=" " alt="" coords="653,55,869,109"/>
 </map>

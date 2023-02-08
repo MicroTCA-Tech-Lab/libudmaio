@@ -38,8 +38,6 @@ struct \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}
 class \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}}
 \begin{DoxyCompactList}\small\item\em Holds information where a device can be found over both UIO and XDMA. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}
-\begin{DoxyCompactList}\small\item\em UIO Interface implementing bus access. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classudmaio_1_1_uio_if_base}{Uio\+If\+Base}}
 \begin{DoxyCompactList}\small\item\em Base class for UIO interfaces. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{Uio\+Mem\+Sgdma}}
 \begin{DoxyCompactList}\small\item\em Interface to AXI DMA scatter-\/gather buffers \& descriptors Uses a \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} to access DMA descriptor memory. \end{DoxyCompactList}\item 
@@ -51,10 +49,6 @@ struct \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}}
 {\footnotesize template$<$typename C , uint32\+\_\+t offset$>$ }\\using \mbox{\hyperlink{namespaceudmaio_a05b519f65a300d1cd8f0c150fae1e71c}{Reg\+Accessor}} = \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}}$<$ C, offset, 0, 0 $>$
 \begin{DoxyCompactList}\small\item\em Convenience wrapper for single (i.\+e. non-\/array) register. \end{DoxyCompactList}\item 
 using \mbox{\hyperlink{namespaceudmaio_a681a7289ae1db6b3e4fdef3a0602ebff}{Axi\+Dma\+Block}} = \mbox{\hyperlink{namespaceaxi__dma_adf82eb6346eaa5e00fb4a043f95c3f40}{axi\+\_\+dma\+::block}}$<$ \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}} $>$
-\item 
-using \mbox{\hyperlink{namespaceudmaio_a9c868d98e95c5a57b57db612562c41c7}{Uio\+If32}} = \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}$<$ uint32\+\_\+t $>$
-\item 
-using \mbox{\hyperlink{namespaceudmaio_a6fa7ecce970804e9fb564fdc466d92a9}{Uio\+If64}} = \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}$<$ uint64\+\_\+t $>$
 \end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -99,18 +93,6 @@ Convenience wrapper for single (i.\+e. non-\/array) register.
 {\em offset} & Register offset into address space \\
 \hline
 \end{DoxyTemplParams}
-\mbox{\Hypertarget{namespaceudmaio_a9c868d98e95c5a57b57db612562c41c7}\label{namespaceudmaio_a9c868d98e95c5a57b57db612562c41c7}} 
-\index{udmaio@{udmaio}!UioIf32@{UioIf32}}
-\index{UioIf32@{UioIf32}!udmaio@{udmaio}}
-\doxysubsubsection{\texorpdfstring{UioIf32}{UioIf32}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceudmaio_a9c868d98e95c5a57b57db612562c41c7}{udmaio\+::\+Uio\+If32}} = typedef \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}$<$uint32\+\_\+t$>$}
-
-\mbox{\Hypertarget{namespaceudmaio_a6fa7ecce970804e9fb564fdc466d92a9}\label{namespaceudmaio_a6fa7ecce970804e9fb564fdc466d92a9}} 
-\index{udmaio@{udmaio}!UioIf64@{UioIf64}}
-\index{UioIf64@{UioIf64}!udmaio@{udmaio}}
-\doxysubsubsection{\texorpdfstring{UioIf64}{UioIf64}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceudmaio_a6fa7ecce970804e9fb564fdc466d92a9}{udmaio\+::\+Uio\+If64}} = typedef \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}$<$uint64\+\_\+t$>$}
-
 
 
 \doxysubsection{Enumeration Type Documentation}

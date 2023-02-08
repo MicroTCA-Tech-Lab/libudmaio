@@ -101,22 +101,39 @@ $(document).ready(function(){initNavTree('_uio_if_8hpp.html',''); initResizable(
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle"><div class="title">UioIf.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_uio_if_base_8hpp_source.html">udmaio/UioIfBase.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;filesystem&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
+<code>#include &lt;boost/core/noncopyable.hpp&gt;</code><br />
+<code>#include &lt;boost/log/core/core.hpp&gt;</code><br />
+<code>#include &lt;boost/log/expressions.hpp&gt;</code><br />
+<code>#include &lt;boost/log/keywords/severity.hpp&gt;</code><br />
+<code>#include &lt;boost/log/sources/logger.hpp&gt;</code><br />
+<code>#include &lt;boost/log/trivial.hpp&gt;</code><br />
+<code>#include &lt;fcntl.h&gt;</code><br />
+<code>#include &lt;sys/mman.h&gt;</code><br />
+<code>#include &lt;sys/stat.h&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_uio_config_8hpp_source.html">udmaio/UioConfig.hpp</a>&quot;</code><br />
+<code>#include &lt;boost/log/sources/record_ostream.hpp&gt;</code><br />
+<code>#include &lt;boost/log/sources/severity_logger.hpp&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for UioIf.hpp:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_uio_if_8hpp__incl.svg" width="100%" height="503"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_uio_if_8hpp__incl.svg" width="100%" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="_uio_if_8hpp__dep__incl.svg" width="599" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="_uio_if_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 </div>
@@ -124,21 +141,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if.html">udmaio::UioIf&lt; bus_type_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">UIO Interface implementing bus access.  <a href="classudmaio_1_1_uio_if.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if.html">udmaio::UioIf</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for UIO interfaces.  <a href="classudmaio_1_1_uio_if.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceudmaio"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceudmaio.html">udmaio</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a9c868d98e95c5a57b57db612562c41c7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceudmaio.html#a9c868d98e95c5a57b57db612562c41c7">udmaio::UioIf32</a> = UioIf&lt; uint32_t &gt;</td></tr>
-<tr class="separator:a9c868d98e95c5a57b57db612562c41c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fa7ecce970804e9fb564fdc466d92a9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceudmaio.html#a6fa7ecce970804e9fb564fdc466d92a9">udmaio::UioIf64</a> = UioIf&lt; uint64_t &gt;</td></tr>
-<tr class="separator:a6fa7ecce970804e9fb564fdc466d92a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

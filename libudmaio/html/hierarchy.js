@@ -19,12 +19,10 @@ var hierarchy =
         [ "udmaio::FpgaMemBufferOverXdma", "classudmaio_1_1_fpga_mem_buffer_over_xdma.html", null ],
         [ "udmaio::UDmaBuf", "classudmaio_1_1_u_dma_buf.html", null ]
       ] ],
-      [ "udmaio::UioIfBase", "classudmaio_1_1_uio_if_base.html", [
-        [ "udmaio::UioIf< bus_type_t >", "classudmaio_1_1_uio_if.html", [
-          [ "udmaio::FpgaMemBufferOverAxi", "classudmaio_1_1_fpga_mem_buffer_over_axi.html", null ],
-          [ "udmaio::UioAxiDmaIf", "classudmaio_1_1_uio_axi_dma_if.html", null ],
-          [ "udmaio::UioMemSgdma", "classudmaio_1_1_uio_mem_sgdma.html", null ]
-        ] ]
+      [ "udmaio::UioIf", "classudmaio_1_1_uio_if.html", [
+        [ "udmaio::FpgaMemBufferOverAxi", "classudmaio_1_1_fpga_mem_buffer_over_axi.html", null ],
+        [ "udmaio::UioAxiDmaIf", "classudmaio_1_1_uio_axi_dma_if.html", null ],
+        [ "udmaio::UioMemSgdma", "classudmaio_1_1_uio_mem_sgdma.html", null ]
       ] ]
     ] ],
     [ "udmaio::RegAccessorBase< C >", "classudmaio_1_1_reg_accessor_base.html", [

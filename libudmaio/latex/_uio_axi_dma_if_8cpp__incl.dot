@@ -16,7 +16,7 @@ digraph "UioAxiDmaIf.cpp"
   Node5 [label="RegAccessor.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_reg_accessor_8hpp.html",tooltip=" "];
   Node5 -> Node4 [color="steelblue1",style="solid"];
   Node5 -> Node6 [color="steelblue1",style="solid"];
-  Node6 [label="udmaio/UioIfBase.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_base_8hpp.html",tooltip=" "];
+  Node6 [label="udmaio/UioIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8hpp.html",tooltip=" "];
   Node6 -> Node7 [color="steelblue1",style="solid"];
   Node7 [label="filesystem",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node6 -> Node8 [color="steelblue1",style="solid"];
@@ -62,11 +62,9 @@ digraph "UioAxiDmaIf.cpp"
   Node26 [label="boost/log/sources/record\l_ostream.hpp",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node6 -> Node27 [color="steelblue1",style="solid"];
   Node27 [label="boost/log/sources/severity\l_logger.hpp",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node2 -> Node28 [color="steelblue1",style="solid"];
-  Node28 [label="UioIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8hpp.html",tooltip=" "];
-  Node28 -> Node6 [color="steelblue1",style="solid"];
-  Node1 -> Node29 [color="steelblue1",style="solid"];
-  Node29 [label="ios",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node2 -> Node6 [color="steelblue1",style="solid"];
+  Node1 -> Node28 [color="steelblue1",style="solid"];
+  Node28 [label="ios",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node13 [color="steelblue1",style="solid"];
   Node1 -> Node16 [color="steelblue1",style="solid"];
   Node1 -> Node17 [color="steelblue1",style="solid"];

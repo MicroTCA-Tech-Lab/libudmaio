@@ -29,7 +29,9 @@ void \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a0dd0d06deac7f7810feeafa37c3
 uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_ac86d786996e68219d26db1ae67cfd0a9}{get\+\_\+first\+\_\+desc\+\_\+addr}} () const
 \begin{DoxyCompactList}\small\item\em Get address of first SGDMA descriptor (needed for the AXI DMA I/F) \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} $>$ \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a34ffc4c13f92af1e5a99075fd7582f08}{get\+\_\+full\+\_\+buffers}} ()
-\begin{DoxyCompactList}\small\item\em Get full SGDMA buffers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get full SGDMA buffers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a9eab72c96cad2df0a438ef2fcf685e2e}{Uio\+If}} (\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} dev)
+\begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -99,7 +101,7 @@ Interface to AXI DMA scatter-\/gather buffers \& descriptors Uses a \mbox{\hyper
 
 
 
-Implements \mbox{\hyperlink{classudmaio_1_1_uio_if_base_adc4c1d9a03e87af0b9a853bb45c5bd62}{udmaio\+::\+Uio\+If\+Base}}.
+Implements \mbox{\hyperlink{classudmaio_1_1_uio_if_aebd339271c546d44575671edc7f7daf9}{udmaio\+::\+Uio\+If}}.
 
 \mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_ac9653d73072e449a5a0a7136ed7deb07}\label{classudmaio_1_1_uio_mem_sgdma_ac9653d73072e449a5a0a7136ed7deb07}} 
 \index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!desc\_ptr@{desc\_ptr}}
@@ -189,6 +191,21 @@ Print all SGDMA descriptors.
 \doxysubsubsection{\texorpdfstring{read\_desc()}{read\_desc()}}
 {\footnotesize\ttfamily S2mm\+Desc udmaio\+::\+Uio\+Mem\+Sgdma\+::read\+\_\+desc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_a9eab72c96cad2df0a438ef2fcf685e2e}\label{classudmaio_1_1_uio_mem_sgdma_a9eab72c96cad2df0a438ef2fcf685e2e}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!UioIf@{UioIf}}
+\index{UioIf@{UioIf}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{UioIf()}{UioIf()}}
+{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}}]{dev }\end{DoxyParamCaption})}
+
+
+
+Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev} & \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} describing the connection information \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_ad1c770a8302c0f8c6838dca51efe5993}\label{classudmaio_1_1_uio_mem_sgdma_ad1c770a8302c0f8c6838dca51efe5993}} 
 \index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!write\_cyc\_mode@{write\_cyc\_mode}}
 \index{write\_cyc\_mode@{write\_cyc\_mode}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}

@@ -16,15 +16,11 @@ var searchData=
   ['uioconfigxdma_13',['UioConfigXdma',['../classudmaio_1_1_uio_config_xdma.html',1,'udmaio::UioConfigXdma'],['../classudmaio_1_1_uio_config_xdma.html#ae57292575248142f2e15b0872c782953',1,'udmaio::UioConfigXdma::UioConfigXdma()=delete'],['../classudmaio_1_1_uio_config_xdma.html#a196df351db3d69f3605bcb89131f02cc',1,'udmaio::UioConfigXdma::UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs)']]],
   ['uiodeviceinfo_14',['UioDeviceInfo',['../structudmaio_1_1_uio_device_info.html',1,'udmaio']]],
   ['uiodevicelocation_15',['UioDeviceLocation',['../classudmaio_1_1_uio_device_location.html',1,'udmaio::UioDeviceLocation'],['../classudmaio_1_1_uio_device_location.html#a54abcabef821b45fc19a628677d56ba2',1,'udmaio::UioDeviceLocation::UioDeviceLocation()']]],
-  ['uioif_16',['UioIf',['../classudmaio_1_1_uio_if.html',1,'udmaio']]],
-  ['uioif_2ehpp_17',['UioIf.hpp',['../_uio_if_8hpp.html',1,'']]],
-  ['uioif32_18',['UioIf32',['../namespaceudmaio.html#a9c868d98e95c5a57b57db612562c41c7',1,'udmaio']]],
-  ['uioif64_19',['UioIf64',['../namespaceudmaio.html#a6fa7ecce970804e9fb564fdc466d92a9',1,'udmaio']]],
-  ['uioifbase_20',['UioIfBase',['../classudmaio_1_1_uio_if_base.html',1,'udmaio::UioIfBase'],['../classudmaio_1_1_uio_if_base.html#a594dc74763500f1162c98d23fc66b589',1,'udmaio::UioIfBase::UioIfBase()'],['../classudmaio_1_1_uio_if.html#a594dc74763500f1162c98d23fc66b589',1,'udmaio::UioIf::UioIfBase()']]],
-  ['uioifbase_2ecpp_21',['UioIfBase.cpp',['../_uio_if_base_8cpp.html',1,'']]],
-  ['uioifbase_2ehpp_22',['UioIfBase.hpp',['../_uio_if_base_8hpp.html',1,'']]],
-  ['uiomemsgdma_23',['UioMemSgdma',['../classudmaio_1_1_uio_mem_sgdma.html',1,'udmaio']]],
-  ['uiomemsgdma_2ecpp_24',['UioMemSgdma.cpp',['../_uio_mem_sgdma_8cpp.html',1,'']]],
-  ['uiomemsgdma_2ehpp_25',['UioMemSgdma.hpp',['../_uio_mem_sgdma_8hpp.html',1,'']]],
-  ['uioregion_26',['UioRegion',['../structudmaio_1_1_uio_region.html',1,'udmaio']]]
+  ['uioif_16',['UioIf',['../classudmaio_1_1_uio_if.html',1,'udmaio::UioIf'],['../classudmaio_1_1_uio_mem_sgdma.html#a9eab72c96cad2df0a438ef2fcf685e2e',1,'udmaio::UioMemSgdma::UioIf()'],['../classudmaio_1_1_fpga_mem_buffer_over_axi.html#a9eab72c96cad2df0a438ef2fcf685e2e',1,'udmaio::FpgaMemBufferOverAxi::UioIf()'],['../classudmaio_1_1_uio_if.html#a9eab72c96cad2df0a438ef2fcf685e2e',1,'udmaio::UioIf::UioIf()']]],
+  ['uioif_2ecpp_17',['UioIf.cpp',['../_uio_if_8cpp.html',1,'']]],
+  ['uioif_2ehpp_18',['UioIf.hpp',['../_uio_if_8hpp.html',1,'']]],
+  ['uiomemsgdma_19',['UioMemSgdma',['../classudmaio_1_1_uio_mem_sgdma.html',1,'udmaio']]],
+  ['uiomemsgdma_2ecpp_20',['UioMemSgdma.cpp',['../_uio_mem_sgdma_8cpp.html',1,'']]],
+  ['uiomemsgdma_2ehpp_21',['UioMemSgdma.hpp',['../_uio_mem_sgdma_8hpp.html',1,'']]],
+  ['uioregion_22',['UioRegion',['../structudmaio_1_1_uio_region.html',1,'udmaio']]]
 ];

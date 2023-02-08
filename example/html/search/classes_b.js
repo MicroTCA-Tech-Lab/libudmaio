@@ -9,8 +9,7 @@ var searchData=
   ['uiodevicelocation_6',['UioDeviceLocation',['../classudmaio_1_1_uio_device_location.html',1,'udmaio']]],
   ['uiogpiostatus_7',['UioGpioStatus',['../class_uio_gpio_status.html',1,'']]],
   ['uioif_8',['UioIf',['../classudmaio_1_1_uio_if.html',1,'udmaio']]],
-  ['uioifbase_9',['UioIfBase',['../classudmaio_1_1_uio_if_base.html',1,'udmaio']]],
-  ['uiomemsgdma_10',['UioMemSgdma',['../classudmaio_1_1_uio_mem_sgdma.html',1,'udmaio']]],
-  ['uioregion_11',['UioRegion',['../structudmaio_1_1_uio_region.html',1,'udmaio']]],
-  ['uiotrafficgen_12',['UioTrafficGen',['../class_uio_traffic_gen.html',1,'']]]
+  ['uiomemsgdma_9',['UioMemSgdma',['../classudmaio_1_1_uio_mem_sgdma.html',1,'udmaio']]],
+  ['uioregion_10',['UioRegion',['../structudmaio_1_1_uio_region.html',1,'udmaio']]],
+  ['uiotrafficgen_11',['UioTrafficGen',['../class_uio_traffic_gen.html',1,'']]]
 ];

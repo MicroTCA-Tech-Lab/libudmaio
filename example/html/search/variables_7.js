@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['g_5fstop_5floop_0',['g_stop_loop',['../axi__dma__demo_8cpp.html#a9500273e36edf10300f1a97e86b1999e',1,'axi_dma_demo.cpp']]],
-  ['gpio_1',['gpio',['../class_uio_gpio_status.html#a3c3d0e9b18d4b0ed16524c32695d9c4f',1,'UioGpioStatus']]]
+  ['halted_0',['halted',['../structaxi__dma_1_1mm2s__dmasr__t.html#adb593de3d6cecf47f9bd5f0c85e77d3a',1,'axi_dma::mm2s_dmasr_t::halted()'],['../structaxi__dma_1_1s2mm__dmasr__t.html#a5c72c3b8ed0a45272709e9e40d9565ee',1,'axi_dma::s2mm_dmasr_t::halted()']]]
 ];

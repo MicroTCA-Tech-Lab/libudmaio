@@ -1,6 +1,5 @@
 <map id="udmaio::UioMemSgdma" name="udmaio::UioMemSgdma">
-<area shape="rect" id="node1" title="Interface to AXI DMA scatter&#45;gather buffers &amp; descriptors Uses a UioIf to access DMA descriptor memor..." alt="" coords="5,225,165,251"/>
-<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="UIO Interface implementing bus access." alt="" coords="53,152,117,177"/>
-<area shape="rect" id="node3" href="$classudmaio_1_1_uio_if_base.html" title="Base class for UIO interfaces." alt="" coords="21,79,149,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="19,5,151,31"/>
+<area shape="rect" id="node1" title="Interface to AXI DMA scatter&#45;gather buffers &amp; descriptors Uses a UioIf to access DMA descriptor memor..." alt="" coords="5,152,165,177"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="36,79,135,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="19,5,151,31"/>
 </map>

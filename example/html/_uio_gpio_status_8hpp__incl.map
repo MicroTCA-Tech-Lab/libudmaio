@@ -1,9 +1,8 @@
 <map id="UioGpioStatus.hpp" name="UioGpioStatus.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="1048,5,1179,31"/>
-<area shape="rect" id="node2" href="$_reg_accessor_8hpp.html" title=" " alt="" coords="944,79,1115,104"/>
-<area shape="rect" id="node26" href="$_uio_if_8hpp.html" title=" " alt="" coords="1139,79,1259,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="999,152,1060,177"/>
-<area shape="rect" id="node4" href="$_uio_if_base_8hpp.html" title=" " alt="" coords="1103,152,1254,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="1056,5,1187,31"/>
+<area shape="rect" id="node2" href="$_reg_accessor_8hpp.html" title=" " alt="" coords="1036,79,1207,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="1033,152,1095,177"/>
+<area shape="rect" id="node4" href="$_uio_if_8hpp.html" title=" " alt="" coords="1119,152,1239,177"/>
 <area shape="rect" id="node5" title=" " alt="" coords="5,233,85,258"/>
 <area shape="rect" id="node6" title=" " alt="" coords="109,233,176,258"/>
 <area shape="rect" id="node7" title=" " alt="" coords="147,313,219,339"/>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['uio_5fname_0',['uio_name',['../classudmaio_1_1_uio_device_location.html#a57f31399f8dc8274d4ef7cb4221bc275',1,'udmaio::UioDeviceLocation']]]
+  ['val_0',['val',['../class_axi_traffic_gen_lfsr.html#aed2a855f64ff59a3e69a9882d23bc134',1,'AxiTrafficGenLfsr']]],
+  ['version_1',['version',['../struct_uio_traffic_gen_1_1_st_control.html#ae851a61b515e5762348e2fe897b263c6',1,'UioTrafficGen::StControl']]]
 ];

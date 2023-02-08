@@ -9,7 +9,7 @@ digraph "RegAccessor.hpp"
   Node1 -> Node2 [color="steelblue1",style="solid"];
   Node2 [label="cstdint",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node3 [color="steelblue1",style="solid"];
-  Node3 [label="udmaio/UioIfBase.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_base_8hpp.html",tooltip=" "];
+  Node3 [label="udmaio/UioIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8hpp.html",tooltip=" "];
   Node3 -> Node4 [color="steelblue1",style="solid"];
   Node4 [label="filesystem",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node3 -> Node5 [color="steelblue1",style="solid"];

@@ -1,6 +1,5 @@
-<map id="udmaio::UioIf&lt; bus_type_t &gt;" name="udmaio::UioIf&lt; bus_type_t &gt;">
-<area shape="rect" id="node1" title="UIO Interface implementing bus access." alt="" coords="83,168,214,208"/>
-<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if_base.html" title="Base class for UIO interfaces." alt="" coords="85,93,213,119"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,5,137,31"/>
-<area shape="rect" id="node4" href="$structudmaio_1_1_uio_region.html" title="General&#45;purpose struct to define a memory area." alt="" coords="162,5,293,31"/>
+<map id="udmaio::UioIf" name="udmaio::UioIf">
+<area shape="rect" id="node1" title="Base class for UIO interfaces." alt="" coords="99,93,198,119"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,137,31"/>
+<area shape="rect" id="node3" href="$structudmaio_1_1_uio_region.html" title="General&#45;purpose struct to define a memory area." alt="" coords="162,5,293,31"/>
 </map>

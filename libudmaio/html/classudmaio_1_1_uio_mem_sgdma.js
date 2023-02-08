@@ -12,6 +12,7 @@ var classudmaio_1_1_uio_mem_sgdma =
     [ "print_desc", "classudmaio_1_1_uio_mem_sgdma.html#a82a1d8293baf5800a56c186d006dd234", null ],
     [ "print_descs", "classudmaio_1_1_uio_mem_sgdma.html#a0dd0d06deac7f7810feeafa37c399dae", null ],
     [ "read_desc", "classudmaio_1_1_uio_mem_sgdma.html#a48b557a66323016bc124caa6f048827b", null ],
+    [ "UioIf", "classudmaio_1_1_uio_mem_sgdma.html#a9eab72c96cad2df0a438ef2fcf685e2e", null ],
     [ "write_cyc_mode", "classudmaio_1_1_uio_mem_sgdma.html#ad1c770a8302c0f8c6838dca51efe5993", null ],
     [ "write_desc", "classudmaio_1_1_uio_mem_sgdma.html#aa6ef679ce983f46e1e4a13ed696cda81", null ],
     [ "_next_readable_buf", "classudmaio_1_1_uio_mem_sgdma.html#a61e1d6a02ede507d2f4c1709939f6413", null ],

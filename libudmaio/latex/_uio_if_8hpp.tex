@@ -1,6 +1,24 @@
 \hypertarget{_uio_if_8hpp}{}\doxysection{Uio\+If.\+hpp File Reference}
 \label{_uio_if_8hpp}\index{UioIf.hpp@{UioIf.hpp}}
-{\ttfamily \#include \char`\"{}udmaio/\+Uio\+If\+Base.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string\+\_\+view$>$}\newline
+{\ttfamily \#include $<$boost/core/noncopyable.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/core/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/expressions.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/keywords/severity.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/sources/logger.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/trivial.\+hpp$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}udmaio/\+Uio\+Config.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/log/sources/record\+\_\+ostream.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/log/sources/severity\+\_\+logger.\+hpp$>$}\newline
 Include dependency graph for Uio\+If.\+hpp\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
@@ -8,17 +26,10 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classudmaio_1_1_uio_if}{udmaio\+::\+Uio\+If$<$ bus\+\_\+type\+\_\+t $>$}}
-\begin{DoxyCompactList}\small\item\em UIO Interface implementing bus access. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classudmaio_1_1_uio_if}{udmaio\+::\+Uio\+If}}
+\begin{DoxyCompactList}\small\item\em Base class for UIO interfaces. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceudmaio}{udmaio}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Typedefs}
-\begin{DoxyCompactItemize}
-\item 
-using \mbox{\hyperlink{namespaceudmaio_a9c868d98e95c5a57b57db612562c41c7}{udmaio\+::\+Uio\+If32}} = Uio\+If$<$ uint32\+\_\+t $>$
-\item 
-using \mbox{\hyperlink{namespaceudmaio_a6fa7ecce970804e9fb564fdc466d92a9}{udmaio\+::\+Uio\+If64}} = Uio\+If$<$ uint64\+\_\+t $>$
 \end{DoxyCompactItemize}

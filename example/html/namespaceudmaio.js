@@ -18,13 +18,10 @@ var namespaceudmaio =
     [ "UioDeviceInfo", "structudmaio_1_1_uio_device_info.html", "structudmaio_1_1_uio_device_info" ],
     [ "UioDeviceLocation", "classudmaio_1_1_uio_device_location.html", "classudmaio_1_1_uio_device_location" ],
     [ "UioIf", "classudmaio_1_1_uio_if.html", "classudmaio_1_1_uio_if" ],
-    [ "UioIfBase", "classudmaio_1_1_uio_if_base.html", "classudmaio_1_1_uio_if_base" ],
     [ "UioMemSgdma", "classudmaio_1_1_uio_mem_sgdma.html", "classudmaio_1_1_uio_mem_sgdma" ],
     [ "UioRegion", "structudmaio_1_1_uio_region.html", "structudmaio_1_1_uio_region" ],
     [ "AxiDmaBlock", "namespaceudmaio.html#a681a7289ae1db6b3e4fdef3a0602ebff", null ],
     [ "RegAccessor", "namespaceudmaio.html#a05b519f65a300d1cd8f0c150fae1e71c", null ],
-    [ "UioIf32", "namespaceudmaio.html#a9c868d98e95c5a57b57db612562c41c7", null ],
-    [ "UioIf64", "namespaceudmaio.html#a6fa7ecce970804e9fb564fdc466d92a9", null ],
     [ "DmaMode", "namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080cec", [
       [ "XDMA", "namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080cecaf3dac949aa62d490afa1ac577a5fc028", null ],
       [ "UIO", "namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080ceca910a3bb55574645cc3d46b715f097eb0", null ]

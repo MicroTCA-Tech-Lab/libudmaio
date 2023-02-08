@@ -34,7 +34,8 @@ digraph "UioConfig.hpp"
   Node1 -> Node14 [dir="back",color="steelblue1",style="solid"];
   Node14 [label="UioConfig.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_config_8cpp.html",tooltip=" "];
   Node1 -> Node15 [dir="back",color="steelblue1",style="solid"];
-  Node15 [label="UioIfBase.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_base_8hpp.html",tooltip=" "];
+  Node15 [label="UioIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8hpp.html",tooltip=" "];
+  Node15 -> Node4 [dir="back",color="steelblue1",style="solid"];
   Node15 -> Node16 [dir="back",color="steelblue1",style="solid"];
   Node16 [label="RegAccessor.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_reg_accessor_8hpp.html",tooltip=" "];
   Node16 -> Node17 [dir="back",color="steelblue1",style="solid"];
@@ -42,11 +43,8 @@ digraph "UioConfig.hpp"
   Node17 -> Node7 [dir="back",color="steelblue1",style="solid"];
   Node17 -> Node18 [dir="back",color="steelblue1",style="solid"];
   Node18 [label="UioAxiDmaIf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_axi_dma_if_8cpp.html",tooltip=" "];
+  Node15 -> Node17 [dir="back",color="steelblue1",style="solid"];
   Node15 -> Node19 [dir="back",color="steelblue1",style="solid"];
-  Node19 [label="UioIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8hpp.html",tooltip=" "];
-  Node19 -> Node4 [dir="back",color="steelblue1",style="solid"];
-  Node19 -> Node17 [dir="back",color="steelblue1",style="solid"];
-  Node19 -> Node12 [dir="back",color="steelblue1",style="solid"];
-  Node15 -> Node20 [dir="back",color="steelblue1",style="solid"];
-  Node20 [label="UioIfBase.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_base_8cpp.html",tooltip=" "];
+  Node19 [label="UioIf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8cpp.html",tooltip=" "];
+  Node15 -> Node12 [dir="back",color="steelblue1",style="solid"];
 }

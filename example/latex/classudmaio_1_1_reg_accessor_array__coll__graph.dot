@@ -9,7 +9,7 @@ digraph "udmaio::RegAccessorArray&lt; C, offset, arr_size, arr_stride &gt;"
   Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
   Node2 [label="udmaio::RegAccessorBase\< C \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_base.html",tooltip="Base class implementing register access. Only used by subclasses, not used directly."];
   Node3 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" _if" ];
-  Node3 [label="udmaio::UioIfBase",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_if_base.html",tooltip="Base class for UIO interfaces."];
+  Node3 [label="udmaio::UioIf",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_if.html",tooltip="Base class for UIO interfaces."];
   Node4 -> Node3 [dir="back",color="firebrick4",style="solid"];
   Node4 [label="boost::noncopyable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
   Node5 -> Node3 [dir="back",color="darkorchid3",style="dashed",label=" _region" ];

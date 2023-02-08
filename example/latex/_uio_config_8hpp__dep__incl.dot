@@ -31,7 +31,8 @@ digraph "UioConfig.hpp"
   Node11 -> Node7 [dir="back",color="steelblue1",style="solid"];
   Node11 -> Node5 [dir="back",color="steelblue1",style="solid"];
   Node1 -> Node12 [dir="back",color="steelblue1",style="solid"];
-  Node12 [label="UioIfBase.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_base_8hpp.html",tooltip=" "];
+  Node12 [label="UioIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8hpp.html",tooltip=" "];
+  Node12 -> Node3 [dir="back",color="steelblue1",style="solid"];
   Node12 -> Node13 [dir="back",color="steelblue1",style="solid"];
   Node13 [label="RegAccessor.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_reg_accessor_8hpp.html",tooltip=" "];
   Node13 -> Node14 [dir="back",color="steelblue1",style="solid"];
@@ -46,16 +47,11 @@ digraph "UioConfig.hpp"
   Node16 -> Node17 [dir="back",color="steelblue1",style="solid"];
   Node17 [label="UioTrafficGen.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_traffic_gen_8cpp.html",tooltip=" "];
   Node16 -> Node5 [dir="back",color="steelblue1",style="solid"];
-  Node12 -> Node18 [dir="back",color="steelblue1",style="solid"];
-  Node18 [label="UioIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8hpp.html",tooltip=" "];
-  Node18 -> Node3 [dir="back",color="steelblue1",style="solid"];
-  Node18 -> Node14 [dir="back",color="steelblue1",style="solid"];
-  Node18 -> Node15 [dir="back",color="steelblue1",style="solid"];
-  Node18 -> Node11 [dir="back",color="steelblue1",style="solid"];
-  Node18 -> Node16 [dir="back",color="steelblue1",style="solid"];
-  Node18 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node12 -> Node14 [dir="back",color="steelblue1",style="solid"];
+  Node12 -> Node11 [dir="back",color="steelblue1",style="solid"];
+  Node12 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node1 -> Node18 [dir="back",color="steelblue1",style="solid"];
+  Node18 [label="Z7ioExampleProjectConsts.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_z7io_example_project_consts_8hpp.html",tooltip=" "];
   Node1 -> Node19 [dir="back",color="steelblue1",style="solid"];
-  Node19 [label="Z7ioExampleProjectConsts.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_z7io_example_project_consts_8hpp.html",tooltip=" "];
-  Node1 -> Node20 [dir="back",color="steelblue1",style="solid"];
-  Node20 [label="ZupExampleProjectConsts.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_zup_example_project_consts_8hpp.html",tooltip=" "];
+  Node19 [label="ZupExampleProjectConsts.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_zup_example_project_consts_8hpp.html",tooltip=" "];
 }

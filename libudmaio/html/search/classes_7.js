@@ -8,7 +8,6 @@ var searchData=
   ['uiodeviceinfo_5',['UioDeviceInfo',['../structudmaio_1_1_uio_device_info.html',1,'udmaio']]],
   ['uiodevicelocation_6',['UioDeviceLocation',['../classudmaio_1_1_uio_device_location.html',1,'udmaio']]],
   ['uioif_7',['UioIf',['../classudmaio_1_1_uio_if.html',1,'udmaio']]],
-  ['uioifbase_8',['UioIfBase',['../classudmaio_1_1_uio_if_base.html',1,'udmaio']]],
-  ['uiomemsgdma_9',['UioMemSgdma',['../classudmaio_1_1_uio_mem_sgdma.html',1,'udmaio']]],
-  ['uioregion_10',['UioRegion',['../structudmaio_1_1_uio_region.html',1,'udmaio']]]
+  ['uiomemsgdma_8',['UioMemSgdma',['../classudmaio_1_1_uio_mem_sgdma.html',1,'udmaio']]],
+  ['uioregion_9',['UioRegion',['../structudmaio_1_1_uio_region.html',1,'udmaio']]]
 ];

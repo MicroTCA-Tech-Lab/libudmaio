@@ -50,7 +50,7 @@ digraph "DataHandlerAbstract.cpp"
   Node20 [label="RegAccessor.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_reg_accessor_8hpp.html",tooltip=" "];
   Node20 -> Node11 [color="steelblue1",style="solid"];
   Node20 -> Node21 [color="steelblue1",style="solid"];
-  Node21 [label="udmaio/UioIfBase.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_base_8hpp.html",tooltip=" "];
+  Node21 [label="udmaio/UioIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8hpp.html",tooltip=" "];
   Node21 -> Node22 [color="steelblue1",style="solid"];
   Node22 [label="filesystem",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node21 -> Node23 [color="steelblue1",style="solid"];
@@ -81,19 +81,17 @@ digraph "DataHandlerAbstract.cpp"
   Node31 [label="boost/log/sources/record\l_ostream.hpp",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node21 -> Node32 [color="steelblue1",style="solid"];
   Node32 [label="boost/log/sources/severity\l_logger.hpp",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node18 -> Node33 [color="steelblue1",style="solid"];
-  Node33 [label="UioIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8hpp.html",tooltip=" "];
+  Node18 -> Node21 [color="steelblue1",style="solid"];
+  Node2 -> Node33 [color="steelblue1",style="solid"];
+  Node33 [label="UioMemSgdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8hpp.html",tooltip=" "];
+  Node33 -> Node10 [color="steelblue1",style="solid"];
   Node33 -> Node21 [color="steelblue1",style="solid"];
   Node2 -> Node34 [color="steelblue1",style="solid"];
-  Node34 [label="UioMemSgdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8hpp.html",tooltip=" "];
-  Node34 -> Node10 [color="steelblue1",style="solid"];
-  Node34 -> Node33 [color="steelblue1",style="solid"];
-  Node2 -> Node35 [color="steelblue1",style="solid"];
-  Node35 [label="boost/asio/posix/stream\l_descriptor.hpp",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node34 [label="boost/asio/posix/stream\l_descriptor.hpp",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node35 [color="steelblue1",style="solid"];
+  Node35 [label="functional",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node36 [color="steelblue1",style="solid"];
-  Node36 [label="functional",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node1 -> Node37 [color="steelblue1",style="solid"];
-  Node37 [label="iomanip",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node36 [label="iomanip",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node13 [color="steelblue1",style="solid"];
   Node1 -> Node3 [color="steelblue1",style="solid"];
 }

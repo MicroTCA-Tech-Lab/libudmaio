@@ -33,7 +33,6 @@ var annotated_dup =
       [ "UioDeviceInfo", "structudmaio_1_1_uio_device_info.html", "structudmaio_1_1_uio_device_info" ],
       [ "UioDeviceLocation", "classudmaio_1_1_uio_device_location.html", "classudmaio_1_1_uio_device_location" ],
       [ "UioIf", "classudmaio_1_1_uio_if.html", "classudmaio_1_1_uio_if" ],
-      [ "UioIfBase", "classudmaio_1_1_uio_if_base.html", "classudmaio_1_1_uio_if_base" ],
       [ "UioMemSgdma", "classudmaio_1_1_uio_mem_sgdma.html", "classudmaio_1_1_uio_mem_sgdma" ],
       [ "UioRegion", "structudmaio_1_1_uio_region.html", "structudmaio_1_1_uio_region" ]
     ] ],

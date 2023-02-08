@@ -16,51 +16,50 @@
 \DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{13 }
 \DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_reg_accessor_8hpp}{udmaio/RegAccessor.hpp}}"{}}}
-\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_uio_if_8hpp}{udmaio/UioIf.hpp}}"{}}}
-\DoxyCodeLine{16 }
-\DoxyCodeLine{17 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}};}
-\DoxyCodeLine{18 }
-\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_uio_traffic_gen}{UioTrafficGen}} : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf32}} \{}
-\DoxyCodeLine{21     \textcolor{keyword}{struct }\mbox{\hyperlink{_reg_accessor_8hpp_acc0a1ca2ff7aa6ea7e505d8c7e018368}{REG\_PACKED\_ALIGNED}} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_control}{StControl}} \{}
-\DoxyCodeLine{22         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_control_ab0d8563c37df39c9a43eada72b1cf416}{stren}} : 1;}
-\DoxyCodeLine{23         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_control_a4429140226b560b19b1b79e4359f9cfd}{done}} : 1;}
-\DoxyCodeLine{24         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_control_a7dbdc38a306b836fd436c500ae9496e2}{rsvd}} : 22;}
-\DoxyCodeLine{25         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_control_ae851a61b515e5762348e2fe897b263c6}{version}} : 8;}
-\DoxyCodeLine{26     \};}
-\DoxyCodeLine{27 }
-\DoxyCodeLine{28     \textcolor{keyword}{struct }\mbox{\hyperlink{_reg_accessor_8hpp_acc0a1ca2ff7aa6ea7e505d8c7e018368}{REG\_PACKED\_ALIGNED}} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_config}{StConfig}} \{}
-\DoxyCodeLine{29         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_config_a3d649ffeb31621fdb7005bc995cfe571}{ranlen}} : 1;}
-\DoxyCodeLine{30         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_config_a3b737b6767883479b73f76efb586d105}{randly}} : 1;}
-\DoxyCodeLine{31         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_config_a712c62800a359e030e05c8a54ce64830}{etkts}} : 1;}
-\DoxyCodeLine{32         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_config_aa142bc7a198c33914c1afe29c8567d6e}{rsvd7\_3}} : 5;}
-\DoxyCodeLine{33         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_config_a7e3b3a80bcaebe749e13818b8ee03b37}{tdest}} : 8;}
-\DoxyCodeLine{34         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_config_a65ba2e8dd8270c26dd7b81188973dbc9}{pdly}} : 16;}
-\DoxyCodeLine{35     \};}
-\DoxyCodeLine{36 }
-\DoxyCodeLine{37     \textcolor{keyword}{struct }\mbox{\hyperlink{_reg_accessor_8hpp_acc0a1ca2ff7aa6ea7e505d8c7e018368}{REG\_PACKED\_ALIGNED}} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_tr_length}{TrLength}} \{}
-\DoxyCodeLine{38         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_tr_length_a706816e1434047fe5e7ae9ef3511222a}{tlen}} : 16;}
-\DoxyCodeLine{39         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_tr_length_ac9bb4312a137799a60e633b22d8bbcbb}{tcnt}} : 16;}
-\DoxyCodeLine{40     \};}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{42     \textcolor{keyword}{struct }\mbox{\hyperlink{_reg_accessor_8hpp_acc0a1ca2ff7aa6ea7e505d8c7e018368}{REG\_PACKED\_ALIGNED}} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_ext_tr_length}{ExtTrLength}} \{}
-\DoxyCodeLine{43         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_ext_tr_length_aba94761ed3303811fc384c5f474c71b2}{ext\_tlen}} : 8;}
-\DoxyCodeLine{44         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_ext_tr_length_a3ae7e55262eebc7c8bde50dbce245b16}{rsvd}} : 24;}
-\DoxyCodeLine{45     \};}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{47     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{RegAccessor<StControl, 0x30>}} \mbox{\hyperlink{class_uio_traffic_gen_a551eb0a5cc23e2a73c4cd6556ef6eaa7}{stControl}}\{\textcolor{keyword}{this}\};}
-\DoxyCodeLine{48     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{RegAccessor<StConfig, 0x34>}} \mbox{\hyperlink{class_uio_traffic_gen_aad03e4e1d3061f2fe52cbcdf94f6d2d7}{stConfig}}\{\textcolor{keyword}{this}\};}
-\DoxyCodeLine{49     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{RegAccessor<TrLength, 0x38>}} \mbox{\hyperlink{class_uio_traffic_gen_ac23297128999e2f8c1ace2cb55c1c80f}{trLength}}\{\textcolor{keyword}{this}\};}
-\DoxyCodeLine{50     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{RegAccessor<ExtTrLength, 0x50>}} \mbox{\hyperlink{class_uio_traffic_gen_a2f9eeafe6748fcdfcb8f290ed7b16311}{extTrLength}}\{\textcolor{keyword}{this}\};}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{52     \textcolor{keyword}{virtual} \textcolor{keyword}{const} std::string\_view \mbox{\hyperlink{class_uio_traffic_gen_acb4f1ec3084398f6bcda00ed3f25e6ab}{\_log\_name}}() \textcolor{keyword}{const override};}
-\DoxyCodeLine{53 }
-\DoxyCodeLine{54   \textcolor{keyword}{public}:}
-\DoxyCodeLine{55     \textcolor{keyword}{using }UioIf::UioIf;}
-\DoxyCodeLine{56 }
-\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_ad56c154d7266ccfda625c0da9c985862}{start}}(uint16\_t nr\_pkts, uint32\_t pkt\_size, uint16\_t pkt\_pause);}
-\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_a91a7c2c7c803d3d2c2ec3ec704adcd23}{stop}}();}
-\DoxyCodeLine{59 }
-\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_a750caba91e833c09f3eb2b928bebf40d}{print\_version}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{61 \};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_uio_traffic_gen}{UioTrafficGen}} : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}} \{}
+\DoxyCodeLine{20     \textcolor{keyword}{struct }\mbox{\hyperlink{_reg_accessor_8hpp_acc0a1ca2ff7aa6ea7e505d8c7e018368}{REG\_PACKED\_ALIGNED}} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_control}{StControl}} \{}
+\DoxyCodeLine{21         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_control_ab0d8563c37df39c9a43eada72b1cf416}{stren}} : 1;}
+\DoxyCodeLine{22         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_control_a4429140226b560b19b1b79e4359f9cfd}{done}} : 1;}
+\DoxyCodeLine{23         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_control_a7dbdc38a306b836fd436c500ae9496e2}{rsvd}} : 22;}
+\DoxyCodeLine{24         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_control_ae851a61b515e5762348e2fe897b263c6}{version}} : 8;}
+\DoxyCodeLine{25     \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keyword}{struct }\mbox{\hyperlink{_reg_accessor_8hpp_acc0a1ca2ff7aa6ea7e505d8c7e018368}{REG\_PACKED\_ALIGNED}} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_config}{StConfig}} \{}
+\DoxyCodeLine{28         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_config_a3d649ffeb31621fdb7005bc995cfe571}{ranlen}} : 1;}
+\DoxyCodeLine{29         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_config_a3b737b6767883479b73f76efb586d105}{randly}} : 1;}
+\DoxyCodeLine{30         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_config_a712c62800a359e030e05c8a54ce64830}{etkts}} : 1;}
+\DoxyCodeLine{31         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_config_aa142bc7a198c33914c1afe29c8567d6e}{rsvd7\_3}} : 5;}
+\DoxyCodeLine{32         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_config_a7e3b3a80bcaebe749e13818b8ee03b37}{tdest}} : 8;}
+\DoxyCodeLine{33         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_config_a65ba2e8dd8270c26dd7b81188973dbc9}{pdly}} : 16;}
+\DoxyCodeLine{34     \};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keyword}{struct }\mbox{\hyperlink{_reg_accessor_8hpp_acc0a1ca2ff7aa6ea7e505d8c7e018368}{REG\_PACKED\_ALIGNED}} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_tr_length}{TrLength}} \{}
+\DoxyCodeLine{37         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_tr_length_a706816e1434047fe5e7ae9ef3511222a}{tlen}} : 16;}
+\DoxyCodeLine{38         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_tr_length_ac9bb4312a137799a60e633b22d8bbcbb}{tcnt}} : 16;}
+\DoxyCodeLine{39     \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keyword}{struct }\mbox{\hyperlink{_reg_accessor_8hpp_acc0a1ca2ff7aa6ea7e505d8c7e018368}{REG\_PACKED\_ALIGNED}} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_ext_tr_length}{ExtTrLength}} \{}
+\DoxyCodeLine{42         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_ext_tr_length_aba94761ed3303811fc384c5f474c71b2}{ext\_tlen}} : 8;}
+\DoxyCodeLine{43         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_ext_tr_length_a3ae7e55262eebc7c8bde50dbce245b16}{rsvd}} : 24;}
+\DoxyCodeLine{44     \};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{RegAccessor<StControl, 0x30>}} \mbox{\hyperlink{class_uio_traffic_gen_a551eb0a5cc23e2a73c4cd6556ef6eaa7}{stControl}}\{\textcolor{keyword}{this}\};}
+\DoxyCodeLine{47     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{RegAccessor<StConfig, 0x34>}} \mbox{\hyperlink{class_uio_traffic_gen_aad03e4e1d3061f2fe52cbcdf94f6d2d7}{stConfig}}\{\textcolor{keyword}{this}\};}
+\DoxyCodeLine{48     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{RegAccessor<TrLength, 0x38>}} \mbox{\hyperlink{class_uio_traffic_gen_ac23297128999e2f8c1ace2cb55c1c80f}{trLength}}\{\textcolor{keyword}{this}\};}
+\DoxyCodeLine{49     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{RegAccessor<ExtTrLength, 0x50>}} \mbox{\hyperlink{class_uio_traffic_gen_a2f9eeafe6748fcdfcb8f290ed7b16311}{extTrLength}}\{\textcolor{keyword}{this}\};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keyword}{virtual} \textcolor{keyword}{const} std::string\_view \mbox{\hyperlink{class_uio_traffic_gen_acb4f1ec3084398f6bcda00ed3f25e6ab}{\_log\_name}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53   \textcolor{keyword}{public}:}
+\DoxyCodeLine{54     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if_a9eab72c96cad2df0a438ef2fcf685e2e}{UioIf::UioIf}};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_ad56c154d7266ccfda625c0da9c985862}{start}}(uint16\_t nr\_pkts, uint32\_t pkt\_size, uint16\_t pkt\_pause);}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_a91a7c2c7c803d3d2c2ec3ec704adcd23}{stop}}();}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_a750caba91e833c09f3eb2b928bebf40d}{print\_version}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{60 \};}
 
 \end{DoxyCode}

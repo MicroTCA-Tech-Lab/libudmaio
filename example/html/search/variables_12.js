@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['val_0',['val',['../class_axi_traffic_gen_lfsr.html#aed2a855f64ff59a3e69a9882d23bc134',1,'AxiTrafficGenLfsr']]],
-  ['version_1',['version',['../struct_uio_traffic_gen_1_1_st_control.html#ae851a61b515e5762348e2fe897b263c6',1,'UioTrafficGen::StControl']]]
+  ['xdma_5fevt_5fdev_0',['xdma_evt_dev',['../classudmaio_1_1_uio_device_location.html#af5b3ea783511afd64e435bb404636483',1,'udmaio::UioDeviceLocation']]],
+  ['xdma_5fregion_1',['xdma_region',['../classudmaio_1_1_uio_device_location.html#a43dc7b04e1a9e9b21808e1a437f6c90a',1,'udmaio::UioDeviceLocation']]]
 ];
