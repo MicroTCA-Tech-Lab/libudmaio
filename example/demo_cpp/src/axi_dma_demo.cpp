@@ -104,7 +104,7 @@ int main(int argc, char* argv[]) {
     if (mode == DmaMode::UIO) {
         UioDeviceLocation::setLinkAxi();
     } else {
-        UioDeviceLocation::setLinkXdma(dev_path, target_hw_consts::pcie_axi4l_offset);
+        UioDeviceLocation::setLinkXdma(dev_path, target_hw_consts::pcie_offset);
     }
 
     auto gpio_status = std::make_unique<UioGpioStatus>(target_hw_consts::axi_gpio_status);
@@ -115,9 +115,9 @@ int main(int argc, char* argv[]) {
         throw std::runtime_error("DDR4 init calib is not complete");
     }
 
-    auto axi_dma = std::make_unique<UioAxiDmaIf>(target_hw_consts::axi_dma_0);
-    auto mem_sgdma = std::make_unique<UioMemSgdma>(target_hw_consts::bram_ctrl_0);
-    auto traffic_gen = std::make_unique<UioTrafficGen>(target_hw_consts::axi_traffic_gen_0);
+    auto axi_dma = std::make_unique<UioAxiDmaIf>(target_hw_consts::axi_dma);
+    auto mem_sgdma = std::make_unique<UioMemSgdma>(target_hw_consts::axi_bram_ctrl);
+    auto traffic_gen = std::make_unique<UioTrafficGen>(target_hw_consts::axi_traffic_gen);
 
     std::unique_ptr<DmaBufferAbstract> udmabuf;
     if (mode == DmaMode::UIO) {
