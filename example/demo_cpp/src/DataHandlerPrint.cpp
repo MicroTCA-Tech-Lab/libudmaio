@@ -19,7 +19,7 @@ DataHandlerPrint::DataHandlerPrint(UioAxiDmaIf& dma,
                                    DmaBufferAbstract& mem,
                                    unsigned int num_bytes_per_beat,
                                    uint64_t num_bytes_expected)
-    : DataHandlerAbstract{dma, desc, mem}
+    : DataHandlerAbstract{"DataHandlerPrint", dma, desc, mem}
     , lfsr{std::nullopt}
     , _counter_ok{0}
     , _counter_total{0}
@@ -28,13 +28,11 @@ DataHandlerPrint::DataHandlerPrint(UioAxiDmaIf& dma,
     , _num_bytes_rcvd{0} {}
 
 void DataHandlerPrint::process_data(std::vector<uint8_t> bytes) {
-    BOOST_LOG_SEV(_slg, blt::severity_level::debug)
-        << "DataHandlerPrint: process data, size = " << bytes.size();
+    BOOST_LOG_SEV(_lg, bls::debug) << "process data, size = " << bytes.size();
     _num_bytes_rcvd += bytes.size();
 
     if (bytes.size() == 0) {
-        BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-            << "DataHandlerPrint: nothing to do, exiting";
+        BOOST_LOG_SEV(_lg, bls::trace) << "nothing to do, exiting";
         return;
     }
 
@@ -52,9 +50,8 @@ void DataHandlerPrint::process_data(std::vector<uint8_t> bytes) {
             uint16_t recv_val = vals[idx];
             _counter_total++;
             if (exp_val != recv_val) {
-                BOOST_LOG_SEV(_slg, blt::severity_level::fatal)
-                    << "mismatch, at " << idx << " recv = " << std::hex << recv_val
-                    << ", exp = " << exp_val;
+                BOOST_LOG_SEV(_lg, bls::fatal) << "mismatch, at " << idx << " recv = " << std::hex
+                                               << recv_val << ", exp = " << exp_val;
                 stop();
                 return;
             }
@@ -67,11 +64,9 @@ void DataHandlerPrint::process_data(std::vector<uint8_t> bytes) {
     if (_num_bytes_expected != 0 && _num_bytes_rcvd >= _num_bytes_expected) {
         // We're done.
         if (_num_bytes_rcvd == _num_bytes_expected) {
-            BOOST_LOG_SEV(_slg, blt::severity_level::debug)
-                << "DataHandlerPrint: Received all packets";
+            BOOST_LOG_SEV(_lg, bls::debug) << "Received all packets";
         } else {
-            BOOST_LOG_SEV(_slg, blt::severity_level::error)
-                << "DataHandlerPrint: Received more packets than expected";
+            BOOST_LOG_SEV(_lg, bls::error) << "Received more packets than expected";
         }
         stop();
     }

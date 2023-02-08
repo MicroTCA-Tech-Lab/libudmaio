@@ -29,11 +29,8 @@ class TrafficGen(UioIf):
             ('Ext_TLEN', 'u8'),
         ))
 
-    def _log_name(self):
-        return 'TrafficGen'
-
     def start(self, nr_pkts=1, pkt_size=1024, pkt_pause=60000):
-        print(f'{self._log_name()}: start, nr pkts = {nr_pkts}, pkt size = {pkt_size}')
+        print(f'start, nr pkts = {nr_pkts}, pkt size = {pkt_size}')
 
         self.stop()
 
@@ -57,13 +54,13 @@ class TrafficGen(UioIf):
         self.StControl.Done = 0
         self.StControl.STREN = 1
         self.StControl.wr()
-    
+
     def stop(self):
         self.StControl.rd()
         self.StControl.STREN = 0
         if self.StControl.Done:
-            print(f'{self._log_name()}: clearing done bit')
-            # W1C – Write 1 to Clear 
+            print('clearing done bit')
+            # W1C – Write 1 to Clear
             self.StControl.Done = 1
         self.StControl.wr()
 

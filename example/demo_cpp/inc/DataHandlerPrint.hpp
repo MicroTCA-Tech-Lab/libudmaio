@@ -23,8 +23,6 @@ using namespace udmaio;
 class DataHandlerPrint : public DataHandlerAbstract {
     std::optional<AxiTrafficGenLfsr> lfsr;
 
-    boost::log::sources::severity_logger_mt<blt::severity_level> _slg;
-
     void process_data(std::vector<uint8_t> bytes) override;
 
     uint64_t _counter_ok;
@@ -39,5 +37,6 @@ class DataHandlerPrint : public DataHandlerAbstract {
                               DmaBufferAbstract& mem,
                               unsigned int num_bytes_per_beat,
                               uint64_t num_bytes_expected);
+
     std::pair<uint64_t, uint64_t> operator()();
 };

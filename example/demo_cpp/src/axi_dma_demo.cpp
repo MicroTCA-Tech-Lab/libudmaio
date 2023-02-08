@@ -14,21 +14,15 @@
 #include <iostream>
 #include <stdexcept>
 
-#include <boost/log/core/core.hpp>
-#include <boost/log/expressions.hpp>
-#include <boost/log/keywords/severity.hpp>
-#include <boost/log/sources/logger.hpp>
-#include <boost/log/trivial.hpp>
-
 #include "DataHandlerPrint.hpp"
 #include "UioGpioStatus.hpp"
 #include "UioTrafficGen.hpp"
 #include "udmaio/FpgaMemBufferOverXdma.hpp"
+#include "udmaio/Logging.hpp"
 #include "udmaio/UDmaBuf.hpp"
 #include "udmaio/UioAxiDmaIf.hpp"
 #include "udmaio/UioIf.hpp"
 #include "udmaio/UioMemSgdma.hpp"
-#include <boost/log/sources/severity_logger.hpp>
 #include <boost/program_options.hpp>
 
 #define TARGET_HW_ZUP 1
@@ -42,7 +36,6 @@
 #include "Z7ioExampleProjectConsts.hpp"
 #endif
 
-namespace blt = boost::log::trivial;
 namespace bpo = boost::program_options;
 
 using namespace udmaio;
@@ -91,13 +84,16 @@ int main(int argc, char* argv[]) {
         return 0;
     }
 
+    Logger::init(17);
     if (trace) {
-        boost::log::core::get()->set_filter(blt::severity >= blt::trace);
+        Logger::set_level(bls::trace);
     } else if (debug) {
-        boost::log::core::get()->set_filter(blt::severity >= blt::debug);
+        Logger::set_level(bls::debug);
     } else {
-        boost::log::core::get()->set_filter(blt::severity >= blt::info);
+        Logger::set_level(bls::info);
     }
+
+    Logger log{"main"};
 
     std::signal(SIGINT, signal_handler);
 
@@ -110,7 +106,7 @@ int main(int argc, char* argv[]) {
     auto gpio_status = std::make_unique<UioGpioStatus>(target_hw_consts::axi_gpio_status);
 
     bool is_ddr4_init = gpio_status->is_ddr4_init_calib_complete();
-    BOOST_LOG_TRIVIAL(debug) << "DDR4 init = " << is_ddr4_init;
+    BOOST_LOG_SEV(log._lg, bls::debug) << "DDR4 init = " << is_ddr4_init;
     if (!is_ddr4_init) {
         throw std::runtime_error("DDR4 init calib is not complete");
     }

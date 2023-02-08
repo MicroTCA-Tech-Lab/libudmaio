@@ -13,21 +13,10 @@
 
 #include <ios>
 
-#include <boost/log/core/core.hpp>
-#include <boost/log/sources/logger.hpp>
-#include <boost/log/trivial.hpp>
-
-namespace blt = boost::log::trivial;
-
 namespace udmaio {
 
-const std::string_view UioAxiDmaIf::_log_name() const {
-    return "UioAxiDmaIf";
-}
-
 void UioAxiDmaIf::start(uintptr_t start_desc) {
-    BOOST_LOG_SEV(_slg, blt::severity_level::debug)
-        << _log_name() << ": start, start_desc = " << std::hex << start_desc << std::dec;
+    BOOST_LOG_SEV(_lg, bls::debug) << "start, start_desc = " << std::hex << start_desc << std::dec;
 
     // 0.
     s2mm_dmacr.wr({.reset = 1});
@@ -39,8 +28,8 @@ void UioAxiDmaIf::start(uintptr_t start_desc) {
 
     // 2.
     auto ctrl_reg = s2mm_dmacr.rd();
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name() << ": DMA ctrl = 0x" << std::hex << reg_to_raw(ctrl_reg) << std::dec;
+    BOOST_LOG_SEV(_lg, bls::trace)
+        << "DMA ctrl = 0x" << std::hex << reg_to_raw(ctrl_reg) << std::dec;
 
     ctrl_reg.rs = 1;
     ctrl_reg.cyclic_bd_enable = 1;
@@ -49,15 +38,15 @@ void UioAxiDmaIf::start(uintptr_t start_desc) {
     // 3.
     s2mm_dmacr.wr(ctrl_reg);
 
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name() << ": DMA control write";
+    BOOST_LOG_SEV(_lg, bls::trace) << "DMA control write";
 
     // 4.
     s2mm_taildesc.wr({.tail_descriptor_pointer = 0x50 >> 6});  // for circular
     s2mm_taildesc_msb.wr(
         (sizeof(start_desc) > sizeof(uint32_t)) ? static_cast<uint32_t>(start_desc >> 32) : 0);
 
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace)
-        << _log_name() << ": DMA ctrl = 0x" << std::hex << reg_to_raw(s2mm_dmacr.rd()) << std::dec;
+    BOOST_LOG_SEV(_lg, bls::trace)
+        << "DMA ctrl = 0x" << std::hex << reg_to_raw(s2mm_dmacr.rd()) << std::dec;
 }
 
 uint32_t UioAxiDmaIf::clear_interrupt() {
@@ -65,7 +54,7 @@ uint32_t UioAxiDmaIf::clear_interrupt() {
 
     s2mm_dmasr.wr({.ioc_irq = 1});
 
-    BOOST_LOG_SEV(_slg, blt::severity_level::trace) << _log_name() << ": clear interrupt";
+    BOOST_LOG_SEV(_lg, bls::trace) << "clear interrupt";
     return irq_count;
 }
 
@@ -79,35 +68,32 @@ bool UioAxiDmaIf::check_for_errors() {
     auto sr = s2mm_dmasr.rd();
     if (sr.dma_int_err) {
         has_errors = true;
-        BOOST_LOG_SEV(_slg, blt::severity_level::fatal) << _log_name() << ": DMA Internal Error";
+        BOOST_LOG_SEV(_lg, bls::fatal) << "DMA Internal Error";
     }
 
     if (sr.dma_slv_err) {
         has_errors = true;
-        BOOST_LOG_SEV(_slg, blt::severity_level::fatal) << _log_name() << ": DMA Slave Error";
+        BOOST_LOG_SEV(_lg, bls::fatal) << "DMA Slave Error";
     }
 
     if (sr.dma_dec_err) {
         has_errors = true;
-        BOOST_LOG_SEV(_slg, blt::severity_level::fatal) << _log_name() << ": DMA Decode Error";
+        BOOST_LOG_SEV(_lg, bls::fatal) << "DMA Decode Error";
     }
 
     if (sr.sg_int_err) {
         has_errors = true;
-        BOOST_LOG_SEV(_slg, blt::severity_level::fatal)
-            << _log_name() << ": Scatter Gather Internal Error";
+        BOOST_LOG_SEV(_lg, bls::fatal) << "Scatter Gather Internal Error";
     }
 
     if (sr.sg_slv_err) {
         has_errors = true;
-        BOOST_LOG_SEV(_slg, blt::severity_level::fatal)
-            << _log_name() << ": Scatter Gather Slave Error";
+        BOOST_LOG_SEV(_lg, bls::fatal) << "Scatter Gather Slave Error";
     }
 
     if (sr.sg_dec_err) {
         has_errors = true;
-        BOOST_LOG_SEV(_slg, blt::severity_level::fatal)
-            << _log_name() << ": Scatter Gather Decode Error";
+        BOOST_LOG_SEV(_lg, bls::fatal) << "Scatter Gather Decode Error";
     }
 
     return has_errors;

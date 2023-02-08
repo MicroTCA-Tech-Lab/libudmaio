@@ -15,37 +15,29 @@
 #include <fstream>
 #include <iostream>
 #include <memory>
-#include <string_view>
+#include <string>
 
 #include <boost/core/noncopyable.hpp>
-#include <boost/log/core/core.hpp>
-#include <boost/log/expressions.hpp>
-#include <boost/log/keywords/severity.hpp>
-#include <boost/log/sources/logger.hpp>
-#include <boost/log/trivial.hpp>
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
 
+#include "udmaio/Logging.hpp"
 #include "udmaio/UioConfig.hpp"
-#include <boost/log/sources/record_ostream.hpp>
-#include <boost/log/sources/severity_logger.hpp>
-
-namespace blt = boost::log::trivial;
 
 namespace udmaio {
 
 /// Base class for UIO interfaces
-class UioIf : private boost::noncopyable {
+class UioIf : public Logger, private boost::noncopyable {
     template <typename C>
     friend class RegAccessorBase;
 
   public:
     /// @brief Construct the UioIf from a UioDeviceInfo
     /// @param dev UioDeviceInfo describing the connection information
-    UioIf(UioDeviceInfo dev);
+    UioIf(std::string name, UioDeviceInfo dev);
 
     virtual ~UioIf();
 
@@ -53,7 +45,6 @@ class UioIf : private boost::noncopyable {
     int _fd, _fd_int;
     void* _mem;
     UioRegion _region;
-    mutable boost::log::sources::severity_logger_mt<blt::severity_level> _slg;
     bool _skip_write_to_arm_int;
 
     volatile uint32_t* _reg_ptr(uint32_t offs) const {
@@ -71,8 +62,6 @@ class UioIf : private boost::noncopyable {
 
     void arm_interrupt();
     uint32_t wait_for_interrupt();
-
-    virtual const std::string_view _log_name() const = 0;
 };
 
 }  // namespace udmaio

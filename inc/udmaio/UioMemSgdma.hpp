@@ -60,11 +60,10 @@ class UioMemSgdma : public UioIf {
     size_t _nr_cyc_desc;
     size_t _next_readable_buf;
 
-    virtual const std::string_view _log_name() const override;
     void write_cyc_mode(const std::vector<UioRegion>& dst_bufs);
 
   public:
-    using UioIf::UioIf;
+    UioMemSgdma(UioDeviceInfo dev) : UioIf("UioMemSgdma", dev) {}
 
     /// @brief Initialize SGDMA descriptors
     /// @param mem Memory receiving the SGDMA data
