@@ -1,6 +1,5 @@
 var classudmaio_1_1_uio_if =
 [
-    [ "UioIfBusType", "classudmaio_1_1_uio_if.html#a3bd9b3bc2b57b3fc6eb9aa85cc6bd58a", null ],
     [ "~UioIf", "classudmaio_1_1_uio_if.html#a04e5a62b29a0684197ad7de27019aff5", null ],
     [ "_rd", "classudmaio_1_1_uio_if.html#af4c53f60c84950f770eb8ae9ecbe9ca1", null ],
     [ "_rd_mem", "classudmaio_1_1_uio_if.html#a4ac244b81986fd286e1ae116bda56644", null ],

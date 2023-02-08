@@ -63,8 +63,8 @@ var NAVTREEINDEX =
 [
 "_axi_dma_8hpp.html",
 "classudmaio_1_1_reg_accessor_base.html#ac48b43f437837cd965706d4c7626b2b9",
-"namespacetarget__hw__consts.html",
-"structaxi__dma_1_1sg__ctl__t.html"
+"namespacetarget__hw__consts.html#a51751ec42e24f2fbbb5e9fb5c42fc978",
+"structaxi__dma_1_1sg__ctl__t.html#a2fca4f6f2869762fbb63af3a7c7b5c6b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

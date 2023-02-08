@@ -21,11 +21,10 @@ var searchData=
   ['uioif64_18',['UioIf64',['../namespaceudmaio.html#a6fa7ecce970804e9fb564fdc466d92a9',1,'udmaio']]],
   ['uioifbase_19',['UioIfBase',['../classudmaio_1_1_uio_if_base.html',1,'udmaio::UioIfBase'],['../classudmaio_1_1_uio_if_base.html#a594dc74763500f1162c98d23fc66b589',1,'udmaio::UioIfBase::UioIfBase()'],['../classudmaio_1_1_uio_if.html#a594dc74763500f1162c98d23fc66b589',1,'udmaio::UioIf::UioIfBase()']]],
   ['uioifbase_2ehpp_20',['UioIfBase.hpp',['../_uio_if_base_8hpp.html',1,'']]],
-  ['uioifbustype_21',['UioIfBusType',['../classudmaio_1_1_uio_if.html#a3bd9b3bc2b57b3fc6eb9aa85cc6bd58a',1,'udmaio::UioIf']]],
-  ['uiomemsgdma_22',['UioMemSgdma',['../classudmaio_1_1_uio_mem_sgdma.html',1,'udmaio']]],
-  ['uiomemsgdma_2ehpp_23',['UioMemSgdma.hpp',['../_uio_mem_sgdma_8hpp.html',1,'']]],
-  ['uioregion_24',['UioRegion',['../structudmaio_1_1_uio_region.html',1,'udmaio']]],
-  ['uiotrafficgen_25',['UioTrafficGen',['../class_uio_traffic_gen.html',1,'']]],
-  ['uiotrafficgen_2ecpp_26',['UioTrafficGen.cpp',['../_uio_traffic_gen_8cpp.html',1,'']]],
-  ['uiotrafficgen_2ehpp_27',['UioTrafficGen.hpp',['../_uio_traffic_gen_8hpp.html',1,'']]]
+  ['uiomemsgdma_21',['UioMemSgdma',['../classudmaio_1_1_uio_mem_sgdma.html',1,'udmaio']]],
+  ['uiomemsgdma_2ehpp_22',['UioMemSgdma.hpp',['../_uio_mem_sgdma_8hpp.html',1,'']]],
+  ['uioregion_23',['UioRegion',['../structudmaio_1_1_uio_region.html',1,'udmaio']]],
+  ['uiotrafficgen_24',['UioTrafficGen',['../class_uio_traffic_gen.html',1,'']]],
+  ['uiotrafficgen_2ecpp_25',['UioTrafficGen.cpp',['../_uio_traffic_gen_8cpp.html',1,'']]],
+  ['uiotrafficgen_2ehpp_26',['UioTrafficGen.hpp',['../_uio_traffic_gen_8hpp.html',1,'']]]
 ];

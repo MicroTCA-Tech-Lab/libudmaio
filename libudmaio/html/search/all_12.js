@@ -23,9 +23,8 @@ var searchData=
   ['uioifbase_20',['UioIfBase',['../classudmaio_1_1_uio_if_base.html',1,'udmaio::UioIfBase'],['../classudmaio_1_1_uio_if_base.html#a594dc74763500f1162c98d23fc66b589',1,'udmaio::UioIfBase::UioIfBase()'],['../classudmaio_1_1_uio_if.html#a594dc74763500f1162c98d23fc66b589',1,'udmaio::UioIf::UioIfBase()']]],
   ['uioifbase_2ecpp_21',['UioIfBase.cpp',['../_uio_if_base_8cpp.html',1,'']]],
   ['uioifbase_2ehpp_22',['UioIfBase.hpp',['../_uio_if_base_8hpp.html',1,'']]],
-  ['uioifbustype_23',['UioIfBusType',['../classudmaio_1_1_uio_if.html#a3bd9b3bc2b57b3fc6eb9aa85cc6bd58a',1,'udmaio::UioIf']]],
-  ['uiomemsgdma_24',['UioMemSgdma',['../classudmaio_1_1_uio_mem_sgdma.html',1,'udmaio']]],
-  ['uiomemsgdma_2ecpp_25',['UioMemSgdma.cpp',['../_uio_mem_sgdma_8cpp.html',1,'']]],
-  ['uiomemsgdma_2ehpp_26',['UioMemSgdma.hpp',['../_uio_mem_sgdma_8hpp.html',1,'']]],
-  ['uioregion_27',['UioRegion',['../structudmaio_1_1_uio_region.html',1,'udmaio']]]
+  ['uiomemsgdma_23',['UioMemSgdma',['../classudmaio_1_1_uio_mem_sgdma.html',1,'udmaio']]],
+  ['uiomemsgdma_2ecpp_24',['UioMemSgdma.cpp',['../_uio_mem_sgdma_8cpp.html',1,'']]],
+  ['uiomemsgdma_2ehpp_25',['UioMemSgdma.hpp',['../_uio_mem_sgdma_8hpp.html',1,'']]],
+  ['uioregion_26',['UioRegion',['../structudmaio_1_1_uio_region.html',1,'udmaio']]]
 ];
