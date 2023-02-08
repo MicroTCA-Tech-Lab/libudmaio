@@ -1,10 +1,9 @@
 var classudmaio_1_1_reg_accessor_base =
 [
-    [ "bus_type_t", "classudmaio_1_1_reg_accessor_base.html#a15e3cc0b449b7630cbee38f95714c2ce", null ],
-    [ "constructor_arg_type", "classudmaio_1_1_reg_accessor_base.html#a9f25adb8e63a3643c3759a70c55e9b60", null ],
-    [ "RegAccessorBase", "classudmaio_1_1_reg_accessor_base.html#ae9f59e8700168bf999053944c48cc340", null ],
-    [ "RegAccessorBase", "classudmaio_1_1_reg_accessor_base.html#a9b6f5d7b942e57fc42d0de842cfcd514", null ],
-    [ "_rd", "classudmaio_1_1_reg_accessor_base.html#a6533971f0b802d7a96e57621e1e585c7", null ],
-    [ "_wr", "classudmaio_1_1_reg_accessor_base.html#ac341f9545ab4777642db8b1b04616b36", null ],
-    [ "_if", "classudmaio_1_1_reg_accessor_base.html#aacad53049524692810e6f78545bb4ae9", null ]
+    [ "constructor_arg_type", "classudmaio_1_1_reg_accessor_base.html#a7580b1d356299af3f97285b813b41792", null ],
+    [ "RegAccessorBase", "classudmaio_1_1_reg_accessor_base.html#ad878857665ec6cb11fb5133240a23e65", null ],
+    [ "RegAccessorBase", "classudmaio_1_1_reg_accessor_base.html#a7298226a53b233dd99ca2dec3e41d109", null ],
+    [ "_rd", "classudmaio_1_1_reg_accessor_base.html#ac48b43f437837cd965706d4c7626b2b9", null ],
+    [ "_wr", "classudmaio_1_1_reg_accessor_base.html#a7107c7f25cb16b638ae56903c7803837", null ],
+    [ "_if", "classudmaio_1_1_reg_accessor_base.html#a07d7176c3c2344ed7f18d9c53c5f558b", null ]
 ];

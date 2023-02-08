@@ -103,7 +103,6 @@ $(document).ready(function(){initNavTree('classudmaio_1_1_uio_if.html',''); init
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="classudmaio_1_1_uio_if-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">udmaio::UioIf&lt; bus_type_t &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -153,6 +152,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:af4c53f60c84950f770eb8ae9ecbe9ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af98e8c2719202c10ab29d9eddfa37bb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if.html#af98e8c2719202c10ab29d9eddfa37bb8">_wr</a> (uint32_t offs, bus_type_t data)</td></tr>
 <tr class="separator:af98e8c2719202c10ab29d9eddfa37bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12db9c7207830ef4b9c5b156a863f408"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if.html#a12db9c7207830ef4b9c5b156a863f408">_rd_mem</a> (uint32_t offs, void *mem, size_t size) const override</td></tr>
+<tr class="separator:a12db9c7207830ef4b9c5b156a863f408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99f0cc1db2c3b5ad3dac80e6e55354ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if.html#a99f0cc1db2c3b5ad3dac80e6e55354ea">_wr_mem</a> (uint32_t offs, const void *mem, size_t size) override</td></tr>
+<tr class="separator:a99f0cc1db2c3b5ad3dac80e6e55354ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classudmaio_1_1_uio_if_base"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classudmaio_1_1_uio_if_base')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classudmaio_1_1_uio_if_base.html">udmaio::UioIfBase</a></td></tr>
 <tr class="memitem:af4c44361fd1a35ff62d5a115098104d6 inherit pro_methods_classudmaio_1_1_uio_if_base"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:af4c44361fd1a35ff62d5a115098104d6 inherit pro_methods_classudmaio_1_1_uio_if_base"><td class="memTemplItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#af4c44361fd1a35ff62d5a115098104d6">reg_to_raw</a> (T data)</td></tr>
@@ -163,12 +166,16 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a4f856e9923d8cead9dcab50be856f30e inherit pro_methods_classudmaio_1_1_uio_if_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc4c1d9a03e87af0b9a853bb45c5bd62 inherit pro_methods_classudmaio_1_1_uio_if_base"><td class="memItemLeft" align="right" valign="top">virtual const std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#adc4c1d9a03e87af0b9a853bb45c5bd62">_log_name</a> () const =0</td></tr>
 <tr class="separator:adc4c1d9a03e87af0b9a853bb45c5bd62 inherit pro_methods_classudmaio_1_1_uio_if_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:afa75163475f0db9186101b2971be6942"><td class="memTemplParams" colspan="2">template&lt;typename C , typename U &gt; </td></tr>
-<tr class="memitem:afa75163475f0db9186101b2971be6942"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if.html#afa75163475f0db9186101b2971be6942">RegAccessorBase</a></td></tr>
-<tr class="separator:afa75163475f0db9186101b2971be6942"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a78c39eec58b2cc46a479f0cbf0048 inherit pro_methods_classudmaio_1_1_uio_if_base"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#ad1a78c39eec58b2cc46a479f0cbf0048">_rd_mem</a> (uint32_t offs, void *mem, size_t size) const =0</td></tr>
+<tr class="separator:ad1a78c39eec58b2cc46a479f0cbf0048 inherit pro_methods_classudmaio_1_1_uio_if_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a328ae1fe07b1d86684bbe254e87cd202 inherit pro_methods_classudmaio_1_1_uio_if_base"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#a328ae1fe07b1d86684bbe254e87cd202">_wr_mem</a> (uint32_t offs, const void *mem, size_t size)=0</td></tr>
+<tr class="separator:a328ae1fe07b1d86684bbe254e87cd202 inherit pro_methods_classudmaio_1_1_uio_if_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69d4ff72db3ffa3d42cbd85ba57a2657 inherit pro_methods_classudmaio_1_1_uio_if_base"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
+<tr class="memitem:a69d4ff72db3ffa3d42cbd85ba57a2657 inherit pro_methods_classudmaio_1_1_uio_if_base"><td class="memTemplItemLeft" align="right" valign="top">C&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#a69d4ff72db3ffa3d42cbd85ba57a2657">_rd_reg</a> (uint32_t offs) const</td></tr>
+<tr class="separator:a69d4ff72db3ffa3d42cbd85ba57a2657 inherit pro_methods_classudmaio_1_1_uio_if_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14a796d071b4fd9ce42a5d24823f3520 inherit pro_methods_classudmaio_1_1_uio_if_base"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
+<tr class="memitem:a14a796d071b4fd9ce42a5d24823f3520 inherit pro_methods_classudmaio_1_1_uio_if_base"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#a14a796d071b4fd9ce42a5d24823f3520">_wr_reg</a> (uint32_t offs, const C &amp;value)</td></tr>
+<tr class="separator:a14a796d071b4fd9ce42a5d24823f3520 inherit pro_methods_classudmaio_1_1_uio_if_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -269,6 +276,52 @@ template&lt;typename bus_type_t  = uint32_t&gt; </div>
 
 </div>
 </div>
+<a id="a12db9c7207830ef4b9c5b156a863f408" name="a12db9c7207830ef4b9c5b156a863f408"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12db9c7207830ef4b9c5b156a863f408">&#9670;&#160;</a></span>_rd_mem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename bus_type_t  = uint32_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classudmaio_1_1_uio_if.html">udmaio::UioIf</a>&lt; bus_type_t &gt;::_rd_mem </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>offs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>mem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classudmaio_1_1_uio_if_base.html#ad1a78c39eec58b2cc46a479f0cbf0048">udmaio::UioIfBase</a>.</p>
+
+</div>
+</div>
 <a id="a3ba493c5afb7aa69dedd68f2d235146a" name="a3ba493c5afb7aa69dedd68f2d235146a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3ba493c5afb7aa69dedd68f2d235146a">&#9670;&#160;</a></span>_reg_ptr()</h2>
 
@@ -335,6 +388,52 @@ template&lt;typename bus_type_t  = uint32_t&gt; </div>
 
 </div>
 </div>
+<a id="a99f0cc1db2c3b5ad3dac80e6e55354ea" name="a99f0cc1db2c3b5ad3dac80e6e55354ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99f0cc1db2c3b5ad3dac80e6e55354ea">&#9670;&#160;</a></span>_wr_mem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename bus_type_t  = uint32_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classudmaio_1_1_uio_if.html">udmaio::UioIf</a>&lt; bus_type_t &gt;::_wr_mem </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>offs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>mem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classudmaio_1_1_uio_if_base.html#a328ae1fe07b1d86684bbe254e87cd202">udmaio::UioIfBase</a>.</p>
+
+</div>
+</div>
 <a id="a594dc74763500f1162c98d23fc66b589" name="a594dc74763500f1162c98d23fc66b589"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a594dc74763500f1162c98d23fc66b589">&#9670;&#160;</a></span>UioIfBase()</h2>
 
@@ -360,33 +459,6 @@ template&lt;typename bus_type_t  = uint32_t&gt; </div>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="afa75163475f0db9186101b2971be6942" name="afa75163475f0db9186101b2971be6942"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa75163475f0db9186101b2971be6942">&#9670;&#160;</a></span>RegAccessorBase</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename bus_type_t  = uint32_t&gt; </div>
-<div class="memtemplate">
-template&lt;typename C , typename U &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">friend class <a class="el" href="classudmaio_1_1_reg_accessor_base.html">RegAccessorBase</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>

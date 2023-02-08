@@ -21,40 +21,55 @@
 \DoxyCodeLine{17 }
 \DoxyCodeLine{22 \textcolor{keyword}{template} <\textcolor{keyword}{typename} bus\_type\_t = u\textcolor{keywordtype}{int}32\_t>}
 \DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_uio_if_base}{UioIfBase}} \{}
-\DoxyCodeLine{24     \textcolor{keyword}{template} <\textcolor{keyword}{typename} C, \textcolor{keyword}{typename} U>}
-\DoxyCodeLine{25     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{RegAccessorBase}};}
+\DoxyCodeLine{24     \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(bus\_type\_t) == \textcolor{keyword}{sizeof}(uint32\_t) || \textcolor{keyword}{sizeof}(bus\_type\_t) == \textcolor{keyword}{sizeof}(uint64\_t),}
+\DoxyCodeLine{25                   \textcolor{stringliteral}{"{}Bus access width must be 32 or 64 bits"{}});}
 \DoxyCodeLine{26 }
-\DoxyCodeLine{27     \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(bus\_type\_t) == \textcolor{keyword}{sizeof}(uint32\_t) || \textcolor{keyword}{sizeof}(bus\_type\_t) == \textcolor{keyword}{sizeof}(uint64\_t),}
-\DoxyCodeLine{28                   \textcolor{stringliteral}{"{}Bus access width must be 32 or 64 bits"{}});}
-\DoxyCodeLine{29 }
-\DoxyCodeLine{30   \textcolor{keyword}{public}:}
-\DoxyCodeLine{31     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if_a3bd9b3bc2b57b3fc6eb9aa85cc6bd58a}{UioIfBusType}} = bus\_type\_t;}
-\DoxyCodeLine{32     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if_base_a594dc74763500f1162c98d23fc66b589}{UioIfBase::UioIfBase}};}
-\DoxyCodeLine{33     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_uio_if_a04e5a62b29a0684197ad7de27019aff5}{\string~UioIf}}()\{\};}
-\DoxyCodeLine{34 }
-\DoxyCodeLine{35   \textcolor{keyword}{protected}:}
-\DoxyCodeLine{36     \textcolor{keyword}{inline} \textcolor{keyword}{volatile} bus\_type\_t* \mbox{\hyperlink{classudmaio_1_1_uio_if_a3ba493c5afb7aa69dedd68f2d235146a}{\_reg\_ptr}}(uint32\_t offs)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{37         \textcolor{keywordflow}{return} \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{volatile }bus\_type\_t*\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}uint8\_t*\textcolor{keyword}{>}(\mbox{\hyperlink{classudmaio_1_1_uio_if_base_af085ebb3a6eb65d5b97e12c11eb976e0}{\_mem}}) +}
-\DoxyCodeLine{38                                                       \textcolor{keyword}{static\_cast<}ptrdiff\_t\textcolor{keyword}{>}(offs));}
-\DoxyCodeLine{39     \}}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{41     bus\_type\_t \mbox{\hyperlink{classudmaio_1_1_uio_if_af4c53f60c84950f770eb8ae9ecbe9ca1}{\_rd}}(uint32\_t offs)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{42         bus\_type\_t tmp = *\mbox{\hyperlink{classudmaio_1_1_uio_if_a3ba493c5afb7aa69dedd68f2d235146a}{\_reg\_ptr}}(offs);}
-\DoxyCodeLine{43         BOOST\_LOG\_SEV(\mbox{\hyperlink{classudmaio_1_1_uio_if_base_a5076f78b2e6d1417e56bee0fb5e2d0de}{\_slg}}, blt::severity\_level::trace)}
-\DoxyCodeLine{44             << \mbox{\hyperlink{classudmaio_1_1_uio_if_base_adc4c1d9a03e87af0b9a853bb45c5bd62}{\_log\_name}}() << \textcolor{stringliteral}{"{}: read at 0x"{}} << std::hex << offs << \textcolor{stringliteral}{"{} = 0x"{}} << tmp << std::dec;}
-\DoxyCodeLine{45         \textcolor{keywordflow}{return} tmp;}
-\DoxyCodeLine{46     \}}
-\DoxyCodeLine{47 }
-\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_af98e8c2719202c10ab29d9eddfa37bb8}{\_wr}}(uint32\_t offs, bus\_type\_t data) \{}
-\DoxyCodeLine{49         BOOST\_LOG\_SEV(\mbox{\hyperlink{classudmaio_1_1_uio_if_base_a5076f78b2e6d1417e56bee0fb5e2d0de}{\_slg}}, blt::severity\_level::trace)}
-\DoxyCodeLine{50             << \mbox{\hyperlink{classudmaio_1_1_uio_if_base_adc4c1d9a03e87af0b9a853bb45c5bd62}{\_log\_name}}() << \textcolor{stringliteral}{"{}: write at 0x"{}} << std::hex << offs << \textcolor{stringliteral}{"{} = 0x"{}} << data << std::dec;}
-\DoxyCodeLine{51         *\mbox{\hyperlink{classudmaio_1_1_uio_if_a3ba493c5afb7aa69dedd68f2d235146a}{\_reg\_ptr}}(offs) = data;}
-\DoxyCodeLine{52     \}}
-\DoxyCodeLine{53 \};}
-\DoxyCodeLine{54 }
-\DoxyCodeLine{55 \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf32}} = \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf<uint32\_t>}};}
-\DoxyCodeLine{56 \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf64}} = \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf<uint64\_t>}};}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{58 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{27   \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if_a3bd9b3bc2b57b3fc6eb9aa85cc6bd58a}{UioIfBusType}} = bus\_type\_t;}
+\DoxyCodeLine{29     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if_base_a594dc74763500f1162c98d23fc66b589}{UioIfBase::UioIfBase}};}
+\DoxyCodeLine{30     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_uio_if_a04e5a62b29a0684197ad7de27019aff5}{\string~UioIf}}()\{\};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{33     \textcolor{keyword}{inline} \textcolor{keyword}{volatile} bus\_type\_t* \mbox{\hyperlink{classudmaio_1_1_uio_if_a3ba493c5afb7aa69dedd68f2d235146a}{\_reg\_ptr}}(uint32\_t offs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{34         \textcolor{keywordflow}{return} \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{volatile }bus\_type\_t*\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}uint8\_t*\textcolor{keyword}{>}(\mbox{\hyperlink{classudmaio_1_1_uio_if_base_af085ebb3a6eb65d5b97e12c11eb976e0}{\_mem}}) +}
+\DoxyCodeLine{35                                                       \textcolor{keyword}{static\_cast<}ptrdiff\_t\textcolor{keyword}{>}(offs));}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     bus\_type\_t \mbox{\hyperlink{classudmaio_1_1_uio_if_af4c53f60c84950f770eb8ae9ecbe9ca1}{\_rd}}(uint32\_t offs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{39         bus\_type\_t tmp = *\mbox{\hyperlink{classudmaio_1_1_uio_if_a3ba493c5afb7aa69dedd68f2d235146a}{\_reg\_ptr}}(offs);}
+\DoxyCodeLine{40         BOOST\_LOG\_SEV(\mbox{\hyperlink{classudmaio_1_1_uio_if_base_a5076f78b2e6d1417e56bee0fb5e2d0de}{\_slg}}, blt::severity\_level::trace)}
+\DoxyCodeLine{41             << \mbox{\hyperlink{classudmaio_1_1_uio_if_base_adc4c1d9a03e87af0b9a853bb45c5bd62}{\_log\_name}}() << \textcolor{stringliteral}{"{}: read at 0x"{}} << std::hex << offs << \textcolor{stringliteral}{"{} = 0x"{}} << tmp << std::dec;}
+\DoxyCodeLine{42         \textcolor{keywordflow}{return} tmp;}
+\DoxyCodeLine{43     \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_af98e8c2719202c10ab29d9eddfa37bb8}{\_wr}}(uint32\_t offs, bus\_type\_t data) \{}
+\DoxyCodeLine{46         BOOST\_LOG\_SEV(\mbox{\hyperlink{classudmaio_1_1_uio_if_base_a5076f78b2e6d1417e56bee0fb5e2d0de}{\_slg}}, blt::severity\_level::trace)}
+\DoxyCodeLine{47             << \mbox{\hyperlink{classudmaio_1_1_uio_if_base_adc4c1d9a03e87af0b9a853bb45c5bd62}{\_log\_name}}() << \textcolor{stringliteral}{"{}: write at 0x"{}} << std::hex << offs << \textcolor{stringliteral}{"{} = 0x"{}} << data << std::dec;}
+\DoxyCodeLine{48         *\mbox{\hyperlink{classudmaio_1_1_uio_if_a3ba493c5afb7aa69dedd68f2d235146a}{\_reg\_ptr}}(offs) = data;}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_a12db9c7207830ef4b9c5b156a863f408}{\_rd\_mem}}(uint32\_t offs, \textcolor{keywordtype}{void}* mem, \textcolor{keywordtype}{size\_t} size)\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{52         assert((offs \% \textcolor{keyword}{sizeof}(bus\_type\_t)) == 0);}
+\DoxyCodeLine{53         assert((size \% \textcolor{keyword}{sizeof}(bus\_type\_t)) == 0);}
+\DoxyCodeLine{54         bus\_type\_t* ptr = \textcolor{keyword}{reinterpret\_cast<}bus\_type\_t*\textcolor{keyword}{>}(mem);}
+\DoxyCodeLine{55         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < size; i += \textcolor{keyword}{sizeof}(bus\_type\_t)) \{}
+\DoxyCodeLine{56             *ptr++ = \mbox{\hyperlink{classudmaio_1_1_uio_if_af4c53f60c84950f770eb8ae9ecbe9ca1}{\_rd}}(offs + i);}
+\DoxyCodeLine{57         \}}
+\DoxyCodeLine{58     \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_a99f0cc1db2c3b5ad3dac80e6e55354ea}{\_wr\_mem}}(uint32\_t offs, \textcolor{keyword}{const} \textcolor{keywordtype}{void}* mem, \textcolor{keywordtype}{size\_t} size)\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{61         assert((offs \% \textcolor{keyword}{sizeof}(bus\_type\_t)) == 0);}
+\DoxyCodeLine{62         assert((size \% \textcolor{keyword}{sizeof}(bus\_type\_t)) == 0);}
+\DoxyCodeLine{63         \textcolor{keyword}{const} bus\_type\_t* ptr = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }bus\_type\_t*\textcolor{keyword}{>}(mem);}
+\DoxyCodeLine{64         \textcolor{keywordflow}{for} (uint32\_t i = 0; i < size; i += \textcolor{keyword}{sizeof}(bus\_type\_t)) \{}
+\DoxyCodeLine{65             \mbox{\hyperlink{classudmaio_1_1_uio_if_af98e8c2719202c10ab29d9eddfa37bb8}{\_wr}}(offs + i, *ptr++);}
+\DoxyCodeLine{66         \}}
+\DoxyCodeLine{67     \}}
+\DoxyCodeLine{68 \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf32}} = \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf<uint32\_t>}};}
+\DoxyCodeLine{71 \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf64}} = \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf<uint64\_t>}};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}

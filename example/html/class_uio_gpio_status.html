@@ -122,7 +122,7 @@ Inheritance diagram for UioGpioStatus:</div>
 <div class="dynheader">
 Collaboration diagram for UioGpioStatus:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_uio_gpio_status__coll__graph.svg" width="431" height="316"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_uio_gpio_status__coll__graph.svg" width="386" height="428"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -152,6 +152,10 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:af4c53f60c84950f770eb8ae9ecbe9ca1 inherit pub_methods_classudmaio_1_1_uio_if"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af98e8c2719202c10ab29d9eddfa37bb8 inherit pub_methods_classudmaio_1_1_uio_if"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if.html#af98e8c2719202c10ab29d9eddfa37bb8">_wr</a> (uint32_t offs, bus_type_t data)</td></tr>
 <tr class="separator:af98e8c2719202c10ab29d9eddfa37bb8 inherit pub_methods_classudmaio_1_1_uio_if"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12db9c7207830ef4b9c5b156a863f408 inherit pub_methods_classudmaio_1_1_uio_if"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if.html#a12db9c7207830ef4b9c5b156a863f408">_rd_mem</a> (uint32_t offs, void *mem, size_t size) const override</td></tr>
+<tr class="separator:a12db9c7207830ef4b9c5b156a863f408 inherit pub_methods_classudmaio_1_1_uio_if"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99f0cc1db2c3b5ad3dac80e6e55354ea inherit pub_methods_classudmaio_1_1_uio_if"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if.html#a99f0cc1db2c3b5ad3dac80e6e55354ea">_wr_mem</a> (uint32_t offs, const void *mem, size_t size) override</td></tr>
+<tr class="separator:a99f0cc1db2c3b5ad3dac80e6e55354ea inherit pub_methods_classudmaio_1_1_uio_if"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classudmaio_1_1_uio_if_base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classudmaio_1_1_uio_if_base')"><img src="closed.png" alt="-"/>&#160;Private Member Functions inherited from <a class="el" href="classudmaio_1_1_uio_if_base.html">udmaio::UioIfBase</a></td></tr>
 <tr class="memitem:a594dc74763500f1162c98d23fc66b589 inherit pub_methods_classudmaio_1_1_uio_if_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#a594dc74763500f1162c98d23fc66b589">UioIfBase</a> (<a class="el" href="structudmaio_1_1_uio_device_info.html">UioDeviceInfo</a> dev)</td></tr>
 <tr class="memdesc:a594dc74763500f1162c98d23fc66b589 inherit pub_methods_classudmaio_1_1_uio_if_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the <a class="el" href="classudmaio_1_1_uio_if.html" title="UIO Interface implementing bus access.">UioIf</a> from a <a class="el" href="structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device.">UioDeviceInfo</a>.  <a href="classudmaio_1_1_uio_if_base.html#a594dc74763500f1162c98d23fc66b589">More...</a><br /></td></tr>
@@ -167,11 +171,21 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a4f856e9923d8cead9dcab50be856f30e inherit pub_methods_classudmaio_1_1_uio_if_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc4c1d9a03e87af0b9a853bb45c5bd62 inherit pub_methods_classudmaio_1_1_uio_if_base"><td class="memItemLeft" align="right" valign="top">virtual const std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#adc4c1d9a03e87af0b9a853bb45c5bd62">_log_name</a> () const =0</td></tr>
 <tr class="separator:adc4c1d9a03e87af0b9a853bb45c5bd62 inherit pub_methods_classudmaio_1_1_uio_if_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a78c39eec58b2cc46a479f0cbf0048 inherit pub_methods_classudmaio_1_1_uio_if_base"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#ad1a78c39eec58b2cc46a479f0cbf0048">_rd_mem</a> (uint32_t offs, void *mem, size_t size) const =0</td></tr>
+<tr class="separator:ad1a78c39eec58b2cc46a479f0cbf0048 inherit pub_methods_classudmaio_1_1_uio_if_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a328ae1fe07b1d86684bbe254e87cd202 inherit pub_methods_classudmaio_1_1_uio_if_base"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#a328ae1fe07b1d86684bbe254e87cd202">_wr_mem</a> (uint32_t offs, const void *mem, size_t size)=0</td></tr>
+<tr class="separator:a328ae1fe07b1d86684bbe254e87cd202 inherit pub_methods_classudmaio_1_1_uio_if_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69d4ff72db3ffa3d42cbd85ba57a2657 inherit pub_methods_classudmaio_1_1_uio_if_base"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
+<tr class="memitem:a69d4ff72db3ffa3d42cbd85ba57a2657 inherit pub_methods_classudmaio_1_1_uio_if_base"><td class="memTemplItemLeft" align="right" valign="top">C&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#a69d4ff72db3ffa3d42cbd85ba57a2657">_rd_reg</a> (uint32_t offs) const</td></tr>
+<tr class="separator:a69d4ff72db3ffa3d42cbd85ba57a2657 inherit pub_methods_classudmaio_1_1_uio_if_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14a796d071b4fd9ce42a5d24823f3520 inherit pub_methods_classudmaio_1_1_uio_if_base"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
+<tr class="memitem:a14a796d071b4fd9ce42a5d24823f3520 inherit pub_methods_classudmaio_1_1_uio_if_base"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#a14a796d071b4fd9ce42a5d24823f3520">_wr_reg</a> (uint32_t offs, const C &amp;value)</td></tr>
+<tr class="separator:a14a796d071b4fd9ce42a5d24823f3520 inherit pub_methods_classudmaio_1_1_uio_if_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a127480ddc263de1c9128232f2dbd6c4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceudmaio.html#a75eaebb71b21ce892c7a054046541e42">RegAccessor32</a>&lt; <a class="el" href="struct_uio_gpio_status_1_1_gpio_data.html">GpioData</a>, 0 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_uio_gpio_status.html#a127480ddc263de1c9128232f2dbd6c4f">gpio</a> {this}</td></tr>
-<tr class="separator:a127480ddc263de1c9128232f2dbd6c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c3d0e9b18d4b0ed16524c32695d9c4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceudmaio.html#a05b519f65a300d1cd8f0c150fae1e71c">RegAccessor</a>&lt; <a class="el" href="struct_uio_gpio_status_1_1_gpio_data.html">GpioData</a>, 0 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_uio_gpio_status.html#a3c3d0e9b18d4b0ed16524c32695d9c4f">gpio</a> {this}</td></tr>
+<tr class="separator:a3c3d0e9b18d4b0ed16524c32695d9c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classudmaio_1_1_uio_if_base"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classudmaio_1_1_uio_if_base')"><img src="closed.png" alt="-"/>&#160;Private Attributes inherited from <a class="el" href="classudmaio_1_1_uio_if_base.html">udmaio::UioIfBase</a></td></tr>
 <tr class="memitem:aa113b7a18b1849586386e4a92441792f inherit pub_attribs_classudmaio_1_1_uio_if_base"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#aa113b7a18b1849586386e4a92441792f">_fd</a></td></tr>
 <tr class="separator:aa113b7a18b1849586386e4a92441792f inherit pub_attribs_classudmaio_1_1_uio_if_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,8 +262,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a127480ddc263de1c9128232f2dbd6c4f" name="a127480ddc263de1c9128232f2dbd6c4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a127480ddc263de1c9128232f2dbd6c4f">&#9670;&#160;</a></span>gpio</h2>
+<a id="a3c3d0e9b18d4b0ed16524c32695d9c4f" name="a3c3d0e9b18d4b0ed16524c32695d9c4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c3d0e9b18d4b0ed16524c32695d9c4f">&#9670;&#160;</a></span>gpio</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,7 +272,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceudmaio.html#a75eaebb71b21ce892c7a054046541e42">RegAccessor32</a>&lt;<a class="el" href="struct_uio_gpio_status_1_1_gpio_data.html">GpioData</a>, 0&gt; UioGpioStatus::gpio {this}</td>
+          <td class="memname"><a class="el" href="namespaceudmaio.html#a05b519f65a300d1cd8f0c150fae1e71c">RegAccessor</a>&lt;<a class="el" href="struct_uio_gpio_status_1_1_gpio_data.html">GpioData</a>, 0&gt; UioGpioStatus::gpio {this}</td>
         </tr>
       </table>
   </td>

@@ -1,15 +1,15 @@
 <map id="UioTrafficGen" name="UioTrafficGen">
-<area shape="rect" id="node1" title="Interface to LFSR core of the demo application." alt="" coords="772,172,873,197"/>
-<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="UIO Interface implementing bus access." alt="" coords="523,29,587,55"/>
-<area shape="rect" id="node3" href="$classudmaio_1_1_uio_if_base.html" title="Base class for UIO interfaces." alt="" coords="256,29,384,55"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,5,137,31"/>
-<area shape="rect" id="node5" href="$structudmaio_1_1_uio_region.html" title="General&#45;purpose struct to define a memory area." alt="" coords="6,55,137,80"/>
-<area shape="rect" id="node6" href="$classudmaio_1_1_reg_accessor_array.html" title=" " alt="" coords="465,79,644,133"/>
-<area shape="rect" id="node7" href="$classudmaio_1_1_reg_accessor_base.html" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="231,86,409,126"/>
-<area shape="rect" id="node8" href="$classudmaio_1_1_reg_accessor_array.html" title=" " alt="" coords="465,157,644,212"/>
-<area shape="rect" id="node9" href="$classudmaio_1_1_reg_accessor_base.html" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="231,165,409,205"/>
-<area shape="rect" id="node10" href="$classudmaio_1_1_reg_accessor_array.html" title=" " alt="" coords="465,236,644,291"/>
-<area shape="rect" id="node11" href="$classudmaio_1_1_reg_accessor_base.html" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="231,243,409,283"/>
-<area shape="rect" id="node12" href="$classudmaio_1_1_reg_accessor_array.html" title=" " alt="" coords="459,315,651,369"/>
-<area shape="rect" id="node13" href="$classudmaio_1_1_reg_accessor_base.html" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="231,322,409,362"/>
+<area shape="rect" id="node1" title="Interface to LFSR core of the demo application." alt="" coords="1053,141,1155,167"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="UIO Interface implementing bus access." alt="" coords="657,5,721,31"/>
+<area shape="rect" id="node3" href="$classudmaio_1_1_uio_if_base.html" title="Base class for UIO interfaces." alt="" coords="231,141,359,167"/>
+<area shape="rect" id="node7" href="$classudmaio_1_1_reg_accessor_base.html" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="424,77,633,103"/>
+<area shape="rect" id="node9" href="$classudmaio_1_1_reg_accessor_base.html" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="424,141,633,167"/>
+<area shape="rect" id="node11" href="$classudmaio_1_1_reg_accessor_base.html" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="424,200,633,225"/>
+<area shape="rect" id="node13" href="$classudmaio_1_1_reg_accessor_base.html" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="424,267,633,292"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,116,137,141"/>
+<area shape="rect" id="node5" href="$structudmaio_1_1_uio_region.html" title="General&#45;purpose struct to define a memory area." alt="" coords="6,165,137,191"/>
+<area shape="rect" id="node6" href="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html" title=" " alt="" coords="745,48,932,103"/>
+<area shape="rect" id="node8" href="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html" title=" " alt="" coords="745,127,932,181"/>
+<area shape="rect" id="node10" href="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html" title=" " alt="" coords="745,205,932,260"/>
+<area shape="rect" id="node12" href="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html" title=" " alt="" coords="745,284,932,339"/>
 </map>

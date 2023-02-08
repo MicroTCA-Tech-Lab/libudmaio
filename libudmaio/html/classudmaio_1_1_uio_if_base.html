@@ -103,6 +103,7 @@ $(document).ready(function(){initNavTree('classudmaio_1_1_uio_if_base.html','');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classudmaio_1_1_uio_if_base-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">udmaio::UioIfBase Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
@@ -144,6 +145,16 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a4f856e9923d8cead9dcab50be856f30e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc4c1d9a03e87af0b9a853bb45c5bd62"><td class="memItemLeft" align="right" valign="top">virtual const std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#adc4c1d9a03e87af0b9a853bb45c5bd62">_log_name</a> () const =0</td></tr>
 <tr class="separator:adc4c1d9a03e87af0b9a853bb45c5bd62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a78c39eec58b2cc46a479f0cbf0048"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#ad1a78c39eec58b2cc46a479f0cbf0048">_rd_mem</a> (uint32_t offs, void *mem, size_t size) const =0</td></tr>
+<tr class="separator:ad1a78c39eec58b2cc46a479f0cbf0048"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a328ae1fe07b1d86684bbe254e87cd202"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#a328ae1fe07b1d86684bbe254e87cd202">_wr_mem</a> (uint32_t offs, const void *mem, size_t size)=0</td></tr>
+<tr class="separator:a328ae1fe07b1d86684bbe254e87cd202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69d4ff72db3ffa3d42cbd85ba57a2657"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
+<tr class="memitem:a69d4ff72db3ffa3d42cbd85ba57a2657"><td class="memTemplItemLeft" align="right" valign="top">C&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#a69d4ff72db3ffa3d42cbd85ba57a2657">_rd_reg</a> (uint32_t offs) const</td></tr>
+<tr class="separator:a69d4ff72db3ffa3d42cbd85ba57a2657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14a796d071b4fd9ce42a5d24823f3520"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
+<tr class="memitem:a14a796d071b4fd9ce42a5d24823f3520"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#a14a796d071b4fd9ce42a5d24823f3520">_wr_reg</a> (uint32_t offs, const C &amp;value)</td></tr>
+<tr class="separator:a14a796d071b4fd9ce42a5d24823f3520"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -159,6 +170,12 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a5076f78b2e6d1417e56bee0fb5e2d0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46736b2688618710640f162aba687007"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#a46736b2688618710640f162aba687007">_skip_write_to_arm_int</a></td></tr>
 <tr class="separator:a46736b2688618710640f162aba687007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a55fe8d02d0291443c9351b5be423747f"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
+<tr class="memitem:a55fe8d02d0291443c9351b5be423747f"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if_base.html#a55fe8d02d0291443c9351b5be423747f">RegAccessorBase</a></td></tr>
+<tr class="separator:a55fe8d02d0291443c9351b5be423747f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Base class for UIO interfaces. </p>
@@ -242,6 +259,160 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ad1a78c39eec58b2cc46a479f0cbf0048" name="ad1a78c39eec58b2cc46a479f0cbf0048"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1a78c39eec58b2cc46a479f0cbf0048">&#9670;&#160;</a></span>_rd_mem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void udmaio::UioIfBase::_rd_mem </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>offs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>mem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classudmaio_1_1_uio_if.html#a12db9c7207830ef4b9c5b156a863f408">udmaio::UioIf&lt; bus_type_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a69d4ff72db3ffa3d42cbd85ba57a2657" name="a69d4ff72db3ffa3d42cbd85ba57a2657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69d4ff72db3ffa3d42cbd85ba57a2657">&#9670;&#160;</a></span>_rd_reg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename C &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">C udmaio::UioIfBase::_rd_reg </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>offs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a328ae1fe07b1d86684bbe254e87cd202" name="a328ae1fe07b1d86684bbe254e87cd202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a328ae1fe07b1d86684bbe254e87cd202">&#9670;&#160;</a></span>_wr_mem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void udmaio::UioIfBase::_wr_mem </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>offs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>mem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classudmaio_1_1_uio_if.html#a99f0cc1db2c3b5ad3dac80e6e55354ea">udmaio::UioIf&lt; bus_type_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a14a796d071b4fd9ce42a5d24823f3520" name="a14a796d071b4fd9ce42a5d24823f3520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14a796d071b4fd9ce42a5d24823f3520">&#9670;&#160;</a></span>_wr_reg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename C &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void udmaio::UioIfBase::_wr_reg </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>offs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const C &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a30eb71a35815af73d2efe1425f2a7320" name="a30eb71a35815af73d2efe1425f2a7320"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a30eb71a35815af73d2efe1425f2a7320">&#9670;&#160;</a></span>arm_interrupt()</h2>
 
@@ -314,6 +485,31 @@ template&lt;typename T &gt; </div>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a55fe8d02d0291443c9351b5be423747f" name="a55fe8d02d0291443c9351b5be423747f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55fe8d02d0291443c9351b5be423747f">&#9670;&#160;</a></span>RegAccessorBase</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename C &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classudmaio_1_1_reg_accessor_base.html">RegAccessorBase</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

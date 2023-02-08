@@ -17,10 +17,10 @@ class \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma}{Fpga\+Mem\+Buf
 \begin{DoxyCompactList}\small\item\em DMA data buffer accessed over XDMA using the xdma c2h0 stream channel. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}}
 \begin{DoxyCompactList}\small\item\em Accessor for register array. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01_u_00_01offset_00_010_00_010_01_4}{Reg\+Accessor\+Array$<$ C, U, offset, 0, 0 $>$}}
+class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{Reg\+Accessor\+Array$<$ C, offset, 0, 0 $>$}}
 \begin{DoxyCompactList}\small\item\em Accessor for single register. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element}{Reg\+Accessor\+Array\+Element}}
-\begin{DoxyCompactList}\small\item\em Accessor for register array element. Returned by \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_aaeb9c859634ac7899ca8dfbbd9bf2653}{Reg\+Accessor\+Array$<$\+C$>$\+::operator\mbox{[}$\,$\mbox{]}}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Accessor for register array element. Returned by \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_a4b8a2afd9ba4baefa3f4e218bc0dc020}{Reg\+Accessor\+Array$<$\+C$>$\+::operator\mbox{[}$\,$\mbox{]}}}. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{Reg\+Accessor\+Base}}
 \begin{DoxyCompactList}\small\item\em Base class implementing register access. Only used by subclasses, not used directly. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classudmaio_1_1_u_dma_buf}{UDma\+Buf}}
@@ -48,15 +48,9 @@ struct \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename C , uint32\+\_\+t offset$>$ }\\using \mbox{\hyperlink{namespaceudmaio_a75eaebb71b21ce892c7a054046541e42}{Reg\+Accessor32}} = \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}}$<$ C, \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}$<$ uint32\+\_\+t $>$, offset, 0, 0 $>$
+{\footnotesize template$<$typename C , uint32\+\_\+t offset$>$ }\\using \mbox{\hyperlink{namespaceudmaio_a05b519f65a300d1cd8f0c150fae1e71c}{Reg\+Accessor}} = \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}}$<$ C, offset, 0, 0 $>$
 \begin{DoxyCompactList}\small\item\em Convenience wrappers for single (i.\+e. non-\/array) register (32-\/bit bus access) \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename C , uint32\+\_\+t offset$>$ }\\using \mbox{\hyperlink{namespaceudmaio_a2eb018eb4da7111faae1a6ff44fffbdb}{Reg\+Accessor64}} = \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}}$<$ C, \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}$<$ uint64\+\_\+t $>$, offset, 0, 0 $>$
-\item 
-{\footnotesize template$<$typename C , uint32\+\_\+t offset, uint32\+\_\+t arr\+\_\+size, uint32\+\_\+t arr\+\_\+stride$>$ }\\using \mbox{\hyperlink{namespaceudmaio_aacbc0e6166cc87d392b9eb95aa47240a}{Reg\+Accessor\+Array32}} = \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}}$<$ C, \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}$<$ uint32\+\_\+t $>$, offset, arr\+\_\+size, arr\+\_\+stride $>$
-\item 
-{\footnotesize template$<$typename C , uint32\+\_\+t offset, uint32\+\_\+t arr\+\_\+size, uint32\+\_\+t arr\+\_\+stride$>$ }\\using \mbox{\hyperlink{namespaceudmaio_a60ebe79e0203213ef066428a8c8eee7e}{Reg\+Accessor\+Array64}} = \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}}$<$ C, \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}$<$ uint64\+\_\+t $>$, offset, arr\+\_\+size, arr\+\_\+stride $>$
-\item 
-using \mbox{\hyperlink{namespaceudmaio_ad847df12a61ac38914c5a8287bafab41}{Axi\+Dma\+Block}} = \mbox{\hyperlink{namespaceaxi__dma_adf82eb6346eaa5e00fb4a043f95c3f40}{axi\+\_\+dma\+::block}}$<$ \mbox{\hyperlink{namespaceudmaio_aacbc0e6166cc87d392b9eb95aa47240a}{Reg\+Accessor\+Array32}} $>$
+using \mbox{\hyperlink{namespaceudmaio_a681a7289ae1db6b3e4fdef3a0602ebff}{Axi\+Dma\+Block}} = \mbox{\hyperlink{namespaceaxi__dma_adf82eb6346eaa5e00fb4a043f95c3f40}{axi\+\_\+dma\+::block}}$<$ \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}} $>$
 \item 
 using \mbox{\hyperlink{namespaceudmaio_a9c868d98e95c5a57b57db612562c41c7}{Uio\+If32}} = \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}$<$ uint32\+\_\+t $>$
 \item 
@@ -81,18 +75,18 @@ std\+::ostream \& \mbox{\hyperlink{namespaceudmaio_ac25c553cf3256b7c5d7cd731d182
 
 
 \doxysubsection{Typedef Documentation}
-\mbox{\Hypertarget{namespaceudmaio_ad847df12a61ac38914c5a8287bafab41}\label{namespaceudmaio_ad847df12a61ac38914c5a8287bafab41}} 
+\mbox{\Hypertarget{namespaceudmaio_a681a7289ae1db6b3e4fdef3a0602ebff}\label{namespaceudmaio_a681a7289ae1db6b3e4fdef3a0602ebff}} 
 \index{udmaio@{udmaio}!AxiDmaBlock@{AxiDmaBlock}}
 \index{AxiDmaBlock@{AxiDmaBlock}!udmaio@{udmaio}}
 \doxysubsubsection{\texorpdfstring{AxiDmaBlock}{AxiDmaBlock}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceudmaio_ad847df12a61ac38914c5a8287bafab41}{udmaio\+::\+Axi\+Dma\+Block}} = typedef \mbox{\hyperlink{namespaceaxi__dma_adf82eb6346eaa5e00fb4a043f95c3f40}{axi\+\_\+dma\+::block}}$<$\mbox{\hyperlink{namespaceudmaio_aacbc0e6166cc87d392b9eb95aa47240a}{Reg\+Accessor\+Array32}}$>$}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceudmaio_a681a7289ae1db6b3e4fdef3a0602ebff}{udmaio\+::\+Axi\+Dma\+Block}} = typedef \mbox{\hyperlink{namespaceaxi__dma_adf82eb6346eaa5e00fb4a043f95c3f40}{axi\+\_\+dma\+::block}}$<$\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}}$>$}
 
-\mbox{\Hypertarget{namespaceudmaio_a75eaebb71b21ce892c7a054046541e42}\label{namespaceudmaio_a75eaebb71b21ce892c7a054046541e42}} 
-\index{udmaio@{udmaio}!RegAccessor32@{RegAccessor32}}
-\index{RegAccessor32@{RegAccessor32}!udmaio@{udmaio}}
-\doxysubsubsection{\texorpdfstring{RegAccessor32}{RegAccessor32}}
+\mbox{\Hypertarget{namespaceudmaio_a05b519f65a300d1cd8f0c150fae1e71c}\label{namespaceudmaio_a05b519f65a300d1cd8f0c150fae1e71c}} 
+\index{udmaio@{udmaio}!RegAccessor@{RegAccessor}}
+\index{RegAccessor@{RegAccessor}!udmaio@{udmaio}}
+\doxysubsubsection{\texorpdfstring{RegAccessor}{RegAccessor}}
 {\footnotesize\ttfamily template$<$typename C , uint32\+\_\+t offset$>$ \\
-using \mbox{\hyperlink{namespaceudmaio_a75eaebb71b21ce892c7a054046541e42}{udmaio\+::\+Reg\+Accessor32}} = typedef \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}}$<$C, \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}$<$uint32\+\_\+t$>$, offset, 0, 0$>$}
+using \mbox{\hyperlink{namespaceudmaio_a05b519f65a300d1cd8f0c150fae1e71c}{udmaio\+::\+Reg\+Accessor}} = typedef \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}}$<$C, offset, 0, 0$>$}
 
 
 
@@ -105,27 +99,6 @@ Convenience wrappers for single (i.\+e. non-\/array) register (32-\/bit bus acce
 {\em offset} & Register offset into address space \\
 \hline
 \end{DoxyTemplParams}
-\mbox{\Hypertarget{namespaceudmaio_a2eb018eb4da7111faae1a6ff44fffbdb}\label{namespaceudmaio_a2eb018eb4da7111faae1a6ff44fffbdb}} 
-\index{udmaio@{udmaio}!RegAccessor64@{RegAccessor64}}
-\index{RegAccessor64@{RegAccessor64}!udmaio@{udmaio}}
-\doxysubsubsection{\texorpdfstring{RegAccessor64}{RegAccessor64}}
-{\footnotesize\ttfamily template$<$typename C , uint32\+\_\+t offset$>$ \\
-using \mbox{\hyperlink{namespaceudmaio_a2eb018eb4da7111faae1a6ff44fffbdb}{udmaio\+::\+Reg\+Accessor64}} = typedef \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}}$<$C, \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}$<$uint64\+\_\+t$>$, offset, 0, 0$>$}
-
-\mbox{\Hypertarget{namespaceudmaio_aacbc0e6166cc87d392b9eb95aa47240a}\label{namespaceudmaio_aacbc0e6166cc87d392b9eb95aa47240a}} 
-\index{udmaio@{udmaio}!RegAccessorArray32@{RegAccessorArray32}}
-\index{RegAccessorArray32@{RegAccessorArray32}!udmaio@{udmaio}}
-\doxysubsubsection{\texorpdfstring{RegAccessorArray32}{RegAccessorArray32}}
-{\footnotesize\ttfamily template$<$typename C , uint32\+\_\+t offset, uint32\+\_\+t arr\+\_\+size, uint32\+\_\+t arr\+\_\+stride$>$ \\
-using \mbox{\hyperlink{namespaceudmaio_aacbc0e6166cc87d392b9eb95aa47240a}{udmaio\+::\+Reg\+Accessor\+Array32}} = typedef \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}}$<$C, \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}$<$uint32\+\_\+t$>$, offset, arr\+\_\+size, arr\+\_\+stride$>$}
-
-\mbox{\Hypertarget{namespaceudmaio_a60ebe79e0203213ef066428a8c8eee7e}\label{namespaceudmaio_a60ebe79e0203213ef066428a8c8eee7e}} 
-\index{udmaio@{udmaio}!RegAccessorArray64@{RegAccessorArray64}}
-\index{RegAccessorArray64@{RegAccessorArray64}!udmaio@{udmaio}}
-\doxysubsubsection{\texorpdfstring{RegAccessorArray64}{RegAccessorArray64}}
-{\footnotesize\ttfamily template$<$typename C , uint32\+\_\+t offset, uint32\+\_\+t arr\+\_\+size, uint32\+\_\+t arr\+\_\+stride$>$ \\
-using \mbox{\hyperlink{namespaceudmaio_a60ebe79e0203213ef066428a8c8eee7e}{udmaio\+::\+Reg\+Accessor\+Array64}} = typedef \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}}$<$C, \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}$<$uint64\+\_\+t$>$, offset, arr\+\_\+size, arr\+\_\+stride$>$}
-
 \mbox{\Hypertarget{namespaceudmaio_a9c868d98e95c5a57b57db612562c41c7}\label{namespaceudmaio_a9c868d98e95c5a57b57db612562c41c7}} 
 \index{udmaio@{udmaio}!UioIf32@{UioIf32}}
 \index{UioIf32@{UioIf32}!udmaio@{udmaio}}

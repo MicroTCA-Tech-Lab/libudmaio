@@ -1,4 +1,4 @@
-digraph "udmaio::RegAccessorBase&lt; C, U &gt;"
+digraph "udmaio::RegAccessorBase&lt; C &gt;"
 {
  // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
@@ -6,21 +6,21 @@ digraph "udmaio::RegAccessorBase&lt; C, U &gt;"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node1 [label="udmaio::RegAccessorBase\l\< C, U \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Base class implementing register access. Only used by subclasses, not used directly."];
+  Node1 [label="udmaio::RegAccessorBase\< C \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Base class implementing register access. Only used by subclasses, not used directly."];
   Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
-  Node2 [label="udmaio::RegAccessorArray\l\< UioGpioStatus::GpioData, 0 \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array.html",tooltip=" "];
+  Node2 [label="udmaio::RegAccessorArray\l\< C, offset, 0, 0 \>\< UioGpioStatus\l::GpioData, 0 \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html",tooltip=" "];
   Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
-  Node3 [label="udmaio::RegAccessorArray\l\< UioTrafficGen::StControl,\l 0x30 \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array.html",tooltip=" "];
+  Node3 [label="udmaio::RegAccessorArray\l\< C, offset, 0, 0 \>\< UioTraffic\lGen::StControl, 0x30 \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html",tooltip=" "];
   Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
-  Node4 [label="udmaio::RegAccessorArray\l\< UioTrafficGen::StConfig,\l 0x34 \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array.html",tooltip=" "];
+  Node4 [label="udmaio::RegAccessorArray\l\< C, offset, 0, 0 \>\< UioTraffic\lGen::StConfig, 0x34 \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html",tooltip=" "];
   Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
-  Node5 [label="udmaio::RegAccessorArray\l\< UioTrafficGen::TrLength,\l 0x38 \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array.html",tooltip=" "];
+  Node5 [label="udmaio::RegAccessorArray\l\< C, offset, 0, 0 \>\< UioTraffic\lGen::TrLength, 0x38 \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html",tooltip=" "];
   Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
-  Node6 [label="udmaio::RegAccessorArray\l\< UioTrafficGen::ExtTrLength,\l 0x50 \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array.html",tooltip=" "];
+  Node6 [label="udmaio::RegAccessorArray\l\< C, offset, 0, 0 \>\< UioTraffic\lGen::ExtTrLength, 0x50 \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html",tooltip=" "];
   Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
-  Node7 [label="udmaio::RegAccessorArray\l\< C, U, offset, arr_size,\l arr_stride \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array.html",tooltip="Accessor for register array."];
+  Node7 [label="udmaio::RegAccessorArray\l\< C, offset, arr_size,\l arr_stride \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array.html",tooltip="Accessor for register array."];
   Node1 -> Node8 [dir="back",color="steelblue1",style="solid"];
-  Node8 [label="udmaio::RegAccessorArray\l\< C, U, offset, 0, 0 \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01_u_00_01offset_00_010_00_010_01_4.html",tooltip="Accessor for single register."];
+  Node8 [label="udmaio::RegAccessorArray\l\< C, offset, 0, 0 \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html",tooltip="Accessor for single register."];
   Node1 -> Node9 [dir="back",color="steelblue1",style="solid"];
-  Node9 [label="udmaio::RegAccessorArray\lElement\< C, U \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array_element.html",tooltip="Accessor for register array element. Returned by RegAccessorArray<C>::operator[]."];
+  Node9 [label="udmaio::RegAccessorArray\lElement\< C \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array_element.html",tooltip="Accessor for register array element. Returned by RegAccessorArray<C>::operator[]."];
 }

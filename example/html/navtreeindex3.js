@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"structaxi__dma_1_1sg__ctl__t.html":[0,0,0,11],
+"structaxi__dma_1_1sg__ctl__t.html#a2fca4f6f2869762fbb63af3a7c7b5c6b":[0,0,0,11,0],
+"structaxi__dma_1_1sg__ctl__t.html#a2fca4f6f2869762fbb63af3a7c7b5c6b":[1,0,0,11,0],
+"structaxi__dma_1_1sg__ctl__t.html#a9dee3d616e2c81426e9ea71d80d705d3":[1,0,0,11,2],
 "structaxi__dma_1_1sg__ctl__t.html#a9dee3d616e2c81426e9ea71d80d705d3":[0,0,0,11,2],
 "structaxi__dma_1_1sg__ctl__t.html#aa4a87d97ef6d7896f69aecf581a1834d":[0,0,0,11,3],
 "structaxi__dma_1_1sg__ctl__t.html#aa4a87d97ef6d7896f69aecf581a1834d":[1,0,0,11,3],

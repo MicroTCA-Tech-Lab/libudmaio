@@ -1,13 +1,12 @@
 <map id="UioIf.hpp" name="UioIf.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="288,5,363,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="236,5,311,31"/>
 <area shape="rect" id="node2" href="$_fpga_mem_buffer_over_axi_8hpp.html" title=" " alt="" coords="5,79,189,104"/>
-<area shape="rect" id="node3" href="$_reg_accessor_8hpp.html" title=" " alt="" coords="214,79,338,104"/>
-<area shape="rect" id="node4" href="$_uio_axi_dma_if_8hpp.html" title=" " alt="" coords="218,152,337,177"/>
-<area shape="rect" id="node10" href="$_uio_mem_sgdma_8hpp.html" title=" " alt="" coords="413,79,549,104"/>
-<area shape="rect" id="node5" href="$_data_handler_abstract_8hpp.html" title=" " alt="" coords="326,225,493,251"/>
-<area shape="rect" id="node9" href="$_uio_axi_dma_if_8cpp.html" title=" " alt="" coords="183,225,302,251"/>
-<area shape="rect" id="node6" href="$_data_handler_abstract_8cpp.html" title=" " alt="" coords="235,299,402,324"/>
-<area shape="rect" id="node7" href="$_data_handler_sync_8hpp.html" title=" " alt="" coords="427,299,573,324"/>
-<area shape="rect" id="node8" href="$_data_handler_sync_8cpp.html" title=" " alt="" coords="427,372,573,397"/>
-<area shape="rect" id="node11" href="$_uio_mem_sgdma_8cpp.html" title=" " alt="" coords="447,152,583,177"/>
+<area shape="rect" id="node3" href="$_uio_axi_dma_if_8hpp.html" title=" " alt="" coords="214,79,333,104"/>
+<area shape="rect" id="node9" href="$_uio_mem_sgdma_8hpp.html" title=" " alt="" coords="357,79,493,104"/>
+<area shape="rect" id="node4" href="$_data_handler_abstract_8hpp.html" title=" " alt="" coords="266,152,433,177"/>
+<area shape="rect" id="node8" href="$_uio_axi_dma_if_8cpp.html" title=" " alt="" coords="123,152,242,177"/>
+<area shape="rect" id="node5" href="$_data_handler_abstract_8cpp.html" title=" " alt="" coords="175,225,342,251"/>
+<area shape="rect" id="node6" href="$_data_handler_sync_8hpp.html" title=" " alt="" coords="367,225,513,251"/>
+<area shape="rect" id="node7" href="$_data_handler_sync_8cpp.html" title=" " alt="" coords="367,299,513,324"/>
+<area shape="rect" id="node10" href="$_uio_mem_sgdma_8cpp.html" title=" " alt="" coords="457,152,593,177"/>
 </map>
