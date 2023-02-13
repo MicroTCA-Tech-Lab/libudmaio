@@ -36,16 +36,20 @@ class UioIf : public Logger, private boost::noncopyable {
 
   public:
     /// @brief Construct the UioIf from a UioDeviceInfo
+    /// @param name Channel name for logger
     /// @param dev UioDeviceInfo describing the connection information
-    UioIf(std::string name, UioDeviceInfo dev);
+    /// @param debug_enable Enable raw register access logging when loglevel is at bls::trace
+    UioIf(std::string name, UioDeviceInfo dev, bool debug_enable = false);
 
     virtual ~UioIf();
 
   protected:
     int _fd, _fd_int;
     void* _mem;
-    UioRegion _region;
-    bool _skip_write_to_arm_int;
+    const UioRegion _region;
+    const bool _skip_write_to_arm_int;
+    const bool _debug_enable;
+    const bool _force_32bit;
 
     volatile uint32_t* _reg_ptr(uint32_t offs) const {
         return static_cast<volatile uint32_t*>(_mem) + offs / 4;

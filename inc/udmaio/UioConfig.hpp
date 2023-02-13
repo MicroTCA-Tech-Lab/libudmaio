@@ -39,6 +39,7 @@ struct UioDeviceInfo {
     std::string evt_path;
     UioRegion region;
     uintptr_t mmap_offs;
+    bool force_32bit;
 };
 
 class UioConfigBase;
@@ -46,6 +47,7 @@ class UioConfigBase;
 /// Holds information where a device can be found over both UIO and XDMA
 class UioDeviceLocation {
     static std::unique_ptr<UioConfigBase> _link_cfg;
+    static bool _is_x7_series;
 
   public:
     UioDeviceLocation(std::string uioname, UioRegion xdmaregion, std::string xdmaevtdev = "")
@@ -64,6 +66,9 @@ class UioDeviceLocation {
     /// @param xdma_path XDMA device instance directory in `/dev`
     /// @param pcie_offs XDMA core PCIe memory offset
     static void setLinkXdma(std::string xdma_path, uintptr_t pcie_offs);
+
+    /// @brief Set the interface to Xilinx 7 series mode. PCIe connections to that device will be limited to 32 bits.
+    static void setX7Series();
 
     operator UioDeviceInfo() const;
 };
