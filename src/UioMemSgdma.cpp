@@ -15,40 +15,6 @@
 
 namespace udmaio {
 
-// Workaround for limited PCIe memory access to certain devices:
-// "For 7 series Gen2 IP, PCIe access from the Host system must be limited to 1DW (4 Bytes)
-// transaction only." (see Xilinx pg195, page 10) If using direct access to the mmap()ed area (or a
-// regular memcpy), the CPU will issue larger transfers and the system will crash
-void UioMemSgdma::memcpy32_helper(void* __restrict__ dest, const void* __restrict__ src, size_t n) {
-    assert((reinterpret_cast<uintptr_t>(dest) % sizeof(uint32_t) == 0) &&
-           "memcpy32_helper: Dest addr not aligned to 32 bit");
-    assert((reinterpret_cast<uintptr_t>(src) % sizeof(uint32_t) == 0) &&
-           "memcpy32_helper: Source addr not aligned to 32 bit");
-    assert((n % sizeof(uint32_t) == 0) && "memcpy32_helper: Copy size not aligned to 32 bit");
-    n /= sizeof(uint32_t);
-    uint32_t* __restrict__ dest32 = static_cast<uint32_t*>(dest);
-    const uint32_t* __restrict__ src32 = static_cast<const uint32_t*>(src);
-    while (n--) {
-        *dest32++ = *src32++;
-    }
-}
-
-UioMemSgdma::S2mmDesc* UioMemSgdma::desc_ptr(size_t i) const {
-    assert(i < _nr_cyc_desc && "desc index out of range");
-    char* addr = static_cast<char*>(_mem) + (i * DESC_ADDR_STEP);
-    return reinterpret_cast<S2mmDesc*>(addr);
-}
-
-UioMemSgdma::S2mmDesc UioMemSgdma::read_desc(size_t i) const {
-    S2mmDesc result;
-    memcpy32_helper(&result, desc_ptr(i), sizeof(S2mmDesc));
-    return result;
-}
-
-void UioMemSgdma::write_desc(size_t i, const S2mmDesc& src) {
-    memcpy32_helper(desc_ptr(i), &src, sizeof(S2mmDesc));
-}
-
 void UioMemSgdma::write_cyc_mode(const std::vector<UioRegion>& dst_bufs) {
     _nr_cyc_desc = dst_bufs.size();
     _next_readable_buf = 0;
@@ -72,7 +38,7 @@ void UioMemSgdma::write_cyc_mode(const std::vector<UioRegion>& dst_bufs) {
             .status = {0},
             .app = {0},
         };
-        write_desc(i++, desc);
+        descriptors[i++].wr(desc);
     }
 }
 
@@ -113,7 +79,7 @@ void UioMemSgdma::print_descs() const {
     for (size_t i = 0; i < _nr_cyc_desc; i++) {
         BLI << "Reading desc " << i << "/" << _nr_cyc_desc - 1 << " from offset 0x" << std::hex
             << i * DESC_ADDR_STEP << std::dec;
-        print_desc(read_desc(i));
+        print_desc(descriptors[i].rd());
     }
 }
 
@@ -130,12 +96,12 @@ std::vector<UioRegion> UioMemSgdma::get_full_buffers() {
     std::vector<UioRegion> bufs;
 
     for (size_t i = 0; i < _nr_cyc_desc; i++) {
-        S2mmDesc desc = read_desc(_next_readable_buf);
+        S2mmDesc desc = descriptors[_next_readable_buf].rd();
         if (!desc.status.cmpit) {
             break;
         }
         desc.status.cmpit = 0;
-        write_desc(_next_readable_buf, desc);
+        descriptors[_next_readable_buf].wr(desc);
 
         bufs.emplace_back(
             UioRegion{static_cast<uintptr_t>(desc.buffer_addr), desc.status.buffer_len});
