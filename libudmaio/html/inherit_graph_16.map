@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device." alt="" coords="5,5,157,31"/>
+<area shape="rect" id="node1" href="$classudmaio_1_1_uio_config_base.html" title="Base class for UioDeviceInfo configuration." alt="" coords="5,31,161,56"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_config_uio.html" title="Creates UioDeviceInfo from UioDeviceLocation (UIO version)" alt="" coords="216,5,363,31"/>
+<area shape="rect" id="node3" href="$classudmaio_1_1_uio_config_xdma.html" title="Creates UioDeviceInfo from UioDeviceLocation (XDMA version)" alt="" coords="209,55,369,80"/>
 </map>

@@ -30,9 +30,9 @@
 \DoxyCodeLine{27   \textcolor{keyword}{public}:}
 \DoxyCodeLine{28     \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a5a7ea9934a05ba5aacada38f5f47a87b}{FpgaMemBufferOverAxi}}(\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{UioDeviceInfo}} dev) : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}(\textcolor{stringliteral}{"{}FpgaMemBufferOverAxi"{}}, dev) \{\}}
 \DoxyCodeLine{29 }
-\DoxyCodeLine{30     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a016fec1601d0de2e9817bff1729077db}{get\_phys\_addr}}()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_uio_if_a7b9d1b5562353fb0df19cc5c4c447458}{\_region}}.\mbox{\hyperlink{structudmaio_1_1_uio_region_aeae3c222eaf007b2850693dfdfd3af9c}{addr}}; \}}
+\DoxyCodeLine{30     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a016fec1601d0de2e9817bff1729077db}{get\_phys\_addr}}()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_uio_if_a884e5d93ed89a07b4d2dc632de171ddf}{\_region}}.\mbox{\hyperlink{structudmaio_1_1_uio_region_aeae3c222eaf007b2850693dfdfd3af9c}{addr}}; \}}
 \DoxyCodeLine{31 }
-\DoxyCodeLine{32     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a4d58cf3e554e6c357a4fe4cdb67e37d5}{get\_phys\_size}}()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_uio_if_a7b9d1b5562353fb0df19cc5c4c447458}{\_region}}.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}}; \}}
+\DoxyCodeLine{32     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a4d58cf3e554e6c357a4fe4cdb67e37d5}{get\_phys\_size}}()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_uio_if_a884e5d93ed89a07b4d2dc632de171ddf}{\_region}}.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}}; \}}
 \DoxyCodeLine{33 }
 \DoxyCodeLine{34   \textcolor{keyword}{protected}:}
 \DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a8ddbb178a2a0b57ecf6ae54de9802c18}{copy\_from\_buf}}(uint8\_t* dest, \textcolor{keyword}{const} \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}}\& buf\_info)\textcolor{keyword}{ const override }\{}
@@ -41,7 +41,7 @@
 \DoxyCodeLine{38             << buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_aeae3c222eaf007b2850693dfdfd3af9c}{addr}} << std::dec;}
 \DoxyCodeLine{39         BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace)}
 \DoxyCodeLine{40             << \textcolor{stringliteral}{"{}FpgaMemBufferOverAxi: append\_from\_buf: buf\_info.size = "{}} << buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}};}
-\DoxyCodeLine{41         uintptr\_t mmap\_addr = buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_aeae3c222eaf007b2850693dfdfd3af9c}{addr}} -\/ \mbox{\hyperlink{classudmaio_1_1_uio_if_a7b9d1b5562353fb0df19cc5c4c447458}{\_region}}.\mbox{\hyperlink{structudmaio_1_1_uio_region_aeae3c222eaf007b2850693dfdfd3af9c}{addr}};}
+\DoxyCodeLine{41         uintptr\_t mmap\_addr = buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_aeae3c222eaf007b2850693dfdfd3af9c}{addr}} -\/ \mbox{\hyperlink{classudmaio_1_1_uio_if_a884e5d93ed89a07b4d2dc632de171ddf}{\_region}}.\mbox{\hyperlink{structudmaio_1_1_uio_region_aeae3c222eaf007b2850693dfdfd3af9c}{addr}};}
 \DoxyCodeLine{42         std::memcpy(dest, \textcolor{keyword}{static\_cast<}uint8\_t*\textcolor{keyword}{>}(\mbox{\hyperlink{classudmaio_1_1_uio_if_a9284f47ea82fd29ee29b3dfd9f465a73}{\_mem}}) + mmap\_addr, buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}});}
 \DoxyCodeLine{43     \}}
 \DoxyCodeLine{44 \};}

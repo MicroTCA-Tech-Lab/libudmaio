@@ -37,6 +37,7 @@ var hierarchy =
       [ "udmaio::UioIf", "classudmaio_1_1_uio_if.html", null ]
     ] ],
     [ "udmaio::RegAccessorBase< C >", "classudmaio_1_1_reg_accessor_base.html", [
+      [ "udmaio::RegAccessorArray< S2mmDesc, 0, 1024, DESC_ADDR_STEP >", "classudmaio_1_1_reg_accessor_array.html", null ],
       [ "udmaio::RegAccessorArray< C, offset, 0, 0 >< UioGpioStatus::GpioData, 0 >", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html", null ],
       [ "udmaio::RegAccessorArray< C, offset, 0, 0 >< UioTrafficGen::StControl, 0x30 >", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html", null ],
       [ "udmaio::RegAccessorArray< C, offset, 0, 0 >< UioTrafficGen::StConfig, 0x34 >", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html", null ],
@@ -46,6 +47,7 @@ var hierarchy =
       [ "udmaio::RegAccessorArray< C, offset, 0, 0 >", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html", null ],
       [ "udmaio::RegAccessorArrayElement< C >", "classudmaio_1_1_reg_accessor_array_element.html", null ]
     ] ],
+    [ "udmaio::RegAccessorBase< S2mmDesc >", "classudmaio_1_1_reg_accessor_base.html", null ],
     [ "udmaio::RegAccessorBase< UioGpioStatus::GpioData >", "classudmaio_1_1_reg_accessor_base.html", null ],
     [ "udmaio::RegAccessorBase< UioTrafficGen::ExtTrLength >", "classudmaio_1_1_reg_accessor_base.html", null ],
     [ "udmaio::RegAccessorBase< UioTrafficGen::StConfig >", "classudmaio_1_1_reg_accessor_base.html", null ],
