@@ -1,12 +1,11 @@
 <map id="udmaio::RegAccessorBase&lt; C &gt;" name="udmaio::RegAccessorBase&lt; C &gt;">
-<area shape="rect" id="node1" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="5,335,215,360"/>
-<area shape="rect" id="node2" href="$classudmaio_1_1_reg_accessor_array.html" title=" " alt="" coords="275,5,467,60"/>
-<area shape="rect" id="node3" href="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html" title=" " alt="" coords="263,84,479,139"/>
+<area shape="rect" id="node1" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="5,296,215,321"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html" title=" " alt="" coords="263,5,479,60"/>
+<area shape="rect" id="node3" href="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html" title=" " alt="" coords="277,84,464,139"/>
 <area shape="rect" id="node4" href="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html" title=" " alt="" coords="277,163,464,217"/>
 <area shape="rect" id="node5" href="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html" title=" " alt="" coords="277,241,464,296"/>
 <area shape="rect" id="node6" href="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html" title=" " alt="" coords="277,320,464,375"/>
-<area shape="rect" id="node7" href="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html" title=" " alt="" coords="277,399,464,453"/>
-<area shape="rect" id="node8" href="$classudmaio_1_1_reg_accessor_array.html" title="Accessor for register array." alt="" coords="281,477,460,532"/>
-<area shape="rect" id="node9" href="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html" title="Accessor for single register." alt="" coords="281,557,460,597"/>
-<area shape="rect" id="node10" href="$classudmaio_1_1_reg_accessor_array_element.html" title="Accessor for register array element. Returned by RegAccessorArray&lt;C&gt;::operator[]." alt="" coords="281,621,460,661"/>
+<area shape="rect" id="node7" href="$classudmaio_1_1_reg_accessor_array.html" title="Accessor for register array." alt="" coords="281,399,460,453"/>
+<area shape="rect" id="node8" href="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html" title="Accessor for single register." alt="" coords="281,478,460,518"/>
+<area shape="rect" id="node9" href="$classudmaio_1_1_reg_accessor_array_element.html" title="Accessor for register array element. Returned by RegAccessorArray&lt;C&gt;::operator[]." alt="" coords="281,542,460,582"/>
 </map>

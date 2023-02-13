@@ -42,13 +42,13 @@ digraph "UioConfig.hpp"
   Node13 -> Node15 [dir="back",color="steelblue1",style="solid"];
   Node15 [label="UioGpioStatus.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_gpio_status_8hpp.html",tooltip=" "];
   Node15 -> Node5 [dir="back",color="steelblue1",style="solid"];
-  Node13 -> Node11 [dir="back",color="steelblue1",style="solid"];
   Node13 -> Node16 [dir="back",color="steelblue1",style="solid"];
   Node16 [label="UioTrafficGen.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_traffic_gen_8hpp.html",tooltip=" "];
   Node16 -> Node17 [dir="back",color="steelblue1",style="solid"];
   Node17 [label="UioTrafficGen.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_traffic_gen_8cpp.html",tooltip=" "];
   Node16 -> Node5 [dir="back",color="steelblue1",style="solid"];
   Node12 -> Node14 [dir="back",color="steelblue1",style="solid"];
+  Node12 -> Node11 [dir="back",color="steelblue1",style="solid"];
   Node12 -> Node5 [dir="back",color="steelblue1",style="solid"];
   Node1 -> Node18 [dir="back",color="steelblue1",style="solid"];
   Node18 [label="Z7ioExampleProjectConsts.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_z7io_example_project_consts_8hpp.html",tooltip=" "];

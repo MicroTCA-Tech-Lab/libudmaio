@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 534;
+var viewWidth = 668;
 var viewHeight = 357;
 var sectionId = 'dynsection-1';
 </script>
@@ -58,8 +58,8 @@ var sectionId = 'dynsection-1';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#999999" stroke="#666666" points="234,-349 165,-349 165,-330 234,-330 234,-349"/>
-<text text-anchor="middle" x="199.5" y="-337" font-family="Helvetica,sans-Serif" font-size="10.00">Logging.hpp</text>
+<polygon fill="#999999" stroke="#666666" points="159,-349 90,-349 90,-330 159,-330 159,-349"/>
+<text text-anchor="middle" x="124.5" y="-337" font-family="Helvetica,sans-Serif" font-size="10.00">Logging.hpp</text>
 </a>
 </g>
 </g>
@@ -75,53 +75,53 @@ var sectionId = 'dynsection-1';
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="#63b8ff" d="M157.1,-325.98C118.45,-311.92 64.19,-284.86 42.5,-239 21.03,-193.6 84.02,-148.25 114.73,-129.49"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="155.52,-329.13 166.12,-329.1 157.82,-322.52 155.52,-329.13"/>
+<path fill="none" stroke="#63b8ff" d="M78.86,-326.74C62.25,-320.01 45.19,-309.67 35.5,-294 31.06,-286.82 33.53,-283.21 35.5,-275 48.3,-221.65 60.74,-210.42 91.5,-165 100.49,-151.73 113,-138.11 121.41,-129.49"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="77.61,-330.01 88.2,-330.14 80,-323.43 77.61,-330.01"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:href="_logging_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="420,-294 351,-294 351,-275 420,-275 420,-294"/>
-<text text-anchor="middle" x="385.5" y="-282" font-family="Helvetica,sans-Serif" font-size="10.00">Logging.cpp</text>
+<polygon fill="white" stroke="#666666" points="114,-294 45,-294 45,-275 114,-275 114,-294"/>
+<text text-anchor="middle" x="79.5" y="-282" font-family="Helvetica,sans-Serif" font-size="10.00">Logging.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="#63b8ff" d="M242.09,-326.36C276.22,-316.64 323.34,-303.21 354.1,-294.45"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="241.17,-322.99 232.51,-329.09 243.08,-329.72 241.17,-322.99"/>
+<path fill="none" stroke="#63b8ff" d="M109.82,-321.22C102.24,-312.28 93.29,-301.74 87.09,-294.44"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="106.95,-323.24 116.09,-328.59 112.29,-318.71 106.95,-323.24"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
 <g id="a_node7"><a xlink:href="_u_dma_buf_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="196,-294 119,-294 119,-275 196,-275 196,-294"/>
-<text text-anchor="middle" x="157.5" y="-282" font-family="Helvetica,sans-Serif" font-size="10.00">UDmaBuf.hpp</text>
+<polygon fill="white" stroke="#666666" points="209,-294 132,-294 132,-275 209,-275 209,-294"/>
+<text text-anchor="middle" x="170.5" y="-282" font-family="Helvetica,sans-Serif" font-size="10.00">UDmaBuf.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
 <g id="edge6" class="edge">
 <title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="#63b8ff" d="M185.58,-320.93C178.54,-312.06 170.31,-301.67 164.59,-294.44"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="182.67,-322.9 191.62,-328.56 188.16,-318.55 182.67,-322.9"/>
+<path fill="none" stroke="#63b8ff" d="M139.5,-321.22C147.26,-312.28 156.4,-301.74 162.74,-294.44"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="137,-318.76 133.09,-328.61 142.29,-323.35 137,-318.76"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
 <g id="a_node9"><a xlink:href="_uio_if_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="332.5,-294 276.5,-294 276.5,-275 332.5,-275 332.5,-294"/>
-<text text-anchor="middle" x="304.5" y="-282" font-family="Helvetica,sans-Serif" font-size="10.00">UioIf.hpp</text>
+<polygon fill="white" stroke="#666666" points="424.5,-294 368.5,-294 368.5,-275 424.5,-275 424.5,-294"/>
+<text text-anchor="middle" x="396.5" y="-282" font-family="Helvetica,sans-Serif" font-size="10.00">UioIf.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node9 -->
 <g id="edge9" class="edge">
 <title>Node1&#45;&gt;Node9</title>
-<path fill="none" stroke="#63b8ff" d="M227.43,-324.4C246.34,-314.86 270.72,-302.55 286.95,-294.36"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="226.01,-321.2 218.66,-328.83 229.17,-327.45 226.01,-321.2"/>
+<path fill="none" stroke="#63b8ff" d="M170.34,-329.57C226.87,-318.55 321.22,-300.17 368.17,-291.02"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="169.86,-326.1 160.71,-331.44 171.2,-332.97 169.86,-326.1"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -171,146 +171,146 @@ var sectionId = 'dynsection-1';
 <!-- Node7&#45;&gt;Node2 -->
 <g id="edge7" class="edge">
 <title>Node7&#45;&gt;Node2</title>
-<path fill="none" stroke="#63b8ff" d="M154.18,-263.44C148.26,-227.74 136.14,-154.57 131.96,-129.31"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="150.71,-263.95 155.8,-273.24 157.62,-262.81 150.71,-263.95"/>
+<path fill="none" stroke="#63b8ff" d="M132.92,-269.85C119.25,-262.85 105.26,-252.82 97.5,-239 76.48,-201.57 108.81,-149.87 123.67,-129.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="131.28,-272.95 141.83,-273.99 134.23,-266.61 131.28,-272.95"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
 <g id="a_node8"><a xlink:href="_u_dma_buf_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="129,-239 52,-239 52,-220 129,-220 129,-239"/>
-<text text-anchor="middle" x="90.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">UDmaBuf.cpp</text>
+<polygon fill="white" stroke="#666666" points="184,-239 107,-239 107,-220 184,-220 184,-239"/>
+<text text-anchor="middle" x="145.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">UDmaBuf.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node8 -->
 <g id="edge8" class="edge">
 <title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="#63b8ff" d="M137.45,-267.64C125.75,-258.39 111.43,-247.05 101.7,-239.36"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="134.93,-270.11 144.95,-273.57 139.28,-264.62 134.93,-270.11"/>
+<path fill="none" stroke="#63b8ff" d="M161.54,-264.5C157.51,-255.96 152.94,-246.28 149.72,-239.44"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="158.29,-265.83 165.73,-273.38 164.63,-262.84 158.29,-265.83"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
 <g id="a_node10"><a xlink:href="_fpga_mem_buffer_over_axi_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="435.5,-239 297.5,-239 297.5,-220 435.5,-220 435.5,-239"/>
-<text text-anchor="middle" x="366.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">FpgaMemBufferOverAxi.hpp</text>
+<polygon fill="white" stroke="#666666" points="534.5,-239 396.5,-239 396.5,-220 534.5,-220 534.5,-239"/>
+<text text-anchor="middle" x="465.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">FpgaMemBufferOverAxi.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node10 -->
 <g id="edge10" class="edge">
 <title>Node9&#45;&gt;Node10</title>
-<path fill="none" stroke="#63b8ff" d="M323.7,-267.09C334.4,-257.94 347.31,-246.9 356.14,-239.36"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="321.49,-264.37 316.17,-273.53 326.04,-269.69 321.49,-264.37"/>
+<path fill="none" stroke="#63b8ff" d="M417.15,-267.64C429.2,-258.39 443.95,-247.05 453.97,-239.36"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="415.2,-264.72 409.41,-273.59 419.47,-270.27 415.2,-264.72"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
 <g id="a_node11"><a xlink:href="_reg_accessor_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="279,-239 186,-239 186,-220 279,-220 279,-239"/>
-<text text-anchor="middle" x="232.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">RegAccessor.hpp</text>
+<polygon fill="white" stroke="#666666" points="646,-239 553,-239 553,-220 646,-220 646,-239"/>
+<text text-anchor="middle" x="599.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">RegAccessor.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node11 -->
 <g id="edge11" class="edge">
 <title>Node9&#45;&gt;Node11</title>
-<path fill="none" stroke="#63b8ff" d="M283.33,-267.92C270.69,-258.61 255.09,-247.13 244.53,-239.36"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="280.94,-270.5 291.07,-273.61 285.09,-264.87 280.94,-270.5"/>
+<path fill="none" stroke="#63b8ff" d="M435.73,-273.26C473.24,-263.46 529.25,-248.84 565.07,-239.49"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="434.98,-269.84 426.19,-275.75 436.75,-276.61 434.98,-269.84"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
 <g id="a_node12"><a xlink:href="_uio_axi_dma_if_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="408,-184 319,-184 319,-165 408,-165 408,-184"/>
-<text text-anchor="middle" x="363.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">UioAxiDmaIf.hpp</text>
+<polygon fill="white" stroke="#666666" points="644,-184 555,-184 555,-165 644,-165 644,-184"/>
+<text text-anchor="middle" x="599.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">UioAxiDmaIf.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node12 -->
-<g id="edge18" class="edge">
+<g id="edge15" class="edge">
 <title>Node9&#45;&gt;Node12</title>
-<path fill="none" stroke="#63b8ff" d="M343.81,-275.03C424.66,-261.75 470.19,-298.2 518.5,-239 550.95,-199.24 464.98,-184.12 408.45,-178.56"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="343.37,-271.55 334.2,-276.85 344.67,-278.43 343.37,-271.55"/>
-</g>
-<!-- Node16 -->
-<g id="node16" class="node">
-<title>Node16</title>
-<g id="a_node16"><a xlink:href="_uio_if_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="509.5,-239 453.5,-239 453.5,-220 509.5,-220 509.5,-239"/>
-<text text-anchor="middle" x="481.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">UioIf.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node9&#45;&gt;Node16 -->
-<g id="edge19" class="edge">
-<title>Node9&#45;&gt;Node16</title>
-<path fill="none" stroke="#63b8ff" d="M343.61,-271.79C376.75,-261.87 423.48,-247.87 453.13,-238.99"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="342.96,-268.33 334.39,-274.55 344.97,-275.03 342.96,-268.33"/>
-</g>
-<!-- Node11&#45;&gt;Node12 -->
-<g id="edge12" class="edge">
-<title>Node11&#45;&gt;Node12</title>
-<path fill="none" stroke="#63b8ff" d="M265.39,-215.19C289.23,-205.55 320.8,-192.78 341.61,-184.36"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="264.08,-211.95 256.13,-218.94 266.71,-218.44 264.08,-211.95"/>
+<path fill="none" stroke="#63b8ff" d="M436.45,-282.67C502.03,-280.36 627.96,-271.68 655.5,-239 672.17,-219.22 639.45,-196.62 617.37,-184.43"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="436.35,-279.17 426.46,-282.98 436.57,-286.16 436.35,-279.17"/>
 </g>
 <!-- Node14 -->
 <g id="node14" class="node">
 <title>Node14</title>
-<g id="a_node14"><a xlink:href="_uio_mem_sgdma_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="287.5,-184 185.5,-184 185.5,-165 287.5,-165 287.5,-184"/>
-<text text-anchor="middle" x="236.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">UioMemSgdma.hpp</text>
+<g id="a_node14"><a xlink:href="_uio_if_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="258.5,-239 202.5,-239 202.5,-220 258.5,-220 258.5,-239"/>
+<text text-anchor="middle" x="230.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">UioIf.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node11&#45;&gt;Node14 -->
-<g id="edge15" class="edge">
-<title>Node11&#45;&gt;Node14</title>
-<path fill="none" stroke="#63b8ff" d="M234.02,-208.35C234.64,-200.1 235.33,-190.97 235.83,-184.44"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="230.54,-208 233.27,-218.24 237.52,-208.53 230.54,-208"/>
+<!-- Node9&#45;&gt;Node14 -->
+<g id="edge16" class="edge">
+<title>Node9&#45;&gt;Node14</title>
+<path fill="none" stroke="#63b8ff" d="M357.69,-271.11C327.3,-261.41 285.74,-248.14 258.52,-239.45"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="356.31,-274.34 366.9,-274.05 358.44,-267.67 356.31,-274.34"/>
+</g>
+<!-- Node15 -->
+<g id="node15" class="node">
+<title>Node15</title>
+<g id="a_node15"><a xlink:href="_uio_mem_sgdma_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="378.5,-239 276.5,-239 276.5,-220 378.5,-220 378.5,-239"/>
+<text text-anchor="middle" x="327.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">UioMemSgdma.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node9&#45;&gt;Node15 -->
+<g id="edge17" class="edge">
+<title>Node9&#45;&gt;Node15</title>
+<path fill="none" stroke="#63b8ff" d="M375.85,-267.64C363.8,-258.39 349.05,-247.05 339.03,-239.36"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="373.53,-270.27 383.59,-273.59 377.8,-264.72 373.53,-270.27"/>
+</g>
+<!-- Node11&#45;&gt;Node12 -->
+<g id="edge12" class="edge">
+<title>Node11&#45;&gt;Node12</title>
+<path fill="none" stroke="#63b8ff" d="M599.5,-208.35C599.5,-200.1 599.5,-190.97 599.5,-184.44"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="596,-208.23 599.5,-218.23 603,-208.23 596,-208.23"/>
 </g>
 <!-- Node12&#45;&gt;Node2 -->
 <g id="edge13" class="edge">
 <title>Node12&#45;&gt;Node2</title>
-<path fill="none" stroke="#63b8ff" d="M312.92,-161.99C269.97,-152.22 209.21,-138.4 169.83,-129.45"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="311.97,-165.37 322.5,-164.17 313.52,-158.54 311.97,-165.37"/>
+<path fill="none" stroke="#63b8ff" d="M543.18,-167.14C455.1,-157.18 285.37,-138 193.41,-127.61"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="542.7,-170.6 553.03,-168.25 543.48,-163.65 542.7,-170.6"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
 <g id="a_node13"><a xlink:href="_uio_axi_dma_if_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="421,-129 332,-129 332,-110 421,-110 421,-129"/>
-<text text-anchor="middle" x="376.5" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">UioAxiDmaIf.cpp</text>
+<polygon fill="white" stroke="#666666" points="644,-129 555,-129 555,-110 644,-110 644,-129"/>
+<text text-anchor="middle" x="599.5" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">UioAxiDmaIf.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node12&#45;&gt;Node13 -->
 <g id="edge14" class="edge">
 <title>Node12&#45;&gt;Node13</title>
-<path fill="none" stroke="#63b8ff" d="M368.37,-153.64C370.41,-145.31 372.69,-136.05 374.31,-129.44"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="364.99,-152.73 366.01,-163.28 371.79,-154.4 364.99,-152.73"/>
+<path fill="none" stroke="#63b8ff" d="M599.5,-153.35C599.5,-145.1 599.5,-135.97 599.5,-129.44"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="596,-153.23 599.5,-163.23 603,-153.23 596,-153.23"/>
 </g>
-<!-- Node14&#45;&gt;Node2 -->
-<g id="edge16" class="edge">
-<title>Node14&#45;&gt;Node2</title>
-<path fill="none" stroke="#63b8ff" d="M208.3,-159.4C189.22,-149.86 164.6,-137.55 148.22,-129.36"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="206.66,-162.49 217.16,-163.83 209.79,-156.23 206.66,-162.49"/>
+<!-- Node15&#45;&gt;Node2 -->
+<g id="edge18" class="edge">
+<title>Node15&#45;&gt;Node2</title>
+<path fill="none" stroke="#63b8ff" d="M301.53,-214.26C260.29,-191.66 181.02,-148.2 146.84,-129.46"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="299.6,-217.2 310.05,-218.93 302.97,-211.06 299.6,-217.2"/>
 </g>
-<!-- Node15 -->
-<g id="node15" class="node">
-<title>Node15</title>
-<g id="a_node15"><a xlink:href="_uio_mem_sgdma_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="313.5,-129 211.5,-129 211.5,-110 313.5,-110 313.5,-129"/>
-<text text-anchor="middle" x="262.5" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">UioMemSgdma.cpp</text>
+<!-- Node16 -->
+<g id="node16" class="node">
+<title>Node16</title>
+<g id="a_node16"><a xlink:href="_uio_mem_sgdma_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="378.5,-184 276.5,-184 276.5,-165 378.5,-165 378.5,-184"/>
+<text text-anchor="middle" x="327.5" y="-172" font-family="Helvetica,sans-Serif" font-size="10.00">UioMemSgdma.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node14&#45;&gt;Node15 -->
-<g id="edge17" class="edge">
-<title>Node14&#45;&gt;Node15</title>
-<path fill="none" stroke="#63b8ff" d="M245.82,-154.5C250.01,-145.96 254.76,-136.28 258.11,-129.44"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="242.72,-152.87 241.46,-163.39 249.01,-155.95 242.72,-152.87"/>
+<!-- Node15&#45;&gt;Node16 -->
+<g id="edge19" class="edge">
+<title>Node15&#45;&gt;Node16</title>
+<path fill="none" stroke="#63b8ff" d="M327.5,-208.35C327.5,-200.1 327.5,-190.97 327.5,-184.44"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="324,-208.23 327.5,-218.23 331,-208.23 324,-208.23"/>
 </g>
 </g>
 </svg>

@@ -23,12 +23,8 @@ digraph "RegAccessor.hpp"
   Node8 [label="UioGpioStatus.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_gpio_status_8hpp.html",tooltip=" "];
   Node8 -> Node6 [dir="back",color="steelblue1",style="solid"];
   Node1 -> Node9 [dir="back",color="steelblue1",style="solid"];
-  Node9 [label="UioMemSgdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8hpp.html",tooltip=" "];
-  Node9 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node9 [label="UioTrafficGen.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_traffic_gen_8hpp.html",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="steelblue1",style="solid"];
+  Node10 [label="UioTrafficGen.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_traffic_gen_8cpp.html",tooltip=" "];
   Node9 -> Node6 [dir="back",color="steelblue1",style="solid"];
-  Node1 -> Node10 [dir="back",color="steelblue1",style="solid"];
-  Node10 [label="UioTrafficGen.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_traffic_gen_8hpp.html",tooltip=" "];
-  Node10 -> Node11 [dir="back",color="steelblue1",style="solid"];
-  Node11 [label="UioTrafficGen.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_traffic_gen_8cpp.html",tooltip=" "];
-  Node10 -> Node6 [dir="back",color="steelblue1",style="solid"];
 }

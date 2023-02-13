@@ -32,12 +32,12 @@ digraph "Logging.hpp"
   Node12 -> Node2 [dir="back",color="steelblue1",style="solid"];
   Node12 -> Node13 [dir="back",color="steelblue1",style="solid"];
   Node13 [label="UioAxiDmaIf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_axi_dma_if_8cpp.html",tooltip=" "];
-  Node11 -> Node14 [dir="back",color="steelblue1",style="solid"];
-  Node14 [label="UioMemSgdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8hpp.html",tooltip=" "];
-  Node14 -> Node2 [dir="back",color="steelblue1",style="solid"];
-  Node14 -> Node15 [dir="back",color="steelblue1",style="solid"];
-  Node15 [label="UioMemSgdma.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8cpp.html",tooltip=" "];
   Node9 -> Node12 [dir="back",color="steelblue1",style="solid"];
-  Node9 -> Node16 [dir="back",color="steelblue1",style="solid"];
-  Node16 [label="UioIf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8cpp.html",tooltip=" "];
+  Node9 -> Node14 [dir="back",color="steelblue1",style="solid"];
+  Node14 [label="UioIf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8cpp.html",tooltip=" "];
+  Node9 -> Node15 [dir="back",color="steelblue1",style="solid"];
+  Node15 [label="UioMemSgdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8hpp.html",tooltip=" "];
+  Node15 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node15 -> Node16 [dir="back",color="steelblue1",style="solid"];
+  Node16 [label="UioMemSgdma.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8cpp.html",tooltip=" "];
 }

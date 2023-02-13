@@ -18,9 +18,4 @@ digraph "RegAccessor.hpp"
   Node6 [label="DataHandlerSync.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_data_handler_sync_8cpp.html",tooltip=" "];
   Node2 -> Node7 [dir="back",color="steelblue1",style="solid"];
   Node7 [label="UioAxiDmaIf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_axi_dma_if_8cpp.html",tooltip=" "];
-  Node1 -> Node8 [dir="back",color="steelblue1",style="solid"];
-  Node8 [label="UioMemSgdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8hpp.html",tooltip=" "];
-  Node8 -> Node3 [dir="back",color="steelblue1",style="solid"];
-  Node8 -> Node9 [dir="back",color="steelblue1",style="solid"];
-  Node9 [label="UioMemSgdma.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8cpp.html",tooltip=" "];
 }
