@@ -43,8 +43,8 @@ digraph "UioConfig.hpp"
   Node17 -> Node7 [dir="back",color="steelblue1",style="solid"];
   Node17 -> Node18 [dir="back",color="steelblue1",style="solid"];
   Node18 [label="UioAxiDmaIf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_axi_dma_if_8cpp.html",tooltip=" "];
+  Node16 -> Node12 [dir="back",color="steelblue1",style="solid"];
   Node15 -> Node17 [dir="back",color="steelblue1",style="solid"];
   Node15 -> Node19 [dir="back",color="steelblue1",style="solid"];
   Node19 [label="UioIf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8cpp.html",tooltip=" "];
-  Node15 -> Node12 [dir="back",color="steelblue1",style="solid"];
 }

@@ -24,7 +24,12 @@ digraph "udmaio::DataHandlerAbstract"
   Node8 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" _desc" ];
   Node8 [label="udmaio::UioMemSgdma",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_mem_sgdma.html",tooltip="Interface to AXI DMA scatter-gather buffers & descriptors Uses a UioIf to access DMA descriptor memor..."];
   Node5 -> Node8 [dir="back",color="steelblue1",style="solid"];
-  Node9 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" _mem" ];
-  Node9 [label="udmaio::DmaBufferAbstract",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_dma_buffer_abstract.html",tooltip="Base class for DMA data buffer."];
-  Node3 -> Node9 [dir="back",color="firebrick4",style="solid"];
+  Node9 -> Node8 [dir="back",color="darkorchid3",style="dashed",label=" descriptors" ];
+  Node9 [label="udmaio::RegAccessorArray\l\< S2mmDesc, 0, 1024, DESC\l_ADDR_STEP \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array.html",tooltip=" "];
+  Node10 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node10 [label="udmaio::RegAccessorBase\< C \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_base.html",tooltip="Base class implementing register access. Only used by subclasses, not used directly."];
+  Node5 -> Node10 [dir="back",color="darkorchid3",style="dashed",label=" _if" ];
+  Node11 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" _mem" ];
+  Node11 [label="udmaio::DmaBufferAbstract",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_dma_buffer_abstract.html",tooltip="Base class for DMA data buffer."];
+  Node3 -> Node11 [dir="back",color="firebrick4",style="solid"];
 }

@@ -104,7 +104,7 @@ digraph "DataHandlerSync.cpp"
   Node10 -> Node42 [color="steelblue1",style="solid"];
   Node42 [label="UioMemSgdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8hpp.html",tooltip=" "];
   Node42 -> Node24 [color="steelblue1",style="solid"];
-  Node42 -> Node34 [color="steelblue1",style="solid"];
+  Node42 -> Node33 [color="steelblue1",style="solid"];
   Node10 -> Node43 [color="steelblue1",style="solid"];
   Node43 [label="boost/asio/posix/stream\l_descriptor.hpp",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
 }

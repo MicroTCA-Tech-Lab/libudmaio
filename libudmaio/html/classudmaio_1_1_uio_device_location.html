@@ -135,6 +135,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:acafeb86cff39d723db231b40862bbb9a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_device_location.html#acafeb86cff39d723db231b40862bbb9a">setLinkXdma</a> (std::string xdma_path, uintptr_t pcie_offs)</td></tr>
 <tr class="memdesc:acafeb86cff39d723db231b40862bbb9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <a class="el" href="classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces.">UioIf</a>'s globally to use a XDMA link.  <a href="classudmaio_1_1_uio_device_location.html#acafeb86cff39d723db231b40862bbb9a">More...</a><br /></td></tr>
 <tr class="separator:acafeb86cff39d723db231b40862bbb9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45360c0dfb806328ecfba1fb1940886f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_device_location.html#a45360c0dfb806328ecfba1fb1940886f">setX7Series</a> ()</td></tr>
+<tr class="memdesc:a45360c0dfb806328ecfba1fb1940886f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the interface to Xilinx 7 series mode. PCIe connections to that device will be limited to 32 bits.  <a href="classudmaio_1_1_uio_device_location.html#a45360c0dfb806328ecfba1fb1940886f">More...</a><br /></td></tr>
+<tr class="separator:a45360c0dfb806328ecfba1fb1940886f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -152,6 +155,8 @@ Public Attributes</h2></td></tr>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:ae572549b49ffaaed58353abd077d5d13"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classudmaio_1_1_uio_config_base.html">UioConfigBase</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_device_location.html#ae572549b49ffaaed58353abd077d5d13">_link_cfg</a> {}</td></tr>
 <tr class="separator:ae572549b49ffaaed58353abd077d5d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62281674d2cecf6e657d3d2557c544fc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_device_location.html#a62281674d2cecf6e657d3d2557c544fc">_is_x7_series</a> {false}</td></tr>
+<tr class="separator:a62281674d2cecf6e657d3d2557c544fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Holds information where a device can be found over both UIO and XDMA. </p>
@@ -288,7 +293,56 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a45360c0dfb806328ecfba1fb1940886f" name="a45360c0dfb806328ecfba1fb1940886f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45360c0dfb806328ecfba1fb1940886f">&#9670;&#160;</a></span>setX7Series()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void udmaio::UioDeviceLocation::setX7Series </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the interface to Xilinx 7 series mode. PCIe connections to that device will be limited to 32 bits. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a62281674d2cecf6e657d3d2557c544fc" name="a62281674d2cecf6e657d3d2557c544fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62281674d2cecf6e657d3d2557c544fc">&#9670;&#160;</a></span>_is_x7_series</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool udmaio::UioDeviceLocation::_is_x7_series {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae572549b49ffaaed58353abd077d5d13" name="ae572549b49ffaaed58353abd077d5d13"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae572549b49ffaaed58353abd077d5d13">&#9670;&#160;</a></span>_link_cfg</h2>
 

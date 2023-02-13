@@ -34,15 +34,15 @@ digraph "Logging.hpp"
   Node12 [label="UioGpioStatus.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_gpio_status_8hpp.html",tooltip=" "];
   Node12 -> Node5 [dir="back",color="steelblue1",style="solid"];
   Node10 -> Node13 [dir="back",color="steelblue1",style="solid"];
-  Node13 [label="UioTrafficGen.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_traffic_gen_8hpp.html",tooltip=" "];
-  Node13 -> Node14 [dir="back",color="steelblue1",style="solid"];
-  Node14 [label="UioTrafficGen.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_traffic_gen_8cpp.html",tooltip=" "];
+  Node13 [label="UioMemSgdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8hpp.html",tooltip=" "];
+  Node13 -> Node2 [dir="back",color="steelblue1",style="solid"];
   Node13 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node10 -> Node14 [dir="back",color="steelblue1",style="solid"];
+  Node14 [label="UioTrafficGen.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_traffic_gen_8hpp.html",tooltip=" "];
+  Node14 -> Node15 [dir="back",color="steelblue1",style="solid"];
+  Node15 [label="UioTrafficGen.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_traffic_gen_8cpp.html",tooltip=" "];
+  Node14 -> Node5 [dir="back",color="steelblue1",style="solid"];
   Node8 -> Node11 [dir="back",color="steelblue1",style="solid"];
-  Node8 -> Node15 [dir="back",color="steelblue1",style="solid"];
-  Node15 [label="UioMemSgdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8hpp.html",tooltip=" "];
-  Node15 -> Node2 [dir="back",color="steelblue1",style="solid"];
-  Node15 -> Node5 [dir="back",color="steelblue1",style="solid"];
   Node8 -> Node5 [dir="back",color="steelblue1",style="solid"];
   Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
 }
