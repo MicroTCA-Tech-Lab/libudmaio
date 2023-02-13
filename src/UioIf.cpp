@@ -65,17 +65,4 @@ uint32_t UioIf::wait_for_interrupt() {
     return irq_count;
 }
 
-uint32_t UioIf::_rd32(uint32_t offs) const {
-    uint32_t tmp = *_reg_ptr(offs);
-    BOOST_LOG_SEV(_lg, bls::trace)
-        << "read at 0x" << std::hex << offs << " = 0x" << tmp << std::dec;
-    return tmp;
-}
-
-void UioIf::_wr32(uint32_t offs, uint32_t data) {
-    BOOST_LOG_SEV(_lg, bls::trace)
-        << "write at 0x" << std::hex << offs << " = 0x" << data << std::dec;
-    *_reg_ptr(offs) = data;
-}
-
 }  // namespace udmaio

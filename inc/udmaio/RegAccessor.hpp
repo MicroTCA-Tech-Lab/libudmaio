@@ -27,26 +27,14 @@ class RegAccessorBase {
      * @param offs Offset into address space
      * @return C Register content
      */
-    C _rd(uint32_t offs) const {
-        C result;
-        uint32_t* ptr = reinterpret_cast<uint32_t*>(&result);
-        for (uint32_t i = 0; i < sizeof(C); i += sizeof(uint32_t)) {
-            *ptr++ = _if->_rd32(offs + i);
-        }
-        return result;
-    }
+    C _rd(uint32_t offs) const { return _if->template _rd_reg<C>(offs); }
 
     /**
      * @brief Write register
      * @param offs Offset into address space
      * @param value Content to write to register
      */
-    void _wr(uint32_t offs, const C& value) {
-        const uint32_t* ptr = reinterpret_cast<const uint32_t*>(&value);
-        for (uint32_t i = 0; i < sizeof(C); i += sizeof(uint32_t)) {
-            _if->_wr32(offs + i, *ptr++);
-        }
-    }
+    void _wr(uint32_t offs, const C& value) { _if->template _wr_reg<C>(offs, value); }
 
   public:
     using constructor_arg_type = UioIf*;
@@ -117,6 +105,12 @@ class RegAccessorArray : public RegAccessorBase<C> {
      * @return RegAccessorArrayElement<C> Accessor for requested array element
      */
     RegAccessorArrayElement<C> operator[](uint32_t idx) {
+        assert(idx < arr_size);
+        const uint32_t reg_offs = offset + idx * arr_stride;
+        return RegAccessorArrayElement<C>{RegAccessorBase<C>::_if, reg_offs};
+    }
+
+    const RegAccessorArrayElement<C> operator[](uint32_t idx) const {
         assert(idx < arr_size);
         const uint32_t reg_offs = offset + idx * arr_stride;
         return RegAccessorArrayElement<C>{RegAccessorBase<C>::_if, reg_offs};
