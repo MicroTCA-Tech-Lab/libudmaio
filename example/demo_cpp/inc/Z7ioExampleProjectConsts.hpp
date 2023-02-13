@@ -12,7 +12,7 @@
  *   https://msktechvcs.desy.de/techlab/software/internal/project-consts
  *
  * This file was generated with:
- * project-consts.py damc_fmc1z7io_top.xsa -t 0x44000000 -a arm_m_axi -e axi_dma:events0 -o Z7ioExampleProjectConsts.hpp
+ * project-consts.py damc_fmc1z7io_top.xsa -t 0x44000000 -a arm_m_axi -e axi_dma_0:events0 -o Z7ioExampleProjectConsts.hpp
  *
  */
 
@@ -30,6 +30,7 @@ const udmaio::UioDeviceLocation axi_bram_ctrl {
 const udmaio::UioDeviceLocation axi_dma {
     "hier_daq_axi_dma_0",
     { 0x0022'2000, 4 * 1024 },
+    "events0",
 };
 
 const udmaio::UioDeviceLocation axi_gpio_0 {
