@@ -33,6 +33,7 @@ std::istream& operator>>(std::istream& in, DmaMode& mode) {
 }
 
 std::unique_ptr<UioConfigBase> UioDeviceLocation::_link_cfg{};
+bool UioDeviceLocation::_is_x7_series{false};
 
 void UioDeviceLocation::setLinkAxi() {
     _link_cfg = std::make_unique<UioConfigUio>();
@@ -42,11 +43,23 @@ void UioDeviceLocation::setLinkXdma(std::string xdma_path, uintptr_t pcie_offs) 
     _link_cfg = std::make_unique<UioConfigXdma>(xdma_path, pcie_offs);
 }
 
+void UioDeviceLocation::setX7Series() {
+    _is_x7_series = true;
+}
+
 UioDeviceLocation::operator UioDeviceInfo() const {
     if (!_link_cfg) {
         throw std::runtime_error("UioIf link type not set (use setLinkAxi() or setLinkXdma())");
     }
-    return _link_cfg->operator()(*this);
+    UioDeviceInfo dev_info = _link_cfg->operator()(*this);
+
+    // Workaround for limited PCIe memory access to certain devices:
+    // "For 7 series Gen2 IP, PCIe access from the Host system must be limited to 1DW (4 Bytes)
+    // transaction only." (see Xilinx pg195, page 10) If using direct access to the mmap()ed area (or a
+    // regular memcpy), the CPU will issue larger transfers and the system will crash
+    dev_info.force_32bit = _is_x7_series && _link_cfg->mode() == DmaMode::XDMA;
+
+    return dev_info;
 }
 
 /** @brief gets a number of UIO device based on the name

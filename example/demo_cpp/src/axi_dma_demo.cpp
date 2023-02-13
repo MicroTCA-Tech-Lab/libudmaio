@@ -103,6 +103,10 @@ int main(int argc, char* argv[]) {
         UioDeviceLocation::setLinkXdma(dev_path, target_hw_consts::pcie_offset);
     }
 
+#if TARGET_HW == TARGET_HW_Z7IO
+    UioDeviceLocation::setX7Series();
+#endif
+
     auto gpio_status = std::make_unique<UioGpioStatus>(target_hw_consts::axi_gpio_status);
 
     bool is_ddr4_init = gpio_status->is_ddr4_init_calib_complete();

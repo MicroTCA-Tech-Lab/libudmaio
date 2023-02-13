@@ -12,7 +12,7 @@
 #pragma once
 
 #include "DmaBufferAbstract.hpp"
-#include "UioIf.hpp"
+#include "RegAccessor.hpp"
 
 namespace udmaio {
 
@@ -52,10 +52,8 @@ class UioMemSgdma : public UioIf {
     static_assert(sizeof(S2mmDescStatus) == 4, "size of S2mmDescStatus must be 4");
     static_assert(sizeof(S2mmDesc) == 0x38, "size of S2mmDesc must be 0x34+4 for alignment");
 
-    static void memcpy32_helper(void* __restrict__ dest, const void* __restrict__ src, size_t n);
-    S2mmDesc* desc_ptr(size_t i) const;
-    S2mmDesc read_desc(size_t i) const;
-    void write_desc(size_t i, const S2mmDesc& src);
+    // set excessively high number of 1024 descriptors, b/c the actual number is not known at compile time
+    RegAccessorArray<S2mmDesc, 0, 1024, DESC_ADDR_STEP> descriptors{this};
 
     size_t _nr_cyc_desc;
     size_t _next_readable_buf;
