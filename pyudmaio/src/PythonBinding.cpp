@@ -15,6 +15,7 @@
 #include "DataHandlerPython.hpp"
 #include "udmaio/FpgaMemBufferOverAxi.hpp"
 #include "udmaio/FpgaMemBufferOverXdma.hpp"
+#include "udmaio/Logging.hpp"
 #include "udmaio/UDmaBuf.hpp"
 #include "udmaio/UioConfig.hpp"
 
@@ -36,7 +37,7 @@ class UioIf_PyPublishHelper : public udmaio::UioIf {
 
 PYBIND11_MODULE(binding, m) {
     // set default to info, with a function provided to set the level dynamically
-    boost::log::core::get()->set_filter(blt::severity >= blt::info);
+    udmaio::Logger::set_level(udmaio::bls::info);
 
     py::class_<udmaio::UioRegion>(m, "UioRegion")
         .def(py::init<uintptr_t, size_t>())
@@ -91,7 +92,7 @@ PYBIND11_MODULE(binding, m) {
              py::arg("evt_dev") = "");
 
     py::class_<udmaio::UioIf, UioIf_PyOverrideHelper, std::shared_ptr<udmaio::UioIf>>(m, "UioIf")
-        .def(py::init<udmaio::UioDeviceInfo>())
+        .def(py::init<std::string, udmaio::UioDeviceInfo>())
         .def("_rd32", &UioIf_PyPublishHelper::_rd32)
         .def("_wr32", &UioIf_PyPublishHelper::_wr32)
         .def("arm_interrupt", &UioIf_PyPublishHelper::arm_interrupt)
@@ -152,7 +153,6 @@ PYBIND11_MODULE(binding, m) {
         .value("TRACE", boost::log::trivial::severity_level::trace)
         .export_values();
 
-    m.def("set_logging_level", [](boost::log::trivial::severity_level level) {
-        boost::log::core::get()->set_filter(blt::severity >= level);
-    });
+    m.def("set_logging_level",
+          [](boost::log::trivial::severity_level level) { udmaio::Logger::set_level(level); });
 }

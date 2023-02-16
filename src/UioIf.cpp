@@ -8,7 +8,6 @@ UioIf::UioIf(std::string name, UioDeviceInfo dev, bool debug_enable)
     , _skip_write_to_arm_int{!dev.evt_path.empty()}
     , _debug_enable{debug_enable}
     , _force_32bit{dev.force_32bit} {
-    // Can't call virtual fn from ctor, so can't use _log_name()
     BOOST_LOG_SEV(_lg, bls::debug) << "uio name = " << dev.dev_path;
 
     // open fd
