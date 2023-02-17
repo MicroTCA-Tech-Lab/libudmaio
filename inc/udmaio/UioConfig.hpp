@@ -46,6 +46,8 @@ class UioConfigBase;
 
 /// Holds information where a device can be found over both UIO and XDMA
 class UioDeviceLocation {
+    friend class UioConfigXdma;
+
     static std::unique_ptr<UioConfigBase> _link_cfg;
     static bool _is_x7_series;
 

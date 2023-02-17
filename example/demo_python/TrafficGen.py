@@ -5,7 +5,7 @@ from pyudmaio import UioIf, UioReg
 
 class TrafficGen(UioIf):
     def __init__(self, cfg):
-        super().__init__(cfg)
+        super().__init__('TrafficGen', cfg)
         self.StControl = UioReg(self, 0x30, (
             ('Version', 'u8'),
             ('Reserved', 'u22'),

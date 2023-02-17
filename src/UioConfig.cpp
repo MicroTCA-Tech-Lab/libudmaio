@@ -53,12 +53,6 @@ UioDeviceLocation::operator UioDeviceInfo() const {
     }
     UioDeviceInfo dev_info = _link_cfg->operator()(*this);
 
-    // Workaround for limited PCIe memory access to certain devices:
-    // "For 7 series Gen2 IP, PCIe access from the Host system must be limited to 1DW (4 Bytes)
-    // transaction only." (see Xilinx pg195, page 10) If using direct access to the mmap()ed area (or a
-    // regular memcpy), the CPU will issue larger transfers and the system will crash
-    dev_info.force_32bit = _is_x7_series && _link_cfg->mode() == DmaMode::XDMA;
-
     return dev_info;
 }
 
@@ -171,6 +165,7 @@ UioDeviceInfo UioConfigUio::operator()(std::string dev_name) {
                 _get_map_size(uio_number, map_index),
             },
         .mmap_offs = static_cast<uintptr_t>(map_index * getpagesize()),
+        .force_32bit = false,
     };
 }
 
@@ -187,6 +182,11 @@ UioDeviceInfo UioConfigXdma::operator()(UioRegion dev_region, std::string evt_de
         .evt_path = !evt_dev.empty() ? _xdma_path + "/" + evt_dev : "",
         .region = {dev_region.addr | _pcie_offs, dev_region.size},
         .mmap_offs = dev_region.addr,
+        // Workaround for limited PCIe memory access to certain devices:
+        // "For 7 series Gen2 IP, PCIe access from the Host system must be limited to 1DW (4 Bytes)
+        // transaction only." (see Xilinx pg195, page 10) If using direct access to the mmap()ed area (or a
+        // regular memcpy), the CPU will issue larger transfers and the system will crash
+        .force_32bit = UioDeviceLocation::_is_x7_series,
     };
 };
 

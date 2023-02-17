@@ -37,6 +37,7 @@ class UioIf_PyPublishHelper : public udmaio::UioIf {
 
 PYBIND11_MODULE(binding, m) {
     // set default to info, with a function provided to set the level dynamically
+    udmaio::Logger::init(15);
     udmaio::Logger::set_level(udmaio::bls::info);
 
     py::class_<udmaio::UioRegion>(m, "UioRegion")
@@ -49,13 +50,15 @@ PYBIND11_MODULE(binding, m) {
         .def_readwrite("dev_path", &udmaio::UioDeviceInfo::dev_path)
         .def_readwrite("evt_path", &udmaio::UioDeviceInfo::evt_path)
         .def_readwrite("region", &udmaio::UioDeviceInfo::region)
-        .def_readwrite("mmap_offs", &udmaio::UioDeviceInfo::mmap_offs);
+        .def_readwrite("mmap_offs", &udmaio::UioDeviceInfo::mmap_offs)
+        .def_readwrite("force_32bit", &udmaio::UioDeviceInfo::force_32bit);
 
     py::class_<udmaio::UioDeviceLocation>(m, "UioDeviceLocation")
         .def(py::init<std::string, udmaio::UioRegion, std::string>(),
              py::arg("uioname"),
              py::arg("xdmaregion"),
              py::arg("xdmaevtdev") = std::string(""))
+        .def_static("setX7Series", &udmaio::UioDeviceLocation::setX7Series)
         .def_readwrite("uio_name", &udmaio::UioDeviceLocation::uio_name)
         .def_readwrite("xdma_region", &udmaio::UioDeviceLocation::xdma_region)
         .def_readwrite("xdma_evt_dev", &udmaio::UioDeviceLocation::xdma_evt_dev);

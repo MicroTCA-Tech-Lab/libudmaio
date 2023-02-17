@@ -5,7 +5,7 @@ from pyudmaio import UioIf, UioReg
 
 class GpioStatus(UioIf):
     def __init__(self, cfg):
-        super().__init__(cfg)
+        super().__init__('GpioStatus', cfg)
         self.GpioStatus = UioReg(self, 0x00000000, (
             ('Reserved', 'u31'),
             ('DDR4_INIT_CMPLT', 'u1'),

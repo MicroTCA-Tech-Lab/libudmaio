@@ -7,7 +7,7 @@ import os
 import numpy as np
 import argparse
 
-from pyudmaio import ConfigUio, ConfigXdma, FpgaMemBufferOverAxi, FpgaMemBufferOverXdma
+from pyudmaio import UioDeviceLocation, ConfigUio, ConfigXdma, FpgaMemBufferOverAxi, FpgaMemBufferOverXdma
 from pyudmaio import UDmaBuf, UioAxiDmaIf, UioMemSgdma, DataHandler
 from pyudmaio import LogLevel, set_logging_level
 from GpioStatus import GpioStatus
@@ -118,6 +118,9 @@ def main():
         'z7io': ProjectConsts.Z7ioExampleConsts
     }[args.hardware.lower()]
     
+    if args.hardware.lower() == 'z7io':
+        UioDeviceLocation.setX7Series()
+
     if args.xdma:
         cfg = ConfigXdma(args.dev_path, consts.PCIE_AXI4L_OFFSET)
     else:
