@@ -9,7 +9,7 @@ var indexSectionsWithContent =
   6: "abcmrs",
   7: "d",
   8: "ux",
-  9: "r",
+  9: "ru",
   10: "_br"
 };
 

@@ -13,7 +13,7 @@ var searchData=
   ['uioconfig_2ehpp_10',['UioConfig.hpp',['../_uio_config_8hpp.html',1,'']]],
   ['uioconfigbase_11',['UioConfigBase',['../classudmaio_1_1_uio_config_base.html',1,'udmaio']]],
   ['uioconfiguio_12',['UioConfigUio',['../classudmaio_1_1_uio_config_uio.html',1,'udmaio']]],
-  ['uioconfigxdma_13',['UioConfigXdma',['../classudmaio_1_1_uio_config_xdma.html',1,'udmaio::UioConfigXdma'],['../classudmaio_1_1_uio_config_xdma.html#a196df351db3d69f3605bcb89131f02cc',1,'udmaio::UioConfigXdma::UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs)'],['../classudmaio_1_1_uio_config_xdma.html#ae57292575248142f2e15b0872c782953',1,'udmaio::UioConfigXdma::UioConfigXdma()=delete']]],
+  ['uioconfigxdma_13',['UioConfigXdma',['../classudmaio_1_1_uio_config_xdma.html',1,'udmaio::UioConfigXdma'],['../classudmaio_1_1_uio_device_location.html#ac2a40d8753199ff8394867c82783e490',1,'udmaio::UioDeviceLocation::UioConfigXdma()'],['../classudmaio_1_1_uio_config_xdma.html#ae57292575248142f2e15b0872c782953',1,'udmaio::UioConfigXdma::UioConfigXdma()=delete'],['../classudmaio_1_1_uio_config_xdma.html#a196df351db3d69f3605bcb89131f02cc',1,'udmaio::UioConfigXdma::UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs)']]],
   ['uiodeviceinfo_14',['UioDeviceInfo',['../structudmaio_1_1_uio_device_info.html',1,'udmaio']]],
   ['uiodevicelocation_15',['UioDeviceLocation',['../classudmaio_1_1_uio_device_location.html',1,'udmaio::UioDeviceLocation'],['../classudmaio_1_1_uio_device_location.html#a54abcabef821b45fc19a628677d56ba2',1,'udmaio::UioDeviceLocation::UioDeviceLocation()']]],
   ['uioif_16',['UioIf',['../classudmaio_1_1_uio_if.html',1,'udmaio::UioIf'],['../classudmaio_1_1_uio_if.html#a6b17adecb54f5862fa95685c22d0e480',1,'udmaio::UioIf::UioIf()']]],

@@ -5,6 +5,7 @@ var classudmaio_1_1_uio_device_location =
     [ "setLinkAxi", "classudmaio_1_1_uio_device_location.html#a06c0eea574248ba46b312b1f8cf71ed9", null ],
     [ "setLinkXdma", "classudmaio_1_1_uio_device_location.html#a2878fdbf20284b4bb331c284ce7db63c", null ],
     [ "setX7Series", "classudmaio_1_1_uio_device_location.html#a0fad7db333c64d94d57701d2e754feee", null ],
+    [ "UioConfigXdma", "classudmaio_1_1_uio_device_location.html#ac2a40d8753199ff8394867c82783e490", null ],
     [ "_is_x7_series", "classudmaio_1_1_uio_device_location.html#a62281674d2cecf6e657d3d2557c544fc", null ],
     [ "_link_cfg", "classudmaio_1_1_uio_device_location.html#aa21d77ab0495f83970ebb4a21e005c07", null ],
     [ "uio_name", "classudmaio_1_1_uio_device_location.html#a57f31399f8dc8274d4ef7cb4221bc275", null ],
