@@ -46,7 +46,13 @@ PYBIND11_MODULE(binding, m) {
         .def_readwrite("size", &udmaio::UioRegion::size);
 
     py::class_<udmaio::UioDeviceInfo>(m, "UioDeviceInfo")
-        .def(py::init<std::string, std::string, udmaio::UioRegion, uintptr_t>())
+        .def(py::init<std::string, std::string, udmaio::UioRegion, uintptr_t, bool>(),
+             py::arg("dev_path"),
+             py::arg("evt_path"),
+             py::arg("region"),
+             py::arg("mmap_offs"),
+             py::arg("force_32bit") = bool(false))
+        .def(py::init<udmaio::UioDeviceLocation>())
         .def_readwrite("dev_path", &udmaio::UioDeviceInfo::dev_path)
         .def_readwrite("evt_path", &udmaio::UioDeviceInfo::evt_path)
         .def_readwrite("region", &udmaio::UioDeviceInfo::region)
@@ -58,10 +64,13 @@ PYBIND11_MODULE(binding, m) {
              py::arg("uioname"),
              py::arg("xdmaregion"),
              py::arg("xdmaevtdev") = std::string(""))
-        .def_static("setX7Series", &udmaio::UioDeviceLocation::setX7Series)
+        .def_static("set_link_axi", &udmaio::UioDeviceLocation::set_link_axi)
+        .def_static("set_link_xdma", &udmaio::UioDeviceLocation::set_link_xdma)
         .def_readwrite("uio_name", &udmaio::UioDeviceLocation::uio_name)
         .def_readwrite("xdma_region", &udmaio::UioDeviceLocation::xdma_region)
         .def_readwrite("xdma_evt_dev", &udmaio::UioDeviceLocation::xdma_evt_dev);
+
+    py::implicitly_convertible<udmaio::UioDeviceLocation, udmaio::UioDeviceInfo>();
 
     py::class_<udmaio::UioConfigBase, std::shared_ptr<udmaio::UioConfigBase>>(m, "ConfigBase");
 
@@ -81,7 +90,10 @@ PYBIND11_MODULE(binding, m) {
     py::class_<udmaio::UioConfigXdma,
                udmaio::UioConfigBase,
                std::shared_ptr<udmaio::UioConfigXdma>>(m, "ConfigXdma")
-        .def(py::init<std::string, uintptr_t>())
+        .def(py::init<std::string, uintptr_t, bool>(),
+             py::arg("xdma_path"),
+             py::arg("pcie_offs"),
+             py::arg("x7_series_mode") = bool(false))
         // We have to expose overloaded functions explicitly
         .def("__call__",
              static_cast<udmaio::UioDeviceInfo (udmaio::UioConfigXdma::*)(

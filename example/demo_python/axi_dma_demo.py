@@ -118,29 +118,26 @@ def main():
         'z7io': ProjectConsts.Z7ioExampleConsts
     }[args.hardware.lower()]
     
-    if args.hardware.lower() == 'z7io':
-        UioDeviceLocation.setX7Series()
-
     if args.xdma:
-        cfg = ConfigXdma(args.dev_path, consts.PCIE_AXI4L_OFFSET)
+        UioDeviceLocation.set_link_xdma(args.dev_path, consts.PCIE_AXI4L_OFFSET, args.hardware.lower() == 'z7io')
     else:
-        cfg = ConfigUio()
+        UioDeviceLocation.set_link_axi()
 
-    g = GpioStatus(cfg(consts.AXI_GPIO_STATUS))
+    g = GpioStatus(consts.AXI_GPIO_STATUS)
     if not g.is_ddr4_init_calib_complete():
         raise RuntimeError('DDR4 init calib is not complete')
 
     print('Creating DMA handler')
 
-    axi_dma = UioAxiDmaIf(cfg(consts.AXI_DMA_0))
-    mem_sgdma = UioMemSgdma(cfg(consts.BRAM_CTRL_0))
+    axi_dma = UioAxiDmaIf(consts.AXI_DMA_0)
+    mem_sgdma = UioMemSgdma(consts.BRAM_CTRL_0)
     if args.xdma:
         udmabuf = FpgaMemBufferOverXdma(args.dev_path, consts.FPGA_MEM_PHYS_ADDR)
     else:
         udmabuf = UDmaBuf()
     
     data_handler = DataHandler(axi_dma, mem_sgdma, udmabuf)
-    traffic_gen = TrafficGen(cfg(consts.AXI_TRAFFIC_GEN_0))
+    traffic_gen = TrafficGen(consts.AXI_TRAFFIC_GEN_0)
 
     print('Starting DMA')
     NR_BUFFERS = 32
