@@ -98,14 +98,12 @@ int main(int argc, char* argv[]) {
     std::signal(SIGINT, signal_handler);
 
     if (mode == DmaMode::UIO) {
-        UioDeviceLocation::setLinkAxi();
+        UioDeviceLocation::set_link_axi();
     } else {
-        UioDeviceLocation::setLinkXdma(dev_path, target_hw_consts::pcie_offset);
+        UioDeviceLocation::set_link_xdma(dev_path,
+                                         target_hw_consts::pcie_offset,
+                                         TARGET_HW == TARGET_HW_Z7IO);
     }
-
-#if TARGET_HW == TARGET_HW_Z7IO
-    UioDeviceLocation::setX7Series();
-#endif
 
     auto gpio_status = std::make_unique<UioGpioStatus>(target_hw_consts::axi_gpio_status);
 

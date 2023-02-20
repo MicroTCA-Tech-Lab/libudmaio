@@ -33,6 +33,8 @@ struct UioRegion {
     size_t size;     ///< Size of region
 };
 
+class UioDeviceLocation;
+
 /// Data needed to construct an UioIf; contains information how to connect to a device
 struct UioDeviceInfo {
     std::string dev_path;
@@ -40,6 +42,13 @@ struct UioDeviceInfo {
     UioRegion region;
     uintptr_t mmap_offs;
     bool force_32bit;
+
+    UioDeviceInfo(std::string dev_path,
+                  std::string evt_path,
+                  UioRegion region,
+                  uintptr_t mmap_offs,
+                  bool force_32bit = false);
+    UioDeviceInfo(UioDeviceLocation dev_loc);
 };
 
 class UioConfigBase;
@@ -49,7 +58,6 @@ class UioDeviceLocation {
     friend class UioConfigXdma;
 
     static std::unique_ptr<UioConfigBase> _link_cfg;
-    static bool _is_x7_series;
 
   public:
     UioDeviceLocation(std::string uioname, UioRegion xdmaregion, std::string xdmaevtdev = "")
@@ -62,17 +70,15 @@ class UioDeviceLocation {
     std::string xdma_evt_dev;
 
     /// @brief Set UioIf's globally to use a AXI/UIO link
-    static void setLinkAxi();
+    static void set_link_axi();
 
     /// @brief Set UioIf's globally to use a XDMA link
     /// @param xdma_path XDMA device instance directory in `/dev`
     /// @param pcie_offs XDMA core PCIe memory offset
-    static void setLinkXdma(std::string xdma_path, uintptr_t pcie_offs);
+    /// @param x7_series_mode Set the interface to Xilinx 7 series mode. PCIe connections to that device will be limited to 32 bits.
+    static void set_link_xdma(std::string xdma_path, uintptr_t pcie_offs, bool x7_series_mode);
 
-    /// @brief Set the interface to Xilinx 7 series mode. PCIe connections to that device will be limited to 32 bits.
-    static void setX7Series();
-
-    operator UioDeviceInfo() const;
+    UioDeviceInfo dev_info() const;
 };
 
 /// Base class for UioDeviceInfo configuration
@@ -95,8 +101,7 @@ class UioConfigBase {
 /// Creates UioDeviceInfo from UioDeviceLocation (UIO version)
 class UioConfigUio : public UioConfigBase {
     static int _get_uio_number(std::string_view name);
-    static size_t _get_map_size(int uio_number, int map_index);
-    static std::uintptr_t _get_map_addr(int uio_number, int map_index);
+    static UioRegion _get_map_region(int uio_number, int map_index);
 
   public:
     /// @brief Create UioDeviceInfo from device name
@@ -111,6 +116,7 @@ class UioConfigUio : public UioConfigBase {
 class UioConfigXdma : public UioConfigBase {
     std::string _xdma_path;
     uintptr_t _pcie_offs;
+    bool _x7_series_mode;
 
   public:
     UioConfigXdma() = delete;
@@ -118,7 +124,7 @@ class UioConfigXdma : public UioConfigBase {
     /// @brief Create UioConfigXdma
     /// @param xdma_path XDMA device path `/dev/...`
     /// @param pcie_offs PCIe offset in memory
-    UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs);
+    UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs, bool x7_series_mode = false);
 
     /// @brief Create UioDeviceInfo from memory region
     /// @param dev_region Memory region for the UioIf

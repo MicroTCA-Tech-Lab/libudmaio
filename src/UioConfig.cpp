@@ -32,28 +32,34 @@ std::istream& operator>>(std::istream& in, DmaMode& mode) {
     return in;
 }
 
-std::unique_ptr<UioConfigBase> UioDeviceLocation::_link_cfg{};
-bool UioDeviceLocation::_is_x7_series{false};
+UioDeviceInfo::UioDeviceInfo(UioDeviceLocation dev_loc) {
+    *this = dev_loc.dev_info();
+}
 
-void UioDeviceLocation::setLinkAxi() {
+UioDeviceInfo::UioDeviceInfo(std::string dev,
+                             std::string evt,
+                             UioRegion reg,
+                             uintptr_t offs,
+                             bool force_32bit)
+    : dev_path{dev}, evt_path{evt}, region{reg}, mmap_offs{offs}, force_32bit{force_32bit} {}
+
+std::unique_ptr<UioConfigBase> UioDeviceLocation::_link_cfg{};
+
+void UioDeviceLocation::set_link_axi() {
     _link_cfg = std::make_unique<UioConfigUio>();
 }
 
-void UioDeviceLocation::setLinkXdma(std::string xdma_path, uintptr_t pcie_offs) {
-    _link_cfg = std::make_unique<UioConfigXdma>(xdma_path, pcie_offs);
+void UioDeviceLocation::set_link_xdma(std::string xdma_path,
+                                      uintptr_t pcie_offs,
+                                      bool x7_series_mode) {
+    _link_cfg = std::make_unique<UioConfigXdma>(xdma_path, pcie_offs, x7_series_mode);
 }
 
-void UioDeviceLocation::setX7Series() {
-    _is_x7_series = true;
-}
-
-UioDeviceLocation::operator UioDeviceInfo() const {
+UioDeviceInfo UioDeviceLocation::dev_info() const {
     if (!_link_cfg) {
         throw std::runtime_error("UioIf link type not set (use setLinkAxi() or setLinkXdma())");
     }
-    UioDeviceInfo dev_info = _link_cfg->operator()(*this);
-
-    return dev_info;
+    return _link_cfg->operator()(*this);
 }
 
 /** @brief gets a number of UIO device based on the name
@@ -82,32 +88,22 @@ int UioConfigUio::_get_uio_number(std::string_view name) {
     return -1;
 }
 
-/** @brief gets a size for an uio map */
-size_t UioConfigUio::_get_map_size(int uio_number, int map_index) {
-    std::string path{"/sys/class/uio/uio" + std::to_string(uio_number) + "/maps/map" +
-                     std::to_string(map_index) + "/size"};
-    std::ifstream ifs{path};
-    if (!ifs) {
-        throw std::runtime_error("could not find a map info for UIO device " +
-                                 std::to_string(uio_number));
-    }
-    std::string size_str;
-    ifs >> size_str;
-    return std::stoull(size_str, nullptr, 0);
-}
+/** @brief gets a region for an uio map */
+UioRegion UioConfigUio::_get_map_region(int uio_number, int map_index) {
+    const std::string base_path{"/sys/class/uio/uio" + std::to_string(uio_number) + "/maps/map" +
+                                std::to_string(map_index) + "/"};
 
-/** @brief gets an address (physical) for an uio map */
-std::uintptr_t UioConfigUio::_get_map_addr(int uio_number, int map_index) {
-    std::string path{"/sys/class/uio/uio" + std::to_string(uio_number) + "/maps/map" +
-                     std::to_string(map_index) + "/addr"};
-    std::ifstream ifs{path};
-    if (!ifs) {
-        throw std::runtime_error("could not find a map info for UIO device " +
-                                 std::to_string(uio_number));
-    }
-    std::string addr_str;
-    ifs >> addr_str;
-    return std::stoull(addr_str, nullptr, 0);
+    auto get_val = [](const std::string path) -> unsigned long long {
+        std::ifstream ifs{path};
+        if (!ifs) {
+            throw std::runtime_error("could not find " + path);
+        }
+        std::string size_str;
+        ifs >> size_str;
+        return std::stoull(size_str, nullptr, 0);
+    };
+
+    return {get_val("addr"), get_val("size")};
 }
 
 /** @brief gets device info (mem region, mmap offset, ...) from a uio name
@@ -157,15 +153,10 @@ UioDeviceInfo UioConfigUio::operator()(std::string dev_name) {
         throw std::runtime_error("could not find a UIO device " + dev_name);
     }
     return {
-        .dev_path = std::string{"/dev/uio"} + std::to_string(uio_number),
-        .evt_path = "",
-        .region =
-            {
-                _get_map_addr(uio_number, map_index),
-                _get_map_size(uio_number, map_index),
-            },
-        .mmap_offs = static_cast<uintptr_t>(map_index * getpagesize()),
-        .force_32bit = false,
+        std::string{"/dev/uio"} + std::to_string(uio_number),
+        "",
+        _get_map_region(uio_number, map_index),
+        static_cast<uintptr_t>(map_index * getpagesize()),
     };
 }
 
@@ -173,20 +164,20 @@ UioDeviceInfo UioConfigUio::operator()(UioDeviceLocation dev_loc) {
     return operator()(dev_loc.uio_name);
 }
 
-UioConfigXdma::UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs)
-    : _xdma_path(xdma_path), _pcie_offs(pcie_offs) {}
+UioConfigXdma::UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs, bool x7_series_mode)
+    : _xdma_path(xdma_path), _pcie_offs(pcie_offs), _x7_series_mode(x7_series_mode) {}
 
 UioDeviceInfo UioConfigXdma::operator()(UioRegion dev_region, std::string evt_dev) {
     return {
-        .dev_path = _xdma_path + "/user",
-        .evt_path = !evt_dev.empty() ? _xdma_path + "/" + evt_dev : "",
-        .region = {dev_region.addr | _pcie_offs, dev_region.size},
-        .mmap_offs = dev_region.addr,
+        _xdma_path + "/user",
+        !evt_dev.empty() ? _xdma_path + "/" + evt_dev : "",
+        {dev_region.addr | _pcie_offs, dev_region.size},
+        dev_region.addr,
         // Workaround for limited PCIe memory access to certain devices:
         // "For 7 series Gen2 IP, PCIe access from the Host system must be limited to 1DW (4 Bytes)
         // transaction only." (see Xilinx pg195, page 10) If using direct access to the mmap()ed area (or a
         // regular memcpy), the CPU will issue larger transfers and the system will crash
-        .force_32bit = UioDeviceLocation::_is_x7_series,
+        _x7_series_mode,
     };
 };
 
