@@ -103,8 +103,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 <h3><a id="index__5F" name="index__5F"></a>- _ -</h3><ul>
 <li>__attribute__()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#ab92cda16dbbcef1e885df0cb0d3bf0d8">udmaio::UioMemSgdma</a></li>
-<li>_get_map_addr()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_config_uio.html#a1d92a7bacf978676b3cf9aff2418e074">udmaio::UioConfigUio</a></li>
-<li>_get_map_size()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_config_uio.html#a32d8955057dc0b62283b40950d0d807f">udmaio::UioConfigUio</a></li>
+<li>_get_map_region()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_config_uio.html#adce1eecf4e1271f76823374191eed627">udmaio::UioConfigUio</a></li>
 <li>_get_phys_addr()&#160;:&#160;<a class="el" href="classudmaio_1_1_u_dma_buf.html#a866be5af2fb3c1b32d0204697453987b">udmaio::UDmaBuf</a></li>
 <li>_get_size()&#160;:&#160;<a class="el" href="classudmaio_1_1_u_dma_buf.html#a8c3261a80f07d783644a9738a9ffe661">udmaio::UDmaBuf</a></li>
 <li>_get_uio_number()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_config_uio.html#ab8a8469e1ddd2b858321b7ae8dd64f5d">udmaio::UioConfigUio</a></li>
@@ -149,6 +148,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
 <li>DataHandlerAbstract()&#160;:&#160;<a class="el" href="classudmaio_1_1_data_handler_abstract.html#a5228c5ea1c6a7a4d9f9aad4c38b03f2b">udmaio::DataHandlerAbstract</a>, <a class="el" href="classudmaio_1_1_data_handler_sync.html#a5228c5ea1c6a7a4d9f9aad4c38b03f2b">udmaio::DataHandlerSync</a></li>
 <li>DataHandlerPrint()&#160;:&#160;<a class="el" href="class_data_handler_print.html#abe3fafd624b77c9749f72d512cbe9232">DataHandlerPrint</a></li>
+<li>dev_info()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_device_location.html#a2a6eab0063172bbaa64a7a5a9c6c8741">udmaio::UioDeviceLocation</a></li>
 <li>dev_path()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_config_base.html#ad96712dac51d4dc4a8ac4780b2de6a8e">udmaio::UioConfigBase</a>, <a class="el" href="classudmaio_1_1_uio_config_xdma.html#a45640a91e84015734b8d02af66a8abce">udmaio::UioConfigXdma</a></li>
 </ul>
 
@@ -187,7 +187,6 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 
 
 <h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
-<li>operator UioDeviceInfo()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_device_location.html#a234bc413c497d442848ae2f4b431c659">udmaio::UioDeviceLocation</a></li>
 <li>operator()()&#160;:&#160;<a class="el" href="class_data_handler_print.html#ae23acb144c1bfa02e7697187410d9d6b">DataHandlerPrint</a>, <a class="el" href="classudmaio_1_1_data_handler_abstract.html#a8b3ef758d72527ef0f7f3e4f1d9a068d">udmaio::DataHandlerAbstract</a>, <a class="el" href="classudmaio_1_1_data_handler_sync.html#af9ef2065d6dcda7af1a6fbf64f2f24ca">udmaio::DataHandlerSync</a>, <a class="el" href="classudmaio_1_1_uio_config_base.html#abb84f646e4e513ed22614056850a12ad">udmaio::UioConfigBase</a>, <a class="el" href="classudmaio_1_1_uio_config_uio.html#a5e713ecbd68672ecb35e589ab260d06a">udmaio::UioConfigUio</a>, <a class="el" href="classudmaio_1_1_uio_config_xdma.html#a0db17013b646dbe71a69cc4dc6fec1db">udmaio::UioConfigXdma</a></li>
 <li>operator=()&#160;:&#160;<a class="el" href="classudmaio_1_1_concurrent_queue.html#ab86afd4013a112387ffe213a56fb1f05">udmaio::ConcurrentQueue&lt; T &gt;</a></li>
 <li>operator[]()&#160;:&#160;<a class="el" href="classudmaio_1_1_reg_accessor_array.html#a4b8a2afd9ba4baefa3f4e218bc0dc020">udmaio::RegAccessorArray&lt; C, offset, arr_size, arr_stride &gt;</a></li>
@@ -216,9 +215,8 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>set()&#160;:&#160;<a class="el" href="class_axi_traffic_gen_lfsr.html#a7689461a613584fe9f91bb5d1d0e0e95">AxiTrafficGenLfsr</a></li>
 <li>set_level()&#160;:&#160;<a class="el" href="structudmaio_1_1_logger.html#a019b14e9d103ef5a9443b9581321225e">udmaio::Logger</a></li>
-<li>setLinkAxi()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_device_location.html#a06c0eea574248ba46b312b1f8cf71ed9">udmaio::UioDeviceLocation</a></li>
-<li>setLinkXdma()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_device_location.html#a2878fdbf20284b4bb331c284ce7db63c">udmaio::UioDeviceLocation</a></li>
-<li>setX7Series()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_device_location.html#a0fad7db333c64d94d57701d2e754feee">udmaio::UioDeviceLocation</a></li>
+<li>set_link_axi()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_device_location.html#a8b3f26fe787c85cb211ef63a7ddf5cd0">udmaio::UioDeviceLocation</a></li>
+<li>set_link_xdma()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_device_location.html#a1c02d1e2b02694389ab75aa1e65426dd">udmaio::UioDeviceLocation</a></li>
 <li>size()&#160;:&#160;<a class="el" href="classudmaio_1_1_reg_accessor_array.html#a488582212ef79d90b08842feb6ec876b">udmaio::RegAccessorArray&lt; C, offset, arr_size, arr_stride &gt;</a></li>
 <li>start()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_axi_dma_if.html#a00bfa497dcdb7fba7c9d30ea0949675d">udmaio::UioAxiDmaIf</a>, <a class="el" href="class_uio_traffic_gen.html#ad56c154d7266ccfda625c0da9c985862">UioTrafficGen</a></li>
 <li>stop()&#160;:&#160;<a class="el" href="classudmaio_1_1_data_handler_abstract.html#aa85481c35139a0c2057b332826b32b90">udmaio::DataHandlerAbstract</a>, <a class="el" href="classudmaio_1_1_data_handler_sync.html#a2a4c89eccf732b191817ec766bd54f82">udmaio::DataHandlerSync</a>, <a class="el" href="class_uio_traffic_gen.html#a91a7c2c7c803d3d2c2ec3ec704adcd23">UioTrafficGen</a></li>
@@ -229,6 +227,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>UDmaBuf()&#160;:&#160;<a class="el" href="classudmaio_1_1_u_dma_buf.html#a57b59a0df1def9f42a4d76763960ab6d">udmaio::UDmaBuf</a></li>
 <li>UioAxiDmaIf()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_axi_dma_if.html#abd92168c528e68ee5ba19a88b0bbc271">udmaio::UioAxiDmaIf</a></li>
 <li>UioConfigXdma()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_config_xdma.html#ae57292575248142f2e15b0872c782953">udmaio::UioConfigXdma</a></li>
+<li>UioDeviceInfo()&#160;:&#160;<a class="el" href="structudmaio_1_1_uio_device_info.html#a0abec63d551197a030d1926d63ce6563">udmaio::UioDeviceInfo</a></li>
 <li>UioDeviceLocation()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_device_location.html#a54abcabef821b45fc19a628677d56ba2">udmaio::UioDeviceLocation</a></li>
 <li>UioGpioStatus()&#160;:&#160;<a class="el" href="class_uio_gpio_status.html#acf034e2ebeecd7364d426ad79f8be94e">UioGpioStatus</a></li>
 <li>UioIf()&#160;:&#160;<a class="el" href="classudmaio_1_1_uio_if.html#a6b17adecb54f5862fa95685c22d0e480">udmaio::UioIf</a></li>

@@ -151,18 +151,15 @@ Static Private Member Functions</h2></td></tr>
 <tr class="memitem:a7c954f5648778cd3e19c8b851aa0d9e5"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_uio.html#a7c954f5648778cd3e19c8b851aa0d9e5">_get_uio_number</a> (std::string_view name)</td></tr>
 <tr class="memdesc:a7c954f5648778cd3e19c8b851aa0d9e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets a number of UIO device based on the name  <a href="classudmaio_1_1_uio_config_uio.html#a7c954f5648778cd3e19c8b851aa0d9e5">More...</a><br /></td></tr>
 <tr class="separator:a7c954f5648778cd3e19c8b851aa0d9e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2e143c79caec2ea921aa641c7fba0d8"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_uio.html#ae2e143c79caec2ea921aa641c7fba0d8">_get_map_size</a> (int uio_number, int map_index)</td></tr>
-<tr class="memdesc:ae2e143c79caec2ea921aa641c7fba0d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets a size for an uio map  <a href="classudmaio_1_1_uio_config_uio.html#ae2e143c79caec2ea921aa641c7fba0d8">More...</a><br /></td></tr>
-<tr class="separator:ae2e143c79caec2ea921aa641c7fba0d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9312bf4bc8baf5a72ce4735897f7d9b"><td class="memItemLeft" align="right" valign="top">static std::uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_uio.html#ad9312bf4bc8baf5a72ce4735897f7d9b">_get_map_addr</a> (int uio_number, int map_index)</td></tr>
-<tr class="memdesc:ad9312bf4bc8baf5a72ce4735897f7d9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets an address (physical) for an uio map  <a href="classudmaio_1_1_uio_config_uio.html#ad9312bf4bc8baf5a72ce4735897f7d9b">More...</a><br /></td></tr>
-<tr class="separator:ad9312bf4bc8baf5a72ce4735897f7d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af47f2a3ecc5ebfb8a6130a01dd279f2a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structudmaio_1_1_uio_region.html">UioRegion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_uio.html#af47f2a3ecc5ebfb8a6130a01dd279f2a">_get_map_region</a> (int uio_number, int map_index)</td></tr>
+<tr class="memdesc:af47f2a3ecc5ebfb8a6130a01dd279f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets a region for an uio map  <a href="classudmaio_1_1_uio_config_uio.html#af47f2a3ecc5ebfb8a6130a01dd279f2a">More...</a><br /></td></tr>
+<tr class="separator:af47f2a3ecc5ebfb8a6130a01dd279f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Creates <a class="el" href="structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device.">UioDeviceInfo</a> from <a class="el" href="classudmaio_1_1_uio_device_location.html" title="Holds information where a device can be found over both UIO and XDMA.">UioDeviceLocation</a> (UIO version) </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad9312bf4bc8baf5a72ce4735897f7d9b" name="ad9312bf4bc8baf5a72ce4735897f7d9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9312bf4bc8baf5a72ce4735897f7d9b">&#9670;&#160;</a></span>_get_map_addr()</h2>
+<a id="af47f2a3ecc5ebfb8a6130a01dd279f2a" name="af47f2a3ecc5ebfb8a6130a01dd279f2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af47f2a3ecc5ebfb8a6130a01dd279f2a">&#9670;&#160;</a></span>_get_map_region()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,7 +168,7 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::uintptr_t udmaio::UioConfigUio::_get_map_addr </td>
+          <td class="memname"><a class="el" href="structudmaio_1_1_uio_region.html">UioRegion</a> udmaio::UioConfigUio::_get_map_region </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>uio_number</em>, </td>
@@ -195,45 +192,7 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>gets an address (physical) for an uio map </p>
-
-</div>
-</div>
-<a id="ae2e143c79caec2ea921aa641c7fba0d8" name="ae2e143c79caec2ea921aa641c7fba0d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2e143c79caec2ea921aa641c7fba0d8">&#9670;&#160;</a></span>_get_map_size()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t udmaio::UioConfigUio::_get_map_size </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>uio_number</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>map_index</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>gets a size for an uio map </p>
+<p>gets a region for an uio map </p>
 
 </div>
 </div>

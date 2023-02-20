@@ -128,9 +128,9 @@ Collaboration diagram for udmaio::UioConfigXdma:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae57292575248142f2e15b0872c782953"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_xdma.html#ae57292575248142f2e15b0872c782953">UioConfigXdma</a> ()=delete</td></tr>
 <tr class="separator:ae57292575248142f2e15b0872c782953"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a196df351db3d69f3605bcb89131f02cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_xdma.html#a196df351db3d69f3605bcb89131f02cc">UioConfigXdma</a> (std::string xdma_path, uintptr_t pcie_offs)</td></tr>
-<tr class="memdesc:a196df351db3d69f3605bcb89131f02cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="classudmaio_1_1_uio_config_xdma.html" title="Creates UioDeviceInfo from UioDeviceLocation (XDMA version)">UioConfigXdma</a>.  <a href="classudmaio_1_1_uio_config_xdma.html#a196df351db3d69f3605bcb89131f02cc">More...</a><br /></td></tr>
-<tr class="separator:a196df351db3d69f3605bcb89131f02cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1fefcc5dc507f93e77d08ce1d878d24"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_xdma.html#af1fefcc5dc507f93e77d08ce1d878d24">UioConfigXdma</a> (std::string xdma_path, uintptr_t pcie_offs, bool x7_series_mode=false)</td></tr>
+<tr class="memdesc:af1fefcc5dc507f93e77d08ce1d878d24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="classudmaio_1_1_uio_config_xdma.html" title="Creates UioDeviceInfo from UioDeviceLocation (XDMA version)">UioConfigXdma</a>.  <a href="classudmaio_1_1_uio_config_xdma.html#af1fefcc5dc507f93e77d08ce1d878d24">More...</a><br /></td></tr>
+<tr class="separator:af1fefcc5dc507f93e77d08ce1d878d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0db17013b646dbe71a69cc4dc6fec1db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structudmaio_1_1_uio_device_info.html">UioDeviceInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_xdma.html#a0db17013b646dbe71a69cc4dc6fec1db">operator()</a> (<a class="el" href="structudmaio_1_1_uio_region.html">UioRegion</a> dev_region, std::string evt_dev=&quot;&quot;)</td></tr>
 <tr class="memdesc:a0db17013b646dbe71a69cc4dc6fec1db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <a class="el" href="structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device.">UioDeviceInfo</a> from memory region.  <a href="classudmaio_1_1_uio_config_xdma.html#a0db17013b646dbe71a69cc4dc6fec1db">More...</a><br /></td></tr>
 <tr class="separator:a0db17013b646dbe71a69cc4dc6fec1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,6 +159,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a36bed740a1bf141c196f9716b5379a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5198fbe1e91b423d6334d1788d60be7c"><td class="memItemLeft" align="right" valign="top">uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_xdma.html#a5198fbe1e91b423d6334d1788d60be7c">_pcie_offs</a></td></tr>
 <tr class="separator:a5198fbe1e91b423d6334d1788d60be7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9245d0f20199649ddb5d01f236fc5085"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_xdma.html#a9245d0f20199649ddb5d01f236fc5085">_x7_series_mode</a></td></tr>
+<tr class="separator:a9245d0f20199649ddb5d01f236fc5085"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Creates <a class="el" href="structudmaio_1_1_uio_device_info.html" title="Data needed to construct an UioIf; contains information how to connect to a device.">UioDeviceInfo</a> from <a class="el" href="classudmaio_1_1_uio_device_location.html" title="Holds information where a device can be found over both UIO and XDMA.">UioDeviceLocation</a> (XDMA version) </p>
@@ -188,8 +190,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a196df351db3d69f3605bcb89131f02cc" name="a196df351db3d69f3605bcb89131f02cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a196df351db3d69f3605bcb89131f02cc">&#9670;&#160;</a></span>UioConfigXdma() <span class="overload">[2/2]</span></h2>
+<a id="af1fefcc5dc507f93e77d08ce1d878d24" name="af1fefcc5dc507f93e77d08ce1d878d24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1fefcc5dc507f93e77d08ce1d878d24">&#9670;&#160;</a></span>UioConfigXdma() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,7 +206,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uintptr_t&#160;</td>
-          <td class="paramname"><em>pcie_offs</em>&#160;</td>
+          <td class="paramname"><em>pcie_offs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>x7_series_mode</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -373,6 +381,28 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">uintptr_t udmaio::UioConfigXdma::_pcie_offs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9245d0f20199649ddb5d01f236fc5085" name="a9245d0f20199649ddb5d01f236fc5085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9245d0f20199649ddb5d01f236fc5085">&#9670;&#160;</a></span>_x7_series_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool udmaio::UioConfigXdma::_x7_series_mode</td>
         </tr>
       </table>
   </td>

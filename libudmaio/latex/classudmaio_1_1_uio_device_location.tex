@@ -18,17 +18,15 @@ Collaboration diagram for udmaio\+::Uio\+Device\+Location\+:
 \item 
 \mbox{\hyperlink{classudmaio_1_1_uio_device_location_a54abcabef821b45fc19a628677d56ba2}{Uio\+Device\+Location}} (std\+::string uioname, \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} xdmaregion, std\+::string xdmaevtdev=\char`\"{}\char`\"{})
 \item 
-\mbox{\hyperlink{classudmaio_1_1_uio_device_location_a234bc413c497d442848ae2f4b431c659}{operator Uio\+Device\+Info}} () const
+\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} \mbox{\hyperlink{classudmaio_1_1_uio_device_location_a2a6eab0063172bbaa64a7a5a9c6c8741}{dev\+\_\+info}} () const
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static void \mbox{\hyperlink{classudmaio_1_1_uio_device_location_abd778cecc780217fabc8e0ffa8081091}{set\+Link\+Axi}} ()
+static void \mbox{\hyperlink{classudmaio_1_1_uio_device_location_a9430b369366399bd9b550a7595710902}{set\+\_\+link\+\_\+axi}} ()
 \begin{DoxyCompactList}\small\item\em Set \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}\textquotesingle{}s globally to use a AXI/\+UIO link. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{classudmaio_1_1_uio_device_location_acafeb86cff39d723db231b40862bbb9a}{set\+Link\+Xdma}} (std\+::string xdma\+\_\+path, uintptr\+\_\+t pcie\+\_\+offs)
-\begin{DoxyCompactList}\small\item\em Set \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}\textquotesingle{}s globally to use a XDMA link. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{classudmaio_1_1_uio_device_location_a45360c0dfb806328ecfba1fb1940886f}{set\+X7\+Series}} ()
-\begin{DoxyCompactList}\small\item\em Set the interface to Xilinx 7 series mode. PCIe connections to that device will be limited to 32 bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{classudmaio_1_1_uio_device_location_ad781d7b7e6ba14d95adf0741e19e5625}{set\+\_\+link\+\_\+xdma}} (std\+::string xdma\+\_\+path, uintptr\+\_\+t pcie\+\_\+offs, bool x7\+\_\+series\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Set \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}\textquotesingle{}s globally to use a XDMA link. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -42,8 +40,6 @@ std\+::string \mbox{\hyperlink{classudmaio_1_1_uio_device_location_af5b3ea783511
 \begin{DoxyCompactItemize}
 \item 
 static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classudmaio_1_1_uio_config_base}{Uio\+Config\+Base}} $>$ \mbox{\hyperlink{classudmaio_1_1_uio_device_location_ae572549b49ffaaed58353abd077d5d13}{\+\_\+link\+\_\+cfg}} \{\}
-\item 
-static bool \mbox{\hyperlink{classudmaio_1_1_uio_device_location_a62281674d2cecf6e657d3d2557c544fc}{\+\_\+is\+\_\+x7\+\_\+series}} \{false\}
 \end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -65,27 +61,27 @@ Holds information where a device can be found over both UIO and XDMA.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classudmaio_1_1_uio_device_location_a234bc413c497d442848ae2f4b431c659}\label{classudmaio_1_1_uio_device_location_a234bc413c497d442848ae2f4b431c659}} 
-\index{udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}!operator UioDeviceInfo@{operator UioDeviceInfo}}
-\index{operator UioDeviceInfo@{operator UioDeviceInfo}!udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}}
-\doxysubsubsection{\texorpdfstring{operator UioDeviceInfo()}{operator UioDeviceInfo()}}
-{\footnotesize\ttfamily udmaio\+::\+Uio\+Device\+Location\+::operator \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+\mbox{\Hypertarget{classudmaio_1_1_uio_device_location_a2a6eab0063172bbaa64a7a5a9c6c8741}\label{classudmaio_1_1_uio_device_location_a2a6eab0063172bbaa64a7a5a9c6c8741}} 
+\index{udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}!dev\_info@{dev\_info}}
+\index{dev\_info@{dev\_info}!udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}}
+\doxysubsubsection{\texorpdfstring{dev\_info()}{dev\_info()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} udmaio\+::\+Uio\+Device\+Location\+::dev\+\_\+info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{classudmaio_1_1_uio_device_location_abd778cecc780217fabc8e0ffa8081091}\label{classudmaio_1_1_uio_device_location_abd778cecc780217fabc8e0ffa8081091}} 
-\index{udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}!setLinkAxi@{setLinkAxi}}
-\index{setLinkAxi@{setLinkAxi}!udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}}
-\doxysubsubsection{\texorpdfstring{setLinkAxi()}{setLinkAxi()}}
-{\footnotesize\ttfamily void udmaio\+::\+Uio\+Device\+Location\+::set\+Link\+Axi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\Hypertarget{classudmaio_1_1_uio_device_location_a9430b369366399bd9b550a7595710902}\label{classudmaio_1_1_uio_device_location_a9430b369366399bd9b550a7595710902}} 
+\index{udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}!set\_link\_axi@{set\_link\_axi}}
+\index{set\_link\_axi@{set\_link\_axi}!udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}}
+\doxysubsubsection{\texorpdfstring{set\_link\_axi()}{set\_link\_axi()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Device\+Location\+::set\+\_\+link\+\_\+axi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Set \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}\textquotesingle{}s globally to use a AXI/\+UIO link. 
 
-\mbox{\Hypertarget{classudmaio_1_1_uio_device_location_acafeb86cff39d723db231b40862bbb9a}\label{classudmaio_1_1_uio_device_location_acafeb86cff39d723db231b40862bbb9a}} 
-\index{udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}!setLinkXdma@{setLinkXdma}}
-\index{setLinkXdma@{setLinkXdma}!udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}}
-\doxysubsubsection{\texorpdfstring{setLinkXdma()}{setLinkXdma()}}
-{\footnotesize\ttfamily void udmaio\+::\+Uio\+Device\+Location\+::set\+Link\+Xdma (\begin{DoxyParamCaption}\item[{std\+::string}]{xdma\+\_\+path,  }\item[{uintptr\+\_\+t}]{pcie\+\_\+offs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\Hypertarget{classudmaio_1_1_uio_device_location_ad781d7b7e6ba14d95adf0741e19e5625}\label{classudmaio_1_1_uio_device_location_ad781d7b7e6ba14d95adf0741e19e5625}} 
+\index{udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}!set\_link\_xdma@{set\_link\_xdma}}
+\index{set\_link\_xdma@{set\_link\_xdma}!udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}}
+\doxysubsubsection{\texorpdfstring{set\_link\_xdma()}{set\_link\_xdma()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Device\+Location\+::set\+\_\+link\+\_\+xdma (\begin{DoxyParamCaption}\item[{std\+::string}]{xdma\+\_\+path,  }\item[{uintptr\+\_\+t}]{pcie\+\_\+offs,  }\item[{bool}]{x7\+\_\+series\+\_\+mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -97,17 +93,9 @@ Set \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}\textquotesingle{}s global
 \hline
 {\em pcie\+\_\+offs} & XDMA core PCIe memory offset \\
 \hline
+{\em x7\+\_\+series\+\_\+mode} & Set the interface to Xilinx 7 series mode. PCIe connections to that device will be limited to 32 bits. \\
+\hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classudmaio_1_1_uio_device_location_a45360c0dfb806328ecfba1fb1940886f}\label{classudmaio_1_1_uio_device_location_a45360c0dfb806328ecfba1fb1940886f}} 
-\index{udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}!setX7Series@{setX7Series}}
-\index{setX7Series@{setX7Series}!udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}}
-\doxysubsubsection{\texorpdfstring{setX7Series()}{setX7Series()}}
-{\footnotesize\ttfamily void udmaio\+::\+Uio\+Device\+Location\+::set\+X7\+Series (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Set the interface to Xilinx 7 series mode. PCIe connections to that device will be limited to 32 bits. 
-
 
 
 \doxysubsection{Friends And Related Function Documentation}
@@ -120,12 +108,6 @@ Set the interface to Xilinx 7 series mode. PCIe connections to that device will 
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classudmaio_1_1_uio_device_location_a62281674d2cecf6e657d3d2557c544fc}\label{classudmaio_1_1_uio_device_location_a62281674d2cecf6e657d3d2557c544fc}} 
-\index{udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}!\_is\_x7\_series@{\_is\_x7\_series}}
-\index{\_is\_x7\_series@{\_is\_x7\_series}!udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}}
-\doxysubsubsection{\texorpdfstring{\_is\_x7\_series}{\_is\_x7\_series}}
-{\footnotesize\ttfamily bool udmaio\+::\+Uio\+Device\+Location\+::\+\_\+is\+\_\+x7\+\_\+series \{false\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
-
 \mbox{\Hypertarget{classudmaio_1_1_uio_device_location_ae572549b49ffaaed58353abd077d5d13}\label{classudmaio_1_1_uio_device_location_ae572549b49ffaaed58353abd077d5d13}} 
 \index{udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}!\_link\_cfg@{\_link\_cfg}}
 \index{\_link\_cfg@{\_link\_cfg}!udmaio::UioDeviceLocation@{udmaio::UioDeviceLocation}}

@@ -1,12 +1,10 @@
 var classudmaio_1_1_uio_device_location =
 [
     [ "UioDeviceLocation", "classudmaio_1_1_uio_device_location.html#a54abcabef821b45fc19a628677d56ba2", null ],
-    [ "operator UioDeviceInfo", "classudmaio_1_1_uio_device_location.html#a234bc413c497d442848ae2f4b431c659", null ],
-    [ "setLinkAxi", "classudmaio_1_1_uio_device_location.html#a06c0eea574248ba46b312b1f8cf71ed9", null ],
-    [ "setLinkXdma", "classudmaio_1_1_uio_device_location.html#a2878fdbf20284b4bb331c284ce7db63c", null ],
-    [ "setX7Series", "classudmaio_1_1_uio_device_location.html#a0fad7db333c64d94d57701d2e754feee", null ],
+    [ "dev_info", "classudmaio_1_1_uio_device_location.html#a2a6eab0063172bbaa64a7a5a9c6c8741", null ],
+    [ "set_link_axi", "classudmaio_1_1_uio_device_location.html#a8b3f26fe787c85cb211ef63a7ddf5cd0", null ],
+    [ "set_link_xdma", "classudmaio_1_1_uio_device_location.html#a1c02d1e2b02694389ab75aa1e65426dd", null ],
     [ "UioConfigXdma", "classudmaio_1_1_uio_device_location.html#ac2a40d8753199ff8394867c82783e490", null ],
-    [ "_is_x7_series", "classudmaio_1_1_uio_device_location.html#a62281674d2cecf6e657d3d2557c544fc", null ],
     [ "_link_cfg", "classudmaio_1_1_uio_device_location.html#aa21d77ab0495f83970ebb4a21e005c07", null ],
     [ "uio_name", "classudmaio_1_1_uio_device_location.html#a57f31399f8dc8274d4ef7cb4221bc275", null ],
     [ "xdma_evt_dev", "classudmaio_1_1_uio_device_location.html#af5b3ea783511afd64e435bb404636483", null ],
