@@ -103,7 +103,10 @@ UioRegion UioConfigUio::_get_map_region(int uio_number, int map_index) {
         return std::stoull(size_str, nullptr, 0);
     };
 
-    return {get_val("addr"), get_val("size")};
+    return {
+        static_cast<uintptr_t>(get_val(base_path + "addr")),
+        static_cast<size_t>(get_val(base_path + "size")),
+    };
 }
 
 /** @brief gets device info (mem region, mmap offset, ...) from a uio name
