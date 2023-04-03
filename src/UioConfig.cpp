@@ -18,6 +18,8 @@
 
 #include <unistd.h>
 
+#include "udmaio/HwAccessor.hpp"
+
 namespace udmaio {
 
 std::istream& operator>>(std::istream& in, DmaMode& mode) {
@@ -32,17 +34,6 @@ std::istream& operator>>(std::istream& in, DmaMode& mode) {
     return in;
 }
 
-UioDeviceInfo::UioDeviceInfo(UioDeviceLocation dev_loc) {
-    *this = dev_loc.dev_info();
-}
-
-UioDeviceInfo::UioDeviceInfo(std::string dev,
-                             std::string evt,
-                             UioRegion reg,
-                             uintptr_t offs,
-                             bool force_32bit)
-    : dev_path{dev}, evt_path{evt}, region{reg}, mmap_offs{offs}, force_32bit{force_32bit} {}
-
 std::unique_ptr<UioConfigBase> UioDeviceLocation::_link_cfg{};
 
 void UioDeviceLocation::set_link_axi() {
@@ -55,11 +46,15 @@ void UioDeviceLocation::set_link_xdma(std::string xdma_path,
     _link_cfg = std::make_unique<UioConfigXdma>(xdma_path, pcie_offs, x7_series_mode);
 }
 
-UioDeviceInfo UioDeviceLocation::dev_info() const {
+HwAccessorPtr UioDeviceLocation::hw_acc() const {
     if (!_link_cfg) {
         throw std::runtime_error("UioIf link type not set (use setLinkAxi() or setLinkXdma())");
     }
-    return _link_cfg->operator()(*this);
+    return _link_cfg->hw_acc(*this);
+}
+
+UioDeviceLocation::operator HwAccessorPtr() const {
+    return hw_acc();
 }
 
 /** @brief gets a number of UIO device based on the name
@@ -138,8 +133,9 @@ UioRegion UioConfigUio::_get_map_region(int uio_number, int map_index) {
  *   `example_app_top:1`
  *
  */
-UioDeviceInfo UioConfigUio::operator()(std::string dev_name) {
+HwAccessorPtr UioConfigUio::hw_acc(const UioDeviceLocation& dev_loc) const {
     int map_index = 0;
+    const std::string& dev_name = dev_loc.uio_name;
     std::string base_dev_name;  // a name without the colon
 
     size_t colon_pos = dev_name.find(":");
@@ -155,37 +151,32 @@ UioDeviceInfo UioConfigUio::operator()(std::string dev_name) {
     if (uio_number < 0) {
         throw std::runtime_error("could not find a UIO device " + dev_name);
     }
-    return {
-        std::string{"/dev/uio"} + std::to_string(uio_number),
-        "",
-        _get_map_region(uio_number, map_index),
-        static_cast<uintptr_t>(map_index * getpagesize()),
-    };
-}
-
-UioDeviceInfo UioConfigUio::operator()(UioDeviceLocation dev_loc) {
-    return operator()(dev_loc.uio_name);
+    return std::make_unique<HwAccessorAxi>(std::string{"/dev/uio"} + std::to_string(uio_number),
+                                           _get_map_region(uio_number, map_index),
+                                           static_cast<uintptr_t>(map_index * getpagesize()));
 }
 
 UioConfigXdma::UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs, bool x7_series_mode)
     : _xdma_path(xdma_path), _pcie_offs(pcie_offs), _x7_series_mode(x7_series_mode) {}
 
-UioDeviceInfo UioConfigXdma::operator()(UioRegion dev_region, std::string evt_dev) {
-    return {
-        _xdma_path + "/user",
-        !evt_dev.empty() ? _xdma_path + "/" + evt_dev : "",
-        {dev_region.addr | _pcie_offs, dev_region.size},
-        dev_region.addr,
+HwAccessorPtr UioConfigXdma::hw_acc(const UioDeviceLocation& dev_loc) const {
+    if (_x7_series_mode) {
         // Workaround for limited PCIe memory access to certain devices:
         // "For 7 series Gen2 IP, PCIe access from the Host system must be limited to 1DW (4 Bytes)
         // transaction only." (see Xilinx pg195, page 10) If using direct access to the mmap()ed area (or a
         // regular memcpy), the CPU will issue larger transfers and the system will crash
-        _x7_series_mode,
-    };
-};
-
-UioDeviceInfo UioConfigXdma::operator()(UioDeviceLocation dev_loc) {
-    return operator()(dev_loc.xdma_region, dev_loc.xdma_evt_dev);
+        return std::make_unique<HwAccessorXdma<uint32_t>>(
+            _xdma_path,
+            dev_loc.xdma_evt_dev,
+            UioRegion{dev_loc.xdma_region.addr, dev_loc.xdma_region.size},
+            _pcie_offs);
+    } else {
+        return std::make_unique<HwAccessorXdma<uint64_t>>(
+            _xdma_path,
+            dev_loc.xdma_evt_dev,
+            UioRegion{dev_loc.xdma_region.addr, dev_loc.xdma_region.size},
+            _pcie_offs);
+    }
 }
 
 }  // namespace udmaio

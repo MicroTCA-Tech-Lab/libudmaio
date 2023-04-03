@@ -19,6 +19,7 @@ using boost_logger = boost::log::sources::severity_channel_logger_mt<bls, std::s
 struct Logger {
     mutable boost_logger _lg;
 
+    Logger() : _lg{} {};
     Logger(std::string name) : _lg{boost::log::keywords::channel = name} {};
     static void set_level(bls lvl);
     static void init(const int channel_padding);

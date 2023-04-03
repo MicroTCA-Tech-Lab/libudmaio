@@ -22,7 +22,7 @@ using AxiDmaBlock = axi_dma::block<RegAccessorArray>;
 /// Interface to AXI DMA Core
 class UioAxiDmaIf : public UioIf, AxiDmaBlock {
   public:
-    UioAxiDmaIf(UioDeviceInfo dev_loc) : UioIf("AxiDma", dev_loc), AxiDmaBlock(this) {}
+    UioAxiDmaIf(HwAccessorPtr hw) : UioIf{"AxiDma", std::move(hw)}, AxiDmaBlock{this} {}
 
     /// @brief Configure and start the AXI DMA controller
     /// @param start_desc Address of first SGDMA descriptor
@@ -32,10 +32,6 @@ class UioAxiDmaIf : public UioIf, AxiDmaBlock {
 
     /// Wait for interrupt and acknowledge it
     uint32_t clear_interrupt();
-
-    /// @brief Get file descriptor of interrupt event file
-    /// @return Event file descriptor
-    int get_fd_int() const;
 
     /// @brief Check status register and log any errors
     /// @return true if any error occurred

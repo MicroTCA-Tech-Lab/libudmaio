@@ -22,6 +22,17 @@ class RegAccessorBase {
   protected:
     UioIf* _if;
 
+  public:
+    using constructor_arg_type = UioIf*;
+
+    RegAccessorBase() = delete;
+
+    /**
+     * @brief Construct a RegAccessorBase
+     * @param interface Hardware interface
+     */
+    RegAccessorBase(constructor_arg_type interface) : _if{interface} {}
+
     /**
      * @brief Read register
      * @param offs Offset into address space
@@ -35,17 +46,6 @@ class RegAccessorBase {
      * @param value Content to write to register
      */
     void _wr(uint32_t offs, const C& value) { _if->template _wr_reg<C>(offs, value); }
-
-  public:
-    using constructor_arg_type = UioIf*;
-
-    RegAccessorBase() = delete;
-
-    /**
-     * @brief Construct a RegAccessorBase
-     * @param interface Hardware interface
-     */
-    RegAccessorBase(constructor_arg_type interface) : _if{interface} {}
 };
 
 /**

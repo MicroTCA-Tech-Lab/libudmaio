@@ -49,7 +49,7 @@ class UioTrafficGen : UioIf {
     RegAccessor<ExtTrLength, 0x50> extTrLength{this};
 
   public:
-    UioTrafficGen(UioDeviceInfo dev) : UioIf("UioTrafficGen", dev) {}
+    UioTrafficGen(HwAccessorPtr hw) : UioIf("UioTrafficGen", std::move(hw)) {}
 
     void start(uint16_t nr_pkts, uint32_t pkt_size, uint16_t pkt_pause);
     void stop();

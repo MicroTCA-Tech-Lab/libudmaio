@@ -23,7 +23,7 @@ void UioMemSgdma::write_cyc_mode(const std::vector<UioRegion>& dst_bufs) {
         BOOST_LOG_SEV(_lg, bls::trace)
             << "dest buf addr = 0x" << std::hex << dst_buf.addr << std::dec;
 
-        uintptr_t nxtdesc = _region.addr + ((i + 1) % _nr_cyc_desc) * DESC_ADDR_STEP;
+        uintptr_t nxtdesc = _hw->get_phys_addr() + ((i + 1) % _nr_cyc_desc) * DESC_ADDR_STEP;
 
         S2mmDesc desc{
             .nxtdesc = nxtdesc,
@@ -84,7 +84,7 @@ void UioMemSgdma::print_descs() const {
 }
 
 uintptr_t UioMemSgdma::get_first_desc_addr() const {
-    return _region.addr;
+    return _hw->get_phys_addr();
 }
 
 std::ostream& operator<<(std::ostream& os, const UioRegion& buf_info) {

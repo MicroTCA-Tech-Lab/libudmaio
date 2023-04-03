@@ -19,6 +19,9 @@
 
 namespace udmaio {
 
+class HwAccessor;
+using HwAccessorPtr = std::unique_ptr<HwAccessor>;
+
 /// DMA access mode
 enum class DmaMode {
     XDMA,  ///< PCIe XDMA driver
@@ -33,24 +36,6 @@ struct UioRegion {
     size_t size;     ///< Size of region
 };
 
-class UioDeviceLocation;
-
-/// Data needed to construct an UioIf; contains information how to connect to a device
-struct UioDeviceInfo {
-    std::string dev_path;
-    std::string evt_path;
-    UioRegion region;
-    uintptr_t mmap_offs;
-    bool force_32bit;
-
-    UioDeviceInfo(std::string dev_path,
-                  std::string evt_path,
-                  UioRegion region,
-                  uintptr_t mmap_offs,
-                  bool force_32bit = false);
-    UioDeviceInfo(UioDeviceLocation dev_loc);
-};
-
 class UioConfigBase;
 
 /// Holds information where a device can be found over both UIO and XDMA
@@ -62,6 +47,7 @@ class UioDeviceLocation {
   public:
     UioDeviceLocation(std::string uioname, UioRegion xdmaregion, std::string xdmaevtdev = "")
         : uio_name(uioname), xdma_region(xdmaregion), xdma_evt_dev(xdmaevtdev){};
+
     /// Device name (from device tree) for access through UIO
     std::string uio_name;
     /// Memory-mapped region for access through XDMA
@@ -78,24 +64,19 @@ class UioDeviceLocation {
     /// @param x7_series_mode Set the interface to Xilinx 7 series mode. PCIe connections to that device will be limited to 32 bits.
     static void set_link_xdma(std::string xdma_path, uintptr_t pcie_offs, bool x7_series_mode);
 
-    UioDeviceInfo dev_info() const;
+    HwAccessorPtr hw_acc() const;
+
+    operator HwAccessorPtr() const;
 };
 
 /// Base class for UioDeviceInfo configuration
 class UioConfigBase {
   public:
-    /// @brief Get device file path (if applicable)
-    /// @return Device file path
-    virtual std::string dev_path() { return ""; };
-
     /// @brief Mode of physical connection to the UioIf object
     /// @return DmaMode enum
     virtual DmaMode mode() = 0;
 
-    /// @brief Make a UioDeviceInfo from a UioDeviceLocation
-    /// @param dev_loc Configuration data for a UioIf for both XDMA and UIO
-    /// @return UioDeviceInfo object to allow constructing the UioIf
-    virtual UioDeviceInfo operator()(UioDeviceLocation dev_loc) = 0;
+    virtual HwAccessorPtr hw_acc(const UioDeviceLocation& dev_loc) const = 0;
 };
 
 /// Creates UioDeviceInfo from UioDeviceLocation (UIO version)
@@ -104,12 +85,9 @@ class UioConfigUio : public UioConfigBase {
     static UioRegion _get_map_region(int uio_number, int map_index);
 
   public:
-    /// @brief Create UioDeviceInfo from device name
-    /// @param dev_name device name as in `/sys/class/uio/uioX/name`
-    /// @return UioDeviceInfo object to allow constructing the UioIf
-    UioDeviceInfo operator()(std::string dev_name);
-    UioDeviceInfo operator()(UioDeviceLocation dev_loc) override;
     DmaMode mode() override { return DmaMode::UIO; };
+
+    HwAccessorPtr hw_acc(const UioDeviceLocation& dev_loc) const override;
 };
 
 /// Creates UioDeviceInfo from UioDeviceLocation (XDMA version)
@@ -126,14 +104,9 @@ class UioConfigXdma : public UioConfigBase {
     /// @param pcie_offs PCIe offset in memory
     UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs, bool x7_series_mode = false);
 
-    /// @brief Create UioDeviceInfo from memory region
-    /// @param dev_region Memory region for the UioIf
-    /// @param evt_dev (optional) Event file for interrupts
-    /// @return UioDeviceInfo object to allow constructing the UioIf
-    UioDeviceInfo operator()(UioRegion dev_region, std::string evt_dev = "");
-    UioDeviceInfo operator()(UioDeviceLocation dev_loc) override;
-    std::string dev_path() override { return _xdma_path; };
     DmaMode mode() override { return DmaMode::XDMA; };
+
+    HwAccessorPtr hw_acc(const UioDeviceLocation& dev_loc) const override;
 };
 
 }  // namespace udmaio

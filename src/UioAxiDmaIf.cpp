@@ -58,10 +58,6 @@ uint32_t UioAxiDmaIf::clear_interrupt() {
     return irq_count;
 }
 
-int UioAxiDmaIf::get_fd_int() const {
-    return _fd_int;
-}
-
 bool UioAxiDmaIf::check_for_errors() {
     bool has_errors = false;
 
