@@ -2,7 +2,10 @@ cmake_minimum_required(VERSION 3.15)
 
 project(libudmaio VERSION 1.1.2)
 
-find_package(Boost 1.65 COMPONENTS log program_options REQUIRED)
+include(CTest)
+
+find_package(Boost 1.65 COMPONENTS log program_options unit_test_framework REQUIRED)
+add_definitions(-DBOOST_LOG_DYN_LINK)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -62,4 +65,25 @@ target_compile_options(axi_dma_demo_cpp PRIVATE -Wall -Wextra -Wno-packed-bitfie
 target_compile_definitions(axi_dma_demo_cpp PRIVATE -DTARGET_HW=TARGET_HW_${TARGET_HW})
 if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16.0") 
     target_precompile_headers(axi_dma_demo_cpp PRIVATE example/demo_cpp/inc/BoostPCH.hpp)
+endif()
+
+# cpp example tests
+
+if(BUILD_TESTING)
+    file(GLOB TEST_SOURCES "example/demo_cpp/src/*.cpp")
+    file(GLOB EXAMPLE_MAIN "example/demo_cpp/src/axi_dma_demo.cpp")
+    list(REMOVE_ITEM TEST_SOURCES ${EXAMPLE_MAIN})
+    add_library(test-objs OBJECT ${TEST_SOURCES})
+    target_include_directories(test-objs PRIVATE example/demo_cpp/inc)
+
+    file(GLOB TESTS "example/demo_cpp/tests/*.cpp")
+
+    foreach(TEST_FILE ${TESTS})
+        get_filename_component(test_basename ${TEST_FILE} NAME_WE)
+
+        add_executable(${test_basename} ${TEST_FILE} $<TARGET_OBJECTS:test-objs>)
+        target_include_directories(${test_basename} PRIVATE example/demo_cpp/inc example/demo_cpp/tests/inc)
+        target_link_libraries(${test_basename} LINK_PUBLIC Boost::unit_test_framework Boost::log Boost::program_options Boost::dynamic_linking udmaio)
+        add_test(NAME ${test_basename} COMMAND ${test_basename})
+    endforeach()
 endif()

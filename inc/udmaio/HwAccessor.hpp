@@ -132,12 +132,12 @@ class HwAccessorMmap : public HwAccessor {
         if (_mem == MAP_FAILED) {
             throw std::runtime_error("mmap failed for uio " + dev_path);
         }
-    };
+    }
 
     virtual ~HwAccessorMmap() {
         munmap(_mem, _region.size);
         ::close(_fd);
-    };
+    }
 
   protected:
     int _fd;
@@ -269,6 +269,46 @@ class HwAccessorAxi : public HwAccessorMmap<uint64_t> {
         uint32_t mask = 1;
         int rc = write(_fd, &mask, sizeof(mask));
         BOOST_LOG_SEV(HwAccessor::_lg, bls::trace) << "arm interrupt enable, ret code = " << rc;
+    }
+};
+
+// Base class for mock hardware (for unit tests)
+class HwAccessorMock : public HwAccessor {
+    mutable std::vector<uint8_t> _mem;
+
+  public:
+    HwAccessorMock(size_t mem_size, bool debug_enable = false)
+        : HwAccessor{debug_enable}, _mem(mem_size, 0) {}
+
+    virtual ~HwAccessorMock() {}
+
+  protected:
+    template <typename access_width_t>
+    inline volatile access_width_t* _mem_ptr(uint32_t offs) const {
+        if (offs + sizeof(access_width_t) > _mem.size()) {
+            throw std::runtime_error("Buffer overflow (" + std::to_string(sizeof(access_width_t)) +
+                                     " bytes at " + std::to_string(offs) + ")");
+        }
+        return reinterpret_cast<access_width_t*>(&_mem[offs]);
+    }
+
+    uint32_t _rd32(uint32_t offs) const final override {
+        const uint32_t tmp = *_mem_ptr<uint32_t>(offs);
+        if (_debug_enable) {
+            BOOST_LOG_SEV(_lg, bls::trace)
+                << "0x" << std::hex << offs << " --> 0x" << std::setw(sizeof(uint32_t) * 2)
+                << std::setfill('0') << tmp << std::dec;
+        }
+        return tmp;
+    }
+
+    void _wr32(uint32_t offs, const uint32_t data) final override {
+        if (_debug_enable) {
+            BOOST_LOG_SEV(_lg, bls::trace)
+                << "0x" << std::hex << offs << " <-- 0x" << std::setw(sizeof(uint32_t) * 2)
+                << std::setfill('0') << data << std::dec;
+        }
+        *_mem_ptr<uint32_t>(offs) = data;
     }
 };
 
