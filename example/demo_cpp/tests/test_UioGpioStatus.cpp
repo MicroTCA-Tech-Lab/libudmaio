@@ -13,6 +13,7 @@ BOOST_AUTO_TEST_CASE(UioGpioStatus_readback) {
     auto mock_hw = mock_hw_inst.get();
 
     auto gpio_stat = UioGpioStatus(std::move(mock_hw_inst));
+    gpio_stat.enable_debug(true);
 
     mock_hw->_wr32(0, 0);
     BOOST_TEST(gpio_stat.is_ddr4_init_calib_complete() == false);

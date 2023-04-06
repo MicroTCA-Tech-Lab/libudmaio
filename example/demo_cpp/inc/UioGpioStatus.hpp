@@ -16,7 +16,7 @@
 using namespace udmaio;
 
 /// Interface to GPIO status port of the demo application
-class UioGpioStatus : UioIf {
+class UioGpioStatus : public UioIf {
     struct REG_PACKED_ALIGNED GpioData {
         bool ddr4_init_calib_complete : 1;
         unsigned reserved : 31;

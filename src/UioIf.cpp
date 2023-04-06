@@ -20,4 +20,7 @@ int UioIf::get_fd_int() const {
     return _hw->get_fd_int();
 }
 
+void UioIf::enable_debug(bool enable) {
+    _hw->enable_debug(enable);
+}
 }  // namespace udmaio

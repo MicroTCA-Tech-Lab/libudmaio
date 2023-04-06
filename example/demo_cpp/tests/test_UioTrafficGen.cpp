@@ -16,7 +16,9 @@ struct Fx {
         : hw_inst{std::make_unique<udmaio::HwAccessorMock>(4096)}
         // Save raw pointer for manipulation - this is safe as long as the UioIf instance is in scope
         , hw{hw_inst.get()}
-        , traffic_gen{std::move(hw_inst)} {}
+        , traffic_gen{std::move(hw_inst)} {
+        traffic_gen.enable_debug(true);
+    }
     ~Fx() {}
 };
 

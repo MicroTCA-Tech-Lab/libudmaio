@@ -36,11 +36,14 @@ class HwAccessor : public Logger, private boost::noncopyable {
     friend class UioIf;
 
   protected:
-    const bool _debug_enable;
+    bool _debug_enable;
 
   public:
-    HwAccessor(bool debug_enable = false);
+    HwAccessor();
     virtual ~HwAccessor();
+
+    // Enable raw register access log
+    void enable_debug(bool enable);
 
     virtual uint32_t _rd32(uint32_t offs) const = 0;
     virtual void _wr32(uint32_t offs, uint32_t data) = 0;
@@ -113,11 +116,8 @@ class HwAccessor : public Logger, private boost::noncopyable {
 template <typename max_access_width_t>
 class HwAccessorMmap : public HwAccessor {
   public:
-    HwAccessorMmap(std::string dev_path,
-                   UioRegion region,
-                   uintptr_t mmap_offs,
-                   bool debug_enable = false)
-        : HwAccessor(debug_enable), _region{region} {
+    HwAccessorMmap(std::string dev_path, UioRegion region, uintptr_t mmap_offs)
+        : HwAccessor(), _region{region} {
         BOOST_LOG_SEV(HwAccessor::_lg, bls::debug) << "dev name = " << dev_path;
 
         _fd = ::open(dev_path.c_str(), O_RDWR);
@@ -226,12 +226,10 @@ class HwAccessorXdma : public HwAccessorMmap<max_access_width_t> {
     HwAccessorXdma(std::string xdma_path,
                    std::string evt_dev,
                    UioRegion region,
-                   uintptr_t pcie_offs,
-                   bool debug_enable = false)
+                   uintptr_t pcie_offs)
         : HwAccessorMmap<max_access_width_t>(xdma_path + "/user",
                                              {region.addr | pcie_offs, region.size},
-                                             region.addr,
-                                             debug_enable) {
+                                             region.addr) {
         if (!evt_dev.empty()) {
             const auto evt_path = xdma_path + "/" + evt_dev;
             _fd_int = ::open(evt_path.c_str(), O_RDWR);
@@ -257,10 +255,7 @@ class HwAccessorXdma : public HwAccessorMmap<max_access_width_t> {
 // Hardware accessor for AXI. Always supports 64 bit access
 class HwAccessorAxi : public HwAccessorMmap<uint64_t> {
   public:
-    HwAccessorAxi(std::string dev_path,
-                  UioRegion region,
-                  uintptr_t mmap_offs,
-                  bool debug_enable = false);
+    HwAccessorAxi(std::string dev_path, UioRegion region, uintptr_t mmap_offs);
     virtual ~HwAccessorAxi();
 
     int get_fd_int() const final override { return _fd; }
@@ -277,8 +272,7 @@ class HwAccessorMock : public HwAccessor {
     mutable std::vector<uint8_t> _mem;
 
   public:
-    HwAccessorMock(size_t mem_size, bool debug_enable = false)
-        : HwAccessor{debug_enable}, _mem(mem_size, 0) {}
+    HwAccessorMock(size_t mem_size) : HwAccessor{}, _mem(mem_size, 0) {}
 
     virtual ~HwAccessorMock() {}
 

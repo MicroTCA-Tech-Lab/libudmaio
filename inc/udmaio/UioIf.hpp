@@ -40,6 +40,12 @@ class UioIf : private boost::noncopyable {
 
     virtual ~UioIf();
 
+    /// @brief Get file descriptor of interrupt event file
+    /// @return Event file descriptor
+    int get_fd_int() const;
+
+    void enable_debug(bool enable);
+
   protected:
     std::unique_ptr<HwAccessor> _hw;
     boost_logger& _lg;
@@ -71,11 +77,6 @@ class UioIf : private boost::noncopyable {
 
     void arm_interrupt();
     uint32_t wait_for_interrupt();
-
-  public:
-    /// @brief Get file descriptor of interrupt event file
-    /// @return Event file descriptor
-    int get_fd_int() const;
 };
 
 }  // namespace udmaio

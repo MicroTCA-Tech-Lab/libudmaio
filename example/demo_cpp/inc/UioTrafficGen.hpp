@@ -16,7 +16,7 @@
 using namespace udmaio;
 
 /// Interface to LFSR core of the demo application
-class UioTrafficGen : UioIf {
+class UioTrafficGen : public UioIf {
     struct REG_PACKED_ALIGNED StControl {
         bool stren : 1;
         bool done : 1;

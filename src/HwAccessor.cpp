@@ -15,9 +15,13 @@
 
 namespace udmaio {
 
-HwAccessor::HwAccessor(bool debug_enable) : Logger("HwAccessor"), _debug_enable(debug_enable) {}
+HwAccessor::HwAccessor() : Logger{"HwAccessor"}, _debug_enable(false) {}
 
 HwAccessor::~HwAccessor() {}
+
+void HwAccessor::enable_debug(bool enable) {
+    _debug_enable = enable;
+}
 
 uint64_t HwAccessor::_rd64(uint32_t offs) const {
     uint64_t result;
@@ -71,11 +75,8 @@ uint32_t HwAccessor::wait_for_interrupt() {
     return 0;
 }
 
-HwAccessorAxi::HwAccessorAxi(std::string dev_path,
-                             UioRegion region,
-                             uintptr_t mmap_offs,
-                             bool debug_enable)
-    : HwAccessorMmap<uint64_t>{dev_path, region, mmap_offs, debug_enable} {}
+HwAccessorAxi::HwAccessorAxi(std::string dev_path, UioRegion region, uintptr_t mmap_offs)
+    : HwAccessorMmap<uint64_t>{dev_path, region, mmap_offs} {}
 
 HwAccessorAxi::~HwAccessorAxi() {}
 
