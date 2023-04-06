@@ -20,19 +20,17 @@ Collaboration diagram for udmaio\+::Uio\+If\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classudmaio_1_1_uio_if_a6b17adecb54f5862fa95685c22d0e480}{Uio\+If}} (std\+::string name, \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} dev, bool debug\+\_\+enable=false)
-\begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classudmaio_1_1_uio_if_a3c018e6a942e3d78e5a69fa0a7c78b8f}{Uio\+If}} (std\+::string name, \mbox{\hyperlink{namespaceudmaio_aa5fc64c7a76c962d8e65553ebbefb92d}{Hw\+Accessor\+Ptr}} hw)
+\item 
 virtual \mbox{\hyperlink{classudmaio_1_1_uio_if_ac50743264269138365856bf6cf073273}{$\sim$\+Uio\+If}} ()
+\item 
+int \mbox{\hyperlink{classudmaio_1_1_uio_if_a2eaafeb3146b24ee7ef1e9978a9482cf}{get\+\_\+fd\+\_\+int}} () const
+\begin{DoxyCompactList}\small\item\em Get file descriptor of interrupt event file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_if_ae46944a87f194f48d10157becb5624f1}{enable\+\_\+debug}} (bool enable)
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename access\+\_\+width\+\_\+t $>$ }\\volatile access\+\_\+width\+\_\+t $\ast$ \mbox{\hyperlink{classudmaio_1_1_uio_if_ad74ee5f06fde3d0234c1f34c00551f4e}{\+\_\+reg\+\_\+ptr}} (uint32\+\_\+t offs) const
-\item 
-{\footnotesize template$<$typename access\+\_\+width\+\_\+t $>$ }\\access\+\_\+width\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_if_a36a7cdd66709d4551d91288a86895d5b}{\+\_\+rd}} (uint32\+\_\+t offs) const
-\begin{DoxyCompactList}\small\item\em Read single data word from UIO interface. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename access\+\_\+width\+\_\+t $>$ }\\void \mbox{\hyperlink{classudmaio_1_1_uio_if_a1c2633c30e31b3900393e0d39732d07c}{\+\_\+wr}} (uint32\+\_\+t offs, const access\+\_\+width\+\_\+t data)
-\begin{DoxyCompactList}\small\item\em Write single data word to UIO interface. \end{DoxyCompactList}\item 
 uint32\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_if_a9a7d60c6438b2d90e204bb5a456ed755}{\+\_\+rd32}} (uint32\+\_\+t offs) const
 \item 
 uint64\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_if_a9a0b7afd8ae6ca5e4a332e6a43b64ebb}{\+\_\+rd64}} (uint32\+\_\+t offs) const
@@ -41,14 +39,10 @@ void \mbox{\hyperlink{classudmaio_1_1_uio_if_a493e161ddcaa28c256f075f45e687391}{
 \item 
 void \mbox{\hyperlink{classudmaio_1_1_uio_if_a0287ff2c15a31b97b78c57e4eeb802e8}{\+\_\+wr64}} (uint32\+\_\+t offs, uint64\+\_\+t data)
 \item 
-{\footnotesize template$<$typename access\+\_\+width\+\_\+t $>$ }\\void \mbox{\hyperlink{classudmaio_1_1_uio_if_a9e675098bec24e2521aa2c681611ceb8}{\+\_\+rd\+\_\+mem}} (uint32\+\_\+t offs, void $\ast$\+\_\+\+\_\+restrict\+\_\+\+\_\+ mem, size\+\_\+t size) const
-\begin{DoxyCompactList}\small\item\em Read data blob from UIO interface. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename access\+\_\+width\+\_\+t $>$ }\\void \mbox{\hyperlink{classudmaio_1_1_uio_if_a70ba21b50d0956d6c97101945ade1de2}{\+\_\+wr\+\_\+mem}} (uint32\+\_\+t offs, const void $\ast$\+\_\+\+\_\+restrict\+\_\+\+\_\+ mem, size\+\_\+t size)
-\begin{DoxyCompactList}\small\item\em Write data blob to UIO interface. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename C $>$ }\\C \mbox{\hyperlink{classudmaio_1_1_uio_if_a4cbf37ba60ea1ecf70034eeb7e953494}{\+\_\+rd\+\_\+reg}} (uint32\+\_\+t offs) const
-\begin{DoxyCompactList}\small\item\em Read register from UIO interface. \end{DoxyCompactList}\item 
+\item 
 {\footnotesize template$<$typename C $>$ }\\void \mbox{\hyperlink{classudmaio_1_1_uio_if_aa8ff2dcd394a824dab2a04e2aa275094}{\+\_\+wr\+\_\+reg}} (uint32\+\_\+t offs, const C \&value)
-\begin{DoxyCompactList}\small\item\em Write register to UIO interface. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{classudmaio_1_1_uio_if_a6756aeb5ca3c013d0c4be22e3d573963}{arm\+\_\+interrupt}} ()
 \item 
 uint32\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_if_a7035fb19bfd190fe5b482d27cc528b0a}{wait\+\_\+for\+\_\+interrupt}} ()
@@ -63,51 +57,27 @@ uint32\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_if_a7035fb19bfd190fe5b482d27c
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{classudmaio_1_1_uio_if_a2a9abc749581164881422f771d81e77c}{\+\_\+fd}}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classudmaio_1_1_hw_accessor}{Hw\+Accessor}} $>$ \mbox{\hyperlink{classudmaio_1_1_uio_if_a30f469bfd2aadc90b0af23405365c9d6}{\+\_\+hw}}
 \item 
-int \mbox{\hyperlink{classudmaio_1_1_uio_if_afb95a4e415ecce2ecf99bfd8baebc670}{\+\_\+fd\+\_\+int}}
-\item 
-void $\ast$ \mbox{\hyperlink{classudmaio_1_1_uio_if_a9284f47ea82fd29ee29b3dfd9f465a73}{\+\_\+mem}}
-\item 
-const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \mbox{\hyperlink{classudmaio_1_1_uio_if_a884e5d93ed89a07b4d2dc632de171ddf}{\+\_\+region}}
-\item 
-const bool \mbox{\hyperlink{classudmaio_1_1_uio_if_a7d5c461e57baf52672442b1ef072209f}{\+\_\+skip\+\_\+write\+\_\+to\+\_\+arm\+\_\+int}}
-\item 
-const bool \mbox{\hyperlink{classudmaio_1_1_uio_if_afcacc4449b15146e7d1d4140f0687d8e}{\+\_\+debug\+\_\+enable}}
-\item 
-const bool \mbox{\hyperlink{classudmaio_1_1_uio_if_a5d831f0776a4f83ff3173dff4b15db93}{\+\_\+force\+\_\+32bit}}
+\mbox{\hyperlink{namespaceudmaio_a03d59114e0370739fb2989fedeed3ffc}{boost\+\_\+logger}} \& \mbox{\hyperlink{classudmaio_1_1_uio_if_a61bd7bbfdf570dabd2077c9af2cddf3f}{\+\_\+lg}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename C $>$ }\\class \mbox{\hyperlink{classudmaio_1_1_uio_if_a55fe8d02d0291443c9351b5be423747f}{Reg\+Accessor\+Base}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
 Base class for UIO interfaces. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_a6b17adecb54f5862fa95685c22d0e480}\label{classudmaio_1_1_uio_if_a6b17adecb54f5862fa95685c22d0e480}} 
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_a3c018e6a942e3d78e5a69fa0a7c78b8f}\label{classudmaio_1_1_uio_if_a3c018e6a942e3d78e5a69fa0a7c78b8f}} 
 \index{udmaio::UioIf@{udmaio::UioIf}!UioIf@{UioIf}}
 \index{UioIf@{UioIf}!udmaio::UioIf@{udmaio::UioIf}}
 \doxysubsubsection{\texorpdfstring{UioIf()}{UioIf()}}
-{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}}]{dev,  }\item[{bool}]{debug\+\_\+enable = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily udmaio\+::\+Uio\+If\+::\+Uio\+If (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{namespaceudmaio_aa5fc64c7a76c962d8e65553ebbefb92d}{Hw\+Accessor\+Ptr}}}]{hw }\end{DoxyParamCaption})}
 
-
-
-Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}}. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em name} & Channel name for logger \\
-\hline
-{\em dev} & \mbox{\hyperlink{structudmaio_1_1_uio_device_info}{Uio\+Device\+Info}} describing the connection information \\
-\hline
-{\em debug\+\_\+enable} & Enable raw register access logging when loglevel is at bls\+::trace \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{classudmaio_1_1_uio_if_ac50743264269138365856bf6cf073273}\label{classudmaio_1_1_uio_if_ac50743264269138365856bf6cf073273}} 
 \index{udmaio::UioIf@{udmaio::UioIf}!````~UioIf@{$\sim$UioIf}}
 \index{````~UioIf@{$\sim$UioIf}!udmaio::UioIf@{udmaio::UioIf}}
@@ -117,30 +87,6 @@ Construct the \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} from a \mbox{\h
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_a36a7cdd66709d4551d91288a86895d5b}\label{classudmaio_1_1_uio_if_a36a7cdd66709d4551d91288a86895d5b}} 
-\index{udmaio::UioIf@{udmaio::UioIf}!\_rd@{\_rd}}
-\index{\_rd@{\_rd}!udmaio::UioIf@{udmaio::UioIf}}
-\doxysubsubsection{\texorpdfstring{\_rd()}{\_rd()}}
-{\footnotesize\ttfamily template$<$typename access\+\_\+width\+\_\+t $>$ \\
-access\+\_\+width\+\_\+t udmaio\+::\+Uio\+If\+::\+\_\+rd (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{offs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
-
-
-
-Read single data word from UIO interface. 
-
-
-\begin{DoxyTemplParams}{Template Parameters}
-{\em access\+\_\+width\+\_\+t} & Data width (uint32\+\_\+t or uint64\+\_\+t) \\
-\hline
-\end{DoxyTemplParams}
-
-\begin{DoxyParams}{Parameters}
-{\em offs} & Offset into address space \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-access\+\_\+width\+\_\+t Data value 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classudmaio_1_1_uio_if_a9a7d60c6438b2d90e204bb5a456ed755}\label{classudmaio_1_1_uio_if_a9a7d60c6438b2d90e204bb5a456ed755}} 
 \index{udmaio::UioIf@{udmaio::UioIf}!\_rd32@{\_rd32}}
 \index{\_rd32@{\_rd32}!udmaio::UioIf@{udmaio::UioIf}}
@@ -153,31 +99,6 @@ access\+\_\+width\+\_\+t Data value
 \doxysubsubsection{\texorpdfstring{\_rd64()}{\_rd64()}}
 {\footnotesize\ttfamily uint64\+\_\+t udmaio\+::\+Uio\+If\+::\+\_\+rd64 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{offs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_a9e675098bec24e2521aa2c681611ceb8}\label{classudmaio_1_1_uio_if_a9e675098bec24e2521aa2c681611ceb8}} 
-\index{udmaio::UioIf@{udmaio::UioIf}!\_rd\_mem@{\_rd\_mem}}
-\index{\_rd\_mem@{\_rd\_mem}!udmaio::UioIf@{udmaio::UioIf}}
-\doxysubsubsection{\texorpdfstring{\_rd\_mem()}{\_rd\_mem()}}
-{\footnotesize\ttfamily template$<$typename access\+\_\+width\+\_\+t $>$ \\
-void udmaio\+::\+Uio\+If\+::\+\_\+rd\+\_\+mem (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{offs,  }\item[{void $\ast$\+\_\+\+\_\+restrict\+\_\+\+\_\+}]{mem,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
-
-
-
-Read data blob from UIO interface. 
-
-
-\begin{DoxyTemplParams}{Template Parameters}
-{\em access\+\_\+width\+\_\+t} & Access width (uint32\+\_\+t or uint64\+\_\+t) \\
-\hline
-\end{DoxyTemplParams}
-
-\begin{DoxyParams}{Parameters}
-{\em offs} & Offset into address space \\
-\hline
-{\em mem} & Buffer to write to \\
-\hline
-{\em size} & Buffer size \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{classudmaio_1_1_uio_if_a4cbf37ba60ea1ecf70034eeb7e953494}\label{classudmaio_1_1_uio_if_a4cbf37ba60ea1ecf70034eeb7e953494}} 
 \index{udmaio::UioIf@{udmaio::UioIf}!\_rd\_reg@{\_rd\_reg}}
 \index{\_rd\_reg@{\_rd\_reg}!udmaio::UioIf@{udmaio::UioIf}}
@@ -185,53 +106,6 @@ Read data blob from UIO interface.
 {\footnotesize\ttfamily template$<$typename C $>$ \\
 C udmaio\+::\+Uio\+If\+::\+\_\+rd\+\_\+reg (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{offs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
-
-
-Read register from UIO interface. 
-
-
-\begin{DoxyTemplParams}{Template Parameters}
-{\em C} & Register data type \\
-\hline
-\end{DoxyTemplParams}
-
-\begin{DoxyParams}{Parameters}
-{\em offs} & Register offset into address space \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-C Value read from register 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_ad74ee5f06fde3d0234c1f34c00551f4e}\label{classudmaio_1_1_uio_if_ad74ee5f06fde3d0234c1f34c00551f4e}} 
-\index{udmaio::UioIf@{udmaio::UioIf}!\_reg\_ptr@{\_reg\_ptr}}
-\index{\_reg\_ptr@{\_reg\_ptr}!udmaio::UioIf@{udmaio::UioIf}}
-\doxysubsubsection{\texorpdfstring{\_reg\_ptr()}{\_reg\_ptr()}}
-{\footnotesize\ttfamily template$<$typename access\+\_\+width\+\_\+t $>$ \\
-volatile access\+\_\+width\+\_\+t $\ast$ udmaio\+::\+Uio\+If\+::\+\_\+reg\+\_\+ptr (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{offs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
-
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_a1c2633c30e31b3900393e0d39732d07c}\label{classudmaio_1_1_uio_if_a1c2633c30e31b3900393e0d39732d07c}} 
-\index{udmaio::UioIf@{udmaio::UioIf}!\_wr@{\_wr}}
-\index{\_wr@{\_wr}!udmaio::UioIf@{udmaio::UioIf}}
-\doxysubsubsection{\texorpdfstring{\_wr()}{\_wr()}}
-{\footnotesize\ttfamily template$<$typename access\+\_\+width\+\_\+t $>$ \\
-void udmaio\+::\+Uio\+If\+::\+\_\+wr (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{offs,  }\item[{const access\+\_\+width\+\_\+t}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
-
-
-
-Write single data word to UIO interface. 
-
-
-\begin{DoxyTemplParams}{Template Parameters}
-{\em access\+\_\+width\+\_\+t} & Data width (uint32\+\_\+t or uint64\+\_\+t) \\
-\hline
-\end{DoxyTemplParams}
-
-\begin{DoxyParams}{Parameters}
-{\em offs} & Offset into address space \\
-\hline
-{\em data} & Data value \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{classudmaio_1_1_uio_if_a493e161ddcaa28c256f075f45e687391}\label{classudmaio_1_1_uio_if_a493e161ddcaa28c256f075f45e687391}} 
 \index{udmaio::UioIf@{udmaio::UioIf}!\_wr32@{\_wr32}}
 \index{\_wr32@{\_wr32}!udmaio::UioIf@{udmaio::UioIf}}
@@ -244,31 +118,6 @@ Write single data word to UIO interface.
 \doxysubsubsection{\texorpdfstring{\_wr64()}{\_wr64()}}
 {\footnotesize\ttfamily void udmaio\+::\+Uio\+If\+::\+\_\+wr64 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{offs,  }\item[{uint64\+\_\+t}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_a70ba21b50d0956d6c97101945ade1de2}\label{classudmaio_1_1_uio_if_a70ba21b50d0956d6c97101945ade1de2}} 
-\index{udmaio::UioIf@{udmaio::UioIf}!\_wr\_mem@{\_wr\_mem}}
-\index{\_wr\_mem@{\_wr\_mem}!udmaio::UioIf@{udmaio::UioIf}}
-\doxysubsubsection{\texorpdfstring{\_wr\_mem()}{\_wr\_mem()}}
-{\footnotesize\ttfamily template$<$typename access\+\_\+width\+\_\+t $>$ \\
-void udmaio\+::\+Uio\+If\+::\+\_\+wr\+\_\+mem (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{offs,  }\item[{const void $\ast$\+\_\+\+\_\+restrict\+\_\+\+\_\+}]{mem,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
-
-
-
-Write data blob to UIO interface. 
-
-
-\begin{DoxyTemplParams}{Template Parameters}
-{\em access\+\_\+width\+\_\+t} & Access width (uint32\+\_\+t or uint64\+\_\+t) \\
-\hline
-\end{DoxyTemplParams}
-
-\begin{DoxyParams}{Parameters}
-{\em offs} & Offset into address space \\
-\hline
-{\em mem} & Buffer to read from \\
-\hline
-{\em size} & Buffer size \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{classudmaio_1_1_uio_if_aa8ff2dcd394a824dab2a04e2aa275094}\label{classudmaio_1_1_uio_if_aa8ff2dcd394a824dab2a04e2aa275094}} 
 \index{udmaio::UioIf@{udmaio::UioIf}!\_wr\_reg@{\_wr\_reg}}
 \index{\_wr\_reg@{\_wr\_reg}!udmaio::UioIf@{udmaio::UioIf}}
@@ -276,28 +125,31 @@ Write data blob to UIO interface.
 {\footnotesize\ttfamily template$<$typename C $>$ \\
 void udmaio\+::\+Uio\+If\+::\+\_\+wr\+\_\+reg (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{offs,  }\item[{const C \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
-
-
-Write register to UIO interface. 
-
-
-\begin{DoxyTemplParams}{Template Parameters}
-{\em C} & Register data type \\
-\hline
-\end{DoxyTemplParams}
-
-\begin{DoxyParams}{Parameters}
-{\em offs} & Register offset into address space \\
-\hline
-{\em value} & Value to write \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{classudmaio_1_1_uio_if_a6756aeb5ca3c013d0c4be22e3d573963}\label{classudmaio_1_1_uio_if_a6756aeb5ca3c013d0c4be22e3d573963}} 
 \index{udmaio::UioIf@{udmaio::UioIf}!arm\_interrupt@{arm\_interrupt}}
 \index{arm\_interrupt@{arm\_interrupt}!udmaio::UioIf@{udmaio::UioIf}}
 \doxysubsubsection{\texorpdfstring{arm\_interrupt()}{arm\_interrupt()}}
 {\footnotesize\ttfamily void udmaio\+::\+Uio\+If\+::arm\+\_\+interrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_ae46944a87f194f48d10157becb5624f1}\label{classudmaio_1_1_uio_if_ae46944a87f194f48d10157becb5624f1}} 
+\index{udmaio::UioIf@{udmaio::UioIf}!enable\_debug@{enable\_debug}}
+\index{enable\_debug@{enable\_debug}!udmaio::UioIf@{udmaio::UioIf}}
+\doxysubsubsection{\texorpdfstring{enable\_debug()}{enable\_debug()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+If\+::enable\+\_\+debug (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_a2eaafeb3146b24ee7ef1e9978a9482cf}\label{classudmaio_1_1_uio_if_a2eaafeb3146b24ee7ef1e9978a9482cf}} 
+\index{udmaio::UioIf@{udmaio::UioIf}!get\_fd\_int@{get\_fd\_int}}
+\index{get\_fd\_int@{get\_fd\_int}!udmaio::UioIf@{udmaio::UioIf}}
+\doxysubsubsection{\texorpdfstring{get\_fd\_int()}{get\_fd\_int()}}
+{\footnotesize\ttfamily int udmaio\+::\+Uio\+If\+::get\+\_\+fd\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get file descriptor of interrupt event file. 
+
+\begin{DoxyReturn}{Returns}
+Event file descriptor 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classudmaio_1_1_uio_if_a4f047f030c4363d46877dddf3d93478f}\label{classudmaio_1_1_uio_if_a4f047f030c4363d46877dddf3d93478f}} 
 \index{udmaio::UioIf@{udmaio::UioIf}!reg\_to\_raw@{reg\_to\_raw}}
 \index{reg\_to\_raw@{reg\_to\_raw}!udmaio::UioIf@{udmaio::UioIf}}
@@ -331,47 +183,17 @@ friend class \mbox{\hyperlink{classudmaio_1_1_reg_accessor_base}{Reg\+Accessor\+
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_afcacc4449b15146e7d1d4140f0687d8e}\label{classudmaio_1_1_uio_if_afcacc4449b15146e7d1d4140f0687d8e}} 
-\index{udmaio::UioIf@{udmaio::UioIf}!\_debug\_enable@{\_debug\_enable}}
-\index{\_debug\_enable@{\_debug\_enable}!udmaio::UioIf@{udmaio::UioIf}}
-\doxysubsubsection{\texorpdfstring{\_debug\_enable}{\_debug\_enable}}
-{\footnotesize\ttfamily const bool udmaio\+::\+Uio\+If\+::\+\_\+debug\+\_\+enable\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_a30f469bfd2aadc90b0af23405365c9d6}\label{classudmaio_1_1_uio_if_a30f469bfd2aadc90b0af23405365c9d6}} 
+\index{udmaio::UioIf@{udmaio::UioIf}!\_hw@{\_hw}}
+\index{\_hw@{\_hw}!udmaio::UioIf@{udmaio::UioIf}}
+\doxysubsubsection{\texorpdfstring{\_hw}{\_hw}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classudmaio_1_1_hw_accessor}{Hw\+Accessor}}$>$ udmaio\+::\+Uio\+If\+::\+\_\+hw\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_a2a9abc749581164881422f771d81e77c}\label{classudmaio_1_1_uio_if_a2a9abc749581164881422f771d81e77c}} 
-\index{udmaio::UioIf@{udmaio::UioIf}!\_fd@{\_fd}}
-\index{\_fd@{\_fd}!udmaio::UioIf@{udmaio::UioIf}}
-\doxysubsubsection{\texorpdfstring{\_fd}{\_fd}}
-{\footnotesize\ttfamily int udmaio\+::\+Uio\+If\+::\+\_\+fd\hspace{0.3cm}{\ttfamily [protected]}}
-
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_afb95a4e415ecce2ecf99bfd8baebc670}\label{classudmaio_1_1_uio_if_afb95a4e415ecce2ecf99bfd8baebc670}} 
-\index{udmaio::UioIf@{udmaio::UioIf}!\_fd\_int@{\_fd\_int}}
-\index{\_fd\_int@{\_fd\_int}!udmaio::UioIf@{udmaio::UioIf}}
-\doxysubsubsection{\texorpdfstring{\_fd\_int}{\_fd\_int}}
-{\footnotesize\ttfamily int udmaio\+::\+Uio\+If\+::\+\_\+fd\+\_\+int\hspace{0.3cm}{\ttfamily [protected]}}
-
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_a5d831f0776a4f83ff3173dff4b15db93}\label{classudmaio_1_1_uio_if_a5d831f0776a4f83ff3173dff4b15db93}} 
-\index{udmaio::UioIf@{udmaio::UioIf}!\_force\_32bit@{\_force\_32bit}}
-\index{\_force\_32bit@{\_force\_32bit}!udmaio::UioIf@{udmaio::UioIf}}
-\doxysubsubsection{\texorpdfstring{\_force\_32bit}{\_force\_32bit}}
-{\footnotesize\ttfamily const bool udmaio\+::\+Uio\+If\+::\+\_\+force\+\_\+32bit\hspace{0.3cm}{\ttfamily [protected]}}
-
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_a9284f47ea82fd29ee29b3dfd9f465a73}\label{classudmaio_1_1_uio_if_a9284f47ea82fd29ee29b3dfd9f465a73}} 
-\index{udmaio::UioIf@{udmaio::UioIf}!\_mem@{\_mem}}
-\index{\_mem@{\_mem}!udmaio::UioIf@{udmaio::UioIf}}
-\doxysubsubsection{\texorpdfstring{\_mem}{\_mem}}
-{\footnotesize\ttfamily void$\ast$ udmaio\+::\+Uio\+If\+::\+\_\+mem\hspace{0.3cm}{\ttfamily [protected]}}
-
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_a884e5d93ed89a07b4d2dc632de171ddf}\label{classudmaio_1_1_uio_if_a884e5d93ed89a07b4d2dc632de171ddf}} 
-\index{udmaio::UioIf@{udmaio::UioIf}!\_region@{\_region}}
-\index{\_region@{\_region}!udmaio::UioIf@{udmaio::UioIf}}
-\doxysubsubsection{\texorpdfstring{\_region}{\_region}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} udmaio\+::\+Uio\+If\+::\+\_\+region\hspace{0.3cm}{\ttfamily [protected]}}
-
-\mbox{\Hypertarget{classudmaio_1_1_uio_if_a7d5c461e57baf52672442b1ef072209f}\label{classudmaio_1_1_uio_if_a7d5c461e57baf52672442b1ef072209f}} 
-\index{udmaio::UioIf@{udmaio::UioIf}!\_skip\_write\_to\_arm\_int@{\_skip\_write\_to\_arm\_int}}
-\index{\_skip\_write\_to\_arm\_int@{\_skip\_write\_to\_arm\_int}!udmaio::UioIf@{udmaio::UioIf}}
-\doxysubsubsection{\texorpdfstring{\_skip\_write\_to\_arm\_int}{\_skip\_write\_to\_arm\_int}}
-{\footnotesize\ttfamily const bool udmaio\+::\+Uio\+If\+::\+\_\+skip\+\_\+write\+\_\+to\+\_\+arm\+\_\+int\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_a61bd7bbfdf570dabd2077c9af2cddf3f}\label{classudmaio_1_1_uio_if_a61bd7bbfdf570dabd2077c9af2cddf3f}} 
+\index{udmaio::UioIf@{udmaio::UioIf}!\_lg@{\_lg}}
+\index{\_lg@{\_lg}!udmaio::UioIf@{udmaio::UioIf}}
+\doxysubsubsection{\texorpdfstring{\_lg}{\_lg}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceudmaio_a03d59114e0370739fb2989fedeed3ffc}{boost\+\_\+logger}}\& udmaio\+::\+Uio\+If\+::\+\_\+lg\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

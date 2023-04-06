@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mode_0',['mode',['../classudmaio_1_1_uio_config_base.html#a3662b6e5c9c2f391a9f02a54105d17d4',1,'udmaio::UioConfigBase::mode()'],['../classudmaio_1_1_uio_config_uio.html#ad07df0538d849b8ea02c67ee7e1b3575',1,'udmaio::UioConfigUio::mode()'],['../classudmaio_1_1_uio_config_xdma.html#a8e91341dbfe554dc57e6509e62f3ce35',1,'udmaio::UioConfigXdma::mode()']]]
+  ['init_0',['init',['../structudmaio_1_1_logger.html#ad00c8e4de659f222de9aecd0f471643b',1,'udmaio::Logger']]],
+  ['init_5fbuffers_1',['init_buffers',['../classudmaio_1_1_uio_mem_sgdma.html#ae0be4822f52dec3b56305cb37779401d',1,'udmaio::UioMemSgdma']]]
 ];

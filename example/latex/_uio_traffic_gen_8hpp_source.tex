@@ -19,7 +19,7 @@
 \DoxyCodeLine{15 }
 \DoxyCodeLine{16 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}};}
 \DoxyCodeLine{17 }
-\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_uio_traffic_gen}{UioTrafficGen}} : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}} \{}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_uio_traffic_gen}{UioTrafficGen}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}} \{}
 \DoxyCodeLine{20     \textcolor{keyword}{struct }\mbox{\hyperlink{_reg_accessor_8hpp_acc0a1ca2ff7aa6ea7e505d8c7e018368}{REG\_PACKED\_ALIGNED}} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_control}{StControl}} \{}
 \DoxyCodeLine{21         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_control_ab0d8563c37df39c9a43eada72b1cf416}{stren}} : 1;}
 \DoxyCodeLine{22         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_control_a4429140226b560b19b1b79e4359f9cfd}{done}} : 1;}
@@ -52,7 +52,7 @@
 \DoxyCodeLine{49     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{RegAccessor<ExtTrLength, 0x50>}} \mbox{\hyperlink{class_uio_traffic_gen_a2f9eeafe6748fcdfcb8f290ed7b16311}{extTrLength}}\{\textcolor{keyword}{this}\};}
 \DoxyCodeLine{50 }
 \DoxyCodeLine{51   \textcolor{keyword}{public}:}
-\DoxyCodeLine{52     \mbox{\hyperlink{class_uio_traffic_gen_a0a9f6c3a70d920dc556478332b1e4d4d}{UioTrafficGen}}(\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{UioDeviceInfo}} dev) : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}(\textcolor{stringliteral}{"{}UioTrafficGen"{}}, dev) \{\}}
+\DoxyCodeLine{52     \mbox{\hyperlink{class_uio_traffic_gen_a5ac93f92388337583a1f7b7e605349fe}{UioTrafficGen}}(\mbox{\hyperlink{namespaceudmaio_aa5fc64c7a76c962d8e65553ebbefb92d}{HwAccessorPtr}} hw) : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}(\textcolor{stringliteral}{"{}UioTrafficGen"{}}, std::move(hw)) \{\}}
 \DoxyCodeLine{53 }
 \DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_ad56c154d7266ccfda625c0da9c985862}{start}}(uint16\_t nr\_pkts, uint32\_t pkt\_size, uint16\_t pkt\_pause);}
 \DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_uio_traffic_gen_a91a7c2c7c803d3d2c2ec3ec704adcd23}{stop}}();}

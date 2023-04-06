@@ -19,7 +19,7 @@
 \DoxyCodeLine{15 }
 \DoxyCodeLine{16 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}};}
 \DoxyCodeLine{17 }
-\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_uio_gpio_status}{UioGpioStatus}} : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}} \{}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_uio_gpio_status}{UioGpioStatus}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}} \{}
 \DoxyCodeLine{20     \textcolor{keyword}{struct }\mbox{\hyperlink{_reg_accessor_8hpp_acc0a1ca2ff7aa6ea7e505d8c7e018368}{REG\_PACKED\_ALIGNED}} \mbox{\hyperlink{struct_uio_gpio_status_1_1_gpio_data}{GpioData}} \{}
 \DoxyCodeLine{21         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_uio_gpio_status_1_1_gpio_data_a4cba73281f2eafe69f6f862fbd9d94e0}{ddr4\_init\_calib\_complete}} : 1;}
 \DoxyCodeLine{22         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_uio_gpio_status_1_1_gpio_data_ae4f1c0742f4381c34cc81772b4a65871}{reserved}} : 31;}
@@ -28,7 +28,7 @@
 \DoxyCodeLine{25     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{RegAccessor<GpioData, 0>}} \mbox{\hyperlink{class_uio_gpio_status_a3c3d0e9b18d4b0ed16524c32695d9c4f}{gpio}}\{\textcolor{keyword}{this}\};}
 \DoxyCodeLine{26 }
 \DoxyCodeLine{27   \textcolor{keyword}{public}:}
-\DoxyCodeLine{28     \mbox{\hyperlink{class_uio_gpio_status_acf034e2ebeecd7364d426ad79f8be94e}{UioGpioStatus}}(\mbox{\hyperlink{structudmaio_1_1_uio_device_info}{UioDeviceInfo}} dev) : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}(\textcolor{stringliteral}{"{}UioGpioStatus"{}}, dev) \{\}}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_uio_gpio_status_a408219ca0a54c9ccb654f69836140972}{UioGpioStatus}}(\mbox{\hyperlink{namespaceudmaio_aa5fc64c7a76c962d8e65553ebbefb92d}{HwAccessorPtr}} hw) : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}(\textcolor{stringliteral}{"{}UioGpioStatus"{}}, std::move(hw)) \{\}}
 \DoxyCodeLine{29 }
 \DoxyCodeLine{30     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_uio_gpio_status_acde661794a05eeeda4e6ed27dba4e951}{is\_ddr4\_init\_calib\_complete}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_uio_gpio_status_a3c3d0e9b18d4b0ed16524c32695d9c4f}{gpio}}.rd().ddr4\_init\_calib\_complete; \}}
 \DoxyCodeLine{31 \};}

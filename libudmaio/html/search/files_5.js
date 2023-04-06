@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['logging_2ecpp_0',['Logging.cpp',['../_logging_8cpp.html',1,'']]],
-  ['logging_2ehpp_1',['Logging.hpp',['../_logging_8hpp.html',1,'']]]
+  ['hwaccessor_2ecpp_0',['HwAccessor.cpp',['../_hw_accessor_8cpp.html',1,'']]],
+  ['hwaccessor_2ehpp_1',['HwAccessor.hpp',['../_hw_accessor_8hpp.html',1,'']]]
 ];

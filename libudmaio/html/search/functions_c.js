@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['rd_0',['rd',['../classudmaio_1_1_reg_accessor_array_element.html#ae54bc577dd3b1006870b046116278d96',1,'udmaio::RegAccessorArrayElement::rd()'],['../classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html#ab7a42dc9e810b80b4ed294730414ec11',1,'udmaio::RegAccessorArray&lt; C, offset, 0, 0 &gt;::rd()']]],
-  ['read_1',['read',['../classudmaio_1_1_data_handler_sync.html#a605fd0316d366ec4935583b4dce91795',1,'udmaio::DataHandlerSync::read()'],['../classudmaio_1_1_data_handler_sync.html#a8e6fda5d3ec7577a83605dcd3b106204',1,'udmaio::DataHandlerSync::read(std::chrono::milliseconds timeout)']]],
-  ['reg_5fto_5fraw_2',['reg_to_raw',['../classudmaio_1_1_uio_if.html#a4f047f030c4363d46877dddf3d93478f',1,'udmaio::UioIf::reg_to_raw(C data)'],['../classudmaio_1_1_uio_if.html#a3b1e22f2824346e4b87fbf884de554eb',1,'udmaio::UioIf::reg_to_raw(C data)']]],
-  ['regaccessorarrayelement_3',['RegAccessorArrayElement',['../classudmaio_1_1_reg_accessor_array_element.html#aaa4e2dac359c1b0ed94316ca5a24727b',1,'udmaio::RegAccessorArrayElement']]],
-  ['regaccessorbase_4',['RegAccessorBase',['../classudmaio_1_1_reg_accessor_base.html#ad878857665ec6cb11fb5133240a23e65',1,'udmaio::RegAccessorBase::RegAccessorBase()=delete'],['../classudmaio_1_1_reg_accessor_base.html#a7298226a53b233dd99ca2dec3e41d109',1,'udmaio::RegAccessorBase::RegAccessorBase(constructor_arg_type interface)']]]
+  ['operator_20hwaccessorptr_0',['operator HwAccessorPtr',['../classudmaio_1_1_uio_device_location.html#ae733be8fc329918e12e60c541e8f70c0',1,'udmaio::UioDeviceLocation']]],
+  ['operator_28_29_1',['operator()',['../classudmaio_1_1_data_handler_abstract.html#a8b3ef758d72527ef0f7f3e4f1d9a068d',1,'udmaio::DataHandlerAbstract::operator()()'],['../classudmaio_1_1_data_handler_sync.html#af9ef2065d6dcda7af1a6fbf64f2f24ca',1,'udmaio::DataHandlerSync::operator()()']]],
+  ['operator_3c_3c_2',['operator&lt;&lt;',['../namespaceudmaio.html#ac25c553cf3256b7c5d7cd731d18251ff',1,'udmaio']]],
+  ['operator_3d_3',['operator=',['../classudmaio_1_1_concurrent_queue.html#ab86afd4013a112387ffe213a56fb1f05',1,'udmaio::ConcurrentQueue']]],
+  ['operator_3e_3e_4',['operator&gt;&gt;',['../namespaceudmaio.html#adcde5ee0e86bf537b18e3d7588443fc5',1,'udmaio']]],
+  ['operator_5b_5d_5',['operator[]',['../classudmaio_1_1_reg_accessor_array.html#a4b8a2afd9ba4baefa3f4e218bc0dc020',1,'udmaio::RegAccessorArray::operator[](uint32_t idx)'],['../classudmaio_1_1_reg_accessor_array.html#a6a2e8f0262742bcb598bb17eb2dc1c24',1,'udmaio::RegAccessorArray::operator[](uint32_t idx) const']]]
 ];

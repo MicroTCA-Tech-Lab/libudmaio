@@ -1,0 +1,17 @@
+digraph "udmaio::HwAccessorXdma&lt; max_access_width_t &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="udmaio::HwAccessorXdma\l\< max_access_width_t \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="udmaio::HwAccessorMmap\l\< max_access_width_t \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_hw_accessor_mmap.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="udmaio::HwAccessor",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_hw_accessor.html",tooltip="Base class for hardware access."];
+  Node4 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="udmaio::Logger",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structudmaio_1_1_logger.html",tooltip=" "];
+  Node5 -> Node3 [dir="back",color="firebrick4",style="solid"];
+  Node5 [label="boost::noncopyable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+}

@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['udmabuf_0',['UDmaBuf',['../classudmaio_1_1_u_dma_buf.html#a57b59a0df1def9f42a4d76763960ab6d',1,'udmaio::UDmaBuf']]],
-  ['uioaxidmaif_1',['UioAxiDmaIf',['../classudmaio_1_1_uio_axi_dma_if.html#abd92168c528e68ee5ba19a88b0bbc271',1,'udmaio::UioAxiDmaIf']]],
-  ['uioconfigxdma_2',['UioConfigXdma',['../classudmaio_1_1_uio_config_xdma.html#ae57292575248142f2e15b0872c782953',1,'udmaio::UioConfigXdma::UioConfigXdma()=delete'],['../classudmaio_1_1_uio_config_xdma.html#af1fefcc5dc507f93e77d08ce1d878d24',1,'udmaio::UioConfigXdma::UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs, bool x7_series_mode=false)']]],
-  ['uiodeviceinfo_3',['UioDeviceInfo',['../structudmaio_1_1_uio_device_info.html#a0abec63d551197a030d1926d63ce6563',1,'udmaio::UioDeviceInfo::UioDeviceInfo(std::string dev_path, std::string evt_path, UioRegion region, uintptr_t mmap_offs, bool force_32bit=false)'],['../structudmaio_1_1_uio_device_info.html#ac58dd33243598679dbc68ee27c535b8a',1,'udmaio::UioDeviceInfo::UioDeviceInfo(UioDeviceLocation dev_loc)']]],
-  ['uiodevicelocation_4',['UioDeviceLocation',['../classudmaio_1_1_uio_device_location.html#a54abcabef821b45fc19a628677d56ba2',1,'udmaio::UioDeviceLocation']]],
-  ['uiogpiostatus_5',['UioGpioStatus',['../class_uio_gpio_status.html#acf034e2ebeecd7364d426ad79f8be94e',1,'UioGpioStatus']]],
-  ['uioif_6',['UioIf',['../classudmaio_1_1_uio_if.html#a6b17adecb54f5862fa95685c22d0e480',1,'udmaio::UioIf']]],
-  ['uiomemsgdma_7',['UioMemSgdma',['../classudmaio_1_1_uio_mem_sgdma.html#acdcd0d351136e23acacca576eaec047e',1,'udmaio::UioMemSgdma']]],
-  ['uiotrafficgen_8',['UioTrafficGen',['../class_uio_traffic_gen.html#a0a9f6c3a70d920dc556478332b1e4d4d',1,'UioTrafficGen']]]
+  ['rd_0',['rd',['../classudmaio_1_1_reg_accessor_array_element.html#ae54bc577dd3b1006870b046116278d96',1,'udmaio::RegAccessorArrayElement::rd()'],['../classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html#ab7a42dc9e810b80b4ed294730414ec11',1,'udmaio::RegAccessorArray&lt; C, offset, 0, 0 &gt;::rd()']]],
+  ['read_1',['read',['../classudmaio_1_1_data_handler_sync.html#a605fd0316d366ec4935583b4dce91795',1,'udmaio::DataHandlerSync::read()'],['../classudmaio_1_1_data_handler_sync.html#a8e6fda5d3ec7577a83605dcd3b106204',1,'udmaio::DataHandlerSync::read(std::chrono::milliseconds timeout)']]],
+  ['reg_5fto_5fraw_2',['reg_to_raw',['../classudmaio_1_1_uio_if.html#a4f047f030c4363d46877dddf3d93478f',1,'udmaio::UioIf::reg_to_raw(C data)'],['../classudmaio_1_1_uio_if.html#a3b1e22f2824346e4b87fbf884de554eb',1,'udmaio::UioIf::reg_to_raw(C data)']]],
+  ['regaccessorarrayelement_3',['RegAccessorArrayElement',['../classudmaio_1_1_reg_accessor_array_element.html#aaa4e2dac359c1b0ed94316ca5a24727b',1,'udmaio::RegAccessorArrayElement']]],
+  ['regaccessorbase_4',['RegAccessorBase',['../classudmaio_1_1_reg_accessor_base.html#ad878857665ec6cb11fb5133240a23e65',1,'udmaio::RegAccessorBase::RegAccessorBase()=delete'],['../classudmaio_1_1_reg_accessor_base.html#a7298226a53b233dd99ca2dec3e41d109',1,'udmaio::RegAccessorBase::RegAccessorBase(constructor_arg_type interface)']]]
 ];

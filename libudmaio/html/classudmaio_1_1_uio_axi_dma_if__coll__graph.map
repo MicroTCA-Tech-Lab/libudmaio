@@ -1,8 +1,9 @@
 <map id="udmaio::UioAxiDmaIf" name="udmaio::UioAxiDmaIf">
-<area shape="rect" id="node1" title="Interface to AXI DMA Core." alt="" coords="196,168,339,193"/>
-<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="157,93,255,119"/>
-<area shape="rect" id="node3" href="$structudmaio_1_1_logger.html" title=" " alt="" coords="5,5,116,31"/>
-<area shape="rect" id="node4" title=" " alt="" coords="140,5,272,31"/>
-<area shape="rect" id="node5" href="$structudmaio_1_1_uio_region.html" title="General&#45;purpose struct to define a memory area." alt="" coords="297,5,427,31"/>
-<area shape="rect" id="node6" href="$structaxi__dma_1_1block__template.html" title="Template class for the axi_dma block, containing accessors for all its registers." alt="" coords="280,93,380,119"/>
+<area shape="rect" id="node1" title="Interface to AXI DMA Core." alt="" coords="83,345,225,371"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="43,271,142,296"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,137,31"/>
+<area shape="rect" id="node5" href="$classudmaio_1_1_hw_accessor.html" title="Base class for hardware access." alt="" coords="116,80,261,105"/>
+<area shape="rect" id="node4" title=" " alt="" coords="109,168,268,208"/>
+<area shape="rect" id="node6" href="$structudmaio_1_1_logger.html" title=" " alt="" coords="161,5,272,31"/>
+<area shape="rect" id="node7" href="$structaxi__dma_1_1block__template.html" title="Template class for the axi_dma block, containing accessors for all its registers." alt="" coords="167,271,267,296"/>
 </map>

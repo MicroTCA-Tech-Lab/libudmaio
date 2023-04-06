@@ -20,6 +20,5 @@ var searchData=
   ['mm2s_5ftaildesc_5fmsb_17',['mm2s_taildesc_msb',['../structaxi__dma_1_1block__template.html#ad40e7d14eccc2a06bdbd09071f8c719b',1,'axi_dma::block_template']]],
   ['mm2s_5ftaildesc_5fmsb_5ft_18',['mm2s_taildesc_msb_t',['../namespaceaxi__dma.html#a486acdc4d7d6f7c8bb5f97470f8a04bd',1,'axi_dma']]],
   ['mm2s_5ftaildesc_5ft_19',['mm2s_taildesc_t',['../structaxi__dma_1_1mm2s__taildesc__t.html',1,'axi_dma']]],
-  ['mmap_5foffs_20',['mmap_offs',['../structudmaio_1_1_uio_device_info.html#a0a207d3b2a1a958a2ca43f1056b77cbd',1,'udmaio::UioDeviceInfo']]],
-  ['mode_21',['mode',['../classudmaio_1_1_uio_config_base.html#a3662b6e5c9c2f391a9f02a54105d17d4',1,'udmaio::UioConfigBase::mode()'],['../classudmaio_1_1_uio_config_uio.html#ad07df0538d849b8ea02c67ee7e1b3575',1,'udmaio::UioConfigUio::mode()'],['../classudmaio_1_1_uio_config_xdma.html#a8e91341dbfe554dc57e6509e62f3ce35',1,'udmaio::UioConfigXdma::mode()']]]
+  ['mode_20',['mode',['../classudmaio_1_1_uio_config_base.html#a3662b6e5c9c2f391a9f02a54105d17d4',1,'udmaio::UioConfigBase::mode()'],['../classudmaio_1_1_uio_config_uio.html#ad07df0538d849b8ea02c67ee7e1b3575',1,'udmaio::UioConfigUio::mode()'],['../classudmaio_1_1_uio_config_xdma.html#a8e91341dbfe554dc57e6509e62f3ce35',1,'udmaio::UioConfigXdma::mode()']]]
 ];

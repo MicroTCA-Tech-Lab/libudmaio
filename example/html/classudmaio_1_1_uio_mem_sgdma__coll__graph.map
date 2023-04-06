@@ -1,9 +1,10 @@
 <map id="udmaio::UioMemSgdma" name="udmaio::UioMemSgdma">
-<area shape="rect" id="node1" title="Interface to AXI DMA scatter&#45;gather buffers &amp; descriptors Uses a UioIf to access DMA descriptor memor..." alt="" coords="126,373,286,399"/>
-<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="157,93,255,119"/>
-<area shape="rect" id="node7" href="$classudmaio_1_1_reg_accessor_base.html" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="223,181,432,207"/>
-<area shape="rect" id="node3" href="$structudmaio_1_1_logger.html" title=" " alt="" coords="5,5,116,31"/>
-<area shape="rect" id="node4" title=" " alt="" coords="140,5,272,31"/>
-<area shape="rect" id="node5" href="$structudmaio_1_1_uio_region.html" title="General&#45;purpose struct to define a memory area." alt="" coords="297,5,427,31"/>
-<area shape="rect" id="node6" href="$classudmaio_1_1_reg_accessor_array.html" title=" " alt="" coords="226,256,418,311"/>
+<area shape="rect" id="node1" title="Interface to AXI DMA scatter&#45;gather buffers &amp; descriptors Uses a UioIf to access DMA descriptor memor..." alt="" coords="1364,29,1524,55"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="633,24,732,49"/>
+<area shape="rect" id="node8" href="$classudmaio_1_1_reg_accessor_base.html" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="797,52,1007,77"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,137,31"/>
+<area shape="rect" id="node5" href="$classudmaio_1_1_hw_accessor.html" title="Base class for hardware access." alt="" coords="187,53,332,79"/>
+<area shape="rect" id="node4" title=" " alt="" coords="399,46,557,86"/>
+<area shape="rect" id="node6" href="$structudmaio_1_1_logger.html" title=" " alt="" coords="16,63,127,88"/>
+<area shape="rect" id="node7" href="$classudmaio_1_1_reg_accessor_array.html" title=" " alt="" coords="1056,48,1248,103"/>
 </map>

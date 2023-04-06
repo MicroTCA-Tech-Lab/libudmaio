@@ -15,13 +15,12 @@ digraph "Logging.hpp"
   Node4 -> Node5 [dir="back",color="steelblue1",style="solid"];
   Node5 [label="DataHandlerSync.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_data_handler_sync_8cpp.html",tooltip=" "];
   Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
-  Node6 [label="Logging.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_logging_8cpp.html",tooltip=" "];
-  Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
-  Node7 [label="UDmaBuf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_u_dma_buf_8hpp.html",tooltip=" "];
-  Node7 -> Node2 [dir="back",color="steelblue1",style="solid"];
-  Node7 -> Node8 [dir="back",color="steelblue1",style="solid"];
-  Node8 [label="UDmaBuf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_u_dma_buf_8cpp.html",tooltip=" "];
-  Node1 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="HwAccessor.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_hw_accessor_8hpp.html",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="HwAccessor.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_hw_accessor_8cpp.html",tooltip=" "];
+  Node6 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="UioConfig.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_config_8cpp.html",tooltip=" "];
+  Node6 -> Node9 [dir="back",color="steelblue1",style="solid"];
   Node9 [label="UioIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8hpp.html",tooltip=" "];
   Node9 -> Node10 [dir="back",color="steelblue1",style="solid"];
   Node10 [label="FpgaMemBufferOverAxi.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_fpga_mem_buffer_over_axi_8hpp.html",tooltip=" "];
@@ -40,4 +39,12 @@ digraph "Logging.hpp"
   Node9 -> Node12 [dir="back",color="steelblue1",style="solid"];
   Node9 -> Node16 [dir="back",color="steelblue1",style="solid"];
   Node16 [label="UioIf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8cpp.html",tooltip=" "];
+  Node1 -> Node17 [dir="back",color="steelblue1",style="solid"];
+  Node17 [label="Logging.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_logging_8cpp.html",tooltip=" "];
+  Node1 -> Node18 [dir="back",color="steelblue1",style="solid"];
+  Node18 [label="UDmaBuf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_u_dma_buf_8hpp.html",tooltip=" "];
+  Node18 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node18 -> Node19 [dir="back",color="steelblue1",style="solid"];
+  Node19 [label="UDmaBuf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_u_dma_buf_8cpp.html",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="steelblue1",style="solid"];
 }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keyhole_0',['keyhole',['../structaxi__dma_1_1mm2s__dmacr__t.html#ab8fb8ec78e43db3206bfb7cb0613fecf',1,'axi_dma::mm2s_dmacr_t::keyhole()'],['../structaxi__dma_1_1s2mm__dmacr__t.html#aeb537dee5d92f7068cf201638cf7a656',1,'axi_dma::s2mm_dmacr_t::keyhole()']]]
+  ['length_0',['length',['../structaxi__dma_1_1mm2s__length__t.html#a3401c7bb61273d7faa3596f320a4a1f9',1,'axi_dma::mm2s_length_t::length()'],['../structaxi__dma_1_1s2mm__length__t.html#a0d1b0c2e0dc342443a982f0e6b51e6d6',1,'axi_dma::s2mm_length_t::length()']]]
 ];

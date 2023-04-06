@@ -8,6 +8,7 @@ var dir_2eef1102eac834eaab345b18b522726b =
     [ "DmaBufferAbstract.hpp", "_dma_buffer_abstract_8hpp.html", "_dma_buffer_abstract_8hpp" ],
     [ "FpgaMemBufferOverAxi.hpp", "_fpga_mem_buffer_over_axi_8hpp.html", "_fpga_mem_buffer_over_axi_8hpp" ],
     [ "FpgaMemBufferOverXdma.hpp", "_fpga_mem_buffer_over_xdma_8hpp.html", "_fpga_mem_buffer_over_xdma_8hpp" ],
+    [ "HwAccessor.hpp", "_hw_accessor_8hpp.html", "_hw_accessor_8hpp" ],
     [ "Logging.hpp", "_logging_8hpp.html", "_logging_8hpp" ],
     [ "RegAccessor.hpp", "_reg_accessor_8hpp.html", "_reg_accessor_8hpp" ],
     [ "UDmaBuf.hpp", "_u_dma_buf_8hpp.html", "_u_dma_buf_8hpp" ],

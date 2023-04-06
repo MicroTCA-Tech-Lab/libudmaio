@@ -13,14 +13,16 @@ var hierarchy =
         [ "DataHandlerPrint", "class_data_handler_print.html", null ],
         [ "udmaio::DataHandlerSync", "classudmaio_1_1_data_handler_sync.html", null ]
       ] ],
-      [ "udmaio::UDmaBuf", "classudmaio_1_1_u_dma_buf.html", null ],
-      [ "udmaio::UioIf", "classudmaio_1_1_uio_if.html", [
-        [ "UioGpioStatus", "class_uio_gpio_status.html", null ],
-        [ "UioTrafficGen", "class_uio_traffic_gen.html", null ],
-        [ "udmaio::FpgaMemBufferOverAxi", "classudmaio_1_1_fpga_mem_buffer_over_axi.html", null ],
-        [ "udmaio::UioAxiDmaIf", "classudmaio_1_1_uio_axi_dma_if.html", null ],
-        [ "udmaio::UioMemSgdma", "classudmaio_1_1_uio_mem_sgdma.html", null ]
-      ] ]
+      [ "udmaio::HwAccessor", "classudmaio_1_1_hw_accessor.html", [
+        [ "udmaio::HwAccessorMmap< uint64_t >", "classudmaio_1_1_hw_accessor_mmap.html", [
+          [ "udmaio::HwAccessorAxi", "classudmaio_1_1_hw_accessor_axi.html", null ]
+        ] ],
+        [ "udmaio::HwAccessorMmap< max_access_width_t >", "classudmaio_1_1_hw_accessor_mmap.html", [
+          [ "udmaio::HwAccessorXdma< max_access_width_t >", "classudmaio_1_1_hw_accessor_xdma.html", null ]
+        ] ],
+        [ "udmaio::HwAccessorMock", "classudmaio_1_1_hw_accessor_mock.html", null ]
+      ] ],
+      [ "udmaio::UDmaBuf", "classudmaio_1_1_u_dma_buf.html", null ]
     ] ],
     [ "axi_dma::mm2s_curdesc_t", "structaxi__dma_1_1mm2s__curdesc__t.html", null ],
     [ "axi_dma::mm2s_dmacr_t", "structaxi__dma_1_1mm2s__dmacr__t.html", null ],
@@ -34,7 +36,14 @@ var hierarchy =
         [ "udmaio::FpgaMemBufferOverXdma", "classudmaio_1_1_fpga_mem_buffer_over_xdma.html", null ],
         [ "udmaio::UDmaBuf", "classudmaio_1_1_u_dma_buf.html", null ]
       ] ],
-      [ "udmaio::UioIf", "classudmaio_1_1_uio_if.html", null ]
+      [ "udmaio::HwAccessor", "classudmaio_1_1_hw_accessor.html", null ],
+      [ "udmaio::UioIf", "classudmaio_1_1_uio_if.html", [
+        [ "UioGpioStatus", "class_uio_gpio_status.html", null ],
+        [ "UioTrafficGen", "class_uio_traffic_gen.html", null ],
+        [ "udmaio::FpgaMemBufferOverAxi", "classudmaio_1_1_fpga_mem_buffer_over_axi.html", null ],
+        [ "udmaio::UioAxiDmaIf", "classudmaio_1_1_uio_axi_dma_if.html", null ],
+        [ "udmaio::UioMemSgdma", "classudmaio_1_1_uio_mem_sgdma.html", null ]
+      ] ]
     ] ],
     [ "udmaio::RegAccessorBase< C >", "classudmaio_1_1_reg_accessor_base.html", [
       [ "udmaio::RegAccessorArray< S2mmDesc, 0, 1024, DESC_ADDR_STEP >", "classudmaio_1_1_reg_accessor_array.html", null ],
@@ -66,7 +75,6 @@ var hierarchy =
       [ "udmaio::UioConfigUio", "classudmaio_1_1_uio_config_uio.html", null ],
       [ "udmaio::UioConfigXdma", "classudmaio_1_1_uio_config_xdma.html", null ]
     ] ],
-    [ "udmaio::UioDeviceInfo", "structudmaio_1_1_uio_device_info.html", null ],
     [ "udmaio::UioDeviceLocation", "classudmaio_1_1_uio_device_location.html", null ],
     [ "udmaio::UioRegion", "structudmaio_1_1_uio_region.html", null ]
 ];

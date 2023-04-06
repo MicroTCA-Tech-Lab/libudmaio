@@ -17,10 +17,8 @@ digraph "Logging.hpp"
   Node2 -> Node6 [dir="back",color="steelblue1",style="solid"];
   Node6 [label="DataHandlerSync.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_data_handler_sync_8hpp.html",tooltip=" "];
   Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
-  Node7 [label="UDmaBuf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_u_dma_buf_8hpp.html",tooltip=" "];
-  Node7 -> Node2 [dir="back",color="steelblue1",style="solid"];
-  Node7 -> Node5 [dir="back",color="steelblue1",style="solid"];
-  Node1 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="HwAccessor.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_hw_accessor_8hpp.html",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="steelblue1",style="solid"];
   Node8 [label="UioIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8hpp.html",tooltip=" "];
   Node8 -> Node9 [dir="back",color="steelblue1",style="solid"];
   Node9 [label="FpgaMemBufferOverAxi.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_fpga_mem_buffer_over_axi_8hpp.html",tooltip=" "];
@@ -44,5 +42,10 @@ digraph "Logging.hpp"
   Node14 -> Node5 [dir="back",color="steelblue1",style="solid"];
   Node8 -> Node11 [dir="back",color="steelblue1",style="solid"];
   Node8 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node1 -> Node16 [dir="back",color="steelblue1",style="solid"];
+  Node16 [label="UDmaBuf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_u_dma_buf_8hpp.html",tooltip=" "];
+  Node16 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node16 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node1 -> Node8 [dir="back",color="steelblue1",style="solid"];
   Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
 }

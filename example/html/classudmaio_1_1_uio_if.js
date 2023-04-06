@@ -1,28 +1,20 @@
 var classudmaio_1_1_uio_if =
 [
-    [ "UioIf", "classudmaio_1_1_uio_if.html#a6b17adecb54f5862fa95685c22d0e480", null ],
+    [ "UioIf", "classudmaio_1_1_uio_if.html#a3c018e6a942e3d78e5a69fa0a7c78b8f", null ],
     [ "~UioIf", "classudmaio_1_1_uio_if.html#ac50743264269138365856bf6cf073273", null ],
-    [ "_rd", "classudmaio_1_1_uio_if.html#a36a7cdd66709d4551d91288a86895d5b", null ],
     [ "_rd32", "classudmaio_1_1_uio_if.html#a9a7d60c6438b2d90e204bb5a456ed755", null ],
     [ "_rd64", "classudmaio_1_1_uio_if.html#a9a0b7afd8ae6ca5e4a332e6a43b64ebb", null ],
-    [ "_rd_mem", "classudmaio_1_1_uio_if.html#a9e675098bec24e2521aa2c681611ceb8", null ],
     [ "_rd_reg", "classudmaio_1_1_uio_if.html#a4cbf37ba60ea1ecf70034eeb7e953494", null ],
-    [ "_reg_ptr", "classudmaio_1_1_uio_if.html#ad74ee5f06fde3d0234c1f34c00551f4e", null ],
-    [ "_wr", "classudmaio_1_1_uio_if.html#a1c2633c30e31b3900393e0d39732d07c", null ],
     [ "_wr32", "classudmaio_1_1_uio_if.html#a493e161ddcaa28c256f075f45e687391", null ],
     [ "_wr64", "classudmaio_1_1_uio_if.html#a0287ff2c15a31b97b78c57e4eeb802e8", null ],
-    [ "_wr_mem", "classudmaio_1_1_uio_if.html#a70ba21b50d0956d6c97101945ade1de2", null ],
     [ "_wr_reg", "classudmaio_1_1_uio_if.html#aa8ff2dcd394a824dab2a04e2aa275094", null ],
     [ "arm_interrupt", "classudmaio_1_1_uio_if.html#a6756aeb5ca3c013d0c4be22e3d573963", null ],
+    [ "enable_debug", "classudmaio_1_1_uio_if.html#ae46944a87f194f48d10157becb5624f1", null ],
+    [ "get_fd_int", "classudmaio_1_1_uio_if.html#a2eaafeb3146b24ee7ef1e9978a9482cf", null ],
     [ "reg_to_raw", "classudmaio_1_1_uio_if.html#a4f047f030c4363d46877dddf3d93478f", null ],
     [ "reg_to_raw", "classudmaio_1_1_uio_if.html#a3b1e22f2824346e4b87fbf884de554eb", null ],
     [ "wait_for_interrupt", "classudmaio_1_1_uio_if.html#a7035fb19bfd190fe5b482d27cc528b0a", null ],
     [ "RegAccessorBase", "classudmaio_1_1_uio_if.html#a55fe8d02d0291443c9351b5be423747f", null ],
-    [ "_debug_enable", "classudmaio_1_1_uio_if.html#afcacc4449b15146e7d1d4140f0687d8e", null ],
-    [ "_fd", "classudmaio_1_1_uio_if.html#a2a9abc749581164881422f771d81e77c", null ],
-    [ "_fd_int", "classudmaio_1_1_uio_if.html#afb95a4e415ecce2ecf99bfd8baebc670", null ],
-    [ "_force_32bit", "classudmaio_1_1_uio_if.html#a5d831f0776a4f83ff3173dff4b15db93", null ],
-    [ "_mem", "classudmaio_1_1_uio_if.html#a9284f47ea82fd29ee29b3dfd9f465a73", null ],
-    [ "_region", "classudmaio_1_1_uio_if.html#a884e5d93ed89a07b4d2dc632de171ddf", null ],
-    [ "_skip_write_to_arm_int", "classudmaio_1_1_uio_if.html#a7d5c461e57baf52672442b1ef072209f", null ]
+    [ "_hw", "classudmaio_1_1_uio_if.html#a30f469bfd2aadc90b0af23405365c9d6", null ],
+    [ "_lg", "classudmaio_1_1_uio_if.html#a61bd7bbfdf570dabd2077c9af2cddf3f", null ]
 ];
