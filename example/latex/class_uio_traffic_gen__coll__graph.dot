@@ -12,7 +12,7 @@ digraph "UioTrafficGen"
   Node3 -> Node2 [dir="back",color="firebrick4",style="solid"];
   Node3 [label="boost::noncopyable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
   Node4 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" _hw" ];
-  Node4 [label="std::unique_ptr\< udmaio\l::HwAccessor \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node4 [label="std::shared_ptr\< HwAccessor \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
   Node5 -> Node4 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
   Node5 [label="udmaio::HwAccessor",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_hw_accessor.html",tooltip="Base class for hardware access."];
   Node6 -> Node5 [dir="back",color="steelblue1",style="solid"];

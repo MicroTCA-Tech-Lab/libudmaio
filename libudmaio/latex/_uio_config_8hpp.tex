@@ -17,11 +17,11 @@ struct \mbox{\hyperlink{structudmaio_1_1_uio_region}{udmaio\+::\+Uio\+Region}}
 class \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{udmaio\+::\+Uio\+Device\+Location}}
 \begin{DoxyCompactList}\small\item\em Holds information where a device can be found over both UIO and XDMA. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classudmaio_1_1_uio_config_base}{udmaio\+::\+Uio\+Config\+Base}}
-\begin{DoxyCompactList}\small\item\em Base class for Uio\+Device\+Info configuration. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Base class for \mbox{\hyperlink{classudmaio_1_1_hw_accessor}{Hw\+Accessor}} creation. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classudmaio_1_1_uio_config_uio}{udmaio\+::\+Uio\+Config\+Uio}}
-\begin{DoxyCompactList}\small\item\em Creates Uio\+Device\+Info from \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} (UIO version) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Creates \mbox{\hyperlink{classudmaio_1_1_hw_accessor}{Hw\+Accessor}} from \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} (UIO version) \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma}{udmaio\+::\+Uio\+Config\+Xdma}}
-\begin{DoxyCompactList}\small\item\em Creates Uio\+Device\+Info from \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} (XDMA version) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Creates \mbox{\hyperlink{classudmaio_1_1_hw_accessor}{Hw\+Accessor}} from \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} (XDMA version) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,7 +30,7 @@ namespace \mbox{\hyperlink{namespaceudmaio}{udmaio}}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-using \mbox{\hyperlink{namespaceudmaio_aa5fc64c7a76c962d8e65553ebbefb92d}{udmaio\+::\+Hw\+Accessor\+Ptr}} = std\+::unique\+\_\+ptr$<$ Hw\+Accessor $>$
+using \mbox{\hyperlink{namespaceudmaio_af23be0f90a70f4eed1e08987bac4f32e}{udmaio\+::\+Hw\+Accessor\+Ptr}} = std\+::shared\+\_\+ptr$<$ Hw\+Accessor $>$
 \end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}

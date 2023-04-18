@@ -28,7 +28,7 @@ var namespaceudmaio =
     [ "AxiDmaBlock", "namespaceudmaio.html#a681a7289ae1db6b3e4fdef3a0602ebff", null ],
     [ "bls", "namespaceudmaio.html#ac339aa8ef598624de4b25e29aeff7e19", null ],
     [ "boost_logger", "namespaceudmaio.html#a03d59114e0370739fb2989fedeed3ffc", null ],
-    [ "HwAccessorPtr", "namespaceudmaio.html#aa5fc64c7a76c962d8e65553ebbefb92d", null ],
+    [ "HwAccessorPtr", "namespaceudmaio.html#af23be0f90a70f4eed1e08987bac4f32e", null ],
     [ "RegAccessor", "namespaceudmaio.html#a05b519f65a300d1cd8f0c150fae1e71c", null ],
     [ "DmaMode", "namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080cec", [
       [ "XDMA", "namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080cecaf3dac949aa62d490afa1ac577a5fc028", null ],

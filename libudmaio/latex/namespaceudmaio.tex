@@ -40,11 +40,11 @@ class \mbox{\hyperlink{classudmaio_1_1_u_dma_buf}{UDma\+Buf}}
 class \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{Uio\+Axi\+Dma\+If}}
 \begin{DoxyCompactList}\small\item\em Interface to AXI DMA Core. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classudmaio_1_1_uio_config_base}{Uio\+Config\+Base}}
-\begin{DoxyCompactList}\small\item\em Base class for Uio\+Device\+Info configuration. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Base class for \mbox{\hyperlink{classudmaio_1_1_hw_accessor}{Hw\+Accessor}} creation. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classudmaio_1_1_uio_config_uio}{Uio\+Config\+Uio}}
-\begin{DoxyCompactList}\small\item\em Creates Uio\+Device\+Info from \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} (UIO version) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Creates \mbox{\hyperlink{classudmaio_1_1_hw_accessor}{Hw\+Accessor}} from \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} (UIO version) \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma}{Uio\+Config\+Xdma}}
-\begin{DoxyCompactList}\small\item\em Creates Uio\+Device\+Info from \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} (XDMA version) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Creates \mbox{\hyperlink{classudmaio_1_1_hw_accessor}{Hw\+Accessor}} from \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} (XDMA version) \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}}
 \begin{DoxyCompactList}\small\item\em Holds information where a device can be found over both UIO and XDMA. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}}
@@ -64,7 +64,7 @@ using \mbox{\hyperlink{namespaceudmaio_a03d59114e0370739fb2989fedeed3ffc}{boost\
 \begin{DoxyCompactList}\small\item\em Convenience wrapper for single (i.\+e. non-\/array) register. \end{DoxyCompactList}\item 
 using \mbox{\hyperlink{namespaceudmaio_a681a7289ae1db6b3e4fdef3a0602ebff}{Axi\+Dma\+Block}} = \mbox{\hyperlink{namespaceaxi__dma_adf82eb6346eaa5e00fb4a043f95c3f40}{axi\+\_\+dma\+::block}}$<$ \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{Reg\+Accessor\+Array}} $>$
 \item 
-using \mbox{\hyperlink{namespaceudmaio_aa5fc64c7a76c962d8e65553ebbefb92d}{Hw\+Accessor\+Ptr}} = std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classudmaio_1_1_hw_accessor}{Hw\+Accessor}} $>$
+using \mbox{\hyperlink{namespaceudmaio_af23be0f90a70f4eed1e08987bac4f32e}{Hw\+Accessor\+Ptr}} = std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classudmaio_1_1_hw_accessor}{Hw\+Accessor}} $>$
 \end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -103,11 +103,11 @@ std\+::ostream \& \mbox{\hyperlink{namespaceudmaio_ac25c553cf3256b7c5d7cd731d182
 \doxysubsubsection{\texorpdfstring{boost\_logger}{boost\_logger}}
 {\footnotesize\ttfamily using \mbox{\hyperlink{namespaceudmaio_a03d59114e0370739fb2989fedeed3ffc}{udmaio\+::boost\+\_\+logger}} = typedef boost\+::log\+::sources\+::severity\+\_\+channel\+\_\+logger\+\_\+mt$<$\mbox{\hyperlink{namespaceudmaio_ac339aa8ef598624de4b25e29aeff7e19}{bls}}, std\+::string$>$}
 
-\mbox{\Hypertarget{namespaceudmaio_aa5fc64c7a76c962d8e65553ebbefb92d}\label{namespaceudmaio_aa5fc64c7a76c962d8e65553ebbefb92d}} 
+\mbox{\Hypertarget{namespaceudmaio_af23be0f90a70f4eed1e08987bac4f32e}\label{namespaceudmaio_af23be0f90a70f4eed1e08987bac4f32e}} 
 \index{udmaio@{udmaio}!HwAccessorPtr@{HwAccessorPtr}}
 \index{HwAccessorPtr@{HwAccessorPtr}!udmaio@{udmaio}}
 \doxysubsubsection{\texorpdfstring{HwAccessorPtr}{HwAccessorPtr}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceudmaio_aa5fc64c7a76c962d8e65553ebbefb92d}{udmaio\+::\+Hw\+Accessor\+Ptr}} = typedef std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classudmaio_1_1_hw_accessor}{Hw\+Accessor}}$>$}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespaceudmaio_af23be0f90a70f4eed1e08987bac4f32e}{udmaio\+::\+Hw\+Accessor\+Ptr}} = typedef std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classudmaio_1_1_hw_accessor}{Hw\+Accessor}}$>$}
 
 \mbox{\Hypertarget{namespaceudmaio_a05b519f65a300d1cd8f0c150fae1e71c}\label{namespaceudmaio_a05b519f65a300d1cd8f0c150fae1e71c}} 
 \index{udmaio@{udmaio}!RegAccessor@{RegAccessor}}

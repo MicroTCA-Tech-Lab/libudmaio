@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Creates UioDeviceInfo from UioDeviceLocation (XDMA version)">
+<g id="a_node1"><a xlink:title="Creates HwAccessor from UioDeviceLocation (XDMA version)">
 <polygon fill="#999999" stroke="#666666" points="152.5,-19 32.5,-19 32.5,0 152.5,0 152.5,-19"/>
 <text text-anchor="middle" x="92.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio::UioConfigXdma</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classudmaio_1_1_uio_config_base.html" target="_top" xlink:title="Base class for UioDeviceInfo configuration.">
+<g id="a_node2"><a xlink:href="classudmaio_1_1_uio_config_base.html" target="_top" xlink:title="Base class for HwAccessor creation.">
 <polygon fill="white" stroke="#666666" points="117,-85 0,-85 0,-66 117,-66 117,-85"/>
 <text text-anchor="middle" x="58.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio::UioConfigBase</text>
 </a>

@@ -1,5 +1,5 @@
 <map id="udmaio::UioConfigBase" name="udmaio::UioConfigBase">
-<area shape="rect" id="node1" title="Base class for UioDeviceInfo configuration." alt="" coords="89,5,245,31"/>
-<area shape="rect" id="node2" href="$classudmaio_1_1_uio_config_uio.html" title="Creates UioDeviceInfo from UioDeviceLocation (UIO version)" alt="" coords="5,79,152,104"/>
-<area shape="rect" id="node3" href="$classudmaio_1_1_uio_config_xdma.html" title="Creates UioDeviceInfo from UioDeviceLocation (XDMA version)" alt="" coords="176,79,336,104"/>
+<area shape="rect" id="node1" title="Base class for HwAccessor creation." alt="" coords="89,5,245,31"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_config_uio.html" title="Creates HwAccessor from UioDeviceLocation (UIO version)" alt="" coords="5,79,152,104"/>
+<area shape="rect" id="node3" href="$classudmaio_1_1_uio_config_xdma.html" title="Creates HwAccessor from UioDeviceLocation (XDMA version)" alt="" coords="176,79,336,104"/>
 </map>

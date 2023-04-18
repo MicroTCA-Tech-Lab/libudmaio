@@ -9,7 +9,7 @@ digraph "udmaio::UioDeviceLocation"
   Node2 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" _link_cfg" ];
   Node2 [label="std::unique_ptr\< udmaio\l::UioConfigBase \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
   Node3 -> Node2 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
-  Node3 [label="udmaio::UioConfigBase",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_config_base.html",tooltip="Base class for UioDeviceInfo configuration."];
+  Node3 [label="udmaio::UioConfigBase",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_config_base.html",tooltip="Base class for HwAccessor creation."];
   Node4 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" uio_name\nxdma_evt_dev" ];
   Node4 [label="std::string",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
   Node5 -> Node4 [dir="back",color="steelblue1",style="solid"];

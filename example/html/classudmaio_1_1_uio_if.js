@@ -15,6 +15,6 @@ var classudmaio_1_1_uio_if =
     [ "reg_to_raw", "classudmaio_1_1_uio_if.html#a3b1e22f2824346e4b87fbf884de554eb", null ],
     [ "wait_for_interrupt", "classudmaio_1_1_uio_if.html#a7035fb19bfd190fe5b482d27cc528b0a", null ],
     [ "RegAccessorBase", "classudmaio_1_1_uio_if.html#a55fe8d02d0291443c9351b5be423747f", null ],
-    [ "_hw", "classudmaio_1_1_uio_if.html#a30f469bfd2aadc90b0af23405365c9d6", null ],
+    [ "_hw", "classudmaio_1_1_uio_if.html#ae470d46791fb4c678be3baf6a5095c7d", null ],
     [ "_lg", "classudmaio_1_1_uio_if.html#a61bd7bbfdf570dabd2077c9af2cddf3f", null ]
 ];

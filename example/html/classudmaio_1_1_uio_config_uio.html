@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('classudmaio_1_1_uio_config_uio.html','
 </div><!--header-->
 <div class="contents">
 
-<p>Creates UioDeviceInfo from <a class="el" href="classudmaio_1_1_uio_device_location.html" title="Holds information where a device can be found over both UIO and XDMA.">UioDeviceLocation</a> (UIO version)  
+<p>Creates <a class="el" href="classudmaio_1_1_hw_accessor.html" title="Base class for hardware access.">HwAccessor</a> from <a class="el" href="classudmaio_1_1_uio_device_location.html" title="Holds information where a device can be found over both UIO and XDMA.">UioDeviceLocation</a> (UIO version)  
  <a href="classudmaio_1_1_uio_config_uio.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_uio_config_8hpp_source.html">UioConfig.hpp</a>&gt;</code></p>
@@ -129,12 +129,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad07df0538d849b8ea02c67ee7e1b3575"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080cec">DmaMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_uio.html#ad07df0538d849b8ea02c67ee7e1b3575">mode</a> () override</td></tr>
 <tr class="memdesc:ad07df0538d849b8ea02c67ee7e1b3575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of physical connection to the <a class="el" href="classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces.">UioIf</a> object.  <a href="classudmaio_1_1_uio_config_uio.html#ad07df0538d849b8ea02c67ee7e1b3575">More...</a><br /></td></tr>
 <tr class="separator:ad07df0538d849b8ea02c67ee7e1b3575"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e347cfcc1e96c4c2bbed0a00ea62099"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceudmaio.html#aa5fc64c7a76c962d8e65553ebbefb92d">HwAccessorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_uio.html#a7e347cfcc1e96c4c2bbed0a00ea62099">hw_acc</a> (const <a class="el" href="classudmaio_1_1_uio_device_location.html">UioDeviceLocation</a> &amp;dev_loc) const override</td></tr>
+<tr class="memitem:a7e347cfcc1e96c4c2bbed0a00ea62099"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceudmaio.html#af23be0f90a70f4eed1e08987bac4f32e">HwAccessorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_uio.html#a7e347cfcc1e96c4c2bbed0a00ea62099">hw_acc</a> (const <a class="el" href="classudmaio_1_1_uio_device_location.html">UioDeviceLocation</a> &amp;dev_loc) const override</td></tr>
 <tr class="separator:a7e347cfcc1e96c4c2bbed0a00ea62099"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3662b6e5c9c2f391a9f02a54105d17d4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080cec">DmaMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_base.html#a3662b6e5c9c2f391a9f02a54105d17d4">mode</a> ()=0</td></tr>
 <tr class="memdesc:a3662b6e5c9c2f391a9f02a54105d17d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of physical connection to the <a class="el" href="classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces.">UioIf</a> object.  <a href="classudmaio_1_1_uio_config_base.html#a3662b6e5c9c2f391a9f02a54105d17d4">More...</a><br /></td></tr>
 <tr class="separator:a3662b6e5c9c2f391a9f02a54105d17d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6bcd672beec7afbab0c917164e8bf17"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceudmaio.html#aa5fc64c7a76c962d8e65553ebbefb92d">HwAccessorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_base.html#ae6bcd672beec7afbab0c917164e8bf17">hw_acc</a> (const <a class="el" href="classudmaio_1_1_uio_device_location.html">UioDeviceLocation</a> &amp;dev_loc) const =0</td></tr>
+<tr class="memitem:ae6bcd672beec7afbab0c917164e8bf17"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceudmaio.html#af23be0f90a70f4eed1e08987bac4f32e">HwAccessorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_base.html#ae6bcd672beec7afbab0c917164e8bf17">hw_acc</a> (const <a class="el" href="classudmaio_1_1_uio_device_location.html">UioDeviceLocation</a> &amp;dev_loc) const =0</td></tr>
 <tr class="separator:ae6bcd672beec7afbab0c917164e8bf17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
@@ -145,7 +145,7 @@ Static Private Member Functions</h2></td></tr>
 <tr class="separator:adce1eecf4e1271f76823374191eed627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Creates UioDeviceInfo from <a class="el" href="classudmaio_1_1_uio_device_location.html" title="Holds information where a device can be found over both UIO and XDMA.">UioDeviceLocation</a> (UIO version) </p>
+<div class="textblock"><p >Creates <a class="el" href="classudmaio_1_1_hw_accessor.html" title="Base class for hardware access.">HwAccessor</a> from <a class="el" href="classudmaio_1_1_uio_device_location.html" title="Holds information where a device can be found over both UIO and XDMA.">UioDeviceLocation</a> (UIO version) </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="adce1eecf4e1271f76823374191eed627" name="adce1eecf4e1271f76823374191eed627"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adce1eecf4e1271f76823374191eed627">&#9670;&#160;</a></span>_get_map_region()</h2>
@@ -219,7 +219,7 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceudmaio.html#aa5fc64c7a76c962d8e65553ebbefb92d">HwAccessorPtr</a> udmaio::UioConfigUio::hw_acc </td>
+          <td class="memname"><a class="el" href="namespaceudmaio.html#af23be0f90a70f4eed1e08987bac4f32e">HwAccessorPtr</a> udmaio::UioConfigUio::hw_acc </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classudmaio_1_1_uio_device_location.html">UioDeviceLocation</a> &amp;&#160;</td>
           <td class="paramname"><em>dev_loc</em></td><td>)</td>

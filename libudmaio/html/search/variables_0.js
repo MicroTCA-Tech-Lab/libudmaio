@@ -9,7 +9,7 @@ var searchData=
   ['_5ffd_6',['_fd',['../classudmaio_1_1_hw_accessor_mmap.html#ae4fd7d9ff21a903af787040ddc36fa91',1,'udmaio::HwAccessorMmap::_fd()'],['../classudmaio_1_1_u_dma_buf.html#a1456154b2dc5cbfcaf4497dfd91a198e',1,'udmaio::UDmaBuf::_fd()']]],
   ['_5ffd_5fint_7',['_fd_int',['../classudmaio_1_1_hw_accessor_xdma.html#af13a77bce91f00d58b1f0f0fa399f6d8',1,'udmaio::HwAccessorXdma']]],
   ['_5fhectare_5fpacked_8',['_HECTARE_PACKED',['../namespaceaxi__dma.html#a0f3cabf491713f846b85c3544b02fae6',1,'axi_dma']]],
-  ['_5fhw_9',['_hw',['../classudmaio_1_1_uio_if.html#a30f469bfd2aadc90b0af23405365c9d6',1,'udmaio::UioIf']]],
+  ['_5fhw_9',['_hw',['../classudmaio_1_1_uio_if.html#ae470d46791fb4c678be3baf6a5095c7d',1,'udmaio::UioIf']]],
   ['_5fif_10',['_if',['../classudmaio_1_1_reg_accessor_base.html#a4067a4efbfab68504bf00063b389eb93',1,'udmaio::RegAccessorBase']]],
   ['_5fiothread_11',['_ioThread',['../classudmaio_1_1_data_handler_sync.html#ac2229f46ef9580c91470316faf836276',1,'udmaio::DataHandlerSync']]],
   ['_5flg_12',['_lg',['../classudmaio_1_1_uio_if.html#a61bd7bbfdf570dabd2077c9af2cddf3f',1,'udmaio::UioIf::_lg()'],['../structudmaio_1_1_logger.html#a1779913e9d83c27fa0d7ea1ff056b403',1,'udmaio::Logger::_lg()']]],

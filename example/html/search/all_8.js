@@ -8,6 +8,6 @@ var searchData=
   ['hwaccessormmap_5',['HwAccessorMmap',['../classudmaio_1_1_hw_accessor_mmap.html#a7ee56bcd3c916bced224cbb9844ada3a',1,'udmaio::HwAccessorMmap::HwAccessorMmap()'],['../classudmaio_1_1_hw_accessor_mmap.html',1,'udmaio::HwAccessorMmap&lt; max_access_width_t &gt;']]],
   ['hwaccessormmap_3c_20uint64_5ft_20_3e_6',['HwAccessorMmap&lt; uint64_t &gt;',['../classudmaio_1_1_hw_accessor_mmap.html',1,'udmaio']]],
   ['hwaccessormock_7',['HwAccessorMock',['../classudmaio_1_1_hw_accessor_mock.html#ab2cb4b1ef325ed48edaf4812ae084d64',1,'udmaio::HwAccessorMock::HwAccessorMock()'],['../classudmaio_1_1_hw_accessor_mock.html',1,'udmaio::HwAccessorMock']]],
-  ['hwaccessorptr_8',['HwAccessorPtr',['../namespaceudmaio.html#aa5fc64c7a76c962d8e65553ebbefb92d',1,'udmaio']]],
+  ['hwaccessorptr_8',['HwAccessorPtr',['../namespaceudmaio.html#af23be0f90a70f4eed1e08987bac4f32e',1,'udmaio']]],
   ['hwaccessorxdma_9',['HwAccessorXdma',['../classudmaio_1_1_hw_accessor_xdma.html#a5546259c3bad3f88facb0ec91f6bcc4e',1,'udmaio::HwAccessorXdma::HwAccessorXdma()'],['../classudmaio_1_1_hw_accessor_xdma.html',1,'udmaio::HwAccessorXdma&lt; max_access_width_t &gt;']]]
 ];

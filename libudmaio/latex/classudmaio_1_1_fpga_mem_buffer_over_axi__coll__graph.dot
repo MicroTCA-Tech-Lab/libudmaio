@@ -14,7 +14,7 @@ digraph "udmaio::FpgaMemBufferOverAxi"
   Node4 [label="udmaio::UioIf",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_if.html",tooltip="Base class for UIO interfaces."];
   Node3 -> Node4 [dir="back",color="firebrick4",style="solid"];
   Node5 -> Node4 [dir="back",color="darkorchid3",style="dashed",label=" _hw" ];
-  Node5 [label="std::unique_ptr\< udmaio\l::HwAccessor \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node5 [label="std::shared_ptr\< HwAccessor \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
   Node6 -> Node5 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
   Node6 [label="udmaio::HwAccessor",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_hw_accessor.html",tooltip="Base class for hardware access."];
   Node7 -> Node6 [dir="back",color="steelblue1",style="solid"];

@@ -5,9 +5,9 @@ digraph "udmaio::UioConfigXdma"
   bgcolor="transparent";
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
-  Node1 [label="udmaio::UioConfigXdma",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Creates UioDeviceInfo from UioDeviceLocation (XDMA version)"];
+  Node1 [label="udmaio::UioConfigXdma",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Creates HwAccessor from UioDeviceLocation (XDMA version)"];
   Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
-  Node2 [label="udmaio::UioConfigBase",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_config_base.html",tooltip="Base class for UioDeviceInfo configuration."];
+  Node2 [label="udmaio::UioConfigBase",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_uio_config_base.html",tooltip="Base class for HwAccessor creation."];
   Node3 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" _xdma_path" ];
   Node3 [label="std::string",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
   Node4 -> Node3 [dir="back",color="steelblue1",style="solid"];
