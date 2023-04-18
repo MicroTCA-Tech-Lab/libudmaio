@@ -69,7 +69,7 @@ class UioDeviceLocation {
     operator HwAccessorPtr() const;
 };
 
-/// Base class for UioDeviceInfo configuration
+/// Base class for HwAccessor creation
 class UioConfigBase {
   public:
     /// @brief Mode of physical connection to the UioIf object
@@ -79,7 +79,7 @@ class UioConfigBase {
     virtual HwAccessorPtr hw_acc(const UioDeviceLocation& dev_loc) const = 0;
 };
 
-/// Creates UioDeviceInfo from UioDeviceLocation (UIO version)
+/// Creates HwAccessor from UioDeviceLocation (UIO version)
 class UioConfigUio : public UioConfigBase {
     static int _get_uio_number(std::string_view name);
     static UioRegion _get_map_region(int uio_number, int map_index);
@@ -90,7 +90,7 @@ class UioConfigUio : public UioConfigBase {
     HwAccessorPtr hw_acc(const UioDeviceLocation& dev_loc) const override;
 };
 
-/// Creates UioDeviceInfo from UioDeviceLocation (XDMA version)
+/// Creates HwAccessor from UioDeviceLocation (XDMA version)
 class UioConfigXdma : public UioConfigBase {
     std::string _xdma_path;
     uintptr_t _pcie_offs;
