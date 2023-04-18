@@ -7,7 +7,7 @@ import os
 import numpy as np
 import argparse
 
-from pyudmaio import UioDeviceLocation, ConfigUio, ConfigXdma, FpgaMemBufferOverAxi, FpgaMemBufferOverXdma
+from pyudmaio import UioDeviceLocation, ConfigUio, ConfigXdma, FpgaMemBufferOverXdma
 from pyudmaio import UDmaBuf, UioAxiDmaIf, UioMemSgdma, DataHandler
 from pyudmaio import LogLevel, set_logging_level
 from GpioStatus import GpioStatus
@@ -16,13 +16,16 @@ from TrafficGen import TrafficGen
 import ProjectConsts
 
 # Implements LFSR as described in "AXI Traffic Generator v3.0"
+
+
 class Lfsr(object):
     def __init__(self, seed):
         self.state = seed
 
     def advance(self):
         old_val = self.state
-        new_bit = 1 ^ (self.state) ^ (self.state >> 1) ^ (self.state >> 3) ^ (self.state >> 12)
+        new_bit = 1 ^ (self.state) ^ (self.state >> 1) ^ (
+            self.state >> 3) ^ (self.state >> 12)
         self.state = (new_bit << 15) | (self.state >> 1)
         self.state &= 0xffff
         return old_val
@@ -36,13 +39,14 @@ class LfsrChecker(object):
     def __init__(self, blk_len):
         self.lfsr = None
         self.blk_len = blk_len
-    
+
     def check(self, arr):
         if self.lfsr is None:
             self.lfsr = Lfsr(arr[0])
-        
+
         # Create vector of expected values
-        vfy = np.asarray([self.lfsr.advance() for n in range(len(arr) // self.blk_len)], dtype=np.uint16)
+        vfy = np.asarray([self.lfsr.advance() for n in range(
+            len(arr) // self.blk_len)], dtype=np.uint16)
 
         # Create matrix where rows are blocks of identical values
         arr = arr.reshape(-1, self.blk_len)
@@ -62,44 +66,44 @@ def main():
                         type=str,
                         default='zup',
                         help='Hardware (zup or z7io)'
-    )
+                        )
     parser.add_argument('-l', '--pkt_len',
                         type=int,
                         default=1024,
                         help='Packet length, default 1024'
-    )
+                        )
     parser.add_argument('-n', '--nr_pkts',
                         type=int,
                         default=1,
                         help='Number of packets, default 1'
-    )
+                        )
     parser.add_argument('-p', '--pkt_pause',
                         type=int,
                         default=10,
                         help='Pause between packets, default 10'
-    )
+                        )
     parser.add_argument('-d', '--dev_path',
                         type=str,
                         help='Path to xdma device nodes'
-    )
+                        )
     dma_mode = parser.add_mutually_exclusive_group(required=True)
     dma_mode.add_argument('-x', '--xdma',
-                           action='store_true',
-                           help='Use XDMA mode'
-    )
+                          action='store_true',
+                          help='Use XDMA mode'
+                          )
     dma_mode.add_argument('-u', '--uio',
-                           action='store_true',
-                           help='Use UIO mode'
-    )
+                          action='store_true',
+                          help='Use UIO mode'
+                          )
     log_lvl = parser.add_mutually_exclusive_group(required=False)
     log_lvl.add_argument('--debug',
                          action='store_true',
                          help='Enable verbose output (debug level)'
-    )
+                         )
     log_lvl.add_argument('--trace',
                          action='store_true',
                          help='Enable even more verbose output (trace level)'
-    )
+                         )
     args = parser.parse_args()
 
     if args.xdma and not args.dev_path:
@@ -117,27 +121,29 @@ def main():
         'zup': ProjectConsts.ZupExampleConsts,
         'z7io': ProjectConsts.Z7ioExampleConsts
     }[args.hardware.lower()]
-    
+
     if args.xdma:
-        UioDeviceLocation.set_link_xdma(args.dev_path, consts.PCIE_AXI4L_OFFSET, args.hardware.lower() == 'z7io')
+        UioDeviceLocation.set_link_xdma(
+            args.dev_path, consts.PCIE_AXI4L_OFFSET, args.hardware.lower() == 'z7io')
     else:
         UioDeviceLocation.set_link_axi()
 
-    g = GpioStatus(consts.AXI_GPIO_STATUS)
+    g = GpioStatus(consts.AXI_GPIO_STATUS.hw_acc())
     if not g.is_ddr4_init_calib_complete():
         raise RuntimeError('DDR4 init calib is not complete')
 
     print('Creating DMA handler')
 
-    axi_dma = UioAxiDmaIf(consts.AXI_DMA_0)
-    mem_sgdma = UioMemSgdma(consts.BRAM_CTRL_0)
+    axi_dma = UioAxiDmaIf(consts.AXI_DMA_0.hw_acc())
+    mem_sgdma = UioMemSgdma(consts.BRAM_CTRL_0.hw_acc())
     if args.xdma:
-        udmabuf = FpgaMemBufferOverXdma(args.dev_path, consts.FPGA_MEM_PHYS_ADDR)
+        udmabuf = FpgaMemBufferOverXdma(
+            args.dev_path, consts.FPGA_MEM_PHYS_ADDR)
     else:
         udmabuf = UDmaBuf()
-    
+
     data_handler = DataHandler(axi_dma, mem_sgdma, udmabuf)
-    traffic_gen = TrafficGen(consts.AXI_TRAFFIC_GEN_0)
+    traffic_gen = TrafficGen(consts.AXI_TRAFFIC_GEN_0.hw_acc())
 
     print('Starting DMA')
     NR_BUFFERS = 32
@@ -146,7 +152,7 @@ def main():
     print('Starting TrafficGen')
     traffic_gen.start(args.nr_pkts, args.pkt_len, args.pkt_pause)
 
-    checker = LfsrChecker(consts.LFSR_BYTES_PER_BEAT // 2) # 2 bytes per word
+    checker = LfsrChecker(consts.LFSR_BYTES_PER_BEAT // 2)  # 2 bytes per word
     words_total = 0
 
     while True:

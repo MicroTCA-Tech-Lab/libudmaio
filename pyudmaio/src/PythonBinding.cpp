@@ -13,7 +13,7 @@
 #include <pybind11/stl.h>
 
 #include "DataHandlerPython.hpp"
-#include "udmaio/FpgaMemBufferOverAxi.hpp"
+// #include "udmaio/FpgaMemBufferOverAxi.hpp"
 #include "udmaio/FpgaMemBufferOverXdma.hpp"
 #include "udmaio/Logging.hpp"
 #include "udmaio/UDmaBuf.hpp"
@@ -45,20 +45,6 @@ PYBIND11_MODULE(binding, m) {
         .def_readwrite("addr", &udmaio::UioRegion::addr)
         .def_readwrite("size", &udmaio::UioRegion::size);
 
-    py::class_<udmaio::UioDeviceInfo>(m, "UioDeviceInfo")
-        .def(py::init<std::string, std::string, udmaio::UioRegion, uintptr_t, bool>(),
-             py::arg("dev_path"),
-             py::arg("evt_path"),
-             py::arg("region"),
-             py::arg("mmap_offs"),
-             py::arg("force_32bit") = bool(false))
-        .def(py::init<udmaio::UioDeviceLocation>())
-        .def_readwrite("dev_path", &udmaio::UioDeviceInfo::dev_path)
-        .def_readwrite("evt_path", &udmaio::UioDeviceInfo::evt_path)
-        .def_readwrite("region", &udmaio::UioDeviceInfo::region)
-        .def_readwrite("mmap_offs", &udmaio::UioDeviceInfo::mmap_offs)
-        .def_readwrite("force_32bit", &udmaio::UioDeviceInfo::force_32bit);
-
     py::class_<udmaio::UioDeviceLocation>(m, "UioDeviceLocation")
         .def(py::init<std::string, udmaio::UioRegion, std::string>(),
              py::arg("uioname"),
@@ -68,24 +54,18 @@ PYBIND11_MODULE(binding, m) {
         .def_static("set_link_xdma", &udmaio::UioDeviceLocation::set_link_xdma)
         .def_readwrite("uio_name", &udmaio::UioDeviceLocation::uio_name)
         .def_readwrite("xdma_region", &udmaio::UioDeviceLocation::xdma_region)
-        .def_readwrite("xdma_evt_dev", &udmaio::UioDeviceLocation::xdma_evt_dev);
+        .def_readwrite("xdma_evt_dev", &udmaio::UioDeviceLocation::xdma_evt_dev)
+        .def("hw_acc", &udmaio::UioDeviceLocation::hw_acc);
 
-    py::implicitly_convertible<udmaio::UioDeviceLocation, udmaio::UioDeviceInfo>();
+    py::class_<udmaio::HwAccessor, std::shared_ptr<udmaio::HwAccessor>>(m, "HwAccessor");
 
-    py::class_<udmaio::UioConfigBase, std::shared_ptr<udmaio::UioConfigBase>>(m, "ConfigBase");
+    py::class_<udmaio::UioConfigBase, std::shared_ptr<udmaio::UioConfigBase>>(m, "ConfigBase")
+        .def("hw_acc", &udmaio::UioConfigBase::hw_acc);
 
     py::class_<udmaio::UioConfigUio, udmaio::UioConfigBase, std::shared_ptr<udmaio::UioConfigUio>>(
         m,
         "ConfigUio")
-        .def(py::init<>())
-        // We have to expose overloaded functions explicitly
-        .def(
-            "__call__",
-            static_cast<udmaio::UioDeviceInfo (udmaio::UioConfigUio::*)(udmaio::UioDeviceLocation)>(
-                &udmaio::UioConfigUio::operator()))
-        .def("__call__",
-             static_cast<udmaio::UioDeviceInfo (udmaio::UioConfigUio::*)(std::string)>(
-                 &udmaio::UioConfigUio::operator()));
+        .def(py::init<>());
 
     py::class_<udmaio::UioConfigXdma,
                udmaio::UioConfigBase,
@@ -93,21 +73,10 @@ PYBIND11_MODULE(binding, m) {
         .def(py::init<std::string, uintptr_t, bool>(),
              py::arg("xdma_path"),
              py::arg("pcie_offs"),
-             py::arg("x7_series_mode") = bool(false))
-        // We have to expose overloaded functions explicitly
-        .def("__call__",
-             static_cast<udmaio::UioDeviceInfo (udmaio::UioConfigXdma::*)(
-                 udmaio::UioDeviceLocation)>(&udmaio::UioConfigXdma::operator()))
-        .def("__call__",
-             static_cast<udmaio::UioDeviceInfo (udmaio::UioConfigXdma::*)(udmaio::UioRegion,
-                                                                          std::string)>(
-                 &udmaio::UioConfigXdma::operator()),
-             // We have to expose default arguments explicitly
-             py::arg("dev_region"),
-             py::arg("evt_dev") = "");
+             py::arg("x7_series_mode") = bool(false));
 
     py::class_<udmaio::UioIf, UioIf_PyOverrideHelper, std::shared_ptr<udmaio::UioIf>>(m, "UioIf")
-        .def(py::init<std::string, udmaio::UioDeviceInfo>())
+        .def(py::init<std::string, udmaio::HwAccessorPtr>())
         .def("_rd32", &UioIf_PyPublishHelper::_rd32)
         .def("_wr32", &UioIf_PyPublishHelper::_wr32)
         .def("arm_interrupt", &UioIf_PyPublishHelper::arm_interrupt)
@@ -119,11 +88,13 @@ PYBIND11_MODULE(binding, m) {
         .def("get_phys_addr", &udmaio::DmaBufferAbstract::get_phys_addr)
         .def("get_phys_size", &udmaio::DmaBufferAbstract::get_phys_size);
 
+#if 0  // FIXME
     py::class_<udmaio::FpgaMemBufferOverAxi,
                udmaio::DmaBufferAbstract,
                udmaio::UioIf,
                std::shared_ptr<udmaio::FpgaMemBufferOverAxi>>(m, "FpgaMemBufferOverAxi")
-        .def(py::init<udmaio::UioDeviceInfo>());
+        .def(py::init<udmaio::HwAccessorPtr>());
+#endif
 
     py::class_<udmaio::FpgaMemBufferOverXdma,
                udmaio::DmaBufferAbstract,
@@ -138,12 +109,12 @@ PYBIND11_MODULE(binding, m) {
     py::class_<udmaio::UioAxiDmaIf, udmaio::UioIf, std::shared_ptr<udmaio::UioAxiDmaIf>>(
         m,
         "UioAxiDmaIf")
-        .def(py::init<udmaio::UioDeviceInfo>());
+        .def(py::init<udmaio::HwAccessorPtr>());
 
     py::class_<udmaio::UioMemSgdma, udmaio::UioIf, std::shared_ptr<udmaio::UioMemSgdma>>(
         m,
         "UioMemSgdma")
-        .def(py::init<udmaio::UioDeviceInfo>())
+        .def(py::init<udmaio::HwAccessorPtr>())
         .def("print_descs", &udmaio::UioMemSgdma::print_descs);
 
     py::class_<udmaio::DataHandlerPython> data_handler(m, "DataHandler");
