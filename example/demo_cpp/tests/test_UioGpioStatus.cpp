@@ -7,12 +7,9 @@
 #include <boost/test/unit_test.hpp>
 
 BOOST_AUTO_TEST_CASE(UioGpioStatus_readback) {
-    udmaio::HwAccessorPtr mock_hw_inst = std::make_unique<udmaio::HwAccessorMock>(4096);
+    udmaio::HwAccessorPtr mock_hw = std::make_shared<udmaio::HwAccessorMock>(4096);
 
-    // Save raw pointer for manipulation - this is safe as long as the UioIf instance is in scope
-    auto mock_hw = mock_hw_inst.get();
-
-    auto gpio_stat = UioGpioStatus(std::move(mock_hw_inst));
+    auto gpio_stat = UioGpioStatus(mock_hw);
     gpio_stat.enable_debug(true);
 
     mock_hw->_wr32(0, 0);

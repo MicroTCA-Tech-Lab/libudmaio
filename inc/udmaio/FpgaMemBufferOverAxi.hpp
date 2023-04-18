@@ -25,7 +25,7 @@ namespace udmaio {
 /// DMA data buffer accessed over AXI/UIO, described w/ explicit address & size
 class FpgaMemBufferOverAxi : public DmaBufferAbstract, public UioIf {
   public:
-    FpgaMemBufferOverAxi(HwAccessorPtr hw) : UioIf("FpgaMemBufferOverAxi", std::move(hw)) {}
+    FpgaMemBufferOverAxi(HwAccessorPtr hw) : UioIf("FpgaMemBufferOverAxi", hw) {}
 
     uintptr_t get_phys_addr() const override { return _region.addr; }
 

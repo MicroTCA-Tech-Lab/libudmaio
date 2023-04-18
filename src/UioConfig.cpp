@@ -151,7 +151,7 @@ HwAccessorPtr UioConfigUio::hw_acc(const UioDeviceLocation& dev_loc) const {
     if (uio_number < 0) {
         throw std::runtime_error("could not find a UIO device " + dev_name);
     }
-    return std::make_unique<HwAccessorAxi>(std::string{"/dev/uio"} + std::to_string(uio_number),
+    return std::make_shared<HwAccessorAxi>(std::string{"/dev/uio"} + std::to_string(uio_number),
                                            _get_map_region(uio_number, map_index),
                                            static_cast<uintptr_t>(map_index * getpagesize()));
 }
@@ -165,13 +165,13 @@ HwAccessorPtr UioConfigXdma::hw_acc(const UioDeviceLocation& dev_loc) const {
         // "For 7 series Gen2 IP, PCIe access from the Host system must be limited to 1DW (4 Bytes)
         // transaction only." (see Xilinx pg195, page 10) If using direct access to the mmap()ed area (or a
         // regular memcpy), the CPU will issue larger transfers and the system will crash
-        return std::make_unique<HwAccessorXdma<uint32_t>>(
+        return std::make_shared<HwAccessorXdma<uint32_t>>(
             _xdma_path,
             dev_loc.xdma_evt_dev,
             UioRegion{dev_loc.xdma_region.addr, dev_loc.xdma_region.size},
             _pcie_offs);
     } else {
-        return std::make_unique<HwAccessorXdma<uint64_t>>(
+        return std::make_shared<HwAccessorXdma<uint64_t>>(
             _xdma_path,
             dev_loc.xdma_evt_dev,
             UioRegion{dev_loc.xdma_region.addr, dev_loc.xdma_region.size},

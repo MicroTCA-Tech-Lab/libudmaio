@@ -2,7 +2,7 @@
 
 namespace udmaio {
 
-UioIf::UioIf(std::string name, std::unique_ptr<HwAccessor> hw) : _hw{std::move(hw)}, _lg{_hw->_lg} {
+UioIf::UioIf(std::string name, HwAccessorPtr hw) : _hw{hw}, _lg{_hw->_lg} {
     _lg.channel(name);
 }
 

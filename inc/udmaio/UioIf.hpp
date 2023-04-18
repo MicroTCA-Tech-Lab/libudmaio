@@ -47,7 +47,7 @@ class UioIf : private boost::noncopyable {
     void enable_debug(bool enable);
 
   protected:
-    std::unique_ptr<HwAccessor> _hw;
+    HwAccessorPtr _hw;
     boost_logger& _lg;
 
     template <typename C, typename = std::enable_if_t<(sizeof(C) == 4)>>

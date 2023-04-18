@@ -20,7 +20,7 @@
 namespace udmaio {
 
 class HwAccessor;
-using HwAccessorPtr = std::unique_ptr<HwAccessor>;
+using HwAccessorPtr = std::shared_ptr<HwAccessor>;
 
 /// DMA access mode
 enum class DmaMode {
