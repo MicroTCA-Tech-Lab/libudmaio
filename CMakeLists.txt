@@ -15,8 +15,6 @@ file(GLOB SOURCES "src/*.cpp")
 
 add_library(udmaio SHARED ${SOURCES})
 target_include_directories(udmaio PUBLIC inc)
-file(GLOB UDMAIO_PUBLIC_HEADERS "inc/udmaio/*.hpp")
-set_target_properties(udmaio PROPERTIES PUBLIC_HEADER "${UDMAIO_PUBLIC_HEADERS}")
 target_link_libraries(udmaio Boost::log Boost::program_options Boost::dynamic_linking)
 target_compile_options(udmaio PRIVATE -Wall -Wextra -Wno-packed-bitfield-compat -Wno-missing-field-initializers -Wno-psabi -O2)
 set_target_properties(udmaio PROPERTIES VERSION ${PROJECT_VERSION})
@@ -39,11 +37,17 @@ write_basic_package_version_file(
     COMPATIBILITY SameMajorVersion
 )
     
-install(TARGETS udmaio
-    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/udmaio
+install(
+    TARGETS udmaio
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
-install(FILES
+install(
+    DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/inc/udmaio"
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+    COMPONENT dev
+)
+install(
+    FILES
     "${CMAKE_CURRENT_BINARY_DIR}/udmaio-config.cmake"
     "${CMAKE_CURRENT_BINARY_DIR}/udmaio-config-version.cmake"
     DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/udmaio"
