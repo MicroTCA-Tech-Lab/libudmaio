@@ -15,7 +15,7 @@ file(GLOB SOURCES "src/*.cpp")
 
 add_library(udmaio SHARED ${SOURCES})
 target_include_directories(udmaio PUBLIC inc)
-target_link_libraries(udmaio Boost::log Boost::program_options Boost::dynamic_linking)
+target_link_libraries(udmaio Boost::log Boost::dynamic_linking)
 target_compile_options(udmaio PRIVATE -Wall -Wextra -Wno-packed-bitfield-compat -Wno-missing-field-initializers -Wno-psabi -O2)
 set_target_properties(udmaio PROPERTIES VERSION ${PROJECT_VERSION})
 if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16.0") 
