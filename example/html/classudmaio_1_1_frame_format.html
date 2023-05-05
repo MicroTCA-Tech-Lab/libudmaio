@@ -100,6 +100,7 @@ $(document).ready(function(){initNavTree('classudmaio_1_1_frame_format.html','')
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
@@ -120,10 +121,16 @@ Inheritance diagram for udmaio::FrameFormat:</div>
 <div class="dynheader">
 Collaboration diagram for udmaio::FrameFormat:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classudmaio_1_1_frame_format__coll__graph.svg" width="310" height="331"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classudmaio_1_1_frame_format__coll__graph.svg" width="100%" height="435"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structudmaio_1_1_frame_format_1_1dim__t.html">dim_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame dimensions.  <a href="structudmaio_1_1_frame_format_1_1dim__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a3509f5d9dfb0173e03ac870041c5db07"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a> : uint32_t { <br />
@@ -188,36 +195,34 @@ Public Types</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a33c5553c8ca80b559c948e252081e8b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a33c5553c8ca80b559c948e252081e8b7">FrameFormat</a> ()</td></tr>
 <tr class="separator:a33c5553c8ca80b559c948e252081e8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a236ad96e224a01ade8a9515e08e2f46c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a236ad96e224a01ade8a9515e08e2f46c">setFormat</a> (uint16_t width, uint16_t height, uint16_t bytes_per_pixel, uint8_t word_width)</td></tr>
-<tr class="memdesc:a236ad96e224a01ade8a9515e08e2f46c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set format of the frames used for the video stream.  <a href="classudmaio_1_1_frame_format.html#a236ad96e224a01ade8a9515e08e2f46c">More...</a><br /></td></tr>
-<tr class="separator:a236ad96e224a01ade8a9515e08e2f46c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a772acea32bd2ec24be15fa49116ac454"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a772acea32bd2ec24be15fa49116ac454">setFormat</a> (uint16_t width, uint16_t height, std::string pixFmt, uint8_t word_width)</td></tr>
-<tr class="memdesc:a772acea32bd2ec24be15fa49116ac454"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set format of the frames used for the video stream.  <a href="classudmaio_1_1_frame_format.html#a772acea32bd2ec24be15fa49116ac454">More...</a><br /></td></tr>
-<tr class="separator:a772acea32bd2ec24be15fa49116ac454"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65132cfae20178ad3bf2adcb504bac0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a65132cfae20178ad3bf2adcb504bac0c">setFormat</a> (uint16_t width, uint16_t height, <a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a> pixFmt, uint8_t word_width)</td></tr>
-<tr class="memdesc:a65132cfae20178ad3bf2adcb504bac0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set format of the frames used for the video stream.  <a href="classudmaio_1_1_frame_format.html#a65132cfae20178ad3bf2adcb504bac0c">More...</a><br /></td></tr>
-<tr class="separator:a65132cfae20178ad3bf2adcb504bac0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5011c6ba729327f54629b133f629ccf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a5011c6ba729327f54629b133f629ccf6">setFormat</a> (uint16_t width, uint16_t height)</td></tr>
-<tr class="memdesc:a5011c6ba729327f54629b133f629ccf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set format of the frames used for the video stream, pixel format is untouched.  <a href="classudmaio_1_1_frame_format.html#a5011c6ba729327f54629b133f629ccf6">More...</a><br /></td></tr>
-<tr class="separator:a5011c6ba729327f54629b133f629ccf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac42d926e6a1e2f132f0dcda3ff490358"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#ac42d926e6a1e2f132f0dcda3ff490358">setFormat</a> (uint16_t bytes_per_pix)</td></tr>
-<tr class="memdesc:ac42d926e6a1e2f132f0dcda3ff490358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set format of the frames used for the video stream, frame dimensions are not touched.  <a href="classudmaio_1_1_frame_format.html#ac42d926e6a1e2f132f0dcda3ff490358">More...</a><br /></td></tr>
-<tr class="separator:ac42d926e6a1e2f132f0dcda3ff490358"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2769f71e9d3d40257d55566606f02733"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a2769f71e9d3d40257d55566606f02733">setFormat</a> (<a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a> pixFmt)</td></tr>
-<tr class="memdesc:a2769f71e9d3d40257d55566606f02733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set format of the frames used for the video stream, frame dimensions are not touched.  <a href="classudmaio_1_1_frame_format.html#a2769f71e9d3d40257d55566606f02733">More...</a><br /></td></tr>
-<tr class="separator:a2769f71e9d3d40257d55566606f02733"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62a9a1292ef4572b50bd583da77c489d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a62a9a1292ef4572b50bd583da77c489d">setFormat</a> (uint8_t word_width)</td></tr>
-<tr class="memdesc:a62a9a1292ef4572b50bd583da77c489d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set format of the frames used for the video stream, frame dimensions are not touched.  <a href="classudmaio_1_1_frame_format.html#a62a9a1292ef4572b50bd583da77c489d">More...</a><br /></td></tr>
-<tr class="separator:a62a9a1292ef4572b50bd583da77c489d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cfbd3d68c809eb49f511458bfd16641"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a7cfbd3d68c809eb49f511458bfd16641">toPixFormat</a> (std::string pixFrmt)</td></tr>
-<tr class="memdesc:a7cfbd3d68c809eb49f511458bfd16641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selets a pixel format by the given name.  <a href="classudmaio_1_1_frame_format.html#a7cfbd3d68c809eb49f511458bfd16641">More...</a><br /></td></tr>
-<tr class="separator:a7cfbd3d68c809eb49f511458bfd16641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab341989db71cb4e346a0389881410abb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#ab341989db71cb4e346a0389881410abb">set_format</a> (<a class="el" href="structudmaio_1_1_frame_format_1_1dim__t.html">dim_t</a> dim, uint16_t bytes_per_pixel, uint8_t word_width)</td></tr>
+<tr class="memdesc:ab341989db71cb4e346a0389881410abb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set format of the frames used for the video stream.  <a href="classudmaio_1_1_frame_format.html#ab341989db71cb4e346a0389881410abb">More...</a><br /></td></tr>
+<tr class="separator:ab341989db71cb4e346a0389881410abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf4da0b3a7a54e2d30c28626130af6e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#aaf4da0b3a7a54e2d30c28626130af6e7">set_format</a> (<a class="el" href="structudmaio_1_1_frame_format_1_1dim__t.html">dim_t</a> dim, std::string pix_fmt, uint8_t word_width)</td></tr>
+<tr class="memdesc:aaf4da0b3a7a54e2d30c28626130af6e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set format of the frames used for the video stream.  <a href="classudmaio_1_1_frame_format.html#aaf4da0b3a7a54e2d30c28626130af6e7">More...</a><br /></td></tr>
+<tr class="separator:aaf4da0b3a7a54e2d30c28626130af6e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86db6f7b1339591a8bd5f63bc4c4dbba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a86db6f7b1339591a8bd5f63bc4c4dbba">set_format</a> (<a class="el" href="structudmaio_1_1_frame_format_1_1dim__t.html">dim_t</a> dim, <a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a> pix_fmt, uint8_t word_width)</td></tr>
+<tr class="memdesc:a86db6f7b1339591a8bd5f63bc4c4dbba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set format of the frames used for the video stream.  <a href="classudmaio_1_1_frame_format.html#a86db6f7b1339591a8bd5f63bc4c4dbba">More...</a><br /></td></tr>
+<tr class="separator:a86db6f7b1339591a8bd5f63bc4c4dbba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad804599410dd6a0208d254870c818a54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#ad804599410dd6a0208d254870c818a54">set_format</a> (<a class="el" href="structudmaio_1_1_frame_format_1_1dim__t.html">dim_t</a> dim)</td></tr>
+<tr class="memdesc:ad804599410dd6a0208d254870c818a54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set format of the frames used for the video stream, pixel format is untouched.  <a href="classudmaio_1_1_frame_format.html#ad804599410dd6a0208d254870c818a54">More...</a><br /></td></tr>
+<tr class="separator:ad804599410dd6a0208d254870c818a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a912825f90371c52d85fb7397378ad380"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a912825f90371c52d85fb7397378ad380">set_format</a> (uint16_t bytes_per_pix)</td></tr>
+<tr class="memdesc:a912825f90371c52d85fb7397378ad380"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set format of the frames used for the video stream, frame dimensions are not touched.  <a href="classudmaio_1_1_frame_format.html#a912825f90371c52d85fb7397378ad380">More...</a><br /></td></tr>
+<tr class="separator:a912825f90371c52d85fb7397378ad380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5faedf3f6edacc549b34d21f56056a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#aa5faedf3f6edacc549b34d21f56056a9">set_format</a> (<a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a> pix_fmt)</td></tr>
+<tr class="memdesc:aa5faedf3f6edacc549b34d21f56056a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set format of the frames used for the video stream, frame dimensions are not touched.  <a href="classudmaio_1_1_frame_format.html#aa5faedf3f6edacc549b34d21f56056a9">More...</a><br /></td></tr>
+<tr class="separator:aa5faedf3f6edacc549b34d21f56056a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadaae6cb5e7a5295c2abd15ab7e49f14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#aadaae6cb5e7a5295c2abd15ab7e49f14">set_format</a> (uint8_t word_width)</td></tr>
+<tr class="memdesc:aadaae6cb5e7a5295c2abd15ab7e49f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set format of the frames used for the video stream, frame dimensions are not touched.  <a href="classudmaio_1_1_frame_format.html#aadaae6cb5e7a5295c2abd15ab7e49f14">More...</a><br /></td></tr>
+<tr class="separator:aadaae6cb5e7a5295c2abd15ab7e49f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acacda65b8b86474bb9ba4fdd4eb48089"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#acacda65b8b86474bb9ba4fdd4eb48089">toPixFormat</a> (std::string pix_fmt)</td></tr>
+<tr class="memdesc:acacda65b8b86474bb9ba4fdd4eb48089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selets a pixel format by the given name.  <a href="classudmaio_1_1_frame_format.html#acacda65b8b86474bb9ba4fdd4eb48089">More...</a><br /></td></tr>
+<tr class="separator:acacda65b8b86474bb9ba4fdd4eb48089"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba52ceab553b0bc44239b44fb22acc5d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#aba52ceab553b0bc44239b44fb22acc5d">toString</a> ()</td></tr>
 <tr class="separator:aba52ceab553b0bc44239b44fb22acc5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba2d2f84548d5c948521f11fc76f8260"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#aba2d2f84548d5c948521f11fc76f8260">get_pixel</a> ()</td></tr>
-<tr class="separator:aba2d2f84548d5c948521f11fc76f8260"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cdad8e259456e3d21df3cd8b7d15950"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a7cdad8e259456e3d21df3cd8b7d15950">get_lines</a> ()</td></tr>
-<tr class="separator:a7cdad8e259456e3d21df3cd8b7d15950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb86802113472573042a8aa5f7c9b060"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structudmaio_1_1_frame_format_1_1dim__t.html">dim_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#adb86802113472573042a8aa5f7c9b060">get_dim</a> ()</td></tr>
+<tr class="separator:adb86802113472573042a8aa5f7c9b060"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebc870e41cc088822b2e4e787f9082a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#aebc870e41cc088822b2e4e787f9082a0">get_pixel_format</a> ()</td></tr>
 <tr class="separator:aebc870e41cc088822b2e4e787f9082a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af25ebe73d42fa4355ce5260171e5de60"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#af25ebe73d42fa4355ce5260171e5de60">get_bytes_per_pixel</a> ()</td></tr>
@@ -240,31 +245,33 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a6b616241bc68a27931e8b4910d6c3da6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a6b616241bc68a27931e8b4910d6c3da6">update_frm_dim</a> (uint16_t width, uint16_t height)</td></tr>
-<tr class="separator:a6b616241bc68a27931e8b4910d6c3da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8135a2a3104d9edb2d6934840fea7880"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a8135a2a3104d9edb2d6934840fea7880">update_frm_dim</a> (<a class="el" href="structudmaio_1_1_frame_format_1_1dim__t.html">dim_t</a> dim)</td></tr>
+<tr class="separator:a8135a2a3104d9edb2d6934840fea7880"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9aa449c52578904b6b8b4509911ce71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#aa9aa449c52578904b6b8b4509911ce71">update_bpp</a> (uint16_t bytes_per_pix)</td></tr>
 <tr class="separator:aa9aa449c52578904b6b8b4509911ce71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac49d915c2111a7b4142db437e40ff45d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#ac49d915c2111a7b4142db437e40ff45d">update_px_fmt</a> (<a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a> pixFmt)</td></tr>
-<tr class="separator:ac49d915c2111a7b4142db437e40ff45d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe86bf67ef49e3fa64314cad1b7e4771"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#afe86bf67ef49e3fa64314cad1b7e4771">update_px_fmt</a> (<a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a> pix_fmt)</td></tr>
+<tr class="separator:afe86bf67ef49e3fa64314cad1b7e4771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af25cb5651410780ff69b96a05447f113"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#af25cb5651410780ff69b96a05447f113">update_hsize</a> ()</td></tr>
 <tr class="separator:af25cb5651410780ff69b96a05447f113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a685c9d69b2250c3867722d59d1390328"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a685c9d69b2250c3867722d59d1390328">pixel</a></td></tr>
-<tr class="separator:a685c9d69b2250c3867722d59d1390328"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaed1598bdafc9c2e80161902125e0bcc"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#aaed1598bdafc9c2e80161902125e0bcc">lines</a></td></tr>
-<tr class="separator:aaed1598bdafc9c2e80161902125e0bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affa336bcc3556dac7513c51aa55630b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#affa336bcc3556dac7513c51aa55630b7">pxFmt</a></td></tr>
-<tr class="separator:affa336bcc3556dac7513c51aa55630b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a388121769aae9a44fa329e09f52b593e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a388121769aae9a44fa329e09f52b593e">bpp</a></td></tr>
-<tr class="separator:a388121769aae9a44fa329e09f52b593e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0359ee5e4ef678f98636f6d3e103ed20"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a0359ee5e4ef678f98636f6d3e103ed20">data_width</a></td></tr>
-<tr class="separator:a0359ee5e4ef678f98636f6d3e103ed20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a114de06fc1404c029477b8732d6fce46"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a114de06fc1404c029477b8732d6fce46">pix_per_word</a></td></tr>
-<tr class="separator:a114de06fc1404c029477b8732d6fce46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1f030a579d1343745d61b336a002e78"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#ad1f030a579d1343745d61b336a002e78">hsize</a></td></tr>
-<tr class="separator:ad1f030a579d1343745d61b336a002e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab13cfe6639cdcecd204a9158d2eceec1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structudmaio_1_1_frame_format_1_1dim__t.html">dim_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#ab13cfe6639cdcecd204a9158d2eceec1">_dim</a></td></tr>
+<tr class="separator:ab13cfe6639cdcecd204a9158d2eceec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe566be3949b3de67ba92d23ce00573c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#abe566be3949b3de67ba92d23ce00573c">_pix_fmt</a></td></tr>
+<tr class="memdesc:abe566be3949b3de67ba92d23ce00573c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pixel format.  <a href="classudmaio_1_1_frame_format.html#abe566be3949b3de67ba92d23ce00573c">More...</a><br /></td></tr>
+<tr class="separator:abe566be3949b3de67ba92d23ce00573c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1ee4b7bf2ef3688eacfadc29e96da4e"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#ab1ee4b7bf2ef3688eacfadc29e96da4e">_bpp</a></td></tr>
+<tr class="memdesc:ab1ee4b7bf2ef3688eacfadc29e96da4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes per pixel.  <a href="classudmaio_1_1_frame_format.html#ab1ee4b7bf2ef3688eacfadc29e96da4e">More...</a><br /></td></tr>
+<tr class="separator:ab1ee4b7bf2ef3688eacfadc29e96da4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b7bf9c6406053d1f6314eea02a3939"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#a95b7bf9c6406053d1f6314eea02a3939">_word_width</a></td></tr>
+<tr class="memdesc:a95b7bf9c6406053d1f6314eea02a3939"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of bytes per data word used by the dma.  <a href="classudmaio_1_1_frame_format.html#a95b7bf9c6406053d1f6314eea02a3939">More...</a><br /></td></tr>
+<tr class="separator:a95b7bf9c6406053d1f6314eea02a3939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8ddffa8f8730c9a8762cd96f6e40c7d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#af8ddffa8f8730c9a8762cd96f6e40c7d">_pix_per_word</a></td></tr>
+<tr class="separator:af8ddffa8f8730c9a8762cd96f6e40c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0abe561f3edc308e2decc1f9a7b37d4"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html#aa0abe561f3edc308e2decc1f9a7b37d4">_hsize</a></td></tr>
+<tr class="memdesc:aa0abe561f3edc308e2decc1f9a7b37d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Line length in bytes.  <a href="classudmaio_1_1_frame_format.html#aa0abe561f3edc308e2decc1f9a7b37d4">More...</a><br /></td></tr>
+<tr class="separator:aa0abe561f3edc308e2decc1f9a7b37d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -403,6 +410,23 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="adb86802113472573042a8aa5f7c9b060" name="adb86802113472573042a8aa5f7c9b060"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb86802113472573042a8aa5f7c9b060">&#9670;&#160;</a></span>get_dim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structudmaio_1_1_frame_format_1_1dim__t.html">dim_t</a> udmaio::FrameFormat::get_dim </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ada6c3fd3064eb873952929c5e45178c5" name="ada6c3fd3064eb873952929c5e45178c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ada6c3fd3064eb873952929c5e45178c5">&#9670;&#160;</a></span>get_frm_size()</h2>
 
@@ -428,40 +452,6 @@ Additional Inherited Members</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">uint16_t udmaio::FrameFormat::get_hsize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7cdad8e259456e3d21df3cd8b7d15950" name="a7cdad8e259456e3d21df3cd8b7d15950"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cdad8e259456e3d21df3cd8b7d15950">&#9670;&#160;</a></span>get_lines()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t udmaio::FrameFormat::get_lines </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aba2d2f84548d5c948521f11fc76f8260" name="aba2d2f84548d5c948521f11fc76f8260"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba2d2f84548d5c948521f11fc76f8260">&#9670;&#160;</a></span>get_pixel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t udmaio::FrameFormat::get_pixel </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -522,80 +512,18 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a2769f71e9d3d40257d55566606f02733" name="a2769f71e9d3d40257d55566606f02733"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2769f71e9d3d40257d55566606f02733">&#9670;&#160;</a></span>setFormat() <span class="overload">[1/7]</span></h2>
+<a id="ad804599410dd6a0208d254870c818a54" name="ad804599410dd6a0208d254870c818a54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad804599410dd6a0208d254870c818a54">&#9670;&#160;</a></span>set_format() <span class="overload">[1/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void udmaio::FrameFormat::setFormat </td>
+          <td class="memname">void udmaio::FrameFormat::set_format </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a>&#160;</td>
-          <td class="paramname"><em>pixFmt</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structudmaio_1_1_frame_format_1_1dim__t.html">dim_t</a>&#160;</td>
+          <td class="paramname"><em>dim</em></td><td>)</td>
           <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set format of the frames used for the video stream, frame dimensions are not touched. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pixFmt</td><td>Pixel format, will be used to set bytes per pixel value </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ac42d926e6a1e2f132f0dcda3ff490358" name="ac42d926e6a1e2f132f0dcda3ff490358"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac42d926e6a1e2f132f0dcda3ff490358">&#9670;&#160;</a></span>setFormat() <span class="overload">[2/7]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void udmaio::FrameFormat::setFormat </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>bytes_per_pix</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set format of the frames used for the video stream, frame dimensions are not touched. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bytes_per_pix</td><td>Number of bytes per pixel, pixel format will be set to unknown </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a5011c6ba729327f54629b133f629ccf6" name="a5011c6ba729327f54629b133f629ccf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5011c6ba729327f54629b133f629ccf6">&#9670;&#160;</a></span>setFormat() <span class="overload">[3/7]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void udmaio::FrameFormat::setFormat </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>height</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -603,37 +531,30 @@ Additional Inherited Members</h2></td></tr>
 <p>Set format of the frames used for the video stream, pixel format is untouched. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">width</td><td>Width of the video frame (in pixel) </td></tr>
-    <tr><td class="paramname">height</td><td>Height of the video frame (in pixel) </td></tr>
+    <tr><td class="paramname">dim</td><td>Width and height of the video frame (in pixels) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a65132cfae20178ad3bf2adcb504bac0c" name="a65132cfae20178ad3bf2adcb504bac0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65132cfae20178ad3bf2adcb504bac0c">&#9670;&#160;</a></span>setFormat() <span class="overload">[4/7]</span></h2>
+<a id="a86db6f7b1339591a8bd5f63bc4c4dbba" name="a86db6f7b1339591a8bd5f63bc4c4dbba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86db6f7b1339591a8bd5f63bc4c4dbba">&#9670;&#160;</a></span>set_format() <span class="overload">[2/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void udmaio::FrameFormat::setFormat </td>
+          <td class="memname">void udmaio::FrameFormat::set_format </td>
           <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>height</em>, </td>
+          <td class="paramtype"><a class="el" href="structudmaio_1_1_frame_format_1_1dim__t.html">dim_t</a>&#160;</td>
+          <td class="paramname"><em>dim</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a>&#160;</td>
-          <td class="paramname"><em>pixFmt</em>, </td>
+          <td class="paramname"><em>pix_fmt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -652,8 +573,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Set format of the frames used for the video stream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">width</td><td>Width of the video frame (in pixel) </td></tr>
-    <tr><td class="paramname">height</td><td>Height of the video frame (in pixel) </td></tr>
+    <tr><td class="paramname">dim</td><td>Width and height of the video frame (in pixels) </td></tr>
     <tr><td class="paramname">pixFmt</td><td>Pixel format, will be used to set bytes per pixel value </td></tr>
     <tr><td class="paramname">word_width</td><td>Number of bytes per data word used by the dma </td></tr>
   </table>
@@ -662,29 +582,23 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a772acea32bd2ec24be15fa49116ac454" name="a772acea32bd2ec24be15fa49116ac454"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a772acea32bd2ec24be15fa49116ac454">&#9670;&#160;</a></span>setFormat() <span class="overload">[5/7]</span></h2>
+<a id="aaf4da0b3a7a54e2d30c28626130af6e7" name="aaf4da0b3a7a54e2d30c28626130af6e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf4da0b3a7a54e2d30c28626130af6e7">&#9670;&#160;</a></span>set_format() <span class="overload">[3/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void udmaio::FrameFormat::setFormat </td>
+          <td class="memname">void udmaio::FrameFormat::set_format </td>
           <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>height</em>, </td>
+          <td class="paramtype"><a class="el" href="structudmaio_1_1_frame_format_1_1dim__t.html">dim_t</a>&#160;</td>
+          <td class="paramname"><em>dim</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>pixFmt</em>, </td>
+          <td class="paramname"><em>pix_fmt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -703,8 +617,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Set format of the frames used for the video stream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">width</td><td>Width of the video frame (in pixel) </td></tr>
-    <tr><td class="paramname">height</td><td>Height of the video frame (in pixel) </td></tr>
+    <tr><td class="paramname">dim</td><td>Width and height of the video frame (in pixels) </td></tr>
     <tr><td class="paramname">pixFmt</td><td>Pixel format, will be used to set bytes per pixel value </td></tr>
     <tr><td class="paramname">word_width</td><td>Number of bytes per data word used by the dma </td></tr>
   </table>
@@ -713,23 +626,17 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a236ad96e224a01ade8a9515e08e2f46c" name="a236ad96e224a01ade8a9515e08e2f46c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a236ad96e224a01ade8a9515e08e2f46c">&#9670;&#160;</a></span>setFormat() <span class="overload">[6/7]</span></h2>
+<a id="ab341989db71cb4e346a0389881410abb" name="ab341989db71cb4e346a0389881410abb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab341989db71cb4e346a0389881410abb">&#9670;&#160;</a></span>set_format() <span class="overload">[4/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void udmaio::FrameFormat::setFormat </td>
+          <td class="memname">void udmaio::FrameFormat::set_format </td>
           <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>height</em>, </td>
+          <td class="paramtype"><a class="el" href="structudmaio_1_1_frame_format_1_1dim__t.html">dim_t</a>&#160;</td>
+          <td class="paramname"><em>dim</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -754,8 +661,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Set format of the frames used for the video stream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">width</td><td>Width of the video frame (in pixel) </td></tr>
-    <tr><td class="paramname">height</td><td>Height of the video frame (in pixel) </td></tr>
+    <tr><td class="paramname">dim</td><td>Width and height of the video frame (in pixels) </td></tr>
     <tr><td class="paramname">bytes_per_pix</td><td>Number of bytes per pixel, pixel format will be set to unknown </td></tr>
     <tr><td class="paramname">word_width</td><td>Number of bytes per data word used by the dma </td></tr>
   </table>
@@ -764,14 +670,66 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a62a9a1292ef4572b50bd583da77c489d" name="a62a9a1292ef4572b50bd583da77c489d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62a9a1292ef4572b50bd583da77c489d">&#9670;&#160;</a></span>setFormat() <span class="overload">[7/7]</span></h2>
+<a id="aa5faedf3f6edacc549b34d21f56056a9" name="aa5faedf3f6edacc549b34d21f56056a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5faedf3f6edacc549b34d21f56056a9">&#9670;&#160;</a></span>set_format() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void udmaio::FrameFormat::setFormat </td>
+          <td class="memname">void udmaio::FrameFormat::set_format </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a>&#160;</td>
+          <td class="paramname"><em>pix_fmt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set format of the frames used for the video stream, frame dimensions are not touched. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pixFmt</td><td>Pixel format, will be used to set bytes per pixel value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a912825f90371c52d85fb7397378ad380" name="a912825f90371c52d85fb7397378ad380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a912825f90371c52d85fb7397378ad380">&#9670;&#160;</a></span>set_format() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void udmaio::FrameFormat::set_format </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>bytes_per_pix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set format of the frames used for the video stream, frame dimensions are not touched. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bytes_per_pix</td><td>Number of bytes per pixel, pixel format will be set to unknown </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aadaae6cb5e7a5295c2abd15ab7e49f14" name="aadaae6cb5e7a5295c2abd15ab7e49f14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadaae6cb5e7a5295c2abd15ab7e49f14">&#9670;&#160;</a></span>set_format() <span class="overload">[7/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void udmaio::FrameFormat::set_format </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>word_width</em></td><td>)</td>
@@ -790,8 +748,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a7cfbd3d68c809eb49f511458bfd16641" name="a7cfbd3d68c809eb49f511458bfd16641"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cfbd3d68c809eb49f511458bfd16641">&#9670;&#160;</a></span>toPixFormat()</h2>
+<a id="acacda65b8b86474bb9ba4fdd4eb48089" name="acacda65b8b86474bb9ba4fdd4eb48089"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acacda65b8b86474bb9ba4fdd4eb48089">&#9670;&#160;</a></span>toPixFormat()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -800,7 +758,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname"><a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a> udmaio::FrameFormat::toPixFormat </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>pixFrmt</em></td><td>)</td>
+          <td class="paramname"><em>pix_fmt</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -809,7 +767,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Selets a pixel format by the given name. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pixFrmt</td><td>String containing the name of the pixel format </td></tr>
+    <tr><td class="paramname">pix_fmt</td><td>String containing the name of the pixel format </td></tr>
   </table>
   </dd>
 </dl>
@@ -859,8 +817,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a6b616241bc68a27931e8b4910d6c3da6" name="a6b616241bc68a27931e8b4910d6c3da6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b616241bc68a27931e8b4910d6c3da6">&#9670;&#160;</a></span>update_frm_dim()</h2>
+<a id="a8135a2a3104d9edb2d6934840fea7880" name="a8135a2a3104d9edb2d6934840fea7880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8135a2a3104d9edb2d6934840fea7880">&#9670;&#160;</a></span>update_frm_dim()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -871,19 +829,9 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void udmaio::FrameFormat::update_frm_dim </td>
           <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="structudmaio_1_1_frame_format_1_1dim__t.html">dim_t</a>&#160;</td>
+          <td class="paramname"><em>dim</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>height</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -920,8 +868,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ac49d915c2111a7b4142db437e40ff45d" name="ac49d915c2111a7b4142db437e40ff45d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac49d915c2111a7b4142db437e40ff45d">&#9670;&#160;</a></span>update_px_fmt()</h2>
+<a id="afe86bf67ef49e3fa64314cad1b7e4771" name="afe86bf67ef49e3fa64314cad1b7e4771"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe86bf67ef49e3fa64314cad1b7e4771">&#9670;&#160;</a></span>update_px_fmt()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -933,7 +881,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void udmaio::FrameFormat::update_px_fmt </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a>&#160;</td>
-          <td class="paramname"><em>pixFmt</em></td><td>)</td>
+          <td class="paramname"><em>pix_fmt</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -947,6 +895,122 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ab1ee4b7bf2ef3688eacfadc29e96da4e" name="ab1ee4b7bf2ef3688eacfadc29e96da4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1ee4b7bf2ef3688eacfadc29e96da4e">&#9670;&#160;</a></span>_bpp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t udmaio::FrameFormat::_bpp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bytes per pixel. </p>
+
+</div>
+</div>
+<a id="ab13cfe6639cdcecd204a9158d2eceec1" name="ab13cfe6639cdcecd204a9158d2eceec1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab13cfe6639cdcecd204a9158d2eceec1">&#9670;&#160;</a></span>_dim</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structudmaio_1_1_frame_format_1_1dim__t.html">dim_t</a> udmaio::FrameFormat::_dim</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa0abe561f3edc308e2decc1f9a7b37d4" name="aa0abe561f3edc308e2decc1f9a7b37d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0abe561f3edc308e2decc1f9a7b37d4">&#9670;&#160;</a></span>_hsize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t udmaio::FrameFormat::_hsize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Line length in bytes. </p>
+
+</div>
+</div>
+<a id="abe566be3949b3de67ba92d23ce00573c" name="abe566be3949b3de67ba92d23ce00573c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe566be3949b3de67ba92d23ce00573c">&#9670;&#160;</a></span>_pix_fmt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a> udmaio::FrameFormat::_pix_fmt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pixel format. </p>
+
+</div>
+</div>
+<a id="af8ddffa8f8730c9a8762cd96f6e40c7d" name="af8ddffa8f8730c9a8762cd96f6e40c7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8ddffa8f8730c9a8762cd96f6e40c7d">&#9670;&#160;</a></span>_pix_per_word</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t udmaio::FrameFormat::_pix_per_word</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2f28196b7829350f53cffb825130ff55" name="a2f28196b7829350f53cffb825130ff55"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f28196b7829350f53cffb825130ff55">&#9670;&#160;</a></span>_pxfmt_enum_to_str_tab</h2>
 
@@ -969,8 +1033,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a388121769aae9a44fa329e09f52b593e" name="a388121769aae9a44fa329e09f52b593e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a388121769aae9a44fa329e09f52b593e">&#9670;&#160;</a></span>bpp</h2>
+<a id="a95b7bf9c6406053d1f6314eea02a3939" name="a95b7bf9c6406053d1f6314eea02a3939"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95b7bf9c6406053d1f6314eea02a3939">&#9670;&#160;</a></span>_word_width</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -979,7 +1043,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t udmaio::FrameFormat::bpp</td>
+          <td class="memname">uint8_t udmaio::FrameFormat::_word_width</td>
         </tr>
       </table>
   </td>
@@ -989,137 +1053,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a0359ee5e4ef678f98636f6d3e103ed20" name="a0359ee5e4ef678f98636f6d3e103ed20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0359ee5e4ef678f98636f6d3e103ed20">&#9670;&#160;</a></span>data_width</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t udmaio::FrameFormat::data_width</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad1f030a579d1343745d61b336a002e78" name="ad1f030a579d1343745d61b336a002e78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1f030a579d1343745d61b336a002e78">&#9670;&#160;</a></span>hsize</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t udmaio::FrameFormat::hsize</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aaed1598bdafc9c2e80161902125e0bcc" name="aaed1598bdafc9c2e80161902125e0bcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaed1598bdafc9c2e80161902125e0bcc">&#9670;&#160;</a></span>lines</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t udmaio::FrameFormat::lines</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a114de06fc1404c029477b8732d6fce46" name="a114de06fc1404c029477b8732d6fce46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a114de06fc1404c029477b8732d6fce46">&#9670;&#160;</a></span>pix_per_word</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t udmaio::FrameFormat::pix_per_word</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a685c9d69b2250c3867722d59d1390328" name="a685c9d69b2250c3867722d59d1390328"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a685c9d69b2250c3867722d59d1390328">&#9670;&#160;</a></span>pixel</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t udmaio::FrameFormat::pixel</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="affa336bcc3556dac7513c51aa55630b7" name="affa336bcc3556dac7513c51aa55630b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affa336bcc3556dac7513c51aa55630b7">&#9670;&#160;</a></span>pxFmt</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classudmaio_1_1_frame_format.html#a3509f5d9dfb0173e03ac870041c5db07">PixelFormat</a> udmaio::FrameFormat::pxFmt</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Number of bytes per data word used by the dma. </p>
 
 </div>
 </div>

@@ -9,6 +9,7 @@ var hierarchy =
     ] ],
     [ "udmaio::ConcurrentQueue< T >", "classudmaio_1_1_concurrent_queue.html", null ],
     [ "udmaio::ConcurrentQueue< std::vector< uint8_t > >", "classudmaio_1_1_concurrent_queue.html", null ],
+    [ "udmaio::FrameFormat::dim_t", "structudmaio_1_1_frame_format_1_1dim__t.html", null ],
     [ "UioTrafficGen::ExtTrLength", "struct_uio_traffic_gen_1_1_ext_tr_length.html", null ],
     [ "UioGpioStatus::GpioData", "struct_uio_gpio_status_1_1_gpio_data.html", null ],
     [ "udmaio::Logger", "structudmaio_1_1_logger.html", [

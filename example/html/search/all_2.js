@@ -22,6 +22,5 @@ var searchData=
   ['block_19',['block',['../namespaceaxi__vdma.html#a4424aed034871033a023500e857dc774',1,'axi_vdma::block()'],['../namespaceaxi__dma.html#adf82eb6346eaa5e00fb4a043f95c3f40',1,'axi_dma::block()']]],
   ['block_5ftemplate_20',['block_template',['../structaxi__dma_1_1block__template.html',1,'axi_dma::block_template&lt; R_array_acc, R_acc_arg &gt;'],['../structaxi__vdma_1_1block__template.html',1,'axi_vdma::block_template&lt; R_array_acc, R_acc_arg &gt;'],['../structaxi__vdma_1_1block__template.html#af5afc9832acd425d7ae19a12d8a67173',1,'axi_vdma::block_template::block_template()'],['../structaxi__dma_1_1block__template.html#a053033be75233e467c81b80d073b21d5',1,'axi_dma::block_template::block_template()']]],
   ['bls_21',['bls',['../namespaceudmaio.html#ac339aa8ef598624de4b25e29aeff7e19',1,'udmaio']]],
-  ['boost_5flogger_22',['boost_logger',['../namespaceudmaio.html#a03d59114e0370739fb2989fedeed3ffc',1,'udmaio']]],
-  ['bpp_23',['bpp',['../classudmaio_1_1_frame_format.html#a388121769aae9a44fa329e09f52b593e',1,'udmaio::FrameFormat']]]
+  ['boost_5flogger_22',['boost_logger',['../namespaceudmaio.html#a03d59114e0370739fb2989fedeed3ffc',1,'udmaio']]]
 ];

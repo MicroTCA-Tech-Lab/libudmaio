@@ -12,6 +12,11 @@ Inheritance diagram for udmaio\+::Frame\+Format\+:
 
 Collaboration diagram for udmaio\+::Frame\+Format\+:
 % FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Frame dimensions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -76,27 +81,25 @@ enum class \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac87
 \item 
 \mbox{\hyperlink{classudmaio_1_1_frame_format_a33c5553c8ca80b559c948e252081e8b7}{Frame\+Format}} ()
 \item 
-void \mbox{\hyperlink{classudmaio_1_1_frame_format_a236ad96e224a01ade8a9515e08e2f46c}{set\+Format}} (uint16\+\_\+t width, uint16\+\_\+t height, uint16\+\_\+t bytes\+\_\+per\+\_\+pixel, uint8\+\_\+t word\+\_\+width)
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_ab341989db71cb4e346a0389881410abb}{set\+\_\+format}} (\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\+\_\+t}} dim, uint16\+\_\+t bytes\+\_\+per\+\_\+pixel, uint8\+\_\+t word\+\_\+width)
 \begin{DoxyCompactList}\small\item\em Set format of the frames used for the video stream. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classudmaio_1_1_frame_format_a772acea32bd2ec24be15fa49116ac454}{set\+Format}} (uint16\+\_\+t width, uint16\+\_\+t height, std\+::string pix\+Fmt, uint8\+\_\+t word\+\_\+width)
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_aaf4da0b3a7a54e2d30c28626130af6e7}{set\+\_\+format}} (\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\+\_\+t}} dim, std\+::string pix\+\_\+fmt, uint8\+\_\+t word\+\_\+width)
 \begin{DoxyCompactList}\small\item\em Set format of the frames used for the video stream. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classudmaio_1_1_frame_format_a65132cfae20178ad3bf2adcb504bac0c}{set\+Format}} (uint16\+\_\+t width, uint16\+\_\+t height, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} pix\+Fmt, uint8\+\_\+t word\+\_\+width)
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_a86db6f7b1339591a8bd5f63bc4c4dbba}{set\+\_\+format}} (\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\+\_\+t}} dim, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} pix\+\_\+fmt, uint8\+\_\+t word\+\_\+width)
 \begin{DoxyCompactList}\small\item\em Set format of the frames used for the video stream. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classudmaio_1_1_frame_format_a5011c6ba729327f54629b133f629ccf6}{set\+Format}} (uint16\+\_\+t width, uint16\+\_\+t height)
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_ad804599410dd6a0208d254870c818a54}{set\+\_\+format}} (\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\+\_\+t}} dim)
 \begin{DoxyCompactList}\small\item\em Set format of the frames used for the video stream, pixel format is untouched. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classudmaio_1_1_frame_format_ac42d926e6a1e2f132f0dcda3ff490358}{set\+Format}} (uint16\+\_\+t bytes\+\_\+per\+\_\+pix)
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_a912825f90371c52d85fb7397378ad380}{set\+\_\+format}} (uint16\+\_\+t bytes\+\_\+per\+\_\+pix)
 \begin{DoxyCompactList}\small\item\em Set format of the frames used for the video stream, frame dimensions are not touched. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classudmaio_1_1_frame_format_a2769f71e9d3d40257d55566606f02733}{set\+Format}} (\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} pix\+Fmt)
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_aa5faedf3f6edacc549b34d21f56056a9}{set\+\_\+format}} (\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} pix\+\_\+fmt)
 \begin{DoxyCompactList}\small\item\em Set format of the frames used for the video stream, frame dimensions are not touched. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classudmaio_1_1_frame_format_a62a9a1292ef4572b50bd583da77c489d}{set\+Format}} (uint8\+\_\+t word\+\_\+width)
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_aadaae6cb5e7a5295c2abd15ab7e49f14}{set\+\_\+format}} (uint8\+\_\+t word\+\_\+width)
 \begin{DoxyCompactList}\small\item\em Set format of the frames used for the video stream, frame dimensions are not touched. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} \mbox{\hyperlink{classudmaio_1_1_frame_format_a7cfbd3d68c809eb49f511458bfd16641}{to\+Pix\+Format}} (std\+::string pix\+Frmt)
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} \mbox{\hyperlink{classudmaio_1_1_frame_format_acacda65b8b86474bb9ba4fdd4eb48089}{to\+Pix\+Format}} (std\+::string pix\+\_\+fmt)
 \begin{DoxyCompactList}\small\item\em Selets a pixel format by the given name. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classudmaio_1_1_frame_format_aba52ceab553b0bc44239b44fb22acc5d}{to\+String}} ()
 \item 
-uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_aba2d2f84548d5c948521f11fc76f8260}{get\+\_\+pixel}} ()
-\item 
-uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_a7cdad8e259456e3d21df3cd8b7d15950}{get\+\_\+lines}} ()
+\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\+\_\+t}} \mbox{\hyperlink{classudmaio_1_1_frame_format_adb86802113472573042a8aa5f7c9b060}{get\+\_\+dim}} ()
 \item 
 \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} \mbox{\hyperlink{classudmaio_1_1_frame_format_aebc870e41cc088822b2e4e787f9082a0}{get\+\_\+pixel\+\_\+format}} ()
 \item 
@@ -115,31 +118,29 @@ void \mbox{\hyperlink{classudmaio_1_1_frame_format_a11dadd456089c1406c118bab5f42
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classudmaio_1_1_frame_format_a6b616241bc68a27931e8b4910d6c3da6}{update\+\_\+frm\+\_\+dim}} (uint16\+\_\+t width, uint16\+\_\+t height)
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_a8135a2a3104d9edb2d6934840fea7880}{update\+\_\+frm\+\_\+dim}} (\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\+\_\+t}} dim)
 \item 
 void \mbox{\hyperlink{classudmaio_1_1_frame_format_aa9aa449c52578904b6b8b4509911ce71}{update\+\_\+bpp}} (uint16\+\_\+t bytes\+\_\+per\+\_\+pix)
 \item 
-void \mbox{\hyperlink{classudmaio_1_1_frame_format_ac49d915c2111a7b4142db437e40ff45d}{update\+\_\+px\+\_\+fmt}} (\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} pix\+Fmt)
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_afe86bf67ef49e3fa64314cad1b7e4771}{update\+\_\+px\+\_\+fmt}} (\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} pix\+\_\+fmt)
 \item 
 void \mbox{\hyperlink{classudmaio_1_1_frame_format_af25cb5651410780ff69b96a05447f113}{update\+\_\+hsize}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_a685c9d69b2250c3867722d59d1390328}{pixel}}
+\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\+\_\+t}} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab13cfe6639cdcecd204a9158d2eceec1}{\+\_\+dim}}
 \item 
-uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_aaed1598bdafc9c2e80161902125e0bcc}{lines}}
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} \mbox{\hyperlink{classudmaio_1_1_frame_format_abe566be3949b3de67ba92d23ce00573c}{\+\_\+pix\+\_\+fmt}}
+\begin{DoxyCompactList}\small\item\em Pixel format. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_ab1ee4b7bf2ef3688eacfadc29e96da4e}{\+\_\+bpp}}
+\begin{DoxyCompactList}\small\item\em Bytes per pixel. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_a95b7bf9c6406053d1f6314eea02a3939}{\+\_\+word\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em Number of bytes per data word used by the dma. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_af8ddffa8f8730c9a8762cd96f6e40c7d}{\+\_\+pix\+\_\+per\+\_\+word}}
 \item 
-\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} \mbox{\hyperlink{classudmaio_1_1_frame_format_affa336bcc3556dac7513c51aa55630b7}{px\+Fmt}}
-\item 
-uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_a388121769aae9a44fa329e09f52b593e}{bpp}}
-\item 
-uint8\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_a0359ee5e4ef678f98636f6d3e103ed20}{data\+\_\+width}}
-\item 
-uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_a114de06fc1404c029477b8732d6fce46}{pix\+\_\+per\+\_\+word}}
-\item 
-uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_ad1f030a579d1343745d61b336a002e78}{hsize}}
-\end{DoxyCompactItemize}
+uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_aa0abe561f3edc308e2decc1f9a7b37d4}{\+\_\+hsize}}
+\begin{DoxyCompactList}\small\item\em Line length in bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -353,6 +354,12 @@ RGB8\+\_\+\+Planar&\\
 \doxysubsubsection{\texorpdfstring{get\_bytes\_per\_pixel()}{get\_bytes\_per\_pixel()}}
 {\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::get\+\_\+bytes\+\_\+per\+\_\+pixel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_adb86802113472573042a8aa5f7c9b060}\label{classudmaio_1_1_frame_format_adb86802113472573042a8aa5f7c9b060}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!get\_dim@{get\_dim}}
+\index{get\_dim@{get\_dim}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{get\_dim()}{get\_dim()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\+\_\+t}} udmaio\+::\+Frame\+Format\+::get\+\_\+dim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{classudmaio_1_1_frame_format_ada6c3fd3064eb873952929c5e45178c5}\label{classudmaio_1_1_frame_format_ada6c3fd3064eb873952929c5e45178c5}} 
 \index{udmaio::FrameFormat@{udmaio::FrameFormat}!get\_frm\_size@{get\_frm\_size}}
 \index{get\_frm\_size@{get\_frm\_size}!udmaio::FrameFormat@{udmaio::FrameFormat}}
@@ -364,18 +371,6 @@ RGB8\+\_\+\+Planar&\\
 \index{get\_hsize@{get\_hsize}!udmaio::FrameFormat@{udmaio::FrameFormat}}
 \doxysubsubsection{\texorpdfstring{get\_hsize()}{get\_hsize()}}
 {\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::get\+\_\+hsize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_a7cdad8e259456e3d21df3cd8b7d15950}\label{classudmaio_1_1_frame_format_a7cdad8e259456e3d21df3cd8b7d15950}} 
-\index{udmaio::FrameFormat@{udmaio::FrameFormat}!get\_lines@{get\_lines}}
-\index{get\_lines@{get\_lines}!udmaio::FrameFormat@{udmaio::FrameFormat}}
-\doxysubsubsection{\texorpdfstring{get\_lines()}{get\_lines()}}
-{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::get\+\_\+lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_aba2d2f84548d5c948521f11fc76f8260}\label{classudmaio_1_1_frame_format_aba2d2f84548d5c948521f11fc76f8260}} 
-\index{udmaio::FrameFormat@{udmaio::FrameFormat}!get\_pixel@{get\_pixel}}
-\index{get\_pixel@{get\_pixel}!udmaio::FrameFormat@{udmaio::FrameFormat}}
-\doxysubsubsection{\texorpdfstring{get\_pixel()}{get\_pixel()}}
-{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::get\+\_\+pixel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classudmaio_1_1_frame_format_aebc870e41cc088822b2e4e787f9082a0}\label{classudmaio_1_1_frame_format_aebc870e41cc088822b2e4e787f9082a0}} 
 \index{udmaio::FrameFormat@{udmaio::FrameFormat}!get\_pixel\_format@{get\_pixel\_format}}
@@ -395,41 +390,11 @@ RGB8\+\_\+\+Planar&\\
 \doxysubsubsection{\texorpdfstring{get\_word\_width()}{get\_word\_width()}}
 {\footnotesize\ttfamily uint8\+\_\+t udmaio\+::\+Frame\+Format\+::get\+\_\+word\+\_\+width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_a2769f71e9d3d40257d55566606f02733}\label{classudmaio_1_1_frame_format_a2769f71e9d3d40257d55566606f02733}} 
-\index{udmaio::FrameFormat@{udmaio::FrameFormat}!setFormat@{setFormat}}
-\index{setFormat@{setFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
-\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
-{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}}}]{pix\+Fmt }\end{DoxyParamCaption})}
-
-
-
-Set format of the frames used for the video stream, frame dimensions are not touched. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em pix\+Fmt} & Pixel format, will be used to set bytes per pixel value \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_ac42d926e6a1e2f132f0dcda3ff490358}\label{classudmaio_1_1_frame_format_ac42d926e6a1e2f132f0dcda3ff490358}} 
-\index{udmaio::FrameFormat@{udmaio::FrameFormat}!setFormat@{setFormat}}
-\index{setFormat@{setFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
-\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
-{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+Format (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{bytes\+\_\+per\+\_\+pix }\end{DoxyParamCaption})}
-
-
-
-Set format of the frames used for the video stream, frame dimensions are not touched. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em bytes\+\_\+per\+\_\+pix} & Number of bytes per pixel, pixel format will be set to unknown \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_a5011c6ba729327f54629b133f629ccf6}\label{classudmaio_1_1_frame_format_a5011c6ba729327f54629b133f629ccf6}} 
-\index{udmaio::FrameFormat@{udmaio::FrameFormat}!setFormat@{setFormat}}
-\index{setFormat@{setFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
-\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
-{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+Format (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_ad804599410dd6a0208d254870c818a54}\label{classudmaio_1_1_frame_format_ad804599410dd6a0208d254870c818a54}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!set\_format@{set\_format}}
+\index{set\_format@{set\_format}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{set\_format()}{set\_format()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+\_\+format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\+\_\+t}}}]{dim }\end{DoxyParamCaption})}
 
 
 
@@ -437,16 +402,14 @@ Set format of the frames used for the video stream, pixel format is untouched.
 
 
 \begin{DoxyParams}{Parameters}
-{\em width} & Width of the video frame (in pixel) \\
-\hline
-{\em height} & Height of the video frame (in pixel) \\
+{\em dim} & Width and height of the video frame (in pixels) \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_a65132cfae20178ad3bf2adcb504bac0c}\label{classudmaio_1_1_frame_format_a65132cfae20178ad3bf2adcb504bac0c}} 
-\index{udmaio::FrameFormat@{udmaio::FrameFormat}!setFormat@{setFormat}}
-\index{setFormat@{setFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
-\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
-{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+Format (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height,  }\item[{\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}}}]{pix\+Fmt,  }\item[{uint8\+\_\+t}]{word\+\_\+width }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a86db6f7b1339591a8bd5f63bc4c4dbba}\label{classudmaio_1_1_frame_format_a86db6f7b1339591a8bd5f63bc4c4dbba}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!set\_format@{set\_format}}
+\index{set\_format@{set\_format}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{set\_format()}{set\_format()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+\_\+format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\+\_\+t}}}]{dim,  }\item[{\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}}}]{pix\+\_\+fmt,  }\item[{uint8\+\_\+t}]{word\+\_\+width }\end{DoxyParamCaption})}
 
 
 
@@ -454,20 +417,18 @@ Set format of the frames used for the video stream.
 
 
 \begin{DoxyParams}{Parameters}
-{\em width} & Width of the video frame (in pixel) \\
-\hline
-{\em height} & Height of the video frame (in pixel) \\
+{\em dim} & Width and height of the video frame (in pixels) \\
 \hline
 {\em pix\+Fmt} & Pixel format, will be used to set bytes per pixel value \\
 \hline
 {\em word\+\_\+width} & Number of bytes per data word used by the dma \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_a772acea32bd2ec24be15fa49116ac454}\label{classudmaio_1_1_frame_format_a772acea32bd2ec24be15fa49116ac454}} 
-\index{udmaio::FrameFormat@{udmaio::FrameFormat}!setFormat@{setFormat}}
-\index{setFormat@{setFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
-\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
-{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+Format (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height,  }\item[{std\+::string}]{pix\+Fmt,  }\item[{uint8\+\_\+t}]{word\+\_\+width }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_aaf4da0b3a7a54e2d30c28626130af6e7}\label{classudmaio_1_1_frame_format_aaf4da0b3a7a54e2d30c28626130af6e7}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!set\_format@{set\_format}}
+\index{set\_format@{set\_format}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{set\_format()}{set\_format()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+\_\+format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\+\_\+t}}}]{dim,  }\item[{std\+::string}]{pix\+\_\+fmt,  }\item[{uint8\+\_\+t}]{word\+\_\+width }\end{DoxyParamCaption})}
 
 
 
@@ -475,20 +436,18 @@ Set format of the frames used for the video stream.
 
 
 \begin{DoxyParams}{Parameters}
-{\em width} & Width of the video frame (in pixel) \\
-\hline
-{\em height} & Height of the video frame (in pixel) \\
+{\em dim} & Width and height of the video frame (in pixels) \\
 \hline
 {\em pix\+Fmt} & Pixel format, will be used to set bytes per pixel value \\
 \hline
 {\em word\+\_\+width} & Number of bytes per data word used by the dma \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_a236ad96e224a01ade8a9515e08e2f46c}\label{classudmaio_1_1_frame_format_a236ad96e224a01ade8a9515e08e2f46c}} 
-\index{udmaio::FrameFormat@{udmaio::FrameFormat}!setFormat@{setFormat}}
-\index{setFormat@{setFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
-\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
-{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+Format (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height,  }\item[{uint16\+\_\+t}]{bytes\+\_\+per\+\_\+pixel,  }\item[{uint8\+\_\+t}]{word\+\_\+width }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_ab341989db71cb4e346a0389881410abb}\label{classudmaio_1_1_frame_format_ab341989db71cb4e346a0389881410abb}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!set\_format@{set\_format}}
+\index{set\_format@{set\_format}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{set\_format()}{set\_format()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+\_\+format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\+\_\+t}}}]{dim,  }\item[{uint16\+\_\+t}]{bytes\+\_\+per\+\_\+pixel,  }\item[{uint8\+\_\+t}]{word\+\_\+width }\end{DoxyParamCaption})}
 
 
 
@@ -496,20 +455,48 @@ Set format of the frames used for the video stream.
 
 
 \begin{DoxyParams}{Parameters}
-{\em width} & Width of the video frame (in pixel) \\
-\hline
-{\em height} & Height of the video frame (in pixel) \\
+{\em dim} & Width and height of the video frame (in pixels) \\
 \hline
 {\em bytes\+\_\+per\+\_\+pix} & Number of bytes per pixel, pixel format will be set to unknown \\
 \hline
 {\em word\+\_\+width} & Number of bytes per data word used by the dma \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_a62a9a1292ef4572b50bd583da77c489d}\label{classudmaio_1_1_frame_format_a62a9a1292ef4572b50bd583da77c489d}} 
-\index{udmaio::FrameFormat@{udmaio::FrameFormat}!setFormat@{setFormat}}
-\index{setFormat@{setFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
-\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
-{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+Format (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{word\+\_\+width }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_aa5faedf3f6edacc549b34d21f56056a9}\label{classudmaio_1_1_frame_format_aa5faedf3f6edacc549b34d21f56056a9}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!set\_format@{set\_format}}
+\index{set\_format@{set\_format}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{set\_format()}{set\_format()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+\_\+format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}}}]{pix\+\_\+fmt }\end{DoxyParamCaption})}
+
+
+
+Set format of the frames used for the video stream, frame dimensions are not touched. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pix\+Fmt} & Pixel format, will be used to set bytes per pixel value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a912825f90371c52d85fb7397378ad380}\label{classudmaio_1_1_frame_format_a912825f90371c52d85fb7397378ad380}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!set\_format@{set\_format}}
+\index{set\_format@{set\_format}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{set\_format()}{set\_format()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+\_\+format (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{bytes\+\_\+per\+\_\+pix }\end{DoxyParamCaption})}
+
+
+
+Set format of the frames used for the video stream, frame dimensions are not touched. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bytes\+\_\+per\+\_\+pix} & Number of bytes per pixel, pixel format will be set to unknown \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_aadaae6cb5e7a5295c2abd15ab7e49f14}\label{classudmaio_1_1_frame_format_aadaae6cb5e7a5295c2abd15ab7e49f14}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!set\_format@{set\_format}}
+\index{set\_format@{set\_format}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{set\_format()}{set\_format()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+\_\+format (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{word\+\_\+width }\end{DoxyParamCaption})}
 
 
 
@@ -520,11 +507,11 @@ Set format of the frames used for the video stream, frame dimensions are not tou
 {\em word\+\_\+width} & Number of bytes per data word used by the dma \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_a7cfbd3d68c809eb49f511458bfd16641}\label{classudmaio_1_1_frame_format_a7cfbd3d68c809eb49f511458bfd16641}} 
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_acacda65b8b86474bb9ba4fdd4eb48089}\label{classudmaio_1_1_frame_format_acacda65b8b86474bb9ba4fdd4eb48089}} 
 \index{udmaio::FrameFormat@{udmaio::FrameFormat}!toPixFormat@{toPixFormat}}
 \index{toPixFormat@{toPixFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
 \doxysubsubsection{\texorpdfstring{toPixFormat()}{toPixFormat()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} udmaio\+::\+Frame\+Format\+::to\+Pix\+Format (\begin{DoxyParamCaption}\item[{std\+::string}]{pix\+Frmt }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} udmaio\+::\+Frame\+Format\+::to\+Pix\+Format (\begin{DoxyParamCaption}\item[{std\+::string}]{pix\+\_\+fmt }\end{DoxyParamCaption})}
 
 
 
@@ -532,7 +519,7 @@ Selets a pixel format by the given name.
 
 
 \begin{DoxyParams}{Parameters}
-{\em pix\+Frmt} & String containing the name of the pixel format \\
+{\em pix\+\_\+fmt} & String containing the name of the pixel format \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classudmaio_1_1_frame_format_aba52ceab553b0bc44239b44fb22acc5d}\label{classudmaio_1_1_frame_format_aba52ceab553b0bc44239b44fb22acc5d}} 
@@ -547,11 +534,11 @@ Selets a pixel format by the given name.
 \doxysubsubsection{\texorpdfstring{update\_bpp()}{update\_bpp()}}
 {\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::update\+\_\+bpp (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{bytes\+\_\+per\+\_\+pix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_a6b616241bc68a27931e8b4910d6c3da6}\label{classudmaio_1_1_frame_format_a6b616241bc68a27931e8b4910d6c3da6}} 
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a8135a2a3104d9edb2d6934840fea7880}\label{classudmaio_1_1_frame_format_a8135a2a3104d9edb2d6934840fea7880}} 
 \index{udmaio::FrameFormat@{udmaio::FrameFormat}!update\_frm\_dim@{update\_frm\_dim}}
 \index{update\_frm\_dim@{update\_frm\_dim}!udmaio::FrameFormat@{udmaio::FrameFormat}}
 \doxysubsubsection{\texorpdfstring{update\_frm\_dim()}{update\_frm\_dim()}}
-{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::update\+\_\+frm\+\_\+dim (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::update\+\_\+frm\+\_\+dim (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\+\_\+t}}}]{dim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classudmaio_1_1_frame_format_af25cb5651410780ff69b96a05447f113}\label{classudmaio_1_1_frame_format_af25cb5651410780ff69b96a05447f113}} 
 \index{udmaio::FrameFormat@{udmaio::FrameFormat}!update\_hsize@{update\_hsize}}
@@ -559,62 +546,72 @@ Selets a pixel format by the given name.
 \doxysubsubsection{\texorpdfstring{update\_hsize()}{update\_hsize()}}
 {\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::update\+\_\+hsize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_ac49d915c2111a7b4142db437e40ff45d}\label{classudmaio_1_1_frame_format_ac49d915c2111a7b4142db437e40ff45d}} 
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_afe86bf67ef49e3fa64314cad1b7e4771}\label{classudmaio_1_1_frame_format_afe86bf67ef49e3fa64314cad1b7e4771}} 
 \index{udmaio::FrameFormat@{udmaio::FrameFormat}!update\_px\_fmt@{update\_px\_fmt}}
 \index{update\_px\_fmt@{update\_px\_fmt}!udmaio::FrameFormat@{udmaio::FrameFormat}}
 \doxysubsubsection{\texorpdfstring{update\_px\_fmt()}{update\_px\_fmt()}}
-{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::update\+\_\+px\+\_\+fmt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}}}]{pix\+Fmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::update\+\_\+px\+\_\+fmt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}}}]{pix\+\_\+fmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_ab1ee4b7bf2ef3688eacfadc29e96da4e}\label{classudmaio_1_1_frame_format_ab1ee4b7bf2ef3688eacfadc29e96da4e}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!\_bpp@{\_bpp}}
+\index{\_bpp@{\_bpp}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{\_bpp}{\_bpp}}
+{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::\+\_\+bpp\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bytes per pixel. 
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_ab13cfe6639cdcecd204a9158d2eceec1}\label{classudmaio_1_1_frame_format_ab13cfe6639cdcecd204a9158d2eceec1}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!\_dim@{\_dim}}
+\index{\_dim@{\_dim}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{\_dim}{\_dim}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\+\_\+t}} udmaio\+::\+Frame\+Format\+::\+\_\+dim\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_aa0abe561f3edc308e2decc1f9a7b37d4}\label{classudmaio_1_1_frame_format_aa0abe561f3edc308e2decc1f9a7b37d4}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!\_hsize@{\_hsize}}
+\index{\_hsize@{\_hsize}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{\_hsize}{\_hsize}}
+{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::\+\_\+hsize\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Line length in bytes. 
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_abe566be3949b3de67ba92d23ce00573c}\label{classudmaio_1_1_frame_format_abe566be3949b3de67ba92d23ce00573c}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!\_pix\_fmt@{\_pix\_fmt}}
+\index{\_pix\_fmt@{\_pix\_fmt}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{\_pix\_fmt}{\_pix\_fmt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} udmaio\+::\+Frame\+Format\+::\+\_\+pix\+\_\+fmt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pixel format. 
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_af8ddffa8f8730c9a8762cd96f6e40c7d}\label{classudmaio_1_1_frame_format_af8ddffa8f8730c9a8762cd96f6e40c7d}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!\_pix\_per\_word@{\_pix\_per\_word}}
+\index{\_pix\_per\_word@{\_pix\_per\_word}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{\_pix\_per\_word}{\_pix\_per\_word}}
+{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::\+\_\+pix\+\_\+per\+\_\+word\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classudmaio_1_1_frame_format_a2f28196b7829350f53cffb825130ff55}\label{classudmaio_1_1_frame_format_a2f28196b7829350f53cffb825130ff55}} 
 \index{udmaio::FrameFormat@{udmaio::FrameFormat}!\_pxfmt\_enum\_to\_str\_tab@{\_pxfmt\_enum\_to\_str\_tab}}
 \index{\_pxfmt\_enum\_to\_str\_tab@{\_pxfmt\_enum\_to\_str\_tab}!udmaio::FrameFormat@{udmaio::FrameFormat}}
 \doxysubsubsection{\texorpdfstring{\_pxfmt\_enum\_to\_str\_tab}{\_pxfmt\_enum\_to\_str\_tab}}
 {\footnotesize\ttfamily const std\+::unordered\+\_\+map$<$\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}}, std\+::string$>$ udmaio\+::\+Frame\+Format\+::\+\_\+pxfmt\+\_\+enum\+\_\+to\+\_\+str\+\_\+tab\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_a388121769aae9a44fa329e09f52b593e}\label{classudmaio_1_1_frame_format_a388121769aae9a44fa329e09f52b593e}} 
-\index{udmaio::FrameFormat@{udmaio::FrameFormat}!bpp@{bpp}}
-\index{bpp@{bpp}!udmaio::FrameFormat@{udmaio::FrameFormat}}
-\doxysubsubsection{\texorpdfstring{bpp}{bpp}}
-{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::bpp\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a95b7bf9c6406053d1f6314eea02a3939}\label{classudmaio_1_1_frame_format_a95b7bf9c6406053d1f6314eea02a3939}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!\_word\_width@{\_word\_width}}
+\index{\_word\_width@{\_word\_width}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{\_word\_width}{\_word\_width}}
+{\footnotesize\ttfamily uint8\+\_\+t udmaio\+::\+Frame\+Format\+::\+\_\+word\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_a0359ee5e4ef678f98636f6d3e103ed20}\label{classudmaio_1_1_frame_format_a0359ee5e4ef678f98636f6d3e103ed20}} 
-\index{udmaio::FrameFormat@{udmaio::FrameFormat}!data\_width@{data\_width}}
-\index{data\_width@{data\_width}!udmaio::FrameFormat@{udmaio::FrameFormat}}
-\doxysubsubsection{\texorpdfstring{data\_width}{data\_width}}
-{\footnotesize\ttfamily uint8\+\_\+t udmaio\+::\+Frame\+Format\+::data\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_ad1f030a579d1343745d61b336a002e78}\label{classudmaio_1_1_frame_format_ad1f030a579d1343745d61b336a002e78}} 
-\index{udmaio::FrameFormat@{udmaio::FrameFormat}!hsize@{hsize}}
-\index{hsize@{hsize}!udmaio::FrameFormat@{udmaio::FrameFormat}}
-\doxysubsubsection{\texorpdfstring{hsize}{hsize}}
-{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::hsize\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_aaed1598bdafc9c2e80161902125e0bcc}\label{classudmaio_1_1_frame_format_aaed1598bdafc9c2e80161902125e0bcc}} 
-\index{udmaio::FrameFormat@{udmaio::FrameFormat}!lines@{lines}}
-\index{lines@{lines}!udmaio::FrameFormat@{udmaio::FrameFormat}}
-\doxysubsubsection{\texorpdfstring{lines}{lines}}
-{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::lines\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_a114de06fc1404c029477b8732d6fce46}\label{classudmaio_1_1_frame_format_a114de06fc1404c029477b8732d6fce46}} 
-\index{udmaio::FrameFormat@{udmaio::FrameFormat}!pix\_per\_word@{pix\_per\_word}}
-\index{pix\_per\_word@{pix\_per\_word}!udmaio::FrameFormat@{udmaio::FrameFormat}}
-\doxysubsubsection{\texorpdfstring{pix\_per\_word}{pix\_per\_word}}
-{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::pix\+\_\+per\+\_\+word\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_a685c9d69b2250c3867722d59d1390328}\label{classudmaio_1_1_frame_format_a685c9d69b2250c3867722d59d1390328}} 
-\index{udmaio::FrameFormat@{udmaio::FrameFormat}!pixel@{pixel}}
-\index{pixel@{pixel}!udmaio::FrameFormat@{udmaio::FrameFormat}}
-\doxysubsubsection{\texorpdfstring{pixel}{pixel}}
-{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::pixel\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classudmaio_1_1_frame_format_affa336bcc3556dac7513c51aa55630b7}\label{classudmaio_1_1_frame_format_affa336bcc3556dac7513c51aa55630b7}} 
-\index{udmaio::FrameFormat@{udmaio::FrameFormat}!pxFmt@{pxFmt}}
-\index{pxFmt@{pxFmt}!udmaio::FrameFormat@{udmaio::FrameFormat}}
-\doxysubsubsection{\texorpdfstring{pxFmt}{pxFmt}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} udmaio\+::\+Frame\+Format\+::px\+Fmt\hspace{0.3cm}{\ttfamily [private]}}
+Number of bytes per data word used by the dma. 
 
 
 

@@ -8,6 +8,7 @@ var hierarchy =
     ] ],
     [ "udmaio::ConcurrentQueue< T >", "classudmaio_1_1_concurrent_queue.html", null ],
     [ "udmaio::ConcurrentQueue< std::vector< uint8_t > >", "classudmaio_1_1_concurrent_queue.html", null ],
+    [ "udmaio::FrameFormat::dim_t", "structudmaio_1_1_frame_format_1_1dim__t.html", null ],
     [ "udmaio::Logger", "structudmaio_1_1_logger.html", [
       [ "udmaio::DataHandlerAbstract", "classudmaio_1_1_data_handler_abstract.html", [
         [ "udmaio::DataHandlerSync", "classudmaio_1_1_data_handler_sync.html", null ]
