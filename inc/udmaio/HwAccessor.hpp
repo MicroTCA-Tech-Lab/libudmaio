@@ -128,7 +128,9 @@ class HwAccessorMmap : public HwAccessor {
 
         // create memory mapping
         _mem = mmap(NULL, _region.size, PROT_READ | PROT_WRITE, MAP_SHARED, _fd, mmap_offs);
-        BOOST_LOG_SEV(HwAccessor::_lg, bls::trace) << "mmap = " << _mem << std::dec;
+        BOOST_LOG_SEV(HwAccessor::_lg, bls::trace)
+            << "mmap = 0x" << std::hex << mmap_offs << " -> 0x" << _mem << std::dec;
+
         if (_mem == MAP_FAILED) {
             throw std::runtime_error("mmap failed for uio " + dev_path);
         }
