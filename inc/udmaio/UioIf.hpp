@@ -52,12 +52,22 @@ class UioIf : private boost::noncopyable {
 
     template <typename C, typename = std::enable_if_t<(sizeof(C) == 4)>>
     static uint32_t reg_to_raw(C data) {
-        return *reinterpret_cast<uint32_t*>(&data);
+        union {
+            uint32_t raw_val;
+            C cooked_val;
+        } u;
+        u.cooked_val = data;
+        return u.raw_val;
     }
 
     template <typename C, typename = std::enable_if_t<(sizeof(C) == 8)>>
     static uint64_t reg_to_raw(C data) {
-        return *reinterpret_cast<uint64_t*>(&data);
+        union {
+            uint64_t raw_val;
+            C cooked_val;
+        } u;
+        u.cooked_val = data;
+        return u.raw_val;
     }
 
     inline uint32_t _rd32(uint32_t offs) const { return _hw->_rd32(offs); }
