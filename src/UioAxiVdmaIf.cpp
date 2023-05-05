@@ -47,7 +47,7 @@ void UioAxiVdmaIf::set_frame_format(FrameFormat frm_format) {
     s2mm_hsize.wr({.horizontal_size = frm_format.get_hsize()});
 
     // Write vertical size
-    s2mm_vsize.wr({.vertical_size = frm_format.get_lines()});
+    s2mm_vsize.wr({.vertical_size = frm_format.get_dim().height});
 }
 
 ////////////////////////////////////////

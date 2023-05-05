@@ -21,6 +21,12 @@ namespace udmaio {
 
 class FrameFormat : public Logger {
   public:
+    /// Frame dimensions
+    struct dim_t {
+        uint16_t width;
+        uint16_t height;
+    };
+
     // clang-format off
     enum class PixelFormat : uint32_t {
       unknown                   = 0,
@@ -99,51 +105,46 @@ class FrameFormat : public Logger {
     FrameFormat();
 
     /// @brief Set format of the frames used for the video stream
-    /// @param width  Width of the video frame (in pixel)
-    /// @param height Height of the video frame (in pixel)
+    /// @param dim  Width and height of the video frame (in pixels)
     /// @param bytes_per_pix Number of bytes per pixel, pixel format will be set to unknown
     /// @param word_width Number of bytes per data word used by the dma
-    void setFormat(uint16_t width, uint16_t height, uint16_t bytes_per_pixel, uint8_t word_width);
+    void set_format(dim_t dim, uint16_t bytes_per_pixel, uint8_t word_width);
 
     /// @brief Set format of the frames used for the video stream
-    /// @param width  Width of the video frame (in pixel)
-    /// @param height Height of the video frame (in pixel)
+    /// @param dim  Width and height of the video frame (in pixels)
     /// @param pixFmt Pixel format, will be used to set bytes per pixel value
     /// @param word_width Number of bytes per data word used by the dma
-    void setFormat(uint16_t width, uint16_t height, std::string pixFmt, uint8_t word_width);
+    void set_format(dim_t dim, std::string pix_fmt, uint8_t word_width);
 
     /// @brief Set format of the frames used for the video stream
-    /// @param width  Width of the video frame (in pixel)
-    /// @param height Height of the video frame (in pixel)
+    /// @param dim  Width and height of the video frame (in pixels)
     /// @param pixFmt Pixel format, will be used to set bytes per pixel value
     /// @param word_width Number of bytes per data word used by the dma
-    void setFormat(uint16_t width, uint16_t height, PixelFormat pixFmt, uint8_t word_width);
+    void set_format(dim_t dim, PixelFormat pix_fmt, uint8_t word_width);
 
     /// @brief Set format of the frames used for the video stream, pixel format is untouched
-    /// @param width  Width of the video frame (in pixel)
-    /// @param height Height of the video frame (in pixel)
-    void setFormat(uint16_t width, uint16_t height);
+    /// @param dim  Width and height of the video frame (in pixels)
+    void set_format(dim_t dim);
 
     /// @brief Set format of the frames used for the video stream, frame dimensions are not touched
     /// @param bytes_per_pix Number of bytes per pixel, pixel format will be set to unknown
-    void setFormat(uint16_t bytes_per_pix);
+    void set_format(uint16_t bytes_per_pix);
 
     /// @brief Set format of the frames used for the video stream, frame dimensions are not touched
     /// @param pixFmt Pixel format, will be used to set bytes per pixel value
-    void setFormat(PixelFormat pixFmt);
+    void set_format(PixelFormat pix_fmt);
 
     /// @brief Set format of the frames used for the video stream, frame dimensions are not touched
     /// @param word_width Number of bytes per data word used by the dma
-    void setFormat(uint8_t word_width);
+    void set_format(uint8_t word_width);
 
     /// @brief Selets a pixel format by the given name
-    /// @param pixFrmt String containing the name of the pixel format
-    PixelFormat toPixFormat(std::string pixFrmt);
+    /// @param pix_fmt String containing the name of the pixel format
+    PixelFormat toPixFormat(std::string pix_fmt);
 
     std::string toString();
 
-    uint16_t get_pixel();
-    uint16_t get_lines();
+    dim_t get_dim();
 
     PixelFormat get_pixel_format();
     uint16_t get_bytes_per_pixel();  // bytes per pixel
@@ -159,20 +160,23 @@ class FrameFormat : public Logger {
   private:
     static const std::unordered_map<PixelFormat, std::string> _pxfmt_enum_to_str_tab;
 
-    void update_frm_dim(uint16_t width, uint16_t height);
+    void update_frm_dim(dim_t dim);
     void update_bpp(uint16_t bytes_per_pix);
-    void update_px_fmt(PixelFormat pixFmt);
+    void update_px_fmt(PixelFormat pix_fmt);
     void update_hsize();
 
-    uint16_t pixel;
-    uint16_t lines;
+    // Frame dimensions
+    dim_t _dim;
+    /// Pixel format
+    PixelFormat _pix_fmt;
+    /// Bytes per pixel
+    uint16_t _bpp;
+    /// Number of bytes per data word used by the dma
+    uint8_t _word_width;
 
-    PixelFormat pxFmt;
-    uint16_t bpp;  // bytes per pixel
-
-    uint8_t data_width;
-    uint16_t pix_per_word;
-    uint16_t hsize;  // line length in bytes
+    uint16_t _pix_per_word;
+    /// Line length in bytes
+    uint16_t _hsize;
 };
 
 }  // namespace udmaio

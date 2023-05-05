@@ -70,64 +70,51 @@ const std::unordered_map<FrameFormat::PixelFormat, std::string> FrameFormat::_px
 };
 
 FrameFormat::FrameFormat() : Logger("FrameFormat") {
-    pixel = 0;
-    lines = 0;
+    _dim = {0, 0};
 
-    pxFmt = PixelFormat::unknown;
-    bpp = 1;  // bytes per pixel
+    _pix_fmt = PixelFormat::unknown;
+    _bpp = 1;
 
-    data_width = 4;
-    pix_per_word = 4;
-    hsize = 0;  // line length in bytes
+    _word_width = 4;
+    _pix_per_word = 4;
+    _hsize = 0;
 }
 
-void FrameFormat::setFormat(uint16_t width,
-                            uint16_t height,
-                            uint16_t bytes_per_pixel,
-                            uint8_t word_width) {
-    update_frm_dim(width, height);
+void FrameFormat::set_format(dim_t dim, uint16_t bytes_per_pixel, uint8_t word_width) {
+    update_frm_dim(dim);
     update_bpp(bytes_per_pixel);
-    data_width = word_width;
+    _word_width = word_width;
     update_hsize();
 }
 
-void FrameFormat::setFormat(uint16_t width,
-                            uint16_t height,
-                            std::string pixFmt,
-                            uint8_t word_width) {
-    update_frm_dim(width, height);
-    update_px_fmt(toPixFormat(pixFmt));
-    data_width = word_width;
-    update_hsize();
+void FrameFormat::set_format(dim_t dim, std::string pixFmt, uint8_t word_width) {
+    set_format(dim, toPixFormat(pixFmt), word_width);
 }
 
-void FrameFormat::setFormat(uint16_t width,
-                            uint16_t height,
-                            PixelFormat pixFmt,
-                            uint8_t word_width) {
-    update_frm_dim(width, height);
+void FrameFormat::set_format(dim_t dim, PixelFormat pixFmt, uint8_t word_width) {
+    update_frm_dim(dim);
     update_px_fmt(pixFmt);
-    data_width = word_width;
+    _word_width = word_width;
     update_hsize();
 }
 
-void FrameFormat::setFormat(uint16_t width, uint16_t height) {
-    update_frm_dim(width, height);
+void FrameFormat::set_format(dim_t dim) {
+    update_frm_dim(dim);
     update_hsize();
 }
 
-void FrameFormat::setFormat(uint16_t bytes_per_pixel) {
+void FrameFormat::set_format(uint16_t bytes_per_pixel) {
     update_bpp(bytes_per_pixel);
     update_hsize();
 }
 
-void FrameFormat::setFormat(PixelFormat pixFmt) {
+void FrameFormat::set_format(PixelFormat pixFmt) {
     update_px_fmt(pixFmt);
     update_hsize();
 }
 
-void FrameFormat::setFormat(uint8_t word_width) {
-    data_width = word_width;
+void FrameFormat::set_format(uint8_t word_width) {
+    _word_width = word_width;
     update_hsize();
 }
 
@@ -141,72 +128,67 @@ FrameFormat::PixelFormat FrameFormat::toPixFormat(std::string pixFrmt) {
 }
 
 std::string FrameFormat::toString() {
-    auto it = _pxfmt_enum_to_str_tab.find(pxFmt);
+    auto it = _pxfmt_enum_to_str_tab.find(_pix_fmt);
     if (it != _pxfmt_enum_to_str_tab.end()) {
         return it->second;
     }
     return "<unkown>";
 }
 
-uint16_t FrameFormat::get_pixel() {
-    return pixel;
-}
-
-uint16_t FrameFormat::get_lines() {
-    return lines;
+FrameFormat::dim_t FrameFormat::get_dim() {
+    return _dim;
 }
 
 FrameFormat::PixelFormat FrameFormat::get_pixel_format() {
-    return pxFmt;
+    return _pix_fmt;
 }
 
 uint16_t FrameFormat::get_bytes_per_pixel() {
-    return bpp;
+    return _bpp;
 }
 
 uint8_t FrameFormat::get_word_width() {
-    return data_width;
+    return _word_width;
 }
 
 uint16_t FrameFormat::get_pixel_per_word() {
-    return pix_per_word;
+    return _pix_per_word;
 }
 
 uint16_t FrameFormat::get_hsize() {
-    return hsize;
+    return _hsize;
 }
 
 size_t FrameFormat::get_frm_size() {
-    return (size_t)(hsize * lines);
+    return (size_t)(_hsize * _dim.height);
     // return (size_t)(pixel*lines*bpp);
 }
 
 void FrameFormat::dump_frame_format() {
     BOOST_LOG_SEV(_lg, bls::debug) << ": pixel        = 0x" << std::hex << std::setfill('0')
-                                   << std::setw(4) << pixel << std::dec;
+                                   << std::setw(4) << _dim.width << std::dec;
     BOOST_LOG_SEV(_lg, bls::debug) << ": lines        = 0x" << std::hex << std::setfill('0')
-                                   << std::setw(4) << lines << std::dec;
+                                   << std::setw(4) << _dim.height << std::dec;
     BOOST_LOG_SEV(_lg, bls::debug)
         << ": pxFmt        = " << toString() << " (0x" << std::hex << std::setfill('0')
-        << std::setw(8) << static_cast<uint32_t>(pxFmt) << std::dec << ")";
+        << std::setw(8) << static_cast<uint32_t>(_pix_fmt) << std::dec << ")";
     BOOST_LOG_SEV(_lg, bls::debug) << ": bpp          = 0x" << std::hex << std::setfill('0')
-                                   << std::setw(4) << bpp << std::dec;
+                                   << std::setw(4) << _bpp << std::dec;
     BOOST_LOG_SEV(_lg, bls::debug) << ": data_width   = 0x" << std::hex << std::setfill('0')
-                                   << std::setw(2) << (int)data_width << std::dec;
+                                   << std::setw(2) << (int)_word_width << std::dec;
     BOOST_LOG_SEV(_lg, bls::debug) << ": pix_per_word = 0x" << std::hex << std::setfill('0')
-                                   << std::setw(4) << pix_per_word << std::dec;
+                                   << std::setw(4) << _pix_per_word << std::dec;
     BOOST_LOG_SEV(_lg, bls::debug) << ": hsize        = 0x" << std::hex << std::setfill('0')
-                                   << std::setw(4) << hsize << std::dec;
+                                   << std::setw(4) << _hsize << std::dec;
 }
 
-void FrameFormat::update_frm_dim(uint16_t width, uint16_t height) {
-    pixel = width;
-    lines = height;
+void FrameFormat::update_frm_dim(dim_t dim) {
+    _dim = dim;
 }
 
 void FrameFormat::update_bpp(uint16_t bytes_per_pixel) {
-    pxFmt = PixelFormat::unknown;
-    bpp = bytes_per_pixel;  // bytes per pixel
+    _pix_fmt = PixelFormat::unknown;
+    _bpp = bytes_per_pixel;
 }
 
 void FrameFormat::update_px_fmt(PixelFormat pixFmt) {
@@ -214,13 +196,13 @@ void FrameFormat::update_px_fmt(PixelFormat pixFmt) {
         BOOST_LOG_SEV(_lg, bls::error)
             << ": Tried to set pixel format to 'unknown_pxfmt', ignoring operation!";
     } else {
-        pxFmt = pixFmt;
-        bpp = (0x00ff & ((uint32_t)pixFmt >> 16)) / 8;  // bytes per pixel
+        _pix_fmt = pixFmt;
+        _bpp = (0x00ff & (static_cast<uint32_t>(pixFmt) >> 16)) / 8;
     }
 }
 
 void FrameFormat::update_hsize() {
-    pix_per_word = data_width / bpp;
-    hsize = std::ceil((float)pixel / pix_per_word) * data_width;
+    _pix_per_word = _word_width / _bpp;
+    _hsize = std::ceil((float)_dim.width / _pix_per_word) * _word_width;
 }
 }  // namespace udmaio
