@@ -17,8 +17,6 @@
 
 #include "udmaio/Logging.hpp"
 
-namespace blt = boost::log::trivial;
-
 namespace udmaio {
 
 ////////////////////////////////////////
