@@ -84,7 +84,6 @@ digraph "UioAxiVdmaIf.cpp"
   Node30 [label="cstddef",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node29 -> Node4 [color="steelblue1",style="solid"];
   Node29 -> Node10 [color="steelblue1",style="solid"];
-  Node29 -> Node18 [color="steelblue1",style="solid"];
   Node2 -> Node31 [color="steelblue1",style="solid"];
   Node31 [label="udmaio/rdl/AxiVdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_axi_vdma_8hpp.html",tooltip=" "];
   Node31 -> Node4 [color="steelblue1",style="solid"];

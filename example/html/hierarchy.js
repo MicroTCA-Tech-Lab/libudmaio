@@ -11,13 +11,13 @@ var hierarchy =
     [ "udmaio::ConcurrentQueue< std::vector< uint8_t > >", "classudmaio_1_1_concurrent_queue.html", null ],
     [ "udmaio::FrameFormat::dim_t", "structudmaio_1_1_frame_format_1_1dim__t.html", null ],
     [ "UioTrafficGen::ExtTrLength", "struct_uio_traffic_gen_1_1_ext_tr_length.html", null ],
+    [ "udmaio::FrameFormat", "classudmaio_1_1_frame_format.html", null ],
     [ "UioGpioStatus::GpioData", "struct_uio_gpio_status_1_1_gpio_data.html", null ],
     [ "udmaio::Logger", "structudmaio_1_1_logger.html", [
       [ "udmaio::DataHandlerAbstract", "classudmaio_1_1_data_handler_abstract.html", [
         [ "DataHandlerPrint", "class_data_handler_print.html", null ],
         [ "udmaio::DataHandlerSync", "classudmaio_1_1_data_handler_sync.html", null ]
       ] ],
-      [ "udmaio::FrameFormat", "classudmaio_1_1_frame_format.html", null ],
       [ "udmaio::HwAccessor", "classudmaio_1_1_hw_accessor.html", [
         [ "udmaio::HwAccessorMmap< uint64_t >", "classudmaio_1_1_hw_accessor_mmap.html", [
           [ "udmaio::HwAccessorAxi", "classudmaio_1_1_hw_accessor_axi.html", null ]

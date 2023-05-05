@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classudmaio_1_1_reg_accessor_base.html" title=" " alt="" coords="5,5,184,45"/>
+<area shape="rect" id="node1" href="$classudmaio_1_1_reg_accessor_base.html" title="Base class implementing register access. Only used by subclasses, not used directly." alt="" coords="5,135,215,160"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_reg_accessor_array.html" title=" " alt="" coords="263,5,455,60"/>
+<area shape="rect" id="node3" href="$classudmaio_1_1_reg_accessor_array.html" title="Accessor for register array." alt="" coords="269,84,448,139"/>
+<area shape="rect" id="node4" href="$classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html" title="Accessor for single register." alt="" coords="269,163,448,203"/>
+<area shape="rect" id="node5" href="$classudmaio_1_1_reg_accessor_array_element.html" title="Accessor for register array element. Returned by RegAccessorArray&lt;C&gt;::operator[]." alt="" coords="269,227,448,267"/>
 </map>

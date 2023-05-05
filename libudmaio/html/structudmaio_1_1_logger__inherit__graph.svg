@@ -58,8 +58,8 @@ var sectionId = 'dynsection-0';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#999999" stroke="#666666" points="83,-84 0,-84 0,-65 83,-65 83,-84"/>
-<text text-anchor="middle" x="41.5" y="-72" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio::Logger</text>
+<polygon fill="#999999" stroke="#666666" points="83,-75 0,-75 0,-56 83,-56 83,-75"/>
+<text text-anchor="middle" x="41.5" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio::Logger</text>
 </a>
 </g>
 </g>
@@ -67,61 +67,46 @@ var sectionId = 'dynsection-0';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="classudmaio_1_1_data_handler_abstract.html" target="_top" xlink:title="Base class to implement a DMA data reception handler.">
-<polygon fill="white" stroke="#666666" points="262,-148 119,-148 119,-129 262,-129 262,-148"/>
-<text text-anchor="middle" x="190.5" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio::DataHandlerAbstract</text>
+<polygon fill="white" stroke="#666666" points="262,-139 119,-139 119,-120 262,-120 262,-139"/>
+<text text-anchor="middle" x="190.5" y="-127" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio::DataHandlerAbstract</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="#63b8ff" d="M71.24,-89.69C85.44,-96.96 102.94,-105.57 119,-112.5 132.42,-118.29 147.59,-123.99 160.41,-128.57"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="72.93,-86.63 62.44,-85.14 69.71,-92.84 72.93,-86.63"/>
+<path fill="none" stroke="#63b8ff" d="M75.88,-80.03C103.63,-92.11 142.38,-108.98 166.69,-119.57"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="77.42,-76.89 66.86,-76.1 74.63,-83.31 77.42,-76.89"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="classudmaio_1_1_frame_format.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="246,-103 135,-103 135,-84 246,-84 246,-103"/>
-<text text-anchor="middle" x="190.5" y="-91" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio::FrameFormat</text>
+<g id="a_node4"><a xlink:href="classudmaio_1_1_hw_accessor.html" target="_top" xlink:title="Base class for hardware access.">
+<polygon fill="white" stroke="#666666" points="245,-75 136,-75 136,-56 245,-56 245,-75"/>
+<text text-anchor="middle" x="190.5" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio::HwAccessor</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="#63b8ff" d="M94.59,-81.23C107.61,-82.92 121.61,-84.73 134.76,-86.42"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="95.31,-77.8 84.95,-79.99 94.42,-84.74 95.31,-77.8"/>
+<path fill="none" stroke="#63b8ff" d="M94.77,-65.5C108.01,-65.5 122.26,-65.5 135.57,-65.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="94.96,-62 84.96,-65.5 94.96,-69 94.96,-62"/>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node">
-<title>Node5</title>
-<g id="a_node5"><a xlink:href="classudmaio_1_1_hw_accessor.html" target="_top" xlink:title="Base class for hardware access.">
-<polygon fill="white" stroke="#666666" points="245,-66 136,-66 136,-47 245,-47 245,-66"/>
-<text text-anchor="middle" x="190.5" y="-54" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio::HwAccessor</text>
+<!-- Node10 -->
+<g id="node10" class="node">
+<title>Node10</title>
+<g id="a_node10"><a xlink:href="classudmaio_1_1_u_dma_buf.html" target="_top" xlink:title="DMA data buffer accessed over AXI/UIO, implemented w/ udmabuf (see https://github....">
+<polygon fill="white" stroke="#666666" points="238,-38 143,-38 143,-19 238,-19 238,-38"/>
+<text text-anchor="middle" x="190.5" y="-26" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio::UDmaBuf</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
-<title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="#63b8ff" d="M94.77,-68.1C108.01,-66.48 122.26,-64.73 135.57,-63.1"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="94.45,-64.61 84.95,-69.3 95.3,-71.56 94.45,-64.61"/>
-</g>
-<!-- Node11 -->
-<g id="node11" class="node">
-<title>Node11</title>
-<g id="a_node11"><a xlink:href="classudmaio_1_1_u_dma_buf.html" target="_top" xlink:title="DMA data buffer accessed over AXI/UIO, implemented w/ udmabuf (see https://github....">
-<polygon fill="white" stroke="#666666" points="238,-29 143,-29 143,-10 238,-10 238,-29"/>
-<text text-anchor="middle" x="190.5" y="-17" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio::UDmaBuf</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node11 -->
-<g id="edge10" class="edge">
-<title>Node1&#45;&gt;Node11</title>
-<path fill="none" stroke="#63b8ff" d="M70.42,-59.33C84.66,-52.02 102.44,-43.55 119,-37.5 127.19,-34.51 136.08,-31.82 144.71,-29.49"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="68.87,-56.19 61.64,-63.93 72.12,-62.39 68.87,-56.19"/>
+<!-- Node1&#45;&gt;Node10 -->
+<g id="edge9" class="edge">
+<title>Node1&#45;&gt;Node10</title>
+<path fill="none" stroke="#63b8ff" d="M92.88,-52.82C111.55,-48.12 132.44,-42.86 150,-38.44"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="92.2,-49.38 83.36,-55.22 93.91,-56.17 92.2,-49.38"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -135,84 +120,84 @@ var sectionId = 'dynsection-0';
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="#63b8ff" d="M273.71,-140.87C283.1,-141.14 292.56,-141.41 301.65,-141.67"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="273.93,-137.37 263.83,-140.58 273.73,-144.37 273.93,-137.37"/>
+<path fill="none" stroke="#63b8ff" d="M273.71,-136.13C283.1,-136.89 292.56,-137.65 301.65,-138.39"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="274.08,-132.65 263.83,-135.34 273.51,-139.63 274.08,-132.65"/>
 </g>
-<!-- Node6 -->
-<g id="node6" class="node">
-<title>Node6</title>
-<g id="a_node6"><a xlink:href="classudmaio_1_1_hw_accessor_mmap.html" target="_top" xlink:title=" ">
+<!-- Node5 -->
+<g id="node5" class="node">
+<title>Node5</title>
+<g id="a_node5"><a xlink:href="classudmaio_1_1_hw_accessor_mmap.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="434,-115.5 298,-115.5 298,-85.5 434,-85.5 434,-115.5"/>
 <text text-anchor="start" x="306" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio::HwAccessorMmap</text>
 <text text-anchor="middle" x="366" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; uint64_t &gt;</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node6 -->
-<g id="edge5" class="edge">
-<title>Node5&#45;&gt;Node6</title>
-<path fill="none" stroke="#63b8ff" d="M241.92,-69.29C261.33,-74.21 283.7,-79.88 304,-85.03"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="242.89,-65.92 232.34,-66.86 241.17,-72.71 242.89,-65.92"/>
+<!-- Node4&#45;&gt;Node5 -->
+<g id="edge4" class="edge">
+<title>Node4&#45;&gt;Node5</title>
+<path fill="none" stroke="#63b8ff" d="M251.85,-77.67C266.69,-80.67 282.67,-83.89 297.81,-86.95"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="252.73,-74.28 242.24,-75.74 251.35,-81.14 252.73,-74.28"/>
 </g>
-<!-- Node8 -->
-<g id="node8" class="node">
-<title>Node8</title>
-<g id="a_node8"><a xlink:href="classudmaio_1_1_hw_accessor_mmap.html" target="_top" xlink:title=" ">
+<!-- Node7 -->
+<g id="node7" class="node">
+<title>Node7</title>
+<g id="a_node7"><a xlink:href="classudmaio_1_1_hw_accessor_mmap.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="434,-67.5 298,-67.5 298,-37.5 434,-37.5 434,-67.5"/>
 <text text-anchor="start" x="306" y="-55.5" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio::HwAccessorMmap</text>
 <text text-anchor="middle" x="366" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; max_access_width_t &gt;</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node8 -->
-<g id="edge7" class="edge">
-<title>Node5&#45;&gt;Node8</title>
-<path fill="none" stroke="#63b8ff" d="M256.92,-54.99C270.23,-54.68 284.25,-54.36 297.62,-54.05"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="256.88,-51.49 246.96,-55.22 257.04,-58.49 256.88,-51.49"/>
+<!-- Node4&#45;&gt;Node7 -->
+<g id="edge6" class="edge">
+<title>Node4&#45;&gt;Node7</title>
+<path fill="none" stroke="#63b8ff" d="M256.92,-60.6C270.23,-59.6 284.25,-58.55 297.62,-57.55"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="256.67,-57.11 246.95,-61.34 257.19,-64.09 256.67,-57.11"/>
 </g>
-<!-- Node10 -->
-<g id="node10" class="node">
-<title>Node10</title>
-<g id="a_node10"><a xlink:href="classudmaio_1_1_hw_accessor_mock.html" target="_top" xlink:title=" ">
+<!-- Node9 -->
+<g id="node9" class="node">
+<title>Node9</title>
+<g id="a_node9"><a xlink:href="classudmaio_1_1_hw_accessor_mock.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="432.5,-19 299.5,-19 299.5,0 432.5,0 432.5,-19"/>
 <text text-anchor="middle" x="366" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio::HwAccessorMock</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node10 -->
-<g id="edge9" class="edge">
-<title>Node5&#45;&gt;Node10</title>
-<path fill="none" stroke="#63b8ff" d="M239.36,-43.62C246.94,-41.57 254.68,-39.48 262,-37.5 284,-31.54 308.64,-24.85 328.3,-19.5"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="238.66,-40.18 229.92,-46.16 240.49,-46.94 238.66,-40.18"/>
+<!-- Node4&#45;&gt;Node9 -->
+<g id="edge8" class="edge">
+<title>Node4&#45;&gt;Node9</title>
+<path fill="none" stroke="#63b8ff" d="M245.1,-52.27C250.86,-50.49 256.58,-48.56 262,-46.5 278.72,-40.14 281.32,-34.97 298,-28.5 306.68,-25.13 316.2,-22.07 325.27,-19.44"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="244.13,-48.91 235.52,-55.08 246.1,-55.62 244.13,-48.91"/>
 </g>
-<!-- Node7 -->
-<g id="node7" class="node">
-<title>Node7</title>
-<g id="a_node7"><a xlink:href="classudmaio_1_1_hw_accessor_axi.html" target="_top" xlink:title=" ">
+<!-- Node6 -->
+<g id="node6" class="node">
+<title>Node6</title>
+<g id="a_node6"><a xlink:href="classudmaio_1_1_hw_accessor_axi.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="598,-110 476,-110 476,-91 598,-91 598,-110"/>
 <text text-anchor="middle" x="537" y="-98" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio::HwAccessorAxi</text>
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node7 -->
-<g id="edge6" class="edge">
-<title>Node6&#45;&gt;Node7</title>
+<!-- Node5&#45;&gt;Node6 -->
+<g id="edge5" class="edge">
+<title>Node5&#45;&gt;Node6</title>
 <path fill="none" stroke="#63b8ff" d="M445.56,-100.5C455.63,-100.5 465.81,-100.5 475.52,-100.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="445.79,-97 435.79,-100.5 445.79,-104 445.79,-97"/>
 </g>
-<!-- Node9 -->
-<g id="node9" class="node">
-<title>Node9</title>
-<g id="a_node9"><a xlink:href="classudmaio_1_1_hw_accessor_xdma.html" target="_top" xlink:title=" ">
+<!-- Node8 -->
+<g id="node8" class="node">
+<title>Node8</title>
+<g id="a_node8"><a xlink:href="classudmaio_1_1_hw_accessor_xdma.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="604,-67.5 470,-67.5 470,-37.5 604,-37.5 604,-67.5"/>
 <text text-anchor="start" x="478" y="-55.5" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio::HwAccessorXdma</text>
 <text text-anchor="middle" x="537" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">&lt; max_access_width_t &gt;</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node9 -->
-<g id="edge8" class="edge">
-<title>Node8&#45;&gt;Node9</title>
+<!-- Node7&#45;&gt;Node8 -->
+<g id="edge7" class="edge">
+<title>Node7&#45;&gt;Node8</title>
 <path fill="none" stroke="#63b8ff" d="M445.53,-52.5C453.55,-52.5 461.64,-52.5 469.5,-52.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="445.79,-49 435.79,-52.5 445.79,-56 445.79,-49"/>
 </g>

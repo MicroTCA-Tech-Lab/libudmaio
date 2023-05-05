@@ -1,8 +1,7 @@
 <map id="udmaio::FrameFormat" name="udmaio::FrameFormat">
-<area shape="rect" id="node1" title=" " alt="" coords="705,69,853,95"/>
-<area shape="rect" id="node2" href="$structudmaio_1_1_logger.html" title=" " alt="" coords="381,5,492,31"/>
-<area shape="rect" id="node3" title=" " alt="" coords="369,55,504,109"/>
-<area shape="rect" id="node4" title=" " alt="" coords="179,69,257,95"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,62,129,102"/>
-<area shape="rect" id="node6" href="$structudmaio_1_1_frame_format_1_1dim__t.html" title="Frame dimensions." alt="" coords="363,134,511,174"/>
+<area shape="rect" id="node1" title=" " alt="" coords="87,300,235,325"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,183,140,237"/>
+<area shape="rect" id="node3" title=" " alt="" coords="33,95,112,120"/>
+<area shape="rect" id="node4" title=" " alt="" coords="11,5,135,45"/>
+<area shape="rect" id="node5" href="$structudmaio_1_1_frame_format_1_1dim__t.html" title="Frame dimensions." alt="" coords="176,190,324,230"/>
 </map>
