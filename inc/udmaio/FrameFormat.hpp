@@ -15,11 +15,9 @@
 #include <cstdint>
 #include <string>
 
-#include "udmaio/Logging.hpp"
-
 namespace udmaio {
 
-class FrameFormat : public Logger {
+class FrameFormat {
   public:
     /// Frame dimensions
     struct dim_t {

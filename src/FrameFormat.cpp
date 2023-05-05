@@ -12,12 +12,7 @@
 #include "udmaio/FrameFormat.hpp"
 
 #include <cmath>
-
-#include <boost/log/core/core.hpp>
-#include <boost/log/sources/logger.hpp>
-#include <boost/log/trivial.hpp>
-
-namespace blt = boost::log::trivial;
+#include <iomanip>
 
 namespace udmaio {
 
@@ -91,7 +86,7 @@ std::ostream& operator<<(std::ostream& os, const FrameFormat::PixelFormat px_fmt
     return os;
 }
 
-FrameFormat::FrameFormat() : Logger("FrameFormat") {
+FrameFormat::FrameFormat() {
     _dim = {0, 0};
 
     _pix_fmt = PixelFormat::unknown;
@@ -183,8 +178,7 @@ void FrameFormat::update_bpp(uint16_t bytes_per_pixel) {
 
 void FrameFormat::update_px_fmt(PixelFormat pixFmt) {
     if (pixFmt == PixelFormat::unknown) {
-        BOOST_LOG_SEV(_lg, bls::error)
-            << ": Tried to set pixel format to 'unknown_pxfmt', ignoring operation!";
+        throw std::runtime_error("Attempt to set pixel format to 'unknown'");
     } else {
         _pix_fmt = pixFmt;
         _bpp = (0x00ff & (static_cast<uint32_t>(pixFmt) >> 16)) / 8;
