@@ -102,6 +102,14 @@ class FrameFormat : public Logger {
     };
     // clang-format on
 
+    /// @brief Gets pixel format enum from string
+    /// @param pix_fmt_str String containing the name of the pixel format
+    static PixelFormat pix_fmt_from_str(std::string pix_fmt_str);
+
+    /// @brief Gets pixel format string from enum
+    /// @param pix_fmt Enum containing the pixel format
+    static std::string pix_fmt_to_str(PixelFormat pix_fmt);
+
     FrameFormat();
 
     /// @brief Set format of the frames used for the video stream
@@ -114,7 +122,7 @@ class FrameFormat : public Logger {
     /// @param dim  Width and height of the video frame (in pixels)
     /// @param pixFmt Pixel format, will be used to set bytes per pixel value
     /// @param word_width Number of bytes per data word used by the dma
-    void set_format(dim_t dim, std::string pix_fmt, uint8_t word_width);
+    void set_format(dim_t dim, std::string pix_fmt_str, uint8_t word_width);
 
     /// @brief Set format of the frames used for the video stream
     /// @param dim  Width and height of the video frame (in pixels)
@@ -124,38 +132,28 @@ class FrameFormat : public Logger {
 
     /// @brief Set format of the frames used for the video stream, pixel format is untouched
     /// @param dim  Width and height of the video frame (in pixels)
-    void set_format(dim_t dim);
+    void set_dim(dim_t dim);
 
     /// @brief Set format of the frames used for the video stream, frame dimensions are not touched
     /// @param bytes_per_pix Number of bytes per pixel, pixel format will be set to unknown
-    void set_format(uint16_t bytes_per_pix);
+    void set_bpp(uint16_t bytes_per_pix);
 
     /// @brief Set format of the frames used for the video stream, frame dimensions are not touched
     /// @param pixFmt Pixel format, will be used to set bytes per pixel value
-    void set_format(PixelFormat pix_fmt);
+    void set_pix_fmt(PixelFormat pix_fmt);
 
     /// @brief Set format of the frames used for the video stream, frame dimensions are not touched
     /// @param word_width Number of bytes per data word used by the dma
-    void set_format(uint8_t word_width);
+    void set_word_width(uint8_t word_width);
 
-    /// @brief Selets a pixel format by the given name
-    /// @param pix_fmt String containing the name of the pixel format
-    PixelFormat toPixFormat(std::string pix_fmt);
-
-    std::string toString();
-
-    dim_t get_dim();
-
-    PixelFormat get_pixel_format();
-    uint16_t get_bytes_per_pixel();  // bytes per pixel
-
-    uint8_t get_word_width();
-    uint16_t get_pixel_per_word();
-    uint16_t get_hsize();  // line length in bytes
-
-    size_t get_frm_size();  // in bytes
-
-    void dump_frame_format();
+    dim_t get_dim() const;
+    PixelFormat get_pixel_format() const;
+    std::string get_pixel_format_str() const;
+    uint16_t get_bytes_per_pixel() const;
+    uint8_t get_word_width() const;
+    uint16_t get_pixel_per_word() const;
+    uint16_t get_hsize() const;
+    size_t get_frm_size() const;
 
   private:
     static const std::unordered_map<PixelFormat, std::string> _pxfmt_enum_to_str_tab;
@@ -178,5 +176,9 @@ class FrameFormat : public Logger {
     /// Line length in bytes
     uint16_t _hsize;
 };
+
+std::ostream& operator<<(std::ostream& os, const FrameFormat::PixelFormat px_fmt);
+
+std::ostream& operator<<(std::ostream& os, const FrameFormat& frm_fmt);
 
 }  // namespace udmaio
