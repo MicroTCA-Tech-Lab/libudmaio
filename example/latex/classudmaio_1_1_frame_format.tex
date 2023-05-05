@@ -1,0 +1,623 @@
+\hypertarget{classudmaio_1_1_frame_format}{}\doxysection{udmaio\+::Frame\+Format Class Reference}
+\label{classudmaio_1_1_frame_format}\index{udmaio::FrameFormat@{udmaio::FrameFormat}}
+
+
+{\ttfamily \#include $<$Frame\+Format.\+hpp$>$}
+
+
+
+Inheritance diagram for udmaio\+::Frame\+Format\+:
+% FIG 0
+
+
+Collaboration diagram for udmaio\+::Frame\+Format\+:
+% FIG 1
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} \+: uint32\+\_\+t \{ \newline
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aad921d60486366258809553a3db49a4a}{unknown}} = 0
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07abc5c44624758954f1a4af1e009f5cf6e}{Mono8}} = 0x01080001
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ab06d5465fa227777dbaebf0c0048244a}{Mono10}} = 0x01100003
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a1c939765b7a08112ae479b0f4d334e28}{Mono12}} = 0x01100005
+, \newline
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a34c41cc1f0312957ac456467c681f66a}{Mono14}} = 0x01100025
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aab2f4f7e4448e8c91c89774787a1cc2c}{Mono16}} = 0x01100007
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a56f68c9445cd0901e1d6d001e4efc067}{Bayer\+GR8}} = 0x01080008
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a759e49edd24350e2c9aaeacc6af81759}{Bayer\+RG8}} = 0x01080009
+, \newline
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a90bd42a79ba5191ed40a8113723e3b1c}{Bayer\+GB8}} = 0x0108000A
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a5c07bb41050e6b3c2e26d6542996a96f}{Bayer\+BG8}} = 0x0108000B
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aa88799c1110dd117afdf42203fac1f6d}{Bayer\+GR10}} = 0x0110000C
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a65055ae551f0e9193def30695fc3453c}{Bayer\+RG10}} = 0x0110000D
+, \newline
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a201d7f008d5cd72743e109f4767cd158}{Bayer\+GB10}} = 0x0110000E
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a280230f3568a5b4639d9f75884d75031}{Bayer\+BG10}} = 0x0110000F
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a49b7655db19a0d2264817b9d9d5b90ff}{Bayer\+GR12}} = 0x01100010
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a51a44c97c1e81969681a7d255f874f08}{Bayer\+RG12}} = 0x01100011
+, \newline
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a66a1fae708cb837c6dfd5a0a4ccab97d}{Bayer\+GB12}} = 0x01100012
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad45a4d6f852fbf8a8f6b3b0a9445cdff}{Bayer\+BG12}} = 0x01100013
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad5b2e6be4ba9b174aa050b9556cb807f}{Bayer\+GR16}} = 0x0110002E
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a9f9d0b00f68d6b9819e65f29139d2bf4}{Bayer\+RG16}} = 0x0110002F
+, \newline
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ae5976562e8db8553d1a347e30a19063b}{Bayer\+GB16}} = 0x01100030
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aff3c8270edb6f2a4baeb966bdfc5a148}{Bayer\+BG16}} = 0x01100031
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a165c6379d01617e12de274a3952efa63}{RGB8}} = 0x02180014
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ae764ec5a498470e04dd8b545427203cc}{BGR8}} = 0x02180015
+, \newline
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a2b59bc7441077b655cfe7dfb3b1790dc}{RGBa8}} = 0x02200016
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07adf676d2654af6c14e72e09576abdcab9}{BGRa8}} = 0x02200017
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ae1767a5a7c7fae24cd6436fb0a015083}{RGB10\+V1\+Packed1}} = 0x0220001C
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07afa967a854da71acb35b554cf29308a4b}{RGB10p32}} = 0x0220001D
+, \newline
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a115337735e69a0fd2fdd3e8b384d918e}{RGB565p}} = 0x02100035
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aa44bf8ffb557cbe0fe795312da9c069f}{BGR565p}} = 0x02100036
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a857930fdbf17cb68c7174ca58a6f7922}{YUV422\+\_\+8\+\_\+\+UYVY}} = 0x0210001F
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a6d1f6c3efd52dbfa99221463f9b2d05e}{YUV422\+\_\+8}} = 0x02100032
+, \newline
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad4d1880339c2babc5d0a1bcbef0089f5}{YUV8\+\_\+\+UYV}} = 0x02180020
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a3f033d70725774e93771d30eecf3144e}{YCb\+Cr8\+\_\+\+Cb\+YCr}} = 0x0218003A
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a6c363a6aa52c89ba1f7edcd888520f54}{YCb\+Cr422\+\_\+8}} = 0x0210003B
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a9c87eb3247a7c906970f3bc27979cd2a}{YCb\+Cr422\+\_\+8\+\_\+\+Cb\+YCrY}} = 0x02100043
+, \newline
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a46835ed49da6f04541e7b2a4d6a1befe}{YCb\+Cr601\+\_\+8\+\_\+\+Cb\+YCr}} = 0x0218003D
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a9e7352c7ccedf0169ed1e7273a8e8882}{YCb\+Cr601\+\_\+422\+\_\+8}} = 0x0210003E
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad05b9b43f4432a6f0a64bcc6bb85c4f1}{YCb\+Cr601\+\_\+422\+\_\+8\+\_\+\+Cb\+YCrY}} = 0x02100044
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad8de4690d1eb08f953ee2aba321d0e46}{YCb\+Cr709\+\_\+8\+\_\+\+Cb\+YCr}} = 0x02180040
+, \newline
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a44c80e863e23a7ef2e0deea47a818290}{YCb\+Cr709\+\_\+422\+\_\+8}} = 0x02100041
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ac84db5b3e65c101288604ea51c742df1}{YCb\+Cr709\+\_\+422\+\_\+8\+\_\+\+Cb\+YCrY}} = 0x02100045
+, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a82e3304dc380a00d357f71498cd35ed8}{RGB8\+\_\+\+Planar}} = 0x02180021
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a33c5553c8ca80b559c948e252081e8b7}{Frame\+Format}} ()
+\item 
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_a236ad96e224a01ade8a9515e08e2f46c}{set\+Format}} (uint16\+\_\+t width, uint16\+\_\+t height, uint16\+\_\+t bytes\+\_\+per\+\_\+pixel, uint8\+\_\+t word\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Set format of the frames used for the video stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_a772acea32bd2ec24be15fa49116ac454}{set\+Format}} (uint16\+\_\+t width, uint16\+\_\+t height, std\+::string pix\+Fmt, uint8\+\_\+t word\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Set format of the frames used for the video stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_a65132cfae20178ad3bf2adcb504bac0c}{set\+Format}} (uint16\+\_\+t width, uint16\+\_\+t height, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} pix\+Fmt, uint8\+\_\+t word\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Set format of the frames used for the video stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_a5011c6ba729327f54629b133f629ccf6}{set\+Format}} (uint16\+\_\+t width, uint16\+\_\+t height)
+\begin{DoxyCompactList}\small\item\em Set format of the frames used for the video stream, pixel format is untouched. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_ac42d926e6a1e2f132f0dcda3ff490358}{set\+Format}} (uint16\+\_\+t bytes\+\_\+per\+\_\+pix)
+\begin{DoxyCompactList}\small\item\em Set format of the frames used for the video stream, frame dimensions are not touched. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_a2769f71e9d3d40257d55566606f02733}{set\+Format}} (\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} pix\+Fmt)
+\begin{DoxyCompactList}\small\item\em Set format of the frames used for the video stream, frame dimensions are not touched. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_a62a9a1292ef4572b50bd583da77c489d}{set\+Format}} (uint8\+\_\+t word\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Set format of the frames used for the video stream, frame dimensions are not touched. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} \mbox{\hyperlink{classudmaio_1_1_frame_format_a7cfbd3d68c809eb49f511458bfd16641}{to\+Pix\+Format}} (std\+::string pix\+Frmt)
+\begin{DoxyCompactList}\small\item\em Selets a pixel format by the given name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classudmaio_1_1_frame_format_aba52ceab553b0bc44239b44fb22acc5d}{to\+String}} ()
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_aba2d2f84548d5c948521f11fc76f8260}{get\+\_\+pixel}} ()
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_a7cdad8e259456e3d21df3cd8b7d15950}{get\+\_\+lines}} ()
+\item 
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} \mbox{\hyperlink{classudmaio_1_1_frame_format_aebc870e41cc088822b2e4e787f9082a0}{get\+\_\+pixel\+\_\+format}} ()
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_af25ebe73d42fa4355ce5260171e5de60}{get\+\_\+bytes\+\_\+per\+\_\+pixel}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_a0789d1665b310e96a0e153c27531c296}{get\+\_\+word\+\_\+width}} ()
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_a2ab7f8e0a6d72b989489dbb800173a2d}{get\+\_\+pixel\+\_\+per\+\_\+word}} ()
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_a3685af1eabe5d2aef8131d0b90de2acb}{get\+\_\+hsize}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_ada6c3fd3064eb873952929c5e45178c5}{get\+\_\+frm\+\_\+size}} ()
+\item 
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_a11dadd456089c1406c118bab5f42c89f}{dump\+\_\+frame\+\_\+format}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_a6b616241bc68a27931e8b4910d6c3da6}{update\+\_\+frm\+\_\+dim}} (uint16\+\_\+t width, uint16\+\_\+t height)
+\item 
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_aa9aa449c52578904b6b8b4509911ce71}{update\+\_\+bpp}} (uint16\+\_\+t bytes\+\_\+per\+\_\+pix)
+\item 
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_ac49d915c2111a7b4142db437e40ff45d}{update\+\_\+px\+\_\+fmt}} (\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} pix\+Fmt)
+\item 
+void \mbox{\hyperlink{classudmaio_1_1_frame_format_af25cb5651410780ff69b96a05447f113}{update\+\_\+hsize}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_a685c9d69b2250c3867722d59d1390328}{pixel}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_aaed1598bdafc9c2e80161902125e0bcc}{lines}}
+\item 
+\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} \mbox{\hyperlink{classudmaio_1_1_frame_format_affa336bcc3556dac7513c51aa55630b7}{px\+Fmt}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_a388121769aae9a44fa329e09f52b593e}{bpp}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_a0359ee5e4ef678f98636f6d3e103ed20}{data\+\_\+width}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_a114de06fc1404c029477b8732d6fce46}{pix\+\_\+per\+\_\+word}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classudmaio_1_1_frame_format_ad1f030a579d1343745d61b336a002e78}{hsize}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}}, std\+::string $>$ \mbox{\hyperlink{classudmaio_1_1_frame_format_a2f28196b7829350f53cffb825130ff55}{\+\_\+pxfmt\+\_\+enum\+\_\+to\+\_\+str\+\_\+tab}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!PixelFormat@{PixelFormat}}
+\index{PixelFormat@{PixelFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{PixelFormat}{PixelFormat}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{udmaio\+::\+Frame\+Format\+::\+Pixel\+Format}} \+: uint32\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{unknown@{unknown}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!unknown@{unknown}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aad921d60486366258809553a3db49a4a}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aad921d60486366258809553a3db49a4a}} 
+unknown&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mono8@{Mono8}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!Mono8@{Mono8}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07abc5c44624758954f1a4af1e009f5cf6e}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07abc5c44624758954f1a4af1e009f5cf6e}} 
+Mono8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mono10@{Mono10}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!Mono10@{Mono10}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ab06d5465fa227777dbaebf0c0048244a}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ab06d5465fa227777dbaebf0c0048244a}} 
+Mono10&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mono12@{Mono12}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!Mono12@{Mono12}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a1c939765b7a08112ae479b0f4d334e28}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a1c939765b7a08112ae479b0f4d334e28}} 
+Mono12&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mono14@{Mono14}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!Mono14@{Mono14}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a34c41cc1f0312957ac456467c681f66a}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a34c41cc1f0312957ac456467c681f66a}} 
+Mono14&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mono16@{Mono16}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!Mono16@{Mono16}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aab2f4f7e4448e8c91c89774787a1cc2c}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aab2f4f7e4448e8c91c89774787a1cc2c}} 
+Mono16&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BayerGR8@{BayerGR8}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BayerGR8@{BayerGR8}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a56f68c9445cd0901e1d6d001e4efc067}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a56f68c9445cd0901e1d6d001e4efc067}} 
+Bayer\+GR8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BayerRG8@{BayerRG8}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BayerRG8@{BayerRG8}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a759e49edd24350e2c9aaeacc6af81759}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a759e49edd24350e2c9aaeacc6af81759}} 
+Bayer\+RG8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BayerGB8@{BayerGB8}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BayerGB8@{BayerGB8}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a90bd42a79ba5191ed40a8113723e3b1c}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a90bd42a79ba5191ed40a8113723e3b1c}} 
+Bayer\+GB8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BayerBG8@{BayerBG8}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BayerBG8@{BayerBG8}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a5c07bb41050e6b3c2e26d6542996a96f}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a5c07bb41050e6b3c2e26d6542996a96f}} 
+Bayer\+BG8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BayerGR10@{BayerGR10}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BayerGR10@{BayerGR10}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aa88799c1110dd117afdf42203fac1f6d}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aa88799c1110dd117afdf42203fac1f6d}} 
+Bayer\+GR10&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BayerRG10@{BayerRG10}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BayerRG10@{BayerRG10}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a65055ae551f0e9193def30695fc3453c}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a65055ae551f0e9193def30695fc3453c}} 
+Bayer\+RG10&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BayerGB10@{BayerGB10}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BayerGB10@{BayerGB10}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a201d7f008d5cd72743e109f4767cd158}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a201d7f008d5cd72743e109f4767cd158}} 
+Bayer\+GB10&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BayerBG10@{BayerBG10}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BayerBG10@{BayerBG10}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a280230f3568a5b4639d9f75884d75031}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a280230f3568a5b4639d9f75884d75031}} 
+Bayer\+BG10&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BayerGR12@{BayerGR12}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BayerGR12@{BayerGR12}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a49b7655db19a0d2264817b9d9d5b90ff}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a49b7655db19a0d2264817b9d9d5b90ff}} 
+Bayer\+GR12&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BayerRG12@{BayerRG12}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BayerRG12@{BayerRG12}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a51a44c97c1e81969681a7d255f874f08}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a51a44c97c1e81969681a7d255f874f08}} 
+Bayer\+RG12&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BayerGB12@{BayerGB12}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BayerGB12@{BayerGB12}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a66a1fae708cb837c6dfd5a0a4ccab97d}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a66a1fae708cb837c6dfd5a0a4ccab97d}} 
+Bayer\+GB12&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BayerBG12@{BayerBG12}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BayerBG12@{BayerBG12}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad45a4d6f852fbf8a8f6b3b0a9445cdff}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad45a4d6f852fbf8a8f6b3b0a9445cdff}} 
+Bayer\+BG12&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BayerGR16@{BayerGR16}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BayerGR16@{BayerGR16}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad5b2e6be4ba9b174aa050b9556cb807f}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad5b2e6be4ba9b174aa050b9556cb807f}} 
+Bayer\+GR16&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BayerRG16@{BayerRG16}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BayerRG16@{BayerRG16}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a9f9d0b00f68d6b9819e65f29139d2bf4}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a9f9d0b00f68d6b9819e65f29139d2bf4}} 
+Bayer\+RG16&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BayerGB16@{BayerGB16}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BayerGB16@{BayerGB16}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ae5976562e8db8553d1a347e30a19063b}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ae5976562e8db8553d1a347e30a19063b}} 
+Bayer\+GB16&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BayerBG16@{BayerBG16}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BayerBG16@{BayerBG16}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aff3c8270edb6f2a4baeb966bdfc5a148}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aff3c8270edb6f2a4baeb966bdfc5a148}} 
+Bayer\+BG16&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGB8@{RGB8}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!RGB8@{RGB8}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a165c6379d01617e12de274a3952efa63}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a165c6379d01617e12de274a3952efa63}} 
+RGB8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BGR8@{BGR8}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BGR8@{BGR8}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ae764ec5a498470e04dd8b545427203cc}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ae764ec5a498470e04dd8b545427203cc}} 
+BGR8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGBa8@{RGBa8}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!RGBa8@{RGBa8}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a2b59bc7441077b655cfe7dfb3b1790dc}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a2b59bc7441077b655cfe7dfb3b1790dc}} 
+RGBa8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BGRa8@{BGRa8}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BGRa8@{BGRa8}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07adf676d2654af6c14e72e09576abdcab9}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07adf676d2654af6c14e72e09576abdcab9}} 
+BGRa8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGB10V1Packed1@{RGB10V1Packed1}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!RGB10V1Packed1@{RGB10V1Packed1}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ae1767a5a7c7fae24cd6436fb0a015083}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ae1767a5a7c7fae24cd6436fb0a015083}} 
+RGB10\+V1\+Packed1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGB10p32@{RGB10p32}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!RGB10p32@{RGB10p32}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07afa967a854da71acb35b554cf29308a4b}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07afa967a854da71acb35b554cf29308a4b}} 
+RGB10p32&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGB565p@{RGB565p}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!RGB565p@{RGB565p}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a115337735e69a0fd2fdd3e8b384d918e}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a115337735e69a0fd2fdd3e8b384d918e}} 
+RGB565p&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BGR565p@{BGR565p}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!BGR565p@{BGR565p}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aa44bf8ffb557cbe0fe795312da9c069f}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aa44bf8ffb557cbe0fe795312da9c069f}} 
+BGR565p&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YUV422\_8\_UYVY@{YUV422\_8\_UYVY}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!YUV422\_8\_UYVY@{YUV422\_8\_UYVY}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a857930fdbf17cb68c7174ca58a6f7922}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a857930fdbf17cb68c7174ca58a6f7922}} 
+YUV422\+\_\+8\+\_\+\+UYVY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YUV422\_8@{YUV422\_8}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!YUV422\_8@{YUV422\_8}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a6d1f6c3efd52dbfa99221463f9b2d05e}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a6d1f6c3efd52dbfa99221463f9b2d05e}} 
+YUV422\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YUV8\_UYV@{YUV8\_UYV}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!YUV8\_UYV@{YUV8\_UYV}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad4d1880339c2babc5d0a1bcbef0089f5}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad4d1880339c2babc5d0a1bcbef0089f5}} 
+YUV8\+\_\+\+UYV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YCbCr8\_CbYCr@{YCbCr8\_CbYCr}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!YCbCr8\_CbYCr@{YCbCr8\_CbYCr}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a3f033d70725774e93771d30eecf3144e}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a3f033d70725774e93771d30eecf3144e}} 
+YCb\+Cr8\+\_\+\+Cb\+YCr&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YCbCr422\_8@{YCbCr422\_8}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!YCbCr422\_8@{YCbCr422\_8}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a6c363a6aa52c89ba1f7edcd888520f54}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a6c363a6aa52c89ba1f7edcd888520f54}} 
+YCb\+Cr422\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YCbCr422\_8\_CbYCrY@{YCbCr422\_8\_CbYCrY}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!YCbCr422\_8\_CbYCrY@{YCbCr422\_8\_CbYCrY}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a9c87eb3247a7c906970f3bc27979cd2a}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a9c87eb3247a7c906970f3bc27979cd2a}} 
+YCb\+Cr422\+\_\+8\+\_\+\+Cb\+YCrY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YCbCr601\_8\_CbYCr@{YCbCr601\_8\_CbYCr}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!YCbCr601\_8\_CbYCr@{YCbCr601\_8\_CbYCr}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a46835ed49da6f04541e7b2a4d6a1befe}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a46835ed49da6f04541e7b2a4d6a1befe}} 
+YCb\+Cr601\+\_\+8\+\_\+\+Cb\+YCr&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YCbCr601\_422\_8@{YCbCr601\_422\_8}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!YCbCr601\_422\_8@{YCbCr601\_422\_8}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a9e7352c7ccedf0169ed1e7273a8e8882}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a9e7352c7ccedf0169ed1e7273a8e8882}} 
+YCb\+Cr601\+\_\+422\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YCbCr601\_422\_8\_CbYCrY@{YCbCr601\_422\_8\_CbYCrY}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!YCbCr601\_422\_8\_CbYCrY@{YCbCr601\_422\_8\_CbYCrY}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad05b9b43f4432a6f0a64bcc6bb85c4f1}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad05b9b43f4432a6f0a64bcc6bb85c4f1}} 
+YCb\+Cr601\+\_\+422\+\_\+8\+\_\+\+Cb\+YCrY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YCbCr709\_8\_CbYCr@{YCbCr709\_8\_CbYCr}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!YCbCr709\_8\_CbYCr@{YCbCr709\_8\_CbYCr}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad8de4690d1eb08f953ee2aba321d0e46}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad8de4690d1eb08f953ee2aba321d0e46}} 
+YCb\+Cr709\+\_\+8\+\_\+\+Cb\+YCr&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YCbCr709\_422\_8@{YCbCr709\_422\_8}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!YCbCr709\_422\_8@{YCbCr709\_422\_8}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a44c80e863e23a7ef2e0deea47a818290}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a44c80e863e23a7ef2e0deea47a818290}} 
+YCb\+Cr709\+\_\+422\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YCbCr709\_422\_8\_CbYCrY@{YCbCr709\_422\_8\_CbYCrY}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!YCbCr709\_422\_8\_CbYCrY@{YCbCr709\_422\_8\_CbYCrY}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ac84db5b3e65c101288604ea51c742df1}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ac84db5b3e65c101288604ea51c742df1}} 
+YCb\+Cr709\+\_\+422\+\_\+8\+\_\+\+Cb\+YCrY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGB8\_Planar@{RGB8\_Planar}!udmaio::FrameFormat@{udmaio::FrameFormat}}\index{udmaio::FrameFormat@{udmaio::FrameFormat}!RGB8\_Planar@{RGB8\_Planar}}}\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a82e3304dc380a00d357f71498cd35ed8}\label{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a82e3304dc380a00d357f71498cd35ed8}} 
+RGB8\+\_\+\+Planar&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a33c5553c8ca80b559c948e252081e8b7}\label{classudmaio_1_1_frame_format_a33c5553c8ca80b559c948e252081e8b7}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!FrameFormat@{FrameFormat}}
+\index{FrameFormat@{FrameFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{FrameFormat()}{FrameFormat()}}
+{\footnotesize\ttfamily udmaio\+::\+Frame\+Format\+::\+Frame\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a11dadd456089c1406c118bab5f42c89f}\label{classudmaio_1_1_frame_format_a11dadd456089c1406c118bab5f42c89f}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!dump\_frame\_format@{dump\_frame\_format}}
+\index{dump\_frame\_format@{dump\_frame\_format}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{dump\_frame\_format()}{dump\_frame\_format()}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::dump\+\_\+frame\+\_\+format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_af25ebe73d42fa4355ce5260171e5de60}\label{classudmaio_1_1_frame_format_af25ebe73d42fa4355ce5260171e5de60}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!get\_bytes\_per\_pixel@{get\_bytes\_per\_pixel}}
+\index{get\_bytes\_per\_pixel@{get\_bytes\_per\_pixel}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{get\_bytes\_per\_pixel()}{get\_bytes\_per\_pixel()}}
+{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::get\+\_\+bytes\+\_\+per\+\_\+pixel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_ada6c3fd3064eb873952929c5e45178c5}\label{classudmaio_1_1_frame_format_ada6c3fd3064eb873952929c5e45178c5}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!get\_frm\_size@{get\_frm\_size}}
+\index{get\_frm\_size@{get\_frm\_size}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{get\_frm\_size()}{get\_frm\_size()}}
+{\footnotesize\ttfamily size\+\_\+t udmaio\+::\+Frame\+Format\+::get\+\_\+frm\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a3685af1eabe5d2aef8131d0b90de2acb}\label{classudmaio_1_1_frame_format_a3685af1eabe5d2aef8131d0b90de2acb}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!get\_hsize@{get\_hsize}}
+\index{get\_hsize@{get\_hsize}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{get\_hsize()}{get\_hsize()}}
+{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::get\+\_\+hsize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a7cdad8e259456e3d21df3cd8b7d15950}\label{classudmaio_1_1_frame_format_a7cdad8e259456e3d21df3cd8b7d15950}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!get\_lines@{get\_lines}}
+\index{get\_lines@{get\_lines}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{get\_lines()}{get\_lines()}}
+{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::get\+\_\+lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_aba2d2f84548d5c948521f11fc76f8260}\label{classudmaio_1_1_frame_format_aba2d2f84548d5c948521f11fc76f8260}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!get\_pixel@{get\_pixel}}
+\index{get\_pixel@{get\_pixel}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{get\_pixel()}{get\_pixel()}}
+{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::get\+\_\+pixel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_aebc870e41cc088822b2e4e787f9082a0}\label{classudmaio_1_1_frame_format_aebc870e41cc088822b2e4e787f9082a0}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!get\_pixel\_format@{get\_pixel\_format}}
+\index{get\_pixel\_format@{get\_pixel\_format}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{get\_pixel\_format()}{get\_pixel\_format()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} udmaio\+::\+Frame\+Format\+::get\+\_\+pixel\+\_\+format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a2ab7f8e0a6d72b989489dbb800173a2d}\label{classudmaio_1_1_frame_format_a2ab7f8e0a6d72b989489dbb800173a2d}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!get\_pixel\_per\_word@{get\_pixel\_per\_word}}
+\index{get\_pixel\_per\_word@{get\_pixel\_per\_word}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{get\_pixel\_per\_word()}{get\_pixel\_per\_word()}}
+{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::get\+\_\+pixel\+\_\+per\+\_\+word (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a0789d1665b310e96a0e153c27531c296}\label{classudmaio_1_1_frame_format_a0789d1665b310e96a0e153c27531c296}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!get\_word\_width@{get\_word\_width}}
+\index{get\_word\_width@{get\_word\_width}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{get\_word\_width()}{get\_word\_width()}}
+{\footnotesize\ttfamily uint8\+\_\+t udmaio\+::\+Frame\+Format\+::get\+\_\+word\+\_\+width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a2769f71e9d3d40257d55566606f02733}\label{classudmaio_1_1_frame_format_a2769f71e9d3d40257d55566606f02733}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!setFormat@{setFormat}}
+\index{setFormat@{setFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}}}]{pix\+Fmt }\end{DoxyParamCaption})}
+
+
+
+Set format of the frames used for the video stream, frame dimensions are not touched. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pix\+Fmt} & Pixel format, will be used to set bytes per pixel value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_ac42d926e6a1e2f132f0dcda3ff490358}\label{classudmaio_1_1_frame_format_ac42d926e6a1e2f132f0dcda3ff490358}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!setFormat@{setFormat}}
+\index{setFormat@{setFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+Format (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{bytes\+\_\+per\+\_\+pix }\end{DoxyParamCaption})}
+
+
+
+Set format of the frames used for the video stream, frame dimensions are not touched. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bytes\+\_\+per\+\_\+pix} & Number of bytes per pixel, pixel format will be set to unknown \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a5011c6ba729327f54629b133f629ccf6}\label{classudmaio_1_1_frame_format_a5011c6ba729327f54629b133f629ccf6}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!setFormat@{setFormat}}
+\index{setFormat@{setFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+Format (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height }\end{DoxyParamCaption})}
+
+
+
+Set format of the frames used for the video stream, pixel format is untouched. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the video frame (in pixel) \\
+\hline
+{\em height} & Height of the video frame (in pixel) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a65132cfae20178ad3bf2adcb504bac0c}\label{classudmaio_1_1_frame_format_a65132cfae20178ad3bf2adcb504bac0c}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!setFormat@{setFormat}}
+\index{setFormat@{setFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+Format (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height,  }\item[{\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}}}]{pix\+Fmt,  }\item[{uint8\+\_\+t}]{word\+\_\+width }\end{DoxyParamCaption})}
+
+
+
+Set format of the frames used for the video stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the video frame (in pixel) \\
+\hline
+{\em height} & Height of the video frame (in pixel) \\
+\hline
+{\em pix\+Fmt} & Pixel format, will be used to set bytes per pixel value \\
+\hline
+{\em word\+\_\+width} & Number of bytes per data word used by the dma \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a772acea32bd2ec24be15fa49116ac454}\label{classudmaio_1_1_frame_format_a772acea32bd2ec24be15fa49116ac454}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!setFormat@{setFormat}}
+\index{setFormat@{setFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+Format (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height,  }\item[{std\+::string}]{pix\+Fmt,  }\item[{uint8\+\_\+t}]{word\+\_\+width }\end{DoxyParamCaption})}
+
+
+
+Set format of the frames used for the video stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the video frame (in pixel) \\
+\hline
+{\em height} & Height of the video frame (in pixel) \\
+\hline
+{\em pix\+Fmt} & Pixel format, will be used to set bytes per pixel value \\
+\hline
+{\em word\+\_\+width} & Number of bytes per data word used by the dma \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a236ad96e224a01ade8a9515e08e2f46c}\label{classudmaio_1_1_frame_format_a236ad96e224a01ade8a9515e08e2f46c}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!setFormat@{setFormat}}
+\index{setFormat@{setFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+Format (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height,  }\item[{uint16\+\_\+t}]{bytes\+\_\+per\+\_\+pixel,  }\item[{uint8\+\_\+t}]{word\+\_\+width }\end{DoxyParamCaption})}
+
+
+
+Set format of the frames used for the video stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the video frame (in pixel) \\
+\hline
+{\em height} & Height of the video frame (in pixel) \\
+\hline
+{\em bytes\+\_\+per\+\_\+pix} & Number of bytes per pixel, pixel format will be set to unknown \\
+\hline
+{\em word\+\_\+width} & Number of bytes per data word used by the dma \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a62a9a1292ef4572b50bd583da77c489d}\label{classudmaio_1_1_frame_format_a62a9a1292ef4572b50bd583da77c489d}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!setFormat@{setFormat}}
+\index{setFormat@{setFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{setFormat()}{setFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::set\+Format (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{word\+\_\+width }\end{DoxyParamCaption})}
+
+
+
+Set format of the frames used for the video stream, frame dimensions are not touched. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em word\+\_\+width} & Number of bytes per data word used by the dma \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a7cfbd3d68c809eb49f511458bfd16641}\label{classudmaio_1_1_frame_format_a7cfbd3d68c809eb49f511458bfd16641}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!toPixFormat@{toPixFormat}}
+\index{toPixFormat@{toPixFormat}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{toPixFormat()}{toPixFormat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} udmaio\+::\+Frame\+Format\+::to\+Pix\+Format (\begin{DoxyParamCaption}\item[{std\+::string}]{pix\+Frmt }\end{DoxyParamCaption})}
+
+
+
+Selets a pixel format by the given name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pix\+Frmt} & String containing the name of the pixel format \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_aba52ceab553b0bc44239b44fb22acc5d}\label{classudmaio_1_1_frame_format_aba52ceab553b0bc44239b44fb22acc5d}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!toString@{toString}}
+\index{toString@{toString}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string udmaio\+::\+Frame\+Format\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_aa9aa449c52578904b6b8b4509911ce71}\label{classudmaio_1_1_frame_format_aa9aa449c52578904b6b8b4509911ce71}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!update\_bpp@{update\_bpp}}
+\index{update\_bpp@{update\_bpp}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{update\_bpp()}{update\_bpp()}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::update\+\_\+bpp (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{bytes\+\_\+per\+\_\+pix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a6b616241bc68a27931e8b4910d6c3da6}\label{classudmaio_1_1_frame_format_a6b616241bc68a27931e8b4910d6c3da6}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!update\_frm\_dim@{update\_frm\_dim}}
+\index{update\_frm\_dim@{update\_frm\_dim}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{update\_frm\_dim()}{update\_frm\_dim()}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::update\+\_\+frm\+\_\+dim (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_af25cb5651410780ff69b96a05447f113}\label{classudmaio_1_1_frame_format_af25cb5651410780ff69b96a05447f113}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!update\_hsize@{update\_hsize}}
+\index{update\_hsize@{update\_hsize}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{update\_hsize()}{update\_hsize()}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::update\+\_\+hsize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_ac49d915c2111a7b4142db437e40ff45d}\label{classudmaio_1_1_frame_format_ac49d915c2111a7b4142db437e40ff45d}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!update\_px\_fmt@{update\_px\_fmt}}
+\index{update\_px\_fmt@{update\_px\_fmt}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{update\_px\_fmt()}{update\_px\_fmt()}}
+{\footnotesize\ttfamily void udmaio\+::\+Frame\+Format\+::update\+\_\+px\+\_\+fmt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}}}]{pix\+Fmt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a2f28196b7829350f53cffb825130ff55}\label{classudmaio_1_1_frame_format_a2f28196b7829350f53cffb825130ff55}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!\_pxfmt\_enum\_to\_str\_tab@{\_pxfmt\_enum\_to\_str\_tab}}
+\index{\_pxfmt\_enum\_to\_str\_tab@{\_pxfmt\_enum\_to\_str\_tab}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{\_pxfmt\_enum\_to\_str\_tab}{\_pxfmt\_enum\_to\_str\_tab}}
+{\footnotesize\ttfamily const std\+::unordered\+\_\+map$<$\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}}, std\+::string$>$ udmaio\+::\+Frame\+Format\+::\+\_\+pxfmt\+\_\+enum\+\_\+to\+\_\+str\+\_\+tab\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a388121769aae9a44fa329e09f52b593e}\label{classudmaio_1_1_frame_format_a388121769aae9a44fa329e09f52b593e}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!bpp@{bpp}}
+\index{bpp@{bpp}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{bpp}{bpp}}
+{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::bpp\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a0359ee5e4ef678f98636f6d3e103ed20}\label{classudmaio_1_1_frame_format_a0359ee5e4ef678f98636f6d3e103ed20}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!data\_width@{data\_width}}
+\index{data\_width@{data\_width}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{data\_width}{data\_width}}
+{\footnotesize\ttfamily uint8\+\_\+t udmaio\+::\+Frame\+Format\+::data\+\_\+width\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_ad1f030a579d1343745d61b336a002e78}\label{classudmaio_1_1_frame_format_ad1f030a579d1343745d61b336a002e78}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!hsize@{hsize}}
+\index{hsize@{hsize}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{hsize}{hsize}}
+{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::hsize\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_aaed1598bdafc9c2e80161902125e0bcc}\label{classudmaio_1_1_frame_format_aaed1598bdafc9c2e80161902125e0bcc}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!lines@{lines}}
+\index{lines@{lines}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{lines}{lines}}
+{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::lines\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a114de06fc1404c029477b8732d6fce46}\label{classudmaio_1_1_frame_format_a114de06fc1404c029477b8732d6fce46}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!pix\_per\_word@{pix\_per\_word}}
+\index{pix\_per\_word@{pix\_per\_word}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{pix\_per\_word}{pix\_per\_word}}
+{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::pix\+\_\+per\+\_\+word\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_a685c9d69b2250c3867722d59d1390328}\label{classudmaio_1_1_frame_format_a685c9d69b2250c3867722d59d1390328}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!pixel@{pixel}}
+\index{pixel@{pixel}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{pixel}{pixel}}
+{\footnotesize\ttfamily uint16\+\_\+t udmaio\+::\+Frame\+Format\+::pixel\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_frame_format_affa336bcc3556dac7513c51aa55630b7}\label{classudmaio_1_1_frame_format_affa336bcc3556dac7513c51aa55630b7}} 
+\index{udmaio::FrameFormat@{udmaio::FrameFormat}!pxFmt@{pxFmt}}
+\index{pxFmt@{pxFmt}!udmaio::FrameFormat@{udmaio::FrameFormat}}
+\doxysubsubsection{\texorpdfstring{pxFmt}{pxFmt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Pixel\+Format}} udmaio\+::\+Frame\+Format\+::px\+Fmt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_frame_format_8hpp}{Frame\+Format.\+hpp}}\end{DoxyCompactItemize}

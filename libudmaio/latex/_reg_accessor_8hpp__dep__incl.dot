@@ -19,8 +19,12 @@ digraph "RegAccessor.hpp"
   Node2 -> Node7 [dir="back",color="steelblue1",style="solid"];
   Node7 [label="UioAxiDmaIf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_axi_dma_if_8cpp.html",tooltip=" "];
   Node1 -> Node8 [dir="back",color="steelblue1",style="solid"];
-  Node8 [label="UioMemSgdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8hpp.html",tooltip=" "];
-  Node8 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="UioAxiVdmaIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_axi_vdma_if_8hpp.html",tooltip=" "];
   Node8 -> Node9 [dir="back",color="steelblue1",style="solid"];
-  Node9 [label="UioMemSgdma.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8cpp.html",tooltip=" "];
+  Node9 [label="UioAxiVdmaIf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_axi_vdma_if_8cpp.html",tooltip=" "];
+  Node1 -> Node10 [dir="back",color="steelblue1",style="solid"];
+  Node10 [label="UioMemSgdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8hpp.html",tooltip=" "];
+  Node10 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node10 -> Node11 [dir="back",color="steelblue1",style="solid"];
+  Node11 [label="UioMemSgdma.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8cpp.html",tooltip=" "];
 }

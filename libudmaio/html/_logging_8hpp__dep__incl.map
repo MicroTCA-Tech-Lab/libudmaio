@@ -1,21 +1,25 @@
 <map id="Logging.hpp" name="Logging.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="508,5,600,31"/>
-<area shape="rect" id="node2" href="$_data_handler_abstract_8hpp.html" title=" " alt="" coords="443,372,610,397"/>
-<area shape="rect" id="node6" href="$_hw_accessor_8hpp.html" title=" " alt="" coords="330,79,451,104"/>
-<area shape="rect" id="node9" href="$_uio_if_8hpp.html" title=" " alt="" coords="132,152,206,177"/>
-<area shape="rect" id="node17" href="$_logging_8cpp.html" title=" " alt="" coords="734,79,826,104"/>
-<area shape="rect" id="node18" href="$_u_dma_buf_8hpp.html" title=" " alt="" coords="503,79,606,104"/>
-<area shape="rect" id="node3" href="$_data_handler_abstract_8cpp.html" title=" " alt="" coords="352,445,519,471"/>
-<area shape="rect" id="node4" href="$_data_handler_sync_8hpp.html" title=" " alt="" coords="544,445,690,471"/>
-<area shape="rect" id="node5" href="$_data_handler_sync_8cpp.html" title=" " alt="" coords="544,519,690,544"/>
-<area shape="rect" id="node7" href="$_hw_accessor_8cpp.html" title=" " alt="" coords="231,152,352,177"/>
-<area shape="rect" id="node8" href="$_uio_config_8cpp.html" title=" " alt="" coords="376,152,479,177"/>
-<area shape="rect" id="node10" href="$_fpga_mem_buffer_over_axi_8hpp.html" title=" " alt="" coords="25,225,209,251"/>
-<area shape="rect" id="node11" href="$_reg_accessor_8hpp.html" title=" " alt="" coords="332,225,456,251"/>
-<area shape="rect" id="node12" href="$_uio_axi_dma_if_8hpp.html" title=" " alt="" coords="174,299,292,324"/>
-<area shape="rect" id="node16" href="$_uio_if_8cpp.html" title=" " alt="" coords="233,225,308,251"/>
-<area shape="rect" id="node14" href="$_uio_mem_sgdma_8hpp.html" title=" " alt="" coords="326,299,462,324"/>
-<area shape="rect" id="node13" href="$_uio_axi_dma_if_8cpp.html" title=" " alt="" coords="139,372,258,397"/>
-<area shape="rect" id="node15" href="$_uio_mem_sgdma_8cpp.html" title=" " alt="" coords="282,372,418,397"/>
-<area shape="rect" id="node19" href="$_u_dma_buf_8cpp.html" title=" " alt="" coords="555,152,658,177"/>
+<area shape="rect" id="node1" title=" " alt="" coords="533,5,625,31"/>
+<area shape="rect" id="node2" href="$_data_handler_abstract_8hpp.html" title=" " alt="" coords="765,372,931,397"/>
+<area shape="rect" id="node6" href="$_frame_format_8hpp.html" title=" " alt="" coords="143,79,267,104"/>
+<area shape="rect" id="node9" href="$_uio_axi_vdma_if_8cpp.html" title=" " alt="" coords="42,372,169,397"/>
+<area shape="rect" id="node10" href="$_hw_accessor_8hpp.html" title=" " alt="" coords="518,79,639,104"/>
+<area shape="rect" id="node13" href="$_uio_if_8hpp.html" title=" " alt="" coords="428,152,503,177"/>
+<area shape="rect" id="node21" href="$_logging_8cpp.html" title=" " alt="" coords="826,79,918,104"/>
+<area shape="rect" id="node22" href="$_u_dma_buf_8hpp.html" title=" " alt="" coords="699,79,802,104"/>
+<area shape="rect" id="node3" href="$_data_handler_abstract_8cpp.html" title=" " alt="" coords="674,445,841,471"/>
+<area shape="rect" id="node4" href="$_data_handler_sync_8hpp.html" title=" " alt="" coords="865,445,1012,471"/>
+<area shape="rect" id="node5" href="$_data_handler_sync_8cpp.html" title=" " alt="" coords="865,519,1012,544"/>
+<area shape="rect" id="node7" href="$_frame_format_8cpp.html" title=" " alt="" coords="43,152,167,177"/>
+<area shape="rect" id="node8" href="$_uio_axi_vdma_if_8hpp.html" title=" " alt="" coords="167,299,294,324"/>
+<area shape="rect" id="node11" href="$_hw_accessor_8cpp.html" title=" " alt="" coords="654,152,775,177"/>
+<area shape="rect" id="node12" href="$_uio_config_8cpp.html" title=" " alt="" coords="527,152,630,177"/>
+<area shape="rect" id="node14" href="$_fpga_mem_buffer_over_axi_8hpp.html" title=" " alt="" coords="293,225,477,251"/>
+<area shape="rect" id="node15" href="$_reg_accessor_8hpp.html" title=" " alt="" coords="502,225,626,251"/>
+<area shape="rect" id="node16" href="$_uio_axi_dma_if_8hpp.html" title=" " alt="" coords="657,299,775,324"/>
+<area shape="rect" id="node20" href="$_uio_if_8cpp.html" title=" " alt="" coords="651,225,725,251"/>
+<area shape="rect" id="node18" href="$_uio_mem_sgdma_8hpp.html" title=" " alt="" coords="496,299,632,324"/>
+<area shape="rect" id="node17" href="$_uio_axi_dma_if_8cpp.html" title=" " alt="" coords="622,372,741,397"/>
+<area shape="rect" id="node19" href="$_uio_mem_sgdma_8cpp.html" title=" " alt="" coords="461,372,597,397"/>
+<area shape="rect" id="node23" href="$_u_dma_buf_8cpp.html" title=" " alt="" coords="851,152,954,177"/>
 </map>

@@ -1,0 +1,100 @@
+\hypertarget{structaxi__vdma_1_1park__ptr__reg__t}{}\doxysection{axi\+\_\+vdma\+::park\+\_\+ptr\+\_\+reg\+\_\+t Struct Reference}
+\label{structaxi__vdma_1_1park__ptr__reg__t}\index{axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}}
+
+
+{\ttfamily \#include $<$Axi\+Vdma.\+hpp$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \mbox{\hyperlink{structaxi__vdma_1_1park__ptr__reg__t_ad619b6417cac16d15777f5ed37b2553b}{rd\+\_\+frm\+\_\+ptr\+\_\+ref}}\+: 5
+\begin{DoxyCompactList}\small\item\em Read Frame Pointer Reference. When Parked (MM2\+S\+\_\+\+VDMACR.\+Circular\+\_\+\+Park = 0) the MM2S channel parks on the buffer referenced by this frame number. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{structaxi__vdma_1_1park__ptr__reg__t_a083e582b53318883f37d2f16dc7b0994}{rsvd\+\_\+7\+\_\+5}}\+: 3
+\item 
+unsigned \mbox{\hyperlink{structaxi__vdma_1_1park__ptr__reg__t_ab6f322e276fc3623211c5fea8c0e75ab}{wr\+\_\+frm\+\_\+ptr\+\_\+ref}}\+: 5
+\begin{DoxyCompactList}\small\item\em Write Frame Pointer Reference. When Parked (S2\+MM\+\_\+\+VDMACR.\+Circular\+\_\+\+Park = 0) the S2\+MM channel parks on the buffer referenced by this frame number. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{structaxi__vdma_1_1park__ptr__reg__t_aed01f9a23597c9a70483091de9a59b73}{rsvd\+\_\+15\+\_\+13}}\+: 3
+\item 
+unsigned \mbox{\hyperlink{structaxi__vdma_1_1park__ptr__reg__t_ae4596914689b88d77ddf4ae7b5bee089}{rd\+\_\+frm\+\_\+store}}\+: 5
+\begin{DoxyCompactList}\small\item\em Read Frame Store number. Indicates the frame number being operated on by the MM2S channel. During VDMA operations this value continually updates as each frame is processed. During error conditions, the value is updated with the frame number being operated on when the error occurred. It will again start tracking the current frame number when all errors are cleared. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{structaxi__vdma_1_1park__ptr__reg__t_aaf3a0214a481f92fec6b747e56e5a657}{rsvd\+\_\+23\+\_\+21}}\+: 3
+\item 
+unsigned \mbox{\hyperlink{structaxi__vdma_1_1park__ptr__reg__t_a137f0ebaffff85602b4bd751b28cfce5}{wr\+\_\+frm\+\_\+store}}\+: 5
+\begin{DoxyCompactList}\small\item\em Write Frame Store number. Indicates current frame number being operated on by the S2\+MM channel. During VDMA operations this value continually updates as each frame is processed. During error conditions, the value is updated with the frame number being operated on when the error occurred. It will again start tracking the current frame number when all errors are cleared. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{structaxi__vdma_1_1park__ptr__reg__t_abc44b40114dd51770d9cd23b2569894f}{rsvd\+\_\+31\+\_\+29}}\+: 3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Park Pointer Register 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structaxi__vdma_1_1park__ptr__reg__t_ad619b6417cac16d15777f5ed37b2553b}\label{structaxi__vdma_1_1park__ptr__reg__t_ad619b6417cac16d15777f5ed37b2553b}} 
+\index{axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}!rd\_frm\_ptr\_ref@{rd\_frm\_ptr\_ref}}
+\index{rd\_frm\_ptr\_ref@{rd\_frm\_ptr\_ref}!axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}}
+\doxysubsubsection{\texorpdfstring{rd\_frm\_ptr\_ref}{rd\_frm\_ptr\_ref}}
+{\footnotesize\ttfamily unsigned axi\+\_\+vdma\+::park\+\_\+ptr\+\_\+reg\+\_\+t\+::rd\+\_\+frm\+\_\+ptr\+\_\+ref}
+
+
+
+Read Frame Pointer Reference. When Parked (MM2\+S\+\_\+\+VDMACR.\+Circular\+\_\+\+Park = 0) the MM2S channel parks on the buffer referenced by this frame number. 
+
+\mbox{\Hypertarget{structaxi__vdma_1_1park__ptr__reg__t_ae4596914689b88d77ddf4ae7b5bee089}\label{structaxi__vdma_1_1park__ptr__reg__t_ae4596914689b88d77ddf4ae7b5bee089}} 
+\index{axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}!rd\_frm\_store@{rd\_frm\_store}}
+\index{rd\_frm\_store@{rd\_frm\_store}!axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}}
+\doxysubsubsection{\texorpdfstring{rd\_frm\_store}{rd\_frm\_store}}
+{\footnotesize\ttfamily unsigned axi\+\_\+vdma\+::park\+\_\+ptr\+\_\+reg\+\_\+t\+::rd\+\_\+frm\+\_\+store}
+
+
+
+Read Frame Store number. Indicates the frame number being operated on by the MM2S channel. During VDMA operations this value continually updates as each frame is processed. During error conditions, the value is updated with the frame number being operated on when the error occurred. It will again start tracking the current frame number when all errors are cleared. 
+
+\mbox{\Hypertarget{structaxi__vdma_1_1park__ptr__reg__t_aed01f9a23597c9a70483091de9a59b73}\label{structaxi__vdma_1_1park__ptr__reg__t_aed01f9a23597c9a70483091de9a59b73}} 
+\index{axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}!rsvd\_15\_13@{rsvd\_15\_13}}
+\index{rsvd\_15\_13@{rsvd\_15\_13}!axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}}
+\doxysubsubsection{\texorpdfstring{rsvd\_15\_13}{rsvd\_15\_13}}
+{\footnotesize\ttfamily unsigned axi\+\_\+vdma\+::park\+\_\+ptr\+\_\+reg\+\_\+t\+::rsvd\+\_\+15\+\_\+13}
+
+\mbox{\Hypertarget{structaxi__vdma_1_1park__ptr__reg__t_aaf3a0214a481f92fec6b747e56e5a657}\label{structaxi__vdma_1_1park__ptr__reg__t_aaf3a0214a481f92fec6b747e56e5a657}} 
+\index{axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}!rsvd\_23\_21@{rsvd\_23\_21}}
+\index{rsvd\_23\_21@{rsvd\_23\_21}!axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}}
+\doxysubsubsection{\texorpdfstring{rsvd\_23\_21}{rsvd\_23\_21}}
+{\footnotesize\ttfamily unsigned axi\+\_\+vdma\+::park\+\_\+ptr\+\_\+reg\+\_\+t\+::rsvd\+\_\+23\+\_\+21}
+
+\mbox{\Hypertarget{structaxi__vdma_1_1park__ptr__reg__t_abc44b40114dd51770d9cd23b2569894f}\label{structaxi__vdma_1_1park__ptr__reg__t_abc44b40114dd51770d9cd23b2569894f}} 
+\index{axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}!rsvd\_31\_29@{rsvd\_31\_29}}
+\index{rsvd\_31\_29@{rsvd\_31\_29}!axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}}
+\doxysubsubsection{\texorpdfstring{rsvd\_31\_29}{rsvd\_31\_29}}
+{\footnotesize\ttfamily unsigned axi\+\_\+vdma\+::park\+\_\+ptr\+\_\+reg\+\_\+t\+::rsvd\+\_\+31\+\_\+29}
+
+\mbox{\Hypertarget{structaxi__vdma_1_1park__ptr__reg__t_a083e582b53318883f37d2f16dc7b0994}\label{structaxi__vdma_1_1park__ptr__reg__t_a083e582b53318883f37d2f16dc7b0994}} 
+\index{axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}!rsvd\_7\_5@{rsvd\_7\_5}}
+\index{rsvd\_7\_5@{rsvd\_7\_5}!axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}}
+\doxysubsubsection{\texorpdfstring{rsvd\_7\_5}{rsvd\_7\_5}}
+{\footnotesize\ttfamily unsigned axi\+\_\+vdma\+::park\+\_\+ptr\+\_\+reg\+\_\+t\+::rsvd\+\_\+7\+\_\+5}
+
+\mbox{\Hypertarget{structaxi__vdma_1_1park__ptr__reg__t_ab6f322e276fc3623211c5fea8c0e75ab}\label{structaxi__vdma_1_1park__ptr__reg__t_ab6f322e276fc3623211c5fea8c0e75ab}} 
+\index{axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}!wr\_frm\_ptr\_ref@{wr\_frm\_ptr\_ref}}
+\index{wr\_frm\_ptr\_ref@{wr\_frm\_ptr\_ref}!axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}}
+\doxysubsubsection{\texorpdfstring{wr\_frm\_ptr\_ref}{wr\_frm\_ptr\_ref}}
+{\footnotesize\ttfamily unsigned axi\+\_\+vdma\+::park\+\_\+ptr\+\_\+reg\+\_\+t\+::wr\+\_\+frm\+\_\+ptr\+\_\+ref}
+
+
+
+Write Frame Pointer Reference. When Parked (S2\+MM\+\_\+\+VDMACR.\+Circular\+\_\+\+Park = 0) the S2\+MM channel parks on the buffer referenced by this frame number. 
+
+\mbox{\Hypertarget{structaxi__vdma_1_1park__ptr__reg__t_a137f0ebaffff85602b4bd751b28cfce5}\label{structaxi__vdma_1_1park__ptr__reg__t_a137f0ebaffff85602b4bd751b28cfce5}} 
+\index{axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}!wr\_frm\_store@{wr\_frm\_store}}
+\index{wr\_frm\_store@{wr\_frm\_store}!axi\_vdma::park\_ptr\_reg\_t@{axi\_vdma::park\_ptr\_reg\_t}}
+\doxysubsubsection{\texorpdfstring{wr\_frm\_store}{wr\_frm\_store}}
+{\footnotesize\ttfamily unsigned axi\+\_\+vdma\+::park\+\_\+ptr\+\_\+reg\+\_\+t\+::wr\+\_\+frm\+\_\+store}
+
+
+
+Write Frame Store number. Indicates current frame number being operated on by the S2\+MM channel. During VDMA operations this value continually updates as each frame is processed. During error conditions, the value is updated with the frame number being operated on when the error occurred. It will again start tracking the current frame number when all errors are cleared. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_axi_vdma_8hpp}{Axi\+Vdma.\+hpp}}\end{DoxyCompactItemize}

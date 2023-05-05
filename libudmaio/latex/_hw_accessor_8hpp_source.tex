@@ -117,184 +117,186 @@
 \DoxyCodeLine{128 }
 \DoxyCodeLine{129         \textcolor{comment}{// create memory mapping}}
 \DoxyCodeLine{130         \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_abc13c9adc5b53ee6ba9ca72a246df928}{\_mem}} = mmap(NULL, \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a87902e27cd5c8b67bcdc71ce4e7bcfed}{\_region}}.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}}, PROT\_READ | PROT\_WRITE, MAP\_SHARED, \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_ae4fd7d9ff21a903af787040ddc36fa91}{\_fd}}, mmap\_offs);}
-\DoxyCodeLine{131         BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{HwAccessor::\_lg}}, bls::trace) << \textcolor{stringliteral}{"{}mmap = "{}} << \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_abc13c9adc5b53ee6ba9ca72a246df928}{\_mem}} << std::dec;}
-\DoxyCodeLine{132         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_abc13c9adc5b53ee6ba9ca72a246df928}{\_mem}} == MAP\_FAILED) \{}
-\DoxyCodeLine{133             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}mmap failed for uio "{}} + dev\_path);}
-\DoxyCodeLine{134         \}}
-\DoxyCodeLine{135     \}}
-\DoxyCodeLine{136 }
-\DoxyCodeLine{137     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a3403619d569a9cc79fe611064426d29d}{\string~HwAccessorMmap}}() \{}
-\DoxyCodeLine{138         munmap(\mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_abc13c9adc5b53ee6ba9ca72a246df928}{\_mem}}, \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a87902e27cd5c8b67bcdc71ce4e7bcfed}{\_region}}.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}});}
-\DoxyCodeLine{139         ::close(\mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_ae4fd7d9ff21a903af787040ddc36fa91}{\_fd}});}
-\DoxyCodeLine{140     \}}
-\DoxyCodeLine{141 }
-\DoxyCodeLine{142   \textcolor{keyword}{protected}:}
-\DoxyCodeLine{143     \textcolor{keywordtype}{int} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_ae4fd7d9ff21a903af787040ddc36fa91}{\_fd}};}
-\DoxyCodeLine{144     \textcolor{keywordtype}{void}* \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_abc13c9adc5b53ee6ba9ca72a246df928}{\_mem}};}
-\DoxyCodeLine{145     \textcolor{keyword}{const} \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a87902e27cd5c8b67bcdc71ce4e7bcfed}{\_region}};}
-\DoxyCodeLine{146 }
-\DoxyCodeLine{147     \textcolor{keyword}{template} <\textcolor{keyword}{typename} access\_w\textcolor{keywordtype}{id}th\_t>}
-\DoxyCodeLine{148     \textcolor{keyword}{inline} \textcolor{keyword}{volatile} access\_width\_t* \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a005eca71429a1d493d4c5c8256b0f51d}{\_mem\_ptr}}(uint32\_t offs)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{149         \textcolor{keywordflow}{return} \textcolor{keyword}{reinterpret\_cast<}access\_width\_t*\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}uint8\_t*\textcolor{keyword}{>}(\mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_abc13c9adc5b53ee6ba9ca72a246df928}{\_mem}}) +}
-\DoxyCodeLine{150                                                  \textcolor{keyword}{static\_cast<}ptrdiff\_t\textcolor{keyword}{>}(offs));}
-\DoxyCodeLine{151     \}}
-\DoxyCodeLine{152 }
-\DoxyCodeLine{153     uint32\_t \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a2489519c2d0a7f616c2f63803dd6e2b2}{\_rd32}}(uint32\_t offs) \textcolor{keyword}{const} \textcolor{keyword}{final} \textcolor{keyword}{override} \{}
-\DoxyCodeLine{154         \textcolor{keyword}{const} uint32\_t tmp = *\_mem\_ptr<uint32\_t>(offs);}
-\DoxyCodeLine{155         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_a8b7c51c0fcdf2daeac15526ebaf6ebe4}{\_debug\_enable}}) \{}
-\DoxyCodeLine{156             BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace)}
-\DoxyCodeLine{157                 << \textcolor{stringliteral}{"{}0x"{}} << std::hex << offs << \textcolor{stringliteral}{"{} -\/-\/> 0x"{}} << std::setw(\textcolor{keyword}{sizeof}(uint32\_t) * 2)}
-\DoxyCodeLine{158                 << std::setfill(\textcolor{charliteral}{'0'}) << tmp << std::dec;}
-\DoxyCodeLine{159         \}}
-\DoxyCodeLine{160         \textcolor{keywordflow}{return} tmp;}
-\DoxyCodeLine{161     \}}
-\DoxyCodeLine{162 }
-\DoxyCodeLine{163     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a17d858e22ba0c9ac6dc2517c1eb8fcd8}{\_wr32}}(uint32\_t offs, \textcolor{keyword}{const} uint32\_t data) \textcolor{keyword}{final} \textcolor{keyword}{override} \{}
-\DoxyCodeLine{164         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_a8b7c51c0fcdf2daeac15526ebaf6ebe4}{\_debug\_enable}}) \{}
-\DoxyCodeLine{165             BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace)}
-\DoxyCodeLine{166                 << \textcolor{stringliteral}{"{}0x"{}} << std::hex << offs << \textcolor{stringliteral}{"{} <-\/-\/ 0x"{}} << std::setw(\textcolor{keyword}{sizeof}(uint32\_t) * 2)}
-\DoxyCodeLine{167                 << std::setfill(\textcolor{charliteral}{'0'}) << data << std::dec;}
-\DoxyCodeLine{168         \}}
-\DoxyCodeLine{169         *\_mem\_ptr<uint32\_t>(offs) = data;}
-\DoxyCodeLine{170     \}}
-\DoxyCodeLine{171 }
-\DoxyCodeLine{172     uint64\_t \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a0e3911204df011f7b0b486ffc5c0645a}{\_rd64}}(uint32\_t offs) \textcolor{keyword}{const} \textcolor{keyword}{final} \textcolor{keyword}{override} \{}
-\DoxyCodeLine{173         \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (\textcolor{keyword}{sizeof}(max\_access\_width\_t) == \textcolor{keyword}{sizeof}(uint64\_t)) \{}
-\DoxyCodeLine{174             \textcolor{comment}{// We support native 64-\/bit access}}
-\DoxyCodeLine{175             \textcolor{keyword}{const} uint64\_t tmp = *\_mem\_ptr<uint64\_t>(offs);}
-\DoxyCodeLine{176             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_a8b7c51c0fcdf2daeac15526ebaf6ebe4}{\_debug\_enable}}) \{}
-\DoxyCodeLine{177                 BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace)}
-\DoxyCodeLine{178                     << \textcolor{stringliteral}{"{}0x"{}} << std::hex << offs << \textcolor{stringliteral}{"{} -\/-\/> 0x"{}} << std::setw(\textcolor{keyword}{sizeof}(uint64\_t) * 2)}
-\DoxyCodeLine{179                     << std::setfill(\textcolor{charliteral}{'0'}) << tmp << std::dec;}
-\DoxyCodeLine{180             \}}
-\DoxyCodeLine{181             \textcolor{keywordflow}{return} tmp;}
-\DoxyCodeLine{182         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{183             \textcolor{comment}{// Use default (32-\/bit) implementation}}
-\DoxyCodeLine{184             \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_a773038b3032f5e07a675183d65789764}{HwAccessor::\_rd64}}(offs);}
-\DoxyCodeLine{185         \}}
-\DoxyCodeLine{186     \}}
-\DoxyCodeLine{187 }
-\DoxyCodeLine{188     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_ab50a301f77a018dbe51f72464c815d54}{\_wr64}}(uint32\_t offs, \textcolor{keyword}{const} uint64\_t data) \textcolor{keyword}{final} \textcolor{keyword}{override} \{}
-\DoxyCodeLine{189         \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (\textcolor{keyword}{sizeof}(max\_access\_width\_t) == \textcolor{keyword}{sizeof}(uint64\_t)) \{}
-\DoxyCodeLine{190             \textcolor{comment}{// We support native 64-\/bit access}}
-\DoxyCodeLine{191             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_a8b7c51c0fcdf2daeac15526ebaf6ebe4}{\_debug\_enable}}) \{}
-\DoxyCodeLine{192                 BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace)}
-\DoxyCodeLine{193                     << \textcolor{stringliteral}{"{}0x"{}} << std::hex << offs << \textcolor{stringliteral}{"{} <-\/-\/ 0x"{}} << std::setw(\textcolor{keyword}{sizeof}(uint64\_t) * 2)}
-\DoxyCodeLine{194                     << std::setfill(\textcolor{charliteral}{'0'}) << data << std::dec;}
-\DoxyCodeLine{195             \}}
-\DoxyCodeLine{196             *\_mem\_ptr<uint64\_t>(offs) = data;}
-\DoxyCodeLine{197         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{198             \textcolor{comment}{// Use default (32-\/bit) implementation}}
-\DoxyCodeLine{199             \mbox{\hyperlink{classudmaio_1_1_hw_accessor_af5f2ebbf214e7affa7d0c90c79a4da0b}{HwAccessor::\_wr64}}(offs, data);}
-\DoxyCodeLine{200         \}}
-\DoxyCodeLine{201     \}}
-\DoxyCodeLine{202 }
-\DoxyCodeLine{203     uint32\_t \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a7d00057806e3b9e98e5f4b200dd81b71}{wait\_for\_interrupt}}() final\textcolor{keyword}{ override }\{}
-\DoxyCodeLine{204         \textcolor{keyword}{const} \textcolor{keywordtype}{int} fd\_int = \mbox{\hyperlink{classudmaio_1_1_hw_accessor_a97f39c0284f7aa859f034caf0b5ecf1f}{get\_fd\_int}}();}
-\DoxyCodeLine{205         uint32\_t irq\_count;}
-\DoxyCodeLine{206         BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace) << \textcolor{stringliteral}{"{}wait for interrupt ..."{}};}
-\DoxyCodeLine{207         \textcolor{keywordflow}{if} (fd\_int < 0) \{}
-\DoxyCodeLine{208             BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::fatal) << \textcolor{stringliteral}{"{}fd\_int not set"{}};}
-\DoxyCodeLine{209         \}}
-\DoxyCodeLine{210         \textcolor{keywordtype}{int} rc = read(fd\_int, \&irq\_count, \textcolor{keyword}{sizeof}(irq\_count));}
-\DoxyCodeLine{211         BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace)}
-\DoxyCodeLine{212             << \textcolor{stringliteral}{"{}interrupt received, rc = "{}} << rc << \textcolor{stringliteral}{"{}, irq count = "{}} << irq\_count;}
-\DoxyCodeLine{213         \textcolor{keywordflow}{return} irq\_count;}
-\DoxyCodeLine{214     \}}
-\DoxyCodeLine{215 }
-\DoxyCodeLine{216   \textcolor{keyword}{public}:}
-\DoxyCodeLine{217     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_ac87f25c8d1620ed686cd378e502ff5a8}{get\_phys\_addr}}() const final\textcolor{keyword}{ override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a87902e27cd5c8b67bcdc71ce4e7bcfed}{\_region}}.\mbox{\hyperlink{structudmaio_1_1_uio_region_aeae3c222eaf007b2850693dfdfd3af9c}{addr}}; \}}
-\DoxyCodeLine{218 \};}
-\DoxyCodeLine{219 }
-\DoxyCodeLine{220 \textcolor{comment}{// Hardware accessor for XDMA. Can support either 32 or 64 bit access}}
-\DoxyCodeLine{221 \textcolor{keyword}{template} <\textcolor{keyword}{typename} max\_access\_w\textcolor{keywordtype}{id}th\_t>}
-\DoxyCodeLine{222 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma}{HwAccessorXdma}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap}{HwAccessorMmap}}<max\_access\_width\_t> \{}
-\DoxyCodeLine{223     \textcolor{keywordtype}{int} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_af13a77bce91f00d58b1f0f0fa399f6d8}{\_fd\_int}};}
-\DoxyCodeLine{224 }
-\DoxyCodeLine{225   \textcolor{keyword}{public}:}
-\DoxyCodeLine{226     \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_a5546259c3bad3f88facb0ec91f6bcc4e}{HwAccessorXdma}}(std::string xdma\_path,}
-\DoxyCodeLine{227                    std::string evt\_dev,}
-\DoxyCodeLine{228                    \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}} region,}
-\DoxyCodeLine{229                    uintptr\_t pcie\_offs)}
-\DoxyCodeLine{230         : \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap}{HwAccessorMmap}}<max\_access\_width\_t>(xdma\_path + \textcolor{stringliteral}{"{}/user"{}},}
-\DoxyCodeLine{231                                              \{region.\mbox{\hyperlink{structudmaio_1_1_uio_region_aeae3c222eaf007b2850693dfdfd3af9c}{addr}} | pcie\_offs, region.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}}\},}
-\DoxyCodeLine{232                                              region.addr) \{}
-\DoxyCodeLine{233         \textcolor{keywordflow}{if} (!evt\_dev.empty()) \{}
-\DoxyCodeLine{234             \textcolor{keyword}{const} \textcolor{keyword}{auto} evt\_path = xdma\_path + \textcolor{stringliteral}{"{}/"{}} + evt\_dev;}
-\DoxyCodeLine{235             \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_af13a77bce91f00d58b1f0f0fa399f6d8}{\_fd\_int}} = ::open(evt\_path.c\_str(), O\_RDWR);}
-\DoxyCodeLine{236 }
-\DoxyCodeLine{237             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_af13a77bce91f00d58b1f0f0fa399f6d8}{\_fd\_int}} < 0) \{}
-\DoxyCodeLine{238                 \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}could not open "{}} + evt\_path);}
-\DoxyCodeLine{239             \}}
-\DoxyCodeLine{240             BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{HwAccessor::\_lg}}, bls::trace) << \textcolor{stringliteral}{"{}fd\_int =  "{}} << \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_af13a77bce91f00d58b1f0f0fa399f6d8}{\_fd\_int}};}
-\DoxyCodeLine{241         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{242             \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_af13a77bce91f00d58b1f0f0fa399f6d8}{\_fd\_int}} = -\/1;}
-\DoxyCodeLine{243         \}}
-\DoxyCodeLine{244     \}}
-\DoxyCodeLine{245 }
-\DoxyCodeLine{246     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_a37bd577fc7da9fe0c3a33274811321fd}{\string~HwAccessorXdma}}() \{}
-\DoxyCodeLine{247         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_af13a77bce91f00d58b1f0f0fa399f6d8}{\_fd\_int}} > 0) \{}
-\DoxyCodeLine{248             ::close(\mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_af13a77bce91f00d58b1f0f0fa399f6d8}{\_fd\_int}});}
-\DoxyCodeLine{249         \}}
-\DoxyCodeLine{250     \}}
-\DoxyCodeLine{251 }
-\DoxyCodeLine{252     \textcolor{keywordtype}{int} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_abde56466e6dfee2f652118ee2ec4d096}{get\_fd\_int}}() const final\textcolor{keyword}{ override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_af13a77bce91f00d58b1f0f0fa399f6d8}{\_fd\_int}}; \}}
-\DoxyCodeLine{253 \};  \textcolor{comment}{// namespace udmaio}}
-\DoxyCodeLine{254 }
-\DoxyCodeLine{255 \textcolor{comment}{// Hardware accessor for AXI. Always supports 64 bit access}}
-\DoxyCodeLine{256 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_hw_accessor_axi}{HwAccessorAxi}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap}{HwAccessorMmap}}<uint64\_t> \{}
-\DoxyCodeLine{257   \textcolor{keyword}{public}:}
-\DoxyCodeLine{258     \mbox{\hyperlink{classudmaio_1_1_hw_accessor_axi}{HwAccessorAxi}}(std::string dev\_path, \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}} region, uintptr\_t mmap\_offs);}
-\DoxyCodeLine{259     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_axi_ac3092318d21180fd6393e8d21f52c120}{\string~HwAccessorAxi}}();}
-\DoxyCodeLine{260 }
-\DoxyCodeLine{261     \textcolor{keywordtype}{int} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_axi_a978c83d1898520efa59e88b1f7f8552c}{get\_fd\_int}}() const final\textcolor{keyword}{ override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_ae4fd7d9ff21a903af787040ddc36fa91}{\_fd}}; \}}
+\DoxyCodeLine{131         BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{HwAccessor::\_lg}}, bls::trace)}
+\DoxyCodeLine{132             << \textcolor{stringliteral}{"{}mmap = 0x"{}} << std::hex << mmap\_offs << \textcolor{stringliteral}{"{} -\/> 0x"{}} << \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_abc13c9adc5b53ee6ba9ca72a246df928}{\_mem}} << std::dec;}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_abc13c9adc5b53ee6ba9ca72a246df928}{\_mem}} == MAP\_FAILED) \{}
+\DoxyCodeLine{135             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}mmap failed for uio "{}} + dev\_path);}
+\DoxyCodeLine{136         \}}
+\DoxyCodeLine{137     \}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a3403619d569a9cc79fe611064426d29d}{\string~HwAccessorMmap}}() \{}
+\DoxyCodeLine{140         munmap(\mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_abc13c9adc5b53ee6ba9ca72a246df928}{\_mem}}, \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a87902e27cd5c8b67bcdc71ce4e7bcfed}{\_region}}.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}});}
+\DoxyCodeLine{141         ::close(\mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_ae4fd7d9ff21a903af787040ddc36fa91}{\_fd}});}
+\DoxyCodeLine{142     \}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{145     \textcolor{keywordtype}{int} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_ae4fd7d9ff21a903af787040ddc36fa91}{\_fd}};}
+\DoxyCodeLine{146     \textcolor{keywordtype}{void}* \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_abc13c9adc5b53ee6ba9ca72a246df928}{\_mem}};}
+\DoxyCodeLine{147     \textcolor{keyword}{const} \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a87902e27cd5c8b67bcdc71ce4e7bcfed}{\_region}};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     \textcolor{keyword}{template} <\textcolor{keyword}{typename} access\_w\textcolor{keywordtype}{id}th\_t>}
+\DoxyCodeLine{150     \textcolor{keyword}{inline} \textcolor{keyword}{volatile} access\_width\_t* \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a005eca71429a1d493d4c5c8256b0f51d}{\_mem\_ptr}}(uint32\_t offs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{151         \textcolor{keywordflow}{return} \textcolor{keyword}{reinterpret\_cast<}access\_width\_t*\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}uint8\_t*\textcolor{keyword}{>}(\mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_abc13c9adc5b53ee6ba9ca72a246df928}{\_mem}}) +}
+\DoxyCodeLine{152                                                  \textcolor{keyword}{static\_cast<}ptrdiff\_t\textcolor{keyword}{>}(offs));}
+\DoxyCodeLine{153     \}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     uint32\_t \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a2489519c2d0a7f616c2f63803dd6e2b2}{\_rd32}}(uint32\_t offs) \textcolor{keyword}{const} \textcolor{keyword}{final} \textcolor{keyword}{override} \{}
+\DoxyCodeLine{156         \textcolor{keyword}{const} uint32\_t tmp = *\_mem\_ptr<uint32\_t>(offs);}
+\DoxyCodeLine{157         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_a8b7c51c0fcdf2daeac15526ebaf6ebe4}{\_debug\_enable}}) \{}
+\DoxyCodeLine{158             BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace)}
+\DoxyCodeLine{159                 << \textcolor{stringliteral}{"{}0x"{}} << std::hex << offs << \textcolor{stringliteral}{"{} -\/-\/> 0x"{}} << std::setw(\textcolor{keyword}{sizeof}(uint32\_t) * 2)}
+\DoxyCodeLine{160                 << std::setfill(\textcolor{charliteral}{'0'}) << tmp << std::dec;}
+\DoxyCodeLine{161         \}}
+\DoxyCodeLine{162         \textcolor{keywordflow}{return} tmp;}
+\DoxyCodeLine{163     \}}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a17d858e22ba0c9ac6dc2517c1eb8fcd8}{\_wr32}}(uint32\_t offs, \textcolor{keyword}{const} uint32\_t data) \textcolor{keyword}{final} \textcolor{keyword}{override} \{}
+\DoxyCodeLine{166         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_a8b7c51c0fcdf2daeac15526ebaf6ebe4}{\_debug\_enable}}) \{}
+\DoxyCodeLine{167             BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace)}
+\DoxyCodeLine{168                 << \textcolor{stringliteral}{"{}0x"{}} << std::hex << offs << \textcolor{stringliteral}{"{} <-\/-\/ 0x"{}} << std::setw(\textcolor{keyword}{sizeof}(uint32\_t) * 2)}
+\DoxyCodeLine{169                 << std::setfill(\textcolor{charliteral}{'0'}) << data << std::dec;}
+\DoxyCodeLine{170         \}}
+\DoxyCodeLine{171         *\_mem\_ptr<uint32\_t>(offs) = data;}
+\DoxyCodeLine{172     \}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174     uint64\_t \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a0e3911204df011f7b0b486ffc5c0645a}{\_rd64}}(uint32\_t offs) \textcolor{keyword}{const} \textcolor{keyword}{final} \textcolor{keyword}{override} \{}
+\DoxyCodeLine{175         \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (\textcolor{keyword}{sizeof}(max\_access\_width\_t) == \textcolor{keyword}{sizeof}(uint64\_t)) \{}
+\DoxyCodeLine{176             \textcolor{comment}{// We support native 64-\/bit access}}
+\DoxyCodeLine{177             \textcolor{keyword}{const} uint64\_t tmp = *\_mem\_ptr<uint64\_t>(offs);}
+\DoxyCodeLine{178             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_a8b7c51c0fcdf2daeac15526ebaf6ebe4}{\_debug\_enable}}) \{}
+\DoxyCodeLine{179                 BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace)}
+\DoxyCodeLine{180                     << \textcolor{stringliteral}{"{}0x"{}} << std::hex << offs << \textcolor{stringliteral}{"{} -\/-\/> 0x"{}} << std::setw(\textcolor{keyword}{sizeof}(uint64\_t) * 2)}
+\DoxyCodeLine{181                     << std::setfill(\textcolor{charliteral}{'0'}) << tmp << std::dec;}
+\DoxyCodeLine{182             \}}
+\DoxyCodeLine{183             \textcolor{keywordflow}{return} tmp;}
+\DoxyCodeLine{184         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{185             \textcolor{comment}{// Use default (32-\/bit) implementation}}
+\DoxyCodeLine{186             \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_a773038b3032f5e07a675183d65789764}{HwAccessor::\_rd64}}(offs);}
+\DoxyCodeLine{187         \}}
+\DoxyCodeLine{188     \}}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_ab50a301f77a018dbe51f72464c815d54}{\_wr64}}(uint32\_t offs, \textcolor{keyword}{const} uint64\_t data) \textcolor{keyword}{final} \textcolor{keyword}{override} \{}
+\DoxyCodeLine{191         \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr} (\textcolor{keyword}{sizeof}(max\_access\_width\_t) == \textcolor{keyword}{sizeof}(uint64\_t)) \{}
+\DoxyCodeLine{192             \textcolor{comment}{// We support native 64-\/bit access}}
+\DoxyCodeLine{193             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_a8b7c51c0fcdf2daeac15526ebaf6ebe4}{\_debug\_enable}}) \{}
+\DoxyCodeLine{194                 BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace)}
+\DoxyCodeLine{195                     << \textcolor{stringliteral}{"{}0x"{}} << std::hex << offs << \textcolor{stringliteral}{"{} <-\/-\/ 0x"{}} << std::setw(\textcolor{keyword}{sizeof}(uint64\_t) * 2)}
+\DoxyCodeLine{196                     << std::setfill(\textcolor{charliteral}{'0'}) << data << std::dec;}
+\DoxyCodeLine{197             \}}
+\DoxyCodeLine{198             *\_mem\_ptr<uint64\_t>(offs) = data;}
+\DoxyCodeLine{199         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{200             \textcolor{comment}{// Use default (32-\/bit) implementation}}
+\DoxyCodeLine{201             \mbox{\hyperlink{classudmaio_1_1_hw_accessor_af5f2ebbf214e7affa7d0c90c79a4da0b}{HwAccessor::\_wr64}}(offs, data);}
+\DoxyCodeLine{202         \}}
+\DoxyCodeLine{203     \}}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205     uint32\_t \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a7d00057806e3b9e98e5f4b200dd81b71}{wait\_for\_interrupt}}() final\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{206         \textcolor{keyword}{const} \textcolor{keywordtype}{int} fd\_int = \mbox{\hyperlink{classudmaio_1_1_hw_accessor_a97f39c0284f7aa859f034caf0b5ecf1f}{get\_fd\_int}}();}
+\DoxyCodeLine{207         uint32\_t irq\_count;}
+\DoxyCodeLine{208         BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace) << \textcolor{stringliteral}{"{}wait for interrupt ..."{}};}
+\DoxyCodeLine{209         \textcolor{keywordflow}{if} (fd\_int < 0) \{}
+\DoxyCodeLine{210             BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::fatal) << \textcolor{stringliteral}{"{}fd\_int not set"{}};}
+\DoxyCodeLine{211         \}}
+\DoxyCodeLine{212         \textcolor{keywordtype}{int} rc = read(fd\_int, \&irq\_count, \textcolor{keyword}{sizeof}(irq\_count));}
+\DoxyCodeLine{213         BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace)}
+\DoxyCodeLine{214             << \textcolor{stringliteral}{"{}interrupt received, rc = "{}} << rc << \textcolor{stringliteral}{"{}, irq count = "{}} << irq\_count;}
+\DoxyCodeLine{215         \textcolor{keywordflow}{return} irq\_count;}
+\DoxyCodeLine{216     \}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218   \textcolor{keyword}{public}:}
+\DoxyCodeLine{219     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_ac87f25c8d1620ed686cd378e502ff5a8}{get\_phys\_addr}}() const final\textcolor{keyword}{ override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a87902e27cd5c8b67bcdc71ce4e7bcfed}{\_region}}.\mbox{\hyperlink{structudmaio_1_1_uio_region_aeae3c222eaf007b2850693dfdfd3af9c}{addr}}; \}}
+\DoxyCodeLine{220 \};}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222 \textcolor{comment}{// Hardware accessor for XDMA. Can support either 32 or 64 bit access}}
+\DoxyCodeLine{223 \textcolor{keyword}{template} <\textcolor{keyword}{typename} max\_access\_w\textcolor{keywordtype}{id}th\_t>}
+\DoxyCodeLine{224 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma}{HwAccessorXdma}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap}{HwAccessorMmap}}<max\_access\_width\_t> \{}
+\DoxyCodeLine{225     \textcolor{keywordtype}{int} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_af13a77bce91f00d58b1f0f0fa399f6d8}{\_fd\_int}};}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227   \textcolor{keyword}{public}:}
+\DoxyCodeLine{228     \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_a5546259c3bad3f88facb0ec91f6bcc4e}{HwAccessorXdma}}(std::string xdma\_path,}
+\DoxyCodeLine{229                    std::string evt\_dev,}
+\DoxyCodeLine{230                    \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}} region,}
+\DoxyCodeLine{231                    uintptr\_t pcie\_offs)}
+\DoxyCodeLine{232         : \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap}{HwAccessorMmap}}<max\_access\_width\_t>(xdma\_path + \textcolor{stringliteral}{"{}/user"{}},}
+\DoxyCodeLine{233                                              \{region.\mbox{\hyperlink{structudmaio_1_1_uio_region_aeae3c222eaf007b2850693dfdfd3af9c}{addr}} | pcie\_offs, region.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}}\},}
+\DoxyCodeLine{234                                              region.addr) \{}
+\DoxyCodeLine{235         \textcolor{keywordflow}{if} (!evt\_dev.empty()) \{}
+\DoxyCodeLine{236             \textcolor{keyword}{const} \textcolor{keyword}{auto} evt\_path = xdma\_path + \textcolor{stringliteral}{"{}/"{}} + evt\_dev;}
+\DoxyCodeLine{237             \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_af13a77bce91f00d58b1f0f0fa399f6d8}{\_fd\_int}} = ::open(evt\_path.c\_str(), O\_RDWR);}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_af13a77bce91f00d58b1f0f0fa399f6d8}{\_fd\_int}} < 0) \{}
+\DoxyCodeLine{240                 \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}could not open "{}} + evt\_path);}
+\DoxyCodeLine{241             \}}
+\DoxyCodeLine{242             BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{HwAccessor::\_lg}}, bls::trace) << \textcolor{stringliteral}{"{}fd\_int =  "{}} << \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_af13a77bce91f00d58b1f0f0fa399f6d8}{\_fd\_int}};}
+\DoxyCodeLine{243         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{244             \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_af13a77bce91f00d58b1f0f0fa399f6d8}{\_fd\_int}} = -\/1;}
+\DoxyCodeLine{245         \}}
+\DoxyCodeLine{246     \}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_a37bd577fc7da9fe0c3a33274811321fd}{\string~HwAccessorXdma}}() \{}
+\DoxyCodeLine{249         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_af13a77bce91f00d58b1f0f0fa399f6d8}{\_fd\_int}} > 0) \{}
+\DoxyCodeLine{250             ::close(\mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_af13a77bce91f00d58b1f0f0fa399f6d8}{\_fd\_int}});}
+\DoxyCodeLine{251         \}}
+\DoxyCodeLine{252     \}}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254     \textcolor{keywordtype}{int} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_abde56466e6dfee2f652118ee2ec4d096}{get\_fd\_int}}() const final\textcolor{keyword}{ override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_af13a77bce91f00d58b1f0f0fa399f6d8}{\_fd\_int}}; \}}
+\DoxyCodeLine{255 \};  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257 \textcolor{comment}{// Hardware accessor for AXI. Always supports 64 bit access}}
+\DoxyCodeLine{258 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_hw_accessor_axi}{HwAccessorAxi}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap}{HwAccessorMmap}}<uint64\_t> \{}
+\DoxyCodeLine{259   \textcolor{keyword}{public}:}
+\DoxyCodeLine{260     \mbox{\hyperlink{classudmaio_1_1_hw_accessor_axi}{HwAccessorAxi}}(std::string dev\_path, \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}} region, uintptr\_t mmap\_offs);}
+\DoxyCodeLine{261     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_axi_ac3092318d21180fd6393e8d21f52c120}{\string~HwAccessorAxi}}();}
 \DoxyCodeLine{262 }
-\DoxyCodeLine{263     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_axi_a94c95498bee88282f1beb21a22127f1d}{arm\_interrupt}}() final\textcolor{keyword}{ override }\{}
-\DoxyCodeLine{264         uint32\_t mask = 1;}
-\DoxyCodeLine{265         \textcolor{keywordtype}{int} rc = write(\mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_ae4fd7d9ff21a903af787040ddc36fa91}{\_fd}}, \&mask, \textcolor{keyword}{sizeof}(mask));}
-\DoxyCodeLine{266         BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{HwAccessor::\_lg}}, bls::trace) << \textcolor{stringliteral}{"{}arm interrupt enable, ret code = "{}} << rc;}
-\DoxyCodeLine{267     \}}
-\DoxyCodeLine{268 \};}
-\DoxyCodeLine{269 }
-\DoxyCodeLine{270 \textcolor{comment}{// Base class for mock hardware (for unit tests)}}
-\DoxyCodeLine{271 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock}{HwAccessorMock}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_hw_accessor}{HwAccessor}} \{}
-\DoxyCodeLine{272     \textcolor{keyword}{mutable} std::vector<uint8\_t> \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_a1fadc1f4fcf69995c8af371b455b58ac}{\_mem}};}
-\DoxyCodeLine{273 }
-\DoxyCodeLine{274   \textcolor{keyword}{public}:}
-\DoxyCodeLine{275     \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_ab2cb4b1ef325ed48edaf4812ae084d64}{HwAccessorMock}}(\textcolor{keywordtype}{size\_t} mem\_size) : \mbox{\hyperlink{classudmaio_1_1_hw_accessor}{HwAccessor}}\{\}, \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_a1fadc1f4fcf69995c8af371b455b58ac}{\_mem}}(mem\_size, 0) \{\}}
-\DoxyCodeLine{276 }
-\DoxyCodeLine{277     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_ad86fddb31a43ed5db94c74e32ef6ffab}{\string~HwAccessorMock}}() \{\}}
+\DoxyCodeLine{263     \textcolor{keywordtype}{int} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_axi_a978c83d1898520efa59e88b1f7f8552c}{get\_fd\_int}}() const final\textcolor{keyword}{ override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_ae4fd7d9ff21a903af787040ddc36fa91}{\_fd}}; \}}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_axi_a94c95498bee88282f1beb21a22127f1d}{arm\_interrupt}}() final\textcolor{keyword}{ override }\{}
+\DoxyCodeLine{266         uint32\_t mask = 1;}
+\DoxyCodeLine{267         \textcolor{keywordtype}{int} rc = write(\mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_ae4fd7d9ff21a903af787040ddc36fa91}{\_fd}}, \&mask, \textcolor{keyword}{sizeof}(mask));}
+\DoxyCodeLine{268         BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{HwAccessor::\_lg}}, bls::trace) << \textcolor{stringliteral}{"{}arm interrupt enable, ret code = "{}} << rc;}
+\DoxyCodeLine{269     \}}
+\DoxyCodeLine{270 \};}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272 \textcolor{comment}{// Base class for mock hardware (for unit tests)}}
+\DoxyCodeLine{273 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock}{HwAccessorMock}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_hw_accessor}{HwAccessor}} \{}
+\DoxyCodeLine{274     \textcolor{keyword}{mutable} std::vector<uint8\_t> \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_a1fadc1f4fcf69995c8af371b455b58ac}{\_mem}};}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276   \textcolor{keyword}{public}:}
+\DoxyCodeLine{277     \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_ab2cb4b1ef325ed48edaf4812ae084d64}{HwAccessorMock}}(\textcolor{keywordtype}{size\_t} mem\_size) : \mbox{\hyperlink{classudmaio_1_1_hw_accessor}{HwAccessor}}\{\}, \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_a1fadc1f4fcf69995c8af371b455b58ac}{\_mem}}(mem\_size, 0) \{\}}
 \DoxyCodeLine{278 }
-\DoxyCodeLine{279   \textcolor{keyword}{protected}:}
-\DoxyCodeLine{280     \textcolor{keyword}{template} <\textcolor{keyword}{typename} access\_w\textcolor{keywordtype}{id}th\_t>}
-\DoxyCodeLine{281     \textcolor{keyword}{inline} \textcolor{keyword}{volatile} access\_width\_t* \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_a7be7afe571251c079078d86064de0d78}{\_mem\_ptr}}(uint32\_t offs)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{282         \textcolor{keywordflow}{if} (offs + \textcolor{keyword}{sizeof}(access\_width\_t) > \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_a1fadc1f4fcf69995c8af371b455b58ac}{\_mem}}.size()) \{}
-\DoxyCodeLine{283             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Buffer overflow ("{}} + std::to\_string(\textcolor{keyword}{sizeof}(access\_width\_t)) +}
-\DoxyCodeLine{284                                      \textcolor{stringliteral}{"{} bytes at "{}} + std::to\_string(offs) + \textcolor{stringliteral}{"{})"{}});}
-\DoxyCodeLine{285         \}}
-\DoxyCodeLine{286         \textcolor{keywordflow}{return} \textcolor{keyword}{reinterpret\_cast<}access\_width\_t*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_a1fadc1f4fcf69995c8af371b455b58ac}{\_mem}}[offs]);}
-\DoxyCodeLine{287     \}}
-\DoxyCodeLine{288 }
-\DoxyCodeLine{289     uint32\_t \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_a230b44dddf8399f240d13587d57a0b9f}{\_rd32}}(uint32\_t offs) \textcolor{keyword}{const} \textcolor{keyword}{final} \textcolor{keyword}{override} \{}
-\DoxyCodeLine{290         \textcolor{keyword}{const} uint32\_t tmp = *\_mem\_ptr<uint32\_t>(offs);}
-\DoxyCodeLine{291         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_a8b7c51c0fcdf2daeac15526ebaf6ebe4}{\_debug\_enable}}) \{}
-\DoxyCodeLine{292             BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace)}
-\DoxyCodeLine{293                 << \textcolor{stringliteral}{"{}0x"{}} << std::hex << offs << \textcolor{stringliteral}{"{} -\/-\/> 0x"{}} << std::setw(\textcolor{keyword}{sizeof}(uint32\_t) * 2)}
-\DoxyCodeLine{294                 << std::setfill(\textcolor{charliteral}{'0'}) << tmp << std::dec;}
-\DoxyCodeLine{295         \}}
-\DoxyCodeLine{296         \textcolor{keywordflow}{return} tmp;}
-\DoxyCodeLine{297     \}}
-\DoxyCodeLine{298 }
-\DoxyCodeLine{299     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_af6b3b4998c3ace3cbd79622c6fba8f71}{\_wr32}}(uint32\_t offs, \textcolor{keyword}{const} uint32\_t data) \textcolor{keyword}{final} \textcolor{keyword}{override} \{}
-\DoxyCodeLine{300         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_a8b7c51c0fcdf2daeac15526ebaf6ebe4}{\_debug\_enable}}) \{}
-\DoxyCodeLine{301             BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace)}
-\DoxyCodeLine{302                 << \textcolor{stringliteral}{"{}0x"{}} << std::hex << offs << \textcolor{stringliteral}{"{} <-\/-\/ 0x"{}} << std::setw(\textcolor{keyword}{sizeof}(uint32\_t) * 2)}
-\DoxyCodeLine{303                 << std::setfill(\textcolor{charliteral}{'0'}) << data << std::dec;}
-\DoxyCodeLine{304         \}}
-\DoxyCodeLine{305         *\_mem\_ptr<uint32\_t>(offs) = data;}
-\DoxyCodeLine{306     \}}
-\DoxyCodeLine{307 \};}
-\DoxyCodeLine{308 }
-\DoxyCodeLine{309 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{279     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_ad86fddb31a43ed5db94c74e32ef6ffab}{\string~HwAccessorMock}}() \{\}}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{282     \textcolor{keyword}{template} <\textcolor{keyword}{typename} access\_w\textcolor{keywordtype}{id}th\_t>}
+\DoxyCodeLine{283     \textcolor{keyword}{inline} \textcolor{keyword}{volatile} access\_width\_t* \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_a7be7afe571251c079078d86064de0d78}{\_mem\_ptr}}(uint32\_t offs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{284         \textcolor{keywordflow}{if} (offs + \textcolor{keyword}{sizeof}(access\_width\_t) > \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_a1fadc1f4fcf69995c8af371b455b58ac}{\_mem}}.size()) \{}
+\DoxyCodeLine{285             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Buffer overflow ("{}} + std::to\_string(\textcolor{keyword}{sizeof}(access\_width\_t)) +}
+\DoxyCodeLine{286                                      \textcolor{stringliteral}{"{} bytes at "{}} + std::to\_string(offs) + \textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{287         \}}
+\DoxyCodeLine{288         \textcolor{keywordflow}{return} \textcolor{keyword}{reinterpret\_cast<}access\_width\_t*\textcolor{keyword}{>}(\&\mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_a1fadc1f4fcf69995c8af371b455b58ac}{\_mem}}[offs]);}
+\DoxyCodeLine{289     \}}
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291     uint32\_t \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_a230b44dddf8399f240d13587d57a0b9f}{\_rd32}}(uint32\_t offs) \textcolor{keyword}{const} \textcolor{keyword}{final} \textcolor{keyword}{override} \{}
+\DoxyCodeLine{292         \textcolor{keyword}{const} uint32\_t tmp = *\_mem\_ptr<uint32\_t>(offs);}
+\DoxyCodeLine{293         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_a8b7c51c0fcdf2daeac15526ebaf6ebe4}{\_debug\_enable}}) \{}
+\DoxyCodeLine{294             BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace)}
+\DoxyCodeLine{295                 << \textcolor{stringliteral}{"{}0x"{}} << std::hex << offs << \textcolor{stringliteral}{"{} -\/-\/> 0x"{}} << std::setw(\textcolor{keyword}{sizeof}(uint32\_t) * 2)}
+\DoxyCodeLine{296                 << std::setfill(\textcolor{charliteral}{'0'}) << tmp << std::dec;}
+\DoxyCodeLine{297         \}}
+\DoxyCodeLine{298         \textcolor{keywordflow}{return} tmp;}
+\DoxyCodeLine{299     \}}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mock_af6b3b4998c3ace3cbd79622c6fba8f71}{\_wr32}}(uint32\_t offs, \textcolor{keyword}{const} uint32\_t data) \textcolor{keyword}{final} \textcolor{keyword}{override} \{}
+\DoxyCodeLine{302         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_hw_accessor_a8b7c51c0fcdf2daeac15526ebaf6ebe4}{\_debug\_enable}}) \{}
+\DoxyCodeLine{303             BOOST\_LOG\_SEV(\mbox{\hyperlink{structudmaio_1_1_logger_a1779913e9d83c27fa0d7ea1ff056b403}{\_lg}}, bls::trace)}
+\DoxyCodeLine{304                 << \textcolor{stringliteral}{"{}0x"{}} << std::hex << offs << \textcolor{stringliteral}{"{} <-\/-\/ 0x"{}} << std::setw(\textcolor{keyword}{sizeof}(uint32\_t) * 2)}
+\DoxyCodeLine{305                 << std::setfill(\textcolor{charliteral}{'0'}) << data << std::dec;}
+\DoxyCodeLine{306         \}}
+\DoxyCodeLine{307         *\_mem\_ptr<uint32\_t>(offs) = data;}
+\DoxyCodeLine{308     \}}
+\DoxyCodeLine{309 \};}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}

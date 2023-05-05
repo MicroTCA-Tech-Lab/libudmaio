@@ -1,0 +1,75 @@
+\hypertarget{_axi_vdma_8hpp}{}\doxysection{Axi\+Vdma.\+hpp File Reference}
+\label{_axi_vdma_8hpp}\index{AxiVdma.hpp@{AxiVdma.hpp}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+Include dependency graph for Axi\+Vdma.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1mm2s__vdmacr__t}{axi\+\_\+vdma\+::mm2s\+\_\+vdmacr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1mm2s__vdmasr__t}{axi\+\_\+vdma\+::mm2s\+\_\+vdmasr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1mm2s__reg__index__t}{axi\+\_\+vdma\+::mm2s\+\_\+reg\+\_\+index\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1park__ptr__reg__t}{axi\+\_\+vdma\+::park\+\_\+ptr\+\_\+reg\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1vdma__version__t}{axi\+\_\+vdma\+::vdma\+\_\+version\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmacr__t}{axi\+\_\+vdma\+::s2mm\+\_\+vdmacr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t}{axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdma__irq__mask__t}{axi\+\_\+vdma\+::s2mm\+\_\+vdma\+\_\+irq\+\_\+mask\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1s2mm__reg__index__t}{axi\+\_\+vdma\+::s2mm\+\_\+reg\+\_\+index\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1mm2s__vsize__t}{axi\+\_\+vdma\+::mm2s\+\_\+vsize\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1mm2s__hsize__t}{axi\+\_\+vdma\+::mm2s\+\_\+hsize\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1mm2s__frmdly__stride__t}{axi\+\_\+vdma\+::mm2s\+\_\+frmdly\+\_\+stride\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vsize__t}{axi\+\_\+vdma\+::s2mm\+\_\+vsize\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1s2mm__hsize__t}{axi\+\_\+vdma\+::s2mm\+\_\+hsize\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1s2mm__frmdly__stride__t}{axi\+\_\+vdma\+::s2mm\+\_\+frmdly\+\_\+stride\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1block__template}{axi\+\_\+vdma\+::block\+\_\+template$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$}}
+\begin{DoxyCompactList}\small\item\em Template class for the \mbox{\hyperlink{namespaceaxi__vdma}{axi\+\_\+vdma}} block, containing accessors for all its registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceaxi__vdma}{axi\+\_\+vdma}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_axi_vdma_8hpp_a915c375db6408f70b2c06f282f34b6ac}{\+\_\+\+HECTARE\+\_\+\+PACKED}}~\+\_\+\+\_\+attribute\+\_\+\+\_\+((packed, aligned(4)))
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceaxi__vdma_a6ab736e9d148889f100e26dd4e19c83c}{axi\+\_\+vdma\+::mm2s\+\_\+sa\+\_\+t}} = uint32\+\_\+t
+\item 
+using \mbox{\hyperlink{namespaceaxi__vdma_a908f405e255829873b0b6bf93e1bcf29}{axi\+\_\+vdma\+::s2mm\+\_\+sa\+\_\+t}} = uint32\+\_\+t
+\item 
+{\footnotesize template$<$template$<$ typename, uint32\+\_\+t, uint32\+\_\+t, uint32\+\_\+t $>$ typename R\+\_\+array\+\_\+acc$>$ }\\using \mbox{\hyperlink{namespaceaxi__vdma_a4424aed034871033a023500e857dc774}{axi\+\_\+vdma\+::block}} = block\+\_\+template$<$ R\+\_\+array\+\_\+acc, typename R\+\_\+array\+\_\+acc$<$ mm2s\+\_\+vdmacr\+\_\+t, 0, 0, 0 $>$\+::constructor\+\_\+arg\+\_\+type $>$
+\begin{DoxyCompactList}\small\item\em Convenience wrapper for \mbox{\hyperlink{structaxi__vdma_1_1block__template}{block\+\_\+template}} to omit the explicit naming of the constructor argument. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structaxi__vdma_1_1mm2s__vdmacr__t}{axi\+\_\+vdma\+::mm2s\+\_\+vdmacr\+\_\+t}} \mbox{\hyperlink{namespaceaxi__vdma_a38d4dabb1fdb55f714ca8def6c4a1c7c}{axi\+\_\+vdma\+::\+\_\+\+HECTARE\+\_\+\+PACKED}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_axi_vdma_8hpp_a915c375db6408f70b2c06f282f34b6ac}\label{_axi_vdma_8hpp_a915c375db6408f70b2c06f282f34b6ac}} 
+\index{AxiVdma.hpp@{AxiVdma.hpp}!\_HECTARE\_PACKED@{\_HECTARE\_PACKED}}
+\index{\_HECTARE\_PACKED@{\_HECTARE\_PACKED}!AxiVdma.hpp@{AxiVdma.hpp}}
+\doxysubsubsection{\texorpdfstring{\_HECTARE\_PACKED}{\_HECTARE\_PACKED}}
+{\footnotesize\ttfamily \#define \+\_\+\+HECTARE\+\_\+\+PACKED~\+\_\+\+\_\+attribute\+\_\+\+\_\+((packed, aligned(4)))}
+

@@ -1,13 +1,14 @@
 <map id="udmaio::Logger" name="udmaio::Logger">
-<area shape="rect" id="node1" title=" " alt="" coords="5,144,116,169"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,141,116,167"/>
 <area shape="rect" id="node2" href="$classudmaio_1_1_data_handler_abstract.html" title="Base class to implement a DMA data reception handler." alt="" coords="164,55,355,80"/>
-<area shape="rect" id="node5" href="$classudmaio_1_1_hw_accessor.html" title="Base class for hardware access." alt="" coords="187,144,332,169"/>
-<area shape="rect" id="node11" href="$classudmaio_1_1_u_dma_buf.html" title="DMA data buffer accessed over AXI/UIO, implemented w/ udmabuf (see https://github...." alt="" coords="196,193,323,219"/>
+<area shape="rect" id="node5" href="$classudmaio_1_1_frame_format.html" title=" " alt="" coords="185,116,333,141"/>
+<area shape="rect" id="node6" href="$classudmaio_1_1_hw_accessor.html" title="Base class for hardware access." alt="" coords="187,165,332,191"/>
+<area shape="rect" id="node12" href="$classudmaio_1_1_u_dma_buf.html" title="DMA data buffer accessed over AXI/UIO, implemented w/ udmabuf (see https://github...." alt="" coords="196,215,323,240"/>
 <area shape="rect" id="node3" href="$class_data_handler_print.html" title="DataHandler implementation that checks LFSR data and prints status / stats." alt="" coords="433,5,554,31"/>
 <area shape="rect" id="node4" href="$classudmaio_1_1_data_handler_sync.html" title="Synchronous data handler with blocking read interface." alt="" coords="408,55,579,80"/>
-<area shape="rect" id="node6" href="$classudmaio_1_1_hw_accessor_mmap.html" title=" " alt="" coords="403,105,584,145"/>
-<area shape="rect" id="node8" href="$classudmaio_1_1_hw_accessor_mmap.html" title=" " alt="" coords="403,169,584,209"/>
-<area shape="rect" id="node10" href="$classudmaio_1_1_hw_accessor_mock.html" title=" " alt="" coords="405,233,582,259"/>
-<area shape="rect" id="node7" href="$classudmaio_1_1_hw_accessor_axi.html" title=" " alt="" coords="640,112,803,137"/>
-<area shape="rect" id="node9" href="$classudmaio_1_1_hw_accessor_xdma.html" title=" " alt="" coords="632,169,811,209"/>
+<area shape="rect" id="node7" href="$classudmaio_1_1_hw_accessor_mmap.html" title=" " alt="" coords="403,105,584,145"/>
+<area shape="rect" id="node9" href="$classudmaio_1_1_hw_accessor_mmap.html" title=" " alt="" coords="403,169,584,209"/>
+<area shape="rect" id="node11" href="$classudmaio_1_1_hw_accessor_mock.html" title=" " alt="" coords="405,233,582,259"/>
+<area shape="rect" id="node8" href="$classudmaio_1_1_hw_accessor_axi.html" title=" " alt="" coords="640,112,803,137"/>
+<area shape="rect" id="node10" href="$classudmaio_1_1_hw_accessor_xdma.html" title=" " alt="" coords="632,169,811,209"/>
 </map>

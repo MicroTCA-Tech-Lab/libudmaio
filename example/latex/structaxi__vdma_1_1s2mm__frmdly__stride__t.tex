@@ -1,0 +1,52 @@
+\hypertarget{structaxi__vdma_1_1s2mm__frmdly__stride__t}{}\doxysection{axi\+\_\+vdma\+::s2mm\+\_\+frmdly\+\_\+stride\+\_\+t Struct Reference}
+\label{structaxi__vdma_1_1s2mm__frmdly__stride__t}\index{axi\_vdma::s2mm\_frmdly\_stride\_t@{axi\_vdma::s2mm\_frmdly\_stride\_t}}
+
+
+{\ttfamily \#include $<$Axi\+Vdma.\+hpp$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structaxi__vdma_1_1s2mm__frmdly__stride__t_a0488e7c5a31744eecf7318c42e6920d8}{stride}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structaxi__vdma_1_1s2mm__frmdly__stride__t_a2ae9d7c7faf7cd5ba732d25df0505335}{rsvd\+\_\+23\+\_\+16}}
+\item 
+unsigned \mbox{\hyperlink{structaxi__vdma_1_1s2mm__frmdly__stride__t_a2021e256b63996244e395054f000c796}{frame\+\_\+delay}}\+: 5
+\item 
+unsigned \mbox{\hyperlink{structaxi__vdma_1_1s2mm__frmdly__stride__t_a7e560ebbc9d7c1a9a090b604be57f1c9}{rsvd\+\_\+31\+\_\+29}}\+: 3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+S2\+MM Frame Delay and Stride 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__frmdly__stride__t_a2021e256b63996244e395054f000c796}\label{structaxi__vdma_1_1s2mm__frmdly__stride__t_a2021e256b63996244e395054f000c796}} 
+\index{axi\_vdma::s2mm\_frmdly\_stride\_t@{axi\_vdma::s2mm\_frmdly\_stride\_t}!frame\_delay@{frame\_delay}}
+\index{frame\_delay@{frame\_delay}!axi\_vdma::s2mm\_frmdly\_stride\_t@{axi\_vdma::s2mm\_frmdly\_stride\_t}}
+\doxysubsubsection{\texorpdfstring{frame\_delay}{frame\_delay}}
+{\footnotesize\ttfamily unsigned axi\+\_\+vdma\+::s2mm\+\_\+frmdly\+\_\+stride\+\_\+t\+::frame\+\_\+delay}
+
+Indicates the minimum number of frame buffers the Genlock slave is to be behind the locked master. This field is only used if the channel is enabled for Genlock Slave operations. This field has no meaning in other Genlock modes. Note\+: Frame Delay must be less than or equal to Frame Buffers or an undefined results occur. \mbox{\Hypertarget{structaxi__vdma_1_1s2mm__frmdly__stride__t_a2ae9d7c7faf7cd5ba732d25df0505335}\label{structaxi__vdma_1_1s2mm__frmdly__stride__t_a2ae9d7c7faf7cd5ba732d25df0505335}} 
+\index{axi\_vdma::s2mm\_frmdly\_stride\_t@{axi\_vdma::s2mm\_frmdly\_stride\_t}!rsvd\_23\_16@{rsvd\_23\_16}}
+\index{rsvd\_23\_16@{rsvd\_23\_16}!axi\_vdma::s2mm\_frmdly\_stride\_t@{axi\_vdma::s2mm\_frmdly\_stride\_t}}
+\doxysubsubsection{\texorpdfstring{rsvd\_23\_16}{rsvd\_23\_16}}
+{\footnotesize\ttfamily uint8\+\_\+t axi\+\_\+vdma\+::s2mm\+\_\+frmdly\+\_\+stride\+\_\+t\+::rsvd\+\_\+23\+\_\+16}
+
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__frmdly__stride__t_a7e560ebbc9d7c1a9a090b604be57f1c9}\label{structaxi__vdma_1_1s2mm__frmdly__stride__t_a7e560ebbc9d7c1a9a090b604be57f1c9}} 
+\index{axi\_vdma::s2mm\_frmdly\_stride\_t@{axi\_vdma::s2mm\_frmdly\_stride\_t}!rsvd\_31\_29@{rsvd\_31\_29}}
+\index{rsvd\_31\_29@{rsvd\_31\_29}!axi\_vdma::s2mm\_frmdly\_stride\_t@{axi\_vdma::s2mm\_frmdly\_stride\_t}}
+\doxysubsubsection{\texorpdfstring{rsvd\_31\_29}{rsvd\_31\_29}}
+{\footnotesize\ttfamily unsigned axi\+\_\+vdma\+::s2mm\+\_\+frmdly\+\_\+stride\+\_\+t\+::rsvd\+\_\+31\+\_\+29}
+
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__frmdly__stride__t_a0488e7c5a31744eecf7318c42e6920d8}\label{structaxi__vdma_1_1s2mm__frmdly__stride__t_a0488e7c5a31744eecf7318c42e6920d8}} 
+\index{axi\_vdma::s2mm\_frmdly\_stride\_t@{axi\_vdma::s2mm\_frmdly\_stride\_t}!stride@{stride}}
+\index{stride@{stride}!axi\_vdma::s2mm\_frmdly\_stride\_t@{axi\_vdma::s2mm\_frmdly\_stride\_t}}
+\doxysubsubsection{\texorpdfstring{stride}{stride}}
+{\footnotesize\ttfamily uint16\+\_\+t axi\+\_\+vdma\+::s2mm\+\_\+frmdly\+\_\+stride\+\_\+t\+::stride}
+
+Indicates the number of address bytes between the first pixels of each video line. Note\+: A stride value less than S2\+MM\+\_\+\+HSIZE causes data to be corrupted. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_axi_vdma_8hpp}{Axi\+Vdma.\+hpp}}\end{DoxyCompactItemize}

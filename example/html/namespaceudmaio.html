@@ -128,6 +128,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_fpga_mem_buffer_over_xdma.html">FpgaMemBufferOverXdma</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA data buffer accessed over XDMA using the xdma c2h0 stream channel.  <a href="classudmaio_1_1_fpga_mem_buffer_over_xdma.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_frame_format.html">FrameFormat</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_hw_accessor.html">HwAccessor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for hardware access.  <a href="classudmaio_1_1_hw_accessor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,6 +160,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_axi_dma_if.html">UioAxiDmaIf</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface to AXI DMA Core.  <a href="classudmaio_1_1_uio_axi_dma_if.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_axi_vdma_if.html">UioAxiVdmaIf</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface to AXI VDMA Core.  <a href="classudmaio_1_1_uio_axi_vdma_if.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_base.html">UioConfigBase</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for <a class="el" href="classudmaio_1_1_hw_accessor.html" title="Base class for hardware access.">HwAccessor</a> creation.  <a href="classudmaio_1_1_uio_config_base.html#details">More...</a><br /></td></tr>
@@ -193,6 +198,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:a05b519f65a300d1cd8f0c150fae1e71c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a681a7289ae1db6b3e4fdef3a0602ebff"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceudmaio.html#a681a7289ae1db6b3e4fdef3a0602ebff">AxiDmaBlock</a> = <a class="el" href="namespaceaxi__dma.html#adf82eb6346eaa5e00fb4a043f95c3f40">axi_dma::block</a>&lt; <a class="el" href="classudmaio_1_1_reg_accessor_array.html">RegAccessorArray</a> &gt;</td></tr>
 <tr class="separator:a681a7289ae1db6b3e4fdef3a0602ebff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c22f9935f640c9e9976275d295bcdac"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceudmaio.html#a0c22f9935f640c9e9976275d295bcdac">AxiVdmaBlock</a> = <a class="el" href="namespaceaxi__vdma.html#a4424aed034871033a023500e857dc774">axi_vdma::block</a>&lt; <a class="el" href="classudmaio_1_1_reg_accessor_array.html">RegAccessorArray</a> &gt;</td></tr>
+<tr class="separator:a0c22f9935f640c9e9976275d295bcdac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af23be0f90a70f4eed1e08987bac4f32e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceudmaio.html#af23be0f90a70f4eed1e08987bac4f32e">HwAccessorPtr</a> = std::shared_ptr&lt; <a class="el" href="classudmaio_1_1_hw_accessor.html">HwAccessor</a> &gt;</td></tr>
 <tr class="separator:af23be0f90a70f4eed1e08987bac4f32e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -224,6 +231,20 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="namespaceudmaio.html#a681a7289ae1db6b3e4fdef3a0602ebff">udmaio::AxiDmaBlock</a> = typedef <a class="el" href="namespaceaxi__dma.html#adf82eb6346eaa5e00fb4a043f95c3f40">axi_dma::block</a>&lt;<a class="el" href="classudmaio_1_1_reg_accessor_array.html">RegAccessorArray</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c22f9935f640c9e9976275d295bcdac" name="a0c22f9935f640c9e9976275d295bcdac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c22f9935f640c9e9976275d295bcdac">&#9670;&#160;</a></span>AxiVdmaBlock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceudmaio.html#a0c22f9935f640c9e9976275d295bcdac">udmaio::AxiVdmaBlock</a> = typedef <a class="el" href="namespaceaxi__vdma.html#a4424aed034871033a023500e857dc774">axi_vdma::block</a>&lt;<a class="el" href="classudmaio_1_1_reg_accessor_array.html">RegAccessorArray</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">

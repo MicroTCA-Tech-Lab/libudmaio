@@ -1,6 +1,7 @@
 var namespaces_dup =
 [
     [ "axi_dma", "namespaceaxi__dma.html", "namespaceaxi__dma" ],
+    [ "axi_vdma", "namespaceaxi__vdma.html", "namespaceaxi__vdma" ],
     [ "target_hw_consts", "namespacetarget__hw__consts.html", [
       [ "axi_bram_ctrl", "namespacetarget__hw__consts.html#a70330827534f95e4a3864ca5934eee33", null ],
       [ "axi_dma", "namespacetarget__hw__consts.html#ac94d10dc3a811678c13ceeac481d634d", null ],

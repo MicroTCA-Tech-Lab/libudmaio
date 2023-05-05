@@ -47,10 +47,15 @@ digraph "UioConfig.hpp"
   Node19 -> Node7 [dir="back",color="steelblue1",style="solid"];
   Node19 -> Node20 [dir="back",color="steelblue1",style="solid"];
   Node20 [label="UioAxiDmaIf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_axi_dma_if_8cpp.html",tooltip=" "];
+  Node18 -> Node21 [dir="back",color="steelblue1",style="solid"];
+  Node21 [label="UioAxiVdmaIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_axi_vdma_if_8hpp.html",tooltip=" "];
+  Node21 -> Node22 [dir="back",color="steelblue1",style="solid"];
+  Node22 [label="UioAxiVdmaIf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_axi_vdma_if_8cpp.html",tooltip=" "];
   Node18 -> Node12 [dir="back",color="steelblue1",style="solid"];
   Node17 -> Node19 [dir="back",color="steelblue1",style="solid"];
   Node17 -> Node21 [dir="back",color="steelblue1",style="solid"];
-  Node21 [label="UioIf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8cpp.html",tooltip=" "];
+  Node17 -> Node23 [dir="back",color="steelblue1",style="solid"];
+  Node23 [label="UioIf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8cpp.html",tooltip=" "];
   Node1 -> Node16 [dir="back",color="steelblue1",style="solid"];
   Node1 -> Node17 [dir="back",color="steelblue1",style="solid"];
 }

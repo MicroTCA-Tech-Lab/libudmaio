@@ -1,0 +1,6 @@
+<map id="udmaio::UioAxiVdmaIf" name="udmaio::UioAxiVdmaIf">
+<area shape="rect" id="node1" title="Interface to AXI VDMA Core." alt="" coords="59,152,209,177"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="22,79,121,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,137,31"/>
+<area shape="rect" id="node4" href="$structaxi__vdma_1_1block__template.html" title="Template class for the axi_vdma block, containing accessors for all its registers." alt="" coords="145,79,251,104"/>
+</map>

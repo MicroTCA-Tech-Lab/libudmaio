@@ -1,0 +1,184 @@
+\hypertarget{structaxi__vdma_1_1s2mm__vdmasr__t}{}\doxysection{axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t Struct Reference}
+\label{structaxi__vdma_1_1s2mm__vdmasr__t}\index{axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}}
+
+
+{\ttfamily \#include $<$Axi\+Vdma.\+hpp$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t_ab6764980ab2d221e1e68312218494600}{halted}}\+: 1
+\item 
+unsigned \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t_a2d6401cbe706aea4e04140b96b01131a}{rsvd\+\_\+3\+\_\+1}}\+: 3
+\item 
+bool \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t_aca8c56f16c062f0abcdd662f41d52196}{vdma\+\_\+int\+\_\+err}}\+: 1
+\item 
+bool \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t_acd6158e2045ccf3c5880e9d61d6bcde5}{vdma\+\_\+slv\+\_\+err}}\+: 1
+\begin{DoxyCompactList}\small\item\em VDMA Slave Error. 0 -\/ No VDMA Slave Errors. 1 -\/ VDMA Slave Error detected. VDMA Engine halts. This error occurs if the slave read from the Memory Map interface issues a Slave Error. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t_afe2dabd8a0e9a1c6e8ecd5958f8e51f7}{vdma\+\_\+dec\+\_\+err}}\+: 1
+\begin{DoxyCompactList}\small\item\em VDMA Decode Error. This error occurs if the address request is to an invalid address. 0 = No VDMA Decode Errors. 1 = VDMA Decode Error detected. VDMA channel halts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t_a59fe89ecb2bf7779e2d40c5ea3896e8a}{sof\+\_\+early\+\_\+err}}\+: 1
+\begin{DoxyCompactList}\small\item\em Start of Frame Early Error 0 -\/ No start-\/of-\/frame Error 1 -\/ Start of Frame Early Error detected. VDMA does not halt. This error occurs if incoming frame size is lesser than programmed vsize value. Write 1 to Clear in flush on fsync mode and Read Only otherwise. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t_afc237af89b03ef27e00dbfae4959d314}{eol\+\_\+early\+\_\+err}}\+: 1
+\begin{DoxyCompactList}\small\item\em End of Line Early Error. 0 -\/ No End of Line Early Error 1 -\/ End of Line Early Error detected. VDMA does not halt. This error occurs if the incoming line size is lesser than the programmed hsize value. Write 1 to clear. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t_a57a6ae5c0a04e29b49595fc80c4fb824}{rsvd\+\_\+10\+\_\+9}}\+: 2
+\item 
+bool \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t_adffa24e5ec417a7ec2898b7769fa9347}{sof\+\_\+late\+\_\+err}}\+: 1
+\begin{DoxyCompactList}\small\item\em Start of Frame Late Error. 0 -\/ No start-\/of-\/frame Late Error 1 -\/ Start of Frame Late Error detected. VDMA does not halt. This error occurs if the incoming frame size is greater than the programmed vsize value. Write 1 to Clear in flush on fsync mode. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t_a77e4b3d019a41fab7b9fcf2f8d1bbd94}{frm\+\_\+cnt\+\_\+irq}}\+: 1
+\begin{DoxyCompactList}\small\item\em Frame Count Interrupt. 0 -\/ No Frame Count Interrupt. 1 -\/ Frame Count Interrupt detected. If enabled (DMACR.\+Frm\+Cnt\+\_\+\+Irq\+En = 1) and if the interrupt threshold has been met, an interrupt out is generated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t_acaac74d744e1a291c0ef5bf9573ffb5b}{dly\+\_\+cnt\+\_\+irq}}\+: 1
+\begin{DoxyCompactList}\small\item\em Interrupt on Delay. 0 -\/ No Delay Interrupt. 1 -\/ Delay Interrupt detected. If enabled (DMACR.\+Dly\+Cnt\+\_\+\+Irq\+En = 1), an interrupt out is generated when the delay count reaches its programmed value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t_a82549fd260dc45a3980c5ca317f5619d}{err\+\_\+irq}}\+: 1
+\begin{DoxyCompactList}\small\item\em Interrupt on Error. 0 -\/ No error Interrupt. 1 -\/ Error interrupt detected. If enabled (VDMACR.\+Err\+\_\+\+Irq\+En = 1), an interrupt out is generated when an error is detected. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t_ac8aada919eec6cacdaff3ccf3ad6ffb9}{eol\+\_\+late\+\_\+err}}\+: 1
+\begin{DoxyCompactList}\small\item\em End of Line Late Error. 0 -\/ No End of Line Late Error 1 -\/ End of Line Late Error detected. VDMA does not halt. This error occurs if the incoming line size is greater than the programmed hsize value. Write 1 to clear. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t_ac257c076259305b11090dc4529601bfb}{irq\+\_\+frame\+\_\+cnt\+\_\+sts}}
+\begin{DoxyCompactList}\small\item\em Interrupt Frame Count Status. Indicates current interrupt frame count value. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t_a87f7a93d4a1336b73ffb93e313f21341}{irq\+\_\+delay\+\_\+cnt\+\_\+sts}}
+\begin{DoxyCompactList}\small\item\em Interrupt Delay Count Status. Indicates current interrupt delay time value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+S2\+MM VDMA Status Register 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdmasr__t_acaac74d744e1a291c0ef5bf9573ffb5b}\label{structaxi__vdma_1_1s2mm__vdmasr__t_acaac74d744e1a291c0ef5bf9573ffb5b}} 
+\index{axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}!dly\_cnt\_irq@{dly\_cnt\_irq}}
+\index{dly\_cnt\_irq@{dly\_cnt\_irq}!axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}}
+\doxysubsubsection{\texorpdfstring{dly\_cnt\_irq}{dly\_cnt\_irq}}
+{\footnotesize\ttfamily bool axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t\+::dly\+\_\+cnt\+\_\+irq}
+
+
+
+Interrupt on Delay. 0 -\/ No Delay Interrupt. 1 -\/ Delay Interrupt detected. If enabled (DMACR.\+Dly\+Cnt\+\_\+\+Irq\+En = 1), an interrupt out is generated when the delay count reaches its programmed value. 
+
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdmasr__t_afc237af89b03ef27e00dbfae4959d314}\label{structaxi__vdma_1_1s2mm__vdmasr__t_afc237af89b03ef27e00dbfae4959d314}} 
+\index{axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}!eol\_early\_err@{eol\_early\_err}}
+\index{eol\_early\_err@{eol\_early\_err}!axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}}
+\doxysubsubsection{\texorpdfstring{eol\_early\_err}{eol\_early\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t\+::eol\+\_\+early\+\_\+err}
+
+
+
+End of Line Early Error. 0 -\/ No End of Line Early Error 1 -\/ End of Line Early Error detected. VDMA does not halt. This error occurs if the incoming line size is lesser than the programmed hsize value. Write 1 to clear. 
+
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdmasr__t_ac8aada919eec6cacdaff3ccf3ad6ffb9}\label{structaxi__vdma_1_1s2mm__vdmasr__t_ac8aada919eec6cacdaff3ccf3ad6ffb9}} 
+\index{axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}!eol\_late\_err@{eol\_late\_err}}
+\index{eol\_late\_err@{eol\_late\_err}!axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}}
+\doxysubsubsection{\texorpdfstring{eol\_late\_err}{eol\_late\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t\+::eol\+\_\+late\+\_\+err}
+
+
+
+End of Line Late Error. 0 -\/ No End of Line Late Error 1 -\/ End of Line Late Error detected. VDMA does not halt. This error occurs if the incoming line size is greater than the programmed hsize value. Write 1 to clear. 
+
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdmasr__t_a82549fd260dc45a3980c5ca317f5619d}\label{structaxi__vdma_1_1s2mm__vdmasr__t_a82549fd260dc45a3980c5ca317f5619d}} 
+\index{axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}!err\_irq@{err\_irq}}
+\index{err\_irq@{err\_irq}!axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}}
+\doxysubsubsection{\texorpdfstring{err\_irq}{err\_irq}}
+{\footnotesize\ttfamily bool axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t\+::err\+\_\+irq}
+
+
+
+Interrupt on Error. 0 -\/ No error Interrupt. 1 -\/ Error interrupt detected. If enabled (VDMACR.\+Err\+\_\+\+Irq\+En = 1), an interrupt out is generated when an error is detected. 
+
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdmasr__t_a77e4b3d019a41fab7b9fcf2f8d1bbd94}\label{structaxi__vdma_1_1s2mm__vdmasr__t_a77e4b3d019a41fab7b9fcf2f8d1bbd94}} 
+\index{axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}!frm\_cnt\_irq@{frm\_cnt\_irq}}
+\index{frm\_cnt\_irq@{frm\_cnt\_irq}!axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}}
+\doxysubsubsection{\texorpdfstring{frm\_cnt\_irq}{frm\_cnt\_irq}}
+{\footnotesize\ttfamily bool axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t\+::frm\+\_\+cnt\+\_\+irq}
+
+
+
+Frame Count Interrupt. 0 -\/ No Frame Count Interrupt. 1 -\/ Frame Count Interrupt detected. If enabled (DMACR.\+Frm\+Cnt\+\_\+\+Irq\+En = 1) and if the interrupt threshold has been met, an interrupt out is generated. 
+
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdmasr__t_ab6764980ab2d221e1e68312218494600}\label{structaxi__vdma_1_1s2mm__vdmasr__t_ab6764980ab2d221e1e68312218494600}} 
+\index{axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}!halted@{halted}}
+\index{halted@{halted}!axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}}
+\doxysubsubsection{\texorpdfstring{halted}{halted}}
+{\footnotesize\ttfamily bool axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t\+::halted}
+
+VDMA Channel Halted. Indicates the run/stop state of the VDMA channel. 0 -\/ VDMA channel running 1 -\/ VDMA channel halted. This bit gets set when VDMACR.\+RS = 0. There can be a lag of time between when VDMACR.\+RS = 0 and when VDMASR.\+Halted = 1. \mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdmasr__t_a87f7a93d4a1336b73ffb93e313f21341}\label{structaxi__vdma_1_1s2mm__vdmasr__t_a87f7a93d4a1336b73ffb93e313f21341}} 
+\index{axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}!irq\_delay\_cnt\_sts@{irq\_delay\_cnt\_sts}}
+\index{irq\_delay\_cnt\_sts@{irq\_delay\_cnt\_sts}!axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}}
+\doxysubsubsection{\texorpdfstring{irq\_delay\_cnt\_sts}{irq\_delay\_cnt\_sts}}
+{\footnotesize\ttfamily uint8\+\_\+t axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t\+::irq\+\_\+delay\+\_\+cnt\+\_\+sts}
+
+
+
+Interrupt Delay Count Status. Indicates current interrupt delay time value. 
+
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdmasr__t_ac257c076259305b11090dc4529601bfb}\label{structaxi__vdma_1_1s2mm__vdmasr__t_ac257c076259305b11090dc4529601bfb}} 
+\index{axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}!irq\_frame\_cnt\_sts@{irq\_frame\_cnt\_sts}}
+\index{irq\_frame\_cnt\_sts@{irq\_frame\_cnt\_sts}!axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}}
+\doxysubsubsection{\texorpdfstring{irq\_frame\_cnt\_sts}{irq\_frame\_cnt\_sts}}
+{\footnotesize\ttfamily uint8\+\_\+t axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t\+::irq\+\_\+frame\+\_\+cnt\+\_\+sts}
+
+
+
+Interrupt Frame Count Status. Indicates current interrupt frame count value. 
+
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdmasr__t_a57a6ae5c0a04e29b49595fc80c4fb824}\label{structaxi__vdma_1_1s2mm__vdmasr__t_a57a6ae5c0a04e29b49595fc80c4fb824}} 
+\index{axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}!rsvd\_10\_9@{rsvd\_10\_9}}
+\index{rsvd\_10\_9@{rsvd\_10\_9}!axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}}
+\doxysubsubsection{\texorpdfstring{rsvd\_10\_9}{rsvd\_10\_9}}
+{\footnotesize\ttfamily unsigned axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t\+::rsvd\+\_\+10\+\_\+9}
+
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdmasr__t_a2d6401cbe706aea4e04140b96b01131a}\label{structaxi__vdma_1_1s2mm__vdmasr__t_a2d6401cbe706aea4e04140b96b01131a}} 
+\index{axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}!rsvd\_3\_1@{rsvd\_3\_1}}
+\index{rsvd\_3\_1@{rsvd\_3\_1}!axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}}
+\doxysubsubsection{\texorpdfstring{rsvd\_3\_1}{rsvd\_3\_1}}
+{\footnotesize\ttfamily unsigned axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t\+::rsvd\+\_\+3\+\_\+1}
+
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdmasr__t_a59fe89ecb2bf7779e2d40c5ea3896e8a}\label{structaxi__vdma_1_1s2mm__vdmasr__t_a59fe89ecb2bf7779e2d40c5ea3896e8a}} 
+\index{axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}!sof\_early\_err@{sof\_early\_err}}
+\index{sof\_early\_err@{sof\_early\_err}!axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}}
+\doxysubsubsection{\texorpdfstring{sof\_early\_err}{sof\_early\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t\+::sof\+\_\+early\+\_\+err}
+
+
+
+Start of Frame Early Error 0 -\/ No start-\/of-\/frame Error 1 -\/ Start of Frame Early Error detected. VDMA does not halt. This error occurs if incoming frame size is lesser than programmed vsize value. Write 1 to Clear in flush on fsync mode and Read Only otherwise. 
+
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdmasr__t_adffa24e5ec417a7ec2898b7769fa9347}\label{structaxi__vdma_1_1s2mm__vdmasr__t_adffa24e5ec417a7ec2898b7769fa9347}} 
+\index{axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}!sof\_late\_err@{sof\_late\_err}}
+\index{sof\_late\_err@{sof\_late\_err}!axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}}
+\doxysubsubsection{\texorpdfstring{sof\_late\_err}{sof\_late\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t\+::sof\+\_\+late\+\_\+err}
+
+
+
+Start of Frame Late Error. 0 -\/ No start-\/of-\/frame Late Error 1 -\/ Start of Frame Late Error detected. VDMA does not halt. This error occurs if the incoming frame size is greater than the programmed vsize value. Write 1 to Clear in flush on fsync mode. 
+
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdmasr__t_afe2dabd8a0e9a1c6e8ecd5958f8e51f7}\label{structaxi__vdma_1_1s2mm__vdmasr__t_afe2dabd8a0e9a1c6e8ecd5958f8e51f7}} 
+\index{axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}!vdma\_dec\_err@{vdma\_dec\_err}}
+\index{vdma\_dec\_err@{vdma\_dec\_err}!axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}}
+\doxysubsubsection{\texorpdfstring{vdma\_dec\_err}{vdma\_dec\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t\+::vdma\+\_\+dec\+\_\+err}
+
+
+
+VDMA Decode Error. This error occurs if the address request is to an invalid address. 0 = No VDMA Decode Errors. 1 = VDMA Decode Error detected. VDMA channel halts. 
+
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdmasr__t_aca8c56f16c062f0abcdd662f41d52196}\label{structaxi__vdma_1_1s2mm__vdmasr__t_aca8c56f16c062f0abcdd662f41d52196}} 
+\index{axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}!vdma\_int\_err@{vdma\_int\_err}}
+\index{vdma\_int\_err@{vdma\_int\_err}!axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}}
+\doxysubsubsection{\texorpdfstring{vdma\_int\_err}{vdma\_int\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t\+::vdma\+\_\+int\+\_\+err}
+
+VDMA Internal Error. 0 -\/ No VDMA Internal Errors. 1 -\/ VDMA Internal Error detected. This error occurs during one of the following conditions. (a) HSIZE or VSIZE register were written zeros or (b) Internal error received from helper core axi\+\_\+datamover or (c) Transferred frame size is lesser than programmed vsize (SOFEarly\+Err). In case (a) and/or (b) channel stops (that is, the VDMACR.\+RS bit is set to 0 and remains cleared). To restart the channel, soft or hard reset is required. In case (c), channel does not stop or halt. \mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdmasr__t_acd6158e2045ccf3c5880e9d61d6bcde5}\label{structaxi__vdma_1_1s2mm__vdmasr__t_acd6158e2045ccf3c5880e9d61d6bcde5}} 
+\index{axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}!vdma\_slv\_err@{vdma\_slv\_err}}
+\index{vdma\_slv\_err@{vdma\_slv\_err}!axi\_vdma::s2mm\_vdmasr\_t@{axi\_vdma::s2mm\_vdmasr\_t}}
+\doxysubsubsection{\texorpdfstring{vdma\_slv\_err}{vdma\_slv\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t\+::vdma\+\_\+slv\+\_\+err}
+
+
+
+VDMA Slave Error. 0 -\/ No VDMA Slave Errors. 1 -\/ VDMA Slave Error detected. VDMA Engine halts. This error occurs if the slave read from the Memory Map interface issues a Slave Error. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_axi_vdma_8hpp}{Axi\+Vdma.\+hpp}}\end{DoxyCompactItemize}

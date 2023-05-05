@@ -4,5 +4,6 @@ var searchData=
   ['read_1',['read',['../classudmaio_1_1_data_handler_sync.html#a605fd0316d366ec4935583b4dce91795',1,'udmaio::DataHandlerSync::read()'],['../classudmaio_1_1_data_handler_sync.html#a8e6fda5d3ec7577a83605dcd3b106204',1,'udmaio::DataHandlerSync::read(std::chrono::milliseconds timeout)']]],
   ['reg_5fto_5fraw_2',['reg_to_raw',['../classudmaio_1_1_uio_if.html#a4f047f030c4363d46877dddf3d93478f',1,'udmaio::UioIf::reg_to_raw(C data)'],['../classudmaio_1_1_uio_if.html#a3b1e22f2824346e4b87fbf884de554eb',1,'udmaio::UioIf::reg_to_raw(C data)']]],
   ['regaccessorarrayelement_3',['RegAccessorArrayElement',['../classudmaio_1_1_reg_accessor_array_element.html#aaa4e2dac359c1b0ed94316ca5a24727b',1,'udmaio::RegAccessorArrayElement']]],
-  ['regaccessorbase_4',['RegAccessorBase',['../classudmaio_1_1_reg_accessor_base.html#ad878857665ec6cb11fb5133240a23e65',1,'udmaio::RegAccessorBase::RegAccessorBase()=delete'],['../classudmaio_1_1_reg_accessor_base.html#a7298226a53b233dd99ca2dec3e41d109',1,'udmaio::RegAccessorBase::RegAccessorBase(constructor_arg_type interface)']]]
+  ['regaccessorbase_4',['RegAccessorBase',['../classudmaio_1_1_reg_accessor_base.html#ad878857665ec6cb11fb5133240a23e65',1,'udmaio::RegAccessorBase::RegAccessorBase()=delete'],['../classudmaio_1_1_reg_accessor_base.html#a7298226a53b233dd99ca2dec3e41d109',1,'udmaio::RegAccessorBase::RegAccessorBase(constructor_arg_type interface)']]],
+  ['reset_5',['reset',['../classudmaio_1_1_uio_axi_vdma_if.html#a27d3d20a66f6085e20bae733792fd3ff',1,'udmaio::UioAxiVdmaIf']]]
 ];

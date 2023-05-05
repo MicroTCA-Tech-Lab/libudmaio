@@ -1,23 +1,26 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node1" href="$structaxi__dma_1_1block__template.html" title="Template class for the axi_dma block, containing accessors for all its registers." alt="" coords="188,5,373,45"/>
-<area shape="rect" id="node2" href="$classudmaio_1_1_uio_axi_dma_if.html" title="Interface to AXI DMA Core." alt="" coords="465,13,607,38"/>
-<area shape="rect" id="node3" href="$structudmaio_1_1_logger.html" title=" " alt="" coords="16,361,127,386"/>
-<area shape="rect" id="node4" href="$classudmaio_1_1_data_handler_abstract.html" title="Base class to implement a DMA data reception handler." alt="" coords="185,361,376,386"/>
-<area shape="rect" id="node7" href="$classudmaio_1_1_hw_accessor.html" title="Base class for hardware access." alt="" coords="208,465,353,490"/>
-<area shape="rect" id="node13" href="$classudmaio_1_1_u_dma_buf.html" title="DMA data buffer accessed over AXI/UIO, implemented w/ udmabuf (see https://github...." alt="" coords="473,309,599,334"/>
-<area shape="rect" id="node5" href="$class_data_handler_print.html" title="DataHandler implementation that checks LFSR data and prints status / stats." alt="" coords="475,407,597,433"/>
-<area shape="rect" id="node6" href="$classudmaio_1_1_data_handler_sync.html" title="Synchronous data handler with blocking read interface." alt="" coords="451,358,621,383"/>
-<area shape="rect" id="node8" href="$classudmaio_1_1_hw_accessor_mmap.html" title=" " alt="" coords="445,457,627,497"/>
-<area shape="rect" id="node10" href="$classudmaio_1_1_hw_accessor_mmap.html" title=" " alt="" coords="445,521,627,561"/>
-<area shape="rect" id="node12" href="$classudmaio_1_1_hw_accessor_mock.html" title=" " alt="" coords="447,586,625,611"/>
-<area shape="rect" id="node9" href="$classudmaio_1_1_hw_accessor_axi.html" title=" " alt="" coords="704,465,867,490"/>
-<area shape="rect" id="node11" href="$classudmaio_1_1_hw_accessor_xdma.html" title=" " alt="" coords="696,521,875,561"/>
-<area shape="rect" id="node14" title=" " alt="" coords="5,286,137,311"/>
-<area shape="rect" id="node15" href="$classudmaio_1_1_dma_buffer_abstract.html" title="Base class for DMA data buffer." alt="" coords="191,259,371,285"/>
-<area shape="rect" id="node18" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="231,137,330,162"/>
-<area shape="rect" id="node16" href="$classudmaio_1_1_fpga_mem_buffer_over_axi.html" title="DMA data buffer accessed over AXI/UIO, described w/ explicit address &amp; size." alt="" coords="432,210,640,235"/>
-<area shape="rect" id="node17" href="$classudmaio_1_1_fpga_mem_buffer_over_xdma.html" title="DMA data buffer accessed over XDMA using the xdma c2h0 stream channel." alt="" coords="424,259,648,285"/>
-<area shape="rect" id="node19" href="$class_uio_gpio_status.html" title="Interface to GPIO status port of the demo application." alt="" coords="483,62,589,87"/>
-<area shape="rect" id="node20" href="$class_uio_traffic_gen.html" title="Interface to LFSR core of the demo application." alt="" coords="485,111,587,137"/>
-<area shape="rect" id="node21" href="$classudmaio_1_1_uio_mem_sgdma.html" title="Interface to AXI DMA scatter&#45;gather buffers &amp; descriptors Uses a UioIf to access DMA descriptor memor..." alt="" coords="456,161,616,186"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_axi_dma_if.html" title="Interface to AXI DMA Core." alt="" coords="465,17,607,42"/>
+<area shape="rect" id="node3" href="$structaxi__vdma_1_1block__template.html" title="Template class for the axi_vdma block, containing accessors for all its registers." alt="" coords="188,69,373,109"/>
+<area shape="rect" id="node4" href="$classudmaio_1_1_uio_axi_vdma_if.html" title="Interface to AXI VDMA Core." alt="" coords="461,73,611,98"/>
+<area shape="rect" id="node5" href="$structudmaio_1_1_logger.html" title=" " alt="" coords="16,510,127,535"/>
+<area shape="rect" id="node6" href="$classudmaio_1_1_data_handler_abstract.html" title="Base class to implement a DMA data reception handler." alt="" coords="185,462,376,487"/>
+<area shape="rect" id="node9" href="$classudmaio_1_1_frame_format.html" title=" " alt="" coords="207,563,355,589"/>
+<area shape="rect" id="node10" href="$classudmaio_1_1_hw_accessor.html" title="Base class for hardware access." alt="" coords="208,514,353,539"/>
+<area shape="rect" id="node16" href="$classudmaio_1_1_u_dma_buf.html" title="DMA data buffer accessed over AXI/UIO, implemented w/ udmabuf (see https://github...." alt="" coords="473,369,599,394"/>
+<area shape="rect" id="node7" href="$class_data_handler_print.html" title="DataHandler implementation that checks LFSR data and prints status / stats." alt="" coords="475,467,597,493"/>
+<area shape="rect" id="node8" href="$classudmaio_1_1_data_handler_sync.html" title="Synchronous data handler with blocking read interface." alt="" coords="451,418,621,443"/>
+<area shape="rect" id="node11" href="$classudmaio_1_1_hw_accessor_mmap.html" title=" " alt="" coords="445,517,627,557"/>
+<area shape="rect" id="node13" href="$classudmaio_1_1_hw_accessor_mmap.html" title=" " alt="" coords="445,581,627,621"/>
+<area shape="rect" id="node15" href="$classudmaio_1_1_hw_accessor_mock.html" title=" " alt="" coords="447,646,625,671"/>
+<area shape="rect" id="node12" href="$classudmaio_1_1_hw_accessor_axi.html" title=" " alt="" coords="704,525,867,550"/>
+<area shape="rect" id="node14" href="$classudmaio_1_1_hw_accessor_xdma.html" title=" " alt="" coords="696,581,875,621"/>
+<area shape="rect" id="node17" title=" " alt="" coords="5,459,137,485"/>
+<area shape="rect" id="node18" href="$classudmaio_1_1_dma_buffer_abstract.html" title="Base class for DMA data buffer." alt="" coords="191,331,371,357"/>
+<area shape="rect" id="node21" href="$classudmaio_1_1_uio_if.html" title="Base class for UIO interfaces." alt="" coords="231,171,330,197"/>
+<area shape="rect" id="node19" href="$classudmaio_1_1_fpga_mem_buffer_over_axi.html" title="DMA data buffer accessed over AXI/UIO, described w/ explicit address &amp; size." alt="" coords="432,270,640,295"/>
+<area shape="rect" id="node20" href="$classudmaio_1_1_fpga_mem_buffer_over_xdma.html" title="DMA data buffer accessed over XDMA using the xdma c2h0 stream channel." alt="" coords="424,319,648,345"/>
+<area shape="rect" id="node22" href="$class_uio_gpio_status.html" title="Interface to GPIO status port of the demo application." alt="" coords="483,122,589,147"/>
+<area shape="rect" id="node23" href="$class_uio_traffic_gen.html" title="Interface to LFSR core of the demo application." alt="" coords="485,171,587,197"/>
+<area shape="rect" id="node24" href="$classudmaio_1_1_uio_mem_sgdma.html" title="Interface to AXI DMA scatter&#45;gather buffers &amp; descriptors Uses a UioIf to access DMA descriptor memor..." alt="" coords="456,221,616,246"/>
 </map>

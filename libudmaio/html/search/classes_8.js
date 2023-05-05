@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['s2mm_5fcurdesc_5ft_0',['s2mm_curdesc_t',['../structaxi__dma_1_1s2mm__curdesc__t.html',1,'axi_dma']]],
-  ['s2mm_5fdmacr_5ft_1',['s2mm_dmacr_t',['../structaxi__dma_1_1s2mm__dmacr__t.html',1,'axi_dma']]],
-  ['s2mm_5fdmasr_5ft_2',['s2mm_dmasr_t',['../structaxi__dma_1_1s2mm__dmasr__t.html',1,'axi_dma']]],
-  ['s2mm_5flength_5ft_3',['s2mm_length_t',['../structaxi__dma_1_1s2mm__length__t.html',1,'axi_dma']]],
-  ['s2mm_5ftaildesc_5ft_4',['s2mm_taildesc_t',['../structaxi__dma_1_1s2mm__taildesc__t.html',1,'axi_dma']]],
-  ['sg_5fctl_5ft_5',['sg_ctl_t',['../structaxi__dma_1_1sg__ctl__t.html',1,'axi_dma']]]
+  ['regaccessorarray_0',['RegAccessorArray',['../classudmaio_1_1_reg_accessor_array.html',1,'udmaio']]],
+  ['regaccessorarray_3c_20c_2c_20offset_2c_200_2c_200_20_3e_1',['RegAccessorArray&lt; C, offset, 0, 0 &gt;',['../classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html',1,'udmaio']]],
+  ['regaccessorarray_3c_20s2mmdesc_2c_200_2c_201024_2c_20desc_5faddr_5fstep_20_3e_2',['RegAccessorArray&lt; S2mmDesc, 0, 1024, DESC_ADDR_STEP &gt;',['../classudmaio_1_1_reg_accessor_array.html',1,'udmaio']]],
+  ['regaccessorarrayelement_3',['RegAccessorArrayElement',['../classudmaio_1_1_reg_accessor_array_element.html',1,'udmaio']]],
+  ['regaccessorbase_4',['RegAccessorBase',['../classudmaio_1_1_reg_accessor_base.html',1,'udmaio']]],
+  ['regaccessorbase_3c_20s2mmdesc_20_3e_5',['RegAccessorBase&lt; S2mmDesc &gt;',['../classudmaio_1_1_reg_accessor_base.html',1,'udmaio']]]
 ];

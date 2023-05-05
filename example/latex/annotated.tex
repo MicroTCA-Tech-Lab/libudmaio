@@ -2,6 +2,7 @@
 Here are the classes, structs, unions and interfaces with brief descriptions\+:\begin{DoxyCompactList}
 \item\contentsline{section}{\mbox{\hyperlink{class_axi_traffic_gen_lfsr}{Axi\+Traffic\+Gen\+Lfsr}} \\*Implements LFSR as described in \char`\"{}\+AXI Traffic Generator v3.\+0\char`\"{} }{\pageref{class_axi_traffic_gen_lfsr}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\+\_\+dma\+::block\+\_\+template$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$}} \\*Template class for the \mbox{\hyperlink{namespaceaxi__dma}{axi\+\_\+dma}} block, containing accessors for all its registers }{\pageref{structaxi__dma_1_1block__template}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structaxi__vdma_1_1block__template}{axi\+\_\+vdma\+::block\+\_\+template$<$ R\+\_\+array\+\_\+acc, R\+\_\+acc\+\_\+arg $>$}} \\*Template class for the \mbox{\hyperlink{namespaceaxi__vdma}{axi\+\_\+vdma}} block, containing accessors for all its registers }{\pageref{structaxi__vdma_1_1block__template}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{udmaio\+::\+Concurrent\+Queue$<$ T $>$}} \\*Helper class to implement a blocking FIFO between threads }{\pageref{classudmaio_1_1_concurrent_queue}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_data_handler_abstract}{udmaio\+::\+Data\+Handler\+Abstract}} \\*Base class to implement a DMA data reception handler }{\pageref{classudmaio_1_1_data_handler_abstract}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_data_handler_print}{Data\+Handler\+Print}} \\*Data\+Handler implementation that checks LFSR data and prints status / stats }{\pageref{class_data_handler_print}}{}
@@ -10,6 +11,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions\+:\
 \item\contentsline{section}{\mbox{\hyperlink{struct_uio_traffic_gen_1_1_ext_tr_length}{Uio\+Traffic\+Gen\+::\+Ext\+Tr\+Length}} }{\pageref{struct_uio_traffic_gen_1_1_ext_tr_length}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi}{udmaio\+::\+Fpga\+Mem\+Buffer\+Over\+Axi}} \\*DMA data buffer accessed over AXI/\+UIO, described w/ explicit address \& size }{\pageref{classudmaio_1_1_fpga_mem_buffer_over_axi}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma}{udmaio\+::\+Fpga\+Mem\+Buffer\+Over\+Xdma}} \\*DMA data buffer accessed over XDMA using the xdma c2h0 stream channel }{\pageref{classudmaio_1_1_fpga_mem_buffer_over_xdma}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_frame_format}{udmaio\+::\+Frame\+Format}} }{\pageref{classudmaio_1_1_frame_format}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_uio_gpio_status_1_1_gpio_data}{Uio\+Gpio\+Status\+::\+Gpio\+Data}} }{\pageref{struct_uio_gpio_status_1_1_gpio_data}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_hw_accessor}{udmaio\+::\+Hw\+Accessor}} \\*Base class for hardware access }{\pageref{classudmaio_1_1_hw_accessor}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_hw_accessor_axi}{udmaio\+::\+Hw\+Accessor\+Axi}} }{\pageref{classudmaio_1_1_hw_accessor_axi}}{}
@@ -20,8 +22,15 @@ Here are the classes, structs, unions and interfaces with brief descriptions\+:\
 \item\contentsline{section}{\mbox{\hyperlink{structaxi__dma_1_1mm2s__curdesc__t}{axi\+\_\+dma\+::mm2s\+\_\+curdesc\+\_\+t}} }{\pageref{structaxi__dma_1_1mm2s__curdesc__t}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structaxi__dma_1_1mm2s__dmacr__t}{axi\+\_\+dma\+::mm2s\+\_\+dmacr\+\_\+t}} }{\pageref{structaxi__dma_1_1mm2s__dmacr__t}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structaxi__dma_1_1mm2s__dmasr__t}{axi\+\_\+dma\+::mm2s\+\_\+dmasr\+\_\+t}} }{\pageref{structaxi__dma_1_1mm2s__dmasr__t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structaxi__vdma_1_1mm2s__frmdly__stride__t}{axi\+\_\+vdma\+::mm2s\+\_\+frmdly\+\_\+stride\+\_\+t}} }{\pageref{structaxi__vdma_1_1mm2s__frmdly__stride__t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structaxi__vdma_1_1mm2s__hsize__t}{axi\+\_\+vdma\+::mm2s\+\_\+hsize\+\_\+t}} }{\pageref{structaxi__vdma_1_1mm2s__hsize__t}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structaxi__dma_1_1mm2s__length__t}{axi\+\_\+dma\+::mm2s\+\_\+length\+\_\+t}} }{\pageref{structaxi__dma_1_1mm2s__length__t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structaxi__vdma_1_1mm2s__reg__index__t}{axi\+\_\+vdma\+::mm2s\+\_\+reg\+\_\+index\+\_\+t}} }{\pageref{structaxi__vdma_1_1mm2s__reg__index__t}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structaxi__dma_1_1mm2s__taildesc__t}{axi\+\_\+dma\+::mm2s\+\_\+taildesc\+\_\+t}} }{\pageref{structaxi__dma_1_1mm2s__taildesc__t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structaxi__vdma_1_1mm2s__vdmacr__t}{axi\+\_\+vdma\+::mm2s\+\_\+vdmacr\+\_\+t}} }{\pageref{structaxi__vdma_1_1mm2s__vdmacr__t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structaxi__vdma_1_1mm2s__vdmasr__t}{axi\+\_\+vdma\+::mm2s\+\_\+vdmasr\+\_\+t}} }{\pageref{structaxi__vdma_1_1mm2s__vdmasr__t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structaxi__vdma_1_1mm2s__vsize__t}{axi\+\_\+vdma\+::mm2s\+\_\+vsize\+\_\+t}} }{\pageref{structaxi__vdma_1_1mm2s__vsize__t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structaxi__vdma_1_1park__ptr__reg__t}{axi\+\_\+vdma\+::park\+\_\+ptr\+\_\+reg\+\_\+t}} }{\pageref{structaxi__vdma_1_1park__ptr__reg__t}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{udmaio\+::\+Reg\+Accessor\+Array$<$ C, offset, arr\+\_\+size, arr\+\_\+stride $>$}} \\*Accessor for register array }{\pageref{classudmaio_1_1_reg_accessor_array}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}{udmaio\+::\+Reg\+Accessor\+Array$<$ C, offset, 0, 0 $>$}} \\*Accessor for single register }{\pageref{classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_element}{udmaio\+::\+Reg\+Accessor\+Array\+Element$<$ C $>$}} \\*Accessor for register array element. Returned by \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array_a4b8a2afd9ba4baefa3f4e218bc0dc020}{Reg\+Accessor\+Array$<$\+C$>$\+::operator\mbox{[}$\,$\mbox{]}}} }{\pageref{classudmaio_1_1_reg_accessor_array_element}}{}
@@ -29,14 +38,22 @@ Here are the classes, structs, unions and interfaces with brief descriptions\+:\
 \item\contentsline{section}{\mbox{\hyperlink{structaxi__dma_1_1s2mm__curdesc__t}{axi\+\_\+dma\+::s2mm\+\_\+curdesc\+\_\+t}} }{\pageref{structaxi__dma_1_1s2mm__curdesc__t}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structaxi__dma_1_1s2mm__dmacr__t}{axi\+\_\+dma\+::s2mm\+\_\+dmacr\+\_\+t}} }{\pageref{structaxi__dma_1_1s2mm__dmacr__t}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t}{axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t}} }{\pageref{structaxi__dma_1_1s2mm__dmasr__t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structaxi__vdma_1_1s2mm__frmdly__stride__t}{axi\+\_\+vdma\+::s2mm\+\_\+frmdly\+\_\+stride\+\_\+t}} }{\pageref{structaxi__vdma_1_1s2mm__frmdly__stride__t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structaxi__vdma_1_1s2mm__hsize__t}{axi\+\_\+vdma\+::s2mm\+\_\+hsize\+\_\+t}} }{\pageref{structaxi__vdma_1_1s2mm__hsize__t}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structaxi__dma_1_1s2mm__length__t}{axi\+\_\+dma\+::s2mm\+\_\+length\+\_\+t}} }{\pageref{structaxi__dma_1_1s2mm__length__t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structaxi__vdma_1_1s2mm__reg__index__t}{axi\+\_\+vdma\+::s2mm\+\_\+reg\+\_\+index\+\_\+t}} }{\pageref{structaxi__vdma_1_1s2mm__reg__index__t}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structaxi__dma_1_1s2mm__taildesc__t}{axi\+\_\+dma\+::s2mm\+\_\+taildesc\+\_\+t}} }{\pageref{structaxi__dma_1_1s2mm__taildesc__t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdma__irq__mask__t}{axi\+\_\+vdma\+::s2mm\+\_\+vdma\+\_\+irq\+\_\+mask\+\_\+t}} }{\pageref{structaxi__vdma_1_1s2mm__vdma__irq__mask__t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmacr__t}{axi\+\_\+vdma\+::s2mm\+\_\+vdmacr\+\_\+t}} }{\pageref{structaxi__vdma_1_1s2mm__vdmacr__t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdmasr__t}{axi\+\_\+vdma\+::s2mm\+\_\+vdmasr\+\_\+t}} }{\pageref{structaxi__vdma_1_1s2mm__vdmasr__t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structaxi__vdma_1_1s2mm__vsize__t}{axi\+\_\+vdma\+::s2mm\+\_\+vsize\+\_\+t}} }{\pageref{structaxi__vdma_1_1s2mm__vsize__t}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structaxi__dma_1_1sg__ctl__t}{axi\+\_\+dma\+::sg\+\_\+ctl\+\_\+t}} }{\pageref{structaxi__dma_1_1sg__ctl__t}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_config}{Uio\+Traffic\+Gen\+::\+St\+Config}} }{\pageref{struct_uio_traffic_gen_1_1_st_config}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_uio_traffic_gen_1_1_st_control}{Uio\+Traffic\+Gen\+::\+St\+Control}} }{\pageref{struct_uio_traffic_gen_1_1_st_control}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_uio_traffic_gen_1_1_tr_length}{Uio\+Traffic\+Gen\+::\+Tr\+Length}} }{\pageref{struct_uio_traffic_gen_1_1_tr_length}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_u_dma_buf}{udmaio\+::\+UDma\+Buf}} \\*DMA data buffer accessed over AXI/\+UIO, implemented w/ udmabuf (see \href{https://github.com/ikwzm/udmabuf}{\texttt{ https\+://github.\+com/ikwzm/udmabuf}}) }{\pageref{classudmaio_1_1_u_dma_buf}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{udmaio\+::\+Uio\+Axi\+Dma\+If}} \\*Interface to AXI DMA Core }{\pageref{classudmaio_1_1_uio_axi_dma_if}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if}{udmaio\+::\+Uio\+Axi\+Vdma\+If}} \\*Interface to AXI VDMA Core }{\pageref{classudmaio_1_1_uio_axi_vdma_if}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_uio_config_base}{udmaio\+::\+Uio\+Config\+Base}} \\*Base class for \mbox{\hyperlink{classudmaio_1_1_hw_accessor}{Hw\+Accessor}} creation }{\pageref{classudmaio_1_1_uio_config_base}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_uio_config_uio}{udmaio\+::\+Uio\+Config\+Uio}} \\*Creates \mbox{\hyperlink{classudmaio_1_1_hw_accessor}{Hw\+Accessor}} from \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} (UIO version) }{\pageref{classudmaio_1_1_uio_config_uio}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_uio_config_xdma}{udmaio\+::\+Uio\+Config\+Xdma}} \\*Creates \mbox{\hyperlink{classudmaio_1_1_hw_accessor}{Hw\+Accessor}} from \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} (XDMA version) }{\pageref{classudmaio_1_1_uio_config_xdma}}{}
@@ -46,4 +63,5 @@ Here are the classes, structs, unions and interfaces with brief descriptions\+:\
 \item\contentsline{section}{\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{udmaio\+::\+Uio\+Mem\+Sgdma}} \\*Interface to AXI DMA scatter-\/gather buffers \& descriptors Uses a \mbox{\hyperlink{classudmaio_1_1_uio_if}{Uio\+If}} to access DMA descriptor memory }{\pageref{classudmaio_1_1_uio_mem_sgdma}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structudmaio_1_1_uio_region}{udmaio\+::\+Uio\+Region}} \\*General-\/purpose struct to define a memory area }{\pageref{structudmaio_1_1_uio_region}}{}
 \item\contentsline{section}{\mbox{\hyperlink{class_uio_traffic_gen}{Uio\+Traffic\+Gen}} \\*Interface to LFSR core of the demo application }{\pageref{class_uio_traffic_gen}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structaxi__vdma_1_1vdma__version__t}{axi\+\_\+vdma\+::vdma\+\_\+version\+\_\+t}} }{\pageref{structaxi__vdma_1_1vdma__version__t}}{}
 \end{DoxyCompactList}

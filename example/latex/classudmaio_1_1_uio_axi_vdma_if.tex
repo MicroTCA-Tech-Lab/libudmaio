@@ -1,0 +1,244 @@
+\hypertarget{classudmaio_1_1_uio_axi_vdma_if}{}\doxysection{udmaio\+::Uio\+Axi\+Vdma\+If Class Reference}
+\label{classudmaio_1_1_uio_axi_vdma_if}\index{udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}}
+
+
+Interface to AXI VDMA Core.  
+
+
+
+
+{\ttfamily \#include $<$Uio\+Axi\+Vdma\+If.\+hpp$>$}
+
+
+
+Inheritance diagram for udmaio\+::Uio\+Axi\+Vdma\+If\+:
+% FIG 0
+
+
+Collaboration diagram for udmaio\+::Uio\+Axi\+Vdma\+If\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_ace41c4bcd1eb2adb9549498500c22dbf}{Uio\+Axi\+Vdma\+If}} (\mbox{\hyperlink{namespaceudmaio_af23be0f90a70f4eed1e08987bac4f32e}{Hw\+Accessor\+Ptr}} dev\+\_\+loc, bool long\+\_\+addrs=false)
+\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a9ce53930680f14ab14cd4d7a9cee43d4}{init\+\_\+buffers}} (const std\+::vector$<$ \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} $>$ \&frm\+\_\+bufs)
+\begin{DoxyCompactList}\small\item\em Configure the AXI VDMA controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a4d60f688dadfa6db99b8002f2107eb56}{set\+\_\+frame\+\_\+format}} (\mbox{\hyperlink{classudmaio_1_1_frame_format}{Frame\+Format}} frm\+\_\+format)
+\begin{DoxyCompactList}\small\item\em Configure the AXI VDMA controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a689c9d2140042c94f887b444cf531a50}{config}} (const std\+::vector$<$ \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} $>$ \&frm\+\_\+bufs)
+\begin{DoxyCompactList}\small\item\em Configure the AXI VDMA controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_af14e061c655188faccb91d3d2ec7364f}{config}} (const std\+::vector$<$ \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} $>$ \&frm\+\_\+bufs, \mbox{\hyperlink{classudmaio_1_1_frame_format}{Frame\+Format}} frm\+\_\+format)
+\begin{DoxyCompactList}\small\item\em Configure the AXI VDMA controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a27d3d20a66f6085e20bae733792fd3ff}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the S2\+MM part of the AXI VDMA controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a15ec6e293e8e7f7cd52bca6e58045e86}{print\+\_\+regs}} ()
+\begin{DoxyCompactList}\small\item\em Read S2\+MM registers of the AXI VDMA controller and print their content. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a5b5feec2f5a05b4d2b935d8e347e2f03}{get\+\_\+cur\+\_\+frmbuf}} ()
+\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_af78bf90c19b61708814e71f57ef0231c}{print\+\_\+cur\+\_\+frmbuf}} ()
+\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a74805e7b3405a703828933ac1218d8ac}{start}} ()
+\begin{DoxyCompactList}\small\item\em Start the already configured AXI VDMA controller (again) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a611b04644e73e90733adf6d573fdb628}{start}} (\mbox{\hyperlink{classudmaio_1_1_frame_format}{Frame\+Format}} frm\+\_\+format)
+\begin{DoxyCompactList}\small\item\em Configure frame size and start the AXI VDMA controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a167913596133a3025ba926191aa165f3}{stop}} (bool wait\+\_\+for\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Stops the AXI VDMA controller. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_aecfdd1da3099c299f46e539c9674bdd7}{isrunning}} ()
+\begin{DoxyCompactList}\small\item\em Check halted bit in status register. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_af57e3c37d8e49fd81f05a73b4f54d28b}{check\+\_\+for\+\_\+errors}} ()
+\begin{DoxyCompactList}\small\item\em Check status register and log any errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const bool \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_afd9b8b9ebee3a29e33adc0884226a893}{\+\_\+long\+\_\+addrs}}
+\begin{DoxyCompactList}\small\item\em true if VDMA core configured for 64-\/bit address space \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Interface to AXI VDMA Core. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_vdma_if_ace41c4bcd1eb2adb9549498500c22dbf}\label{classudmaio_1_1_uio_axi_vdma_if_ace41c4bcd1eb2adb9549498500c22dbf}} 
+\index{udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}!UioAxiVdmaIf@{UioAxiVdmaIf}}
+\index{UioAxiVdmaIf@{UioAxiVdmaIf}!udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}}
+\doxysubsubsection{\texorpdfstring{UioAxiVdmaIf()}{UioAxiVdmaIf()}}
+{\footnotesize\ttfamily udmaio\+::\+Uio\+Axi\+Vdma\+If\+::\+Uio\+Axi\+Vdma\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceudmaio_af23be0f90a70f4eed1e08987bac4f32e}{Hw\+Accessor\+Ptr}}}]{dev\+\_\+loc,  }\item[{bool}]{long\+\_\+addrs = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_vdma_if_af57e3c37d8e49fd81f05a73b4f54d28b}\label{classudmaio_1_1_uio_axi_vdma_if_af57e3c37d8e49fd81f05a73b4f54d28b}} 
+\index{udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}!check\_for\_errors@{check\_for\_errors}}
+\index{check\_for\_errors@{check\_for\_errors}!udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}}
+\doxysubsubsection{\texorpdfstring{check\_for\_errors()}{check\_for\_errors()}}
+{\footnotesize\ttfamily bool udmaio\+::\+Uio\+Axi\+Vdma\+If\+::check\+\_\+for\+\_\+errors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check status register and log any errors. 
+
+\begin{DoxyReturn}{Returns}
+true if any error occurred 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_vdma_if_a689c9d2140042c94f887b444cf531a50}\label{classudmaio_1_1_uio_axi_vdma_if_a689c9d2140042c94f887b444cf531a50}} 
+\index{udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}!config@{config}}
+\index{config@{config}!udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}}
+\doxysubsubsection{\texorpdfstring{config()}{config()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Axi\+Vdma\+If\+::config (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} $>$ \&}]{frm\+\_\+bufs }\end{DoxyParamCaption})}
+
+
+
+Configure the AXI VDMA controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frm\+\_\+bufs} & Vector of memory regions used as frame buffers \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_vdma_if_af14e061c655188faccb91d3d2ec7364f}\label{classudmaio_1_1_uio_axi_vdma_if_af14e061c655188faccb91d3d2ec7364f}} 
+\index{udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}!config@{config}}
+\index{config@{config}!udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}}
+\doxysubsubsection{\texorpdfstring{config()}{config()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Axi\+Vdma\+If\+::config (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} $>$ \&}]{frm\+\_\+bufs,  }\item[{\mbox{\hyperlink{classudmaio_1_1_frame_format}{Frame\+Format}}}]{frm\+\_\+format }\end{DoxyParamCaption})}
+
+
+
+Configure the AXI VDMA controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frm\+\_\+bufs} & Vector of memory regions used as frame buffers \\
+\hline
+{\em frm\+\_\+format} & Frame format to be set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_vdma_if_a5b5feec2f5a05b4d2b935d8e347e2f03}\label{classudmaio_1_1_uio_axi_vdma_if_a5b5feec2f5a05b4d2b935d8e347e2f03}} 
+\index{udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}!get\_cur\_frmbuf@{get\_cur\_frmbuf}}
+\index{get\_cur\_frmbuf@{get\_cur\_frmbuf}!udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}}
+\doxysubsubsection{\texorpdfstring{get\_cur\_frmbuf()}{get\_cur\_frmbuf()}}
+{\footnotesize\ttfamily uint32\+\_\+t udmaio\+::\+Uio\+Axi\+Vdma\+If\+::get\+\_\+cur\+\_\+frmbuf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_vdma_if_a9ce53930680f14ab14cd4d7a9cee43d4}\label{classudmaio_1_1_uio_axi_vdma_if_a9ce53930680f14ab14cd4d7a9cee43d4}} 
+\index{udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}!init\_buffers@{init\_buffers}}
+\index{init\_buffers@{init\_buffers}!udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}}
+\doxysubsubsection{\texorpdfstring{init\_buffers()}{init\_buffers()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Axi\+Vdma\+If\+::init\+\_\+buffers (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} $>$ \&}]{frm\+\_\+bufs }\end{DoxyParamCaption})}
+
+
+
+Configure the AXI VDMA controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frm\+\_\+bufs} & Vector of memory regions used as frame buffers \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_vdma_if_aecfdd1da3099c299f46e539c9674bdd7}\label{classudmaio_1_1_uio_axi_vdma_if_aecfdd1da3099c299f46e539c9674bdd7}} 
+\index{udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}!isrunning@{isrunning}}
+\index{isrunning@{isrunning}!udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}}
+\doxysubsubsection{\texorpdfstring{isrunning()}{isrunning()}}
+{\footnotesize\ttfamily bool udmaio\+::\+Uio\+Axi\+Vdma\+If\+::isrunning (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check halted bit in status register. 
+
+\begin{DoxyReturn}{Returns}
+true if operation is not stopped 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_vdma_if_af78bf90c19b61708814e71f57ef0231c}\label{classudmaio_1_1_uio_axi_vdma_if_af78bf90c19b61708814e71f57ef0231c}} 
+\index{udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}!print\_cur\_frmbuf@{print\_cur\_frmbuf}}
+\index{print\_cur\_frmbuf@{print\_cur\_frmbuf}!udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}}
+\doxysubsubsection{\texorpdfstring{print\_cur\_frmbuf()}{print\_cur\_frmbuf()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Axi\+Vdma\+If\+::print\+\_\+cur\+\_\+frmbuf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_vdma_if_a15ec6e293e8e7f7cd52bca6e58045e86}\label{classudmaio_1_1_uio_axi_vdma_if_a15ec6e293e8e7f7cd52bca6e58045e86}} 
+\index{udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}!print\_regs@{print\_regs}}
+\index{print\_regs@{print\_regs}!udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}}
+\doxysubsubsection{\texorpdfstring{print\_regs()}{print\_regs()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Axi\+Vdma\+If\+::print\+\_\+regs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Read S2\+MM registers of the AXI VDMA controller and print their content. 
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_vdma_if_a27d3d20a66f6085e20bae733792fd3ff}\label{classudmaio_1_1_uio_axi_vdma_if_a27d3d20a66f6085e20bae733792fd3ff}} 
+\index{udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}!reset@{reset}}
+\index{reset@{reset}!udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Axi\+Vdma\+If\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset the S2\+MM part of the AXI VDMA controller. 
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_vdma_if_a4d60f688dadfa6db99b8002f2107eb56}\label{classudmaio_1_1_uio_axi_vdma_if_a4d60f688dadfa6db99b8002f2107eb56}} 
+\index{udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}!set\_frame\_format@{set\_frame\_format}}
+\index{set\_frame\_format@{set\_frame\_format}!udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}}
+\doxysubsubsection{\texorpdfstring{set\_frame\_format()}{set\_frame\_format()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Axi\+Vdma\+If\+::set\+\_\+frame\+\_\+format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classudmaio_1_1_frame_format}{Frame\+Format}}}]{frm\+\_\+format }\end{DoxyParamCaption})}
+
+
+
+Configure the AXI VDMA controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frm\+\_\+format} & Frame format to be set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_vdma_if_a74805e7b3405a703828933ac1218d8ac}\label{classudmaio_1_1_uio_axi_vdma_if_a74805e7b3405a703828933ac1218d8ac}} 
+\index{udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}!start@{start}}
+\index{start@{start}!udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Axi\+Vdma\+If\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start the already configured AXI VDMA controller (again) 
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_vdma_if_a611b04644e73e90733adf6d573fdb628}\label{classudmaio_1_1_uio_axi_vdma_if_a611b04644e73e90733adf6d573fdb628}} 
+\index{udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}!start@{start}}
+\index{start@{start}!udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Axi\+Vdma\+If\+::start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classudmaio_1_1_frame_format}{Frame\+Format}}}]{frm\+\_\+format }\end{DoxyParamCaption})}
+
+
+
+Configure frame size and start the AXI VDMA controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frm\+\_\+format} & Frame format to be set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_vdma_if_a167913596133a3025ba926191aa165f3}\label{classudmaio_1_1_uio_axi_vdma_if_a167913596133a3025ba926191aa165f3}} 
+\index{udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}!stop@{stop}}
+\index{stop@{stop}!udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Axi\+Vdma\+If\+::stop (\begin{DoxyParamCaption}\item[{bool}]{wait\+\_\+for\+\_\+end }\end{DoxyParamCaption})}
+
+
+
+Stops the AXI VDMA controller. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_vdma_if_afd9b8b9ebee3a29e33adc0884226a893}\label{classudmaio_1_1_uio_axi_vdma_if_afd9b8b9ebee3a29e33adc0884226a893}} 
+\index{udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}!\_long\_addrs@{\_long\_addrs}}
+\index{\_long\_addrs@{\_long\_addrs}!udmaio::UioAxiVdmaIf@{udmaio::UioAxiVdmaIf}}
+\doxysubsubsection{\texorpdfstring{\_long\_addrs}{\_long\_addrs}}
+{\footnotesize\ttfamily const bool udmaio\+::\+Uio\+Axi\+Vdma\+If\+::\+\_\+long\+\_\+addrs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+true if VDMA core configured for 64-\/bit address space 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_uio_axi_vdma_if_8hpp}{Uio\+Axi\+Vdma\+If.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\hypertarget{structaxi__vdma_1_1s2mm__vdma__irq__mask__t}{}\doxysection{axi\+\_\+vdma\+::s2mm\+\_\+vdma\+\_\+irq\+\_\+mask\+\_\+t Struct Reference}
+\label{structaxi__vdma_1_1s2mm__vdma__irq__mask__t}\index{axi\_vdma::s2mm\_vdma\_irq\_mask\_t@{axi\_vdma::s2mm\_vdma\_irq\_mask\_t}}
+
+
+{\ttfamily \#include $<$Axi\+Vdma.\+hpp$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdma__irq__mask__t_ace05ca638105c3545a3dabd1932d5d88}{irq\+\_\+mask\+\_\+sof\+\_\+early\+\_\+err}}\+: 1
+\item 
+bool \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdma__irq__mask__t_a9a49e3355dccfb7c3360d9878194bdd7}{irq\+\_\+mask\+\_\+eol\+\_\+early\+\_\+err}}\+: 1
+\item 
+bool \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdma__irq__mask__t_ad57a6a6da6cb184910c88e747b549d0b}{irq\+\_\+mask\+\_\+sof\+\_\+late\+\_\+err}}\+: 1
+\item 
+bool \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdma__irq__mask__t_aab7cc25570399b58863e396aa8b223e9}{irq\+\_\+mask\+\_\+eol\+\_\+late\+\_\+err}}\+: 1
+\item 
+unsigned \mbox{\hyperlink{structaxi__vdma_1_1s2mm__vdma__irq__mask__t_ad87f0b6c4cf2ec891b82e95bf5b99f75}{rsvd\+\_\+31\+\_\+4}}\+: 28
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+S2\+MM Error Interrupt Mask Register 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdma__irq__mask__t_a9a49e3355dccfb7c3360d9878194bdd7}\label{structaxi__vdma_1_1s2mm__vdma__irq__mask__t_a9a49e3355dccfb7c3360d9878194bdd7}} 
+\index{axi\_vdma::s2mm\_vdma\_irq\_mask\_t@{axi\_vdma::s2mm\_vdma\_irq\_mask\_t}!irq\_mask\_eol\_early\_err@{irq\_mask\_eol\_early\_err}}
+\index{irq\_mask\_eol\_early\_err@{irq\_mask\_eol\_early\_err}!axi\_vdma::s2mm\_vdma\_irq\_mask\_t@{axi\_vdma::s2mm\_vdma\_irq\_mask\_t}}
+\doxysubsubsection{\texorpdfstring{irq\_mask\_eol\_early\_err}{irq\_mask\_eol\_early\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+vdma\+::s2mm\+\_\+vdma\+\_\+irq\+\_\+mask\+\_\+t\+::irq\+\_\+mask\+\_\+eol\+\_\+early\+\_\+err}
+
+1 -\/ Masks interrupt due to EOLEarly\+Err. 0 -\/ Does not mask interrupt due to EOLEarly\+Err. \mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdma__irq__mask__t_aab7cc25570399b58863e396aa8b223e9}\label{structaxi__vdma_1_1s2mm__vdma__irq__mask__t_aab7cc25570399b58863e396aa8b223e9}} 
+\index{axi\_vdma::s2mm\_vdma\_irq\_mask\_t@{axi\_vdma::s2mm\_vdma\_irq\_mask\_t}!irq\_mask\_eol\_late\_err@{irq\_mask\_eol\_late\_err}}
+\index{irq\_mask\_eol\_late\_err@{irq\_mask\_eol\_late\_err}!axi\_vdma::s2mm\_vdma\_irq\_mask\_t@{axi\_vdma::s2mm\_vdma\_irq\_mask\_t}}
+\doxysubsubsection{\texorpdfstring{irq\_mask\_eol\_late\_err}{irq\_mask\_eol\_late\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+vdma\+::s2mm\+\_\+vdma\+\_\+irq\+\_\+mask\+\_\+t\+::irq\+\_\+mask\+\_\+eol\+\_\+late\+\_\+err}
+
+1 = Masks interrupt due to EOLLate\+Err. 0 = Does not mask interrupt due to EOLLate\+Err. \mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdma__irq__mask__t_ace05ca638105c3545a3dabd1932d5d88}\label{structaxi__vdma_1_1s2mm__vdma__irq__mask__t_ace05ca638105c3545a3dabd1932d5d88}} 
+\index{axi\_vdma::s2mm\_vdma\_irq\_mask\_t@{axi\_vdma::s2mm\_vdma\_irq\_mask\_t}!irq\_mask\_sof\_early\_err@{irq\_mask\_sof\_early\_err}}
+\index{irq\_mask\_sof\_early\_err@{irq\_mask\_sof\_early\_err}!axi\_vdma::s2mm\_vdma\_irq\_mask\_t@{axi\_vdma::s2mm\_vdma\_irq\_mask\_t}}
+\doxysubsubsection{\texorpdfstring{irq\_mask\_sof\_early\_err}{irq\_mask\_sof\_early\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+vdma\+::s2mm\+\_\+vdma\+\_\+irq\+\_\+mask\+\_\+t\+::irq\+\_\+mask\+\_\+sof\+\_\+early\+\_\+err}
+
+1 -\/ Masks interrupt due to SOFEarly\+Err. 0 -\/ Does not mask interrupt due to SOFEarly\+Err. \mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdma__irq__mask__t_ad57a6a6da6cb184910c88e747b549d0b}\label{structaxi__vdma_1_1s2mm__vdma__irq__mask__t_ad57a6a6da6cb184910c88e747b549d0b}} 
+\index{axi\_vdma::s2mm\_vdma\_irq\_mask\_t@{axi\_vdma::s2mm\_vdma\_irq\_mask\_t}!irq\_mask\_sof\_late\_err@{irq\_mask\_sof\_late\_err}}
+\index{irq\_mask\_sof\_late\_err@{irq\_mask\_sof\_late\_err}!axi\_vdma::s2mm\_vdma\_irq\_mask\_t@{axi\_vdma::s2mm\_vdma\_irq\_mask\_t}}
+\doxysubsubsection{\texorpdfstring{irq\_mask\_sof\_late\_err}{irq\_mask\_sof\_late\_err}}
+{\footnotesize\ttfamily bool axi\+\_\+vdma\+::s2mm\+\_\+vdma\+\_\+irq\+\_\+mask\+\_\+t\+::irq\+\_\+mask\+\_\+sof\+\_\+late\+\_\+err}
+
+1 -\/ Masks interrupt due to SOFLate\+Err. 0 -\/ Does not mask interrupt due to SOFLate\+Err. \mbox{\Hypertarget{structaxi__vdma_1_1s2mm__vdma__irq__mask__t_ad87f0b6c4cf2ec891b82e95bf5b99f75}\label{structaxi__vdma_1_1s2mm__vdma__irq__mask__t_ad87f0b6c4cf2ec891b82e95bf5b99f75}} 
+\index{axi\_vdma::s2mm\_vdma\_irq\_mask\_t@{axi\_vdma::s2mm\_vdma\_irq\_mask\_t}!rsvd\_31\_4@{rsvd\_31\_4}}
+\index{rsvd\_31\_4@{rsvd\_31\_4}!axi\_vdma::s2mm\_vdma\_irq\_mask\_t@{axi\_vdma::s2mm\_vdma\_irq\_mask\_t}}
+\doxysubsubsection{\texorpdfstring{rsvd\_31\_4}{rsvd\_31\_4}}
+{\footnotesize\ttfamily unsigned axi\+\_\+vdma\+::s2mm\+\_\+vdma\+\_\+irq\+\_\+mask\+\_\+t\+::rsvd\+\_\+31\+\_\+4}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_axi_vdma_8hpp}{Axi\+Vdma.\+hpp}}\end{DoxyCompactItemize}

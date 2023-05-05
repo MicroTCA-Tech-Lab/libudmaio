@@ -21,20 +21,20 @@
 <area shape="rect" id="node13" title=" " alt="" coords="1811,533,1962,573"/>
 <area shape="rect" id="node14" title=" " alt="" coords="1986,533,2147,573"/>
 <area shape="rect" id="node16" href="$_dma_buffer_abstract_8hpp.html" title=" " alt="" coords="1247,240,1403,265"/>
-<area shape="rect" id="node17" title=" " alt="" coords="875,313,936,339"/>
+<area shape="rect" id="node17" title=" " alt="" coords="936,313,997,339"/>
 <area shape="rect" id="node18" href="$_uio_config_8hpp.html" title=" " alt="" coords="842,460,990,485"/>
 <area shape="rect" id="node20" title=" " alt="" coords="654,541,722,566"/>
-<area shape="rect" id="node21" title=" " alt="" coords="786,541,865,566"/>
-<area shape="rect" id="node22" title=" " alt="" coords="889,541,977,566"/>
-<area shape="rect" id="node24" href="$_axi_dma_8hpp.html" title=" " alt="" coords="728,240,819,265"/>
-<area shape="rect" id="node25" href="$_reg_accessor_8hpp.html" title=" " alt="" coords="843,240,967,265"/>
-<area shape="rect" id="node26" href="$_uio_if_8hpp.html" title=" " alt="" coords="629,313,749,339"/>
-<area shape="rect" id="node27" title=" " alt="" coords="347,460,427,485"/>
-<area shape="rect" id="node28" title=" " alt="" coords="451,460,517,485"/>
-<area shape="rect" id="node29" title=" " alt="" coords="542,460,599,485"/>
-<area shape="rect" id="node30" title=" " alt="" coords="726,460,818,485"/>
-<area shape="rect" id="node31" title=" " alt="" coords="1066,460,1145,485"/>
-<area shape="rect" id="node32" title=" " alt="" coords="145,460,231,485"/>
-<area shape="rect" id="node33" title=" " alt="" coords="256,460,323,485"/>
-<area shape="rect" id="node34" href="$_hw_accessor_8hpp.html" title=" " alt="" coords="605,387,771,412"/>
+<area shape="rect" id="node21" title=" " alt="" coords="777,541,855,566"/>
+<area shape="rect" id="node22" title=" " alt="" coords="880,541,968,566"/>
+<area shape="rect" id="node24" href="$_reg_accessor_8hpp.html" title=" " alt="" coords="905,240,1029,265"/>
+<area shape="rect" id="node25" href="$_uio_if_8hpp.html" title=" " alt="" coords="628,313,748,339"/>
+<area shape="rect" id="node34" href="$_axi_dma_8hpp.html" title=" " alt="" coords="725,240,880,265"/>
+<area shape="rect" id="node26" title=" " alt="" coords="347,460,427,485"/>
+<area shape="rect" id="node27" title=" " alt="" coords="451,460,517,485"/>
+<area shape="rect" id="node28" title=" " alt="" coords="542,460,599,485"/>
+<area shape="rect" id="node29" title=" " alt="" coords="726,460,818,485"/>
+<area shape="rect" id="node30" title=" " alt="" coords="1066,460,1145,485"/>
+<area shape="rect" id="node31" title=" " alt="" coords="145,460,231,485"/>
+<area shape="rect" id="node32" title=" " alt="" coords="256,460,323,485"/>
+<area shape="rect" id="node33" href="$_hw_accessor_8hpp.html" title=" " alt="" coords="605,387,771,412"/>
 </map>

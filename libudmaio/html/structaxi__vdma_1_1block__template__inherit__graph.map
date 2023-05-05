@@ -1,0 +1,4 @@
+<map id="axi_vdma::block_template&lt; R_array_acc, R_acc_arg &gt;" name="axi_vdma::block_template&lt; R_array_acc, R_acc_arg &gt;">
+<area shape="rect" id="node1" title="Template class for the axi_vdma block, containing accessors for all its registers." alt="" coords="5,5,191,45"/>
+<area shape="rect" id="node2" href="$classudmaio_1_1_uio_axi_vdma_if.html" title="Interface to AXI VDMA Core." alt="" coords="22,93,174,133"/>
+</map>

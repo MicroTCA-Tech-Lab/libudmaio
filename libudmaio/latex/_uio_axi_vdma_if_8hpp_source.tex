@@ -1,0 +1,72 @@
+\hypertarget{_uio_axi_vdma_if_8hpp_source}{}\doxysection{Uio\+Axi\+Vdma\+If.\+hpp}
+\label{_uio_axi_vdma_if_8hpp_source}\index{UioAxiVdmaIf.hpp@{UioAxiVdmaIf.hpp}}
+\mbox{\hyperlink{_uio_axi_vdma_if_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\///}}
+\DoxyCodeLine{2 \textcolor{comment}{//        \_\_\_\_  \_\_\_\_\_\_\_\_\_\_\_\_\_  \_\_    \_\_  \_\_ \_           \_\_\_\_\_ \_\_\_   \_        //}}
+\DoxyCodeLine{3 \textcolor{comment}{//       / \_\_ \(\backslash\)/ \_\_\_\_/ \_\_\_/\(\backslash\) \(\backslash\)/ /   |  \(\backslash\)/  (\_)\_\_ \_ \_ \_\_|\_   \_/ \_\_| /\_\(\backslash\)       //}}
+\DoxyCodeLine{4 \textcolor{comment}{//      / / / / \_\_/  \(\backslash\)\_\_ \(\backslash\)  \(\backslash\)  /    | |\(\backslash\)/| | / \_| '\_/ \_ \(\backslash\)| || (\_\_ / \_ \(\backslash\)      //}}
+\DoxyCodeLine{5 \textcolor{comment}{//     / /\_/ / /\_\_\_ \_\_\_/ /  / /     |\_|  |\_|\_\(\backslash\)\_\_|\_| \(\backslash\)\_\_\_/|\_| \(\backslash\)\_\_\_/\_/ \(\backslash\)\_\(\backslash\)     //}}
+\DoxyCodeLine{6 \textcolor{comment}{//    /\_\_\_\_\_/\_\_\_\_\_//\_\_\_\_/  /\_/      T  E  C  H  N  O  L  O  G  Y   L A B     //}}
+\DoxyCodeLine{7 \textcolor{comment}{//                                                                           //}}
+\DoxyCodeLine{8 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\///}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{// Copyright (c) 2023 Deutsches Elektronen-\/Synchrotron DESY}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_reg_accessor_8hpp}{udmaio/RegAccessor.hpp}}>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{_uio_if_8hpp}{udmaio/UioIf.hpp}}>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_frame_format_8hpp}{udmaio/FrameFormat.hpp}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_axi_vdma_8hpp}{udmaio/rdl/AxiVdma.hpp}}"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}} \{}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{using }\mbox{\hyperlink{structaxi__vdma_1_1block__template}{AxiVdmaBlock}} = \mbox{\hyperlink{structaxi__vdma_1_1block__template}{axi\_vdma::block<RegAccessorArray>}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if}{UioAxiVdmaIf}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}, \mbox{\hyperlink{structaxi__vdma_1_1block__template}{AxiVdmaBlock}} \{}
+\DoxyCodeLine{27     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_afd9b8b9ebee3a29e33adc0884226a893}{\_long\_addrs}};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29   \textcolor{keyword}{public}:}
+\DoxyCodeLine{30     \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_ace41c4bcd1eb2adb9549498500c22dbf}{UioAxiVdmaIf}}(\mbox{\hyperlink{namespaceudmaio_af23be0f90a70f4eed1e08987bac4f32e}{HwAccessorPtr}} dev\_loc, \textcolor{keywordtype}{bool} long\_addrs = \textcolor{keyword}{false})}
+\DoxyCodeLine{31         : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}(\textcolor{stringliteral}{"{}UioAxiVdmaIf"{}}, dev\_loc), \mbox{\hyperlink{structaxi__vdma_1_1block__template}{AxiVdmaBlock}}(this), \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_afd9b8b9ebee3a29e33adc0884226a893}{\_long\_addrs}}\{long\_addrs\} \{}
+\DoxyCodeLine{32         \mbox{\hyperlink{classudmaio_1_1_uio_if_ae46944a87f194f48d10157becb5624f1}{enable\_debug}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{33     \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{36     \textcolor{comment}{// Helper functions}}
+\DoxyCodeLine{38 \textcolor{comment}{}}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a9ce53930680f14ab14cd4d7a9cee43d4}{init\_buffers}}(\textcolor{keyword}{const} std::vector<UioRegion>\& frm\_bufs);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a4d60f688dadfa6db99b8002f2107eb56}{set\_frame\_format}}(\mbox{\hyperlink{classudmaio_1_1_frame_format}{FrameFormat}} frm\_format);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{48     \textcolor{comment}{// Base config}}
+\DoxyCodeLine{50 \textcolor{comment}{}}
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a689c9d2140042c94f887b444cf531a50}{config}}(\textcolor{keyword}{const} std::vector<UioRegion>\& frm\_bufs);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a689c9d2140042c94f887b444cf531a50}{config}}(\textcolor{keyword}{const} std::vector<UioRegion>\& frm\_bufs, \mbox{\hyperlink{classudmaio_1_1_frame_format}{FrameFormat}} frm\_format);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a27d3d20a66f6085e20bae733792fd3ff}{reset}}();}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a15ec6e293e8e7f7cd52bca6e58045e86}{print\_regs}}();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     uint32\_t \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a5b5feec2f5a05b4d2b935d8e347e2f03}{get\_cur\_frmbuf}}();}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_af78bf90c19b61708814e71f57ef0231c}{print\_cur\_frmbuf}}();}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{71     \textcolor{comment}{// Operational functions}}
+\DoxyCodeLine{73 \textcolor{comment}{}}
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a74805e7b3405a703828933ac1218d8ac}{start}}();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a74805e7b3405a703828933ac1218d8ac}{start}}(\mbox{\hyperlink{classudmaio_1_1_frame_format}{FrameFormat}} frm\_format);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a167913596133a3025ba926191aa165f3}{stop}}(\textcolor{keywordtype}{bool} wait\_for\_end);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{86     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_aecfdd1da3099c299f46e539c9674bdd7}{isrunning}}();}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{90     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_af57e3c37d8e49fd81f05a73b4f54d28b}{check\_for\_errors}}();}
+\DoxyCodeLine{91 \};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \}  \textcolor{comment}{// namespace udmaio}}
+
+\end{DoxyCode}
