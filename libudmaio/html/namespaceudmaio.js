@@ -38,6 +38,8 @@ var namespaceudmaio =
       [ "UIO", "namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080ceca910a3bb55574645cc3d46b715f097eb0", null ]
     ] ],
     [ "field_to_str", "namespaceudmaio.html#a5c03c63d910348e26da90a894fc7242e", null ],
+    [ "operator<<", "namespaceudmaio.html#ae5ffb5ed8410a34985e51fb5ce286aba", null ],
+    [ "operator<<", "namespaceudmaio.html#af07b25049ad33f69ea022fd1b09a9b63", null ],
     [ "operator<<", "namespaceudmaio.html#ac25c553cf3256b7c5d7cd731d18251ff", null ],
     [ "operator>>", "namespaceudmaio.html#adcde5ee0e86bf537b18e3d7588443fc5", null ]
 ];

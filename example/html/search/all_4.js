@@ -17,10 +17,9 @@ var searchData=
   ['dly_5firq_5fen_14',['dly_irq_en',['../structaxi__dma_1_1mm2s__dmacr__t.html#a8e7bb27a9239ba13d19a17eed064215e',1,'axi_dma::mm2s_dmacr_t::dly_irq_en()'],['../structaxi__dma_1_1s2mm__dmacr__t.html#aee7e95943db77cda4b4868c0c589b7f9',1,'axi_dma::s2mm_dmacr_t::dly_irq_en()']]],
   ['dma_5fdec_5ferr_15',['dma_dec_err',['../structaxi__dma_1_1mm2s__dmasr__t.html#ae5ad7717bccc9225b9e2a1735fff4a80',1,'axi_dma::mm2s_dmasr_t::dma_dec_err()'],['../structaxi__dma_1_1s2mm__dmasr__t.html#a540fa65a440e901fdf6e3cf237337b94',1,'axi_dma::s2mm_dmasr_t::dma_dec_err()']]],
   ['dma_5fint_5ferr_16',['dma_int_err',['../structaxi__dma_1_1mm2s__dmasr__t.html#a2948bd39ad73c12fc5d3d86f76f6f98d',1,'axi_dma::mm2s_dmasr_t::dma_int_err()'],['../structaxi__dma_1_1s2mm__dmasr__t.html#a56b0f54b3f359ee921b5f40c86450041',1,'axi_dma::s2mm_dmasr_t::dma_int_err()']]],
-  ['dma_5fslv_5ferr_17',['dma_slv_err',['../structaxi__dma_1_1s2mm__dmasr__t.html#acf40ec7ef4667f4b7b475ef63d7753a4',1,'axi_dma::s2mm_dmasr_t::dma_slv_err()'],['../structaxi__dma_1_1mm2s__dmasr__t.html#a3c543682d2de34cfd7256bba6ead28a9',1,'axi_dma::mm2s_dmasr_t::dma_slv_err()']]],
+  ['dma_5fslv_5ferr_17',['dma_slv_err',['../structaxi__dma_1_1mm2s__dmasr__t.html#a3c543682d2de34cfd7256bba6ead28a9',1,'axi_dma::mm2s_dmasr_t::dma_slv_err()'],['../structaxi__dma_1_1s2mm__dmasr__t.html#acf40ec7ef4667f4b7b475ef63d7753a4',1,'axi_dma::s2mm_dmasr_t::dma_slv_err()']]],
   ['dmabufferabstract_18',['DmaBufferAbstract',['../classudmaio_1_1_dma_buffer_abstract.html',1,'udmaio']]],
   ['dmabufferabstract_2ehpp_19',['DmaBufferAbstract.hpp',['../_dma_buffer_abstract_8hpp.html',1,'']]],
   ['dmamode_20',['DmaMode',['../namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080cec',1,'udmaio']]],
-  ['done_21',['done',['../struct_uio_traffic_gen_1_1_st_control.html#a4429140226b560b19b1b79e4359f9cfd',1,'UioTrafficGen::StControl']]],
-  ['dump_5fframe_5fformat_22',['dump_frame_format',['../classudmaio_1_1_frame_format.html#a11dadd456089c1406c118bab5f42c89f',1,'udmaio::FrameFormat']]]
+  ['done_21',['done',['../struct_uio_traffic_gen_1_1_st_control.html#a4429140226b560b19b1b79e4359f9cfd',1,'UioTrafficGen::StControl']]]
 ];

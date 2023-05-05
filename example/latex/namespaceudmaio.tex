@@ -82,6 +82,10 @@ enum class \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}{D
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+std\+::ostream \& \mbox{\hyperlink{namespaceudmaio_af07b25049ad33f69ea022fd1b09a9b63}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Frame\+Format\+::\+Pixel\+Format}} px\+\_\+fmt)
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespaceudmaio_ae5ffb5ed8410a34985e51fb5ce286aba}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classudmaio_1_1_frame_format}{Frame\+Format}} \&frm\+\_\+fmt)
+\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{namespaceudmaio_a5c03c63d910348e26da90a894fc7242e}{field\+\_\+to\+\_\+str}} (const T \&chararray)
 \begin{DoxyCompactList}\small\item\em Convert fixed C string to a std\+::string. \end{DoxyCompactList}\item 
 std\+::istream \& \mbox{\hyperlink{namespaceudmaio_adcde5ee0e86bf537b18e3d7588443fc5}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}{Dma\+Mode}} \&mode)
@@ -189,10 +193,22 @@ Convert fixed C string to a std\+::string.
 \begin{DoxyReturn}{Returns}
 std\+::string Converted C++ string, limited to max. N chars 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespaceudmaio_ae5ffb5ed8410a34985e51fb5ce286aba}\label{namespaceudmaio_ae5ffb5ed8410a34985e51fb5ce286aba}} 
+\index{udmaio@{udmaio}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!udmaio@{udmaio}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily std\+::ostream \& udmaio\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classudmaio_1_1_frame_format}{Frame\+Format}} \&}]{frm\+\_\+fmt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceudmaio_af07b25049ad33f69ea022fd1b09a9b63}\label{namespaceudmaio_af07b25049ad33f69ea022fd1b09a9b63}} 
+\index{udmaio@{udmaio}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!udmaio@{udmaio}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::ostream \& udmaio\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{Frame\+Format\+::\+Pixel\+Format}}}]{px\+\_\+fmt }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{namespaceudmaio_ac25c553cf3256b7c5d7cd731d18251ff}\label{namespaceudmaio_ac25c553cf3256b7c5d7cd731d18251ff}} 
 \index{udmaio@{udmaio}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!udmaio@{udmaio}}
-\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily std\+::ostream \& udmaio\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \&}]{buf\+\_\+info }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{namespaceudmaio_adcde5ee0e86bf537b18e3d7588443fc5}\label{namespaceudmaio_adcde5ee0e86bf537b18e3d7588443fc5}} 

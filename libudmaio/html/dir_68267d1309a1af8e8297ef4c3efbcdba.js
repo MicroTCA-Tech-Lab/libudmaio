@@ -3,7 +3,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "DataHandlerAbstract.cpp", "_data_handler_abstract_8cpp.html", null ],
     [ "DataHandlerSync.cpp", "_data_handler_sync_8cpp.html", null ],
     [ "DmaBufferAbstract.cpp", "_dma_buffer_abstract_8cpp.html", null ],
-    [ "FrameFormat.cpp", "_frame_format_8cpp.html", null ],
+    [ "FrameFormat.cpp", "_frame_format_8cpp.html", "_frame_format_8cpp" ],
     [ "HwAccessor.cpp", "_hw_accessor_8cpp.html", null ],
     [ "Logging.cpp", "_logging_8cpp.html", null ],
     [ "UDmaBuf.cpp", "_u_dma_buf_8cpp.html", null ],

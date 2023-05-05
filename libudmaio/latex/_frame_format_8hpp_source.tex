@@ -105,57 +105,57 @@
 \DoxyCodeLine{102     \};}
 \DoxyCodeLine{103     \textcolor{comment}{// clang-\/format on}}
 \DoxyCodeLine{104 }
-\DoxyCodeLine{105     \mbox{\hyperlink{classudmaio_1_1_frame_format_a33c5553c8ca80b559c948e252081e8b7}{FrameFormat}}();}
-\DoxyCodeLine{106 }
-\DoxyCodeLine{111     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab341989db71cb4e346a0389881410abb}{set\_format}}(dim\_t dim, uint16\_t bytes\_per\_pixel, uint8\_t word\_width);}
+\DoxyCodeLine{107     \textcolor{keyword}{static} \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} \mbox{\hyperlink{classudmaio_1_1_frame_format_a63cb1f706b019da9151826d2ed6486ac}{pix\_fmt\_from\_str}}(std::string pix\_fmt\_str);}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{111     \textcolor{keyword}{static} std::string \mbox{\hyperlink{classudmaio_1_1_frame_format_a8322dab4351bb3cb195c0d1529409f11}{pix\_fmt\_to\_str}}(\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} pix\_fmt);}
 \DoxyCodeLine{112 }
-\DoxyCodeLine{117     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab341989db71cb4e346a0389881410abb}{set\_format}}(dim\_t dim, std::string pix\_fmt, uint8\_t word\_width);}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{123     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab341989db71cb4e346a0389881410abb}{set\_format}}(dim\_t dim, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} pix\_fmt, uint8\_t word\_width);}
-\DoxyCodeLine{124 }
-\DoxyCodeLine{127     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab341989db71cb4e346a0389881410abb}{set\_format}}(dim\_t dim);}
-\DoxyCodeLine{128 }
-\DoxyCodeLine{131     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab341989db71cb4e346a0389881410abb}{set\_format}}(uint16\_t bytes\_per\_pix);}
+\DoxyCodeLine{113     \mbox{\hyperlink{classudmaio_1_1_frame_format_a33c5553c8ca80b559c948e252081e8b7}{FrameFormat}}();}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{119     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab341989db71cb4e346a0389881410abb}{set\_format}}(dim\_t dim, uint16\_t bytes\_per\_pixel, uint8\_t word\_width);}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{125     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab341989db71cb4e346a0389881410abb}{set\_format}}(dim\_t dim, std::string pix\_fmt\_str, uint8\_t word\_width);}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{131     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab341989db71cb4e346a0389881410abb}{set\_format}}(dim\_t dim, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} pix\_fmt, uint8\_t word\_width);}
 \DoxyCodeLine{132 }
-\DoxyCodeLine{135     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab341989db71cb4e346a0389881410abb}{set\_format}}(\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} pix\_fmt);}
+\DoxyCodeLine{135     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_af78a310fe80e5084878f9412f1ab0eaf}{set\_dim}}(dim\_t dim);}
 \DoxyCodeLine{136 }
-\DoxyCodeLine{139     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab341989db71cb4e346a0389881410abb}{set\_format}}(uint8\_t word\_width);}
+\DoxyCodeLine{139     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a6d704637400e2d82f84f87cbe9dd77f9}{set\_bpp}}(uint16\_t bytes\_per\_pix);}
 \DoxyCodeLine{140 }
-\DoxyCodeLine{143     \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} \mbox{\hyperlink{classudmaio_1_1_frame_format_a7d4444bcc17e7b7b9c182250daba4306}{toPixFormat}}(std::string pix\_fmt);}
+\DoxyCodeLine{143     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a17c7e6774e5f91e00dc7882178195824}{set\_pix\_fmt}}(\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} pix\_fmt);}
 \DoxyCodeLine{144 }
-\DoxyCodeLine{145     std::string \mbox{\hyperlink{classudmaio_1_1_frame_format_aba52ceab553b0bc44239b44fb22acc5d}{toString}}();}
-\DoxyCodeLine{146 }
-\DoxyCodeLine{147     dim\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_ac3e645261268863b8afe78844d6530a5}{get\_dim}}();}
+\DoxyCodeLine{147     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a09acb3d1e77b8845ade3fc38dc58bc13}{set\_word\_width}}(uint8\_t word\_width);}
 \DoxyCodeLine{148 }
-\DoxyCodeLine{149     \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} \mbox{\hyperlink{classudmaio_1_1_frame_format_a90cd7834f5b34d03678c292f9f3c5586}{get\_pixel\_format}}();}
-\DoxyCodeLine{150     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_af25ebe73d42fa4355ce5260171e5de60}{get\_bytes\_per\_pixel}}();  \textcolor{comment}{// bytes per pixel}}
-\DoxyCodeLine{151 }
-\DoxyCodeLine{152     uint8\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_a0789d1665b310e96a0e153c27531c296}{get\_word\_width}}();}
-\DoxyCodeLine{153     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_a2ab7f8e0a6d72b989489dbb800173a2d}{get\_pixel\_per\_word}}();}
-\DoxyCodeLine{154     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_a3685af1eabe5d2aef8131d0b90de2acb}{get\_hsize}}();  \textcolor{comment}{// line length in bytes}}
-\DoxyCodeLine{155 }
-\DoxyCodeLine{156     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classudmaio_1_1_frame_format_ada6c3fd3064eb873952929c5e45178c5}{get\_frm\_size}}();  \textcolor{comment}{// in bytes}}
+\DoxyCodeLine{149     dim\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_abb5072ef4de9537132ef71c2dcaaa7d4}{get\_dim}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{150     \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} \mbox{\hyperlink{classudmaio_1_1_frame_format_adbb8e87500fa2a7570799293b6c59526}{get\_pixel\_format}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{151     std::string \mbox{\hyperlink{classudmaio_1_1_frame_format_ace2a07558593adf85147f628040e38d8}{get\_pixel\_format\_str}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{152     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_a398941f7529b1d64c4cddc076fae8ae4}{get\_bytes\_per\_pixel}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{153     uint8\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_a37d5a9f0e105cc5777b1f082177b116b}{get\_word\_width}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{154     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_afdeadf1f6d613f391f67168b3d0254c4}{get\_pixel\_per\_word}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{155     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_a77a5d86afa24fc5beb6da498594273ad}{get\_hsize}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{156     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classudmaio_1_1_frame_format_a324ee0a859d7032a6470d016b31440a8}{get\_frm\_size}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{157 }
-\DoxyCodeLine{158     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a11dadd456089c1406c118bab5f42c89f}{dump\_frame\_format}}();}
-\DoxyCodeLine{159 }
-\DoxyCodeLine{160   \textcolor{keyword}{private}:}
-\DoxyCodeLine{161     \textcolor{keyword}{static} \textcolor{keyword}{const} std::unordered\_map<PixelFormat, std::string> \mbox{\hyperlink{classudmaio_1_1_frame_format_a18b01460334e71e6dde3df175ee474e1}{\_pxfmt\_enum\_to\_str\_tab}};}
-\DoxyCodeLine{162 }
-\DoxyCodeLine{163     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a8135a2a3104d9edb2d6934840fea7880}{update\_frm\_dim}}(\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\_t}} dim);}
-\DoxyCodeLine{164     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_aa9aa449c52578904b6b8b4509911ce71}{update\_bpp}}(uint16\_t bytes\_per\_pix);}
-\DoxyCodeLine{165     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_afe86bf67ef49e3fa64314cad1b7e4771}{update\_px\_fmt}}(\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} pix\_fmt);}
-\DoxyCodeLine{166     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_af25cb5651410780ff69b96a05447f113}{update\_hsize}}();}
-\DoxyCodeLine{167 }
-\DoxyCodeLine{168     \textcolor{comment}{// Frame dimensions}}
-\DoxyCodeLine{169     \mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\_t}} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab13cfe6639cdcecd204a9158d2eceec1}{\_dim}};}
-\DoxyCodeLine{171     \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} \mbox{\hyperlink{classudmaio_1_1_frame_format_abe566be3949b3de67ba92d23ce00573c}{\_pix\_fmt}};}
-\DoxyCodeLine{173     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_ab1ee4b7bf2ef3688eacfadc29e96da4e}{\_bpp}};}
-\DoxyCodeLine{175     uint8\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_a95b7bf9c6406053d1f6314eea02a3939}{\_word\_width}};}
-\DoxyCodeLine{176 }
-\DoxyCodeLine{177     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_af8ddffa8f8730c9a8762cd96f6e40c7d}{\_pix\_per\_word}};}
-\DoxyCodeLine{179     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_aa0abe561f3edc308e2decc1f9a7b37d4}{\_hsize}};}
-\DoxyCodeLine{180 \};}
+\DoxyCodeLine{158   \textcolor{keyword}{private}:}
+\DoxyCodeLine{159     \textcolor{keyword}{static} \textcolor{keyword}{const} std::unordered\_map<PixelFormat, std::string> \mbox{\hyperlink{classudmaio_1_1_frame_format_a18b01460334e71e6dde3df175ee474e1}{\_pxfmt\_enum\_to\_str\_tab}};}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a8135a2a3104d9edb2d6934840fea7880}{update\_frm\_dim}}(\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\_t}} dim);}
+\DoxyCodeLine{162     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_aa9aa449c52578904b6b8b4509911ce71}{update\_bpp}}(uint16\_t bytes\_per\_pix);}
+\DoxyCodeLine{163     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_afe86bf67ef49e3fa64314cad1b7e4771}{update\_px\_fmt}}(\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} pix\_fmt);}
+\DoxyCodeLine{164     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_af25cb5651410780ff69b96a05447f113}{update\_hsize}}();}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166     \textcolor{comment}{// Frame dimensions}}
+\DoxyCodeLine{167     \mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\_t}} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab13cfe6639cdcecd204a9158d2eceec1}{\_dim}};}
+\DoxyCodeLine{169     \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} \mbox{\hyperlink{classudmaio_1_1_frame_format_abe566be3949b3de67ba92d23ce00573c}{\_pix\_fmt}};}
+\DoxyCodeLine{171     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_ab1ee4b7bf2ef3688eacfadc29e96da4e}{\_bpp}};}
+\DoxyCodeLine{173     uint8\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_a95b7bf9c6406053d1f6314eea02a3939}{\_word\_width}};}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_af8ddffa8f8730c9a8762cd96f6e40c7d}{\_pix\_per\_word}};}
+\DoxyCodeLine{177     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_aa0abe561f3edc308e2decc1f9a7b37d4}{\_hsize}};}
+\DoxyCodeLine{178 \};}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 std::ostream\& \mbox{\hyperlink{namespaceudmaio_af07b25049ad33f69ea022fd1b09a9b63}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{FrameFormat::PixelFormat}} px\_fmt);}
 \DoxyCodeLine{181 }
-\DoxyCodeLine{182 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{182 std::ostream\& \mbox{\hyperlink{namespaceudmaio_af07b25049ad33f69ea022fd1b09a9b63}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classudmaio_1_1_frame_format}{FrameFormat}}\& frm\_fmt);}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}

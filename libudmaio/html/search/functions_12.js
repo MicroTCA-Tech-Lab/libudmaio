@@ -1,6 +1,13 @@
 var searchData=
 [
-  ['wait_5ffor_5finterrupt_0',['wait_for_interrupt',['../classudmaio_1_1_hw_accessor.html#a05bca18dee3f8705c565fe15e845a163',1,'udmaio::HwAccessor::wait_for_interrupt()'],['../classudmaio_1_1_hw_accessor_mmap.html#a7d00057806e3b9e98e5f4b200dd81b71',1,'udmaio::HwAccessorMmap::wait_for_interrupt()'],['../classudmaio_1_1_uio_if.html#a7035fb19bfd190fe5b482d27cc528b0a',1,'udmaio::UioIf::wait_for_interrupt()']]],
-  ['wr_1',['wr',['../classudmaio_1_1_reg_accessor_array_element.html#adab9bc37d421d67e94015a8a5f0ee9d3',1,'udmaio::RegAccessorArrayElement::wr()'],['../classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html#a39bd8f92c5a373086119460ccde63746',1,'udmaio::RegAccessorArray&lt; C, offset, 0, 0 &gt;::wr()']]],
-  ['write_5fcyc_5fmode_2',['write_cyc_mode',['../classudmaio_1_1_uio_mem_sgdma.html#ad1c770a8302c0f8c6838dca51efe5993',1,'udmaio::UioMemSgdma']]]
+  ['_7edatahandlerabstract_0',['~DataHandlerAbstract',['../classudmaio_1_1_data_handler_abstract.html#a4a1936ba9b7a3afb28d73364fc334e43',1,'udmaio::DataHandlerAbstract']]],
+  ['_7edatahandlersync_1',['~DataHandlerSync',['../classudmaio_1_1_data_handler_sync.html#a1e3bd0fe8b30b01c3f2409d00d004b42',1,'udmaio::DataHandlerSync']]],
+  ['_7efpgamembufferoverxdma_2',['~FpgaMemBufferOverXdma',['../classudmaio_1_1_fpga_mem_buffer_over_xdma.html#a95b84664b5ffe4d8935c4e7eeb4cdd4f',1,'udmaio::FpgaMemBufferOverXdma']]],
+  ['_7ehwaccessor_3',['~HwAccessor',['../classudmaio_1_1_hw_accessor.html#afe779e09dc6d94798bf0f0aee6b4d691',1,'udmaio::HwAccessor']]],
+  ['_7ehwaccessoraxi_4',['~HwAccessorAxi',['../classudmaio_1_1_hw_accessor_axi.html#ac3092318d21180fd6393e8d21f52c120',1,'udmaio::HwAccessorAxi']]],
+  ['_7ehwaccessormmap_5',['~HwAccessorMmap',['../classudmaio_1_1_hw_accessor_mmap.html#a3403619d569a9cc79fe611064426d29d',1,'udmaio::HwAccessorMmap']]],
+  ['_7ehwaccessormock_6',['~HwAccessorMock',['../classudmaio_1_1_hw_accessor_mock.html#ad86fddb31a43ed5db94c74e32ef6ffab',1,'udmaio::HwAccessorMock']]],
+  ['_7ehwaccessorxdma_7',['~HwAccessorXdma',['../classudmaio_1_1_hw_accessor_xdma.html#a37bd577fc7da9fe0c3a33274811321fd',1,'udmaio::HwAccessorXdma']]],
+  ['_7eudmabuf_8',['~UDmaBuf',['../classudmaio_1_1_u_dma_buf.html#ae76ea7e48d64a0d466ebb0e408d7da52',1,'udmaio::UDmaBuf']]],
+  ['_7euioif_9',['~UioIf',['../classudmaio_1_1_uio_if.html#abecdae6ece38df3bdd0a1797787a2487',1,'udmaio::UioIf']]]
 ];
