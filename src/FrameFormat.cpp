@@ -86,16 +86,13 @@ std::ostream& operator<<(std::ostream& os, const FrameFormat::PixelFormat px_fmt
     return os;
 }
 
-FrameFormat::FrameFormat() {
-    _dim = {0, 0};
-
-    _pix_fmt = PixelFormat::unknown;
-    _bpp = 1;
-
-    _word_width = 4;
-    _pix_per_word = 4;
-    _hsize = 0;
-}
+FrameFormat::FrameFormat()
+    : _dim{0, 0}
+    , _pix_fmt{PixelFormat::unknown}
+    , _bpp{1}
+    , _word_width{4}
+    , _pix_per_word{4}
+    , _hsize{0} {}
 
 void FrameFormat::set_format(dim_t dim, uint16_t bytes_per_pixel, uint8_t word_width) {
     update_frm_dim(dim);

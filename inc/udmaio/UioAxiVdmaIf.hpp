@@ -44,6 +44,9 @@ class UioAxiVdmaIf : public UioIf, AxiVdmaBlock {
     /// @param frm_format Frame format to be set
     void set_frame_format(FrameFormat frm_format);
 
+    /// @brief Autodetect max. number of framebuffers
+    size_t autodetect_num_frmbufs();
+
     ////////////////////////////////////////
     // Base config
     ////////////////////////////////////////

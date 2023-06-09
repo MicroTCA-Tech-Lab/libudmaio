@@ -48,6 +48,34 @@ void UioAxiVdmaIf::set_frame_format(FrameFormat frm_format) {
     s2mm_vsize.wr({.vertical_size = frm_format.get_dim().height});
 }
 
+size_t UioAxiVdmaIf::autodetect_num_frmbufs()
+{
+    // There is some weird banking logic going on when using more than 16 frame buffers.
+    // We're just considering the first 16 ones for now
+    constexpr size_t num_addrs = 16;
+    // Just write and readback a pattern to check if the frame buffer can be used
+    constexpr uint32_t patterns[] = { 0x55555555, 0xaaaaaaaa };
+
+    size_t i;
+    for (i = 0; i < num_addrs; i++) {
+        for (size_t k = 0; k < sizeof(patterns)/sizeof(patterns[0]); k++) {
+            bool vfy = false;
+            if (_long_addrs) {
+                s2mm_sa[i * 2].wr(patterns[k]);
+                s2mm_sa[i * 2 + 1].wr(patterns[k]);
+                vfy = s2mm_sa[i * 2].rd() == patterns[k] && s2mm_sa[i * 2 + 1].rd() == patterns[k];
+            } else {
+                s2mm_sa[i].wr(patterns[k]);
+                vfy = s2mm_sa[i].rd() == patterns[k];
+            }
+            if (!vfy) {
+                return i;
+            }
+        }
+    }
+    return i;
+}
+
 ////////////////////////////////////////
 // Base config
 ////////////////////////////////////////
