@@ -23,6 +23,7 @@ class FrameFormat {
     struct dim_t {
         uint16_t width;
         uint16_t height;
+        dim_t(uint16_t w, uint16_t h):width(w),height(h){}
     };
 
     // clang-format off
@@ -114,19 +115,19 @@ class FrameFormat {
     /// @param dim  Width and height of the video frame (in pixels)
     /// @param bytes_per_pix Number of bytes per pixel, pixel format will be set to unknown
     /// @param word_width Number of bytes per data word used by the dma
-    void set_format(dim_t dim, uint16_t bytes_per_pixel, uint8_t word_width);
+    void set_format(dim_t dim, uint16_t bytes_per_pixel, uint8_t word_width=4);
 
     /// @brief Set format of the frames used for the video stream
     /// @param dim  Width and height of the video frame (in pixels)
     /// @param pixFmt Pixel format, will be used to set bytes per pixel value
     /// @param word_width Number of bytes per data word used by the dma
-    void set_format(dim_t dim, std::string pix_fmt_str, uint8_t word_width);
+    void set_format(dim_t dim, std::string pix_fmt_str, uint8_t word_width=4);
 
     /// @brief Set format of the frames used for the video stream
     /// @param dim  Width and height of the video frame (in pixels)
     /// @param pixFmt Pixel format, will be used to set bytes per pixel value
     /// @param word_width Number of bytes per data word used by the dma
-    void set_format(dim_t dim, PixelFormat pix_fmt, uint8_t word_width);
+    void set_format(dim_t dim, PixelFormat pix_fmt, uint8_t word_width=4);
 
     /// @brief Set format of the frames used for the video stream, pixel format is untouched
     /// @param dim  Width and height of the video frame (in pixels)

@@ -18,6 +18,7 @@
 #include "udmaio/Logging.hpp"
 #include "udmaio/UDmaBuf.hpp"
 #include "udmaio/UioConfig.hpp"
+#include "udmaio/FrameFormat.hpp"
 
 namespace py = pybind11;
 
@@ -141,4 +142,38 @@ PYBIND11_MODULE(binding, m) {
 
     m.def("set_logging_level",
           [](boost::log::trivial::severity_level level) { udmaio::Logger::set_level(level); });
+
+    py::class_<udmaio::FrameFormat> frame_format(m, "FrameFormat");
+
+    py::enum_<udmaio::FrameFormat::PixelFormat>(frame_format, "PixelFormat")
+        .value("unknown", udmaio::FrameFormat::PixelFormat::unknown)
+        .value("Mono8", udmaio::FrameFormat::PixelFormat::Mono8)
+        .value("Mono10", udmaio::FrameFormat::PixelFormat::Mono10)
+        .value("Mono12", udmaio::FrameFormat::PixelFormat::Mono12)
+        .value("Mono14", udmaio::FrameFormat::PixelFormat::Mono14)
+        .value("Mono16", udmaio::FrameFormat::PixelFormat::Mono16)
+        // ...etc...
+        .export_values();
+
+    py::class_<udmaio::FrameFormat::dim_t>(frame_format, "Dim")
+        .def(py::init<uint16_t, uint16_t>())
+        .def_readwrite("width", &udmaio::FrameFormat::dim_t::width)
+        .def_readwrite("height", &udmaio::FrameFormat::dim_t::height);
+
+    frame_format.def(py::init<>())
+        .def("set_format", static_cast<void (udmaio::FrameFormat::*)(udmaio::FrameFormat::dim_t, uint16_t, uint8_t)>(&udmaio::FrameFormat::set_format), py::arg("dim"), py::arg("bytes_per_pixel"), py::arg("word_width") = 4)
+        .def("set_format", static_cast<void (udmaio::FrameFormat::*)(udmaio::FrameFormat::dim_t, std::string, uint8_t)>(&udmaio::FrameFormat::set_format), py::arg("dim"), py::arg("pix_fmt_str"), py::arg("word_width") = 4)
+        .def("set_format", static_cast<void (udmaio::FrameFormat::*)(udmaio::FrameFormat::dim_t, udmaio::FrameFormat::PixelFormat, uint8_t)>(&udmaio::FrameFormat::set_format), py::arg("dim"), py::arg("pix_fmt"), py::arg("word_width") = 4)
+        .def("set_dim", &udmaio::FrameFormat::set_dim)
+        .def("set_bpp", &udmaio::FrameFormat::set_bpp)
+        .def("set_pix_fmt", &udmaio::FrameFormat::set_pix_fmt)
+        .def("set_word_width", &udmaio::FrameFormat::set_word_width)
+        .def("get_dim", &udmaio::FrameFormat::get_dim)
+        .def("get_pixel_format", &udmaio::FrameFormat::get_pixel_format)
+        .def("get_pixel_format_str", &udmaio::FrameFormat::get_pixel_format_str)
+        .def("get_bytes_per_pixel", &udmaio::FrameFormat::get_bytes_per_pixel)
+        .def("get_word_width", &udmaio::FrameFormat::get_word_width)
+        .def("get_pixel_per_word", &udmaio::FrameFormat::get_pixel_per_word)
+        .def("get_hsize", &udmaio::FrameFormat::get_hsize)
+        .def("get_frm_size", &udmaio::FrameFormat::get_frm_size);
 }
