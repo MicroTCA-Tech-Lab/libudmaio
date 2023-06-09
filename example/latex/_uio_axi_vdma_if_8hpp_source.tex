@@ -40,33 +40,35 @@
 \DoxyCodeLine{42 }
 \DoxyCodeLine{45     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a4d60f688dadfa6db99b8002f2107eb56}{set\_frame\_format}}(\mbox{\hyperlink{classudmaio_1_1_frame_format}{FrameFormat}} frm\_format);}
 \DoxyCodeLine{46 }
-\DoxyCodeLine{48     \textcolor{comment}{// Base config}}
-\DoxyCodeLine{50 \textcolor{comment}{}}
-\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a689c9d2140042c94f887b444cf531a50}{config}}(\textcolor{keyword}{const} std::vector<UioRegion>\& frm\_bufs);}
-\DoxyCodeLine{54 }
-\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_af14e061c655188faccb91d3d2ec7364f}{config}}(\textcolor{keyword}{const} std::vector<UioRegion>\& frm\_bufs, \mbox{\hyperlink{classudmaio_1_1_frame_format}{FrameFormat}} frm\_format);}
-\DoxyCodeLine{59 }
-\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a27d3d20a66f6085e20bae733792fd3ff}{reset}}();}
+\DoxyCodeLine{48     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a735e7ce8b104a248f8e99cc2e694b05c}{autodetect\_num\_frmbufs}}();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{51     \textcolor{comment}{// Base config}}
+\DoxyCodeLine{53 \textcolor{comment}{}}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a689c9d2140042c94f887b444cf531a50}{config}}(\textcolor{keyword}{const} std::vector<UioRegion>\& frm\_bufs);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_af14e061c655188faccb91d3d2ec7364f}{config}}(\textcolor{keyword}{const} std::vector<UioRegion>\& frm\_bufs, \mbox{\hyperlink{classudmaio_1_1_frame_format}{FrameFormat}} frm\_format);}
 \DoxyCodeLine{62 }
-\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a15ec6e293e8e7f7cd52bca6e58045e86}{print\_regs}}();}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a27d3d20a66f6085e20bae733792fd3ff}{reset}}();}
 \DoxyCodeLine{65 }
-\DoxyCodeLine{66     uint32\_t \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a5b5feec2f5a05b4d2b935d8e347e2f03}{get\_cur\_frmbuf}}();}
-\DoxyCodeLine{67 }
-\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_af78bf90c19b61708814e71f57ef0231c}{print\_cur\_frmbuf}}();}
-\DoxyCodeLine{69 }
-\DoxyCodeLine{71     \textcolor{comment}{// Operational functions}}
-\DoxyCodeLine{73 \textcolor{comment}{}}
-\DoxyCodeLine{75     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a74805e7b3405a703828933ac1218d8ac}{start}}();}
-\DoxyCodeLine{76 }
-\DoxyCodeLine{79     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a611b04644e73e90733adf6d573fdb628}{start}}(\mbox{\hyperlink{classudmaio_1_1_frame_format}{FrameFormat}} frm\_format);}
-\DoxyCodeLine{80 }
-\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a167913596133a3025ba926191aa165f3}{stop}}(\textcolor{keywordtype}{bool} wait\_for\_end);}
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a15ec6e293e8e7f7cd52bca6e58045e86}{print\_regs}}();}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     uint32\_t \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a5b5feec2f5a05b4d2b935d8e347e2f03}{get\_cur\_frmbuf}}();}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_af78bf90c19b61708814e71f57ef0231c}{print\_cur\_frmbuf}}();}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{74     \textcolor{comment}{// Operational functions}}
+\DoxyCodeLine{76 \textcolor{comment}{}}
+\DoxyCodeLine{78     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a74805e7b3405a703828933ac1218d8ac}{start}}();}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a611b04644e73e90733adf6d573fdb628}{start}}(\mbox{\hyperlink{classudmaio_1_1_frame_format}{FrameFormat}} frm\_format);}
 \DoxyCodeLine{83 }
-\DoxyCodeLine{86     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_aecfdd1da3099c299f46e539c9674bdd7}{isrunning}}();}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{90     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_af57e3c37d8e49fd81f05a73b4f54d28b}{check\_for\_errors}}();}
-\DoxyCodeLine{91 \};}
-\DoxyCodeLine{92 }
-\DoxyCodeLine{93 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_a167913596133a3025ba926191aa165f3}{stop}}(\textcolor{keywordtype}{bool} wait\_for\_end);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{89     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_aecfdd1da3099c299f46e539c9674bdd7}{isrunning}}();}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{93     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classudmaio_1_1_uio_axi_vdma_if_af57e3c37d8e49fd81f05a73b4f54d28b}{check\_for\_errors}}();}
+\DoxyCodeLine{94 \};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}

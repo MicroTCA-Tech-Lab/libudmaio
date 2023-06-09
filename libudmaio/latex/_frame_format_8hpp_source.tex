@@ -26,134 +26,135 @@
 \DoxyCodeLine{23     \textcolor{keyword}{struct }\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\_t}} \{}
 \DoxyCodeLine{24         uint16\_t \mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t_acc25b37766401f91860fc00727fa1ea2}{width}};}
 \DoxyCodeLine{25         uint16\_t \mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t_acfbd14cfa1af5b020e8f193326dd91c0}{height}};}
-\DoxyCodeLine{26     \};}
-\DoxyCodeLine{27 }
-\DoxyCodeLine{28     \textcolor{comment}{// clang-\/format off}}
-\DoxyCodeLine{29     \textcolor{keyword}{enum class} \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} : uint32\_t \{}
-\DoxyCodeLine{30       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aad921d60486366258809553a3db49a4a}{unknown}}                   = 0,}
-\DoxyCodeLine{31       \textcolor{comment}{// Mono1p                    = 0x01010037, //   1-\/bit monochrome, unsigned, 8 pixels packed in one byte.}}
-\DoxyCodeLine{32       \textcolor{comment}{// Mono2p                    = 0x01020038, //   2-\/bit monochrome, unsigned, 4 pixels packed in one byte.}}
-\DoxyCodeLine{33       \textcolor{comment}{// Mono4p                    = 0x01040039, //   4-\/bit monochrome, unsigned, 2 pixels packed in one byte.}}
-\DoxyCodeLine{34       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07abc5c44624758954f1a4af1e009f5cf6e}{Mono8}}                     = 0x01080001, \textcolor{comment}{//   8-\/bit monochrome, unsigned, unpacked format.}}
-\DoxyCodeLine{35       \textcolor{comment}{// Mono8s                    = 0x01080002, //   8-\/bit monochrome,   signed, unpacked format.}}
-\DoxyCodeLine{36       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ab06d5465fa227777dbaebf0c0048244a}{Mono10}}                    = 0x01100003, \textcolor{comment}{//  10-\/bit monochrome, unsigned, unpacked format.}}
-\DoxyCodeLine{37       \textcolor{comment}{// Mono10Packed1             = 0x010C0004, //  10-\/bit monochrome, unsigned, GigE Vision-\/specific packed format.}}
-\DoxyCodeLine{38       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a1c939765b7a08112ae479b0f4d334e28}{Mono12}}                    = 0x01100005, \textcolor{comment}{//  12-\/bit monochrome, unsigned, unpacked format.}}
-\DoxyCodeLine{39       \textcolor{comment}{// Mono12Packed1             = 0x010C0006, //  12-\/bit monochrome, unsigned, GigE Vision-\/specific packed format.}}
-\DoxyCodeLine{40       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a34c41cc1f0312957ac456467c681f66a}{Mono14}}                    = 0x01100025, \textcolor{comment}{//  14-\/bit monochrome, unsigned, unpacked format.}}
-\DoxyCodeLine{41       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aab2f4f7e4448e8c91c89774787a1cc2c}{Mono16}}                    = 0x01100007, \textcolor{comment}{//  16-\/bit monochrome, unsigned, unpacked format.}}
-\DoxyCodeLine{42       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a56f68c9445cd0901e1d6d001e4efc067}{BayerGR8}}                  = 0x01080008, \textcolor{comment}{//   8-\/bit GRBG (green-\/red-\/blue-\/green) Bayer pattern, unsigned, unpacked format.}}
-\DoxyCodeLine{43       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a759e49edd24350e2c9aaeacc6af81759}{BayerRG8}}                  = 0x01080009, \textcolor{comment}{//   8-\/bit RGGB (red-\/green-\/green-\/blue) Bayer pattern, unsigned, unpacked format.}}
-\DoxyCodeLine{44       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a90bd42a79ba5191ed40a8113723e3b1c}{BayerGB8}}                  = 0x0108000A, \textcolor{comment}{//   8-\/bit GBRG (green-\/blue-\/red-\/green) Bayer pattern, unsigned, unpacked format.}}
-\DoxyCodeLine{45       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a5c07bb41050e6b3c2e26d6542996a96f}{BayerBG8}}                  = 0x0108000B, \textcolor{comment}{//   8-\/bit BGGR (blue-\/green-\/green-\/red) Bayer pattern, unsigned, unpacked format.}}
-\DoxyCodeLine{46       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aa88799c1110dd117afdf42203fac1f6d}{BayerGR10}}                 = 0x0110000C, \textcolor{comment}{//  10-\/bit GRBG (green-\/red-\/blue-\/green) Bayer pattern, unsigned, unpacked format.}}
-\DoxyCodeLine{47       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a65055ae551f0e9193def30695fc3453c}{BayerRG10}}                 = 0x0110000D, \textcolor{comment}{//  10-\/bit RGGB (red-\/green-\/green-\/blue) Bayer pattern, unsigned, unpacked format.}}
-\DoxyCodeLine{48       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a201d7f008d5cd72743e109f4767cd158}{BayerGB10}}                 = 0x0110000E, \textcolor{comment}{//  10-\/bit GBRG (green-\/blue-\/red-\/green) Bayer pattern, unsigned, unpacked format.}}
-\DoxyCodeLine{49       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a280230f3568a5b4639d9f75884d75031}{BayerBG10}}                 = 0x0110000F, \textcolor{comment}{//  10-\/bit BGGR (blue-\/green-\/green-\/red) Bayer pattern, unsigned, unpacked format.}}
-\DoxyCodeLine{50       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a49b7655db19a0d2264817b9d9d5b90ff}{BayerGR12}}                 = 0x01100010, \textcolor{comment}{//  12-\/bit GRBG (green-\/red-\/blue-\/green) Bayer pattern, unsigned, unpacked format.}}
-\DoxyCodeLine{51       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a51a44c97c1e81969681a7d255f874f08}{BayerRG12}}                 = 0x01100011, \textcolor{comment}{//  12-\/bit RGGB (red-\/green-\/green-\/blue) Bayer pattern, unsigned, unpacked format.}}
-\DoxyCodeLine{52       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a66a1fae708cb837c6dfd5a0a4ccab97d}{BayerGB12}}                 = 0x01100012, \textcolor{comment}{//  12-\/bit GBRG (green-\/blue-\/red-\/green) Bayer pattern, unsigned, unpacked format.}}
-\DoxyCodeLine{53       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad45a4d6f852fbf8a8f6b3b0a9445cdff}{BayerBG12}}                 = 0x01100013, \textcolor{comment}{//  12-\/bit BGGR (blue-\/green-\/green-\/red) Bayer pattern, unsigned, unpacked format.}}
-\DoxyCodeLine{54       \textcolor{comment}{// BayerGR10Packed1          = 0x010C0026, //  10-\/bit GRBG (green-\/red-\/blue-\/green) Bayer pattern, unsigned, GigE Vision-\/specific packed format.}}
-\DoxyCodeLine{55       \textcolor{comment}{// BayerRG10Packed1          = 0x010C0027, //  10-\/bit RGGB (red-\/green-\/green-\/blue) Bayer pattern, unsigned, GigE Vision-\/specific packed format.}}
-\DoxyCodeLine{56       \textcolor{comment}{// BayerGB10Packed1          = 0x010C0028, //  10-\/bit GBRG (green-\/blue-\/red-\/green) Bayer pattern, unsigned, GigE Vision-\/specific packed format.}}
-\DoxyCodeLine{57       \textcolor{comment}{// BayerBG10Packed1          = 0x010C0029, //  10-\/bit BGGR (blue-\/green-\/green-\/red) Bayer pattern, unsigned, GigE Vision-\/specific packed format.}}
-\DoxyCodeLine{58       \textcolor{comment}{// BayerGR12Packed1          = 0x010C002A, //  12-\/bit GRBG (green-\/red-\/blue-\/green) Bayer pattern, unsigned, GigE Vision-\/specific packed format.}}
-\DoxyCodeLine{59       \textcolor{comment}{// BayerRG12Packed           = 0x010C002B, //  12-\/bit RGGB (red-\/green-\/green-\/blue) Bayer pattern, unsigned, GigE Vision-\/specific packed format.}}
-\DoxyCodeLine{60       \textcolor{comment}{// BayerGB12Packed1          = 0x010C002C, //  12-\/bit GBRG (green-\/blue-\/red-\/green) Bayer pattern, unsigned, GigE Vision-\/specific packed format.}}
-\DoxyCodeLine{61       \textcolor{comment}{// BayerBG12Packed1          = 0x010C002D, //  12-\/bit BGGR (blue-\/green-\/green-\/red) Bayer pattern, unsigned, GigE Vision-\/specific packed format.}}
-\DoxyCodeLine{62       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad5b2e6be4ba9b174aa050b9556cb807f}{BayerGR16}}                 = 0x0110002E, \textcolor{comment}{//  16-\/bit GRBG (green-\/red-\/blue-\/green) Bayer pattern, unsigned, unpacked format.}}
-\DoxyCodeLine{63       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a9f9d0b00f68d6b9819e65f29139d2bf4}{BayerRG16}}                 = 0x0110002F, \textcolor{comment}{//  16-\/bit RGGB (red-\/green-\/green-\/blue) Bayer pattern, unsigned, unpacked format.}}
-\DoxyCodeLine{64       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ae5976562e8db8553d1a347e30a19063b}{BayerGB16}}                 = 0x01100030, \textcolor{comment}{//  16-\/bit GBRG (green-\/blue-\/red-\/green) Bayer pattern, unsigned, unpacked format.}}
-\DoxyCodeLine{65       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aff3c8270edb6f2a4baeb966bdfc5a148}{BayerBG16}}                 = 0x01100031, \textcolor{comment}{//  16-\/bit BGGR (blue-\/green-\/green-\/red) Bayer pattern, unsigned, unpacked format.}}
-\DoxyCodeLine{66       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a165c6379d01617e12de274a3952efa63}{RGB8}}                      = 0x02180014, \textcolor{comment}{//   8-\/bit RGB (red-\/green-\/blue), unsigned, unpacked format.}}
-\DoxyCodeLine{67       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ae764ec5a498470e04dd8b545427203cc}{BGR8}}                      = 0x02180015, \textcolor{comment}{//   8-\/bit BGR (blue-\/green-\/red), unsigned, unpacked format.}}
-\DoxyCodeLine{68       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a2b59bc7441077b655cfe7dfb3b1790dc}{RGBa8}}                     = 0x02200016, \textcolor{comment}{//   8-\/bit RGBa (red-\/green-\/blue-\/alpha), unsigned, unpacked format.}}
-\DoxyCodeLine{69       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07adf676d2654af6c14e72e09576abdcab9}{BGRa8}}                     = 0x02200017, \textcolor{comment}{//   8-\/bit BGRa (blue-\/green-\/red-\/alpha), unsigned, unpacked format.}}
-\DoxyCodeLine{70       \textcolor{comment}{// RGB10                     = 0x02300018, //  10-\/bit RGB (red-\/green-\/blue), unsigned, unpacked format.}}
-\DoxyCodeLine{71       \textcolor{comment}{// BGR10                     = 0x02300019, //  10-\/bit BGR (blue-\/green-\/red), unsigned, unpacked format.}}
-\DoxyCodeLine{72       \textcolor{comment}{// RGB12                     = 0x0230001A, //  12-\/bit RGB (red-\/green-\/blue), unsigned, unpacked format.}}
-\DoxyCodeLine{73       \textcolor{comment}{// BGR12                     = 0x0230001B, //  12-\/bit BGR (blue-\/green-\/red), unsigned, unpacked format.}}
-\DoxyCodeLine{74       \textcolor{comment}{// RGB16                     = 0x02300033, //  16-\/bit RGB (red-\/green-\/blue), unsigned, unpacked format.}}
-\DoxyCodeLine{75       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ae1767a5a7c7fae24cd6436fb0a015083}{RGB10V1Packed1}}            = 0x0220001C, \textcolor{comment}{//  10-\/bit RGB (red-\/green-\/blue), unsigned, GigE Vision-\/specific packed format.}}
-\DoxyCodeLine{76       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07afa967a854da71acb35b554cf29308a4b}{RGB10p32}}                  = 0x0220001D, \textcolor{comment}{//  10-\/bit RGB (red-\/green-\/blue), unsigned, packed format.}}
-\DoxyCodeLine{77       \textcolor{comment}{// RGB12V1Packed1            = 0x02240034, //  12-\/bit RGB (red-\/green-\/blue), unsigned, GigE Vision-\/specific packed format.}}
-\DoxyCodeLine{78       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a115337735e69a0fd2fdd3e8b384d918e}{RGB565p}}                   = 0x02100035, \textcolor{comment}{//  RGB (red 5 bits -\/ green 6 bits -\/ blue 5 bits), unsigned, packed format.}}
-\DoxyCodeLine{79       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aa44bf8ffb557cbe0fe795312da9c069f}{BGR565p}}                   = 0x02100036, \textcolor{comment}{//  BGR (blue 5 bits – green 6 bits – red 5 bits), unsigned, packed format.}}
-\DoxyCodeLine{80       \textcolor{comment}{// YUV411\_8\_UYYVYY           = 0x020C001E, //   8-\/bit YUV 4:1:1, unsigned, unpacked format.}}
-\DoxyCodeLine{81       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a857930fdbf17cb68c7174ca58a6f7922}{YUV422\_8\_UYVY}}             = 0x0210001F, \textcolor{comment}{//   8-\/bit YUV 4:2:2, unsigned, unpacked format.}}
-\DoxyCodeLine{82       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a6d1f6c3efd52dbfa99221463f9b2d05e}{YUV422\_8}}                  = 0x02100032, \textcolor{comment}{//   8-\/bit YUV 4:2:2, unsigned, unpacked format.}}
-\DoxyCodeLine{83       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad4d1880339c2babc5d0a1bcbef0089f5}{YUV8\_UYV}}                  = 0x02180020, \textcolor{comment}{//   8-\/bit YUV 4:4:4, unsigned, unpacked format.}}
-\DoxyCodeLine{84       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a3f033d70725774e93771d30eecf3144e}{YCbCr8\_CbYCr}}              = 0x0218003A, \textcolor{comment}{//   8-\/bit YCbCr 4:4:4, unsigned, unpacked format.}}
-\DoxyCodeLine{85       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a6c363a6aa52c89ba1f7edcd888520f54}{YCbCr422\_8}}                = 0x0210003B, \textcolor{comment}{//   8-\/bit YCbCr 4:2:2, unsigned, unpacked format.}}
-\DoxyCodeLine{86       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a9c87eb3247a7c906970f3bc27979cd2a}{YCbCr422\_8\_CbYCrY}}         = 0x02100043, \textcolor{comment}{//   8-\/bit YCbCr 4:2:2, unsigned, unpacked format.}}
-\DoxyCodeLine{87       \textcolor{comment}{// YCbCr411\_8\_CbYYCrYY       = 0x020C003C, //   8-\/bit YCbCr 4:1:1, unsigned, unpacked format.}}
-\DoxyCodeLine{88       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a46835ed49da6f04541e7b2a4d6a1befe}{YCbCr601\_8\_CbYCr}}          = 0x0218003D, \textcolor{comment}{//   8-\/bit YCbCr 4:4:4, unsigned, unpacked format. This pixel format uses the color space specified in ITU-\/R BT.601.}}
-\DoxyCodeLine{89       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a9e7352c7ccedf0169ed1e7273a8e8882}{YCbCr601\_422\_8}}            = 0x0210003E, \textcolor{comment}{//   8-\/bit YCbCr 4:2:2, unsigned, unpacked format. This pixel format uses the color space specified in ITU-\/R BT.601.}}
-\DoxyCodeLine{90       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad05b9b43f4432a6f0a64bcc6bb85c4f1}{YCbCr601\_422\_8\_CbYCrY}}     = 0x02100044, \textcolor{comment}{//   8-\/bit YCbCr 4:2:2, unsigned, unpacked format. This pixel format uses the color space specified in ITU-\/R BT.601.}}
-\DoxyCodeLine{91       \textcolor{comment}{// YCbCr601\_411\_8\_CbYYCrYY   = 0x020C003F, //   8-\/bit YCbCr 4:1:1, unsigned, unpacked format. This pixel format uses the color space specified in ITU-\/R BT.601.}}
-\DoxyCodeLine{92       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad8de4690d1eb08f953ee2aba321d0e46}{YCbCr709\_8\_CbYCr}}          = 0x02180040, \textcolor{comment}{//   8-\/bit YCbCr 4:4:4, unsigned, unpacked format. This pixel format uses the color space specified in ITU-\/R BT.709.}}
-\DoxyCodeLine{93       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a44c80e863e23a7ef2e0deea47a818290}{YCbCr709\_422\_8}}            = 0x02100041, \textcolor{comment}{//   8-\/bit YCbCr 4:2:2, unsigned, unpacked format. This pixel format uses the color space specified in ITU-\/R BT.709.}}
-\DoxyCodeLine{94       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ac84db5b3e65c101288604ea51c742df1}{YCbCr709\_422\_8\_CbYCrY}}     = 0x02100045, \textcolor{comment}{//   8-\/bit YCbCr 4:2:2, unsigned, unpacked format. This pixel format uses the color space specified in ITU-\/R BT.709.}}
-\DoxyCodeLine{95       \textcolor{comment}{// YCbCr709\_411\_8\_CbYYCrYY   = 0x020C0042, //   8-\/bit YCbCr 4:1:1, unsigned, unpacked format. This pixel format uses the color space specified in ITU-\/R BT.709.}}
-\DoxyCodeLine{96       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a82e3304dc380a00d357f71498cd35ed8}{RGB8\_Planar}}               = 0x02180021, \textcolor{comment}{//   8-\/bit RGB (red-\/green-\/blue), unsigned, unpacked, planar format where all color planes are transmitted in a multi-\/part payload block (recommended) or each color plane is transmitted on a different stream channel.}}
-\DoxyCodeLine{97       \textcolor{comment}{// RGB10\_Planar              = 0x02300022, //  10-\/bit RGB (red-\/green-\/blue), unsigned, unpacked, planar format where all color planes are transmitted in a multi-\/part payload block (recommended) or each color plane is transmitted on a different stream channel.}}
-\DoxyCodeLine{98       \textcolor{comment}{// RGB12\_Planar              = 0x02300023, //  12-\/bit RGB (red-\/green-\/blue), unsigned, unpacked, planar format where all color planes are transmitted in a multi-\/part payload block (recommended) or each color plane is transmitted on a different stream channel.}}
-\DoxyCodeLine{99       \textcolor{comment}{// RGB16\_Planar              = 0x02300024, //  16-\/bit RGB (red-\/green-\/blue), unsigned, unpacked, planar format where all color planes are transmitted in a multi-\/part payload block (recommended) or each color plane is transmitted on a different stream channel.}}
-\DoxyCodeLine{100     \};}
-\DoxyCodeLine{101     \textcolor{comment}{// clang-\/format on}}
-\DoxyCodeLine{102 }
-\DoxyCodeLine{105     \textcolor{keyword}{static} \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} \mbox{\hyperlink{classudmaio_1_1_frame_format_a63cb1f706b019da9151826d2ed6486ac}{pix\_fmt\_from\_str}}(std::string pix\_fmt\_str);}
-\DoxyCodeLine{106 }
-\DoxyCodeLine{109     \textcolor{keyword}{static} std::string \mbox{\hyperlink{classudmaio_1_1_frame_format_a8322dab4351bb3cb195c0d1529409f11}{pix\_fmt\_to\_str}}(\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} pix\_fmt);}
-\DoxyCodeLine{110 }
-\DoxyCodeLine{111     \mbox{\hyperlink{classudmaio_1_1_frame_format_a33c5553c8ca80b559c948e252081e8b7}{FrameFormat}}();}
-\DoxyCodeLine{112 }
-\DoxyCodeLine{117     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab341989db71cb4e346a0389881410abb}{set\_format}}(dim\_t dim, uint16\_t bytes\_per\_pixel, uint8\_t word\_width);}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{123     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab341989db71cb4e346a0389881410abb}{set\_format}}(dim\_t dim, std::string pix\_fmt\_str, uint8\_t word\_width);}
-\DoxyCodeLine{124 }
-\DoxyCodeLine{129     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab341989db71cb4e346a0389881410abb}{set\_format}}(dim\_t dim, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} pix\_fmt, uint8\_t word\_width);}
-\DoxyCodeLine{130 }
-\DoxyCodeLine{133     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_af78a310fe80e5084878f9412f1ab0eaf}{set\_dim}}(dim\_t dim);}
-\DoxyCodeLine{134 }
-\DoxyCodeLine{137     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a6d704637400e2d82f84f87cbe9dd77f9}{set\_bpp}}(uint16\_t bytes\_per\_pix);}
-\DoxyCodeLine{138 }
-\DoxyCodeLine{141     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a17c7e6774e5f91e00dc7882178195824}{set\_pix\_fmt}}(\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} pix\_fmt);}
-\DoxyCodeLine{142 }
-\DoxyCodeLine{145     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a09acb3d1e77b8845ade3fc38dc58bc13}{set\_word\_width}}(uint8\_t word\_width);}
-\DoxyCodeLine{146 }
-\DoxyCodeLine{147     dim\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_abb5072ef4de9537132ef71c2dcaaa7d4}{get\_dim}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{148     \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} \mbox{\hyperlink{classudmaio_1_1_frame_format_adbb8e87500fa2a7570799293b6c59526}{get\_pixel\_format}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{149     std::string \mbox{\hyperlink{classudmaio_1_1_frame_format_ace2a07558593adf85147f628040e38d8}{get\_pixel\_format\_str}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{150     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_a398941f7529b1d64c4cddc076fae8ae4}{get\_bytes\_per\_pixel}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{151     uint8\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_a37d5a9f0e105cc5777b1f082177b116b}{get\_word\_width}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{152     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_afdeadf1f6d613f391f67168b3d0254c4}{get\_pixel\_per\_word}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{153     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_a77a5d86afa24fc5beb6da498594273ad}{get\_hsize}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{154     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classudmaio_1_1_frame_format_a324ee0a859d7032a6470d016b31440a8}{get\_frm\_size}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{155 }
-\DoxyCodeLine{156   \textcolor{keyword}{private}:}
-\DoxyCodeLine{157     \textcolor{keyword}{static} \textcolor{keyword}{const} std::unordered\_map<PixelFormat, std::string> \mbox{\hyperlink{classudmaio_1_1_frame_format_a18b01460334e71e6dde3df175ee474e1}{\_pxfmt\_enum\_to\_str\_tab}};}
-\DoxyCodeLine{158 }
-\DoxyCodeLine{159     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a8135a2a3104d9edb2d6934840fea7880}{update\_frm\_dim}}(\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\_t}} dim);}
-\DoxyCodeLine{160     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_aa9aa449c52578904b6b8b4509911ce71}{update\_bpp}}(uint16\_t bytes\_per\_pix);}
-\DoxyCodeLine{161     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_afe86bf67ef49e3fa64314cad1b7e4771}{update\_px\_fmt}}(\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} pix\_fmt);}
-\DoxyCodeLine{162     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_af25cb5651410780ff69b96a05447f113}{update\_hsize}}();}
-\DoxyCodeLine{163 }
-\DoxyCodeLine{164     \textcolor{comment}{// Frame dimensions}}
-\DoxyCodeLine{165     \mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\_t}} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab13cfe6639cdcecd204a9158d2eceec1}{\_dim}};}
-\DoxyCodeLine{167     \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} \mbox{\hyperlink{classudmaio_1_1_frame_format_abe566be3949b3de67ba92d23ce00573c}{\_pix\_fmt}};}
-\DoxyCodeLine{169     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_ab1ee4b7bf2ef3688eacfadc29e96da4e}{\_bpp}};}
-\DoxyCodeLine{171     uint8\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_a95b7bf9c6406053d1f6314eea02a3939}{\_word\_width}};}
-\DoxyCodeLine{172 }
-\DoxyCodeLine{173     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_af8ddffa8f8730c9a8762cd96f6e40c7d}{\_pix\_per\_word}};}
-\DoxyCodeLine{175     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_aa0abe561f3edc308e2decc1f9a7b37d4}{\_hsize}};}
-\DoxyCodeLine{176 \};}
-\DoxyCodeLine{177 }
-\DoxyCodeLine{178 std::ostream\& \mbox{\hyperlink{namespaceudmaio_af07b25049ad33f69ea022fd1b09a9b63}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{FrameFormat::PixelFormat}} px\_fmt);}
-\DoxyCodeLine{179 }
-\DoxyCodeLine{180 std::ostream\& \mbox{\hyperlink{namespaceudmaio_af07b25049ad33f69ea022fd1b09a9b63}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classudmaio_1_1_frame_format}{FrameFormat}}\& frm\_fmt);}
-\DoxyCodeLine{181 }
-\DoxyCodeLine{182 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{26         \mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t_a978f232b6b2fca9ae3f7cb32bc961ab6}{dim\_t}}(uint16\_t w, uint16\_t h):\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t_acc25b37766401f91860fc00727fa1ea2}{width}}(w),\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t_acfbd14cfa1af5b020e8f193326dd91c0}{height}}(h)\{\}}
+\DoxyCodeLine{27     \};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{comment}{// clang-\/format off}}
+\DoxyCodeLine{30     \textcolor{keyword}{enum class} \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} : uint32\_t \{}
+\DoxyCodeLine{31       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aad921d60486366258809553a3db49a4a}{unknown}}                   = 0,}
+\DoxyCodeLine{32       \textcolor{comment}{// Mono1p                    = 0x01010037, //   1-\/bit monochrome, unsigned, 8 pixels packed in one byte.}}
+\DoxyCodeLine{33       \textcolor{comment}{// Mono2p                    = 0x01020038, //   2-\/bit monochrome, unsigned, 4 pixels packed in one byte.}}
+\DoxyCodeLine{34       \textcolor{comment}{// Mono4p                    = 0x01040039, //   4-\/bit monochrome, unsigned, 2 pixels packed in one byte.}}
+\DoxyCodeLine{35       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07abc5c44624758954f1a4af1e009f5cf6e}{Mono8}}                     = 0x01080001, \textcolor{comment}{//   8-\/bit monochrome, unsigned, unpacked format.}}
+\DoxyCodeLine{36       \textcolor{comment}{// Mono8s                    = 0x01080002, //   8-\/bit monochrome,   signed, unpacked format.}}
+\DoxyCodeLine{37       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ab06d5465fa227777dbaebf0c0048244a}{Mono10}}                    = 0x01100003, \textcolor{comment}{//  10-\/bit monochrome, unsigned, unpacked format.}}
+\DoxyCodeLine{38       \textcolor{comment}{// Mono10Packed1             = 0x010C0004, //  10-\/bit monochrome, unsigned, GigE Vision-\/specific packed format.}}
+\DoxyCodeLine{39       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a1c939765b7a08112ae479b0f4d334e28}{Mono12}}                    = 0x01100005, \textcolor{comment}{//  12-\/bit monochrome, unsigned, unpacked format.}}
+\DoxyCodeLine{40       \textcolor{comment}{// Mono12Packed1             = 0x010C0006, //  12-\/bit monochrome, unsigned, GigE Vision-\/specific packed format.}}
+\DoxyCodeLine{41       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a34c41cc1f0312957ac456467c681f66a}{Mono14}}                    = 0x01100025, \textcolor{comment}{//  14-\/bit monochrome, unsigned, unpacked format.}}
+\DoxyCodeLine{42       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aab2f4f7e4448e8c91c89774787a1cc2c}{Mono16}}                    = 0x01100007, \textcolor{comment}{//  16-\/bit monochrome, unsigned, unpacked format.}}
+\DoxyCodeLine{43       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a56f68c9445cd0901e1d6d001e4efc067}{BayerGR8}}                  = 0x01080008, \textcolor{comment}{//   8-\/bit GRBG (green-\/red-\/blue-\/green) Bayer pattern, unsigned, unpacked format.}}
+\DoxyCodeLine{44       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a759e49edd24350e2c9aaeacc6af81759}{BayerRG8}}                  = 0x01080009, \textcolor{comment}{//   8-\/bit RGGB (red-\/green-\/green-\/blue) Bayer pattern, unsigned, unpacked format.}}
+\DoxyCodeLine{45       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a90bd42a79ba5191ed40a8113723e3b1c}{BayerGB8}}                  = 0x0108000A, \textcolor{comment}{//   8-\/bit GBRG (green-\/blue-\/red-\/green) Bayer pattern, unsigned, unpacked format.}}
+\DoxyCodeLine{46       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a5c07bb41050e6b3c2e26d6542996a96f}{BayerBG8}}                  = 0x0108000B, \textcolor{comment}{//   8-\/bit BGGR (blue-\/green-\/green-\/red) Bayer pattern, unsigned, unpacked format.}}
+\DoxyCodeLine{47       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aa88799c1110dd117afdf42203fac1f6d}{BayerGR10}}                 = 0x0110000C, \textcolor{comment}{//  10-\/bit GRBG (green-\/red-\/blue-\/green) Bayer pattern, unsigned, unpacked format.}}
+\DoxyCodeLine{48       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a65055ae551f0e9193def30695fc3453c}{BayerRG10}}                 = 0x0110000D, \textcolor{comment}{//  10-\/bit RGGB (red-\/green-\/green-\/blue) Bayer pattern, unsigned, unpacked format.}}
+\DoxyCodeLine{49       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a201d7f008d5cd72743e109f4767cd158}{BayerGB10}}                 = 0x0110000E, \textcolor{comment}{//  10-\/bit GBRG (green-\/blue-\/red-\/green) Bayer pattern, unsigned, unpacked format.}}
+\DoxyCodeLine{50       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a280230f3568a5b4639d9f75884d75031}{BayerBG10}}                 = 0x0110000F, \textcolor{comment}{//  10-\/bit BGGR (blue-\/green-\/green-\/red) Bayer pattern, unsigned, unpacked format.}}
+\DoxyCodeLine{51       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a49b7655db19a0d2264817b9d9d5b90ff}{BayerGR12}}                 = 0x01100010, \textcolor{comment}{//  12-\/bit GRBG (green-\/red-\/blue-\/green) Bayer pattern, unsigned, unpacked format.}}
+\DoxyCodeLine{52       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a51a44c97c1e81969681a7d255f874f08}{BayerRG12}}                 = 0x01100011, \textcolor{comment}{//  12-\/bit RGGB (red-\/green-\/green-\/blue) Bayer pattern, unsigned, unpacked format.}}
+\DoxyCodeLine{53       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a66a1fae708cb837c6dfd5a0a4ccab97d}{BayerGB12}}                 = 0x01100012, \textcolor{comment}{//  12-\/bit GBRG (green-\/blue-\/red-\/green) Bayer pattern, unsigned, unpacked format.}}
+\DoxyCodeLine{54       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad45a4d6f852fbf8a8f6b3b0a9445cdff}{BayerBG12}}                 = 0x01100013, \textcolor{comment}{//  12-\/bit BGGR (blue-\/green-\/green-\/red) Bayer pattern, unsigned, unpacked format.}}
+\DoxyCodeLine{55       \textcolor{comment}{// BayerGR10Packed1          = 0x010C0026, //  10-\/bit GRBG (green-\/red-\/blue-\/green) Bayer pattern, unsigned, GigE Vision-\/specific packed format.}}
+\DoxyCodeLine{56       \textcolor{comment}{// BayerRG10Packed1          = 0x010C0027, //  10-\/bit RGGB (red-\/green-\/green-\/blue) Bayer pattern, unsigned, GigE Vision-\/specific packed format.}}
+\DoxyCodeLine{57       \textcolor{comment}{// BayerGB10Packed1          = 0x010C0028, //  10-\/bit GBRG (green-\/blue-\/red-\/green) Bayer pattern, unsigned, GigE Vision-\/specific packed format.}}
+\DoxyCodeLine{58       \textcolor{comment}{// BayerBG10Packed1          = 0x010C0029, //  10-\/bit BGGR (blue-\/green-\/green-\/red) Bayer pattern, unsigned, GigE Vision-\/specific packed format.}}
+\DoxyCodeLine{59       \textcolor{comment}{// BayerGR12Packed1          = 0x010C002A, //  12-\/bit GRBG (green-\/red-\/blue-\/green) Bayer pattern, unsigned, GigE Vision-\/specific packed format.}}
+\DoxyCodeLine{60       \textcolor{comment}{// BayerRG12Packed           = 0x010C002B, //  12-\/bit RGGB (red-\/green-\/green-\/blue) Bayer pattern, unsigned, GigE Vision-\/specific packed format.}}
+\DoxyCodeLine{61       \textcolor{comment}{// BayerGB12Packed1          = 0x010C002C, //  12-\/bit GBRG (green-\/blue-\/red-\/green) Bayer pattern, unsigned, GigE Vision-\/specific packed format.}}
+\DoxyCodeLine{62       \textcolor{comment}{// BayerBG12Packed1          = 0x010C002D, //  12-\/bit BGGR (blue-\/green-\/green-\/red) Bayer pattern, unsigned, GigE Vision-\/specific packed format.}}
+\DoxyCodeLine{63       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad5b2e6be4ba9b174aa050b9556cb807f}{BayerGR16}}                 = 0x0110002E, \textcolor{comment}{//  16-\/bit GRBG (green-\/red-\/blue-\/green) Bayer pattern, unsigned, unpacked format.}}
+\DoxyCodeLine{64       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a9f9d0b00f68d6b9819e65f29139d2bf4}{BayerRG16}}                 = 0x0110002F, \textcolor{comment}{//  16-\/bit RGGB (red-\/green-\/green-\/blue) Bayer pattern, unsigned, unpacked format.}}
+\DoxyCodeLine{65       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ae5976562e8db8553d1a347e30a19063b}{BayerGB16}}                 = 0x01100030, \textcolor{comment}{//  16-\/bit GBRG (green-\/blue-\/red-\/green) Bayer pattern, unsigned, unpacked format.}}
+\DoxyCodeLine{66       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aff3c8270edb6f2a4baeb966bdfc5a148}{BayerBG16}}                 = 0x01100031, \textcolor{comment}{//  16-\/bit BGGR (blue-\/green-\/green-\/red) Bayer pattern, unsigned, unpacked format.}}
+\DoxyCodeLine{67       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a165c6379d01617e12de274a3952efa63}{RGB8}}                      = 0x02180014, \textcolor{comment}{//   8-\/bit RGB (red-\/green-\/blue), unsigned, unpacked format.}}
+\DoxyCodeLine{68       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ae764ec5a498470e04dd8b545427203cc}{BGR8}}                      = 0x02180015, \textcolor{comment}{//   8-\/bit BGR (blue-\/green-\/red), unsigned, unpacked format.}}
+\DoxyCodeLine{69       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a2b59bc7441077b655cfe7dfb3b1790dc}{RGBa8}}                     = 0x02200016, \textcolor{comment}{//   8-\/bit RGBa (red-\/green-\/blue-\/alpha), unsigned, unpacked format.}}
+\DoxyCodeLine{70       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07adf676d2654af6c14e72e09576abdcab9}{BGRa8}}                     = 0x02200017, \textcolor{comment}{//   8-\/bit BGRa (blue-\/green-\/red-\/alpha), unsigned, unpacked format.}}
+\DoxyCodeLine{71       \textcolor{comment}{// RGB10                     = 0x02300018, //  10-\/bit RGB (red-\/green-\/blue), unsigned, unpacked format.}}
+\DoxyCodeLine{72       \textcolor{comment}{// BGR10                     = 0x02300019, //  10-\/bit BGR (blue-\/green-\/red), unsigned, unpacked format.}}
+\DoxyCodeLine{73       \textcolor{comment}{// RGB12                     = 0x0230001A, //  12-\/bit RGB (red-\/green-\/blue), unsigned, unpacked format.}}
+\DoxyCodeLine{74       \textcolor{comment}{// BGR12                     = 0x0230001B, //  12-\/bit BGR (blue-\/green-\/red), unsigned, unpacked format.}}
+\DoxyCodeLine{75       \textcolor{comment}{// RGB16                     = 0x02300033, //  16-\/bit RGB (red-\/green-\/blue), unsigned, unpacked format.}}
+\DoxyCodeLine{76       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ae1767a5a7c7fae24cd6436fb0a015083}{RGB10V1Packed1}}            = 0x0220001C, \textcolor{comment}{//  10-\/bit RGB (red-\/green-\/blue), unsigned, GigE Vision-\/specific packed format.}}
+\DoxyCodeLine{77       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07afa967a854da71acb35b554cf29308a4b}{RGB10p32}}                  = 0x0220001D, \textcolor{comment}{//  10-\/bit RGB (red-\/green-\/blue), unsigned, packed format.}}
+\DoxyCodeLine{78       \textcolor{comment}{// RGB12V1Packed1            = 0x02240034, //  12-\/bit RGB (red-\/green-\/blue), unsigned, GigE Vision-\/specific packed format.}}
+\DoxyCodeLine{79       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a115337735e69a0fd2fdd3e8b384d918e}{RGB565p}}                   = 0x02100035, \textcolor{comment}{//  RGB (red 5 bits -\/ green 6 bits -\/ blue 5 bits), unsigned, packed format.}}
+\DoxyCodeLine{80       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07aa44bf8ffb557cbe0fe795312da9c069f}{BGR565p}}                   = 0x02100036, \textcolor{comment}{//  BGR (blue 5 bits – green 6 bits – red 5 bits), unsigned, packed format.}}
+\DoxyCodeLine{81       \textcolor{comment}{// YUV411\_8\_UYYVYY           = 0x020C001E, //   8-\/bit YUV 4:1:1, unsigned, unpacked format.}}
+\DoxyCodeLine{82       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a857930fdbf17cb68c7174ca58a6f7922}{YUV422\_8\_UYVY}}             = 0x0210001F, \textcolor{comment}{//   8-\/bit YUV 4:2:2, unsigned, unpacked format.}}
+\DoxyCodeLine{83       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a6d1f6c3efd52dbfa99221463f9b2d05e}{YUV422\_8}}                  = 0x02100032, \textcolor{comment}{//   8-\/bit YUV 4:2:2, unsigned, unpacked format.}}
+\DoxyCodeLine{84       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad4d1880339c2babc5d0a1bcbef0089f5}{YUV8\_UYV}}                  = 0x02180020, \textcolor{comment}{//   8-\/bit YUV 4:4:4, unsigned, unpacked format.}}
+\DoxyCodeLine{85       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a3f033d70725774e93771d30eecf3144e}{YCbCr8\_CbYCr}}              = 0x0218003A, \textcolor{comment}{//   8-\/bit YCbCr 4:4:4, unsigned, unpacked format.}}
+\DoxyCodeLine{86       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a6c363a6aa52c89ba1f7edcd888520f54}{YCbCr422\_8}}                = 0x0210003B, \textcolor{comment}{//   8-\/bit YCbCr 4:2:2, unsigned, unpacked format.}}
+\DoxyCodeLine{87       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a9c87eb3247a7c906970f3bc27979cd2a}{YCbCr422\_8\_CbYCrY}}         = 0x02100043, \textcolor{comment}{//   8-\/bit YCbCr 4:2:2, unsigned, unpacked format.}}
+\DoxyCodeLine{88       \textcolor{comment}{// YCbCr411\_8\_CbYYCrYY       = 0x020C003C, //   8-\/bit YCbCr 4:1:1, unsigned, unpacked format.}}
+\DoxyCodeLine{89       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a46835ed49da6f04541e7b2a4d6a1befe}{YCbCr601\_8\_CbYCr}}          = 0x0218003D, \textcolor{comment}{//   8-\/bit YCbCr 4:4:4, unsigned, unpacked format. This pixel format uses the color space specified in ITU-\/R BT.601.}}
+\DoxyCodeLine{90       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a9e7352c7ccedf0169ed1e7273a8e8882}{YCbCr601\_422\_8}}            = 0x0210003E, \textcolor{comment}{//   8-\/bit YCbCr 4:2:2, unsigned, unpacked format. This pixel format uses the color space specified in ITU-\/R BT.601.}}
+\DoxyCodeLine{91       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad05b9b43f4432a6f0a64bcc6bb85c4f1}{YCbCr601\_422\_8\_CbYCrY}}     = 0x02100044, \textcolor{comment}{//   8-\/bit YCbCr 4:2:2, unsigned, unpacked format. This pixel format uses the color space specified in ITU-\/R BT.601.}}
+\DoxyCodeLine{92       \textcolor{comment}{// YCbCr601\_411\_8\_CbYYCrYY   = 0x020C003F, //   8-\/bit YCbCr 4:1:1, unsigned, unpacked format. This pixel format uses the color space specified in ITU-\/R BT.601.}}
+\DoxyCodeLine{93       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ad8de4690d1eb08f953ee2aba321d0e46}{YCbCr709\_8\_CbYCr}}          = 0x02180040, \textcolor{comment}{//   8-\/bit YCbCr 4:4:4, unsigned, unpacked format. This pixel format uses the color space specified in ITU-\/R BT.709.}}
+\DoxyCodeLine{94       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a44c80e863e23a7ef2e0deea47a818290}{YCbCr709\_422\_8}}            = 0x02100041, \textcolor{comment}{//   8-\/bit YCbCr 4:2:2, unsigned, unpacked format. This pixel format uses the color space specified in ITU-\/R BT.709.}}
+\DoxyCodeLine{95       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07ac84db5b3e65c101288604ea51c742df1}{YCbCr709\_422\_8\_CbYCrY}}     = 0x02100045, \textcolor{comment}{//   8-\/bit YCbCr 4:2:2, unsigned, unpacked format. This pixel format uses the color space specified in ITU-\/R BT.709.}}
+\DoxyCodeLine{96       \textcolor{comment}{// YCbCr709\_411\_8\_CbYYCrYY   = 0x020C0042, //   8-\/bit YCbCr 4:1:1, unsigned, unpacked format. This pixel format uses the color space specified in ITU-\/R BT.709.}}
+\DoxyCodeLine{97       \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07a82e3304dc380a00d357f71498cd35ed8}{RGB8\_Planar}}               = 0x02180021, \textcolor{comment}{//   8-\/bit RGB (red-\/green-\/blue), unsigned, unpacked, planar format where all color planes are transmitted in a multi-\/part payload block (recommended) or each color plane is transmitted on a different stream channel.}}
+\DoxyCodeLine{98       \textcolor{comment}{// RGB10\_Planar              = 0x02300022, //  10-\/bit RGB (red-\/green-\/blue), unsigned, unpacked, planar format where all color planes are transmitted in a multi-\/part payload block (recommended) or each color plane is transmitted on a different stream channel.}}
+\DoxyCodeLine{99       \textcolor{comment}{// RGB12\_Planar              = 0x02300023, //  12-\/bit RGB (red-\/green-\/blue), unsigned, unpacked, planar format where all color planes are transmitted in a multi-\/part payload block (recommended) or each color plane is transmitted on a different stream channel.}}
+\DoxyCodeLine{100       \textcolor{comment}{// RGB16\_Planar              = 0x02300024, //  16-\/bit RGB (red-\/green-\/blue), unsigned, unpacked, planar format where all color planes are transmitted in a multi-\/part payload block (recommended) or each color plane is transmitted on a different stream channel.}}
+\DoxyCodeLine{101     \};}
+\DoxyCodeLine{102     \textcolor{comment}{// clang-\/format on}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{106     \textcolor{keyword}{static} \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} \mbox{\hyperlink{classudmaio_1_1_frame_format_a63cb1f706b019da9151826d2ed6486ac}{pix\_fmt\_from\_str}}(std::string pix\_fmt\_str);}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{110     \textcolor{keyword}{static} std::string \mbox{\hyperlink{classudmaio_1_1_frame_format_a8322dab4351bb3cb195c0d1529409f11}{pix\_fmt\_to\_str}}(\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} pix\_fmt);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \mbox{\hyperlink{classudmaio_1_1_frame_format_a33c5553c8ca80b559c948e252081e8b7}{FrameFormat}}();}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{118     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a1af008417f1227fc2041fab9ec774e25}{set\_format}}(dim\_t dim, uint16\_t bytes\_per\_pixel, uint8\_t word\_width=4);}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{124     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a1af008417f1227fc2041fab9ec774e25}{set\_format}}(dim\_t dim, std::string pix\_fmt\_str, uint8\_t word\_width=4);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{130     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a1af008417f1227fc2041fab9ec774e25}{set\_format}}(dim\_t dim, \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} pix\_fmt, uint8\_t word\_width=4);}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{134     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_af78a310fe80e5084878f9412f1ab0eaf}{set\_dim}}(dim\_t dim);}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{138     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a6d704637400e2d82f84f87cbe9dd77f9}{set\_bpp}}(uint16\_t bytes\_per\_pix);}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{142     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a17c7e6774e5f91e00dc7882178195824}{set\_pix\_fmt}}(\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} pix\_fmt);}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{146     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a09acb3d1e77b8845ade3fc38dc58bc13}{set\_word\_width}}(uint8\_t word\_width);}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     dim\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_abb5072ef4de9537132ef71c2dcaaa7d4}{get\_dim}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{149     \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} \mbox{\hyperlink{classudmaio_1_1_frame_format_adbb8e87500fa2a7570799293b6c59526}{get\_pixel\_format}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{150     std::string \mbox{\hyperlink{classudmaio_1_1_frame_format_ace2a07558593adf85147f628040e38d8}{get\_pixel\_format\_str}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{151     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_a398941f7529b1d64c4cddc076fae8ae4}{get\_bytes\_per\_pixel}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{152     uint8\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_a37d5a9f0e105cc5777b1f082177b116b}{get\_word\_width}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{153     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_afdeadf1f6d613f391f67168b3d0254c4}{get\_pixel\_per\_word}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{154     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_a77a5d86afa24fc5beb6da498594273ad}{get\_hsize}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{155     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classudmaio_1_1_frame_format_a324ee0a859d7032a6470d016b31440a8}{get\_frm\_size}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157   \textcolor{keyword}{private}:}
+\DoxyCodeLine{158     \textcolor{keyword}{static} \textcolor{keyword}{const} std::unordered\_map<PixelFormat, std::string> \mbox{\hyperlink{classudmaio_1_1_frame_format_a18b01460334e71e6dde3df175ee474e1}{\_pxfmt\_enum\_to\_str\_tab}};}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_a8135a2a3104d9edb2d6934840fea7880}{update\_frm\_dim}}(\mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\_t}} dim);}
+\DoxyCodeLine{161     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_aa9aa449c52578904b6b8b4509911ce71}{update\_bpp}}(uint16\_t bytes\_per\_pix);}
+\DoxyCodeLine{162     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_afe86bf67ef49e3fa64314cad1b7e4771}{update\_px\_fmt}}(\mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} pix\_fmt);}
+\DoxyCodeLine{163     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_frame_format_af25cb5651410780ff69b96a05447f113}{update\_hsize}}();}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165     \textcolor{comment}{// Frame dimensions}}
+\DoxyCodeLine{166     \mbox{\hyperlink{structudmaio_1_1_frame_format_1_1dim__t}{dim\_t}} \mbox{\hyperlink{classudmaio_1_1_frame_format_ab13cfe6639cdcecd204a9158d2eceec1}{\_dim}};}
+\DoxyCodeLine{168     \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{PixelFormat}} \mbox{\hyperlink{classudmaio_1_1_frame_format_abe566be3949b3de67ba92d23ce00573c}{\_pix\_fmt}};}
+\DoxyCodeLine{170     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_ab1ee4b7bf2ef3688eacfadc29e96da4e}{\_bpp}};}
+\DoxyCodeLine{172     uint8\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_a95b7bf9c6406053d1f6314eea02a3939}{\_word\_width}};}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_af8ddffa8f8730c9a8762cd96f6e40c7d}{\_pix\_per\_word}};}
+\DoxyCodeLine{176     uint16\_t \mbox{\hyperlink{classudmaio_1_1_frame_format_aa0abe561f3edc308e2decc1f9a7b37d4}{\_hsize}};}
+\DoxyCodeLine{177 \};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 std::ostream\& \mbox{\hyperlink{namespaceudmaio_af07b25049ad33f69ea022fd1b09a9b63}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classudmaio_1_1_frame_format_a3509f5d9dfb0173e03ac870041c5db07}{FrameFormat::PixelFormat}} px\_fmt);}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 std::ostream\& \mbox{\hyperlink{namespaceudmaio_af07b25049ad33f69ea022fd1b09a9b63}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classudmaio_1_1_frame_format}{FrameFormat}}\& frm\_fmt);}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}
