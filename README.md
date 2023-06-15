@@ -75,6 +75,16 @@ or (to install the library in [editable mode](https://pip.pypa.io/en/latest/cli/
 pip3 install --use-feature=in-tree-build -e .
 ```
 
+### `.pyi` update
+
+To update the `.pyi` stubs after changing the binding:
+
+```bash
+cd pyudmaio
+python3 -m pybind11_stubgen pyudmaio --no-setup-py -o /tmp
+cp -a /tmp/pyudmaio-stubs/* pyudmaio
+```
+
 ## Usage example
 
 Available in the folder `example` is a small example, which demonstrates how

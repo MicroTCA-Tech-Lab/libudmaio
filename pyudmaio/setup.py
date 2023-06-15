@@ -71,5 +71,8 @@ setup(
         "build_ext": build_ext
     },
     packages=find_packages(exclude=['tests']),
+    package_data={
+        package: ["**/*.pyi"] for package in find_packages(exclude=['tests'])
+    },
     zip_safe=False,
 )

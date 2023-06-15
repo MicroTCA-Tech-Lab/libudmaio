@@ -15,10 +15,10 @@
 #include "DataHandlerPython.hpp"
 // #include "udmaio/FpgaMemBufferOverAxi.hpp"
 #include "udmaio/FpgaMemBufferOverXdma.hpp"
+#include "udmaio/FrameFormat.hpp"
 #include "udmaio/Logging.hpp"
 #include "udmaio/UDmaBuf.hpp"
 #include "udmaio/UioConfig.hpp"
-#include "udmaio/FrameFormat.hpp"
 
 namespace py = pybind11;
 
@@ -46,6 +46,8 @@ PYBIND11_MODULE(binding, m) {
         .def_readwrite("addr", &udmaio::UioRegion::addr)
         .def_readwrite("size", &udmaio::UioRegion::size);
 
+    py::class_<udmaio::HwAccessor, std::shared_ptr<udmaio::HwAccessor>>(m, "HwAccessor");
+
     py::class_<udmaio::UioDeviceLocation>(m, "UioDeviceLocation")
         .def(py::init<std::string, udmaio::UioRegion, std::string>(),
              py::arg("uioname"),
@@ -57,8 +59,6 @@ PYBIND11_MODULE(binding, m) {
         .def_readwrite("xdma_region", &udmaio::UioDeviceLocation::xdma_region)
         .def_readwrite("xdma_evt_dev", &udmaio::UioDeviceLocation::xdma_evt_dev)
         .def("hw_acc", &udmaio::UioDeviceLocation::hw_acc);
-
-    py::class_<udmaio::HwAccessor, std::shared_ptr<udmaio::HwAccessor>>(m, "HwAccessor");
 
     py::class_<udmaio::UioConfigBase, std::shared_ptr<udmaio::UioConfigBase>>(m, "ConfigBase")
         .def("hw_acc", &udmaio::UioConfigBase::hw_acc);
@@ -161,9 +161,27 @@ PYBIND11_MODULE(binding, m) {
         .def_readwrite("height", &udmaio::FrameFormat::dim_t::height);
 
     frame_format.def(py::init<>())
-        .def("set_format", static_cast<void (udmaio::FrameFormat::*)(udmaio::FrameFormat::dim_t, uint16_t, uint8_t)>(&udmaio::FrameFormat::set_format), py::arg("dim"), py::arg("bytes_per_pixel"), py::arg("word_width") = 4)
-        .def("set_format", static_cast<void (udmaio::FrameFormat::*)(udmaio::FrameFormat::dim_t, std::string, uint8_t)>(&udmaio::FrameFormat::set_format), py::arg("dim"), py::arg("pix_fmt_str"), py::arg("word_width") = 4)
-        .def("set_format", static_cast<void (udmaio::FrameFormat::*)(udmaio::FrameFormat::dim_t, udmaio::FrameFormat::PixelFormat, uint8_t)>(&udmaio::FrameFormat::set_format), py::arg("dim"), py::arg("pix_fmt"), py::arg("word_width") = 4)
+        .def("set_format",
+             static_cast<void (
+                 udmaio::FrameFormat::*)(udmaio::FrameFormat::dim_t, uint16_t, uint8_t)>(
+                 &udmaio::FrameFormat::set_format),
+             py::arg("dim"),
+             py::arg("bytes_per_pixel"),
+             py::arg("word_width") = 4)
+        .def("set_format",
+             static_cast<void (
+                 udmaio::FrameFormat::*)(udmaio::FrameFormat::dim_t, std::string, uint8_t)>(
+                 &udmaio::FrameFormat::set_format),
+             py::arg("dim"),
+             py::arg("pix_fmt_str"),
+             py::arg("word_width") = 4)
+        .def("set_format",
+             static_cast<void (udmaio::FrameFormat::*)(udmaio::FrameFormat::dim_t,
+                                                       udmaio::FrameFormat::PixelFormat,
+                                                       uint8_t)>(&udmaio::FrameFormat::set_format),
+             py::arg("dim"),
+             py::arg("pix_fmt"),
+             py::arg("word_width") = 4)
         .def("set_dim", &udmaio::FrameFormat::set_dim)
         .def("set_bpp", &udmaio::FrameFormat::set_bpp)
         .def("set_pix_fmt", &udmaio::FrameFormat::set_pix_fmt)
