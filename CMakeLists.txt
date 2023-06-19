@@ -72,7 +72,6 @@ if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16.0")
 endif()
 
 # cpp example tests
-
 if(BUILD_TESTING)
     file(GLOB TEST_SOURCES "example/demo_cpp/src/*.cpp")
     file(GLOB EXAMPLE_MAIN "example/demo_cpp/src/axi_dma_demo.cpp")
@@ -91,3 +90,16 @@ if(BUILD_TESTING)
         add_test(NAME ${test_basename} COMMAND ${test_basename})
     endforeach()
 endif()
+
+# Create debian package containing library
+set(CPACK_GENERATOR "DEB")
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Patrick Huesmann <patrick.huesmann@desy.de>")
+set(CPACK_DEBIAN_PACKAGE_HOMEPAGE "https://github.com/MicroTCA-Tech-Lab/libudmaio")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "")
+set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Userspace I/O library for Xilinx AXI S2MM DMA ")
+set(CPACK_DEBIAN_PACKAGE_SECTION "contrib/devel")
+set(CPACK_PACKAGE_NAME "libudmaio")
+set(CPACK_PACKAGE_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
+set(CPACK_PACKAGE_VERSION_MINOR ${PROJECT_VERSION_MINOR})
+set(CPACK_PACKAGE_VERSION_PATCH ${PROJECT_VERSION_PATCH})
+include(CPack)
