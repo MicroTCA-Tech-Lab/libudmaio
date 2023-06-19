@@ -44,9 +44,13 @@ class UioDeviceLocation {
 
     static std::unique_ptr<UioConfigBase> _link_cfg;
 
+    /// Override the regular hardware accessor (for testing purposes)
+    HwAccessorPtr _hw_acc_override;
+
   public:
     UioDeviceLocation(std::string uioname, UioRegion xdmaregion, std::string xdmaevtdev = "")
-        : uio_name(uioname), xdma_region(xdmaregion), xdma_evt_dev(xdmaevtdev){};
+        : uio_name(uioname), xdma_region(xdmaregion), xdma_evt_dev(xdmaevtdev) {}
+    UioDeviceLocation(HwAccessorPtr hw_acc_override) : _hw_acc_override{hw_acc_override} {}
 
     /// Device name (from device tree) for access through UIO
     std::string uio_name;
@@ -65,8 +69,6 @@ class UioDeviceLocation {
     static void set_link_xdma(std::string xdma_path, uintptr_t pcie_offs, bool x7_series_mode);
 
     HwAccessorPtr hw_acc() const;
-
-    operator HwAccessorPtr() const;
 };
 
 /// Base class for HwAccessor creation

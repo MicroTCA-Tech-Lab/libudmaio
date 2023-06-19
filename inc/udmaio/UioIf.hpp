@@ -36,7 +36,7 @@ class UioIf : private boost::noncopyable {
     friend class RegAccessorBase;
 
   public:
-    UioIf(std::string name, HwAccessorPtr hw);
+    UioIf(std::string name, UioDeviceLocation dev_loc);
 
     virtual ~UioIf();
 

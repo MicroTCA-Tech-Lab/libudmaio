@@ -49,7 +49,7 @@ class UioTrafficGen : public UioIf {
     RegAccessor<ExtTrLength, 0x50> extTrLength{this};
 
   public:
-    UioTrafficGen(HwAccessorPtr hw) : UioIf("UioTrafficGen", hw) {}
+    UioTrafficGen(UioDeviceLocation dev_loc) : UioIf("UioTrafficGen", dev_loc) {}
 
     void start(uint16_t nr_pkts, uint32_t pkt_size, uint16_t pkt_pause);
     void stop();

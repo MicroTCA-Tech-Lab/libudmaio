@@ -47,14 +47,15 @@ void UioDeviceLocation::set_link_xdma(std::string xdma_path,
 }
 
 HwAccessorPtr UioDeviceLocation::hw_acc() const {
+    if (_hw_acc_override) {
+        // If a hardware accessor is set (e.g. for testing), return it in place of the regular one
+        return _hw_acc_override;
+    }
     if (!_link_cfg) {
         throw std::runtime_error("UioIf link type not set (use setLinkAxi() or setLinkXdma())");
     }
+    // Create a hardware accessor for the actual UioConfig.
     return _link_cfg->hw_acc(*this);
-}
-
-UioDeviceLocation::operator HwAccessorPtr() const {
-    return hw_acc();
 }
 
 /** @brief gets a number of UIO device based on the name

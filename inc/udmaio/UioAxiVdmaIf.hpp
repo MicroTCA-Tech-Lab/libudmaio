@@ -27,7 +27,7 @@ class UioAxiVdmaIf : public UioIf, AxiVdmaBlock {
     const bool _long_addrs;
 
   public:
-    UioAxiVdmaIf(HwAccessorPtr dev_loc, bool long_addrs = false)
+    UioAxiVdmaIf(UioDeviceLocation dev_loc, bool long_addrs = false)
         : UioIf("UioAxiVdmaIf", dev_loc), AxiVdmaBlock(this), _long_addrs{long_addrs} {
         enable_debug(true);
     }

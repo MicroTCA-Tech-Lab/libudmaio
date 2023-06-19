@@ -25,7 +25,7 @@ class UioGpioStatus : public UioIf {
     RegAccessor<GpioData, 0> gpio{this};
 
   public:
-    UioGpioStatus(HwAccessorPtr hw) : UioIf("UioGpioStatus", hw) {}
+    UioGpioStatus(UioDeviceLocation dev_loc) : UioIf("UioGpioStatus", dev_loc) {}
 
     bool is_ddr4_init_calib_complete() const { return gpio.rd().ddr4_init_calib_complete; }
 };

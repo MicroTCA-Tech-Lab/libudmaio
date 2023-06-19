@@ -8,8 +8,9 @@
 
 BOOST_AUTO_TEST_CASE(UioGpioStatus_readback) {
     udmaio::HwAccessorPtr mock_hw = std::make_shared<udmaio::HwAccessorMock>(4096);
+    udmaio::UioDeviceLocation dev_loc{mock_hw};
 
-    auto gpio_stat = UioGpioStatus(mock_hw);
+    auto gpio_stat = UioGpioStatus(dev_loc);
     gpio_stat.enable_debug(true);
 
     mock_hw->_wr32(0, 0);

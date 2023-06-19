@@ -2,7 +2,7 @@
 
 namespace udmaio {
 
-UioIf::UioIf(std::string name, HwAccessorPtr hw) : _hw{hw}, _lg{_hw->_lg} {
+UioIf::UioIf(std::string name, UioDeviceLocation dev_loc) : _hw{dev_loc.hw_acc()}, _lg{_hw->_lg} {
     _lg.channel(name);
 }
 

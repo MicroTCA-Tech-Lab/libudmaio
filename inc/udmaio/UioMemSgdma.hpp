@@ -61,7 +61,7 @@ class UioMemSgdma : public UioIf {
     void write_cyc_mode(const std::vector<UioRegion>& dst_bufs);
 
   public:
-    UioMemSgdma(HwAccessorPtr hw) : UioIf("UioMemSgdma", hw) {}
+    UioMemSgdma(UioDeviceLocation dev_loc) : UioIf("UioMemSgdma", dev_loc) {}
 
     /// @brief Initialize SGDMA descriptors
     /// @param mem Memory receiving the SGDMA data

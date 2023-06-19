@@ -8,10 +8,11 @@
 
 struct Fx {
     udmaio::HwAccessorPtr hw;
+    udmaio::UioDeviceLocation dev_loc;
 
     UioTrafficGen traffic_gen;
 
-    Fx() : hw{std::make_shared<udmaio::HwAccessorMock>(4096)}, traffic_gen{hw} {
+    Fx() : hw{std::make_shared<udmaio::HwAccessorMock>(4096)}, dev_loc{hw}, traffic_gen{dev_loc} {
         traffic_gen.enable_debug(true);
     }
     ~Fx() {}
