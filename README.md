@@ -81,8 +81,8 @@ To update the `.pyi` stubs after changing the binding:
 
 ```bash
 cd pyudmaio
-python3 -m pybind11_stubgen pyudmaio --no-setup-py -o /tmp
-cp -a /tmp/pyudmaio-stubs/* pyudmaio
+python3 -m pybind11_stubgen pyudmaio --no-setup-py -o /tmp \
+&& cp -a /tmp/pyudmaio-stubs/* pyudmaio
 ```
 
 ## Usage example

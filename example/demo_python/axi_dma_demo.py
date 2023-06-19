@@ -128,14 +128,14 @@ def main():
     else:
         UioDeviceLocation.set_link_axi()
 
-    g = GpioStatus(consts.AXI_GPIO_STATUS.hw_acc())
+    g = GpioStatus(consts.AXI_GPIO_STATUS)
     if not g.is_ddr4_init_calib_complete():
         raise RuntimeError('DDR4 init calib is not complete')
 
     print('Creating DMA handler')
 
-    axi_dma = UioAxiDmaIf(consts.AXI_DMA_0.hw_acc())
-    mem_sgdma = UioMemSgdma(consts.BRAM_CTRL_0.hw_acc())
+    axi_dma = UioAxiDmaIf(consts.AXI_DMA_0)
+    mem_sgdma = UioMemSgdma(consts.BRAM_CTRL_0)
     if args.xdma:
         udmabuf = FpgaMemBufferOverXdma(
             args.dev_path, consts.FPGA_MEM_PHYS_ADDR)
@@ -143,7 +143,7 @@ def main():
         udmabuf = UDmaBuf()
 
     data_handler = DataHandler(axi_dma, mem_sgdma, udmabuf)
-    traffic_gen = TrafficGen(consts.AXI_TRAFFIC_GEN_0.hw_acc())
+    traffic_gen = TrafficGen(consts.AXI_TRAFFIC_GEN_0)
 
     print('Starting DMA')
     NR_BUFFERS = 32

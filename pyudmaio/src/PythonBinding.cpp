@@ -77,7 +77,7 @@ PYBIND11_MODULE(binding, m) {
              py::arg("x7_series_mode") = bool(false));
 
     py::class_<udmaio::UioIf, UioIf_PyOverrideHelper, std::shared_ptr<udmaio::UioIf>>(m, "UioIf")
-        .def(py::init<std::string, udmaio::HwAccessorPtr>())
+        .def(py::init<std::string, udmaio::UioDeviceLocation>())
         .def("_rd32", &UioIf_PyPublishHelper::_rd32)
         .def("_wr32", &UioIf_PyPublishHelper::_wr32)
         .def("arm_interrupt", &UioIf_PyPublishHelper::arm_interrupt)
@@ -94,7 +94,7 @@ PYBIND11_MODULE(binding, m) {
                udmaio::DmaBufferAbstract,
                udmaio::UioIf,
                std::shared_ptr<udmaio::FpgaMemBufferOverAxi>>(m, "FpgaMemBufferOverAxi")
-        .def(py::init<udmaio::HwAccessorPtr>());
+        .def(py::init<udmaio::UioDeviceLocation>());
 #endif
 
     py::class_<udmaio::FpgaMemBufferOverXdma,
@@ -110,12 +110,12 @@ PYBIND11_MODULE(binding, m) {
     py::class_<udmaio::UioAxiDmaIf, udmaio::UioIf, std::shared_ptr<udmaio::UioAxiDmaIf>>(
         m,
         "UioAxiDmaIf")
-        .def(py::init<udmaio::HwAccessorPtr>());
+        .def(py::init<udmaio::UioDeviceLocation>());
 
     py::class_<udmaio::UioMemSgdma, udmaio::UioIf, std::shared_ptr<udmaio::UioMemSgdma>>(
         m,
         "UioMemSgdma")
-        .def(py::init<udmaio::HwAccessorPtr>())
+        .def(py::init<udmaio::UioDeviceLocation>())
         .def("print_descs", &udmaio::UioMemSgdma::print_descs);
 
     py::class_<udmaio::DataHandlerPython> data_handler(m, "DataHandler");
