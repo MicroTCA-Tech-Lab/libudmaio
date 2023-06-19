@@ -10,19 +10,27 @@ class UioReg(object):
         self.dict = {}
         self.intf = intf
         self.offs = offs
-        bitfield = ''.join(list(zip(*fields))[1])
-        if bitstruct.calcsize(bitfield) != 32:
-            raise RuntimeError('UioReg: Bitfield must be 32 bits in size')
-        names = list(zip(*fields))[0]
-        self.bs = bitstruct.compile(bitfield, names=names)
-        self.val = 0
+        if fields is not None:
+            bitfield = ''.join(list(zip(*fields))[1])
+            if bitstruct.calcsize(bitfield) != 32:
+                raise RuntimeError('UioReg: Bitfield must be 32 bits in size')
+            names = list(zip(*fields))[0]
+            self.bs = bitstruct.compile(bitfield, names=names)
+            self.val = 0
+        else:
+            self.bs = None
 
     def rd(self):
-        self.val = self.intf._rd32(self.offs)
-        return self
+        val = self.intf._rd32(self.offs)
+        if self.bs is not None:
+            self.val = val
+        return val
 
-    def wr(self):
-        self.intf._wr32(self.offs, self.val)
+    def wr(self, val = None):
+        if val is not None:
+            self.intf._wr32(self.offs, val)
+        else:
+            self.intf._wr32(self.offs, self.val)
 
     def __getattr__(self, name):
         if name != 'dict' and name in self.dict:
