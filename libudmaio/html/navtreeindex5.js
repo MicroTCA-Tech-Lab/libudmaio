@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"structudmaio_1_1_logger.html":[1,0,2,12],
+"structudmaio_1_1_logger.html":[0,0,2,12],
 "structudmaio_1_1_logger.html#a1779913e9d83c27fa0d7ea1ff056b403":[0,0,2,12,4],
 "structudmaio_1_1_logger.html#a1779913e9d83c27fa0d7ea1ff056b403":[1,0,2,12,4],
 "structudmaio_1_1_logger.html#a9d09aa86a1082b58719c6f2d7ba84660":[1,0,2,12,0],

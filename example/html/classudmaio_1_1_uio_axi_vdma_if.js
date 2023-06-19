@@ -1,6 +1,6 @@
 var classudmaio_1_1_uio_axi_vdma_if =
 [
-    [ "UioAxiVdmaIf", "classudmaio_1_1_uio_axi_vdma_if.html#ace41c4bcd1eb2adb9549498500c22dbf", null ],
+    [ "UioAxiVdmaIf", "classudmaio_1_1_uio_axi_vdma_if.html#a6167f940e67753881aade9b8075c569d", null ],
     [ "autodetect_num_frmbufs", "classudmaio_1_1_uio_axi_vdma_if.html#a735e7ce8b104a248f8e99cc2e694b05c", null ],
     [ "check_for_errors", "classudmaio_1_1_uio_axi_vdma_if.html#af57e3c37d8e49fd81f05a73b4f54d28b", null ],
     [ "config", "classudmaio_1_1_uio_axi_vdma_if.html#a689c9d2140042c94f887b444cf531a50", null ],
