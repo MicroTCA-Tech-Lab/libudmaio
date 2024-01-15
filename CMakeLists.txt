@@ -95,7 +95,7 @@ endif()
 set(CPACK_GENERATOR "DEB")
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Patrick Huesmann <patrick.huesmann@desy.de>")
 set(CPACK_DEBIAN_PACKAGE_HOMEPAGE "https://github.com/MicroTCA-Tech-Lab/libudmaio")
-set(CPACK_DEBIAN_PACKAGE_DEPENDS "libboost-log")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "libboost-log-dev") # use -dev b/c it's independent of package version
 set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Userspace I/O library for Xilinx AXI S2MM DMA ")
 set(CPACK_DEBIAN_PACKAGE_SECTION "contrib/devel")
 set(CPACK_PACKAGE_NAME "libudmaio")
