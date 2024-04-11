@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(libudmaio VERSION 1.3.1)
+project(libudmaio VERSION 1.3.2)
 
 include(CTest)
 
