@@ -86,8 +86,7 @@ PYBIND11_MODULE(binding, m) {
     py::class_<udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::DmaBufferAbstract>>(
         m,
         "DmaBufferAbstract")
-        .def("get_phys_addr", &udmaio::DmaBufferAbstract::get_phys_addr)
-        .def("get_phys_size", &udmaio::DmaBufferAbstract::get_phys_size);
+        .def("get_phys_region", &udmaio::DmaBufferAbstract::get_phys_region);
 
 #if 0  // FIXME
     py::class_<udmaio::FpgaMemBufferOverAxi,
