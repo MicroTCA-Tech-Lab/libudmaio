@@ -26,13 +26,9 @@ class DmaBufferAbstract : private boost::noncopyable {
     virtual void copy_from_buf(uint8_t* dest, const UioRegion& buf_info) const = 0;
 
   public:
-    /// @brief Get physical address
-    /// @return Physical address of DMA data buffer
-    virtual uintptr_t get_phys_addr() const = 0;
-
-    /// @brief Get buffer size
-    /// @return Size of DMA data buffer
-    virtual uintptr_t get_phys_size() const = 0;
+    /// @brief Get physical region
+    /// @return Physical address and size of DMA data buffer
+    virtual UioRegion get_phys_region() const = 0;
 
     /// @brief Append received DMA data to vector
     /// @param buf_info Memory region of DMA buffer

@@ -2,6 +2,7 @@
 /pyudmaio/build*
 /pyudmaio/pyudmaio/*.so
 /.vscode
+/.cache
 *.pyc
 *.egg-info
 

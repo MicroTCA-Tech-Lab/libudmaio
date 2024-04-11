@@ -25,11 +25,9 @@ namespace udmaio {
 /// DMA data buffer accessed over AXI/UIO, described w/ explicit address & size
 class FpgaMemBufferOverAxi : public DmaBufferAbstract, public UioIf {
   public:
-    FpgaMemBufferOverAxi(UioDeviceLocation dev_loc) : UioIf("FpgaMemBufferOverAxi", hw) {}
+    FpgaMemBufferOverAxi(UioDeviceLocation dev_loc) : UioIf("FpgaMemBufferOverAxi", dev_loc) {}
 
-    uintptr_t get_phys_addr() const override { return _region.addr; }
-
-    uintptr_t get_phys_size() const override { return _region.size; }
+    UioRegion get_phys_region() const override { return _hw->get_phys_region(); }
 
   protected:
     void copy_from_buf(uint8_t* dest, const UioRegion& buf_info) const override {
@@ -38,8 +36,8 @@ class FpgaMemBufferOverAxi : public DmaBufferAbstract, public UioIf {
             << buf_info.addr << std::dec;
         BOOST_LOG_SEV(_lg, bls::trace)
             << "FpgaMemBufferOverAxi: append_from_buf: buf_info.size = " << buf_info.size;
-        uintptr_t mmap_addr = buf_info.addr - _region.addr;
-        std::memcpy(dest, static_cast<uint8_t*>(_mem) + mmap_addr, buf_info.size);
+        uintptr_t mmap_addr = buf_info.addr - get_phys_region().addr;
+        std::memcpy(dest, static_cast<uint8_t*>(_hw->get_virt_mem()) + mmap_addr, buf_info.size);
     }
 };
 

@@ -13,6 +13,7 @@
 
 #include "DmaBufferAbstract.hpp"
 #include "Logging.hpp"
+#include "udmaio/UioConfig.hpp"
 
 namespace udmaio {
 
@@ -34,8 +35,7 @@ class UDmaBuf : public DmaBufferAbstract, public Logger {
 
     virtual ~UDmaBuf();
 
-    uintptr_t get_phys_addr() const override;
-    uintptr_t get_phys_size() const override;
+    UioRegion get_phys_region() const override;
 };
 
 }  // namespace udmaio

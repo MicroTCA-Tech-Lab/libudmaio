@@ -68,12 +68,8 @@ UDmaBuf::~UDmaBuf() {
     ::close(_fd);
 }
 
-uintptr_t UDmaBuf::get_phys_addr() const {
-    return _phys.addr;
-}
-
-uintptr_t UDmaBuf::get_phys_size() const {
-    return _phys.size;
+UioRegion UDmaBuf::get_phys_region() const {
+    return _phys;
 }
 
 void UDmaBuf::copy_from_buf(uint8_t* dest, const UioRegion& buf_info) const {

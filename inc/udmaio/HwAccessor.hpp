@@ -109,7 +109,8 @@ class HwAccessor : public Logger, private boost::noncopyable {
     virtual void arm_interrupt();
     virtual uint32_t wait_for_interrupt();
     virtual int get_fd_int() const { return -1; }
-    virtual uintptr_t get_phys_addr() const { return 0; }
+    virtual UioRegion get_phys_region() const { return {0, 0}; }
+    virtual void* get_virt_mem() const { return nullptr; }
 };
 
 // Base class for mmap'ed hardware access
@@ -216,7 +217,8 @@ class HwAccessorMmap : public HwAccessor {
     }
 
   public:
-    uintptr_t get_phys_addr() const final override { return _region.addr; }
+    UioRegion get_phys_region() const final override { return _region; }
+    void* get_virt_mem() const final override { return _mem; }
 };
 
 // Hardware accessor for XDMA. Can support either 32 or 64 bit access

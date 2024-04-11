@@ -11,7 +11,7 @@
 
 #include "udmaio/UioMemSgdma.hpp"
 
-#include <bitset>
+#include <cstdint>
 
 namespace udmaio {
 
@@ -19,11 +19,12 @@ void UioMemSgdma::write_cyc_mode(const std::vector<UioRegion>& dst_bufs) {
     _nr_cyc_desc = dst_bufs.size();
     _next_readable_buf = 0;
     size_t i = 0;
+
     for (auto dst_buf : dst_bufs) {
         BOOST_LOG_SEV(_lg, bls::trace)
             << "dest buf addr = 0x" << std::hex << dst_buf.addr << std::dec;
 
-        uintptr_t nxtdesc = _hw->get_phys_addr() + ((i + 1) % _nr_cyc_desc) * DESC_ADDR_STEP;
+        uintptr_t nxtdesc = get_first_desc_addr() + ((i + 1) % _nr_cyc_desc) * DESC_ADDR_STEP;
 
         S2mmDesc desc{
             .nxtdesc = nxtdesc,
@@ -47,7 +48,7 @@ void UioMemSgdma::init_buffers(DmaBufferAbstract& mem, size_t num_buffers, size_
     std::vector<UioRegion> dst_bufs;
     for (size_t i = 0; i < num_buffers; i++) {
         dst_bufs.push_back({
-            .addr = mem.get_phys_addr() + i * buf_size,
+            .addr = mem.get_phys_region().addr + i * buf_size,
             .size = buf_size,
         });
     };
@@ -84,7 +85,7 @@ void UioMemSgdma::print_descs() const {
 }
 
 uintptr_t UioMemSgdma::get_first_desc_addr() const {
-    return _hw->get_phys_addr();
+    return _hw->get_phys_region().addr;
 }
 
 std::ostream& operator<<(std::ostream& os, const UioRegion& buf_info) {
