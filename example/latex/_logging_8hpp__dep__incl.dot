@@ -22,6 +22,7 @@ digraph "Logging.hpp"
   Node8 [label="UioIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8hpp.html",tooltip=" "];
   Node8 -> Node9 [dir="back",color="steelblue1",style="solid"];
   Node9 [label="FpgaMemBufferOverAxi.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_fpga_mem_buffer_over_axi_8hpp.html",tooltip=" "];
+  Node9 -> Node5 [dir="back",color="steelblue1",style="solid"];
   Node8 -> Node10 [dir="back",color="steelblue1",style="solid"];
   Node10 [label="RegAccessor.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_reg_accessor_8hpp.html",tooltip=" "];
   Node10 -> Node11 [dir="back",color="steelblue1",style="solid"];

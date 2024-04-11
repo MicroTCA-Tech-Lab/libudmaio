@@ -128,16 +128,25 @@ digraph "axi_dma_demo.cpp"
   Node44 [label="UioTrafficGen.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_traffic_gen_8hpp.html",tooltip=" "];
   Node44 -> Node30 [color="steelblue1",style="solid"];
   Node1 -> Node45 [color="steelblue1",style="solid"];
-  Node45 [label="udmaio/FpgaMemBufferOver\lXdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_fpga_mem_buffer_over_xdma_8hpp.html",tooltip=" "];
+  Node45 [label="udmaio/FpgaMemBufferOver\lAxi.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_fpga_mem_buffer_over_axi_8hpp.html",tooltip=" "];
   Node45 -> Node34 [color="steelblue1",style="solid"];
+  Node45 -> Node35 [color="steelblue1",style="solid"];
   Node45 -> Node36 [color="steelblue1",style="solid"];
   Node45 -> Node37 [color="steelblue1",style="solid"];
+  Node45 -> Node38 [color="steelblue1",style="solid"];
   Node45 -> Node25 [color="steelblue1",style="solid"];
+  Node45 -> Node31 [color="steelblue1",style="solid"];
+  Node1 -> Node46 [color="steelblue1",style="solid"];
+  Node46 [label="udmaio/FpgaMemBufferOver\lXdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_fpga_mem_buffer_over_xdma_8hpp.html",tooltip=" "];
+  Node46 -> Node34 [color="steelblue1",style="solid"];
+  Node46 -> Node36 [color="steelblue1",style="solid"];
+  Node46 -> Node37 [color="steelblue1",style="solid"];
+  Node46 -> Node25 [color="steelblue1",style="solid"];
   Node1 -> Node16 [color="steelblue1",style="solid"];
   Node1 -> Node24 [color="steelblue1",style="solid"];
   Node1 -> Node29 [color="steelblue1",style="solid"];
   Node1 -> Node31 [color="steelblue1",style="solid"];
   Node1 -> Node41 [color="steelblue1",style="solid"];
-  Node1 -> Node46 [color="steelblue1",style="solid"];
-  Node46 [label="boost/program_options.hpp",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node47 [color="steelblue1",style="solid"];
+  Node47 [label="boost/program_options.hpp",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
 }
