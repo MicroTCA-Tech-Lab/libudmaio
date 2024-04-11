@@ -68,6 +68,7 @@ digraph "DataHandlerSync.hpp"
   Node25 -> Node29 [color="steelblue1",style="solid"];
   Node29 [label="string_view",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node22 -> Node14 [color="steelblue1",style="solid"];
+  Node22 -> Node25 [color="steelblue1",style="solid"];
   Node9 -> Node30 [color="steelblue1",style="solid"];
   Node30 [label="UioAxiDmaIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_axi_dma_if_8hpp.html",tooltip=" "];
   Node30 -> Node31 [color="steelblue1",style="solid"];

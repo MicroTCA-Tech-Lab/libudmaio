@@ -52,7 +52,9 @@ virtual uint32\+\_\+t \mbox{\hyperlink{classudmaio_1_1_hw_accessor_a02df3d943565
 \item 
 virtual int \mbox{\hyperlink{classudmaio_1_1_hw_accessor_a97f39c0284f7aa859f034caf0b5ecf1f}{get\+\_\+fd\+\_\+int}} () const
 \item 
-virtual uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_hw_accessor_a208dd9dcb2368635652f0d79c9fe853c}{get\+\_\+phys\+\_\+addr}} () const
+virtual \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \mbox{\hyperlink{classudmaio_1_1_hw_accessor_a3995bf6f93a9e9cd4c6aaffd4d9ffa96}{get\+\_\+phys\+\_\+region}} () const
+\item 
+virtual void $\ast$ \mbox{\hyperlink{classudmaio_1_1_hw_accessor_a722d56b34c177ab7b2d05664fa74f040}{get\+\_\+virt\+\_\+mem}} () const
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -225,15 +227,25 @@ Reimplemented in \mbox{\hyperlink{classudmaio_1_1_hw_accessor_axi_a94c95498bee88
 
 Reimplemented in \mbox{\hyperlink{classudmaio_1_1_hw_accessor_xdma_abde56466e6dfee2f652118ee2ec4d096}{udmaio\+::\+Hw\+Accessor\+Xdma$<$ max\+\_\+access\+\_\+width\+\_\+t $>$}}, and \mbox{\hyperlink{classudmaio_1_1_hw_accessor_axi_a978c83d1898520efa59e88b1f7f8552c}{udmaio\+::\+Hw\+Accessor\+Axi}}.
 
-\mbox{\Hypertarget{classudmaio_1_1_hw_accessor_a208dd9dcb2368635652f0d79c9fe853c}\label{classudmaio_1_1_hw_accessor_a208dd9dcb2368635652f0d79c9fe853c}} 
-\index{udmaio::HwAccessor@{udmaio::HwAccessor}!get\_phys\_addr@{get\_phys\_addr}}
-\index{get\_phys\_addr@{get\_phys\_addr}!udmaio::HwAccessor@{udmaio::HwAccessor}}
-\doxysubsubsection{\texorpdfstring{get\_phys\_addr()}{get\_phys\_addr()}}
-{\footnotesize\ttfamily virtual uintptr\+\_\+t udmaio\+::\+Hw\+Accessor\+::get\+\_\+phys\+\_\+addr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+\mbox{\Hypertarget{classudmaio_1_1_hw_accessor_a3995bf6f93a9e9cd4c6aaffd4d9ffa96}\label{classudmaio_1_1_hw_accessor_a3995bf6f93a9e9cd4c6aaffd4d9ffa96}} 
+\index{udmaio::HwAccessor@{udmaio::HwAccessor}!get\_phys\_region@{get\_phys\_region}}
+\index{get\_phys\_region@{get\_phys\_region}!udmaio::HwAccessor@{udmaio::HwAccessor}}
+\doxysubsubsection{\texorpdfstring{get\_phys\_region()}{get\_phys\_region()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} udmaio\+::\+Hw\+Accessor\+::get\+\_\+phys\+\_\+region (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
-Reimplemented in \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_ac87f25c8d1620ed686cd378e502ff5a8}{udmaio\+::\+Hw\+Accessor\+Mmap$<$ max\+\_\+access\+\_\+width\+\_\+t $>$}}, and \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_ac87f25c8d1620ed686cd378e502ff5a8}{udmaio\+::\+Hw\+Accessor\+Mmap$<$ uint64\+\_\+t $>$}}.
+Reimplemented in \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a521d0a992a1a281c0f0becafa651f3e4}{udmaio\+::\+Hw\+Accessor\+Mmap$<$ max\+\_\+access\+\_\+width\+\_\+t $>$}}, and \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a521d0a992a1a281c0f0becafa651f3e4}{udmaio\+::\+Hw\+Accessor\+Mmap$<$ uint64\+\_\+t $>$}}.
+
+\mbox{\Hypertarget{classudmaio_1_1_hw_accessor_a722d56b34c177ab7b2d05664fa74f040}\label{classudmaio_1_1_hw_accessor_a722d56b34c177ab7b2d05664fa74f040}} 
+\index{udmaio::HwAccessor@{udmaio::HwAccessor}!get\_virt\_mem@{get\_virt\_mem}}
+\index{get\_virt\_mem@{get\_virt\_mem}!udmaio::HwAccessor@{udmaio::HwAccessor}}
+\doxysubsubsection{\texorpdfstring{get\_virt\_mem()}{get\_virt\_mem()}}
+{\footnotesize\ttfamily virtual void $\ast$ udmaio\+::\+Hw\+Accessor\+::get\+\_\+virt\+\_\+mem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a096d74608a4499d234ee47a14396ca1a}{udmaio\+::\+Hw\+Accessor\+Mmap$<$ max\+\_\+access\+\_\+width\+\_\+t $>$}}, and \mbox{\hyperlink{classudmaio_1_1_hw_accessor_mmap_a096d74608a4499d234ee47a14396ca1a}{udmaio\+::\+Hw\+Accessor\+Mmap$<$ uint64\+\_\+t $>$}}.
 
 \mbox{\Hypertarget{classudmaio_1_1_hw_accessor_a02df3d9435657fd6d17ced25885a902f}\label{classudmaio_1_1_hw_accessor_a02df3d9435657fd6d17ced25885a902f}} 
 \index{udmaio::HwAccessor@{udmaio::HwAccessor}!wait\_for\_interrupt@{wait\_for\_interrupt}}

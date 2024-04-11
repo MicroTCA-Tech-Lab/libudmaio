@@ -68,6 +68,7 @@ digraph "axi_dma_demo.cpp"
   Node26 -> Node28 [color="steelblue1",style="solid"];
   Node28 [label="string_view",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node24 -> Node16 [color="steelblue1",style="solid"];
+  Node24 -> Node26 [color="steelblue1",style="solid"];
   Node11 -> Node29 [color="steelblue1",style="solid"];
   Node29 [label="UioAxiDmaIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_axi_dma_if_8hpp.html",tooltip=" "];
   Node29 -> Node30 [color="steelblue1",style="solid"];

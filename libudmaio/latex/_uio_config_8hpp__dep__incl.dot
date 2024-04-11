@@ -56,6 +56,7 @@ digraph "UioConfig.hpp"
   Node17 -> Node21 [dir="back",color="steelblue1",style="solid"];
   Node17 -> Node23 [dir="back",color="steelblue1",style="solid"];
   Node23 [label="UioIf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_if_8cpp.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
   Node1 -> Node16 [dir="back",color="steelblue1",style="solid"];
   Node1 -> Node17 [dir="back",color="steelblue1",style="solid"];
 }

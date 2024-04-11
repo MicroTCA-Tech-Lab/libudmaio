@@ -25,11 +25,11 @@
 \DoxyCodeLine{21 }
 \DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma}{FpgaMemBufferOverXdma}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{DmaBufferAbstract}} \{}
 \DoxyCodeLine{24     \textcolor{keywordtype}{int} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}};}
-\DoxyCodeLine{25     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_a3427375448cf17f23407dcf4536b86ec}{\_phys\_addr}};}
+\DoxyCodeLine{25     \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_abfc8dad0b8d48f83e83517db22893a9c}{\_phys\_region}};}
 \DoxyCodeLine{26 }
 \DoxyCodeLine{27   \textcolor{keyword}{public}:}
 \DoxyCodeLine{31     \textcolor{keyword}{explicit} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_a7c3fe91db1d91f4c701830f311ac308d}{FpgaMemBufferOverXdma}}(\textcolor{keyword}{const} std::string\& path, uintptr\_t phys\_addr)}
-\DoxyCodeLine{32         : \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_a3427375448cf17f23407dcf4536b86ec}{\_phys\_addr}}\{phys\_addr\} \{}
+\DoxyCodeLine{32         : \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_abfc8dad0b8d48f83e83517db22893a9c}{\_phys\_region}}\{phys\_addr, 0\} \{  \textcolor{comment}{// FIXME: can we get the memory size?}}
 \DoxyCodeLine{33         \textcolor{keyword}{const} std::string dev\_path\{path + \textcolor{stringliteral}{"{}/c2h0"{}}\};}
 \DoxyCodeLine{34         \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}} = open(dev\_path.c\_str(), O\_RDWR);}
 \DoxyCodeLine{35         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}} < 0) \{}
@@ -38,23 +38,18 @@
 \DoxyCodeLine{38     \}}
 \DoxyCodeLine{39     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_a95b84664b5ffe4d8935c4e7eeb4cdd4f}{\string~FpgaMemBufferOverXdma}}() \{ close(\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}}); \}}
 \DoxyCodeLine{40 }
-\DoxyCodeLine{41     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_ac1d0bb078fe6bb4e6e5a32b31c0b1d13}{get\_phys\_addr}}()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_a3427375448cf17f23407dcf4536b86ec}{\_phys\_addr}}; \}}
+\DoxyCodeLine{41     \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_a15ecde2a47d2ecc175c9f4af83f5b423}{get\_phys\_region}}()\textcolor{keyword}{ const override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_abfc8dad0b8d48f83e83517db22893a9c}{\_phys\_region}}; \}}
 \DoxyCodeLine{42 }
-\DoxyCodeLine{43     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa1886d2ecc38f6382e36d756533eef6d}{get\_phys\_size}}()\textcolor{keyword}{ const override }\{}
-\DoxyCodeLine{44         \textcolor{comment}{// there is no way to get the size over the Xdma, return 0 and let the user handle it}}
-\DoxyCodeLine{45         \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{46     \}}
-\DoxyCodeLine{47 }
-\DoxyCodeLine{48   \textcolor{keyword}{protected}:}
-\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_a0418e09aeafa2329d3222c562f71a79d}{copy\_from\_buf}}(uint8\_t* dest, \textcolor{keyword}{const} \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}}\& buf\_info)\textcolor{keyword}{ const override }\{}
-\DoxyCodeLine{50         lseek(\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}}, buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_aeae3c222eaf007b2850693dfdfd3af9c}{addr}}, SEEK\_SET);}
-\DoxyCodeLine{51         ssize\_t rc = read(\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}}, dest, buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}});}
-\DoxyCodeLine{52         \textcolor{keywordflow}{if} (rc < \textcolor{keyword}{static\_cast<}ssize\_t\textcolor{keyword}{>}(buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}})) \{}
-\DoxyCodeLine{53             \textcolor{comment}{// TODO: error handling}}
-\DoxyCodeLine{54         \}}
-\DoxyCodeLine{55     \}}
-\DoxyCodeLine{56 \};}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{58 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{43   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_a0418e09aeafa2329d3222c562f71a79d}{copy\_from\_buf}}(uint8\_t* dest, \textcolor{keyword}{const} \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}}\& buf\_info)\textcolor{keyword}{ const override }\{}
+\DoxyCodeLine{45         lseek(\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}}, buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_aeae3c222eaf007b2850693dfdfd3af9c}{addr}}, SEEK\_SET);}
+\DoxyCodeLine{46         ssize\_t rc = read(\mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_xdma_aa7e29797f2131b05eb89a98bbbf931a3}{\_dma\_fd}}, dest, buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}});}
+\DoxyCodeLine{47         \textcolor{keywordflow}{if} (rc < \textcolor{keyword}{static\_cast<}ssize\_t\textcolor{keyword}{>}(buf\_info.\mbox{\hyperlink{structudmaio_1_1_uio_region_ac820f3588c55f13155345aae9e198a32}{size}})) \{}
+\DoxyCodeLine{48             \textcolor{comment}{// TODO: error handling}}
+\DoxyCodeLine{49         \}}
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51 \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}

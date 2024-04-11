@@ -53,6 +53,7 @@ digraph "DataHandlerAbstract.cpp"
   Node18 -> Node22 [color="steelblue1",style="solid"];
   Node22 [label="string_view",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node15 -> Node7 [color="steelblue1",style="solid"];
+  Node15 -> Node18 [color="steelblue1",style="solid"];
   Node2 -> Node23 [color="steelblue1",style="solid"];
   Node23 [label="UioAxiDmaIf.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_axi_dma_if_8hpp.html",tooltip=" "];
   Node23 -> Node24 [color="steelblue1",style="solid"];

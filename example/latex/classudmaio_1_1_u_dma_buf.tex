@@ -24,10 +24,8 @@ Collaboration diagram for udmaio\+::UDma\+Buf\+:
 \begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classudmaio_1_1_u_dma_buf}{UDma\+Buf}}. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_aed4ca914393cd227fac5d7596a3446c7}{$\sim$\+UDma\+Buf}} ()
 \item 
-uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_ae187f2139a3e5362d36dd8acd1993108}{get\+\_\+phys\+\_\+addr}} () const override
-\begin{DoxyCompactList}\small\item\em Get physical address. \end{DoxyCompactList}\item 
-uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_a97e7e45c979c01d31b6f6b81c3bc1095}{get\+\_\+phys\+\_\+size}} () const override
-\begin{DoxyCompactList}\small\item\em Get buffer size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \mbox{\hyperlink{classudmaio_1_1_u_dma_buf_ad0b33e28fdc27a4711e9f8364a52f01c}{get\+\_\+phys\+\_\+region}} () const override
+\begin{DoxyCompactList}\small\item\em Get physical region. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -102,39 +100,22 @@ Constructs a \mbox{\hyperlink{classudmaio_1_1_u_dma_buf}{UDma\+Buf}}.
 
 Implements \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a4b878534dcc75586ae7cd56a405395f7}{udmaio\+::\+Dma\+Buffer\+Abstract}}.
 
-\mbox{\Hypertarget{classudmaio_1_1_u_dma_buf_ae187f2139a3e5362d36dd8acd1993108}\label{classudmaio_1_1_u_dma_buf_ae187f2139a3e5362d36dd8acd1993108}} 
-\index{udmaio::UDmaBuf@{udmaio::UDmaBuf}!get\_phys\_addr@{get\_phys\_addr}}
-\index{get\_phys\_addr@{get\_phys\_addr}!udmaio::UDmaBuf@{udmaio::UDmaBuf}}
-\doxysubsubsection{\texorpdfstring{get\_phys\_addr()}{get\_phys\_addr()}}
-{\footnotesize\ttfamily uintptr\+\_\+t udmaio\+::\+UDma\+Buf\+::get\+\_\+phys\+\_\+addr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+\mbox{\Hypertarget{classudmaio_1_1_u_dma_buf_ad0b33e28fdc27a4711e9f8364a52f01c}\label{classudmaio_1_1_u_dma_buf_ad0b33e28fdc27a4711e9f8364a52f01c}} 
+\index{udmaio::UDmaBuf@{udmaio::UDmaBuf}!get\_phys\_region@{get\_phys\_region}}
+\index{get\_phys\_region@{get\_phys\_region}!udmaio::UDmaBuf@{udmaio::UDmaBuf}}
+\doxysubsubsection{\texorpdfstring{get\_phys\_region()}{get\_phys\_region()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} udmaio\+::\+UDma\+Buf\+::get\+\_\+phys\+\_\+region (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Get physical address. 
+Get physical region. 
 
 \begin{DoxyReturn}{Returns}
-Physical address of DMA data buffer 
+Physical address and size of DMA data buffer 
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_abe52ba4c61d6a63e2024eb38f634f3bf}{udmaio\+::\+Dma\+Buffer\+Abstract}}.
-
-\mbox{\Hypertarget{classudmaio_1_1_u_dma_buf_a97e7e45c979c01d31b6f6b81c3bc1095}\label{classudmaio_1_1_u_dma_buf_a97e7e45c979c01d31b6f6b81c3bc1095}} 
-\index{udmaio::UDmaBuf@{udmaio::UDmaBuf}!get\_phys\_size@{get\_phys\_size}}
-\index{get\_phys\_size@{get\_phys\_size}!udmaio::UDmaBuf@{udmaio::UDmaBuf}}
-\doxysubsubsection{\texorpdfstring{get\_phys\_size()}{get\_phys\_size()}}
-{\footnotesize\ttfamily uintptr\+\_\+t udmaio\+::\+UDma\+Buf\+::get\+\_\+phys\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Get buffer size. 
-
-\begin{DoxyReturn}{Returns}
-Size of DMA data buffer 
-\end{DoxyReturn}
-
-
-Implements \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a63369da47cbfa8c63d3a0269a2bffcad}{udmaio\+::\+Dma\+Buffer\+Abstract}}.
+Implements \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_ae51157a70b85ccd157996f6e038d652f}{udmaio\+::\+Dma\+Buffer\+Abstract}}.
 
 
 

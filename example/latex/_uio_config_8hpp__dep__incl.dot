@@ -55,6 +55,7 @@ digraph "UioConfig.hpp"
   Node13 -> Node15 [dir="back",color="steelblue1",style="solid"];
   Node13 -> Node16 [dir="back",color="steelblue1",style="solid"];
   Node13 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
   Node1 -> Node13 [dir="back",color="steelblue1",style="solid"];
   Node1 -> Node20 [dir="back",color="steelblue1",style="solid"];
   Node20 [label="Z7ioExampleProjectConsts.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_z7io_example_project_consts_8hpp.html",tooltip=" "];

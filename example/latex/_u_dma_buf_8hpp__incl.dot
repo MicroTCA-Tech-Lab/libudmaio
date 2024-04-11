@@ -43,4 +43,5 @@ digraph "UDmaBuf.hpp"
   Node18 [label="boost/log/support/date\l_time.hpp",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node12 -> Node19 [color="steelblue1",style="solid"];
   Node19 [label="boost/log/utility/setup\l/common_attributes.hpp",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node6 [color="steelblue1",style="solid"];
 }

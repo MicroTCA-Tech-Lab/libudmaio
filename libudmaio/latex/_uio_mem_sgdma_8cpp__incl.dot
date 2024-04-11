@@ -84,6 +84,5 @@ digraph "UioMemSgdma.cpp"
   Node22 -> Node7 [color="steelblue1",style="solid"];
   Node14 -> Node23 [color="steelblue1",style="solid"];
   Node14 -> Node7 [color="steelblue1",style="solid"];
-  Node1 -> Node31 [color="steelblue1",style="solid"];
-  Node31 [label="bitset",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
 }

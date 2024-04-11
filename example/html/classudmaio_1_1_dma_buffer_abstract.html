@@ -126,12 +126,9 @@ Collaboration diagram for udmaio::DmaBufferAbstract:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abe52ba4c61d6a63e2024eb38f634f3bf"><td class="memItemLeft" align="right" valign="top">virtual uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_dma_buffer_abstract.html#abe52ba4c61d6a63e2024eb38f634f3bf">get_phys_addr</a> () const =0</td></tr>
-<tr class="memdesc:abe52ba4c61d6a63e2024eb38f634f3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get physical address.  <a href="classudmaio_1_1_dma_buffer_abstract.html#abe52ba4c61d6a63e2024eb38f634f3bf">More...</a><br /></td></tr>
-<tr class="separator:abe52ba4c61d6a63e2024eb38f634f3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63369da47cbfa8c63d3a0269a2bffcad"><td class="memItemLeft" align="right" valign="top">virtual uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_dma_buffer_abstract.html#a63369da47cbfa8c63d3a0269a2bffcad">get_phys_size</a> () const =0</td></tr>
-<tr class="memdesc:a63369da47cbfa8c63d3a0269a2bffcad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get buffer size.  <a href="classudmaio_1_1_dma_buffer_abstract.html#a63369da47cbfa8c63d3a0269a2bffcad">More...</a><br /></td></tr>
-<tr class="separator:a63369da47cbfa8c63d3a0269a2bffcad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae51157a70b85ccd157996f6e038d652f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structudmaio_1_1_uio_region.html">UioRegion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_dma_buffer_abstract.html#ae51157a70b85ccd157996f6e038d652f">get_phys_region</a> () const =0</td></tr>
+<tr class="memdesc:ae51157a70b85ccd157996f6e038d652f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get physical region.  <a href="classudmaio_1_1_dma_buffer_abstract.html#ae51157a70b85ccd157996f6e038d652f">More...</a><br /></td></tr>
+<tr class="separator:ae51157a70b85ccd157996f6e038d652f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dd3acc6d3b2f5c0994e6ac7451d25ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_dma_buffer_abstract.html#a4dd3acc6d3b2f5c0994e6ac7451d25ea">append_from_buf</a> (const <a class="el" href="structudmaio_1_1_uio_region.html">UioRegion</a> &amp;buf_info, std::vector&lt; uint8_t &gt; &amp;out) const</td></tr>
 <tr class="memdesc:a4dd3acc6d3b2f5c0994e6ac7451d25ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append received DMA data to vector.  <a href="classudmaio_1_1_dma_buffer_abstract.html#a4dd3acc6d3b2f5c0994e6ac7451d25ea">More...</a><br /></td></tr>
 <tr class="separator:a4dd3acc6d3b2f5c0994e6ac7451d25ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -219,8 +216,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abe52ba4c61d6a63e2024eb38f634f3bf" name="abe52ba4c61d6a63e2024eb38f634f3bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe52ba4c61d6a63e2024eb38f634f3bf">&#9670;&#160;</a></span>get_phys_addr()</h2>
+<a id="ae51157a70b85ccd157996f6e038d652f" name="ae51157a70b85ccd157996f6e038d652f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae51157a70b85ccd157996f6e038d652f">&#9670;&#160;</a></span>get_phys_region()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,7 +226,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual uintptr_t udmaio::DmaBufferAbstract::get_phys_addr </td>
+          <td class="memname">virtual <a class="el" href="structudmaio_1_1_uio_region.html">UioRegion</a> udmaio::DmaBufferAbstract::get_phys_region </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -242,40 +239,10 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get physical address. </p>
-<dl class="section return"><dt>Returns</dt><dd>Physical address of DMA data buffer </dd></dl>
+<p>Get physical region. </p>
+<dl class="section return"><dt>Returns</dt><dd>Physical address and size of DMA data buffer </dd></dl>
 
-<p>Implemented in <a class="el" href="classudmaio_1_1_fpga_mem_buffer_over_axi.html#a016fec1601d0de2e9817bff1729077db">udmaio::FpgaMemBufferOverAxi</a>, <a class="el" href="classudmaio_1_1_fpga_mem_buffer_over_xdma.html#ac1d0bb078fe6bb4e6e5a32b31c0b1d13">udmaio::FpgaMemBufferOverXdma</a>, and <a class="el" href="classudmaio_1_1_u_dma_buf.html#ae187f2139a3e5362d36dd8acd1993108">udmaio::UDmaBuf</a>.</p>
-
-</div>
-</div>
-<a id="a63369da47cbfa8c63d3a0269a2bffcad" name="a63369da47cbfa8c63d3a0269a2bffcad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63369da47cbfa8c63d3a0269a2bffcad">&#9670;&#160;</a></span>get_phys_size()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual uintptr_t udmaio::DmaBufferAbstract::get_phys_size </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get buffer size. </p>
-<dl class="section return"><dt>Returns</dt><dd>Size of DMA data buffer </dd></dl>
-
-<p>Implemented in <a class="el" href="classudmaio_1_1_fpga_mem_buffer_over_axi.html#a4d58cf3e554e6c357a4fe4cdb67e37d5">udmaio::FpgaMemBufferOverAxi</a>, <a class="el" href="classudmaio_1_1_fpga_mem_buffer_over_xdma.html#aa1886d2ecc38f6382e36d756533eef6d">udmaio::FpgaMemBufferOverXdma</a>, and <a class="el" href="classudmaio_1_1_u_dma_buf.html#a97e7e45c979c01d31b6f6b81c3bc1095">udmaio::UDmaBuf</a>.</p>
+<p>Implemented in <a class="el" href="classudmaio_1_1_fpga_mem_buffer_over_axi.html#a539e3b8a5f3ffbcbfdb0f4b2d54ff53f">udmaio::FpgaMemBufferOverAxi</a>, <a class="el" href="classudmaio_1_1_fpga_mem_buffer_over_xdma.html#a15ecde2a47d2ecc175c9f4af83f5b423">udmaio::FpgaMemBufferOverXdma</a>, and <a class="el" href="classudmaio_1_1_u_dma_buf.html#ad0b33e28fdc27a4711e9f8364a52f01c">udmaio::UDmaBuf</a>.</p>
 
 </div>
 </div>

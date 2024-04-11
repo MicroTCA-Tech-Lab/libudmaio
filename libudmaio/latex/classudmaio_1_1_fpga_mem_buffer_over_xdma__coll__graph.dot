@@ -10,4 +10,6 @@ digraph "udmaio::FpgaMemBufferOverXdma"
   Node2 [label="udmaio::DmaBufferAbstract",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_dma_buffer_abstract.html",tooltip="Base class for DMA data buffer."];
   Node3 -> Node2 [dir="back",color="firebrick4",style="solid"];
   Node3 [label="boost::noncopyable",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" _phys_region" ];
+  Node4 [label="udmaio::UioRegion",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structudmaio_1_1_uio_region.html",tooltip="General-purpose struct to define a memory area."];
 }

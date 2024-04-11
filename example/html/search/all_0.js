@@ -37,7 +37,7 @@ var searchData=
   ['_5fnum_5fbytes_5frcvd_34',['_num_bytes_rcvd',['../class_data_handler_print.html#a5e550f148177832ff116f8aececc28ab',1,'DataHandlerPrint']]],
   ['_5fpcie_5foffs_35',['_pcie_offs',['../classudmaio_1_1_uio_config_xdma.html#a5198fbe1e91b423d6334d1788d60be7c',1,'udmaio::UioConfigXdma']]],
   ['_5fphys_36',['_phys',['../classudmaio_1_1_u_dma_buf.html#af46c0be580c25090c0a9b2fe06ce919e',1,'udmaio::UDmaBuf']]],
-  ['_5fphys_5faddr_37',['_phys_addr',['../classudmaio_1_1_fpga_mem_buffer_over_xdma.html#a3427375448cf17f23407dcf4536b86ec',1,'udmaio::FpgaMemBufferOverXdma']]],
+  ['_5fphys_5fregion_37',['_phys_region',['../classudmaio_1_1_fpga_mem_buffer_over_xdma.html#abfc8dad0b8d48f83e83517db22893a9c',1,'udmaio::FpgaMemBufferOverXdma']]],
   ['_5fpix_5ffmt_38',['_pix_fmt',['../classudmaio_1_1_frame_format.html#abe566be3949b3de67ba92d23ce00573c',1,'udmaio::FrameFormat']]],
   ['_5fpix_5fper_5fword_39',['_pix_per_word',['../classudmaio_1_1_frame_format.html#af8ddffa8f8730c9a8762cd96f6e40c7d',1,'udmaio::FrameFormat']]],
   ['_5fpxfmt_5fenum_5fto_5fstr_5ftab_40',['_pxfmt_enum_to_str_tab',['../classudmaio_1_1_frame_format.html#a2f28196b7829350f53cffb825130ff55',1,'udmaio::FrameFormat']]],

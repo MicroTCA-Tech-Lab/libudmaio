@@ -22,10 +22,8 @@ Collaboration diagram for udmaio\+::Fpga\+Mem\+Buffer\+Over\+Axi\+:
 \item 
 \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a69834f8f541d955052181a5575400e1f}{Fpga\+Mem\+Buffer\+Over\+Axi}} (\mbox{\hyperlink{classudmaio_1_1_uio_device_location}{Uio\+Device\+Location}} dev\+\_\+loc)
 \item 
-uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a016fec1601d0de2e9817bff1729077db}{get\+\_\+phys\+\_\+addr}} () const override
-\begin{DoxyCompactList}\small\item\em Get physical address. \end{DoxyCompactList}\item 
-uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a4d58cf3e554e6c357a4fe4cdb67e37d5}{get\+\_\+phys\+\_\+size}} () const override
-\begin{DoxyCompactList}\small\item\em Get buffer size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} \mbox{\hyperlink{classudmaio_1_1_fpga_mem_buffer_over_axi_a539e3b8a5f3ffbcbfdb0f4b2d54ff53f}{get\+\_\+phys\+\_\+region}} () const override
+\begin{DoxyCompactList}\small\item\em Get physical region. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -57,39 +55,22 @@ DMA data buffer accessed over AXI/\+UIO, described w/ explicit address \& size.
 
 Implements \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a4b878534dcc75586ae7cd56a405395f7}{udmaio\+::\+Dma\+Buffer\+Abstract}}.
 
-\mbox{\Hypertarget{classudmaio_1_1_fpga_mem_buffer_over_axi_a016fec1601d0de2e9817bff1729077db}\label{classudmaio_1_1_fpga_mem_buffer_over_axi_a016fec1601d0de2e9817bff1729077db}} 
-\index{udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}!get\_phys\_addr@{get\_phys\_addr}}
-\index{get\_phys\_addr@{get\_phys\_addr}!udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}}
-\doxysubsubsection{\texorpdfstring{get\_phys\_addr()}{get\_phys\_addr()}}
-{\footnotesize\ttfamily uintptr\+\_\+t udmaio\+::\+Fpga\+Mem\+Buffer\+Over\+Axi\+::get\+\_\+phys\+\_\+addr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+\mbox{\Hypertarget{classudmaio_1_1_fpga_mem_buffer_over_axi_a539e3b8a5f3ffbcbfdb0f4b2d54ff53f}\label{classudmaio_1_1_fpga_mem_buffer_over_axi_a539e3b8a5f3ffbcbfdb0f4b2d54ff53f}} 
+\index{udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}!get\_phys\_region@{get\_phys\_region}}
+\index{get\_phys\_region@{get\_phys\_region}!udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}}
+\doxysubsubsection{\texorpdfstring{get\_phys\_region()}{get\_phys\_region()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structudmaio_1_1_uio_region}{Uio\+Region}} udmaio\+::\+Fpga\+Mem\+Buffer\+Over\+Axi\+::get\+\_\+phys\+\_\+region (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Get physical address. 
+Get physical region. 
 
 \begin{DoxyReturn}{Returns}
-Physical address of DMA data buffer 
+Physical address and size of DMA data buffer 
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_abe52ba4c61d6a63e2024eb38f634f3bf}{udmaio\+::\+Dma\+Buffer\+Abstract}}.
-
-\mbox{\Hypertarget{classudmaio_1_1_fpga_mem_buffer_over_axi_a4d58cf3e554e6c357a4fe4cdb67e37d5}\label{classudmaio_1_1_fpga_mem_buffer_over_axi_a4d58cf3e554e6c357a4fe4cdb67e37d5}} 
-\index{udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}!get\_phys\_size@{get\_phys\_size}}
-\index{get\_phys\_size@{get\_phys\_size}!udmaio::FpgaMemBufferOverAxi@{udmaio::FpgaMemBufferOverAxi}}
-\doxysubsubsection{\texorpdfstring{get\_phys\_size()}{get\_phys\_size()}}
-{\footnotesize\ttfamily uintptr\+\_\+t udmaio\+::\+Fpga\+Mem\+Buffer\+Over\+Axi\+::get\+\_\+phys\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Get buffer size. 
-
-\begin{DoxyReturn}{Returns}
-Size of DMA data buffer 
-\end{DoxyReturn}
-
-
-Implements \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_a63369da47cbfa8c63d3a0269a2bffcad}{udmaio\+::\+Dma\+Buffer\+Abstract}}.
+Implements \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract_ae51157a70b85ccd157996f6e038d652f}{udmaio\+::\+Dma\+Buffer\+Abstract}}.
 
 
 

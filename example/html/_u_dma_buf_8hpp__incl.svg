@@ -58,8 +58,8 @@ var sectionId = 'dynsection-0';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#999999" stroke="#666666" points="516.5,-195 439.5,-195 439.5,-176 516.5,-176 516.5,-195"/>
-<text text-anchor="middle" x="478" y="-183" font-family="Helvetica,sans-Serif" font-size="10.00">UDmaBuf.hpp</text>
+<polygon fill="#999999" stroke="#666666" points="375.5,-195 298.5,-195 298.5,-176 375.5,-176 375.5,-195"/>
+<text text-anchor="middle" x="337" y="-183" font-family="Helvetica,sans-Serif" font-size="10.00">UDmaBuf.hpp</text>
 </a>
 </g>
 </g>
@@ -75,8 +75,23 @@ var sectionId = 'dynsection-0';
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="#63b8ff" d="M439.24,-177.24C391.37,-168.28 309.47,-152.94 253.83,-142.52"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="254.69,-139.12 244.21,-140.72 253.4,-146 254.69,-139.12"/>
+<path fill="none" stroke="#63b8ff" d="M312.91,-175.51C289.93,-166.93 255.06,-153.92 229.2,-144.27"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="230.74,-141.1 220.15,-140.89 228.3,-147.66 230.74,-141.1"/>
+</g>
+<!-- Node6 -->
+<g id="node6" class="node">
+<title>Node6</title>
+<g id="a_node6"><a xlink:href="_uio_config_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="392.5,-79.5 281.5,-79.5 281.5,-60.5 392.5,-60.5 392.5,-79.5"/>
+<text text-anchor="middle" x="337" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio/UioConfig.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node6 -->
+<g id="edge20" class="edge">
+<title>Node1&#45;&gt;Node6</title>
+<path fill="none" stroke="#63b8ff" d="M337,-175.59C337,-157.53 337,-116.17 337,-91.21"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="340.5,-91.38 337,-81.38 333.5,-91.38 340.5,-91.38"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
@@ -90,8 +105,8 @@ var sectionId = 'dynsection-0';
 <!-- Node1&#45;&gt;Node12 -->
 <g id="edge11" class="edge">
 <title>Node1&#45;&gt;Node12</title>
-<path fill="none" stroke="#63b8ff" d="M516.87,-178C575.55,-168.19 686.52,-149.64 749.09,-139.18"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="749.41,-142.67 758.69,-137.57 748.25,-135.77 749.41,-142.67"/>
+<path fill="none" stroke="#63b8ff" d="M375.65,-180.03C459.64,-170.31 658.47,-147.3 748.85,-136.84"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="749.05,-140.34 758.59,-135.71 748.25,-133.39 749.05,-140.34"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -137,15 +152,6 @@ var sectionId = 'dynsection-0';
 <title>Node2&#45;&gt;Node5</title>
 <path fill="none" stroke="#63b8ff" d="M195,-120.87C195,-113 195,-101.1 195,-90.89"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="198.5,-91.18 195,-81.18 191.5,-91.18 198.5,-91.18"/>
-</g>
-<!-- Node6 -->
-<g id="node6" class="node">
-<title>Node6</title>
-<g id="a_node6"><a xlink:href="_uio_config_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="392.5,-79.5 281.5,-79.5 281.5,-60.5 392.5,-60.5 392.5,-79.5"/>
-<text text-anchor="middle" x="337" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">udmaio/UioConfig.hpp</text>
-</a>
-</g>
 </g>
 <!-- Node2&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
@@ -246,8 +252,8 @@ var sectionId = 'dynsection-0';
 <!-- Node12&#45;&gt;Node13 -->
 <g id="edge13" class="edge">
 <title>Node12&#45;&gt;Node13</title>
-<path fill="none" stroke="#63b8ff" d="M760.14,-122.33C718.94,-113.78 648.36,-98.9 588,-85 584.68,-84.24 581.26,-83.43 577.81,-82.61"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="578.85,-79.26 568.31,-80.33 577.22,-86.07 578.85,-79.26"/>
+<path fill="none" stroke="#63b8ff" d="M760.32,-122.27C719.33,-113.67 649.1,-98.74 589,-85 585.63,-84.23 582.14,-83.42 578.64,-82.6"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="579.49,-79.2 568.95,-80.3 577.87,-86.01 579.49,-79.2"/>
 </g>
 <!-- Node14 -->
 <g id="node14" class="node">

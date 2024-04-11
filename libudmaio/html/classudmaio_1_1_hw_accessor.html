@@ -163,8 +163,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a05bca18dee3f8705c565fe15e845a163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97f39c0284f7aa859f034caf0b5ecf1f"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_hw_accessor.html#a97f39c0284f7aa859f034caf0b5ecf1f">get_fd_int</a> () const</td></tr>
 <tr class="separator:a97f39c0284f7aa859f034caf0b5ecf1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a208dd9dcb2368635652f0d79c9fe853c"><td class="memItemLeft" align="right" valign="top">virtual uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_hw_accessor.html#a208dd9dcb2368635652f0d79c9fe853c">get_phys_addr</a> () const</td></tr>
-<tr class="separator:a208dd9dcb2368635652f0d79c9fe853c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3995bf6f93a9e9cd4c6aaffd4d9ffa96"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structudmaio_1_1_uio_region.html">UioRegion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_hw_accessor.html#a3995bf6f93a9e9cd4c6aaffd4d9ffa96">get_phys_region</a> () const</td></tr>
+<tr class="separator:a3995bf6f93a9e9cd4c6aaffd4d9ffa96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a722d56b34c177ab7b2d05664fa74f040"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_hw_accessor.html#a722d56b34c177ab7b2d05664fa74f040">get_virt_mem</a> () const</td></tr>
+<tr class="separator:a722d56b34c177ab7b2d05664fa74f040"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_structudmaio_1_1_logger"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_structudmaio_1_1_logger')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="structudmaio_1_1_logger.html">udmaio::Logger</a></td></tr>
 <tr class="memitem:a9d09aa86a1082b58719c6f2d7ba84660 inherit pub_methods_structudmaio_1_1_logger"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structudmaio_1_1_logger.html#a9d09aa86a1082b58719c6f2d7ba84660">Logger</a> ()</td></tr>
 <tr class="separator:a9d09aa86a1082b58719c6f2d7ba84660 inherit pub_methods_structudmaio_1_1_logger"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -677,8 +679,8 @@ template&lt;typename C &gt; </div>
 
 </div>
 </div>
-<a id="a208dd9dcb2368635652f0d79c9fe853c" name="a208dd9dcb2368635652f0d79c9fe853c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a208dd9dcb2368635652f0d79c9fe853c">&#9670;&#160;</a></span>get_phys_addr()</h2>
+<a id="a3995bf6f93a9e9cd4c6aaffd4d9ffa96" name="a3995bf6f93a9e9cd4c6aaffd4d9ffa96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3995bf6f93a9e9cd4c6aaffd4d9ffa96">&#9670;&#160;</a></span>get_phys_region()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -687,7 +689,7 @@ template&lt;typename C &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual uintptr_t udmaio::HwAccessor::get_phys_addr </td>
+          <td class="memname">virtual <a class="el" href="structudmaio_1_1_uio_region.html">UioRegion</a> udmaio::HwAccessor::get_phys_region </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -700,7 +702,34 @@ template&lt;typename C &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classudmaio_1_1_hw_accessor_mmap.html#ac87f25c8d1620ed686cd378e502ff5a8">udmaio::HwAccessorMmap&lt; max_access_width_t &gt;</a>, and <a class="el" href="classudmaio_1_1_hw_accessor_mmap.html#ac87f25c8d1620ed686cd378e502ff5a8">udmaio::HwAccessorMmap&lt; uint64_t &gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classudmaio_1_1_hw_accessor_mmap.html#a521d0a992a1a281c0f0becafa651f3e4">udmaio::HwAccessorMmap&lt; max_access_width_t &gt;</a>, and <a class="el" href="classudmaio_1_1_hw_accessor_mmap.html#a521d0a992a1a281c0f0becafa651f3e4">udmaio::HwAccessorMmap&lt; uint64_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a722d56b34c177ab7b2d05664fa74f040" name="a722d56b34c177ab7b2d05664fa74f040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a722d56b34c177ab7b2d05664fa74f040">&#9670;&#160;</a></span>get_virt_mem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void * udmaio::HwAccessor::get_virt_mem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classudmaio_1_1_hw_accessor_mmap.html#a096d74608a4499d234ee47a14396ca1a">udmaio::HwAccessorMmap&lt; max_access_width_t &gt;</a>, and <a class="el" href="classudmaio_1_1_hw_accessor_mmap.html#a096d74608a4499d234ee47a14396ca1a">udmaio::HwAccessorMmap&lt; uint64_t &gt;</a>.</p>
 
 </div>
 </div>
