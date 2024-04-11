@@ -9,11 +9,13 @@
 
 // Copyright (c) 2021 Deutsches Elektronen-Synchrotron DESY
 
+#include <cstdint>
+
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 
 #include "DataHandlerPython.hpp"
-// #include "udmaio/FpgaMemBufferOverAxi.hpp"
+#include "udmaio/FpgaMemBufferOverAxi.hpp"
 #include "udmaio/FpgaMemBufferOverXdma.hpp"
 #include "udmaio/FrameFormat.hpp"
 #include "udmaio/Logging.hpp"
@@ -51,7 +53,7 @@ PYBIND11_MODULE(binding, m) {
     py::class_<udmaio::UioDeviceLocation>(m, "UioDeviceLocation")
         .def(py::init<std::string, udmaio::UioRegion, std::string>(),
              py::arg("uioname"),
-             py::arg("xdmaregion"),
+             py::arg("xdmaregion") = udmaio::UioRegion({0, 0}),
              py::arg("xdmaevtdev") = std::string(""))
         .def_static("set_link_axi", &udmaio::UioDeviceLocation::set_link_axi)
         .def_static("set_link_xdma", &udmaio::UioDeviceLocation::set_link_xdma)
@@ -88,13 +90,11 @@ PYBIND11_MODULE(binding, m) {
         "DmaBufferAbstract")
         .def("get_phys_region", &udmaio::DmaBufferAbstract::get_phys_region);
 
-#if 0  // FIXME
     py::class_<udmaio::FpgaMemBufferOverAxi,
                udmaio::DmaBufferAbstract,
                udmaio::UioIf,
                std::shared_ptr<udmaio::FpgaMemBufferOverAxi>>(m, "FpgaMemBufferOverAxi")
         .def(py::init<udmaio::UioDeviceLocation>());
-#endif
 
     py::class_<udmaio::FpgaMemBufferOverXdma,
                udmaio::DmaBufferAbstract,

@@ -17,6 +17,7 @@
 #include "DataHandlerPrint.hpp"
 #include "UioGpioStatus.hpp"
 #include "UioTrafficGen.hpp"
+#include "udmaio/FpgaMemBufferOverAxi.hpp"
 #include "udmaio/FpgaMemBufferOverXdma.hpp"
 #include "udmaio/Logging.hpp"
 #include "udmaio/UDmaBuf.hpp"
@@ -119,7 +120,10 @@ int main(int argc, char* argv[]) {
 
     std::unique_ptr<DmaBufferAbstract> udmabuf;
     if (mode == DmaMode::UIO) {
-        udmabuf = std::make_unique<UDmaBuf>();
+        UioDeviceLocation plddr_test{"plddr-axi-test", {}};
+
+        // udmabuf = std::make_unique<UDmaBuf>();
+        udmabuf = std::make_unique<FpgaMemBufferOverAxi>(plddr_test);
     } else {
         udmabuf =
             std::make_unique<FpgaMemBufferOverXdma>(dev_path, target_hw_consts::fpga_mem_phys_addr);
