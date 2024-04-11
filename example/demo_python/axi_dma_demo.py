@@ -7,7 +7,7 @@ import os
 import numpy as np
 import argparse
 
-from pyudmaio import UioDeviceLocation, ConfigUio, ConfigXdma, FpgaMemBufferOverXdma
+from pyudmaio import UioDeviceLocation, ConfigUio, ConfigXdma, FpgaMemBufferOverXdma, FpgaMemBufferOverAxi
 from pyudmaio import UDmaBuf, UioAxiDmaIf, UioMemSgdma, DataHandler
 from pyudmaio import LogLevel, set_logging_level
 from GpioStatus import GpioStatus
@@ -141,6 +141,8 @@ def main():
             args.dev_path, consts.FPGA_MEM_PHYS_ADDR)
     else:
         udmabuf = UDmaBuf()
+        # when using predefined UIO region such as PL-DDR
+        # udmabuf = FpgaMemBufferOverAxi(UioDeviceLocation('plddr-axi-test'))
 
     data_handler = DataHandler(axi_dma, mem_sgdma, udmabuf)
     traffic_gen = TrafficGen(consts.AXI_TRAFFIC_GEN_0)
