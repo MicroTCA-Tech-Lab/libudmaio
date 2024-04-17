@@ -120,10 +120,7 @@ int main(int argc, char* argv[]) {
 
     std::unique_ptr<DmaBufferAbstract> udmabuf;
     if (mode == DmaMode::UIO) {
-        UioDeviceLocation plddr_test{"plddr-axi-test", {}};
-
-        // udmabuf = std::make_unique<UDmaBuf>();
-        udmabuf = std::make_unique<FpgaMemBufferOverAxi>(plddr_test);
+        udmabuf = std::make_unique<UDmaBuf>();
     } else {
         udmabuf =
             std::make_unique<FpgaMemBufferOverXdma>(dev_path, target_hw_consts::fpga_mem_phys_addr);
