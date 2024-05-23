@@ -6,11 +6,11 @@ var hierarchy =
     [ "axi_vdma::block_template< R_array_acc, R_acc_arg >", "structaxi__vdma_1_1block__template.html", [
       [ "udmaio::UioAxiVdmaIf", "classudmaio_1_1_uio_axi_vdma_if.html", null ]
     ] ],
-    [ "udmaio::ConcurrentQueue< T >", "classudmaio_1_1_concurrent_queue.html", null ],
-    [ "udmaio::ConcurrentQueue< std::vector< uint8_t > >", "classudmaio_1_1_concurrent_queue.html", null ],
     [ "udmaio::FrameFormat::dim_t", "structudmaio_1_1_frame_format_1_1dim__t.html", null ],
     [ "udmaio::FrameFormat", "classudmaio_1_1_frame_format.html", null ],
     [ "udmaio::Logger", "structudmaio_1_1_logger.html", [
+      [ "udmaio::ConcurrentQueue< std::vector< uint8_t > >", "classudmaio_1_1_concurrent_queue.html", null ],
+      [ "udmaio::ConcurrentQueue< T >", "classudmaio_1_1_concurrent_queue.html", null ],
       [ "udmaio::DataHandlerAbstract", "classudmaio_1_1_data_handler_abstract.html", [
         [ "udmaio::DataHandlerSync", "classudmaio_1_1_data_handler_sync.html", null ]
       ] ],

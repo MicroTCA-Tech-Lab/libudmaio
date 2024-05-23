@@ -39,6 +39,7 @@ digraph "udmaio::DataHandlerSync"
   Node4 -> Node13 [dir="back",color="firebrick4",style="solid"];
   Node14 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" _queue" ];
   Node14 [label="udmaio::ConcurrentQueue\l\< std::vector\< uint8_t \> \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_concurrent_queue.html",tooltip=" "];
+  Node3 -> Node14 [dir="back",color="steelblue1",style="solid"];
   Node15 -> Node14 [dir="back",color="darkorchid3",style="dashed",label=" _queue" ];
   Node15 [label="std::queue\< std::vector\l\< uint8_t \> \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
   Node16 -> Node15 [dir="back",color="darkorchid3",style="dashed",label=" elements" ];
