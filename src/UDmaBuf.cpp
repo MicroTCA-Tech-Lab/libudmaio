@@ -13,6 +13,7 @@
 
 #include <filesystem>
 #include <fstream>
+#include <ios>
 #include <iostream>
 
 #include <fcntl.h>
@@ -74,7 +75,10 @@ UioRegion UDmaBuf::get_phys_region() const {
 
 void UDmaBuf::copy_from_buf(uint8_t* dest, const UioRegion& buf_info) const {
     uintptr_t mmap_addr = buf_info.addr - _phys.addr;
+    BOOST_LOG_SEV(_lg, bls::trace) << "copying " << buf_info.size << " bytes from 0x" << std::hex
+                                   << buf_info.addr << std::dec << "...";
     std::memcpy(dest, static_cast<uint8_t*>(_mem) + mmap_addr, buf_info.size);
+    BOOST_LOG_SEV(_lg, bls::trace) << "copying done";
 }
 
 }  // namespace udmaio

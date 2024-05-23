@@ -36,6 +36,7 @@ void DataHandlerAbstract::stop() {
 }
 
 void DataHandlerAbstract::_start_read() {
+    BOOST_LOG_SEV(_lg, bls::trace) << "_start_read()";
     _dma.arm_interrupt();
 
     _sd.async_read_some(
@@ -47,6 +48,7 @@ void DataHandlerAbstract::_start_read() {
 }
 
 void DataHandlerAbstract::_handle_input(const boost::system::error_code& ec) {
+    BOOST_LOG_SEV(_lg, bls::trace) << "_handle_input()";
     if (ec) {
         BOOST_LOG_SEV(_lg, bls::error) << "I/O error: " << ec.message();
         return;
@@ -71,6 +73,7 @@ void DataHandlerAbstract::_handle_input(const boost::system::error_code& ec) {
         _mem.append_from_buf(buf, bytes);
     }
 
+    BOOST_LOG_SEV(_lg, bls::trace) << "process_data()";
     process_data(std::move(bytes));
 
 done:

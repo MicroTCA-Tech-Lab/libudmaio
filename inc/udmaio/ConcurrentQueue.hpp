@@ -17,23 +17,28 @@
 #include <queue>
 #include <thread>
 
+#include "udmaio/Logging.hpp"
+
 namespace udmaio {
 
 /// Helper class to implement a blocking FIFO between threads
 template <typename T>
-class ConcurrentQueue {
+class ConcurrentQueue : public Logger {
   public:
     /// @brief Pop an element from the queue, block if none available
     /// @param timeout timeout in ms, default 0 = no timeout, return empty T if elapsed
     /// @return Element popped from the queue
     T pop(std::chrono::milliseconds timeout = std::chrono::milliseconds{0}) {
+        BOOST_LOG_SEV(_lg, bls::trace) << "pop...";
         std::unique_lock<std::mutex> lock{_mutex};
         while (_queue.empty()) {
             if (_abort) {
+                BOOST_LOG_SEV(_lg, bls::trace) << "pop abort";
                 return {};
             }
             if (timeout.count()) {
                 if (_cond.wait_for(lock, timeout) == std::cv_status::timeout) {
+                    BOOST_LOG_SEV(_lg, bls::trace) << "pop timeout";
                     return {};
                 }
             } else {
@@ -44,12 +49,14 @@ class ConcurrentQueue {
         _queue.pop();
         lock.unlock();
         _cond.notify_one();
+        BOOST_LOG_SEV(_lg, bls::trace) << "pop done";
         return val;
     }
 
     /// @brief Push an element to the queue
     /// @param item Element to push to the queue
     void push(T item) {
+        BOOST_LOG_SEV(_lg, bls::trace) << "push...";
         std::unique_lock<std::mutex> lock(_mutex);
         if (_queue.size() >= MAX_ELEMS) {
             lock.unlock();
@@ -58,6 +65,7 @@ class ConcurrentQueue {
         _queue.push(std::move(item));
         lock.unlock();
         _cond.notify_one();
+        BOOST_LOG_SEV(_lg, bls::trace) << "push done";
     }
 
     /// @brief Abort any blocking consumers
@@ -66,7 +74,7 @@ class ConcurrentQueue {
         _cond.notify_one();
     }
 
-    ConcurrentQueue() = default;
+    ConcurrentQueue() : Logger("Queue") {}
     ConcurrentQueue(const ConcurrentQueue&) = delete;
     ConcurrentQueue& operator=(const ConcurrentQueue&) = delete;
 

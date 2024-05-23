@@ -37,13 +37,17 @@ py::array_t<uint8_t> DataHandlerPython::numpy_read(uint32_t ms_timeout) {
         throw std::runtime_error("DMA has experienced an error");
     }
 
+    BOOST_LOG_SEV(_lg, bls::trace) << "Starting blocking read...";
     // Create vector on the heap, holding the data
     auto vec = new std::vector<uint8_t>(read(std::chrono::milliseconds{ms_timeout}));
+    BOOST_LOG_SEV(_lg, bls::trace) << "read() returned with " << vec->size() << " bytes";
+
     // Callback for Python garbage collector
     py::capsule gc_callback(vec, [](void* f) {
         auto ptr = reinterpret_cast<std::vector<uint8_t>*>(f);
         delete ptr;
     });
+
     // Return Numpy array, transferring ownership to Python
     return py::array_t<uint8_t>({vec->size() / sizeof(uint8_t)},          // shape
                                 {sizeof(uint8_t)},                        // stride
