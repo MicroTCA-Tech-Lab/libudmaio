@@ -104,8 +104,18 @@ std::vector<UioRegion> UioMemSgdma::get_full_buffers() {
         desc.status.cmpit = 0;
         descriptors[_next_readable_buf].wr(desc);
 
+        if (desc.status.buffer_len != desc.control.buffer_len || desc.status.buffer_len == 0) {
+            BOOST_LOG_SEV(_lg, bls::error)
+                << "Descriptor #" << i << " size mismatch (expected " << desc.control.buffer_len
+                << ", received " << desc.status.buffer_len << "), skipping";
+
+            print_desc(desc);
+            continue;
+        }
+
         bufs.emplace_back(
             UioRegion{static_cast<uintptr_t>(desc.buffer_addr), desc.status.buffer_len});
+
         BOOST_LOG_SEV(_lg, bls::trace)
             << "save buf #" << _next_readable_buf << " @ 0x" << std::hex << desc.buffer_addr;
 

@@ -52,6 +52,9 @@ void DataHandlerAbstract::_handle_input(const boost::system::error_code& ec) {
         return;
     }
 
+    // Check for error flags and log them
+    _dma.check_for_errors();
+
     uint32_t irq_count = _dma.clear_interrupt();
     BOOST_LOG_SEV(_lg, bls::trace) << "irq count = " << irq_count;
 
