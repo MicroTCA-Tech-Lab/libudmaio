@@ -12,6 +12,7 @@
 #pragma once
 
 #include <cstddef>
+#include <memory>
 
 #include "DmaBufferAbstract.hpp"
 #include "RegAccessor.hpp"
@@ -78,6 +79,8 @@ class UioMemSgdma : public UioIf {
     std::vector<uint64_t> _buf_addrs;
     size_t _buf_size;
 
+    std::shared_ptr<DmaBufferAbstract> _mem;
+
     void write_cyc_mode(const std::vector<UioRegion>& dst_bufs);
 
   public:
@@ -87,7 +90,7 @@ class UioMemSgdma : public UioIf {
     /// @param mem Memory receiving the SGDMA data
     /// @param num_buffers Number of descriptors / SGDMA blocks
     /// @param buf_size Size of each SGDMA block
-    void init_buffers(DmaBufferAbstract& mem, size_t num_buffers, size_t buf_size);
+    void init_buffers(std::shared_ptr<DmaBufferAbstract> mem, size_t num_buffers, size_t buf_size);
 
     /// @brief Print SGDMA descriptor
     /// @param desc SGDMA descriptor
@@ -101,8 +104,10 @@ class UioMemSgdma : public UioIf {
     uintptr_t get_first_desc_addr() const;
 
     /// @brief Get full SGDMA buffers
-    /// @return Vector of UioRegion pointing into full buffers
-    std::vector<UioRegion> get_full_buffers();
+    /// @return Vector of indices of full buffers
+    std::vector<size_t> get_full_buffers();
+
+    std::vector<uint8_t> read_buffers(const std::vector<size_t> indices);
 };
 
 std::ostream& operator<<(std::ostream& os, const UioRegion& buf_info);

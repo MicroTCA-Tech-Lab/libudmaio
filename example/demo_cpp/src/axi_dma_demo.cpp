@@ -118,12 +118,12 @@ int main(int argc, char* argv[]) {
     auto mem_sgdma = std::make_unique<UioMemSgdma>(target_hw_consts::axi_bram_ctrl);
     auto traffic_gen = std::make_unique<UioTrafficGen>(target_hw_consts::axi_traffic_gen);
 
-    std::unique_ptr<DmaBufferAbstract> udmabuf;
+    std::shared_ptr<DmaBufferAbstract> udmabuf;
     if (mode == DmaMode::UIO) {
-        udmabuf = std::make_unique<UDmaBuf>();
+        udmabuf = std::make_shared<UDmaBuf>();
     } else {
         udmabuf =
-            std::make_unique<FpgaMemBufferOverXdma>(dev_path, target_hw_consts::fpga_mem_phys_addr);
+            std::make_shared<FpgaMemBufferOverXdma>(dev_path, target_hw_consts::fpga_mem_phys_addr);
     }
 
     const size_t pkt_size = pkt_len * target_hw_consts::lfsr_bytes_per_beat;
@@ -136,7 +136,7 @@ int main(int argc, char* argv[]) {
     auto fut = std::async(std::launch::async, std::ref(data_handler));
 
     constexpr int nr_buffers = 32;
-    mem_sgdma->init_buffers(*udmabuf, nr_buffers, pkt_size);
+    mem_sgdma->init_buffers(udmabuf, nr_buffers, pkt_size);
 
     uintptr_t first_desc = mem_sgdma->get_first_desc_addr();
     axi_dma->start(first_desc);

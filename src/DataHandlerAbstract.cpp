@@ -58,25 +58,14 @@ void DataHandlerAbstract::_handle_input(const boost::system::error_code& ec) {
     uint32_t irq_count = _dma.clear_interrupt();
     BOOST_LOG_SEV(_lg, bls::trace) << "irq count = " << irq_count;
 
-    std::vector<UioRegion> full_bufs = _desc.get_full_buffers();
-    std::vector<uint8_t> bytes;
-
+    auto full_bufs = _desc.get_full_buffers();
     if (full_bufs.empty()) {
         BOOST_LOG_SEV(_lg, bls::trace) << "spurious event, got no data";
-        goto done;
+    } else {
+        auto bytes = _desc.read_buffers(full_bufs);
+        process_data(std::move(bytes));
     }
 
-    // Assuming all buffers are equally big, we need number of buffers times buffer size
-    // Reserving enough space in advance to avoid re-allocation / copying
-    bytes.reserve(full_bufs.size() * full_bufs[0].size);
-
-    for (auto& buf : full_bufs) {
-        _mem.append_from_buf(buf, bytes);
-    }
-
-    process_data(std::move(bytes));
-
-done:
     _start_read();
 }
 

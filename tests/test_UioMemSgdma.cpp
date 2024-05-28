@@ -19,13 +19,13 @@ struct UioMemSgdmaTest : public Logger {
     UioMemSgdma sgdma;
 
     HwAccessorPtr hw_fpga_mem;
-    FpgaMemBufferOverAxi fpga_mem;
+    std::shared_ptr<FpgaMemBufferOverAxi> fpga_mem;
 
     UioMemSgdmaTest()
         : hw_sgdma{std::make_shared<udmaio::HwAccessorMock>(16 * 1024)}
         , sgdma{UioDeviceLocation{hw_sgdma}}
         , hw_fpga_mem{std::make_shared<HwAccessorMock>(16 * 1024)}
-        , fpga_mem{UioDeviceLocation{hw_fpga_mem}}
+        , fpga_mem{std::make_shared<FpgaMemBufferOverAxi>(UioDeviceLocation{hw_fpga_mem})}
         , descriptors{sgdma.descriptors}
         , Logger("UioMemSgdmaTest") {}
     ~UioMemSgdmaTest() {}
@@ -81,8 +81,7 @@ BOOST_FIXTURE_TEST_CASE(full_buffers, UioMemSgdmaTest) {
     auto bufs = sgdma.get_full_buffers();
     BOOST_CHECK_MESSAGE(bufs.size() == 1, "Expected one full buffer, received " << bufs.size());
 
-    std::vector<uint8_t> data;
-    fpga_mem.append_from_buf(bufs[0], data);
+    std::vector<uint8_t> data = sgdma.read_buffers(bufs);
     BOOST_CHECK_MESSAGE(data.size() == buf_size, "Buffer size mismatch");
     check_buffer(data);
 }

@@ -11,7 +11,14 @@
 
 #include "udmaio/UioMemSgdma.hpp"
 
+#include <cstddef>
 #include <cstdint>
+#include <memory>
+#include <stdexcept>
+#include <string>
+#include <vector>
+
+#include "udmaio/DmaBufferAbstract.hpp"
 
 namespace udmaio {
 
@@ -43,12 +50,16 @@ void UioMemSgdma::write_cyc_mode(const std::vector<UioRegion>& dst_bufs) {
     }
 }
 
-void UioMemSgdma::init_buffers(DmaBufferAbstract& mem, size_t num_buffers, size_t buf_size) {
+void UioMemSgdma::init_buffers(std::shared_ptr<DmaBufferAbstract> mem,
+                               size_t num_buffers,
+                               size_t buf_size) {
+    _mem = mem;
+
     // FIXME: enforce alignment constraints?
     std::vector<UioRegion> dst_bufs;
     _buf_addrs.clear();
     for (size_t i = 0; i < num_buffers; i++) {
-        uint64_t addr = mem.get_phys_region().addr + i * buf_size;
+        uint64_t addr = mem->get_phys_region().addr + i * buf_size;
         dst_bufs.push_back({
             .addr = addr,
             .size = buf_size,
@@ -97,8 +108,8 @@ std::ostream& operator<<(std::ostream& os, const UioRegion& buf_info) {
     return os;
 }
 
-std::vector<UioRegion> UioMemSgdma::get_full_buffers() {
-    std::vector<UioRegion> bufs;
+std::vector<size_t> UioMemSgdma::get_full_buffers() {
+    std::vector<size_t> result;
 
     for (size_t i = 0; i < _nr_cyc_desc; i++) {
         auto stat = desc_statuses[_next_readable_buf].rd();
@@ -107,29 +118,42 @@ std::vector<UioRegion> UioMemSgdma::get_full_buffers() {
         }
 
         if ((!stat.rxeof && (stat.num_stored_bytes != _buf_size)) || stat.num_stored_bytes == 0) {
-            BOOST_LOG_SEV(_lg, bls::error)
-                << "Descriptor #" << i << " size mismatch (expected " << _buf_size << ", received "
-                << stat.num_stored_bytes << "), skipping";
-
-            print_desc(descriptors[_next_readable_buf].rd());
-            continue;
+            throw std::runtime_error("Descriptor #" + std::to_string(i) +
+                                     " size mismatch (expected " + std::to_string(_buf_size) +
+                                     ", received " + std::to_string(stat.num_stored_bytes) + ")");
         }
 
-        stat.cmplt = 0;
-        desc_statuses[_next_readable_buf].wr(stat);
-
-        const uint64_t buf_addr = _buf_addrs[_next_readable_buf];
-        bufs.emplace_back(UioRegion{static_cast<uintptr_t>(buf_addr), stat.num_stored_bytes});
-
-        BOOST_LOG_SEV(_lg, bls::trace)
-            << "save buf #" << _next_readable_buf << " (" << stat.num_stored_bytes << " bytes) @ 0x"
-            << std::hex << buf_addr;
+        result.push_back(_next_readable_buf);
 
         _next_readable_buf++;
         _next_readable_buf %= _nr_cyc_desc;
     }
 
-    return bufs;
+    return result;
+}
+
+std::vector<uint8_t> UioMemSgdma::read_buffers(const std::vector<size_t> indices) {
+    // Read statuses for all buffers
+    std::vector<S2mmDescStatus> stats{indices.size()};
+    size_t result_size = 0;
+    for (size_t i = 0; i < indices.size(); i++) {
+        stats[i] = desc_statuses[indices[i]].rd();
+        result_size += stats[i].num_stored_bytes;
+    }
+
+    std::vector<uint8_t> result;
+    // Reserve enough space in advance to avoid re-allocation / copying
+    result.reserve(result_size);
+    for (size_t i = 0; i < indices.size(); i++) {
+        auto region = UioRegion{_buf_addrs[indices[i]], stats[i].num_stored_bytes};
+        BOOST_LOG_SEV(_lg, bls::trace) << "save buf #" << indices[i] << " (" << region.size
+                                       << " bytes) @ 0x" << std::hex << region.addr;
+        _mem->append_from_buf(region, result);
+        // Clear complete flag after having read the data
+        stats[i].cmplt = 0;
+        desc_statuses[indices[i]].wr(stats[i]);
+    }
+    return result;
 }
 
 }  // namespace udmaio
