@@ -19,6 +19,8 @@ namespace udmaio {
 /// @brief Interface to AXI DMA scatter-gather buffers & descriptors
 /// Uses a UioIf to access DMA descriptor memory
 class UioMemSgdma : public UioIf {
+    friend struct UioMemSgdmaTest;
+
     static constexpr int DESC_ADDR_STEP = 0x40;
 
     struct __attribute__((packed)) S2mmDescControl {
