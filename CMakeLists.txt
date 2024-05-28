@@ -71,8 +71,20 @@ if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16.0")
     target_precompile_headers(axi_dma_demo_cpp PRIVATE example/demo_cpp/inc/BoostPCH.hpp)
 endif()
 
-# cpp example tests
 if(BUILD_TESTING)
+    # library tests
+    file(GLOB LIB_TESTS "tests/*.cpp")
+
+    foreach(TEST_FILE ${LIB_TESTS})
+        get_filename_component(test_basename ${TEST_FILE} NAME_WE)
+
+        add_executable(${test_basename} ${TEST_FILE})
+        target_include_directories(${test_basename} PRIVATE inc)
+        target_link_libraries(${test_basename} LINK_PUBLIC Boost::unit_test_framework Boost::log Boost::program_options Boost::dynamic_linking udmaio)
+        add_test(NAME ${test_basename} COMMAND ${test_basename})
+    endforeach()
+
+    # cpp example tests
     file(GLOB TEST_SOURCES "example/demo_cpp/src/*.cpp")
     file(GLOB EXAMPLE_MAIN "example/demo_cpp/src/axi_dma_demo.cpp")
     list(REMOVE_ITEM TEST_SOURCES ${EXAMPLE_MAIN})
