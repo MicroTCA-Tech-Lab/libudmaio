@@ -46,14 +46,18 @@ void UioMemSgdma::write_cyc_mode(const std::vector<UioRegion>& dst_bufs) {
 void UioMemSgdma::init_buffers(DmaBufferAbstract& mem, size_t num_buffers, size_t buf_size) {
     // FIXME: enforce alignment constraints?
     std::vector<UioRegion> dst_bufs;
+    _buf_addrs.clear();
     for (size_t i = 0; i < num_buffers; i++) {
+        uint64_t addr = mem.get_phys_region().addr + i * buf_size;
         dst_bufs.push_back({
-            .addr = mem.get_phys_region().addr + i * buf_size,
+            .addr = addr,
             .size = buf_size,
         });
+        _buf_addrs.push_back(addr);
     };
 
     write_cyc_mode(dst_bufs);
+    _buf_size = buf_size;
 }
 
 void UioMemSgdma::print_desc(const S2mmDesc& desc) const {
@@ -97,30 +101,29 @@ std::vector<UioRegion> UioMemSgdma::get_full_buffers() {
     std::vector<UioRegion> bufs;
 
     for (size_t i = 0; i < _nr_cyc_desc; i++) {
-        S2mmDesc desc = descriptors[_next_readable_buf].rd();
-        if (!desc.status.cmplt) {
+        auto stat = desc_statuses[_next_readable_buf].rd();
+        if (!stat.cmplt) {
             break;
         }
 
-        if ((!desc.status.rxeof && (desc.status.num_stored_bytes != desc.control.buffer_len)) ||
-            desc.status.num_stored_bytes == 0) {
+        if ((!stat.rxeof && (stat.num_stored_bytes != _buf_size)) || stat.num_stored_bytes == 0) {
             BOOST_LOG_SEV(_lg, bls::error)
-                << "Descriptor #" << i << " size mismatch (expected " << desc.control.buffer_len
-                << ", received " << desc.status.num_stored_bytes << "), skipping";
+                << "Descriptor #" << i << " size mismatch (expected " << _buf_size << ", received "
+                << stat.num_stored_bytes << "), skipping";
 
-            print_desc(desc);
+            print_desc(descriptors[_next_readable_buf].rd());
             continue;
         }
 
-        desc.status.cmplt = 0;
-        descriptors[_next_readable_buf].wr(desc);
+        stat.cmplt = 0;
+        desc_statuses[_next_readable_buf].wr(stat);
 
-        bufs.emplace_back(
-            UioRegion{static_cast<uintptr_t>(desc.buffer_addr), desc.status.num_stored_bytes});
+        const uint64_t buf_addr = _buf_addrs[_next_readable_buf];
+        bufs.emplace_back(UioRegion{static_cast<uintptr_t>(buf_addr), stat.num_stored_bytes});
 
         BOOST_LOG_SEV(_lg, bls::trace)
-            << "save buf #" << _next_readable_buf << " (" << desc.status.num_stored_bytes
-            << " bytes) @ 0x" << std::hex << desc.buffer_addr;
+            << "save buf #" << _next_readable_buf << " (" << stat.num_stored_bytes << " bytes) @ 0x"
+            << std::hex << buf_addr;
 
         _next_readable_buf++;
         _next_readable_buf %= _nr_cyc_desc;

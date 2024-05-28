@@ -11,6 +11,8 @@
 
 #pragma once
 
+#include <cstddef>
+
 #include "DmaBufferAbstract.hpp"
 #include "RegAccessor.hpp"
 
@@ -65,9 +67,16 @@ class UioMemSgdma : public UioIf {
 
     // set excessively high number of 1024 descriptors, b/c the actual number is not known at compile time
     RegAccessorArray<S2mmDesc, 0, 1024, DESC_ADDR_STEP> descriptors{this};
+    // Make a separate accessor for the statuses only, so we don't have to read/write the whole descriptor when we only want the status
+    RegAccessorArray<S2mmDescStatus, offsetof(S2mmDesc, status), 1024, DESC_ADDR_STEP>
+        desc_statuses{this};
 
     size_t _nr_cyc_desc;
     size_t _next_readable_buf;
+
+    // Cache buffer addrs/sizes in order to not have to pull it from BRAM all the time
+    std::vector<uint64_t> _buf_addrs;
+    size_t _buf_size;
 
     void write_cyc_mode(const std::vector<UioRegion>& dst_bufs);
 

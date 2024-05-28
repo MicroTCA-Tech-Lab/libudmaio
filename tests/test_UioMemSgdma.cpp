@@ -41,13 +41,13 @@ BOOST_FIXTURE_TEST_CASE(init_buffers, UioMemSgdmaTest) {
                         "Descriptor address mismatch");
 }
 
-void fill_buffer(HwAccessorPtr& mem, uintptr_t offs, size_t size) {
-    assert(offs % sizeof(uint32_t) == 0);
+void fill_buffer(HwAccessorPtr& mem, uintptr_t addr, uint32_t start_count, size_t size) {
+    assert(addr % sizeof(uint32_t) == 0);
     assert(size % sizeof(uint32_t) == 0);
 
-    while (offs < size) {
-        mem->_wr32(offs, offs);
-        offs += sizeof(uint32_t);
+    while (addr < size) {
+        mem->_wr32(addr, addr + start_count);
+        addr += sizeof(uint32_t);
     }
 }
 
@@ -67,7 +67,7 @@ BOOST_FIXTURE_TEST_CASE(full_buffers, UioMemSgdmaTest) {
     BOOST_CHECK_MESSAGE(empty_bufs.size() == 0, "Empty buffers result not empty");
 
     // Fill first buffer
-    fill_buffer(hw_fpga_mem, 0, buf_size);
+    fill_buffer(hw_fpga_mem, 0x00000000, 0, buf_size);
 
     auto desc = descriptors[0].rd();
     desc.status.cmplt = true;
