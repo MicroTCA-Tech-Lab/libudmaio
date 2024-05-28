@@ -308,6 +308,8 @@ class HwAccessorMock : public HwAccessor {
         }
         *_mem_ptr<uint32_t>(offs) = data;
     }
+
+    void* get_virt_mem() const final override { return reinterpret_cast<void*>(&_mem[0]); }
 };
 
 }  // namespace udmaio
