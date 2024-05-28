@@ -66,13 +66,13 @@ void UioMemSgdma::print_desc(const S2mmDesc& desc) const {
     BLI << "    sof        = " << std::dec << desc.control.rxsof;
     BLI << "    eof        = " << std::dec << desc.control.rxeof;
     BLI << "  status";
-    BLI << "    buffer_len = " << std::dec << desc.status.buffer_len;
+    BLI << "    buffer_len = " << std::dec << desc.status.num_stored_bytes;
     BLI << "    sof        = " << std::dec << desc.status.rxsof;
     BLI << "    eof        = " << std::dec << desc.status.rxeof;
     BLI << "    dmainterr  = " << std::dec << desc.status.dmainterr;
     BLI << "    dmaslverr  = " << std::dec << desc.status.dmaslverr;
     BLI << "    dmadecerr  = " << std::dec << desc.status.dmadecerr;
-    BLI << "    cmpit      = " << std::dec << desc.status.cmpit;
+    BLI << "    cmplt      = " << std::dec << desc.status.cmplt;
     BLI << "}" << std::dec;
 }
 
@@ -98,26 +98,29 @@ std::vector<UioRegion> UioMemSgdma::get_full_buffers() {
 
     for (size_t i = 0; i < _nr_cyc_desc; i++) {
         S2mmDesc desc = descriptors[_next_readable_buf].rd();
-        if (!desc.status.cmpit) {
+        if (!desc.status.cmplt) {
             break;
         }
-        desc.status.cmpit = 0;
-        descriptors[_next_readable_buf].wr(desc);
 
-        if (desc.status.buffer_len != desc.control.buffer_len || desc.status.buffer_len == 0) {
+        if ((!desc.status.rxeof && (desc.status.num_stored_bytes != desc.control.buffer_len)) ||
+            desc.status.num_stored_bytes == 0) {
             BOOST_LOG_SEV(_lg, bls::error)
                 << "Descriptor #" << i << " size mismatch (expected " << desc.control.buffer_len
-                << ", received " << desc.status.buffer_len << "), skipping";
+                << ", received " << desc.status.num_stored_bytes << "), skipping";
 
             print_desc(desc);
             continue;
         }
 
+        desc.status.cmplt = 0;
+        descriptors[_next_readable_buf].wr(desc);
+
         bufs.emplace_back(
-            UioRegion{static_cast<uintptr_t>(desc.buffer_addr), desc.status.buffer_len});
+            UioRegion{static_cast<uintptr_t>(desc.buffer_addr), desc.status.num_stored_bytes});
 
         BOOST_LOG_SEV(_lg, bls::trace)
-            << "save buf #" << _next_readable_buf << " @ 0x" << std::hex << desc.buffer_addr;
+            << "save buf #" << _next_readable_buf << " (" << desc.status.num_stored_bytes
+            << " bytes) @ 0x" << std::hex << desc.buffer_addr;
 
         _next_readable_buf++;
         _next_readable_buf %= _nr_cyc_desc;

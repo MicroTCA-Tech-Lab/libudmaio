@@ -31,13 +31,22 @@ class UioMemSgdma : public UioIf {
     };
 
     struct __attribute__((packed)) S2mmDescStatus {
-        uint32_t buffer_len : 26;
+        // This value indicates the amount of data received and stored in the buffer described by
+        // this descriptor. This might or might not match the buffer length
+        uint32_t num_stored_bytes : 26;
+        // End of Frame. Flag indicating buffer holds the last part of packet.
         bool rxeof : 1;
+        // Start of Frame. Flag indicating buffer holds first part of packet.
         bool rxsof : 1;
+        // DMA Internal Error. Internal Error detected by primary AXI DataMover.
         bool dmainterr : 1;
+        // DMA Slave Error. Slave Error detected by primary AXI DataMover.
         bool dmaslverr : 1;
+        // DMA Decode Error. Decode Error detected by primary AXI DataMover.
         bool dmadecerr : 1;
-        bool cmpit : 1;
+        // Completed. This indicates to the software that the DMA Engine has
+        // completed the transfer as described by the associated descriptor.
+        bool cmplt : 1;
     };
 
     struct __attribute__((packed, aligned(8))) S2mmDesc {
