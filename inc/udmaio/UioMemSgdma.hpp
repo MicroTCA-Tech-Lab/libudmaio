@@ -103,10 +103,17 @@ class UioMemSgdma : public UioIf {
     /// @return Address of first SGDMA descriptor
     uintptr_t get_first_desc_addr() const;
 
-    /// @brief Get full SGDMA buffers
-    /// @return Vector of indices of full buffers
+    /// @brief Get all full SGDMA buffers
+    /// @return Vector of buffer indices of full buffers
     std::vector<size_t> get_full_buffers();
 
+    /// @brief Get SGDMA buffers for next packet
+    /// @return Vector of buffer indices for next packet
+    /// Returns only complete packets
+    std::vector<size_t> get_next_packet();
+
+    /// @brief Read data from a set of buffers
+    /// @param indices Vector of buffer indices to read
     std::vector<uint8_t> read_buffers(const std::vector<size_t> indices);
 };
 

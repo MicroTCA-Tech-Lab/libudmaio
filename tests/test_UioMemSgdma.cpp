@@ -162,4 +162,101 @@ BOOST_FIXTURE_TEST_CASE(buffer_read, UioMemSgdmaTest) {
     BOOST_CHECK_MESSAGE(cmplt_reset, "Complete flags are not reset");
 }
 
+BOOST_FIXTURE_TEST_CASE(packets_read, UioMemSgdmaTest) {
+    // Make a packet filling up the first buffer
+    fill_buffer(hw_fpga_mem, buf_size * 0, 0, buf_size);
+
+    auto desc = descriptors[0].rd();
+    desc.status.cmplt = true;
+    desc.status.rxsof = true;
+    desc.status.rxeof = true;
+    desc.status.num_stored_bytes = buf_size;
+    descriptors[0].wr(desc);
+
+    auto bufs = sgdma.get_next_packet();
+    BOOST_CHECK_MESSAGE(bufs.size() == 1, "Expected one full buffer, received " << bufs.size());
+    BOOST_CHECK_MESSAGE(bufs[0] == 0, "Expected first buffer to be full, received " << bufs[0]);
+
+    std::vector<uint8_t> data = sgdma.read_buffers(bufs);
+    BOOST_CHECK_MESSAGE(data.size() == buf_size, "Buffer size mismatch");
+    check_buffer(data);
+
+    bool cmplt_reset = !descriptors[0].rd().status.cmplt;
+    BOOST_CHECK_MESSAGE(cmplt_reset, "Complete flag is not reset");
+
+    // Make a packet spanning 1.5 buffers
+    fill_buffer(hw_fpga_mem, buf_size * 1, 0, buf_size * 3 / 2);
+    desc = descriptors[1].rd();
+    desc.status.cmplt = true;
+    desc.status.rxsof = true;
+    desc.status.rxeof = false;
+    desc.status.num_stored_bytes = buf_size;
+    descriptors[1].wr(desc);
+    desc = descriptors[2].rd();
+    desc.status.cmplt = true;
+    desc.status.rxsof = false;
+    desc.status.rxeof = true;
+    desc.status.num_stored_bytes = buf_size / 2;
+    descriptors[2].wr(desc);
+
+    bufs = sgdma.get_next_packet();
+    BOOST_CHECK_MESSAGE((bufs == std::vector<size_t>{1, 2}), "Buffer indices mismatch");
+
+    data = sgdma.read_buffers(bufs);
+    BOOST_CHECK_MESSAGE(data.size() == buf_size * 3 / 2, "Data size mismatch");
+    check_buffer(data);
+
+    cmplt_reset = !descriptors[1].rd().status.cmplt && !descriptors[2].rd().status.cmplt;
+    BOOST_CHECK_MESSAGE(cmplt_reset, "Complete flags are not reset");
+
+    // Make two packets spanning 4 buffers
+    fill_buffer(hw_fpga_mem, buf_size * 3, 1234, buf_size * 3 / 2);
+    desc = descriptors[3].rd();
+    desc.status.cmplt = true;
+    desc.status.rxsof = true;
+    desc.status.rxeof = false;
+    desc.status.num_stored_bytes = buf_size;
+    descriptors[3].wr(desc);
+
+    // Try to read a packet; ensure it doesn't return anything yet w/o EOF
+    bufs = sgdma.get_next_packet();
+    BOOST_CHECK_MESSAGE(bufs.empty(), "Packet is not full yet");
+
+    desc = descriptors[4].rd();
+    desc.status.cmplt = true;
+    desc.status.rxsof = false;
+    desc.status.rxeof = true;
+    desc.status.num_stored_bytes = buf_size / 2;
+    descriptors[4].wr(desc);
+
+    fill_buffer(hw_fpga_mem, buf_size * 5, 5678, buf_size * 2);
+    desc = descriptors[5].rd();
+    desc.status.cmplt = true;
+    desc.status.rxsof = true;
+    desc.status.rxeof = false;
+    desc.status.num_stored_bytes = buf_size;
+    descriptors[5].wr(desc);
+    desc = descriptors[6].rd();
+    desc.status.cmplt = true;
+    desc.status.rxsof = false;
+    desc.status.rxeof = true;
+    desc.status.num_stored_bytes = buf_size;
+    descriptors[6].wr(desc);
+
+    bufs = sgdma.get_next_packet();
+    BOOST_CHECK_MESSAGE((bufs == std::vector<size_t>{3, 4}), "Buffer indices mismatch");
+    data = sgdma.read_buffers(bufs);
+    BOOST_CHECK_MESSAGE(data.size() == buf_size * 3 / 2, "Data size mismatch");
+    check_buffer(data, 1234);
+    cmplt_reset = !descriptors[3].rd().status.cmplt && !descriptors[4].rd().status.cmplt;
+    BOOST_CHECK_MESSAGE(cmplt_reset, "Complete flags are not reset");
+
+    bufs = sgdma.get_next_packet();
+    BOOST_CHECK_MESSAGE((bufs == std::vector<size_t>{5, 6}), "Buffer indices mismatch");
+    data = sgdma.read_buffers(bufs);
+    BOOST_CHECK_MESSAGE(data.size() == buf_size * 2, "Data size mismatch");
+    check_buffer(data, 5678);
+    cmplt_reset = !descriptors[3].rd().status.cmplt && !descriptors[4].rd().status.cmplt;
+    BOOST_CHECK_MESSAGE(cmplt_reset, "Complete flags are not reset");
+}
 }  // namespace udmaio

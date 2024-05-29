@@ -13,12 +13,29 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <iterator>
 #include <memory>
 #include <stdexcept>
 #include <string>
 #include <vector>
 
 #include "udmaio/DmaBufferAbstract.hpp"
+#include <boost/log/sources/severity_feature.hpp>
+
+namespace std {
+// To dump e.g. buffer indices
+// To look a operator up, it has to live in the same namespace as the type it is supposed to stream
+// We want to stream std::vector<size_t> so we have to put it into std namespace :-/
+ostream& operator<<(ostream& os, const vector<size_t>& vec) {
+    os << '[';
+    if (!vec.empty()) {
+        copy(vec.begin(), vec.end() - 1, ostream_iterator<size_t>(os, ", "));
+        os << vec.back();
+    }
+    os << ']';
+    return os;
+}
+};  // namespace std
 
 namespace udmaio {
 
@@ -117,10 +134,9 @@ std::vector<size_t> UioMemSgdma::get_full_buffers() {
             break;
         }
 
-        if ((!stat.rxeof && (stat.num_stored_bytes != _buf_size)) || stat.num_stored_bytes == 0) {
-            throw std::runtime_error("Descriptor #" + std::to_string(i) +
-                                     " size mismatch (expected " + std::to_string(_buf_size) +
-                                     ", received " + std::to_string(stat.num_stored_bytes) + ")");
+        if (stat.num_stored_bytes == 0) {
+            throw std::runtime_error("Descriptor #" + std::to_string(_next_readable_buf) +
+                                     " yields zero buffer length");
         }
 
         result.push_back(_next_readable_buf);
@@ -129,7 +145,53 @@ std::vector<size_t> UioMemSgdma::get_full_buffers() {
         _next_readable_buf %= _nr_cyc_desc;
     }
 
+    if (!result.empty()) {
+        BOOST_LOG_SEV(_lg, bls::trace) << "get_full_buffers() result: " << result;
+    }
     return result;
+}
+
+std::vector<size_t> UioMemSgdma::get_next_packet() {
+    std::vector<size_t> result;
+
+    bool has_sof = false;
+    size_t n = _next_readable_buf;
+
+    for (size_t i = 0; i < _nr_cyc_desc; i++) {
+        auto stat = desc_statuses[n].rd();
+        if (!stat.cmplt) {
+            break;
+        }
+
+        if (stat.num_stored_bytes == 0) {
+            throw std::runtime_error("Descriptor #" + std::to_string(n) +
+                                     " yields zero buffer length");
+        }
+        if (!has_sof && !stat.rxsof) {
+            BOOST_LOG_SEV(_lg, bls::warning) << "buffer #" << n << " has no SOF, skipping";
+            n++;
+            n %= _nr_cyc_desc;
+            _next_readable_buf = n;
+            continue;
+        }
+        if (stat.rxsof) {
+            if (!has_sof) {
+                has_sof = true;
+            } else {
+                BOOST_LOG_SEV(_lg, bls::warning) << "buffer #" << n << ": duplicate SOF";
+            }
+        }
+        result.push_back(n);
+        n++;
+        n %= _nr_cyc_desc;
+        if (stat.rxeof) {
+            _next_readable_buf = n;
+            BOOST_LOG_SEV(_lg, bls::trace) << "get_next_packet() result: " << result;
+            return result;
+        }
+    }
+
+    return {};
 }
 
 std::vector<uint8_t> UioMemSgdma::read_buffers(const std::vector<size_t> indices) {
