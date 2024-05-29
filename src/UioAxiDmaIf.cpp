@@ -62,6 +62,14 @@ bool UioAxiDmaIf::check_for_errors() {
     bool has_errors = false;
 
     auto sr = s2mm_dmasr.rd();
+    if (sr.halted) {
+        BOOST_LOG_SEV(_lg, bls::warning) << "DMA Halted";
+    }
+
+    if (sr.idle) {
+        BOOST_LOG_SEV(_lg, bls::warning) << "DMA Idle";
+    }
+
     if (sr.dma_int_err) {
         has_errors = true;
         BOOST_LOG_SEV(_lg, bls::fatal) << "DMA Internal Error";

@@ -150,7 +150,7 @@ int main(int argc, char* argv[]) {
             break;
         }
     }
-
+    axi_dma->check_for_errors();
     traffic_gen->stop();
 
     auto [counter_ok, counter_total] = fut.get();
