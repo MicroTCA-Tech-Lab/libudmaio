@@ -3,16 +3,20 @@
 {\ttfamily \#include \char`\"{}udmaio/\+Uio\+Mem\+Sgdma.\+hpp\char`\"{}}\newline
 {\ttfamily \#include $<$cstddef$>$}\newline
 {\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
 {\ttfamily \#include $<$memory$>$}\newline
 {\ttfamily \#include $<$stdexcept$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
 {\ttfamily \#include \char`\"{}udmaio/\+Dma\+Buffer\+Abstract.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$boost/log/sources/severity\+\_\+feature.\+hpp$>$}\newline
 Include dependency graph for Uio\+Mem\+Sgdma.\+cpp\+:
 % FIG 0
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
+namespace \mbox{\hyperlink{namespacestd}{std}}
+\begin{DoxyCompactList}\small\item\em STL namespace. \end{DoxyCompactList}\item 
 namespace \mbox{\hyperlink{namespaceudmaio}{udmaio}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Macros}
@@ -22,6 +26,8 @@ namespace \mbox{\hyperlink{namespaceudmaio}{udmaio}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{namespacestd_a5edd63f583ab9a0606363ecff9bfff6d}{std\+::operator$<$$<$}} (ostream \&os, const vector$<$ size\+\_\+t $>$ \&vec)
 \item 
 std\+::ostream \& \mbox{\hyperlink{namespaceudmaio_ac25c553cf3256b7c5d7cd731d18251ff}{udmaio\+::operator$<$$<$}} (std\+::ostream \&os, const Uio\+Region \&buf\+\_\+info)
 \end{DoxyCompactItemize}

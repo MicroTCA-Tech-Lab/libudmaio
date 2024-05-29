@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['datahandlerabstract_0',['DataHandlerAbstract',['../classudmaio_1_1_data_handler_abstract.html#a5228c5ea1c6a7a4d9f9aad4c38b03f2b',1,'udmaio::DataHandlerAbstract::DataHandlerAbstract()'],['../classudmaio_1_1_data_handler_sync.html#a5228c5ea1c6a7a4d9f9aad4c38b03f2b',1,'udmaio::DataHandlerSync::DataHandlerAbstract()'],['../classudmaio_1_1_data_handler_abstract.html',1,'udmaio::DataHandlerAbstract']]],
+  ['datahandlerabstract_0',['DataHandlerAbstract',['../classudmaio_1_1_data_handler_abstract.html#ad3731cb36bac1fb2019eefaae629c833',1,'udmaio::DataHandlerAbstract::DataHandlerAbstract()'],['../classudmaio_1_1_data_handler_sync.html#ad3731cb36bac1fb2019eefaae629c833',1,'udmaio::DataHandlerSync::DataHandlerAbstract()'],['../classudmaio_1_1_data_handler_abstract.html',1,'udmaio::DataHandlerAbstract']]],
   ['datahandlerabstract_2ecpp_1',['DataHandlerAbstract.cpp',['../_data_handler_abstract_8cpp.html',1,'']]],
   ['datahandlerabstract_2ehpp_2',['DataHandlerAbstract.hpp',['../_data_handler_abstract_8hpp.html',1,'']]],
   ['datahandlersync_3',['DataHandlerSync',['../classudmaio_1_1_data_handler_sync.html',1,'udmaio']]],

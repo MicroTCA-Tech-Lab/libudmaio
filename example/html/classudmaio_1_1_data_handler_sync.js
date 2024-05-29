@@ -1,7 +1,7 @@
 var classudmaio_1_1_data_handler_sync =
 [
     [ "~DataHandlerSync", "classudmaio_1_1_data_handler_sync.html#a2c99b9d7544ba9e43af2cf0407b08fb2", null ],
-    [ "DataHandlerAbstract", "classudmaio_1_1_data_handler_sync.html#a5228c5ea1c6a7a4d9f9aad4c38b03f2b", null ],
+    [ "DataHandlerAbstract", "classudmaio_1_1_data_handler_sync.html#ad3731cb36bac1fb2019eefaae629c833", null ],
     [ "operator()", "classudmaio_1_1_data_handler_sync.html#af9ef2065d6dcda7af1a6fbf64f2f24ca", null ],
     [ "process_data", "classudmaio_1_1_data_handler_sync.html#a42e7f4d866c460a6487d525604562102", null ],
     [ "read", "classudmaio_1_1_data_handler_sync.html#a605fd0316d366ec4935583b4dce91795", null ],

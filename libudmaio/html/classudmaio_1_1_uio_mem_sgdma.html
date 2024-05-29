@@ -144,9 +144,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac86d786996e68219d26db1ae67cfd0a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get address of first SGDMA descriptor (needed for the AXI DMA I/F)  <a href="classudmaio_1_1_uio_mem_sgdma.html#ac86d786996e68219d26db1ae67cfd0a9">More...</a><br /></td></tr>
 <tr class="separator:ac86d786996e68219d26db1ae67cfd0a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abca7da8011e089d5a293ff4ea5deb07b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#abca7da8011e089d5a293ff4ea5deb07b">get_full_buffers</a> ()</td></tr>
-<tr class="memdesc:abca7da8011e089d5a293ff4ea5deb07b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get full SGDMA buffers.  <a href="classudmaio_1_1_uio_mem_sgdma.html#abca7da8011e089d5a293ff4ea5deb07b">More...</a><br /></td></tr>
+<tr class="memdesc:abca7da8011e089d5a293ff4ea5deb07b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all full SGDMA buffers.  <a href="classudmaio_1_1_uio_mem_sgdma.html#abca7da8011e089d5a293ff4ea5deb07b">More...</a><br /></td></tr>
 <tr class="separator:abca7da8011e089d5a293ff4ea5deb07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e11475b0dc522c0d2f5308868ae9e2e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#a0e11475b0dc522c0d2f5308868ae9e2e">get_next_packet</a> ()</td></tr>
+<tr class="memdesc:a0e11475b0dc522c0d2f5308868ae9e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get SGDMA buffers for next packet.  <a href="classudmaio_1_1_uio_mem_sgdma.html#a0e11475b0dc522c0d2f5308868ae9e2e">More...</a><br /></td></tr>
+<tr class="separator:a0e11475b0dc522c0d2f5308868ae9e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa623e411a9394e4254e08929d91d8ce9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#aa623e411a9394e4254e08929d91d8ce9">read_buffers</a> (const std::vector&lt; size_t &gt; indices)</td></tr>
+<tr class="memdesc:aa623e411a9394e4254e08929d91d8ce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read data from a set of buffers.  <a href="classudmaio_1_1_uio_mem_sgdma.html#aa623e411a9394e4254e08929d91d8ce9">More...</a><br /></td></tr>
 <tr class="separator:aa623e411a9394e4254e08929d91d8ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classudmaio_1_1_uio_if"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classudmaio_1_1_uio_if')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classudmaio_1_1_uio_if.html">udmaio::UioIf</a></td></tr>
 <tr class="memitem:a383688e40d0c62f7a46a8ab37e9de4ec inherit pub_methods_classudmaio_1_1_uio_if"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if.html#a383688e40d0c62f7a46a8ab37e9de4ec">UioIf</a> (std::string name, <a class="el" href="classudmaio_1_1_uio_device_location.html">UioDeviceLocation</a> dev_loc)</td></tr>
@@ -374,8 +378,28 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get full SGDMA buffers. </p>
-<dl class="section return"><dt>Returns</dt><dd>Vector of indices of full buffers </dd></dl>
+<p>Get all full SGDMA buffers. </p>
+<dl class="section return"><dt>Returns</dt><dd>Vector of buffer indices of full buffers </dd></dl>
+
+</div>
+</div>
+<a id="a0e11475b0dc522c0d2f5308868ae9e2e" name="a0e11475b0dc522c0d2f5308868ae9e2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e11475b0dc522c0d2f5308868ae9e2e">&#9670;&#160;</a></span>get_next_packet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; size_t &gt; udmaio::UioMemSgdma::get_next_packet </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get SGDMA buffers for next packet. </p>
+<dl class="section return"><dt>Returns</dt><dd>Vector of buffer indices for next packet Returns only complete packets </dd></dl>
 
 </div>
 </div>
@@ -483,6 +507,14 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Read data from a set of buffers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">indices</td><td>Vector of buffer indices to read </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

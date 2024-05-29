@@ -31,9 +31,11 @@ void \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a0dd0d06deac7f7810feeafa37c3
 uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_ac86d786996e68219d26db1ae67cfd0a9}{get\+\_\+first\+\_\+desc\+\_\+addr}} () const
 \begin{DoxyCompactList}\small\item\em Get address of first SGDMA descriptor (needed for the AXI DMA I/F) \end{DoxyCompactList}\item 
 std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_abca7da8011e089d5a293ff4ea5deb07b}{get\+\_\+full\+\_\+buffers}} ()
-\begin{DoxyCompactList}\small\item\em Get full SGDMA buffers. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get all full SGDMA buffers. \end{DoxyCompactList}\item 
+std\+::vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a0e11475b0dc522c0d2f5308868ae9e2e}{get\+\_\+next\+\_\+packet}} ()
+\begin{DoxyCompactList}\small\item\em Get SGDMA buffers for next packet. \end{DoxyCompactList}\item 
 std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_aa623e411a9394e4254e08929d91d8ce9}{read\+\_\+buffers}} (const std\+::vector$<$ size\+\_\+t $>$ indices)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Read data from a set of buffers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -127,10 +129,23 @@ Address of first SGDMA descriptor
 
 
 
-Get full SGDMA buffers. 
+Get all full SGDMA buffers. 
 
 \begin{DoxyReturn}{Returns}
-Vector of indices of full buffers 
+Vector of buffer indices of full buffers 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_a0e11475b0dc522c0d2f5308868ae9e2e}\label{classudmaio_1_1_uio_mem_sgdma_a0e11475b0dc522c0d2f5308868ae9e2e}} 
+\index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!get\_next\_packet@{get\_next\_packet}}
+\index{get\_next\_packet@{get\_next\_packet}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}
+\doxysubsubsection{\texorpdfstring{get\_next\_packet()}{get\_next\_packet()}}
+{\footnotesize\ttfamily std\+::vector$<$ size\+\_\+t $>$ udmaio\+::\+Uio\+Mem\+Sgdma\+::get\+\_\+next\+\_\+packet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get SGDMA buffers for next packet. 
+
+\begin{DoxyReturn}{Returns}
+Vector of buffer indices for next packet Returns only complete packets 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_aa4aa8a35e676a052ec360b2766fc8814}\label{classudmaio_1_1_uio_mem_sgdma_aa4aa8a35e676a052ec360b2766fc8814}} 
 \index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!init\_buffers@{init\_buffers}}
@@ -182,6 +197,15 @@ Print all SGDMA descriptors.
 \doxysubsubsection{\texorpdfstring{read\_buffers()}{read\_buffers()}}
 {\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ udmaio\+::\+Uio\+Mem\+Sgdma\+::read\+\_\+buffers (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ size\+\_\+t $>$}]{indices }\end{DoxyParamCaption})}
 
+
+
+Read data from a set of buffers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indices} & Vector of buffer indices to read \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classudmaio_1_1_uio_mem_sgdma_ad1c770a8302c0f8c6838dca51efe5993}\label{classudmaio_1_1_uio_mem_sgdma_ad1c770a8302c0f8c6838dca51efe5993}} 
 \index{udmaio::UioMemSgdma@{udmaio::UioMemSgdma}!write\_cyc\_mode@{write\_cyc\_mode}}
 \index{write\_cyc\_mode@{write\_cyc\_mode}!udmaio::UioMemSgdma@{udmaio::UioMemSgdma}}

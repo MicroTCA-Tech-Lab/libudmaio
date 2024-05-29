@@ -32,7 +32,7 @@ std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classudmaio_1_1_data_handler_
 \begin{DoxyCompactList}\small\item\em Blocking read. \end{DoxyCompactList}\item 
 std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_a8e6fda5d3ec7577a83605dcd3b106204}{read}} (std\+::chrono\+::milliseconds timeout)
 \begin{DoxyCompactList}\small\item\em Blocking read with timeout. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classudmaio_1_1_data_handler_sync_a5228c5ea1c6a7a4d9f9aad4c38b03f2b}{Data\+Handler\+Abstract}} (std\+::string name, \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{Uio\+Axi\+Dma\+If}} \&dma, \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{Uio\+Mem\+Sgdma}} \&desc, \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{Dma\+Buffer\+Abstract}} \&mem)
+\mbox{\hyperlink{classudmaio_1_1_data_handler_sync_ad3731cb36bac1fb2019eefaae629c833}{Data\+Handler\+Abstract}} (std\+::string name, \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{Uio\+Axi\+Dma\+If}} \&dma, \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{Uio\+Mem\+Sgdma}} \&desc, \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{Dma\+Buffer\+Abstract}} \&mem, bool receive\+\_\+packets=true)
 \begin{DoxyCompactList}\small\item\em Construct a Data Handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -57,11 +57,11 @@ Synchronous data handler with blocking read interface.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classudmaio_1_1_data_handler_sync_a5228c5ea1c6a7a4d9f9aad4c38b03f2b}\label{classudmaio_1_1_data_handler_sync_a5228c5ea1c6a7a4d9f9aad4c38b03f2b}} 
+\mbox{\Hypertarget{classudmaio_1_1_data_handler_sync_ad3731cb36bac1fb2019eefaae629c833}\label{classudmaio_1_1_data_handler_sync_ad3731cb36bac1fb2019eefaae629c833}} 
 \index{udmaio::DataHandlerSync@{udmaio::DataHandlerSync}!DataHandlerAbstract@{DataHandlerAbstract}}
 \index{DataHandlerAbstract@{DataHandlerAbstract}!udmaio::DataHandlerSync@{udmaio::DataHandlerSync}}
 \doxysubsubsection{\texorpdfstring{DataHandlerAbstract()}{DataHandlerAbstract()}}
-{\footnotesize\ttfamily udmaio\+::\+Data\+Handler\+Abstract\+::\+Data\+Handler\+Abstract (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{Uio\+Axi\+Dma\+If}} \&}]{dma,  }\item[{\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{Uio\+Mem\+Sgdma}} \&}]{desc,  }\item[{\mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{Dma\+Buffer\+Abstract}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily udmaio\+::\+Data\+Handler\+Abstract\+::\+Data\+Handler\+Abstract (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{Uio\+Axi\+Dma\+If}} \&}]{dma,  }\item[{\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{Uio\+Mem\+Sgdma}} \&}]{desc,  }\item[{\mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{Dma\+Buffer\+Abstract}} \&}]{mem,  }\item[{bool}]{receive\+\_\+packets = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -74,6 +74,8 @@ Construct a Data Handler.
 {\em desc} & Interface to the SGDMA descriptors \\
 \hline
 {\em mem} & Interface to the memory holding the SGDMA data buffers \\
+\hline
+{\em receive\+\_\+packets} & Receive packets/frames delimited by SOF/\+EOF. If not set, receive stream as-\/is without regard for packets \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classudmaio_1_1_data_handler_sync_af9ef2065d6dcda7af1a6fbf64f2f24ca}\label{classudmaio_1_1_data_handler_sync_af9ef2065d6dcda7af1a6fbf64f2f24ca}} 

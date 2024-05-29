@@ -6,6 +6,7 @@ var classudmaio_1_1_uio_mem_sgdma =
     [ "__attribute__", "classudmaio_1_1_uio_mem_sgdma.html#af1afffe0e924857e45845206ae9ef5b5", null ],
     [ "get_first_desc_addr", "classudmaio_1_1_uio_mem_sgdma.html#ac86d786996e68219d26db1ae67cfd0a9", null ],
     [ "get_full_buffers", "classudmaio_1_1_uio_mem_sgdma.html#abca7da8011e089d5a293ff4ea5deb07b", null ],
+    [ "get_next_packet", "classudmaio_1_1_uio_mem_sgdma.html#a0e11475b0dc522c0d2f5308868ae9e2e", null ],
     [ "init_buffers", "classudmaio_1_1_uio_mem_sgdma.html#aa4aa8a35e676a052ec360b2766fc8814", null ],
     [ "print_desc", "classudmaio_1_1_uio_mem_sgdma.html#a82a1d8293baf5800a56c186d006dd234", null ],
     [ "print_descs", "classudmaio_1_1_uio_mem_sgdma.html#a0dd0d06deac7f7810feeafa37c399dae", null ],

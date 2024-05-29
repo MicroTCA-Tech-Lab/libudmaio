@@ -20,7 +20,7 @@ Collaboration diagram for udmaio\+::Data\+Handler\+Abstract\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_a5228c5ea1c6a7a4d9f9aad4c38b03f2b}{Data\+Handler\+Abstract}} (std\+::string name, \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{Uio\+Axi\+Dma\+If}} \&dma, \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{Uio\+Mem\+Sgdma}} \&desc, \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{Dma\+Buffer\+Abstract}} \&mem)
+\mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_ad3731cb36bac1fb2019eefaae629c833}{Data\+Handler\+Abstract}} (std\+::string name, \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{Uio\+Axi\+Dma\+If}} \&dma, \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{Uio\+Mem\+Sgdma}} \&desc, \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{Dma\+Buffer\+Abstract}} \&mem, bool receive\+\_\+packets=true)
 \begin{DoxyCompactList}\small\item\em Construct a Data Handler. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_aad33dd6ad2e4c30ab2da27088c61053b}{$\sim$\+Data\+Handler\+Abstract}} ()
 \item 
@@ -30,6 +30,11 @@ void \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_a8b3ef758d72527ef0f7
 \begin{DoxyCompactList}\small\item\em Run the data reception. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_ac61900afc81ade0bb51bfab49bcfe257}{process\+\_\+data}} (std\+::vector$<$ uint8\+\_\+t $>$ bytes)=0
 \begin{DoxyCompactList}\small\item\em Process the received data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_a0a8f2cedde2cb0d2d4e891fba981c04b}{\+\_\+receive\+\_\+packets}}
+\begin{DoxyCompactList}\small\item\em Enable segmentation of stream into SOF/\+EOF delimited frames. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -57,11 +62,11 @@ boost\+::asio\+::posix\+::stream\+\_\+descriptor \mbox{\hyperlink{classudmaio_1_
 Base class to implement a DMA data reception handler. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classudmaio_1_1_data_handler_abstract_a5228c5ea1c6a7a4d9f9aad4c38b03f2b}\label{classudmaio_1_1_data_handler_abstract_a5228c5ea1c6a7a4d9f9aad4c38b03f2b}} 
+\mbox{\Hypertarget{classudmaio_1_1_data_handler_abstract_ad3731cb36bac1fb2019eefaae629c833}\label{classudmaio_1_1_data_handler_abstract_ad3731cb36bac1fb2019eefaae629c833}} 
 \index{udmaio::DataHandlerAbstract@{udmaio::DataHandlerAbstract}!DataHandlerAbstract@{DataHandlerAbstract}}
 \index{DataHandlerAbstract@{DataHandlerAbstract}!udmaio::DataHandlerAbstract@{udmaio::DataHandlerAbstract}}
 \doxysubsubsection{\texorpdfstring{DataHandlerAbstract()}{DataHandlerAbstract()}}
-{\footnotesize\ttfamily udmaio\+::\+Data\+Handler\+Abstract\+::\+Data\+Handler\+Abstract (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{Uio\+Axi\+Dma\+If}} \&}]{dma,  }\item[{\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{Uio\+Mem\+Sgdma}} \&}]{desc,  }\item[{\mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{Dma\+Buffer\+Abstract}} \&}]{mem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily udmaio\+::\+Data\+Handler\+Abstract\+::\+Data\+Handler\+Abstract (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{Uio\+Axi\+Dma\+If}} \&}]{dma,  }\item[{\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{Uio\+Mem\+Sgdma}} \&}]{desc,  }\item[{\mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{Dma\+Buffer\+Abstract}} \&}]{mem,  }\item[{bool}]{receive\+\_\+packets = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -74,6 +79,8 @@ Construct a Data Handler.
 {\em desc} & Interface to the SGDMA descriptors \\
 \hline
 {\em mem} & Interface to the memory holding the SGDMA data buffers \\
+\hline
+{\em receive\+\_\+packets} & Receive packets/frames delimited by SOF/\+EOF. If not set, receive stream as-\/is without regard for packets \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classudmaio_1_1_data_handler_abstract_aad33dd6ad2e4c30ab2da27088c61053b}\label{classudmaio_1_1_data_handler_abstract_aad33dd6ad2e4c30ab2da27088c61053b}} 
@@ -172,6 +179,16 @@ AXI DMA interface.
 
 
 SGDMA buffer holding the data received from AXI DMA. 
+
+\mbox{\Hypertarget{classudmaio_1_1_data_handler_abstract_a0a8f2cedde2cb0d2d4e891fba981c04b}\label{classudmaio_1_1_data_handler_abstract_a0a8f2cedde2cb0d2d4e891fba981c04b}} 
+\index{udmaio::DataHandlerAbstract@{udmaio::DataHandlerAbstract}!\_receive\_packets@{\_receive\_packets}}
+\index{\_receive\_packets@{\_receive\_packets}!udmaio::DataHandlerAbstract@{udmaio::DataHandlerAbstract}}
+\doxysubsubsection{\texorpdfstring{\_receive\_packets}{\_receive\_packets}}
+{\footnotesize\ttfamily bool udmaio\+::\+Data\+Handler\+Abstract\+::\+\_\+receive\+\_\+packets\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Enable segmentation of stream into SOF/\+EOF delimited frames. 
 
 \mbox{\Hypertarget{classudmaio_1_1_data_handler_abstract_a6dfd98d26b983dbee80af2e8c2f4c8e8}\label{classudmaio_1_1_data_handler_abstract_a6dfd98d26b983dbee80af2e8c2f4c8e8}} 
 \index{udmaio::DataHandlerAbstract@{udmaio::DataHandlerAbstract}!\_sd@{\_sd}}
