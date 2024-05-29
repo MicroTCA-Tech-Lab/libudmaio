@@ -25,8 +25,9 @@ digraph "DmaBufferAbstract.hpp"
   Node5 -> Node10 [dir="back",color="steelblue1",style="solid"];
   Node10 [label="UDmaBuf.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_u_dma_buf_8cpp.html",tooltip=" "];
   Node1 -> Node11 [dir="back",color="steelblue1",style="solid"];
-  Node11 [label="UioMemSgdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8hpp.html",tooltip=" "];
-  Node11 -> Node6 [dir="back",color="steelblue1",style="solid"];
-  Node11 -> Node12 [dir="back",color="steelblue1",style="solid"];
-  Node12 [label="UioMemSgdma.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8cpp.html",tooltip=" "];
+  Node11 [label="UioMemSgdma.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8cpp.html",tooltip=" "];
+  Node1 -> Node12 [dir="back",color="steelblue1",style="solid"];
+  Node12 [label="UioMemSgdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8hpp.html",tooltip=" "];
+  Node12 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node12 -> Node11 [dir="back",color="steelblue1",style="solid"];
 }

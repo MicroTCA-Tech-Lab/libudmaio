@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('classudmaio_1_1_uio_mem_sgdma.html',''
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classudmaio_1_1_uio_mem_sgdma-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">udmaio::UioMemSgdma Class Reference</div></div>
 </div><!--header-->
@@ -122,7 +123,7 @@ Inheritance diagram for udmaio::UioMemSgdma:</div>
 <div class="dynheader">
 Collaboration diagram for udmaio::UioMemSgdma:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classudmaio_1_1_uio_mem_sgdma__coll__graph.svg" width="324" height="567"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classudmaio_1_1_uio_mem_sgdma__coll__graph.svg" width="100%" height="546"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -130,9 +131,9 @@ Collaboration diagram for udmaio::UioMemSgdma:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a58bbe1090b994a1fc57ffd3580b0208e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#a58bbe1090b994a1fc57ffd3580b0208e">UioMemSgdma</a> (<a class="el" href="classudmaio_1_1_uio_device_location.html">UioDeviceLocation</a> dev_loc)</td></tr>
 <tr class="separator:a58bbe1090b994a1fc57ffd3580b0208e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0be4822f52dec3b56305cb37779401d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#ae0be4822f52dec3b56305cb37779401d">init_buffers</a> (<a class="el" href="classudmaio_1_1_dma_buffer_abstract.html">DmaBufferAbstract</a> &amp;mem, size_t num_buffers, size_t buf_size)</td></tr>
-<tr class="memdesc:ae0be4822f52dec3b56305cb37779401d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize SGDMA descriptors.  <a href="classudmaio_1_1_uio_mem_sgdma.html#ae0be4822f52dec3b56305cb37779401d">More...</a><br /></td></tr>
-<tr class="separator:ae0be4822f52dec3b56305cb37779401d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4aa8a35e676a052ec360b2766fc8814"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#aa4aa8a35e676a052ec360b2766fc8814">init_buffers</a> (std::shared_ptr&lt; <a class="el" href="classudmaio_1_1_dma_buffer_abstract.html">DmaBufferAbstract</a> &gt; mem, size_t num_buffers, size_t buf_size)</td></tr>
+<tr class="memdesc:aa4aa8a35e676a052ec360b2766fc8814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize SGDMA descriptors.  <a href="classudmaio_1_1_uio_mem_sgdma.html#aa4aa8a35e676a052ec360b2766fc8814">More...</a><br /></td></tr>
+<tr class="separator:aa4aa8a35e676a052ec360b2766fc8814"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82a1d8293baf5800a56c186d006dd234"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#a82a1d8293baf5800a56c186d006dd234">print_desc</a> (const S2mmDesc &amp;desc) const</td></tr>
 <tr class="memdesc:a82a1d8293baf5800a56c186d006dd234"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print SGDMA descriptor.  <a href="classudmaio_1_1_uio_mem_sgdma.html#a82a1d8293baf5800a56c186d006dd234">More...</a><br /></td></tr>
 <tr class="separator:a82a1d8293baf5800a56c186d006dd234"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,9 +143,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac86d786996e68219d26db1ae67cfd0a9"><td class="memItemLeft" align="right" valign="top">uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#ac86d786996e68219d26db1ae67cfd0a9">get_first_desc_addr</a> () const</td></tr>
 <tr class="memdesc:ac86d786996e68219d26db1ae67cfd0a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get address of first SGDMA descriptor (needed for the AXI DMA I/F)  <a href="classudmaio_1_1_uio_mem_sgdma.html#ac86d786996e68219d26db1ae67cfd0a9">More...</a><br /></td></tr>
 <tr class="separator:ac86d786996e68219d26db1ae67cfd0a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34ffc4c13f92af1e5a99075fd7582f08"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structudmaio_1_1_uio_region.html">UioRegion</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#a34ffc4c13f92af1e5a99075fd7582f08">get_full_buffers</a> ()</td></tr>
-<tr class="memdesc:a34ffc4c13f92af1e5a99075fd7582f08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get full SGDMA buffers.  <a href="classudmaio_1_1_uio_mem_sgdma.html#a34ffc4c13f92af1e5a99075fd7582f08">More...</a><br /></td></tr>
-<tr class="separator:a34ffc4c13f92af1e5a99075fd7582f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abca7da8011e089d5a293ff4ea5deb07b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#abca7da8011e089d5a293ff4ea5deb07b">get_full_buffers</a> ()</td></tr>
+<tr class="memdesc:abca7da8011e089d5a293ff4ea5deb07b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get full SGDMA buffers.  <a href="classudmaio_1_1_uio_mem_sgdma.html#abca7da8011e089d5a293ff4ea5deb07b">More...</a><br /></td></tr>
+<tr class="separator:abca7da8011e089d5a293ff4ea5deb07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa623e411a9394e4254e08929d91d8ce9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#aa623e411a9394e4254e08929d91d8ce9">read_buffers</a> (const std::vector&lt; size_t &gt; indices)</td></tr>
+<tr class="separator:aa623e411a9394e4254e08929d91d8ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classudmaio_1_1_uio_if"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classudmaio_1_1_uio_if')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classudmaio_1_1_uio_if.html">udmaio::UioIf</a></td></tr>
 <tr class="memitem:a383688e40d0c62f7a46a8ab37e9de4ec inherit pub_methods_classudmaio_1_1_uio_if"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if.html#a383688e40d0c62f7a46a8ab37e9de4ec">UioIf</a> (std::string name, <a class="el" href="classudmaio_1_1_uio_device_location.html">UioDeviceLocation</a> dev_loc)</td></tr>
 <tr class="separator:a383688e40d0c62f7a46a8ab37e9de4ec inherit pub_methods_classudmaio_1_1_uio_if"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,15 +174,28 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a51a8ec983a7596c44e9baffb7e4aa575"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classudmaio_1_1_reg_accessor_array.html">RegAccessorArray</a>&lt; S2mmDesc, 0, 1024, <a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#a62c5f9829c57bd2bbebf63cae30e5260">DESC_ADDR_STEP</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#a51a8ec983a7596c44e9baffb7e4aa575">descriptors</a> {this}</td></tr>
 <tr class="separator:a51a8ec983a7596c44e9baffb7e4aa575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85c89e92776072f51af31d106f2a546e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classudmaio_1_1_reg_accessor_array.html">RegAccessorArray</a>&lt; S2mmDescStatus, offsetof(S2mmDesc, status), 1024, <a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#a62c5f9829c57bd2bbebf63cae30e5260">DESC_ADDR_STEP</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#a85c89e92776072f51af31d106f2a546e">desc_statuses</a> {this}</td></tr>
+<tr class="separator:a85c89e92776072f51af31d106f2a546e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68e9947dea4f4f7f55f1b1a738a32529"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#a68e9947dea4f4f7f55f1b1a738a32529">_nr_cyc_desc</a></td></tr>
 <tr class="separator:a68e9947dea4f4f7f55f1b1a738a32529"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61e1d6a02ede507d2f4c1709939f6413"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#a61e1d6a02ede507d2f4c1709939f6413">_next_readable_buf</a></td></tr>
 <tr class="separator:a61e1d6a02ede507d2f4c1709939f6413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a010076eb899b0c4448ffef900ccdd0d2"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#a010076eb899b0c4448ffef900ccdd0d2">_buf_addrs</a></td></tr>
+<tr class="separator:a010076eb899b0c4448ffef900ccdd0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6c01c7847e41266244872555ccac4d2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#ab6c01c7847e41266244872555ccac4d2">_buf_size</a></td></tr>
+<tr class="separator:ab6c01c7847e41266244872555ccac4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc0bdf4fea8355d7e5108120709e9507"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classudmaio_1_1_dma_buffer_abstract.html">DmaBufferAbstract</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#acc0bdf4fea8355d7e5108120709e9507">_mem</a></td></tr>
+<tr class="separator:acc0bdf4fea8355d7e5108120709e9507"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a62c5f9829c57bd2bbebf63cae30e5260"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#a62c5f9829c57bd2bbebf63cae30e5260">DESC_ADDR_STEP</a> = 0x40</td></tr>
 <tr class="separator:a62c5f9829c57bd2bbebf63cae30e5260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a1797279760aa780071c9cf17354f4363"><td class="memItemLeft" align="right" valign="top">struct&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#a1797279760aa780071c9cf17354f4363">UioMemSgdmaTest</a></td></tr>
+<tr class="separator:a1797279760aa780071c9cf17354f4363"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -343,14 +359,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a34ffc4c13f92af1e5a99075fd7582f08" name="a34ffc4c13f92af1e5a99075fd7582f08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34ffc4c13f92af1e5a99075fd7582f08">&#9670;&#160;</a></span>get_full_buffers()</h2>
+<a id="abca7da8011e089d5a293ff4ea5deb07b" name="abca7da8011e089d5a293ff4ea5deb07b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abca7da8011e089d5a293ff4ea5deb07b">&#9670;&#160;</a></span>get_full_buffers()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="structudmaio_1_1_uio_region.html">UioRegion</a> &gt; udmaio::UioMemSgdma::get_full_buffers </td>
+          <td class="memname">std::vector&lt; size_t &gt; udmaio::UioMemSgdma::get_full_buffers </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -359,12 +375,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get full SGDMA buffers. </p>
-<dl class="section return"><dt>Returns</dt><dd>Vector of <a class="el" href="structudmaio_1_1_uio_region.html" title="General-purpose struct to define a memory area.">UioRegion</a> pointing into full buffers </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector of indices of full buffers </dd></dl>
 
 </div>
 </div>
-<a id="ae0be4822f52dec3b56305cb37779401d" name="ae0be4822f52dec3b56305cb37779401d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0be4822f52dec3b56305cb37779401d">&#9670;&#160;</a></span>init_buffers()</h2>
+<a id="aa4aa8a35e676a052ec360b2766fc8814" name="aa4aa8a35e676a052ec360b2766fc8814"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4aa8a35e676a052ec360b2766fc8814">&#9670;&#160;</a></span>init_buffers()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -372,7 +388,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void udmaio::UioMemSgdma::init_buffers </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classudmaio_1_1_dma_buffer_abstract.html">DmaBufferAbstract</a> &amp;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classudmaio_1_1_dma_buffer_abstract.html">DmaBufferAbstract</a> &gt;&#160;</td>
           <td class="paramname"><em>mem</em>, </td>
         </tr>
         <tr>
@@ -452,6 +468,24 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="aa623e411a9394e4254e08929d91d8ce9" name="aa623e411a9394e4254e08929d91d8ce9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa623e411a9394e4254e08929d91d8ce9">&#9670;&#160;</a></span>read_buffers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; uint8_t &gt; udmaio::UioMemSgdma::read_buffers </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; size_t &gt;&#160;</td>
+          <td class="paramname"><em>indices</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad1c770a8302c0f8c6838dca51efe5993" name="ad1c770a8302c0f8c6838dca51efe5993"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1c770a8302c0f8c6838dca51efe5993">&#9670;&#160;</a></span>write_cyc_mode()</h2>
 
@@ -478,7 +512,96 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a1797279760aa780071c9cf17354f4363" name="a1797279760aa780071c9cf17354f4363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1797279760aa780071c9cf17354f4363">&#9670;&#160;</a></span>UioMemSgdmaTest</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend struct UioMemSgdmaTest</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a010076eb899b0c4448ffef900ccdd0d2" name="a010076eb899b0c4448ffef900ccdd0d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a010076eb899b0c4448ffef900ccdd0d2">&#9670;&#160;</a></span>_buf_addrs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;uint64_t&gt; udmaio::UioMemSgdma::_buf_addrs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab6c01c7847e41266244872555ccac4d2" name="ab6c01c7847e41266244872555ccac4d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6c01c7847e41266244872555ccac4d2">&#9670;&#160;</a></span>_buf_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t udmaio::UioMemSgdma::_buf_size</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc0bdf4fea8355d7e5108120709e9507" name="acc0bdf4fea8355d7e5108120709e9507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc0bdf4fea8355d7e5108120709e9507">&#9670;&#160;</a></span>_mem</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classudmaio_1_1_dma_buffer_abstract.html">DmaBufferAbstract</a>&gt; udmaio::UioMemSgdma::_mem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a61e1d6a02ede507d2f4c1709939f6413" name="a61e1d6a02ede507d2f4c1709939f6413"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a61e1d6a02ede507d2f4c1709939f6413">&#9670;&#160;</a></span>_next_readable_buf</h2>
 
@@ -539,6 +662,28 @@ Additional Inherited Members</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85c89e92776072f51af31d106f2a546e" name="a85c89e92776072f51af31d106f2a546e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85c89e92776072f51af31d106f2a546e">&#9670;&#160;</a></span>desc_statuses</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classudmaio_1_1_reg_accessor_array.html">RegAccessorArray</a>&lt;S2mmDescStatus, offsetof(S2mmDesc, status), 1024, <a class="el" href="classudmaio_1_1_uio_mem_sgdma.html#a62c5f9829c57bd2bbebf63cae30e5260">DESC_ADDR_STEP</a>&gt; udmaio::UioMemSgdma::desc_statuses {this}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

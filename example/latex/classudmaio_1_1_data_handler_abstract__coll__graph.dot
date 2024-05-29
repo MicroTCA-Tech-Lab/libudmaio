@@ -32,7 +32,17 @@ digraph "udmaio::DataHandlerAbstract"
   Node11 -> Node10 [dir="back",color="steelblue1",style="solid"];
   Node11 [label="udmaio::RegAccessorBase\< C \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_base.html",tooltip="Base class implementing register access. Only used by subclasses, not used directly."];
   Node5 -> Node11 [dir="back",color="darkorchid3",style="dashed",label=" _if" ];
-  Node12 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" _mem" ];
-  Node12 [label="udmaio::DmaBufferAbstract",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_dma_buffer_abstract.html",tooltip="Base class for DMA data buffer."];
-  Node3 -> Node12 [dir="back",color="firebrick4",style="solid"];
+  Node12 -> Node9 [dir="back",color="darkorchid3",style="dashed",label=" desc_statuses" ];
+  Node12 [label="udmaio::RegAccessorArray\l\< S2mmDescStatus, offsetof\l(S2mmDesc, status), 1024,\l DESC_ADDR_STEP \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_array.html",tooltip=" "];
+  Node13 -> Node12 [dir="back",color="steelblue1",style="solid"];
+  Node13 [label="udmaio::RegAccessorBase\< C \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_reg_accessor_base.html",tooltip="Base class implementing register access. Only used by subclasses, not used directly."];
+  Node5 -> Node13 [dir="back",color="darkorchid3",style="dashed",label=" _if" ];
+  Node14 -> Node9 [dir="back",color="darkorchid3",style="dashed",label=" _buf_addrs" ];
+  Node14 [label="std::vector\< uint64_t \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node15 -> Node9 [dir="back",color="darkorchid3",style="dashed",label=" _mem" ];
+  Node15 [label="std::shared_ptr\< udmaio\l::DmaBufferAbstract \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node16 -> Node15 [dir="back",color="darkorchid3",style="dashed",label=" ptr" ];
+  Node16 [label="udmaio::DmaBufferAbstract",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classudmaio_1_1_dma_buffer_abstract.html",tooltip="Base class for DMA data buffer."];
+  Node3 -> Node16 [dir="back",color="firebrick4",style="solid"];
+  Node16 -> Node1 [dir="back",color="darkorchid3",style="dashed",label=" _mem" ];
 }

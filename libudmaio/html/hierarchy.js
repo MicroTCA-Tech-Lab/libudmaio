@@ -54,11 +54,13 @@ var hierarchy =
     [ "axi_vdma::park_ptr_reg_t", "structaxi__vdma_1_1park__ptr__reg__t.html", null ],
     [ "udmaio::RegAccessorBase< C >", "classudmaio_1_1_reg_accessor_base.html", [
       [ "udmaio::RegAccessorArray< S2mmDesc, 0, 1024, DESC_ADDR_STEP >", "classudmaio_1_1_reg_accessor_array.html", null ],
+      [ "udmaio::RegAccessorArray< S2mmDescStatus, offsetof(S2mmDesc, status), 1024, DESC_ADDR_STEP >", "classudmaio_1_1_reg_accessor_array.html", null ],
       [ "udmaio::RegAccessorArray< C, offset, arr_size, arr_stride >", "classudmaio_1_1_reg_accessor_array.html", null ],
       [ "udmaio::RegAccessorArray< C, offset, 0, 0 >", "classudmaio_1_1_reg_accessor_array_3_01_c_00_01offset_00_010_00_010_01_4.html", null ],
       [ "udmaio::RegAccessorArrayElement< C >", "classudmaio_1_1_reg_accessor_array_element.html", null ]
     ] ],
     [ "udmaio::RegAccessorBase< S2mmDesc >", "classudmaio_1_1_reg_accessor_base.html", null ],
+    [ "udmaio::RegAccessorBase< S2mmDescStatus >", "classudmaio_1_1_reg_accessor_base.html", null ],
     [ "axi_dma::s2mm_curdesc_t", "structaxi__dma_1_1s2mm__curdesc__t.html", null ],
     [ "axi_dma::s2mm_dmacr_t", "structaxi__dma_1_1s2mm__dmacr__t.html", null ],
     [ "axi_dma::s2mm_dmasr_t", "structaxi__dma_1_1s2mm__dmasr__t.html", null ],

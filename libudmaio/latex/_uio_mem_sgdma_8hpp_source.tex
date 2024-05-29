@@ -15,69 +15,94 @@
 \DoxyCodeLine{11 }
 \DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{13 }
-\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_dma_buffer_abstract_8hpp}{DmaBufferAbstract.hpp}}"{}}}
-\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_reg_accessor_8hpp}{RegAccessor.hpp}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <memory>}}
 \DoxyCodeLine{16 }
-\DoxyCodeLine{17 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}} \{}
-\DoxyCodeLine{18 }
-\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{UioMemSgdma}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}} \{}
-\DoxyCodeLine{22     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a62c5f9829c57bd2bbebf63cae30e5260}{DESC\_ADDR\_STEP}} = 0x40;}
-\DoxyCodeLine{23 }
-\DoxyCodeLine{24     \textcolor{keyword}{struct }\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a5bb8c7d44b6bef0bc82268a84d5c6f99}{\_\_attribute\_\_}}((packed)) S2mmDescControl \{}
-\DoxyCodeLine{25         uint32\_t buffer\_len : 26;}
-\DoxyCodeLine{26         \textcolor{keywordtype}{bool} rxeof : 1;}
-\DoxyCodeLine{27         \textcolor{keywordtype}{bool} rxsof : 1;}
-\DoxyCodeLine{28         uint32\_t rsvd : 4;}
-\DoxyCodeLine{29     \};}
-\DoxyCodeLine{30 }
-\DoxyCodeLine{31     \textcolor{keyword}{struct }\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a5bb8c7d44b6bef0bc82268a84d5c6f99}{\_\_attribute\_\_}}((packed)) S2mmDescStatus \{}
-\DoxyCodeLine{32         uint32\_t buffer\_len : 26;}
-\DoxyCodeLine{33         \textcolor{keywordtype}{bool} rxeof : 1;}
-\DoxyCodeLine{34         \textcolor{keywordtype}{bool} rxsof : 1;}
-\DoxyCodeLine{35         \textcolor{keywordtype}{bool} dmainterr : 1;}
-\DoxyCodeLine{36         \textcolor{keywordtype}{bool} dmaslverr : 1;}
-\DoxyCodeLine{37         \textcolor{keywordtype}{bool} dmadecerr : 1;}
-\DoxyCodeLine{38         \textcolor{keywordtype}{bool} cmpit : 1;}
-\DoxyCodeLine{39     \};}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{41     \textcolor{keyword}{struct }\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a5bb8c7d44b6bef0bc82268a84d5c6f99}{\_\_attribute\_\_}}((packed, aligned(8))) S2mmDesc \{}
-\DoxyCodeLine{42         uint64\_t nxtdesc;}
-\DoxyCodeLine{43         uint64\_t buffer\_addr;}
-\DoxyCodeLine{44         uint32\_t rsvd0x10;}
-\DoxyCodeLine{45         uint32\_t rsvd0x14;}
-\DoxyCodeLine{46         S2mmDescControl control;}
-\DoxyCodeLine{47         S2mmDescStatus status;}
-\DoxyCodeLine{48         uint32\_t app[5];}
-\DoxyCodeLine{49     \};}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51     \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(S2mmDescControl) == 4, \textcolor{stringliteral}{"{}size of S2mmDescControl must be 4"{}});}
-\DoxyCodeLine{52     \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(S2mmDescStatus) == 4, \textcolor{stringliteral}{"{}size of S2mmDescStatus must be 4"{}});}
-\DoxyCodeLine{53     \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(S2mmDesc) == 0x38, \textcolor{stringliteral}{"{}size of S2mmDesc must be 0x34+4 for alignment"{}});}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_dma_buffer_abstract_8hpp}{DmaBufferAbstract.hpp}}"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_reg_accessor_8hpp}{RegAccessor.hpp}}"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}} \{}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{UioMemSgdma}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}} \{}
+\DoxyCodeLine{25     \textcolor{keyword}{friend} \textcolor{keyword}{struct }\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a1797279760aa780071c9cf17354f4363}{UioMemSgdmaTest}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a62c5f9829c57bd2bbebf63cae30e5260}{DESC\_ADDR\_STEP}} = 0x40;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keyword}{struct }\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a5bb8c7d44b6bef0bc82268a84d5c6f99}{\_\_attribute\_\_}}((packed)) S2mmDescControl \{}
+\DoxyCodeLine{30         uint32\_t buffer\_len : 26;}
+\DoxyCodeLine{31         \textcolor{keywordtype}{bool} rxeof : 1;}
+\DoxyCodeLine{32         \textcolor{keywordtype}{bool} rxsof : 1;}
+\DoxyCodeLine{33         uint32\_t rsvd : 4;}
+\DoxyCodeLine{34     \};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keyword}{struct }\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a5bb8c7d44b6bef0bc82268a84d5c6f99}{\_\_attribute\_\_}}((packed)) S2mmDescStatus \{}
+\DoxyCodeLine{37         \textcolor{comment}{// This value indicates the amount of data received and stored in the buffer described by}}
+\DoxyCodeLine{38         \textcolor{comment}{// this descriptor. This might or might not match the buffer length}}
+\DoxyCodeLine{39         uint32\_t num\_stored\_bytes : 26;}
+\DoxyCodeLine{40         \textcolor{comment}{// End of Frame. Flag indicating buffer holds the last part of packet.}}
+\DoxyCodeLine{41         \textcolor{keywordtype}{bool} rxeof : 1;}
+\DoxyCodeLine{42         \textcolor{comment}{// Start of Frame. Flag indicating buffer holds first part of packet.}}
+\DoxyCodeLine{43         \textcolor{keywordtype}{bool} rxsof : 1;}
+\DoxyCodeLine{44         \textcolor{comment}{// DMA Internal Error. Internal Error detected by primary AXI DataMover.}}
+\DoxyCodeLine{45         \textcolor{keywordtype}{bool} dmainterr : 1;}
+\DoxyCodeLine{46         \textcolor{comment}{// DMA Slave Error. Slave Error detected by primary AXI DataMover.}}
+\DoxyCodeLine{47         \textcolor{keywordtype}{bool} dmaslverr : 1;}
+\DoxyCodeLine{48         \textcolor{comment}{// DMA Decode Error. Decode Error detected by primary AXI DataMover.}}
+\DoxyCodeLine{49         \textcolor{keywordtype}{bool} dmadecerr : 1;}
+\DoxyCodeLine{50         \textcolor{comment}{// Completed. This indicates to the software that the DMA Engine has}}
+\DoxyCodeLine{51         \textcolor{comment}{// completed the transfer as described by the associated descriptor.}}
+\DoxyCodeLine{52         \textcolor{keywordtype}{bool} cmplt : 1;}
+\DoxyCodeLine{53     \};}
 \DoxyCodeLine{54 }
-\DoxyCodeLine{55     \textcolor{comment}{// set excessively high number of 1024 descriptors, b/c the actual number is not known at compile time}}
-\DoxyCodeLine{56     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessorArray<S2mmDesc, 0, 1024, DESC\_ADDR\_STEP>}} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a51a8ec983a7596c44e9baffb7e4aa575}{descriptors}}\{\textcolor{keyword}{this}\};}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{58     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a68e9947dea4f4f7f55f1b1a738a32529}{\_nr\_cyc\_desc}};}
-\DoxyCodeLine{59     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a61e1d6a02ede507d2f4c1709939f6413}{\_next\_readable\_buf}};}
-\DoxyCodeLine{60 }
-\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_ad1c770a8302c0f8c6838dca51efe5993}{write\_cyc\_mode}}(\textcolor{keyword}{const} std::vector<UioRegion>\& dst\_bufs);}
-\DoxyCodeLine{62 }
-\DoxyCodeLine{63   \textcolor{keyword}{public}:}
-\DoxyCodeLine{64     \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a58bbe1090b994a1fc57ffd3580b0208e}{UioMemSgdma}}(\mbox{\hyperlink{classudmaio_1_1_uio_device_location}{UioDeviceLocation}} dev\_loc) : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}(\textcolor{stringliteral}{"{}UioMemSgdma"{}}, dev\_loc) \{\}}
-\DoxyCodeLine{65 }
-\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_ae0be4822f52dec3b56305cb37779401d}{init\_buffers}}(\mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{DmaBufferAbstract}}\& mem, \textcolor{keywordtype}{size\_t} num\_buffers, \textcolor{keywordtype}{size\_t} buf\_size);}
-\DoxyCodeLine{71 }
-\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a82a1d8293baf5800a56c186d006dd234}{print\_desc}}(\textcolor{keyword}{const} S2mmDesc\& desc) \textcolor{keyword}{const};}
-\DoxyCodeLine{75 }
-\DoxyCodeLine{77     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a0dd0d06deac7f7810feeafa37c399dae}{print\_descs}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{78 }
-\DoxyCodeLine{81     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_ac86d786996e68219d26db1ae67cfd0a9}{get\_first\_desc\_addr}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{82 }
-\DoxyCodeLine{85     std::vector<UioRegion> \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a34ffc4c13f92af1e5a99075fd7582f08}{get\_full\_buffers}}();}
-\DoxyCodeLine{86 \};}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{88 std::ostream\& \mbox{\hyperlink{namespaceudmaio_af07b25049ad33f69ea022fd1b09a9b63}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} UioRegion\& buf\_info);}
-\DoxyCodeLine{89 }
-\DoxyCodeLine{90 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{55     \textcolor{keyword}{struct }\mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a5bb8c7d44b6bef0bc82268a84d5c6f99}{\_\_attribute\_\_}}((packed, aligned(8))) S2mmDesc \{}
+\DoxyCodeLine{56         uint64\_t nxtdesc;}
+\DoxyCodeLine{57         uint64\_t buffer\_addr;}
+\DoxyCodeLine{58         uint32\_t rsvd0x10;}
+\DoxyCodeLine{59         uint32\_t rsvd0x14;}
+\DoxyCodeLine{60         S2mmDescControl control;}
+\DoxyCodeLine{61         S2mmDescStatus status;}
+\DoxyCodeLine{62         uint32\_t app[5];}
+\DoxyCodeLine{63     \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(S2mmDescControl) == 4, \textcolor{stringliteral}{"{}size of S2mmDescControl must be 4"{}});}
+\DoxyCodeLine{66     \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(S2mmDescStatus) == 4, \textcolor{stringliteral}{"{}size of S2mmDescStatus must be 4"{}});}
+\DoxyCodeLine{67     \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(S2mmDesc) == 0x38, \textcolor{stringliteral}{"{}size of S2mmDesc must be 0x34+4 for alignment"{}});}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{comment}{// set excessively high number of 1024 descriptors, b/c the actual number is not known at compile time}}
+\DoxyCodeLine{70     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessorArray<S2mmDesc, 0, 1024, DESC\_ADDR\_STEP>}} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a51a8ec983a7596c44e9baffb7e4aa575}{descriptors}}\{\textcolor{keyword}{this}\};}
+\DoxyCodeLine{71     \textcolor{comment}{// Make a separate accessor for the statuses only, so we don't have to read/write the whole descriptor when we only want the status}}
+\DoxyCodeLine{72     \mbox{\hyperlink{classudmaio_1_1_reg_accessor_array}{RegAccessorArray}}<S2mmDescStatus, offsetof(S2mmDesc, status), 1024, \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a62c5f9829c57bd2bbebf63cae30e5260}{DESC\_ADDR\_STEP}}>}
+\DoxyCodeLine{73         \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a85c89e92776072f51af31d106f2a546e}{desc\_statuses}}\{\textcolor{keyword}{this}\};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a68e9947dea4f4f7f55f1b1a738a32529}{\_nr\_cyc\_desc}};}
+\DoxyCodeLine{76     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a61e1d6a02ede507d2f4c1709939f6413}{\_next\_readable\_buf}};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{comment}{// Cache buffer addrs/sizes in order to not have to pull it from BRAM all the time}}
+\DoxyCodeLine{79     std::vector<uint64\_t> \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a010076eb899b0c4448ffef900ccdd0d2}{\_buf\_addrs}};}
+\DoxyCodeLine{80     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_ab6c01c7847e41266244872555ccac4d2}{\_buf\_size}};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     std::shared\_ptr<DmaBufferAbstract> \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_acc0bdf4fea8355d7e5108120709e9507}{\_mem}};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_ad1c770a8302c0f8c6838dca51efe5993}{write\_cyc\_mode}}(\textcolor{keyword}{const} std::vector<UioRegion>\& dst\_bufs);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86   \textcolor{keyword}{public}:}
+\DoxyCodeLine{87     \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a58bbe1090b994a1fc57ffd3580b0208e}{UioMemSgdma}}(\mbox{\hyperlink{classudmaio_1_1_uio_device_location}{UioDeviceLocation}} dev\_loc) : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}(\textcolor{stringliteral}{"{}UioMemSgdma"{}}, dev\_loc) \{\}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_aa4aa8a35e676a052ec360b2766fc8814}{init\_buffers}}(std::shared\_ptr<DmaBufferAbstract> mem, \textcolor{keywordtype}{size\_t} num\_buffers, \textcolor{keywordtype}{size\_t} buf\_size);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a82a1d8293baf5800a56c186d006dd234}{print\_desc}}(\textcolor{keyword}{const} S2mmDesc\& desc) \textcolor{keyword}{const};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{100     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_a0dd0d06deac7f7810feeafa37c399dae}{print\_descs}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{104     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_ac86d786996e68219d26db1ae67cfd0a9}{get\_first\_desc\_addr}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{108     std::vector<size\_t> \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_abca7da8011e089d5a293ff4ea5deb07b}{get\_full\_buffers}}();}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     std::vector<uint8\_t> \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma_aa623e411a9394e4254e08929d91d8ce9}{read\_buffers}}(\textcolor{keyword}{const} std::vector<size\_t> indices);}
+\DoxyCodeLine{111 \};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 std::ostream\& \mbox{\hyperlink{namespaceudmaio_af07b25049ad33f69ea022fd1b09a9b63}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} UioRegion\& buf\_info);}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}
