@@ -37,15 +37,20 @@ class DataHandlerAbstract : public Logger, private boost::noncopyable {
     void _start_read();
     void _handle_input(const boost::system::error_code& ec);
 
+  protected:
+    bool _receive_packets;  ///< Enable segmentation of stream into SOF/EOF delimited frames
+
   public:
     /// @brief Construct a Data Handler
     /// @param dma Interface to the AXI DMA core
     /// @param desc Interface to the SGDMA descriptors
     /// @param mem Interface to the memory holding the SGDMA data buffers
+    /// @param receive_packets Receive packets/frames delimited by SOF/EOF. If not set, receive stream as-is without regard for packets
     explicit DataHandlerAbstract(std::string name,
                                  UioAxiDmaIf& dma,
                                  UioMemSgdma& desc,
-                                 DmaBufferAbstract& mem);
+                                 DmaBufferAbstract& mem,
+                                 bool receive_packets = true);
     virtual ~DataHandlerAbstract();
 
     /// @brief Stop the data reception

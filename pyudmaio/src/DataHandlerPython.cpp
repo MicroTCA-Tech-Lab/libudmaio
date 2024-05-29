@@ -15,8 +15,9 @@ namespace udmaio {
 
 DataHandlerPython::DataHandlerPython(std::shared_ptr<UioAxiDmaIf> dma_ptr,
                                      std::shared_ptr<UioMemSgdma> desc_ptr,
-                                     std::shared_ptr<DmaBufferAbstract> mem_ptr)
-    : DataHandlerSync("DataHandlerPython", *dma_ptr, *desc_ptr, *mem_ptr)
+                                     std::shared_ptr<DmaBufferAbstract> mem_ptr,
+                                     bool receive_packets)
+    : DataHandlerSync("DataHandlerPython", *dma_ptr, *desc_ptr, *mem_ptr, receive_packets)
     , _dma_ptr(dma_ptr)
     , _desc_ptr(desc_ptr)
     , _mem_ptr(mem_ptr) {}
@@ -56,7 +57,8 @@ py::array_t<uint8_t> DataHandlerPython::numpy_read_nb() {
         throw std::runtime_error("DMA has experienced an error");
     }
 
-    auto full_bufs = _desc_ptr->get_full_buffers();
+    auto full_bufs =
+        _receive_packets ? _desc_ptr->get_next_packet() : _desc_ptr->get_full_buffers();
     auto vec = new std::vector<uint8_t>(_desc_ptr->read_buffers(full_bufs));
 
     // Callback for Python garbage collector

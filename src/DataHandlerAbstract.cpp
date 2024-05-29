@@ -21,8 +21,15 @@ namespace udmaio {
 DataHandlerAbstract::DataHandlerAbstract(std::string name,
                                          UioAxiDmaIf& dma,
                                          UioMemSgdma& desc,
-                                         DmaBufferAbstract& mem)
-    : Logger(name), _dma{dma}, _desc{desc}, _mem{mem}, _svc{}, _sd{_svc, _dma.get_fd_int()} {
+                                         DmaBufferAbstract& mem,
+                                         bool receive_packets)
+    : Logger(name)
+    , _dma{dma}
+    , _desc{desc}
+    , _mem{mem}
+    , _svc{}
+    , _sd{_svc, _dma.get_fd_int()}
+    , _receive_packets{receive_packets} {
     BOOST_LOG_SEV(_lg, bls::trace) << "ctor";
 };
 
@@ -58,7 +65,7 @@ void DataHandlerAbstract::_handle_input(const boost::system::error_code& ec) {
     uint32_t irq_count = _dma.clear_interrupt();
     BOOST_LOG_SEV(_lg, bls::trace) << "irq count = " << irq_count;
 
-    auto full_bufs = _desc.get_full_buffers();
+    auto full_bufs = _receive_packets ? _desc.get_next_packet() : _desc.get_full_buffers();
     if (full_bufs.empty()) {
         BOOST_LOG_SEV(_lg, bls::trace) << "spurious event, got no data";
     } else {

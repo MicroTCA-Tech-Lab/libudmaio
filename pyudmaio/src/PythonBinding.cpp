@@ -122,7 +122,12 @@ PYBIND11_MODULE(binding, m) {
     data_handler
         .def(py::init<std::shared_ptr<udmaio::UioAxiDmaIf>,
                       std::shared_ptr<udmaio::UioMemSgdma>,
-                      std::shared_ptr<udmaio::DmaBufferAbstract>>())
+                      std::shared_ptr<udmaio::DmaBufferAbstract>,
+                      bool>(),
+             py::arg("dma"),
+             py::arg("desc"),
+             py::arg("mem"),
+             py::arg("receive_packets") = bool(true))
         .def("start",
              &udmaio::DataHandlerPython::start,
              py::arg("nr_pkts"),

@@ -12,6 +12,7 @@
 #pragma once
 
 #include <memory>
+
 #include <pybind11/numpy.h>
 
 #include "udmaio/DataHandlerSync.hpp"
@@ -25,13 +26,15 @@ class DataHandlerPython : public DataHandlerSync {
     std::shared_ptr<UioMemSgdma> _desc_ptr;
     std::shared_ptr<DmaBufferAbstract> _mem_ptr;
 
-public:
-    DataHandlerPython(std::shared_ptr<UioAxiDmaIf>, std::shared_ptr<UioMemSgdma>, std::shared_ptr<DmaBufferAbstract>);
+  public:
+    DataHandlerPython(std::shared_ptr<UioAxiDmaIf>,
+                      std::shared_ptr<UioMemSgdma>,
+                      std::shared_ptr<DmaBufferAbstract>,
+                      bool receive_packets = true);
 
     void start(int nr_pkts, size_t pkt_size, bool init_only = false);
-    py::array_t<uint8_t> numpy_read(uint32_t ms_timeout=0);
+    py::array_t<uint8_t> numpy_read(uint32_t ms_timeout = 0);
     py::array_t<uint8_t> numpy_read_nb();
-
 };
 
-} // namespace udmaio
+}  // namespace udmaio
