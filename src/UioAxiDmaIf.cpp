@@ -11,6 +11,7 @@
 
 #include "udmaio/UioAxiDmaIf.hpp"
 
+#include <cstdint>
 #include <ios>
 #include <stdexcept>
 
@@ -49,6 +50,17 @@ void UioAxiDmaIf::start(uintptr_t start_desc) {
 
     BOOST_LOG_SEV(_lg, bls::trace)
         << "DMA ctrl = 0x" << std::hex << reg_to_raw(s2mm_dmacr.rd()) << std::dec;
+}
+
+uintptr_t UioAxiDmaIf::get_curr_desc() {
+    uintptr_t result = s2mm_curdesc.rd().current_descriptor_pointer;
+    result <<= 6;
+    if (sizeof(result) > sizeof(uint32_t)) {
+        uintptr_t msb = s2mm_curdesc_msb.rd();
+        msb <<= 32;
+        result |= msb;
+    }
+    return result;
 }
 
 std::tuple<uint32_t, axi_dma::s2mm_dmasr_t> UioAxiDmaIf::clear_interrupt() {

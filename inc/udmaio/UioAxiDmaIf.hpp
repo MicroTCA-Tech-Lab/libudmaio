@@ -11,7 +11,10 @@
 
 #pragma once
 
+#include <cstdint>
 #include <tuple>
+
+#include <sys/types.h>
 
 #include "RegAccessor.hpp"
 #include "UioIf.hpp"
@@ -28,6 +31,7 @@ class UioAxiDmaIf : public UioIf, AxiDmaBlock {
     /// @brief Configure and start the AXI DMA controller
     /// @param start_desc Address of first SGDMA descriptor
     void start(uintptr_t start_desc);
+    uintptr_t get_curr_desc();
 
     using UioIf::arm_interrupt;
 

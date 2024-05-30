@@ -89,23 +89,17 @@ void UioMemSgdma::init_buffers(std::shared_ptr<DmaBufferAbstract> mem,
 }
 
 void UioMemSgdma::print_desc(const S2mmDesc& desc) const {
+    auto fmt_flag = [](std::string name, bool val) { return (val ? "+" : "-") + name; };
 #define BLI BOOST_LOG_SEV(_lg, bls::info) << ""
-    BLI << "S2mmDesc {";
-    BLI << "  next desc   = 0x" << std::hex << desc.nxtdesc;
-    BLI << "  buffer addr = 0x" << std::hex << desc.buffer_addr;
-    BLI << "  control";
-    BLI << "    buffer_len = " << std::dec << desc.control.buffer_len;
-    BLI << "    sof        = " << std::dec << desc.control.rxsof;
-    BLI << "    eof        = " << std::dec << desc.control.rxeof;
-    BLI << "  status";
-    BLI << "    buffer_len = " << std::dec << desc.status.num_stored_bytes;
-    BLI << "    sof        = " << std::dec << desc.status.rxsof;
-    BLI << "    eof        = " << std::dec << desc.status.rxeof;
-    BLI << "    dmainterr  = " << std::dec << desc.status.dmainterr;
-    BLI << "    dmaslverr  = " << std::dec << desc.status.dmaslverr;
-    BLI << "    dmadecerr  = " << std::dec << desc.status.dmadecerr;
-    BLI << "    cmplt      = " << std::dec << desc.status.cmplt;
-    BLI << "}" << std::dec;
+    BLI << "next_desc: 0x" << std::hex << desc.nxtdesc << ", " << "buff_addr: 0x" << std::hex
+        << desc.buffer_addr;
+    BLI << "ctrl: buf_len " << std::dec << desc.control.buffer_len << ", "
+        << fmt_flag("sof", desc.control.rxsof) << " " << fmt_flag("eof", desc.control.rxeof) << " ";
+    BLI << "status: num_bytes " << std::dec << desc.status.num_stored_bytes << ", "
+        << fmt_flag("sof", desc.status.rxsof) << " " << fmt_flag("eof", desc.status.rxeof) << " "
+        << fmt_flag("interr", desc.status.dmainterr) << " "
+        << fmt_flag("slverr", desc.status.dmaslverr) << " "
+        << fmt_flag("decerr", desc.status.dmadecerr) << " " << fmt_flag("cmplt", desc.status.cmplt);
 }
 
 void UioMemSgdma::print_descs() const {
