@@ -83,4 +83,5 @@ digraph "UioAxiDmaIf.cpp"
   Node29 -> Node4 [color="steelblue1",style="solid"];
   Node1 -> Node30 [color="steelblue1",style="solid"];
   Node30 [label="ios",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node27 [color="steelblue1",style="solid"];
 }
