@@ -24,7 +24,7 @@ Collaboration diagram for udmaio\+::Uio\+Axi\+Dma\+If\+:
 \item 
 void \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a00bfa497dcdb7fba7c9d30ea0949675d}{start}} (uintptr\+\_\+t start\+\_\+desc)
 \begin{DoxyCompactList}\small\item\em Configure and start the AXI DMA controller. \end{DoxyCompactList}\item 
-uint32\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a12ad2b773b16b735c3fe9e8a24fe7139}{clear\+\_\+interrupt}} ()
+std\+::tuple$<$ uint32\+\_\+t, \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t}{axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t}} $>$ \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a1cbc86036333f77a67e79a1077618a56}{clear\+\_\+interrupt}} ()
 \begin{DoxyCompactList}\small\item\em Wait for interrupt and acknowledge it. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a5917c7c9808afd9a4271759e60e17ca6}{check\+\_\+for\+\_\+errors}} ()
 \begin{DoxyCompactList}\small\item\em Check status register and log any errors. \end{DoxyCompactList}\item 
@@ -65,11 +65,11 @@ Check status register and log any errors.
 \begin{DoxyReturn}{Returns}
 true if any error occurred 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a12ad2b773b16b735c3fe9e8a24fe7139}\label{classudmaio_1_1_uio_axi_dma_if_a12ad2b773b16b735c3fe9e8a24fe7139}} 
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a1cbc86036333f77a67e79a1077618a56}\label{classudmaio_1_1_uio_axi_dma_if_a1cbc86036333f77a67e79a1077618a56}} 
 \index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!clear\_interrupt@{clear\_interrupt}}
 \index{clear\_interrupt@{clear\_interrupt}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
 \doxysubsubsection{\texorpdfstring{clear\_interrupt()}{clear\_interrupt()}}
-{\footnotesize\ttfamily uint32\+\_\+t udmaio\+::\+Uio\+Axi\+Dma\+If\+::clear\+\_\+interrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::tuple$<$ uint32\+\_\+t, \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t}{axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t}} $>$ udmaio\+::\+Uio\+Axi\+Dma\+If\+::clear\+\_\+interrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
