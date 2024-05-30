@@ -11,10 +11,11 @@
 
 #pragma once
 
+#include <tuple>
+
 #include "RegAccessor.hpp"
 #include "UioIf.hpp"
 #include "udmaio/rdl/AxiDma.hpp"
-
 namespace udmaio {
 
 using AxiDmaBlock = axi_dma::block<RegAccessorArray>;
@@ -31,7 +32,7 @@ class UioAxiDmaIf : public UioIf, AxiDmaBlock {
     using UioIf::arm_interrupt;
 
     /// Wait for interrupt and acknowledge it
-    uint32_t clear_interrupt();
+    std::tuple<uint32_t, axi_dma::s2mm_dmasr_t> clear_interrupt();
 
     /// @brief Check status register and log any errors
     /// @return true if any error occurred

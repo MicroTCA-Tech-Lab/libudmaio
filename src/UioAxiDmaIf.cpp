@@ -51,7 +51,7 @@ void UioAxiDmaIf::start(uintptr_t start_desc) {
         << "DMA ctrl = 0x" << std::hex << reg_to_raw(s2mm_dmacr.rd()) << std::dec;
 }
 
-uint32_t UioAxiDmaIf::clear_interrupt() {
+std::tuple<uint32_t, axi_dma::s2mm_dmasr_t> UioAxiDmaIf::clear_interrupt() {
     uint32_t irq_count = wait_for_interrupt();
 
     auto stat = s2mm_dmasr.rd();
@@ -60,13 +60,10 @@ uint32_t UioAxiDmaIf::clear_interrupt() {
     }
     if (stat.err_irq) {
         BOOST_LOG_SEV(_lg, bls::warning) << "ERR IRQ";
-        if (check_for_errors()) {
-            throw std::runtime_error("DMA engine error raised");
-        }
     }
     s2mm_dmasr.wr({.ioc_irq = stat.ioc_irq, .err_irq = stat.err_irq});
 
-    return irq_count;
+    return std::make_tuple(irq_count, stat);
 }
 
 bool UioAxiDmaIf::check_for_errors() {

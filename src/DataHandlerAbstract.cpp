@@ -59,18 +59,21 @@ void DataHandlerAbstract::_handle_input(const boost::system::error_code& ec) {
         return;
     }
 
-    // Check for error flags and log them
-    _dma.check_for_errors();
-
-    uint32_t irq_count = _dma.clear_interrupt();
+    auto [irq_count, dma_stat] = _dma.clear_interrupt();
     BOOST_LOG_SEV(_lg, bls::trace) << "irq count = " << irq_count;
+    if (dma_stat.err_irq && _dma.check_for_errors()) {
+        _desc.print_descs();
+        throw std::runtime_error("DMA engine error raised");
+    }
 
-    auto full_bufs = _receive_packets ? _desc.get_next_packet() : _desc.get_full_buffers();
-    if (full_bufs.empty()) {
-        BOOST_LOG_SEV(_lg, bls::trace) << "spurious event, got no data";
-    } else {
-        auto bytes = _desc.read_buffers(full_bufs);
-        process_data(std::move(bytes));
+    if (dma_stat.ioc_irq) {
+        auto full_bufs = _receive_packets ? _desc.get_next_packet() : _desc.get_full_buffers();
+        if (full_bufs.empty()) {
+            BOOST_LOG_SEV(_lg, bls::trace) << "spurious event, got no data";
+        } else {
+            auto bytes = _desc.read_buffers(full_bufs);
+            process_data(std::move(bytes));
+        }
     }
 
     _start_read();
