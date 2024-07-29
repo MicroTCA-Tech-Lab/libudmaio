@@ -24,6 +24,8 @@ Collaboration diagram for udmaio\+::Uio\+Axi\+Dma\+If\+:
 \item 
 void \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a00bfa497dcdb7fba7c9d30ea0949675d}{start}} (uintptr\+\_\+t start\+\_\+desc)
 \begin{DoxyCompactList}\small\item\em Configure and start the AXI DMA controller. \end{DoxyCompactList}\item 
+uintptr\+\_\+t \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a52177a071c9c29e2ed57a6da50d12ebd}{get\+\_\+curr\+\_\+desc}} ()
+\item 
 std\+::tuple$<$ uint32\+\_\+t, \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t}{axi\+\_\+dma\+::s2mm\+\_\+dmasr\+\_\+t}} $>$ \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a1cbc86036333f77a67e79a1077618a56}{clear\+\_\+interrupt}} ()
 \begin{DoxyCompactList}\small\item\em Wait for interrupt and acknowledge it. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a5917c7c9808afd9a4271759e60e17ca6}{check\+\_\+for\+\_\+errors}} ()
@@ -74,6 +76,12 @@ true if any error occurred
 
 
 Wait for interrupt and acknowledge it. 
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a52177a071c9c29e2ed57a6da50d12ebd}\label{classudmaio_1_1_uio_axi_dma_if_a52177a071c9c29e2ed57a6da50d12ebd}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!get\_curr\_desc@{get\_curr\_desc}}
+\index{get\_curr\_desc@{get\_curr\_desc}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{get\_curr\_desc()}{get\_curr\_desc()}}
+{\footnotesize\ttfamily uintptr\+\_\+t udmaio\+::\+Uio\+Axi\+Dma\+If\+::get\+\_\+curr\+\_\+desc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a00bfa497dcdb7fba7c9d30ea0949675d}\label{classudmaio_1_1_uio_axi_dma_if_a00bfa497dcdb7fba7c9d30ea0949675d}} 
 \index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!start@{start}}

@@ -15,28 +15,32 @@
 \DoxyCodeLine{11 }
 \DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{13 }
-\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <tuple>}}
-\DoxyCodeLine{15 }
-\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_reg_accessor_8hpp}{RegAccessor.hpp}}"{}}}
-\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_uio_if_8hpp}{UioIf.hpp}}"{}}}
-\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_axi_dma_8hpp}{udmaio/rdl/AxiDma.hpp}}"{}}}
-\DoxyCodeLine{19 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}} \{}
-\DoxyCodeLine{20 }
-\DoxyCodeLine{21 \textcolor{keyword}{using }\mbox{\hyperlink{structaxi__dma_1_1block__template}{AxiDmaBlock}} = \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\_dma::block<RegAccessorArray>}};}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{UioAxiDmaIf}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}, \mbox{\hyperlink{structaxi__dma_1_1block__template}{AxiDmaBlock}} \{}
-\DoxyCodeLine{25   \textcolor{keyword}{public}:}
-\DoxyCodeLine{26     \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_aff01d963fa85b9a234d2d90be6a63011}{UioAxiDmaIf}}(\mbox{\hyperlink{classudmaio_1_1_uio_device_location}{UioDeviceLocation}} dev\_loc) : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}\{\textcolor{stringliteral}{"{}AxiDma"{}}, dev\_loc\}, \mbox{\hyperlink{structaxi__dma_1_1block__template}{AxiDmaBlock}}\{this\} \{\}}
-\DoxyCodeLine{27 }
-\DoxyCodeLine{30     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a00bfa497dcdb7fba7c9d30ea0949675d}{start}}(uintptr\_t start\_desc);}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if_a6756aeb5ca3c013d0c4be22e3d573963}{UioIf::arm\_interrupt}};}
-\DoxyCodeLine{33 }
-\DoxyCodeLine{35     std::tuple<uint32\_t, axi\_dma::s2mm\_dmasr\_t> \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a1cbc86036333f77a67e79a1077618a56}{clear\_interrupt}}();}
-\DoxyCodeLine{36 }
-\DoxyCodeLine{39     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a5917c7c9808afd9a4271759e60e17ca6}{check\_for\_errors}}();}
-\DoxyCodeLine{40 \};}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{42 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <tuple>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <sys/types.h>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_reg_accessor_8hpp}{RegAccessor.hpp}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_uio_if_8hpp}{UioIf.hpp}}"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_axi_dma_8hpp}{udmaio/rdl/AxiDma.hpp}}"{}}}
+\DoxyCodeLine{22 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}} \{}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{using }\mbox{\hyperlink{structaxi__dma_1_1block__template}{AxiDmaBlock}} = \mbox{\hyperlink{structaxi__dma_1_1block__template}{axi\_dma::block<RegAccessorArray>}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{UioAxiDmaIf}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}, \mbox{\hyperlink{structaxi__dma_1_1block__template}{AxiDmaBlock}} \{}
+\DoxyCodeLine{28   \textcolor{keyword}{public}:}
+\DoxyCodeLine{29     \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_aff01d963fa85b9a234d2d90be6a63011}{UioAxiDmaIf}}(\mbox{\hyperlink{classudmaio_1_1_uio_device_location}{UioDeviceLocation}} dev\_loc) : \mbox{\hyperlink{classudmaio_1_1_uio_if}{UioIf}}\{\textcolor{stringliteral}{"{}AxiDma"{}}, dev\_loc\}, \mbox{\hyperlink{structaxi__dma_1_1block__template}{AxiDmaBlock}}\{this\} \{\}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a00bfa497dcdb7fba7c9d30ea0949675d}{start}}(uintptr\_t start\_desc);}
+\DoxyCodeLine{34     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a52177a071c9c29e2ed57a6da50d12ebd}{get\_curr\_desc}}();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keyword}{using }\mbox{\hyperlink{classudmaio_1_1_uio_if_a6756aeb5ca3c013d0c4be22e3d573963}{UioIf::arm\_interrupt}};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{39     std::tuple<uint32\_t, axi\_dma::s2mm\_dmasr\_t> \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a1cbc86036333f77a67e79a1077618a56}{clear\_interrupt}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{43     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a5917c7c9808afd9a4271759e60e17ca6}{check\_for\_errors}}();}
+\DoxyCodeLine{44 \};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}
