@@ -69,12 +69,22 @@ void DataHandlerAbstract::_handle_input(const boost::system::error_code& ec) {
     }
 
     if (dma_stat.ioc_irq) {
-        auto full_bufs = _receive_packets ? _desc.get_next_packet() : _desc.get_full_buffers();
-        if (full_bufs.empty()) {
-            BOOST_LOG_SEV(_lg, bls::trace) << "spurious event, got no data";
-        } else {
-            auto bytes = _desc.read_buffers(full_bufs);
-            process_data(std::move(bytes));
+        bool spurious_event = true;
+        // Receive data until there's no more incoming packets or full buffers
+        // (esp. important in packet mode where get_next_packet() will only
+        // return *one* packet, regardless of more incoming data in the pipeline)
+        while (true) {
+            auto full_bufs = _receive_packets ? _desc.get_next_packet() : _desc.get_full_buffers();
+            if (full_bufs.empty()) {
+                if (spurious_event) {
+                    BOOST_LOG_SEV(_lg, bls::trace) << "spurious event, got no data";
+                }
+                break;
+            } else {
+                auto bytes = _desc.read_buffers(full_bufs);
+                process_data(std::move(bytes));
+                spurious_event = false;
+            }
         }
     }
 
