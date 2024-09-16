@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"structaxi__vdma_1_1s2mm__reg__index__t.html":[1,0,1,10],
+"structaxi__vdma_1_1s2mm__reg__index__t.html":[0,0,1,10],
 "structaxi__vdma_1_1s2mm__reg__index__t.html#a43582f80d10f3595e8374c155edd626c":[1,0,1,10,0],
 "structaxi__vdma_1_1s2mm__reg__index__t.html#a43582f80d10f3595e8374c155edd626c":[0,0,1,10,0],
 "structaxi__vdma_1_1s2mm__reg__index__t.html#a584c800a70d8171876ce2f36adba4995":[1,0,1,10,1],

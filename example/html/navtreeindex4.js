@@ -1,9 +1,11 @@
 var NAVTREEINDEX4 =
 {
+"structaxi__dma_1_1s2mm__curdesc__t.html#a19e772094021dea2fc71d9a4e4a2f564":[1,0,0,6,0],
+"structaxi__dma_1_1s2mm__curdesc__t.html#a19e772094021dea2fc71d9a4e4a2f564":[0,0,0,6,0],
 "structaxi__dma_1_1s2mm__curdesc__t.html#a6ea905eb86d547545f876ad35b6094ca":[1,0,0,6,1],
 "structaxi__dma_1_1s2mm__curdesc__t.html#a6ea905eb86d547545f876ad35b6094ca":[0,0,0,6,1],
-"structaxi__dma_1_1s2mm__dmacr__t.html":[0,0,0,7],
 "structaxi__dma_1_1s2mm__dmacr__t.html":[1,0,0,7],
+"structaxi__dma_1_1s2mm__dmacr__t.html":[0,0,0,7],
 "structaxi__dma_1_1s2mm__dmacr__t.html#a037e7d7c17f60e6026618a76aae97422":[1,0,0,7,9],
 "structaxi__dma_1_1s2mm__dmacr__t.html#a037e7d7c17f60e6026618a76aae97422":[0,0,0,7,9],
 "structaxi__dma_1_1s2mm__dmacr__t.html#a263a47afe1be52ed4e20c8b551ab5bb1":[1,0,0,7,8],
@@ -28,8 +30,8 @@ var NAVTREEINDEX4 =
 "structaxi__dma_1_1s2mm__dmacr__t.html#aee7e95943db77cda4b4868c0c589b7f9":[1,0,0,7,1],
 "structaxi__dma_1_1s2mm__dmacr__t.html#af6a76aa6092b8357b66bf53429c2e41c":[1,0,0,7,0],
 "structaxi__dma_1_1s2mm__dmacr__t.html#af6a76aa6092b8357b66bf53429c2e41c":[0,0,0,7,0],
-"structaxi__dma_1_1s2mm__dmasr__t.html":[0,0,0,8],
 "structaxi__dma_1_1s2mm__dmasr__t.html":[1,0,0,8],
+"structaxi__dma_1_1s2mm__dmasr__t.html":[0,0,0,8],
 "structaxi__dma_1_1s2mm__dmasr__t.html#a2a7d67417f4a854666b47d19e8c748da":[1,0,0,8,16],
 "structaxi__dma_1_1s2mm__dmasr__t.html#a2a7d67417f4a854666b47d19e8c748da":[0,0,0,8,16],
 "structaxi__dma_1_1s2mm__dmasr__t.html#a2b90322b3c2d36480781e8bfbaecad86":[1,0,0,8,14],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "structaxi__vdma_1_1s2mm__hsize__t.html#a89a298ea971c222aa2ac46d4bf4fcea6":[1,0,1,9,1],
 "structaxi__vdma_1_1s2mm__hsize__t.html#a89a298ea971c222aa2ac46d4bf4fcea6":[0,0,1,9,1],
 "structaxi__vdma_1_1s2mm__hsize__t.html#aec5560933227dd6b7a3857e97f357750":[1,0,1,9,0],
-"structaxi__vdma_1_1s2mm__hsize__t.html#aec5560933227dd6b7a3857e97f357750":[0,0,1,9,0],
-"structaxi__vdma_1_1s2mm__reg__index__t.html":[1,0,1,10],
-"structaxi__vdma_1_1s2mm__reg__index__t.html":[0,0,1,10]
+"structaxi__vdma_1_1s2mm__hsize__t.html#aec5560933227dd6b7a3857e97f357750":[0,0,1,9,0]
 };

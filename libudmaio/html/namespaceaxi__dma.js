@@ -21,5 +21,6 @@ var namespaceaxi__dma =
     [ "s2mm_da_msb_t", "namespaceaxi__dma.html#a2e7fb45c7a845c74441f754211aed93f", null ],
     [ "s2mm_da_t", "namespaceaxi__dma.html#a8054f0fece4e8539d6367f6560d021ac", null ],
     [ "s2mm_taildesc_msb_t", "namespaceaxi__dma.html#af96a46fee3cd5dbc6a78ecdc13f48320", null ],
+    [ "operator<<", "namespaceaxi__dma.html#a7ea49b5fdec6746bb62bc3b1fe9d033f", null ],
     [ "_HECTARE_PACKED", "namespaceaxi__dma.html#a0f3cabf491713f846b85c3544b02fae6", null ]
 ];

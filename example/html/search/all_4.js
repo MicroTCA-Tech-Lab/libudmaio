@@ -22,5 +22,6 @@ var searchData=
   ['dmabufferabstract_19',['DmaBufferAbstract',['../classudmaio_1_1_dma_buffer_abstract.html',1,'udmaio']]],
   ['dmabufferabstract_2ehpp_20',['DmaBufferAbstract.hpp',['../_dma_buffer_abstract_8hpp.html',1,'']]],
   ['dmamode_21',['DmaMode',['../namespaceudmaio.html#a6b5d6a27d182272b899d28e1a7080cec',1,'udmaio']]],
-  ['done_22',['done',['../struct_uio_traffic_gen_1_1_st_control.html#a4429140226b560b19b1b79e4359f9cfd',1,'UioTrafficGen::StControl']]]
+  ['done_22',['done',['../struct_uio_traffic_gen_1_1_st_control.html#a4429140226b560b19b1b79e4359f9cfd',1,'UioTrafficGen::StControl']]],
+  ['dump_5fstatus_23',['dump_status',['../classudmaio_1_1_uio_axi_dma_if.html#a02d6527c841f5766b616ce7f8f2f25c0',1,'udmaio::UioAxiDmaIf']]]
 ];

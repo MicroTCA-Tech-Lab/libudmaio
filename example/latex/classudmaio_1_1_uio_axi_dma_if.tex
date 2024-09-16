@@ -30,6 +30,8 @@ std\+::tuple$<$ uint32\+\_\+t, \mbox{\hyperlink{structaxi__dma_1_1s2mm__dmasr__t
 \begin{DoxyCompactList}\small\item\em Wait for interrupt and acknowledge it. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a5917c7c9808afd9a4271759e60e17ca6}{check\+\_\+for\+\_\+errors}} ()
 \begin{DoxyCompactList}\small\item\em Check status register and log any errors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a02d6527c841f5766b616ce7f8f2f25c0}{dump\+\_\+status}} ()
+\begin{DoxyCompactList}\small\item\em Dump all status register flags in the log. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if_a6756aeb5ca3c013d0c4be22e3d573963}{arm\+\_\+interrupt}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
@@ -76,6 +78,16 @@ true if any error occurred
 
 
 Wait for interrupt and acknowledge it. 
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a02d6527c841f5766b616ce7f8f2f25c0}\label{classudmaio_1_1_uio_axi_dma_if_a02d6527c841f5766b616ce7f8f2f25c0}} 
+\index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!dump\_status@{dump\_status}}
+\index{dump\_status@{dump\_status}!udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}}
+\doxysubsubsection{\texorpdfstring{dump\_status()}{dump\_status()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+Axi\+Dma\+If\+::dump\+\_\+status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Dump all status register flags in the log. 
 
 \mbox{\Hypertarget{classudmaio_1_1_uio_axi_dma_if_a52177a071c9c29e2ed57a6da50d12ebd}\label{classudmaio_1_1_uio_axi_dma_if_a52177a071c9c29e2ed57a6da50d12ebd}} 
 \index{udmaio::UioAxiDmaIf@{udmaio::UioAxiDmaIf}!get\_curr\_desc@{get\_curr\_desc}}
