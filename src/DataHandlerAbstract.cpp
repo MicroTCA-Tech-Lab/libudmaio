@@ -64,6 +64,7 @@ void DataHandlerAbstract::_handle_input(const boost::system::error_code& ec) {
     if (dma_stat.err_irq && _dma.check_for_errors()) {
         BOOST_LOG_SEV(_lg, bls::fatal)
             << "DMA error, curr.desc 0x" << std::hex << _dma.get_curr_desc();
+        _dma.dump_status();
         _desc.print_descs();
         throw std::runtime_error("DMA engine error raised");
     }

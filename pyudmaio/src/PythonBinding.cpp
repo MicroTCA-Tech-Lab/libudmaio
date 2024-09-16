@@ -109,7 +109,8 @@ PYBIND11_MODULE(binding, m) {
     py::class_<udmaio::UioAxiDmaIf, udmaio::UioIf, std::shared_ptr<udmaio::UioAxiDmaIf>>(
         m,
         "UioAxiDmaIf")
-        .def(py::init<udmaio::UioDeviceLocation>());
+        .def(py::init<udmaio::UioDeviceLocation>())
+        .def("dump_status", &udmaio::UioAxiDmaIf::dump_status);
 
     py::class_<udmaio::UioMemSgdma, udmaio::UioIf, std::shared_ptr<udmaio::UioMemSgdma>>(
         m,

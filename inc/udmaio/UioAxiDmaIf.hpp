@@ -41,6 +41,9 @@ class UioAxiDmaIf : public UioIf, AxiDmaBlock {
     /// @brief Check status register and log any errors
     /// @return true if any error occurred
     bool check_for_errors();
+
+    /// @brief Dump all status register flags in the log
+    void dump_status();
 };
 
 }  // namespace udmaio

@@ -147,6 +147,7 @@ int main(int argc, char* argv[]) {
         if (g_stop_loop) {
             data_handler.stop();
             fut.wait();
+            axi_dma->dump_status();
             break;
         }
     }

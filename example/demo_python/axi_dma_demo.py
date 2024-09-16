@@ -169,6 +169,7 @@ def main():
     print(f'{words_total} words OK')
     traffic_gen.stop()
     data_handler.stop()
+    axi_dma.dump_status()
 
 
 if __name__ == '__main__':

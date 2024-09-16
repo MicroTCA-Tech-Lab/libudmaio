@@ -15,6 +15,29 @@
 #include <ios>
 #include <stdexcept>
 
+#include "udmaio/FrameFormat.hpp"
+
+namespace axi_dma {
+
+std::ostream& operator<<(std::ostream& os, const s2mm_dmasr_t& stat) {
+    auto fmt = [](std::string name, bool val) { return (val ? "+" : "-") + name; };
+    os << fmt("halted", stat.halted) << " ";
+    os << fmt("idle", stat.idle) << " ";
+    os << fmt("sg_incld", stat.sg_incld) << " ";
+    os << fmt("dma_int_err", stat.dma_int_err) << " ";
+    os << fmt("dma_slv_err", stat.dma_slv_err) << " ";
+    os << fmt("dma_dec_err", stat.dma_dec_err) << " ";
+    os << fmt("sg_int_err", stat.sg_int_err) << " ";
+    os << fmt("sg_slv_err", stat.sg_slv_err) << " ";
+    os << fmt("sg_dec_err", stat.sg_dec_err) << " ";
+    os << fmt("ioc_irq", stat.ioc_irq) << " ";
+    os << fmt("dly_irq", stat.dly_irq) << " ";
+    os << fmt("err_irq", stat.err_irq);
+    return os;
+}
+
+}  // namespace axi_dma
+
 namespace udmaio {
 
 void UioAxiDmaIf::start(uintptr_t start_desc) {
@@ -123,4 +146,7 @@ bool UioAxiDmaIf::check_for_errors() {
     return has_errors;
 }
 
+void UioAxiDmaIf::dump_status() {
+    BOOST_LOG_SEV(_lg, bls::info) << s2mm_dmasr.rd();
+}
 }  // namespace udmaio
