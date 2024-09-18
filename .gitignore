@@ -13,3 +13,9 @@
 # doxygen
 docs/libudmaio
 docs/example
+
+# venv in demo_python
+/example/demo_python/bin
+/example/demo_python/lib
+/example/demo_python/lib64
+/example/demo_python/pyvenv.cfg
