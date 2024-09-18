@@ -11,6 +11,7 @@
 
 #pragma once
 
+#include <algorithm>
 #include <chrono>
 #include <condition_variable>
 #include <mutex>
@@ -51,7 +52,7 @@ class ConcurrentQueue {
     /// @param item Element to push to the queue
     void push(T item) {
         std::unique_lock<std::mutex> lock(_mutex);
-        if (_queue.size() >= MAX_ELEMS) {
+        if (_queue.size() >= _max_elems) {
             lock.unlock();
             throw std::runtime_error("libudmaio: ConcurrentQueue full");
         }
@@ -66,7 +67,7 @@ class ConcurrentQueue {
         _cond.notify_one();
     }
 
-    ConcurrentQueue() = default;
+    ConcurrentQueue(size_t max_elems = 64) : _max_elems{max_elems} {}
     ConcurrentQueue(const ConcurrentQueue&) = delete;
     ConcurrentQueue& operator=(const ConcurrentQueue&) = delete;
 
@@ -74,7 +75,7 @@ class ConcurrentQueue {
     std::queue<T> _queue;
     std::mutex _mutex;
     std::condition_variable _cond;
-    constexpr static size_t MAX_ELEMS = 64;
+    size_t _max_elems;
     bool _abort = false;
 };
 

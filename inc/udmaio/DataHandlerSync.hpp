@@ -11,6 +11,8 @@
 
 #pragma once
 
+#include <cstddef>
+#include <iterator>
 #include <optional>
 #include <thread>
 
@@ -25,7 +27,14 @@ class DataHandlerSync : public DataHandlerAbstract {
     std::optional<std::thread> _ioThread;          ///< I/O thread
 
   public:
-    using DataHandlerAbstract::DataHandlerAbstract;
+    explicit DataHandlerSync(std::string name,
+                             UioAxiDmaIf& dma,
+                             UioMemSgdma& desc,
+                             DmaBufferAbstract& mem,
+                             bool receive_packets = true,
+                             size_t queue_size = 64)
+        : DataHandlerAbstract{name, dma, desc, mem, receive_packets}, _queue{queue_size} {}
+
     virtual ~DataHandlerSync();
 
     /// Run the data reception
