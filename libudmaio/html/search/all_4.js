@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['datahandlerabstract_0',['DataHandlerAbstract',['../classudmaio_1_1_data_handler_abstract.html#ad3731cb36bac1fb2019eefaae629c833',1,'udmaio::DataHandlerAbstract::DataHandlerAbstract()'],['../classudmaio_1_1_data_handler_abstract.html',1,'udmaio::DataHandlerAbstract']]],
+  ['datahandlerabstract_0',['DataHandlerAbstract',['../classudmaio_1_1_data_handler_abstract.html#ad3731cb36bac1fb2019eefaae629c833',1,'udmaio::DataHandlerAbstract::DataHandlerAbstract()'],['../classudmaio_1_1_data_handler_sync.html#ad3731cb36bac1fb2019eefaae629c833',1,'udmaio::DataHandlerSync::DataHandlerAbstract()'],['../classudmaio_1_1_data_handler_abstract.html',1,'udmaio::DataHandlerAbstract']]],
   ['datahandlerabstract_2ecpp_1',['DataHandlerAbstract.cpp',['../_data_handler_abstract_8cpp.html',1,'']]],
   ['datahandlerabstract_2ehpp_2',['DataHandlerAbstract.hpp',['../_data_handler_abstract_8hpp.html',1,'']]],
-  ['datahandlersync_3',['DataHandlerSync',['../classudmaio_1_1_data_handler_sync.html#af7021543a200a90d985949be45405cc1',1,'udmaio::DataHandlerSync::DataHandlerSync()'],['../classudmaio_1_1_data_handler_sync.html',1,'udmaio::DataHandlerSync']]],
+  ['datahandlersync_3',['DataHandlerSync',['../classudmaio_1_1_data_handler_sync.html',1,'udmaio']]],
   ['datahandlersync_2ecpp_4',['DataHandlerSync.cpp',['../_data_handler_sync_8cpp.html',1,'']]],
   ['datahandlersync_2ehpp_5',['DataHandlerSync.hpp',['../_data_handler_sync_8hpp.html',1,'']]],
   ['desc_5faddr_5fstep_6',['DESC_ADDR_STEP',['../classudmaio_1_1_uio_mem_sgdma.html#a62c5f9829c57bd2bbebf63cae30e5260',1,'udmaio::UioMemSgdma']]],
