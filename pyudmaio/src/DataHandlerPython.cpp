@@ -16,8 +16,14 @@ namespace udmaio {
 DataHandlerPython::DataHandlerPython(std::shared_ptr<UioAxiDmaIf> dma_ptr,
                                      std::shared_ptr<UioMemSgdma> desc_ptr,
                                      std::shared_ptr<DmaBufferAbstract> mem_ptr,
-                                     bool receive_packets)
-    : DataHandlerSync("DataHandlerPython", *dma_ptr, *desc_ptr, *mem_ptr, receive_packets)
+                                     bool receive_packets,
+                                     size_t queue_size)
+    : DataHandlerSync("DataHandlerPython",
+                      *dma_ptr,
+                      *desc_ptr,
+                      *mem_ptr,
+                      receive_packets,
+                      queue_size)
     , _dma_ptr(dma_ptr)
     , _desc_ptr(desc_ptr)
     , _mem_ptr(mem_ptr) {}
