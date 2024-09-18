@@ -1,8 +1,9 @@
 <map id="ConcurrentQueue.hpp" name="ConcurrentQueue.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="197,5,344,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,79,67,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="91,79,218,104"/>
-<area shape="rect" id="node4" title=" " alt="" coords="242,79,299,104"/>
-<area shape="rect" id="node5" title=" " alt="" coords="323,79,381,104"/>
-<area shape="rect" id="node6" title=" " alt="" coords="405,79,464,104"/>
+<area shape="rect" id="node1" title=" " alt="" coords="237,5,384,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,79,80,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="104,79,165,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="190,79,317,104"/>
+<area shape="rect" id="node5" title=" " alt="" coords="341,79,398,104"/>
+<area shape="rect" id="node6" title=" " alt="" coords="422,79,479,104"/>
+<area shape="rect" id="node7" title=" " alt="" coords="504,79,563,104"/>
 </map>

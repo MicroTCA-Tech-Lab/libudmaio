@@ -15,66 +15,67 @@
 \DoxyCodeLine{11 }
 \DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{13 }
-\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <chrono>}}
-\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <condition\_variable>}}
-\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <mutex>}}
-\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <queue>}}
-\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <thread>}}
-\DoxyCodeLine{19 }
-\DoxyCodeLine{20 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}} \{}
-\DoxyCodeLine{21 }
-\DoxyCodeLine{23 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
-\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{ConcurrentQueue}} \{}
-\DoxyCodeLine{25   \textcolor{keyword}{public}:}
-\DoxyCodeLine{29     T \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a448333f6da5f44b12586a2b0041354aa}{pop}}(std::chrono::milliseconds timeout = std::chrono::milliseconds\{0\}) \{}
-\DoxyCodeLine{30         std::unique\_lock<std::mutex> lock\{\mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a30d6a2c6aaaf69eb5ee501526f3f7353}{\_mutex}}\};}
-\DoxyCodeLine{31         \textcolor{keywordflow}{while} (\mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aa5b3c888ba18a51132f6c68006b7bea5}{\_queue}}.empty()) \{}
-\DoxyCodeLine{32             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a779c0e38ac39c3f7a44a83202971dc89}{\_abort}}) \{}
-\DoxyCodeLine{33                 \textcolor{keywordflow}{return} \{\};}
-\DoxyCodeLine{34             \}}
-\DoxyCodeLine{35             \textcolor{keywordflow}{if} (timeout.count()) \{}
-\DoxyCodeLine{36                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_concurrent_queue_af3be3bf32dc9f61afe7f92a0b6f948a1}{\_cond}}.wait\_for(lock, timeout) == std::cv\_status::timeout) \{}
-\DoxyCodeLine{37                     \textcolor{keywordflow}{return} \{\};}
-\DoxyCodeLine{38                 \}}
-\DoxyCodeLine{39             \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{40                 \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_af3be3bf32dc9f61afe7f92a0b6f948a1}{\_cond}}.wait(lock);}
-\DoxyCodeLine{41             \}}
-\DoxyCodeLine{42         \}}
-\DoxyCodeLine{43         \textcolor{keyword}{auto} val = std::move(\mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aa5b3c888ba18a51132f6c68006b7bea5}{\_queue}}.front());}
-\DoxyCodeLine{44         \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aa5b3c888ba18a51132f6c68006b7bea5}{\_queue}}.pop();}
-\DoxyCodeLine{45         lock.unlock();}
-\DoxyCodeLine{46         \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_af3be3bf32dc9f61afe7f92a0b6f948a1}{\_cond}}.notify\_one();}
-\DoxyCodeLine{47         \textcolor{keywordflow}{return} val;}
-\DoxyCodeLine{48     \}}
-\DoxyCodeLine{49 }
-\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a522ac5797493b721ac95f658a0509320}{push}}(T item) \{}
-\DoxyCodeLine{53         std::unique\_lock<std::mutex> lock(\mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a30d6a2c6aaaf69eb5ee501526f3f7353}{\_mutex}});}
-\DoxyCodeLine{54         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aa5b3c888ba18a51132f6c68006b7bea5}{\_queue}}.size() >= \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_afd6c990a383134f9c26082ff4d24b730}{MAX\_ELEMS}}) \{}
-\DoxyCodeLine{55             lock.unlock();}
-\DoxyCodeLine{56             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}libudmaio: ConcurrentQueue full"{}});}
-\DoxyCodeLine{57         \}}
-\DoxyCodeLine{58         \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aa5b3c888ba18a51132f6c68006b7bea5}{\_queue}}.push(std::move(item));}
-\DoxyCodeLine{59         lock.unlock();}
-\DoxyCodeLine{60         \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_af3be3bf32dc9f61afe7f92a0b6f948a1}{\_cond}}.notify\_one();}
-\DoxyCodeLine{61     \}}
-\DoxyCodeLine{62 }
-\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aaa86ed0665b6ebeb97a155123ef752ac}{abort}}() \{}
-\DoxyCodeLine{65         \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a779c0e38ac39c3f7a44a83202971dc89}{\_abort}} = \textcolor{keyword}{true};}
-\DoxyCodeLine{66         \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_af3be3bf32dc9f61afe7f92a0b6f948a1}{\_cond}}.notify\_one();}
-\DoxyCodeLine{67     \}}
-\DoxyCodeLine{68 }
-\DoxyCodeLine{69     \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a4a8392be30ced410bc665a7ecf735cf1}{ConcurrentQueue}}() = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{70     \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a6d5f4e8e14dccaf9db9172cc98f5c888}{ConcurrentQueue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{ConcurrentQueue}}\&) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{71     \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{ConcurrentQueue}}\& \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_ab86afd4013a112387ffe213a56fb1f05}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{ConcurrentQueue}}\&) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{72 }
-\DoxyCodeLine{73   \textcolor{keyword}{private}:}
-\DoxyCodeLine{74     std::queue<T> \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aa5b3c888ba18a51132f6c68006b7bea5}{\_queue}};}
-\DoxyCodeLine{75     std::mutex \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a30d6a2c6aaaf69eb5ee501526f3f7353}{\_mutex}};}
-\DoxyCodeLine{76     std::condition\_variable \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_af3be3bf32dc9f61afe7f92a0b6f948a1}{\_cond}};}
-\DoxyCodeLine{77     \textcolor{keyword}{constexpr} \textcolor{keyword}{static} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_afd6c990a383134f9c26082ff4d24b730}{MAX\_ELEMS}} = 64;}
-\DoxyCodeLine{78     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a779c0e38ac39c3f7a44a83202971dc89}{\_abort}} = \textcolor{keyword}{false};}
-\DoxyCodeLine{79 \};}
-\DoxyCodeLine{80 }
-\DoxyCodeLine{81 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <condition\_variable>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceudmaio}{udmaio}} \{}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{24 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{ConcurrentQueue}} \{}
+\DoxyCodeLine{26   \textcolor{keyword}{public}:}
+\DoxyCodeLine{30     T \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a448333f6da5f44b12586a2b0041354aa}{pop}}(std::chrono::milliseconds timeout = std::chrono::milliseconds\{0\}) \{}
+\DoxyCodeLine{31         std::unique\_lock<std::mutex> lock\{\mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a30d6a2c6aaaf69eb5ee501526f3f7353}{\_mutex}}\};}
+\DoxyCodeLine{32         \textcolor{keywordflow}{while} (\mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aa5b3c888ba18a51132f6c68006b7bea5}{\_queue}}.empty()) \{}
+\DoxyCodeLine{33             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a779c0e38ac39c3f7a44a83202971dc89}{\_abort}}) \{}
+\DoxyCodeLine{34                 \textcolor{keywordflow}{return} \{\};}
+\DoxyCodeLine{35             \}}
+\DoxyCodeLine{36             \textcolor{keywordflow}{if} (timeout.count()) \{}
+\DoxyCodeLine{37                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_concurrent_queue_af3be3bf32dc9f61afe7f92a0b6f948a1}{\_cond}}.wait\_for(lock, timeout) == std::cv\_status::timeout) \{}
+\DoxyCodeLine{38                     \textcolor{keywordflow}{return} \{\};}
+\DoxyCodeLine{39                 \}}
+\DoxyCodeLine{40             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{41                 \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_af3be3bf32dc9f61afe7f92a0b6f948a1}{\_cond}}.wait(lock);}
+\DoxyCodeLine{42             \}}
+\DoxyCodeLine{43         \}}
+\DoxyCodeLine{44         \textcolor{keyword}{auto} val = std::move(\mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aa5b3c888ba18a51132f6c68006b7bea5}{\_queue}}.front());}
+\DoxyCodeLine{45         \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aa5b3c888ba18a51132f6c68006b7bea5}{\_queue}}.pop();}
+\DoxyCodeLine{46         lock.unlock();}
+\DoxyCodeLine{47         \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_af3be3bf32dc9f61afe7f92a0b6f948a1}{\_cond}}.notify\_one();}
+\DoxyCodeLine{48         \textcolor{keywordflow}{return} val;}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a522ac5797493b721ac95f658a0509320}{push}}(T item) \{}
+\DoxyCodeLine{54         std::unique\_lock<std::mutex> lock(\mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a30d6a2c6aaaf69eb5ee501526f3f7353}{\_mutex}});}
+\DoxyCodeLine{55         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aa5b3c888ba18a51132f6c68006b7bea5}{\_queue}}.size() >= \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aaa468325e1f30fba3d84cb22ca510948}{\_max\_elems}}) \{}
+\DoxyCodeLine{56             lock.unlock();}
+\DoxyCodeLine{57             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}libudmaio: ConcurrentQueue full"{}});}
+\DoxyCodeLine{58         \}}
+\DoxyCodeLine{59         \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aa5b3c888ba18a51132f6c68006b7bea5}{\_queue}}.push(std::move(item));}
+\DoxyCodeLine{60         lock.unlock();}
+\DoxyCodeLine{61         \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_af3be3bf32dc9f61afe7f92a0b6f948a1}{\_cond}}.notify\_one();}
+\DoxyCodeLine{62     \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aaa86ed0665b6ebeb97a155123ef752ac}{abort}}() \{}
+\DoxyCodeLine{66         \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a779c0e38ac39c3f7a44a83202971dc89}{\_abort}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{67         \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_af3be3bf32dc9f61afe7f92a0b6f948a1}{\_cond}}.notify\_one();}
+\DoxyCodeLine{68     \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a171910f48f56da5edee4d1ab24d5169f}{ConcurrentQueue}}(\textcolor{keywordtype}{size\_t} max\_elems = 64) : \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aaa468325e1f30fba3d84cb22ca510948}{\_max\_elems}}\{max\_elems\} \{\}}
+\DoxyCodeLine{71     \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a6d5f4e8e14dccaf9db9172cc98f5c888}{ConcurrentQueue}}(\textcolor{keyword}{const} \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{ConcurrentQueue}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{72     \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{ConcurrentQueue}}\& \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_ab86afd4013a112387ffe213a56fb1f05}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classudmaio_1_1_concurrent_queue}{ConcurrentQueue}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74   \textcolor{keyword}{private}:}
+\DoxyCodeLine{75     std::queue<T> \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aa5b3c888ba18a51132f6c68006b7bea5}{\_queue}};}
+\DoxyCodeLine{76     std::mutex \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a30d6a2c6aaaf69eb5ee501526f3f7353}{\_mutex}};}
+\DoxyCodeLine{77     std::condition\_variable \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_af3be3bf32dc9f61afe7f92a0b6f948a1}{\_cond}};}
+\DoxyCodeLine{78     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_aaa468325e1f30fba3d84cb22ca510948}{\_max\_elems}};}
+\DoxyCodeLine{79     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classudmaio_1_1_concurrent_queue_a779c0e38ac39c3f7a44a83202971dc89}{\_abort}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{80 \};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}

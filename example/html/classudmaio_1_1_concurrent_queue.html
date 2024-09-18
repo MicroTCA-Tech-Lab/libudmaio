@@ -102,7 +102,6 @@ $(document).ready(function(){initNavTree('classudmaio_1_1_concurrent_queue.html'
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classudmaio_1_1_concurrent_queue-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">udmaio::ConcurrentQueue&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -130,8 +129,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaa86ed0665b6ebeb97a155123ef752ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_concurrent_queue.html#aaa86ed0665b6ebeb97a155123ef752ac">abort</a> ()</td></tr>
 <tr class="memdesc:aaa86ed0665b6ebeb97a155123ef752ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abort any blocking consumers.  <a href="classudmaio_1_1_concurrent_queue.html#aaa86ed0665b6ebeb97a155123ef752ac">More...</a><br /></td></tr>
 <tr class="separator:aaa86ed0665b6ebeb97a155123ef752ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a8392be30ced410bc665a7ecf735cf1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_concurrent_queue.html#a4a8392be30ced410bc665a7ecf735cf1">ConcurrentQueue</a> ()=default</td></tr>
-<tr class="separator:a4a8392be30ced410bc665a7ecf735cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a171910f48f56da5edee4d1ab24d5169f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_concurrent_queue.html#a171910f48f56da5edee4d1ab24d5169f">ConcurrentQueue</a> (size_t max_elems=64)</td></tr>
+<tr class="separator:a171910f48f56da5edee4d1ab24d5169f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d5f4e8e14dccaf9db9172cc98f5c888"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_concurrent_queue.html#a6d5f4e8e14dccaf9db9172cc98f5c888">ConcurrentQueue</a> (const <a class="el" href="classudmaio_1_1_concurrent_queue.html">ConcurrentQueue</a> &amp;)=delete</td></tr>
 <tr class="separator:a6d5f4e8e14dccaf9db9172cc98f5c888"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab86afd4013a112387ffe213a56fb1f05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classudmaio_1_1_concurrent_queue.html">ConcurrentQueue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_concurrent_queue.html#ab86afd4013a112387ffe213a56fb1f05">operator=</a> (const <a class="el" href="classudmaio_1_1_concurrent_queue.html">ConcurrentQueue</a> &amp;)=delete</td></tr>
@@ -145,20 +144,17 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a30d6a2c6aaaf69eb5ee501526f3f7353"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3be3bf32dc9f61afe7f92a0b6f948a1"><td class="memItemLeft" align="right" valign="top">std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_concurrent_queue.html#af3be3bf32dc9f61afe7f92a0b6f948a1">_cond</a></td></tr>
 <tr class="separator:af3be3bf32dc9f61afe7f92a0b6f948a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa468325e1f30fba3d84cb22ca510948"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_concurrent_queue.html#aaa468325e1f30fba3d84cb22ca510948">_max_elems</a></td></tr>
+<tr class="separator:aaa468325e1f30fba3d84cb22ca510948"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a779c0e38ac39c3f7a44a83202971dc89"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_concurrent_queue.html#a779c0e38ac39c3f7a44a83202971dc89">_abort</a> = false</td></tr>
 <tr class="separator:a779c0e38ac39c3f7a44a83202971dc89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
-Static Private Attributes</h2></td></tr>
-<tr class="memitem:afd6c990a383134f9c26082ff4d24b730"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_concurrent_queue.html#afd6c990a383134f9c26082ff4d24b730">MAX_ELEMS</a> = 64</td></tr>
-<tr class="separator:afd6c990a383134f9c26082ff4d24b730"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
 class udmaio::ConcurrentQueue&lt; T &gt;</div><p >Helper class to implement a blocking FIFO between threads. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4a8392be30ced410bc665a7ecf735cf1" name="a4a8392be30ced410bc665a7ecf735cf1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a8392be30ced410bc665a7ecf735cf1">&#9670;&#160;</a></span>ConcurrentQueue() <span class="overload">[1/2]</span></h2>
+<a id="a171910f48f56da5edee4d1ab24d5169f" name="a171910f48f56da5edee4d1ab24d5169f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a171910f48f56da5edee4d1ab24d5169f">&#9670;&#160;</a></span>ConcurrentQueue() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,13 +167,14 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classudmaio_1_1_concurrent_queue.html">udmaio::ConcurrentQueue</a>&lt; T &gt;::ConcurrentQueue </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>max_elems</em> = <code>64</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -392,6 +389,30 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="aaa468325e1f30fba3d84cb22ca510948" name="aaa468325e1f30fba3d84cb22ca510948"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa468325e1f30fba3d84cb22ca510948">&#9670;&#160;</a></span>_max_elems</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classudmaio_1_1_concurrent_queue.html">udmaio::ConcurrentQueue</a>&lt; T &gt;::_max_elems</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a30d6a2c6aaaf69eb5ee501526f3f7353" name="a30d6a2c6aaaf69eb5ee501526f3f7353"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a30d6a2c6aaaf69eb5ee501526f3f7353">&#9670;&#160;</a></span>_mutex</h2>
 
@@ -434,30 +455,6 @@ template&lt;typename T &gt; </div>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="afd6c990a383134f9c26082ff4d24b730" name="afd6c990a383134f9c26082ff4d24b730"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd6c990a383134f9c26082ff4d24b730">&#9670;&#160;</a></span>MAX_ELEMS</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr size_t <a class="el" href="classudmaio_1_1_concurrent_queue.html">udmaio::ConcurrentQueue</a>&lt; T &gt;::MAX_ELEMS = 64</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
