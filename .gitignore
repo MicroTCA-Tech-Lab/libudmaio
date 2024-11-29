@@ -19,3 +19,6 @@ docs/example
 /example/demo_python/lib
 /example/demo_python/lib64
 /example/demo_python/pyvenv.cfg
+
+#...or anywhere else
+.venv
