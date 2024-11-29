@@ -80,9 +80,24 @@ pip3 install --use-feature=in-tree-build -e .
 To update the `.pyi` stubs after changing the binding:
 
 ```bash
-cd pyudmaio
-python3 -m pybind11_stubgen pyudmaio --no-setup-py -o /tmp \
-&& cp -a /tmp/pyudmaio-stubs/* pyudmaio
+# (re-)generate docstrings
+ python3 -m pybind11_mkdoc -I ./inc -o pyudmaio/src/docstrings.hpp \
+  inc/udmaio/UioConfig.hpp \
+  inc/udmaio/UioIf.hpp \
+  inc/udmaio/DmaBufferAbstract.hpp \
+  inc/udmaio/FpgaMemBufferOverAxi.hpp \
+  inc/udmaio/FpgaMemBufferOverXdma.hpp \
+  inc/udmaio/UDmaBuf.hpp \
+  inc/udmaio/UioAxiDmaIf.hpp \
+  inc/udmaio/UioMemSgdma.hpp \
+  pyudmaio/src/DataHandlerPython.hpp \
+  inc/udmaio/FrameFormat.hpp
+
+# build & install binding
+pip3 install ./pyudmaio
+
+# update stubs
+python3 -m pybind11_stubgen pyudmaio -o pyudmaio
 ```
 
 ## Usage example
