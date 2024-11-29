@@ -104,6 +104,19 @@ if(BUILD_TESTING)
     endforeach()
 endif()
 
+# The python binding is usually installed via setuptools;
+# we include the C++ part of it here only to populate the compile-command.json for editors/IDEs
+if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/pyudmaio/pybind11/CMakeLists.txt")
+    message("pybind11 submodule found, adding pyudmaio target")
+    add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/pyudmaio/pybind11")
+    pybind11_add_module(pyudmaio EXCLUDE_FROM_ALL
+        "${CMAKE_CURRENT_LIST_DIR}/pyudmaio/src/PythonBinding.cpp"
+        "${CMAKE_CURRENT_LIST_DIR}/pyudmaio/src/DataHandlerPython.cpp"
+    )
+else()
+    message("skipping python binding, clone pybind11 submodule to include it")
+endif()
+
 # Create debian package containing library
 set(CPACK_GENERATOR "DEB")
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Patrick Huesmann <patrick.huesmann@desy.de>")
