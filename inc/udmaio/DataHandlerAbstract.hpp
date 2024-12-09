@@ -33,12 +33,13 @@ class DataHandlerAbstract : public Logger, private boost::noncopyable {
 
     boost::asio::io_service _svc;
     boost::asio::posix::stream_descriptor _sd;
+    const bool _rt_prio;
 
     void _start_read();
     void _handle_input(const boost::system::error_code& ec);
 
   protected:
-    bool _receive_packets;  ///< Enable segmentation of stream into SOF/EOF delimited frames
+    const bool _receive_packets;  ///< Enable segmentation of stream into SOF/EOF delimited frames
 
   public:
     /// @brief Construct a Data Handler
@@ -46,11 +47,13 @@ class DataHandlerAbstract : public Logger, private boost::noncopyable {
     /// @param desc Interface to the SGDMA descriptors
     /// @param mem Interface to the memory holding the SGDMA data buffers
     /// @param receive_packets Receive packets/frames delimited by SOF/EOF. If not set, receive stream as-is without regard for packets
+    /// @param rt_prio Set receiving thread to use RT scheduling priority
     explicit DataHandlerAbstract(std::string name,
                                  UioAxiDmaIf& dma,
                                  UioMemSgdma& desc,
                                  DmaBufferAbstract& mem,
-                                 bool receive_packets = true);
+                                 bool receive_packets = true,
+                                 bool rt_prio = false);
     virtual ~DataHandlerAbstract();
 
     /// @brief Stop the data reception

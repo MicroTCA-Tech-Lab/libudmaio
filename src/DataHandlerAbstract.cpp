@@ -12,9 +12,10 @@
 #include "udmaio/DataHandlerAbstract.hpp"
 
 #include <functional>
-#include <iomanip>
 #include <iostream>
 #include <vector>
+
+#include <pthread.h>
 
 namespace udmaio {
 
@@ -22,13 +23,15 @@ DataHandlerAbstract::DataHandlerAbstract(std::string name,
                                          UioAxiDmaIf& dma,
                                          UioMemSgdma& desc,
                                          DmaBufferAbstract& mem,
-                                         bool receive_packets)
+                                         bool receive_packets,
+                                         bool rt_prio)
     : Logger(name)
     , _dma{dma}
     , _desc{desc}
     , _mem{mem}
     , _svc{}
     , _sd{_svc, _dma.get_fd_int()}
+    , _rt_prio{rt_prio}
     , _receive_packets{receive_packets} {
     BOOST_LOG_SEV(_lg, bls::trace) << "ctor";
 };
@@ -94,6 +97,15 @@ void DataHandlerAbstract::_handle_input(const boost::system::error_code& ec) {
 
 void DataHandlerAbstract::operator()() {
     BOOST_LOG_SEV(_lg, bls::trace) << "started";
+
+    if (_rt_prio) {
+        // Set real-time scheduling
+        sched_param sch_params = {.sched_priority = sched_get_priority_max(SCHED_FIFO)};
+        if (pthread_setschedparam(pthread_self(), SCHED_FIFO, &sch_params)) {
+            BOOST_LOG_SEV(_lg, bls::error)
+                << "Failed to set thread scheduling: Permission denied or invalid policy";
+        }
+    }
 
     _start_read();
     _svc.run();

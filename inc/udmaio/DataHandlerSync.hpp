@@ -32,8 +32,9 @@ class DataHandlerSync : public DataHandlerAbstract {
                              UioMemSgdma& desc,
                              DmaBufferAbstract& mem,
                              bool receive_packets = true,
-                             size_t queue_size = 64)
-        : DataHandlerAbstract{name, dma, desc, mem, receive_packets}, _queue{queue_size} {}
+                             size_t queue_size = 64,
+                             bool rt_prio = false)
+        : DataHandlerAbstract{name, dma, desc, mem, receive_packets, rt_prio}, _queue{queue_size} {}
 
     virtual ~DataHandlerSync();
 
