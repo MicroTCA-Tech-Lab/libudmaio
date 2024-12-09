@@ -18,8 +18,9 @@ DataHandlerPrint::DataHandlerPrint(UioAxiDmaIf& dma,
                                    UioMemSgdma& desc,
                                    DmaBufferAbstract& mem,
                                    unsigned int num_bytes_per_beat,
-                                   uint64_t num_bytes_expected)
-    : DataHandlerAbstract{"DataHandlerPrint", dma, desc, mem}
+                                   uint64_t num_bytes_expected,
+                                   bool rt_prio)
+    : DataHandlerAbstract{"DataHandlerPrint", dma, desc, mem, true, rt_prio}
     , lfsr{std::nullopt}
     , _counter_ok{0}
     , _counter_total{0}

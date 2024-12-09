@@ -36,7 +36,8 @@ class DataHandlerPrint : public DataHandlerAbstract {
                               UioMemSgdma& desc,
                               DmaBufferAbstract& mem,
                               unsigned int num_bytes_per_beat,
-                              uint64_t num_bytes_expected);
+                              uint64_t num_bytes_expected,
+                              bool rt_prio);
 
     std::pair<uint64_t, uint64_t> operator()();
 };

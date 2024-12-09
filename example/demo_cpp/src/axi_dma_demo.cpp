@@ -25,6 +25,7 @@
 #include "udmaio/UioIf.hpp"
 #include "udmaio/UioMemSgdma.hpp"
 #include <boost/program_options.hpp>
+#include <boost/program_options/value_semantic.hpp>
 
 #define TARGET_HW_ZUP 1
 #define TARGET_HW_Z7IO 2
@@ -50,7 +51,7 @@ void signal_handler([[maybe_unused]] int signal) {
 
 int main(int argc, char* argv[]) {
     bpo::options_description desc("AXI DMA demo");
-    bool debug, trace;
+    bool debug, trace, rt_prio;
     uint16_t pkt_pause;
     uint16_t nr_pkts;
     uint32_t pkt_len;
@@ -63,6 +64,7 @@ int main(int argc, char* argv[]) {
     ("mode", bpo::value<DmaMode>(&mode)->multitoken()->required(), "select operation mode (xdma or uio) - see docs for details")
     ("debug", bpo::bool_switch(&debug), "enable verbose output (debug level)")
     ("trace", bpo::bool_switch(&trace), "enable even more verbose output (trace level)")
+    ("rt_prio", bpo::bool_switch(&rt_prio), "enable RT priority for I/O thread")
     ("pkt_pause", bpo::value<uint16_t>(&pkt_pause)->default_value(10), "pause between pkts - see AXI TG user's manual")
     ("nr_pkts", bpo::value<uint16_t>(&nr_pkts)->default_value(1), "number of packets to generate - see AXI TG user's manual")
     ("pkt_len", bpo::value<uint32_t>(&pkt_len)->default_value(1024), "packet length - see AXI TG user's manual")
@@ -132,7 +134,8 @@ int main(int argc, char* argv[]) {
                                   *mem_sgdma,
                                   *udmabuf,
                                   target_hw_consts::lfsr_bytes_per_beat,
-                                  nr_pkts * pkt_size};
+                                  nr_pkts * pkt_size,
+                                  rt_prio};
     auto fut = std::async(std::launch::async, std::ref(data_handler));
 
     constexpr int nr_buffers = 32;
