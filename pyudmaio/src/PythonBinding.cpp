@@ -168,12 +168,14 @@ PYBIND11_MODULE(binding, m) {
                       std::shared_ptr<udmaio::UioMemSgdma>,
                       std::shared_ptr<udmaio::DmaBufferAbstract>,
                       bool,
-                      size_t>(),
+                      size_t,
+                      bool>(),
              py::arg("dma"),
              py::arg("desc"),
              py::arg("mem"),
              py::arg("receive_packets") = bool(true),
-             py::arg("queue_size") = size_t(64))
+             py::arg("queue_size") = size_t(64),
+             py::arg("rt_prio") = bool(false))
         .def("start",
              &udmaio::DataHandlerPython::start,
              py::arg("nr_pkts"),

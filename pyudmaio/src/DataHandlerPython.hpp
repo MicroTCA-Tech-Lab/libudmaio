@@ -31,7 +31,8 @@ class DataHandlerPython : public DataHandlerSync {
                       std::shared_ptr<UioMemSgdma>,
                       std::shared_ptr<DmaBufferAbstract>,
                       bool receive_packets = true,
-                      size_t queue_size = 64);
+                      size_t queue_size = 64,
+                      bool rt_prio = false);
 
     void start(int nr_pkts, size_t pkt_size, bool init_only = false);
     py::array_t<uint8_t> numpy_read(uint32_t ms_timeout = 0);

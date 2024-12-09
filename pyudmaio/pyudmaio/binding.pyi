@@ -1,5 +1,4 @@
 from __future__ import annotations
-import numpy
 import typing
 __all__ = ['ConfigBase', 'ConfigUio', 'ConfigXdma', 'DEBUG', 'DataHandler', 'DmaBufferAbstract', 'FATAL', 'FpgaMemBufferOverAxi', 'FpgaMemBufferOverXdma', 'FrameFormat', 'HwAccessor', 'INFO', 'LogLevel', 'TRACE', 'UDmaBuf', 'UioAxiDmaIf', 'UioDeviceLocation', 'UioIf', 'UioMemSgdma', 'UioRegion', 'set_logging_level']
 class ConfigBase:
@@ -35,7 +34,7 @@ class DataHandler:
     @staticmethod
     def _pybind11_conduit_v1_(*args, **kwargs):
         ...
-    def __init__(self, dma: UioAxiDmaIf, desc: UioMemSgdma, mem: DmaBufferAbstract, receive_packets: bool = True, queue_size: int = 64) -> None:
+    def __init__(self, dma: UioAxiDmaIf, desc: UioMemSgdma, mem: DmaBufferAbstract, receive_packets: bool = True, queue_size: int = 64, rt_prio: bool = False) -> None:
         ...
     def read(self, ms_timeout: int) -> numpy.ndarray[numpy.uint8]:
         ...

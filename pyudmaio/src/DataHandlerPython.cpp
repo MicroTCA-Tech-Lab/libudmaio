@@ -17,13 +17,15 @@ DataHandlerPython::DataHandlerPython(std::shared_ptr<UioAxiDmaIf> dma_ptr,
                                      std::shared_ptr<UioMemSgdma> desc_ptr,
                                      std::shared_ptr<DmaBufferAbstract> mem_ptr,
                                      bool receive_packets,
-                                     size_t queue_size)
+                                     size_t queue_size,
+                                     bool rt_prio)
     : DataHandlerSync("DataHandlerPython",
                       *dma_ptr,
                       *desc_ptr,
                       *mem_ptr,
                       receive_packets,
-                      queue_size)
+                      queue_size,
+                      rt_prio)
     , _dma_ptr(dma_ptr)
     , _desc_ptr(desc_ptr)
     , _mem_ptr(mem_ptr) {}
