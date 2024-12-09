@@ -1,6 +1,6 @@
 var class_data_handler_print =
 [
-    [ "DataHandlerPrint", "class_data_handler_print.html#abe3fafd624b77c9749f72d512cbe9232", null ],
+    [ "DataHandlerPrint", "class_data_handler_print.html#ace640eca6b337a665dc230356ea2429e", null ],
     [ "operator()", "class_data_handler_print.html#ae23acb144c1bfa02e7697187410d9d6b", null ],
     [ "process_data", "class_data_handler_print.html#aa3bc74f37259997bd5c538f4eddedf9a", null ],
     [ "_counter_ok", "class_data_handler_print.html#a9cb0bb441af9f111f8570c3c69e39321", null ],

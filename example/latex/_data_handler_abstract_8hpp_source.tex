@@ -36,28 +36,30 @@
 \DoxyCodeLine{33 }
 \DoxyCodeLine{34     boost::asio::io\_service \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_aa2df2042238f57a4d0369af1f1093663}{\_svc}};}
 \DoxyCodeLine{35     boost::asio::posix::stream\_descriptor \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_a6dfd98d26b983dbee80af2e8c2f4c8e8}{\_sd}};}
-\DoxyCodeLine{36 }
-\DoxyCodeLine{37     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_a90d25df268b70ea580559fd0ad7aaa0a}{\_start\_read}}();}
-\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_a03d3679ad7b54a8c3791005ea69ff711}{\_handle\_input}}(\textcolor{keyword}{const} boost::system::error\_code\& ec);}
-\DoxyCodeLine{39 }
-\DoxyCodeLine{40   \textcolor{keyword}{protected}:}
-\DoxyCodeLine{41     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_a0a8f2cedde2cb0d2d4e891fba981c04b}{\_receive\_packets}};  }
-\DoxyCodeLine{42 }
-\DoxyCodeLine{43   \textcolor{keyword}{public}:}
-\DoxyCodeLine{49     \textcolor{keyword}{explicit} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_ad3731cb36bac1fb2019eefaae629c833}{DataHandlerAbstract}}(std::string name,}
-\DoxyCodeLine{50                                  \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{UioAxiDmaIf}}\& dma,}
-\DoxyCodeLine{51                                  \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{UioMemSgdma}}\& desc,}
-\DoxyCodeLine{52                                  \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{DmaBufferAbstract}}\& mem,}
-\DoxyCodeLine{53                                  \textcolor{keywordtype}{bool} receive\_packets = \textcolor{keyword}{true});}
-\DoxyCodeLine{54     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_aad33dd6ad2e4c30ab2da27088c61053b}{\string~DataHandlerAbstract}}();}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{57     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_aa85481c35139a0c2057b332826b32b90}{stop}}();}
+\DoxyCodeLine{36     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_af957056ee6fc504e1dcef35d1d605da4}{\_rt\_prio}};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_a90d25df268b70ea580559fd0ad7aaa0a}{\_start\_read}}();}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_a03d3679ad7b54a8c3791005ea69ff711}{\_handle\_input}}(\textcolor{keyword}{const} boost::system::error\_code\& ec);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41   \textcolor{keyword}{protected}:}
+\DoxyCodeLine{42     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_abbe558284f80cb8cf51dd7b14a77f2ae}{\_receive\_packets}};  }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44   \textcolor{keyword}{public}:}
+\DoxyCodeLine{51     \textcolor{keyword}{explicit} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_ac1525984206ab3c9d88f45c37c0ffd6c}{DataHandlerAbstract}}(std::string name,}
+\DoxyCodeLine{52                                  \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{UioAxiDmaIf}}\& dma,}
+\DoxyCodeLine{53                                  \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{UioMemSgdma}}\& desc,}
+\DoxyCodeLine{54                                  \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{DmaBufferAbstract}}\& mem,}
+\DoxyCodeLine{55                                  \textcolor{keywordtype}{bool} receive\_packets = \textcolor{keyword}{true},}
+\DoxyCodeLine{56                                  \textcolor{keywordtype}{bool} rt\_prio = \textcolor{keyword}{false});}
+\DoxyCodeLine{57     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_aad33dd6ad2e4c30ab2da27088c61053b}{\string~DataHandlerAbstract}}();}
 \DoxyCodeLine{58 }
-\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_a8b3ef758d72527ef0f7f3e4f1d9a068d}{operator()}}();}
+\DoxyCodeLine{60     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_aa85481c35139a0c2057b332826b32b90}{stop}}();}
 \DoxyCodeLine{61 }
-\DoxyCodeLine{64     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_ac61900afc81ade0bb51bfab49bcfe257}{process\_data}}(std::vector<uint8\_t> bytes) = 0;}
-\DoxyCodeLine{65 \};}
-\DoxyCodeLine{66 }
-\DoxyCodeLine{67 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_a8b3ef758d72527ef0f7f3e4f1d9a068d}{operator()}}();}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{67     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract_ac61900afc81ade0bb51bfab49bcfe257}{process\_data}}(std::vector<uint8\_t> bytes) = 0;}
+\DoxyCodeLine{68 \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}

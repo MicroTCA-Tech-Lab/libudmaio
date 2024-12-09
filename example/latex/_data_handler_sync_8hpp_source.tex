@@ -30,27 +30,28 @@
 \DoxyCodeLine{27     std::optional<std::thread> \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_ac2229f46ef9580c91470316faf836276}{\_ioThread}};          }
 \DoxyCodeLine{28 }
 \DoxyCodeLine{29   \textcolor{keyword}{public}:}
-\DoxyCodeLine{30     \textcolor{keyword}{explicit} \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_af7021543a200a90d985949be45405cc1}{DataHandlerSync}}(std::string name,}
+\DoxyCodeLine{30     \textcolor{keyword}{explicit} \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_aaa0c33b256181f73a5b19e04dc018e26}{DataHandlerSync}}(std::string name,}
 \DoxyCodeLine{31                              \mbox{\hyperlink{classudmaio_1_1_uio_axi_dma_if}{UioAxiDmaIf}}\& dma,}
 \DoxyCodeLine{32                              \mbox{\hyperlink{classudmaio_1_1_uio_mem_sgdma}{UioMemSgdma}}\& desc,}
 \DoxyCodeLine{33                              \mbox{\hyperlink{classudmaio_1_1_dma_buffer_abstract}{DmaBufferAbstract}}\& mem,}
 \DoxyCodeLine{34                              \textcolor{keywordtype}{bool} receive\_packets = \textcolor{keyword}{true},}
-\DoxyCodeLine{35                              \textcolor{keywordtype}{size\_t} queue\_size = 64)}
-\DoxyCodeLine{36         : \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract}{DataHandlerAbstract}}\{name, dma, desc, mem, receive\_packets\}, \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_aaf38b90916bf263efee4ee575fb8da09}{\_queue}}\{queue\_size\} \{\}}
-\DoxyCodeLine{37 }
-\DoxyCodeLine{38     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_a2c99b9d7544ba9e43af2cf0407b08fb2}{\string~DataHandlerSync}}();}
-\DoxyCodeLine{39 }
-\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_af9ef2065d6dcda7af1a6fbf64f2f24ca}{operator()}}();}
-\DoxyCodeLine{42 }
-\DoxyCodeLine{43     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_a42e7f4d866c460a6487d525604562102}{process\_data}}(std::vector<uint8\_t> bytes) \textcolor{keyword}{override};}
-\DoxyCodeLine{44 }
-\DoxyCodeLine{45     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_a2a4c89eccf732b191817ec766bd54f82}{stop}}() \textcolor{keyword}{override};}
-\DoxyCodeLine{46 }
-\DoxyCodeLine{49     std::vector<uint8\_t> \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_a605fd0316d366ec4935583b4dce91795}{read}}();}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{54     std::vector<uint8\_t> \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_a8e6fda5d3ec7577a83605dcd3b106204}{read}}(std::chrono::milliseconds timeout);}
-\DoxyCodeLine{55 \};}
-\DoxyCodeLine{56 }
-\DoxyCodeLine{57 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{35                              \textcolor{keywordtype}{size\_t} queue\_size = 64,}
+\DoxyCodeLine{36                              \textcolor{keywordtype}{bool} rt\_prio = \textcolor{keyword}{false})}
+\DoxyCodeLine{37         : \mbox{\hyperlink{classudmaio_1_1_data_handler_abstract}{DataHandlerAbstract}}\{name, dma, desc, mem, receive\_packets, rt\_prio\}, \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_aaf38b90916bf263efee4ee575fb8da09}{\_queue}}\{queue\_size\} \{\}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{keyword}{virtual} \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_a2c99b9d7544ba9e43af2cf0407b08fb2}{\string~DataHandlerSync}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_af9ef2065d6dcda7af1a6fbf64f2f24ca}{operator()}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_a42e7f4d866c460a6487d525604562102}{process\_data}}(std::vector<uint8\_t> bytes) \textcolor{keyword}{override};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_a2a4c89eccf732b191817ec766bd54f82}{stop}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{50     std::vector<uint8\_t> \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_a605fd0316d366ec4935583b4dce91795}{read}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{55     std::vector<uint8\_t> \mbox{\hyperlink{classudmaio_1_1_data_handler_sync_a8e6fda5d3ec7577a83605dcd3b106204}{read}}(std::chrono::milliseconds timeout);}
+\DoxyCodeLine{56 \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}

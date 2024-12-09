@@ -128,9 +128,9 @@ Collaboration diagram for udmaio::DataHandlerAbstract:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad3731cb36bac1fb2019eefaae629c833"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_data_handler_abstract.html#ad3731cb36bac1fb2019eefaae629c833">DataHandlerAbstract</a> (std::string name, <a class="el" href="classudmaio_1_1_uio_axi_dma_if.html">UioAxiDmaIf</a> &amp;dma, <a class="el" href="classudmaio_1_1_uio_mem_sgdma.html">UioMemSgdma</a> &amp;desc, <a class="el" href="classudmaio_1_1_dma_buffer_abstract.html">DmaBufferAbstract</a> &amp;mem, bool receive_packets=true)</td></tr>
-<tr class="memdesc:ad3731cb36bac1fb2019eefaae629c833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a Data Handler.  <a href="classudmaio_1_1_data_handler_abstract.html#ad3731cb36bac1fb2019eefaae629c833">More...</a><br /></td></tr>
-<tr class="separator:ad3731cb36bac1fb2019eefaae629c833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1525984206ab3c9d88f45c37c0ffd6c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_data_handler_abstract.html#ac1525984206ab3c9d88f45c37c0ffd6c">DataHandlerAbstract</a> (std::string name, <a class="el" href="classudmaio_1_1_uio_axi_dma_if.html">UioAxiDmaIf</a> &amp;dma, <a class="el" href="classudmaio_1_1_uio_mem_sgdma.html">UioMemSgdma</a> &amp;desc, <a class="el" href="classudmaio_1_1_dma_buffer_abstract.html">DmaBufferAbstract</a> &amp;mem, bool receive_packets=true, bool rt_prio=false)</td></tr>
+<tr class="memdesc:ac1525984206ab3c9d88f45c37c0ffd6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a Data Handler.  <a href="classudmaio_1_1_data_handler_abstract.html#ac1525984206ab3c9d88f45c37c0ffd6c">More...</a><br /></td></tr>
+<tr class="separator:ac1525984206ab3c9d88f45c37c0ffd6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad33dd6ad2e4c30ab2da27088c61053b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_data_handler_abstract.html#aad33dd6ad2e4c30ab2da27088c61053b">~DataHandlerAbstract</a> ()</td></tr>
 <tr class="separator:aad33dd6ad2e4c30ab2da27088c61053b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa85481c35139a0c2057b332826b32b90"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_data_handler_abstract.html#aa85481c35139a0c2057b332826b32b90">stop</a> ()</td></tr>
@@ -150,9 +150,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a0a8f2cedde2cb0d2d4e891fba981c04b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_data_handler_abstract.html#a0a8f2cedde2cb0d2d4e891fba981c04b">_receive_packets</a></td></tr>
-<tr class="memdesc:a0a8f2cedde2cb0d2d4e891fba981c04b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable segmentation of stream into SOF/EOF delimited frames.  <a href="classudmaio_1_1_data_handler_abstract.html#a0a8f2cedde2cb0d2d4e891fba981c04b">More...</a><br /></td></tr>
-<tr class="separator:a0a8f2cedde2cb0d2d4e891fba981c04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbe558284f80cb8cf51dd7b14a77f2ae"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_data_handler_abstract.html#abbe558284f80cb8cf51dd7b14a77f2ae">_receive_packets</a></td></tr>
+<tr class="memdesc:abbe558284f80cb8cf51dd7b14a77f2ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable segmentation of stream into SOF/EOF delimited frames.  <a href="classudmaio_1_1_data_handler_abstract.html#abbe558284f80cb8cf51dd7b14a77f2ae">More...</a><br /></td></tr>
+<tr class="separator:abbe558284f80cb8cf51dd7b14a77f2ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -176,6 +176,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aa2df2042238f57a4d0369af1f1093663"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dfd98d26b983dbee80af2e8c2f4c8e8"><td class="memItemLeft" align="right" valign="top">boost::asio::posix::stream_descriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_data_handler_abstract.html#a6dfd98d26b983dbee80af2e8c2f4c8e8">_sd</a></td></tr>
 <tr class="separator:a6dfd98d26b983dbee80af2e8c2f4c8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af957056ee6fc504e1dcef35d1d605da4"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_data_handler_abstract.html#af957056ee6fc504e1dcef35d1d605da4">_rt_prio</a></td></tr>
+<tr class="separator:af957056ee6fc504e1dcef35d1d605da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -191,8 +193,8 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Base class to implement a DMA data reception handler. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ad3731cb36bac1fb2019eefaae629c833" name="ad3731cb36bac1fb2019eefaae629c833"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3731cb36bac1fb2019eefaae629c833">&#9670;&#160;</a></span>DataHandlerAbstract()</h2>
+<a id="ac1525984206ab3c9d88f45c37c0ffd6c" name="ac1525984206ab3c9d88f45c37c0ffd6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1525984206ab3c9d88f45c37c0ffd6c">&#9670;&#160;</a></span>DataHandlerAbstract()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -228,7 +230,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>receive_packets</em> = <code>true</code>&#160;</td>
+          <td class="paramname"><em>receive_packets</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>rt_prio</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -250,6 +258,7 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramname">desc</td><td>Interface to the SGDMA descriptors </td></tr>
     <tr><td class="paramname">mem</td><td>Interface to the memory holding the SGDMA data buffers </td></tr>
     <tr><td class="paramname">receive_packets</td><td>Receive packets/frames delimited by SOF/EOF. If not set, receive stream as-is without regard for packets </td></tr>
+    <tr><td class="paramname">rt_prio</td><td>Set receiving thread to use RT scheduling priority </td></tr>
   </table>
   </dd>
 </dl>
@@ -490,8 +499,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a0a8f2cedde2cb0d2d4e891fba981c04b" name="a0a8f2cedde2cb0d2d4e891fba981c04b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a8f2cedde2cb0d2d4e891fba981c04b">&#9670;&#160;</a></span>_receive_packets</h2>
+<a id="abbe558284f80cb8cf51dd7b14a77f2ae" name="abbe558284f80cb8cf51dd7b14a77f2ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbe558284f80cb8cf51dd7b14a77f2ae">&#9670;&#160;</a></span>_receive_packets</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -500,7 +509,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool udmaio::DataHandlerAbstract::_receive_packets</td>
+          <td class="memname">const bool udmaio::DataHandlerAbstract::_receive_packets</td>
         </tr>
       </table>
   </td>
@@ -511,6 +520,28 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Enable segmentation of stream into SOF/EOF delimited frames. </p>
+
+</div>
+</div>
+<a id="af957056ee6fc504e1dcef35d1d605da4" name="af957056ee6fc504e1dcef35d1d605da4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af957056ee6fc504e1dcef35d1d605da4">&#9670;&#160;</a></span>_rt_prio</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool udmaio::DataHandlerAbstract::_rt_prio</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
