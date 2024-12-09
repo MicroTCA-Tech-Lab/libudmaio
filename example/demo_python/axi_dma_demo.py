@@ -86,6 +86,10 @@ def main():
                         type=str,
                         help='Path to xdma device nodes'
                         )
+    parser.add_argument('-r', '--rt-prio',
+                         action='store_true',
+                         help='Enable RT scheduling priority'
+                         )
     dma_mode = parser.add_mutually_exclusive_group(required=True)
     dma_mode.add_argument('-x', '--xdma',
                           action='store_true',
@@ -144,7 +148,7 @@ def main():
         # when using predefined UIO region such as PL-DDR
         # udmabuf = FpgaMemBufferOverAxi(UioDeviceLocation('plddr-axi-test'))
 
-    data_handler = DataHandler(axi_dma, mem_sgdma, udmabuf)
+    data_handler = DataHandler(axi_dma, mem_sgdma, udmabuf, True, 1024, args.rt_prio)
     traffic_gen = TrafficGen(consts.AXI_TRAFFIC_GEN_0)
 
     print('Starting DMA')
