@@ -75,8 +75,11 @@ uint32_t HwAccessor::wait_for_interrupt() {
     return 0;
 }
 
-HwAccessorAxi::HwAccessorAxi(std::string dev_path, UioRegion region, uintptr_t mmap_offs)
-    : HwAccessorMmap<uint64_t>{dev_path, region, mmap_offs} {}
+HwAccessorAxi::HwAccessorAxi(std::string dev_path,
+                             UioRegion region,
+                             uintptr_t mmap_offs,
+                             size_t access_offs)
+    : HwAccessorMmap<uint64_t>{dev_path, region, mmap_offs, access_offs} {}
 
 HwAccessorAxi::~HwAccessorAxi() {}
 

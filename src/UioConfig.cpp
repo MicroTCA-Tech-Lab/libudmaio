@@ -84,25 +84,39 @@ int UioConfigUio::_get_uio_number(std::string_view name) {
     return -1;
 }
 
+unsigned long long UioConfigUio::_get_uio_val(const std::string path) {
+    std::ifstream ifs{path};
+    if (!ifs) {
+        throw std::runtime_error("could not find " + path);
+    }
+    std::string size_str;
+    ifs >> size_str;
+    return std::stoull(size_str, nullptr, 0);
+}
+
 /** @brief gets a region for an uio map */
 UioRegion UioConfigUio::_get_map_region(int uio_number, int map_index) {
     const std::string base_path{"/sys/class/uio/uio" + std::to_string(uio_number) + "/maps/map" +
                                 std::to_string(map_index) + "/"};
 
-    auto get_val = [](const std::string path) -> unsigned long long {
-        std::ifstream ifs{path};
-        if (!ifs) {
-            throw std::runtime_error("could not find " + path);
-        }
-        std::string size_str;
-        ifs >> size_str;
-        return std::stoull(size_str, nullptr, 0);
+    auto region = UioRegion{
+        static_cast<uintptr_t>(_get_uio_val(base_path + "addr")),
+        static_cast<size_t>(_get_uio_val(base_path + "size")),
     };
 
-    return {
-        static_cast<uintptr_t>(get_val(base_path + "addr")),
-        static_cast<size_t>(get_val(base_path + "size")),
-    };
+    std::cout << "UIoRegion is " << region.size << " bytes at 0x" << std::hex << region.addr
+              << std::endl;
+    return region;
+}
+
+size_t UioConfigUio::_get_map_offset(int uio_number, int map_index) {
+    const std::string base_path{"/sys/class/uio/uio" + std::to_string(uio_number) + "/maps/map" +
+                                std::to_string(map_index) + "/"};
+
+    auto offset = static_cast<size_t>(_get_uio_val(base_path + "offset"));
+
+    std::cout << "UIoOffset is 0x" << std::hex << offset << std::endl;
+    return offset;
 }
 
 /** @brief gets device info (mem region, mmap offset, ...) from a uio name
@@ -154,7 +168,8 @@ HwAccessorPtr UioConfigUio::hw_acc(const UioDeviceLocation& dev_loc) const {
     }
     return std::make_shared<HwAccessorAxi>(std::string{"/dev/uio"} + std::to_string(uio_number),
                                            _get_map_region(uio_number, map_index),
-                                           static_cast<uintptr_t>(map_index * getpagesize()));
+                                           static_cast<uintptr_t>(map_index * getpagesize()),
+                                           _get_map_offset(uio_number, map_index));
 }
 
 UioConfigXdma::UioConfigXdma(std::string xdma_path, uintptr_t pcie_offs, bool x7_series_mode)

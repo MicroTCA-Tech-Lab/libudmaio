@@ -84,7 +84,9 @@ class UioConfigBase {
 /// Creates HwAccessor from UioDeviceLocation (UIO version)
 class UioConfigUio : public UioConfigBase {
     static int _get_uio_number(std::string_view name);
+    static unsigned long long _get_uio_val(const std::string path);
     static UioRegion _get_map_region(int uio_number, int map_index);
+    static size_t _get_map_offset(int uio_number, int map_index);
 
   public:
     DmaMode mode() override { return DmaMode::UIO; };

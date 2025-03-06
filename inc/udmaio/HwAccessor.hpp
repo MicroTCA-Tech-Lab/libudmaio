@@ -11,6 +11,7 @@
 
 #pragma once
 
+#include <cstddef>
 #include <filesystem>
 #include <fstream>
 #include <iostream>
@@ -117,7 +118,7 @@ class HwAccessor : public Logger, private boost::noncopyable {
 template <typename max_access_width_t>
 class HwAccessorMmap : public HwAccessor {
   public:
-    HwAccessorMmap(std::string dev_path, UioRegion region, uintptr_t mmap_offs)
+    HwAccessorMmap(std::string dev_path, UioRegion region, uintptr_t mmap_offs, size_t access_offs)
         : HwAccessor(), _region{region} {
         BOOST_LOG_SEV(HwAccessor::_lg, bls::debug) << "dev name = " << dev_path;
 
@@ -128,28 +129,34 @@ class HwAccessorMmap : public HwAccessor {
         BOOST_LOG_SEV(HwAccessor::_lg, bls::trace) << "fd = " << _fd << ", size = " << _region.size;
 
         // create memory mapping
-        _mem = mmap(NULL, _region.size, PROT_READ | PROT_WRITE, MAP_SHARED, _fd, mmap_offs);
-        BOOST_LOG_SEV(HwAccessor::_lg, bls::trace)
-            << "mmap = 0x" << std::hex << mmap_offs << " -> 0x" << _mem << std::dec;
+        _mmap_mem = mmap(NULL, _region.size, PROT_READ | PROT_WRITE, MAP_SHARED, _fd, mmap_offs);
+        _access_mem = static_cast<void*>(static_cast<char*>(_mmap_mem) + access_offs);
 
-        if (_mem == MAP_FAILED) {
-            throw std::runtime_error("mmap failed for uio " + dev_path);
+        BOOST_LOG_SEV(HwAccessor::_lg, bls::trace)
+            << "mmap = 0x" << std::hex << mmap_offs << " -> 0x" << _mmap_mem << std::dec;
+
+        if (_mmap_mem == MAP_FAILED) {
+            throw std::runtime_error("mmap failed for uio " + dev_path + ": " + strerror(errno));
         }
+
+        BOOST_LOG_SEV(HwAccessor::_lg, bls::trace)
+            << "access offs = 0x" << std::hex << access_offs << " -> 0x" << _access_mem << std::dec;
     }
 
     virtual ~HwAccessorMmap() {
-        munmap(_mem, _region.size);
+        munmap(_mmap_mem, _region.size);
         ::close(_fd);
     }
 
   protected:
     int _fd;
-    void* _mem;
+    void* _mmap_mem;
+    void* _access_mem;
     const UioRegion _region;
 
     template <typename access_width_t>
     inline volatile access_width_t* _mem_ptr(uint32_t offs) const {
-        return reinterpret_cast<access_width_t*>(static_cast<uint8_t*>(_mem) +
+        return reinterpret_cast<access_width_t*>(static_cast<uint8_t*>(_access_mem) +
                                                  static_cast<ptrdiff_t>(offs));
     }
 
@@ -217,8 +224,12 @@ class HwAccessorMmap : public HwAccessor {
     }
 
   public:
-    UioRegion get_phys_region() const final override { return _region; }
-    void* get_virt_mem() const final override { return _mem; }
+    UioRegion get_phys_region() const final override {
+        const size_t access_offs =
+            static_cast<uint8_t*>(_access_mem) - static_cast<uint8_t*>(_mmap_mem);
+        return {_region.addr + access_offs, _region.size - access_offs};
+    }
+    void* get_virt_mem() const final override { return _access_mem; }
 };
 
 // Hardware accessor for XDMA. Can support either 32 or 64 bit access
@@ -227,13 +238,15 @@ class HwAccessorXdma : public HwAccessorMmap<max_access_width_t> {
     int _fd_int;
 
   public:
+    // TODO: if we ever have to deal w/ unaligned mappings over XDMA (like on UIO), we'll have to pass an access_offs to HwAccessorMmap
     HwAccessorXdma(std::string xdma_path,
                    std::string evt_dev,
                    UioRegion region,
                    uintptr_t pcie_offs)
         : HwAccessorMmap<max_access_width_t>(xdma_path + "/user",
                                              {region.addr | pcie_offs, region.size},
-                                             region.addr) {
+                                             region.addr,
+                                             0) {
         if (!evt_dev.empty()) {
             const auto evt_path = xdma_path + "/" + evt_dev;
             _fd_int = ::open(evt_path.c_str(), O_RDWR);
@@ -259,7 +272,7 @@ class HwAccessorXdma : public HwAccessorMmap<max_access_width_t> {
 // Hardware accessor for AXI. Always supports 64 bit access
 class HwAccessorAxi : public HwAccessorMmap<uint64_t> {
   public:
-    HwAccessorAxi(std::string dev_path, UioRegion region, uintptr_t mmap_offs);
+    HwAccessorAxi(std::string dev_path, UioRegion region, uintptr_t mmap_offs, size_t access_offs);
     virtual ~HwAccessorAxi();
 
     int get_fd_int() const final override { return _fd; }
