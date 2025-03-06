@@ -1,5 +1,11 @@
 var NAVTREEINDEX5 =
 {
+"structaxi__vdma_1_1s2mm__frmdly__stride__t.html#a7e560ebbc9d7c1a9a090b604be57f1c9":[1,0,1,8,2],
+"structaxi__vdma_1_1s2mm__frmdly__stride__t.html#a7e560ebbc9d7c1a9a090b604be57f1c9":[0,0,1,8,2],
+"structaxi__vdma_1_1s2mm__hsize__t.html":[1,0,1,9],
+"structaxi__vdma_1_1s2mm__hsize__t.html":[0,0,1,9],
+"structaxi__vdma_1_1s2mm__hsize__t.html#a89a298ea971c222aa2ac46d4bf4fcea6":[1,0,1,9,1],
+"structaxi__vdma_1_1s2mm__hsize__t.html#a89a298ea971c222aa2ac46d4bf4fcea6":[0,0,1,9,1],
 "structaxi__vdma_1_1s2mm__hsize__t.html#aec5560933227dd6b7a3857e97f357750":[1,0,1,9,0],
 "structaxi__vdma_1_1s2mm__hsize__t.html#aec5560933227dd6b7a3857e97f357750":[0,0,1,9,0],
 "structaxi__vdma_1_1s2mm__reg__index__t.html":[1,0,1,10],

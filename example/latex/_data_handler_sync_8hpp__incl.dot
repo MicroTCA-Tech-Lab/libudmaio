@@ -106,6 +106,7 @@ digraph "DataHandlerSync.hpp"
   Node43 [label="unistd.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node37 -> Node44 [color="steelblue1",style="solid"];
   Node44 [label="udmaio/HwAccessor.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_hw_accessor_8hpp.html",tooltip=" "];
+  Node44 -> Node2 [color="steelblue1",style="solid"];
   Node44 -> Node38 [color="steelblue1",style="solid"];
   Node44 -> Node39 [color="steelblue1",style="solid"];
   Node44 -> Node29 [color="steelblue1",style="solid"];

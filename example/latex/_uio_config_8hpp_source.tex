@@ -72,29 +72,31 @@
 \DoxyCodeLine{83 }
 \DoxyCodeLine{85 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_uio_config_uio}{UioConfigUio}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_uio_config_base}{UioConfigBase}} \{}
 \DoxyCodeLine{86     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{classudmaio_1_1_uio_config_uio_ab8a8469e1ddd2b858321b7ae8dd64f5d}{\_get\_uio\_number}}(std::string\_view name);}
-\DoxyCodeLine{87     \textcolor{keyword}{static} \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}} \mbox{\hyperlink{classudmaio_1_1_uio_config_uio_adce1eecf4e1271f76823374191eed627}{\_get\_map\_region}}(\textcolor{keywordtype}{int} uio\_number, \textcolor{keywordtype}{int} map\_index);}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{89   \textcolor{keyword}{public}:}
-\DoxyCodeLine{90     \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}{DmaMode}} \mbox{\hyperlink{classudmaio_1_1_uio_config_uio_ad07df0538d849b8ea02c67ee7e1b3575}{mode}}()\textcolor{keyword}{ override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080ceca910a3bb55574645cc3d46b715f097eb0}{DmaMode::UIO}}; \};}
-\DoxyCodeLine{91 }
-\DoxyCodeLine{92     \mbox{\hyperlink{namespaceudmaio_af23be0f90a70f4eed1e08987bac4f32e}{HwAccessorPtr}} \mbox{\hyperlink{classudmaio_1_1_uio_config_uio_a7e347cfcc1e96c4c2bbed0a00ea62099}{hw\_acc}}(\textcolor{keyword}{const} \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{UioDeviceLocation}}\& dev\_loc) \textcolor{keyword}{const override};}
-\DoxyCodeLine{93 \};}
-\DoxyCodeLine{94 }
-\DoxyCodeLine{96 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_uio_config_xdma}{UioConfigXdma}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_uio_config_base}{UioConfigBase}} \{}
-\DoxyCodeLine{97     std::string \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a36bed740a1bf141c196f9716b5379a57}{\_xdma\_path}};}
-\DoxyCodeLine{98     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a5198fbe1e91b423d6334d1788d60be7c}{\_pcie\_offs}};}
-\DoxyCodeLine{99     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a9245d0f20199649ddb5d01f236fc5085}{\_x7\_series\_mode}};}
-\DoxyCodeLine{100 }
-\DoxyCodeLine{101   \textcolor{keyword}{public}:}
-\DoxyCodeLine{102     \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_ae57292575248142f2e15b0872c782953}{UioConfigXdma}}() = \textcolor{keyword}{delete};}
-\DoxyCodeLine{103 }
-\DoxyCodeLine{107     \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_af1fefcc5dc507f93e77d08ce1d878d24}{UioConfigXdma}}(std::string xdma\_path, uintptr\_t pcie\_offs, \textcolor{keywordtype}{bool} x7\_series\_mode = \textcolor{keyword}{false});}
-\DoxyCodeLine{108 }
-\DoxyCodeLine{109     \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}{DmaMode}} \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a8e91341dbfe554dc57e6509e62f3ce35}{mode}}()\textcolor{keyword}{ override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cecaf3dac949aa62d490afa1ac577a5fc028}{DmaMode::XDMA}}; \};}
+\DoxyCodeLine{87     \textcolor{keyword}{static} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \mbox{\hyperlink{classudmaio_1_1_uio_config_uio_aff558dfd5ab73ee49fb760a806a0e7b6}{\_get\_uio\_val}}(\textcolor{keyword}{const} std::string path);}
+\DoxyCodeLine{88     \textcolor{keyword}{static} \mbox{\hyperlink{structudmaio_1_1_uio_region}{UioRegion}} \mbox{\hyperlink{classudmaio_1_1_uio_config_uio_adce1eecf4e1271f76823374191eed627}{\_get\_map\_region}}(\textcolor{keywordtype}{int} uio\_number, \textcolor{keywordtype}{int} map\_index);}
+\DoxyCodeLine{89     \textcolor{keyword}{static} \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classudmaio_1_1_uio_config_uio_a27e1d71d9e5a1b6e1502b98fedb96ea2}{\_get\_map\_offset}}(\textcolor{keywordtype}{int} uio\_number, \textcolor{keywordtype}{int} map\_index);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91   \textcolor{keyword}{public}:}
+\DoxyCodeLine{92     \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}{DmaMode}} \mbox{\hyperlink{classudmaio_1_1_uio_config_uio_ad07df0538d849b8ea02c67ee7e1b3575}{mode}}()\textcolor{keyword}{ override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080ceca910a3bb55574645cc3d46b715f097eb0}{DmaMode::UIO}}; \};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \mbox{\hyperlink{namespaceudmaio_af23be0f90a70f4eed1e08987bac4f32e}{HwAccessorPtr}} \mbox{\hyperlink{classudmaio_1_1_uio_config_uio_a7e347cfcc1e96c4c2bbed0a00ea62099}{hw\_acc}}(\textcolor{keyword}{const} \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{UioDeviceLocation}}\& dev\_loc) \textcolor{keyword}{const override};}
+\DoxyCodeLine{95 \};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{98 \textcolor{keyword}{class }\mbox{\hyperlink{classudmaio_1_1_uio_config_xdma}{UioConfigXdma}} : \textcolor{keyword}{public} \mbox{\hyperlink{classudmaio_1_1_uio_config_base}{UioConfigBase}} \{}
+\DoxyCodeLine{99     std::string \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a36bed740a1bf141c196f9716b5379a57}{\_xdma\_path}};}
+\DoxyCodeLine{100     uintptr\_t \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a5198fbe1e91b423d6334d1788d60be7c}{\_pcie\_offs}};}
+\DoxyCodeLine{101     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a9245d0f20199649ddb5d01f236fc5085}{\_x7\_series\_mode}};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103   \textcolor{keyword}{public}:}
+\DoxyCodeLine{104     \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_ae57292575248142f2e15b0872c782953}{UioConfigXdma}}() = \textcolor{keyword}{delete};}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{109     \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_af1fefcc5dc507f93e77d08ce1d878d24}{UioConfigXdma}}(std::string xdma\_path, uintptr\_t pcie\_offs, \textcolor{keywordtype}{bool} x7\_series\_mode = \textcolor{keyword}{false});}
 \DoxyCodeLine{110 }
-\DoxyCodeLine{111     \mbox{\hyperlink{namespaceudmaio_af23be0f90a70f4eed1e08987bac4f32e}{HwAccessorPtr}} \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a10c5f27cf568f9ef320143cd5b832f6b}{hw\_acc}}(\textcolor{keyword}{const} \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{UioDeviceLocation}}\& dev\_loc) \textcolor{keyword}{const override};}
-\DoxyCodeLine{112 \};}
-\DoxyCodeLine{113 }
-\DoxyCodeLine{114 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{111     \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cec}{DmaMode}} \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a8e91341dbfe554dc57e6509e62f3ce35}{mode}}()\textcolor{keyword}{ override }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceudmaio_a6b5d6a27d182272b899d28e1a7080cecaf3dac949aa62d490afa1ac577a5fc028}{DmaMode::XDMA}}; \};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \mbox{\hyperlink{namespaceudmaio_af23be0f90a70f4eed1e08987bac4f32e}{HwAccessorPtr}} \mbox{\hyperlink{classudmaio_1_1_uio_config_xdma_a10c5f27cf568f9ef320143cd5b832f6b}{hw\_acc}}(\textcolor{keyword}{const} \mbox{\hyperlink{classudmaio_1_1_uio_device_location}{UioDeviceLocation}}\& dev\_loc) \textcolor{keyword}{const override};}
+\DoxyCodeLine{114 \};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}

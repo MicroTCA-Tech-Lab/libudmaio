@@ -141,12 +141,52 @@ Public Member Functions</h2></td></tr>
 Static Private Member Functions</h2></td></tr>
 <tr class="memitem:ab8a8469e1ddd2b858321b7ae8dd64f5d"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_uio.html#ab8a8469e1ddd2b858321b7ae8dd64f5d">_get_uio_number</a> (std::string_view name)</td></tr>
 <tr class="separator:ab8a8469e1ddd2b858321b7ae8dd64f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff558dfd5ab73ee49fb760a806a0e7b6"><td class="memItemLeft" align="right" valign="top">static unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_uio.html#aff558dfd5ab73ee49fb760a806a0e7b6">_get_uio_val</a> (const std::string path)</td></tr>
+<tr class="separator:aff558dfd5ab73ee49fb760a806a0e7b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adce1eecf4e1271f76823374191eed627"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structudmaio_1_1_uio_region.html">UioRegion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_uio.html#adce1eecf4e1271f76823374191eed627">_get_map_region</a> (int uio_number, int map_index)</td></tr>
 <tr class="separator:adce1eecf4e1271f76823374191eed627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27e1d71d9e5a1b6e1502b98fedb96ea2"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_config_uio.html#a27e1d71d9e5a1b6e1502b98fedb96ea2">_get_map_offset</a> (int uio_number, int map_index)</td></tr>
+<tr class="separator:a27e1d71d9e5a1b6e1502b98fedb96ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Creates <a class="el" href="classudmaio_1_1_hw_accessor.html" title="Base class for hardware access.">HwAccessor</a> from <a class="el" href="classudmaio_1_1_uio_device_location.html" title="Holds information where a device can be found over both UIO and XDMA.">UioDeviceLocation</a> (UIO version) </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a27e1d71d9e5a1b6e1502b98fedb96ea2" name="a27e1d71d9e5a1b6e1502b98fedb96ea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27e1d71d9e5a1b6e1502b98fedb96ea2">&#9670;&#160;</a></span>_get_map_offset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t udmaio::UioConfigUio::_get_map_offset </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>uio_number</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>map_index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="adce1eecf4e1271f76823374191eed627" name="adce1eecf4e1271f76823374191eed627"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adce1eecf4e1271f76823374191eed627">&#9670;&#160;</a></span>_get_map_region()</h2>
 
@@ -197,6 +237,32 @@ Static Private Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">std::string_view&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aff558dfd5ab73ee49fb760a806a0e7b6" name="aff558dfd5ab73ee49fb760a806a0e7b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff558dfd5ab73ee49fb760a806a0e7b6">&#9670;&#160;</a></span>_get_uio_val()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static unsigned long long udmaio::UioConfigUio::_get_uio_val </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

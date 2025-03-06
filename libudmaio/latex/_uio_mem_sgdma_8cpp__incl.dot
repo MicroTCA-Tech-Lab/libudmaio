@@ -56,6 +56,7 @@ digraph "UioMemSgdma.cpp"
   Node22 [label="unistd.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node15 -> Node23 [color="steelblue1",style="solid"];
   Node23 [label="udmaio/HwAccessor.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_hw_accessor_8hpp.html",tooltip=" "];
+  Node23 -> Node3 [color="steelblue1",style="solid"];
   Node23 -> Node16 [color="steelblue1",style="solid"];
   Node23 -> Node17 [color="steelblue1",style="solid"];
   Node23 -> Node10 [color="steelblue1",style="solid"];
