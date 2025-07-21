@@ -12,6 +12,7 @@
 #pragma once
 
 #include <cstddef>
+#include <cstring>
 #include <filesystem>
 #include <fstream>
 #include <iostream>
@@ -63,9 +64,14 @@ class HwAccessor : public Logger, private boost::noncopyable {
     void _wr_mem32(uint32_t offs, const void* __restrict__ mem, size_t size);
     void _wr_mem64(uint32_t offs, const void* __restrict__ mem, size_t size);
 
+    virtual std::vector<uint8_t> read_bulk([[maybe_unused]] uint32_t offs,
+                                           [[maybe_unused]] uint32_t size) {
+        return {};
+    }
+
     /**
      * @brief Read register from UIO interface
-     * 
+     *
      * @tparam C Register data type
      * @param offs Register offset into address space
      * @return C Value read from register
@@ -87,7 +93,7 @@ class HwAccessor : public Logger, private boost::noncopyable {
 
     /**
      * @brief Write register to UIO interface
-     * 
+     *
      * @tparam C Register data type
      * @param offs Register offset into address space
      * @param value Value to write
@@ -221,6 +227,14 @@ class HwAccessorMmap : public HwAccessor {
         BOOST_LOG_SEV(_lg, bls::trace)
             << "interrupt received, rc = " << rc << ", irq count = " << irq_count;
         return irq_count;
+    }
+
+    std::vector<uint8_t> read_bulk(uint32_t offs, uint32_t size) final override {
+        std::vector<uint8_t> result;
+        result.resize(size);
+        auto src = _mem_ptr<uint8_t>(offs);
+        memcpy(&result[0], const_cast<uint8_t*>(src), size);
+        return result;
     }
 
   public:

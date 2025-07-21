@@ -75,6 +75,10 @@ class UioIf : private boost::noncopyable {
     inline void _wr32(uint32_t offs, uint32_t data) { _hw->_wr32(offs, data); }
     inline void _wr64(uint32_t offs, uint64_t data) { _hw->_wr64(offs, data); }
 
+    std::vector<uint8_t> read_bulk(uint32_t offs, uint32_t size) {
+        return _hw->read_bulk(offs, size);
+    }
+
     template <typename C>
     C _rd_reg(uint32_t offs) const {
         return _hw->template _rd_reg<C>(offs);
