@@ -1,22 +1,22 @@
 <map id="DataHandlerPrint.cpp" name="DataHandlerPrint.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="2603,5,2748,31"/>
-<area shape="rect" id="node2" href="$_data_handler_print_8hpp.html" title=" " alt="" coords="2092,79,2237,104"/>
-<area shape="rect" id="node23" title=" " alt="" coords="1926,614,1998,639"/>
-<area shape="rect" id="node43" title=" " alt="" coords="2713,79,2771,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="2262,152,2329,177"/>
-<area shape="rect" id="node4" title=" " alt="" coords="1673,152,1725,177"/>
-<area shape="rect" id="node5" href="$_axi_traffic_gen_lfsr_8hpp.html" title=" " alt="" coords="2091,152,2238,177"/>
-<area shape="rect" id="node7" href="$_data_handler_abstract_8hpp.html" title=" " alt="" coords="1750,152,1963,177"/>
-<area shape="rect" id="node6" title=" " alt="" coords="2174,387,2235,412"/>
+<area shape="rect" id="node1" title=" " alt="" coords="2745,5,2891,31"/>
+<area shape="rect" id="node2" href="$_data_handler_print_8hpp.html" title=" " alt="" coords="2295,79,2440,104"/>
+<area shape="rect" id="node23" title=" " alt="" coords="2189,614,2261,639"/>
+<area shape="rect" id="node44" title=" " alt="" coords="2855,79,2914,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="2465,152,2531,177"/>
+<area shape="rect" id="node4" title=" " alt="" coords="1851,152,1903,177"/>
+<area shape="rect" id="node5" href="$_axi_traffic_gen_lfsr_8hpp.html" title=" " alt="" coords="2294,152,2441,177"/>
+<area shape="rect" id="node7" href="$_data_handler_abstract_8hpp.html" title=" " alt="" coords="1927,152,2141,177"/>
+<area shape="rect" id="node6" title=" " alt="" coords="2258,387,2319,412"/>
 <area shape="rect" id="node8" title=" " alt="" coords="1241,614,1296,639"/>
-<area shape="rect" id="node9" title=" " alt="" coords="1249,387,1307,412"/>
-<area shape="rect" id="node10" title=" " alt="" coords="1941,233,2047,258"/>
-<area shape="rect" id="node11" title=" " alt="" coords="2455,533,2637,559"/>
-<area shape="rect" id="node12" href="$_logging_8hpp.html" title=" " alt="" coords="948,533,1040,559"/>
-<area shape="rect" id="node20" href="$_u_dma_buf_8hpp.html" title=" " alt="" coords="1139,233,1241,258"/>
-<area shape="rect" id="node27" href="$_uio_axi_dma_if_8hpp.html" title=" " alt="" coords="1797,233,1916,258"/>
-<area shape="rect" id="node41" href="$_uio_mem_sgdma_8hpp.html" title=" " alt="" coords="1469,233,1605,258"/>
-<area shape="rect" id="node42" title=" " alt="" coords="2071,225,2231,265"/>
+<area shape="rect" id="node9" title=" " alt="" coords="1270,387,1329,412"/>
+<area shape="rect" id="node10" title=" " alt="" coords="2118,233,2225,258"/>
+<area shape="rect" id="node11" title=" " alt="" coords="2597,533,2780,559"/>
+<area shape="rect" id="node12" href="$_logging_8hpp.html" title=" " alt="" coords="924,533,1016,559"/>
+<area shape="rect" id="node20" href="$_u_dma_buf_8hpp.html" title=" " alt="" coords="1157,233,1260,258"/>
+<area shape="rect" id="node27" href="$_uio_axi_dma_if_8hpp.html" title=" " alt="" coords="1975,233,2093,258"/>
+<area shape="rect" id="node42" href="$_uio_mem_sgdma_8hpp.html" title=" " alt="" coords="1535,233,1671,258"/>
+<area shape="rect" id="node43" title=" " alt="" coords="2249,225,2409,265"/>
 <area shape="rect" id="node13" title=" " alt="" coords="366,614,494,639"/>
 <area shape="rect" id="node14" title=" " alt="" coords="519,614,691,639"/>
 <area shape="rect" id="node15" title=" " alt="" coords="715,614,849,639"/>
@@ -24,22 +24,23 @@
 <area shape="rect" id="node17" title=" " alt="" coords="1043,607,1217,647"/>
 <area shape="rect" id="node18" title=" " alt="" coords="5,607,156,647"/>
 <area shape="rect" id="node19" title=" " alt="" coords="180,607,341,647"/>
-<area shape="rect" id="node21" href="$_dma_buffer_abstract_8hpp.html" title=" " alt="" coords="1292,313,1448,339"/>
-<area shape="rect" id="node22" href="$_uio_config_8hpp.html" title=" " alt="" coords="1240,533,1388,559"/>
-<area shape="rect" id="node24" title=" " alt="" coords="1741,614,1809,639"/>
+<area shape="rect" id="node21" href="$_dma_buffer_abstract_8hpp.html" title=" " alt="" coords="1336,313,1492,339"/>
+<area shape="rect" id="node22" href="$_uio_config_8hpp.html" title=" " alt="" coords="1296,533,1444,559"/>
+<area shape="rect" id="node24" title=" " alt="" coords="1536,614,1604,639"/>
 <area shape="rect" id="node25" title=" " alt="" coords="1320,614,1399,639"/>
 <area shape="rect" id="node26" title=" " alt="" coords="1423,614,1511,639"/>
-<area shape="rect" id="node28" title=" " alt="" coords="2177,313,2227,339"/>
-<area shape="rect" id="node29" title=" " alt="" coords="2344,533,2431,559"/>
-<area shape="rect" id="node30" href="$_reg_accessor_8hpp.html" title=" " alt="" coords="1799,313,1923,339"/>
-<area shape="rect" id="node31" href="$_uio_if_8hpp.html" title=" " alt="" coords="1801,387,1921,412"/>
-<area shape="rect" id="node40" href="$_axi_dma_8hpp.html" title=" " alt="" coords="1947,313,2102,339"/>
-<area shape="rect" id="node32" title=" " alt="" coords="1553,533,1633,559"/>
-<area shape="rect" id="node33" title=" " alt="" coords="1657,533,1723,559"/>
-<area shape="rect" id="node34" title=" " alt="" coords="1748,533,1805,559"/>
-<area shape="rect" id="node35" title=" " alt="" coords="1932,533,2024,559"/>
-<area shape="rect" id="node36" title=" " alt="" coords="2048,533,2127,559"/>
-<area shape="rect" id="node37" title=" " alt="" coords="2151,533,2218,559"/>
-<area shape="rect" id="node38" href="$_hw_accessor_8hpp.html" title=" " alt="" coords="1777,460,1944,485"/>
-<area shape="rect" id="node39" title=" " alt="" coords="1412,533,1477,559"/>
+<area shape="rect" id="node28" title=" " alt="" coords="2301,313,2351,339"/>
+<area shape="rect" id="node29" title=" " alt="" coords="2487,533,2573,559"/>
+<area shape="rect" id="node30" href="$_reg_accessor_8hpp.html" title=" " alt="" coords="1872,313,1996,339"/>
+<area shape="rect" id="node31" href="$_uio_if_8hpp.html" title=" " alt="" coords="1891,387,2011,412"/>
+<area shape="rect" id="node41" href="$_axi_dma_8hpp.html" title=" " alt="" coords="2122,313,2277,339"/>
+<area shape="rect" id="node32" title=" " alt="" coords="1661,533,1741,559"/>
+<area shape="rect" id="node33" title=" " alt="" coords="1765,533,1831,559"/>
+<area shape="rect" id="node34" title=" " alt="" coords="1856,533,1913,559"/>
+<area shape="rect" id="node35" title=" " alt="" coords="2125,533,2217,559"/>
+<area shape="rect" id="node36" title=" " alt="" coords="2241,533,2320,559"/>
+<area shape="rect" id="node37" title=" " alt="" coords="2345,533,2411,559"/>
+<area shape="rect" id="node38" href="$_hw_accessor_8hpp.html" title=" " alt="" coords="1887,460,2053,485"/>
+<area shape="rect" id="node39" title=" " alt="" coords="1571,533,1636,559"/>
+<area shape="rect" id="node40" title=" " alt="" coords="2039,533,2101,559"/>
 </map>

@@ -1,28 +1,29 @@
 <map id="UioConfig.cpp" name="UioConfig.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="588,5,691,31"/>
-<area shape="rect" id="node2" href="$_uio_config_8hpp.html" title=" " alt="" coords="103,152,251,177"/>
-<area shape="rect" id="node8" title=" " alt="" coords="275,152,355,177"/>
-<area shape="rect" id="node9" title=" " alt="" coords="379,152,446,177"/>
-<area shape="rect" id="node10" title=" " alt="" coords="882,79,935,104"/>
-<area shape="rect" id="node11" title=" " alt="" coords="1494,152,1561,177"/>
-<area shape="rect" id="node12" href="$_hw_accessor_8hpp.html" title=" " alt="" coords="640,79,807,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="221,233,293,258"/>
-<area shape="rect" id="node4" title=" " alt="" coords="317,233,385,258"/>
-<area shape="rect" id="node5" title=" " alt="" coords="5,233,84,258"/>
-<area shape="rect" id="node6" title=" " alt="" coords="409,233,464,258"/>
-<area shape="rect" id="node7" title=" " alt="" coords="109,233,197,258"/>
-<area shape="rect" id="node13" title=" " alt="" coords="1000,152,1065,177"/>
-<area shape="rect" id="node14" title=" " alt="" coords="1089,152,1272,177"/>
-<area shape="rect" id="node15" title=" " alt="" coords="1296,152,1353,177"/>
-<area shape="rect" id="node16" title=" " alt="" coords="1377,152,1469,177"/>
-<area shape="rect" id="node17" title=" " alt="" coords="471,152,549,177"/>
-<area shape="rect" id="node18" title=" " alt="" coords="573,152,660,177"/>
-<area shape="rect" id="node19" href="$_logging_8hpp.html" title=" " alt="" coords="837,152,975,177"/>
-<area shape="rect" id="node20" title=" " alt="" coords="1217,233,1345,258"/>
-<area shape="rect" id="node21" title=" " alt="" coords="1369,233,1541,258"/>
-<area shape="rect" id="node22" title=" " alt="" coords="1565,233,1700,258"/>
-<area shape="rect" id="node23" title=" " alt="" coords="488,225,633,265"/>
-<area shape="rect" id="node24" title=" " alt="" coords="657,225,832,265"/>
-<area shape="rect" id="node25" title=" " alt="" coords="856,225,1007,265"/>
-<area shape="rect" id="node26" title=" " alt="" coords="1031,225,1192,265"/>
+<area shape="rect" id="node1" title=" " alt="" coords="1184,5,1287,31"/>
+<area shape="rect" id="node2" href="$_uio_config_8hpp.html" title=" " alt="" coords="1753,152,1901,177"/>
+<area shape="rect" id="node8" title=" " alt="" coords="449,152,529,177"/>
+<area shape="rect" id="node9" title=" " alt="" coords="553,152,619,177"/>
+<area shape="rect" id="node10" title=" " alt="" coords="1385,79,1438,104"/>
+<area shape="rect" id="node11" title=" " alt="" coords="1926,152,1993,177"/>
+<area shape="rect" id="node12" href="$_hw_accessor_8hpp.html" title=" " alt="" coords="1092,79,1259,104"/>
+<area shape="rect" id="node3" title=" " alt="" coords="1683,233,1755,258"/>
+<area shape="rect" id="node4" title=" " alt="" coords="1493,233,1561,258"/>
+<area shape="rect" id="node5" title=" " alt="" coords="1785,233,1864,258"/>
+<area shape="rect" id="node6" title=" " alt="" coords="1241,233,1296,258"/>
+<area shape="rect" id="node7" title=" " alt="" coords="1889,233,1977,258"/>
+<area shape="rect" id="node13" title=" " alt="" coords="908,152,973,177"/>
+<area shape="rect" id="node14" title=" " alt="" coords="998,152,1059,177"/>
+<area shape="rect" id="node15" title=" " alt="" coords="1084,152,1267,177"/>
+<area shape="rect" id="node16" title=" " alt="" coords="1291,152,1348,177"/>
+<area shape="rect" id="node17" title=" " alt="" coords="1372,152,1464,177"/>
+<area shape="rect" id="node18" title=" " alt="" coords="1488,152,1567,177"/>
+<area shape="rect" id="node19" title=" " alt="" coords="1591,152,1677,177"/>
+<area shape="rect" id="node20" href="$_logging_8hpp.html" title=" " alt="" coords="643,152,782,177"/>
+<area shape="rect" id="node21" title=" " alt="" coords="734,233,862,258"/>
+<area shape="rect" id="node22" title=" " alt="" coords="887,233,1059,258"/>
+<area shape="rect" id="node23" title=" " alt="" coords="1083,233,1217,258"/>
+<area shape="rect" id="node24" title=" " alt="" coords="5,225,151,265"/>
+<area shape="rect" id="node25" title=" " alt="" coords="175,225,349,265"/>
+<area shape="rect" id="node26" title=" " alt="" coords="373,225,524,265"/>
+<area shape="rect" id="node27" title=" " alt="" coords="548,225,709,265"/>
 </map>

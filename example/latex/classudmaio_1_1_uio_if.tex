@@ -39,6 +39,8 @@ void \mbox{\hyperlink{classudmaio_1_1_uio_if_a493e161ddcaa28c256f075f45e687391}{
 \item 
 void \mbox{\hyperlink{classudmaio_1_1_uio_if_a0287ff2c15a31b97b78c57e4eeb802e8}{\+\_\+wr64}} (uint32\+\_\+t offs, uint64\+\_\+t data)
 \item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classudmaio_1_1_uio_if_a5f8fc60947d75be15927a2310658cb03}{read\+\_\+bulk}} (uint32\+\_\+t offs, uint32\+\_\+t size)
+\item 
 {\footnotesize template$<$typename C $>$ }\\C \mbox{\hyperlink{classudmaio_1_1_uio_if_a4cbf37ba60ea1ecf70034eeb7e953494}{\+\_\+rd\+\_\+reg}} (uint32\+\_\+t offs) const
 \item 
 {\footnotesize template$<$typename C $>$ }\\void \mbox{\hyperlink{classudmaio_1_1_uio_if_aa8ff2dcd394a824dab2a04e2aa275094}{\+\_\+wr\+\_\+reg}} (uint32\+\_\+t offs, const C \&value)
@@ -150,6 +152,12 @@ Get file descriptor of interrupt event file.
 \begin{DoxyReturn}{Returns}
 Event file descriptor 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_a5f8fc60947d75be15927a2310658cb03}\label{classudmaio_1_1_uio_if_a5f8fc60947d75be15927a2310658cb03}} 
+\index{udmaio::UioIf@{udmaio::UioIf}!read\_bulk@{read\_bulk}}
+\index{read\_bulk@{read\_bulk}!udmaio::UioIf@{udmaio::UioIf}}
+\doxysubsubsection{\texorpdfstring{read\_bulk()}{read\_bulk()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ udmaio\+::\+Uio\+If\+::read\+\_\+bulk (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{offs,  }\item[{uint32\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
 \mbox{\Hypertarget{classudmaio_1_1_uio_if_a4f047f030c4363d46877dddf3d93478f}\label{classudmaio_1_1_uio_if_a4f047f030c4363d46877dddf3d93478f}} 
 \index{udmaio::UioIf@{udmaio::UioIf}!reg\_to\_raw@{reg\_to\_raw}}
 \index{reg\_to\_raw@{reg\_to\_raw}!udmaio::UioIf@{udmaio::UioIf}}

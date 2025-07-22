@@ -85,6 +85,8 @@ digraph "DataHandlerAbstract.hpp"
   Node33 [label="udmaio/HwAccessor.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_hw_accessor_8hpp.html",tooltip=" "];
   Node33 -> Node34 [color="steelblue1",style="solid"];
   Node34 [label="cstddef",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node33 -> Node35 [color="steelblue1",style="solid"];
+  Node35 [label="cstring",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node33 -> Node27 [color="steelblue1",style="solid"];
   Node33 -> Node28 [color="steelblue1",style="solid"];
   Node33 -> Node18 [color="steelblue1",style="solid"];
@@ -101,15 +103,15 @@ digraph "DataHandlerAbstract.hpp"
   Node26 -> Node6 [color="steelblue1",style="solid"];
   Node26 -> Node17 [color="steelblue1",style="solid"];
   Node22 -> Node26 [color="steelblue1",style="solid"];
-  Node22 -> Node35 [color="steelblue1",style="solid"];
-  Node35 [label="udmaio/rdl/AxiDma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_axi_dma_8hpp.html",tooltip=" "];
-  Node35 -> Node16 [color="steelblue1",style="solid"];
-  Node1 -> Node36 [color="steelblue1",style="solid"];
-  Node36 [label="UioMemSgdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8hpp.html",tooltip=" "];
-  Node36 -> Node34 [color="steelblue1",style="solid"];
-  Node36 -> Node19 [color="steelblue1",style="solid"];
-  Node36 -> Node15 [color="steelblue1",style="solid"];
-  Node36 -> Node25 [color="steelblue1",style="solid"];
+  Node22 -> Node36 [color="steelblue1",style="solid"];
+  Node36 [label="udmaio/rdl/AxiDma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_axi_dma_8hpp.html",tooltip=" "];
+  Node36 -> Node16 [color="steelblue1",style="solid"];
   Node1 -> Node37 [color="steelblue1",style="solid"];
-  Node37 [label="boost/asio/posix/stream\l_descriptor.hpp",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node37 [label="UioMemSgdma.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_uio_mem_sgdma_8hpp.html",tooltip=" "];
+  Node37 -> Node34 [color="steelblue1",style="solid"];
+  Node37 -> Node19 [color="steelblue1",style="solid"];
+  Node37 -> Node15 [color="steelblue1",style="solid"];
+  Node37 -> Node25 [color="steelblue1",style="solid"];
+  Node1 -> Node38 [color="steelblue1",style="solid"];
+  Node38 [label="boost/asio/posix/stream\l_descriptor.hpp",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
 }

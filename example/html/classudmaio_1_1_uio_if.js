@@ -11,6 +11,7 @@ var classudmaio_1_1_uio_if =
     [ "arm_interrupt", "classudmaio_1_1_uio_if.html#a6756aeb5ca3c013d0c4be22e3d573963", null ],
     [ "enable_debug", "classudmaio_1_1_uio_if.html#ae46944a87f194f48d10157becb5624f1", null ],
     [ "get_fd_int", "classudmaio_1_1_uio_if.html#a2eaafeb3146b24ee7ef1e9978a9482cf", null ],
+    [ "read_bulk", "classudmaio_1_1_uio_if.html#a5f8fc60947d75be15927a2310658cb03", null ],
     [ "reg_to_raw", "classudmaio_1_1_uio_if.html#a4f047f030c4363d46877dddf3d93478f", null ],
     [ "reg_to_raw", "classudmaio_1_1_uio_if.html#a3b1e22f2824346e4b87fbf884de554eb", null ],
     [ "wait_for_interrupt", "classudmaio_1_1_uio_if.html#a7035fb19bfd190fe5b482d27cc528b0a", null ],

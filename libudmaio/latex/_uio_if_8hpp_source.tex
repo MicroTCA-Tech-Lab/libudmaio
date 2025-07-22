@@ -76,20 +76,24 @@
 \DoxyCodeLine{75     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_a493e161ddcaa28c256f075f45e687391}{\_wr32}}(uint32\_t offs, uint32\_t data) \{ \mbox{\hyperlink{classudmaio_1_1_uio_if_ae470d46791fb4c678be3baf6a5095c7d}{\_hw}}-\/>\_wr32(offs, data); \}}
 \DoxyCodeLine{76     \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_a0287ff2c15a31b97b78c57e4eeb802e8}{\_wr64}}(uint32\_t offs, uint64\_t data) \{ \mbox{\hyperlink{classudmaio_1_1_uio_if_ae470d46791fb4c678be3baf6a5095c7d}{\_hw}}-\/>\_wr64(offs, data); \}}
 \DoxyCodeLine{77 }
-\DoxyCodeLine{78     \textcolor{keyword}{template} <\textcolor{keyword}{typename} C>}
-\DoxyCodeLine{79     C \mbox{\hyperlink{classudmaio_1_1_uio_if_a4cbf37ba60ea1ecf70034eeb7e953494}{\_rd\_reg}}(uint32\_t offs)\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{80         \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_uio_if_ae470d46791fb4c678be3baf6a5095c7d}{\_hw}}-\/>template \_rd\_reg<C>(offs);}
-\DoxyCodeLine{81     \}}
-\DoxyCodeLine{82 }
-\DoxyCodeLine{83     \textcolor{keyword}{template} <\textcolor{keyword}{typename} C>}
-\DoxyCodeLine{84     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_aa8ff2dcd394a824dab2a04e2aa275094}{\_wr\_reg}}(uint32\_t offs, \textcolor{keyword}{const} C\& value) \{}
-\DoxyCodeLine{85         \mbox{\hyperlink{classudmaio_1_1_uio_if_ae470d46791fb4c678be3baf6a5095c7d}{\_hw}}-\/>template \_wr\_reg<C>(offs, value);}
-\DoxyCodeLine{86     \}}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{88     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_a6756aeb5ca3c013d0c4be22e3d573963}{arm\_interrupt}}();}
-\DoxyCodeLine{89     uint32\_t \mbox{\hyperlink{classudmaio_1_1_uio_if_a7035fb19bfd190fe5b482d27cc528b0a}{wait\_for\_interrupt}}();}
-\DoxyCodeLine{90 \};}
+\DoxyCodeLine{78     std::vector<uint8\_t> \mbox{\hyperlink{classudmaio_1_1_uio_if_a5f8fc60947d75be15927a2310658cb03}{read\_bulk}}(uint32\_t offs, uint32\_t size) \{}
+\DoxyCodeLine{79         \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_uio_if_ae470d46791fb4c678be3baf6a5095c7d}{\_hw}}-\/>read\_bulk(offs, size);}
+\DoxyCodeLine{80     \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     \textcolor{keyword}{template} <\textcolor{keyword}{typename} C>}
+\DoxyCodeLine{83     C \mbox{\hyperlink{classudmaio_1_1_uio_if_a4cbf37ba60ea1ecf70034eeb7e953494}{\_rd\_reg}}(uint32\_t offs)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{84         \textcolor{keywordflow}{return} \mbox{\hyperlink{classudmaio_1_1_uio_if_ae470d46791fb4c678be3baf6a5095c7d}{\_hw}}-\/>template \_rd\_reg<C>(offs);}
+\DoxyCodeLine{85     \}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{keyword}{template} <\textcolor{keyword}{typename} C>}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_aa8ff2dcd394a824dab2a04e2aa275094}{\_wr\_reg}}(uint32\_t offs, \textcolor{keyword}{const} C\& value) \{}
+\DoxyCodeLine{89         \mbox{\hyperlink{classudmaio_1_1_uio_if_ae470d46791fb4c678be3baf6a5095c7d}{\_hw}}-\/>template \_wr\_reg<C>(offs, value);}
+\DoxyCodeLine{90     \}}
 \DoxyCodeLine{91 }
-\DoxyCodeLine{92 \}  \textcolor{comment}{// namespace udmaio}}
+\DoxyCodeLine{92     \textcolor{keywordtype}{void} \mbox{\hyperlink{classudmaio_1_1_uio_if_a6756aeb5ca3c013d0c4be22e3d573963}{arm\_interrupt}}();}
+\DoxyCodeLine{93     uint32\_t \mbox{\hyperlink{classudmaio_1_1_uio_if_a7035fb19bfd190fe5b482d27cc528b0a}{wait\_for\_interrupt}}();}
+\DoxyCodeLine{94 \};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \}  \textcolor{comment}{// namespace udmaio}}
 
 \end{DoxyCode}
