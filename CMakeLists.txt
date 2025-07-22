@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(libudmaio VERSION 1.5.0)
+project(libudmaio VERSION 1.5.1)
 
 include(CTest)
 
@@ -19,7 +19,7 @@ target_include_directories(udmaio PUBLIC inc)
 target_link_libraries(udmaio Boost::log Boost::dynamic_linking)
 target_compile_options(udmaio PRIVATE -Wall -Wextra -Wno-packed-bitfield-compat -Wno-missing-field-initializers -Wno-psabi -O2)
 set_target_properties(udmaio PROPERTIES VERSION ${PROJECT_VERSION})
-if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16.0") 
+if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16.0")
     target_precompile_headers(udmaio PRIVATE inc/udmaio/BoostPCH.hpp)
 endif()
 
@@ -37,7 +37,7 @@ write_basic_package_version_file(
     VERSION ${PROJECT_VERSION}
     COMPATIBILITY SameMajorVersion
 )
-    
+
 install(
     TARGETS udmaio
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
@@ -68,7 +68,7 @@ target_include_directories(axi_dma_demo_cpp PRIVATE example/demo_cpp/inc inc)
 target_link_libraries(axi_dma_demo_cpp Boost::log Boost::program_options Boost::dynamic_linking udmaio)
 target_compile_options(axi_dma_demo_cpp PRIVATE -Wall -Wextra -Wno-packed-bitfield-compat -Wno-missing-field-initializers -O2)
 target_compile_definitions(axi_dma_demo_cpp PRIVATE -DTARGET_HW=TARGET_HW_${TARGET_HW})
-if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16.0") 
+if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.16.0")
     target_precompile_headers(axi_dma_demo_cpp PRIVATE example/demo_cpp/inc/BoostPCH.hpp)
 endif()
 
