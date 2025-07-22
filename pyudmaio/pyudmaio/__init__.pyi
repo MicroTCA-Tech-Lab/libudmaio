@@ -13,7 +13,7 @@ from pyudmaio.binding import UioDeviceLocation
 from pyudmaio.binding import UioIf
 from pyudmaio.binding import UioMemSgdma
 from pyudmaio.binding import UioRegion
-from pyudmaio.binding import set_logging_level
+from pyudmaio.binding.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1 import set_logging_level
 from . import _UioReg
 from . import binding
 __all__ = ['ConfigUio', 'ConfigXdma', 'DataHandler', 'FpgaMemBufferOverAxi', 'FpgaMemBufferOverXdma', 'FrameFormat', 'LogLevel', 'UDmaBuf', 'UioAxiDmaIf', 'UioDeviceLocation', 'UioIf', 'UioMemSgdma', 'UioReg', 'UioRegion', 'binding', 'set_logging_level']

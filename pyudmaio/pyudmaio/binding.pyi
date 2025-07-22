@@ -1,46 +1,36 @@
 from __future__ import annotations
+import numpy
+import numpy.typing
 import typing
 __all__ = ['ConfigBase', 'ConfigUio', 'ConfigXdma', 'DEBUG', 'DataHandler', 'DmaBufferAbstract', 'FATAL', 'FpgaMemBufferOverAxi', 'FpgaMemBufferOverXdma', 'FrameFormat', 'HwAccessor', 'INFO', 'LogLevel', 'TRACE', 'UDmaBuf', 'UioAxiDmaIf', 'UioDeviceLocation', 'UioIf', 'UioMemSgdma', 'UioRegion', 'set_logging_level']
 class ConfigBase:
     """
     Base class for HwAccessor creation
     """
-    @staticmethod
-    def _pybind11_conduit_v1_(*args, **kwargs):
-        ...
     def hw_acc(self, arg0: UioDeviceLocation) -> HwAccessor:
         ...
 class ConfigUio(ConfigBase):
     """
     Creates HwAccessor from UioDeviceLocation (UIO version)
     """
-    @staticmethod
-    def _pybind11_conduit_v1_(*args, **kwargs):
-        ...
     def __init__(self) -> None:
         ...
 class ConfigXdma(ConfigBase):
     """
     Creates HwAccessor from UioDeviceLocation (XDMA version)
     """
-    @staticmethod
-    def _pybind11_conduit_v1_(*args, **kwargs):
-        ...
-    def __init__(self, xdma_path: str, pcie_offs: int, x7_series_mode: bool = False) -> None:
+    def __init__(self, xdma_path: str, pcie_offs: typing.SupportsInt, x7_series_mode: bool = False) -> None:
         ...
 class DataHandler:
     """
     """
-    @staticmethod
-    def _pybind11_conduit_v1_(*args, **kwargs):
+    def __init__(self, dma: UioAxiDmaIf, desc: UioMemSgdma, mem: DmaBufferAbstract, receive_packets: bool = True, queue_size: typing.SupportsInt = 64, rt_prio: bool = False) -> None:
         ...
-    def __init__(self, dma: UioAxiDmaIf, desc: UioMemSgdma, mem: DmaBufferAbstract, receive_packets: bool = True, queue_size: int = 64, rt_prio: bool = False) -> None:
+    def read(self, ms_timeout: typing.SupportsInt) -> numpy.typing.NDArray[numpy.uint8]:
         ...
-    def read(self, ms_timeout: int) -> numpy.ndarray[numpy.uint8]:
+    def read_nb(self) -> numpy.typing.NDArray[numpy.uint8]:
         ...
-    def read_nb(self) -> numpy.ndarray[numpy.uint8]:
-        ...
-    def start(self, nr_pkts: int, pkt_size: int, init_only: bool = False) -> None:
+    def start(self, nr_pkts: typing.SupportsInt, pkt_size: typing.SupportsInt, init_only: bool = False) -> None:
         ...
     def stop(self) -> None:
         ...
@@ -48,9 +38,6 @@ class DmaBufferAbstract:
     """
     Base class for DMA data buffer
     """
-    @staticmethod
-    def _pybind11_conduit_v1_(*args, **kwargs):
-        ...
     def get_phys_region(self) -> UioRegion:
         """
         Get physical region
@@ -63,19 +50,13 @@ class FpgaMemBufferOverAxi(DmaBufferAbstract, UioIf):
     DMA data buffer accessed over AXI/UIO, described w/ explicit address &
     size
     """
-    @staticmethod
-    def _pybind11_conduit_v1_(*args, **kwargs):
-        ...
     def __init__(self, arg0: UioDeviceLocation) -> None:
         ...
 class FpgaMemBufferOverXdma(DmaBufferAbstract):
     """
     DMA data buffer accessed over XDMA using the xdma c2h0 stream channel
     """
-    @staticmethod
-    def _pybind11_conduit_v1_(*args, **kwargs):
-        ...
-    def __init__(self, arg0: str, arg1: int) -> None:
+    def __init__(self, arg0: str, arg1: typing.SupportsInt) -> None:
         """
         Constructs a DMA data buffer
         
@@ -92,12 +73,19 @@ class FrameFormat:
         """
         Frame dimensions
         """
-        height: int
-        width: int
-        @staticmethod
-        def _pybind11_conduit_v1_(*args, **kwargs):
+        def __init__(self, arg0: typing.SupportsInt, arg1: typing.SupportsInt) -> None:
             ...
-        def __init__(self, arg0: int, arg1: int) -> None:
+        @property
+        def height(self) -> int:
+            ...
+        @height.setter
+        def height(self, arg0: typing.SupportsInt) -> None:
+            ...
+        @property
+        def width(self) -> int:
+            ...
+        @width.setter
+        def width(self, arg0: typing.SupportsInt) -> None:
             ...
     class PixelFormat:
         """
@@ -223,9 +211,6 @@ class FrameFormat:
         YUV8_UYV: typing.ClassVar[FrameFormat.PixelFormat]  # value = <PixelFormat.YUV8_UYV: 35127328>
         __members__: typing.ClassVar[dict[str, FrameFormat.PixelFormat]]  # value = {'unknown': <PixelFormat.unknown: 0>, 'Mono8': <PixelFormat.Mono8: 17301505>, 'Mono10': <PixelFormat.Mono10: 17825795>, 'Mono12': <PixelFormat.Mono12: 17825797>, 'Mono14': <PixelFormat.Mono14: 17825829>, 'Mono16': <PixelFormat.Mono16: 17825799>, 'BayerGR8': <PixelFormat.BayerGR8: 17301512>, 'BayerRG8': <PixelFormat.BayerRG8: 17301513>, 'BayerGB8': <PixelFormat.BayerGB8: 17301514>, 'BayerBG8': <PixelFormat.BayerBG8: 17301515>, 'BayerGR10': <PixelFormat.BayerGR10: 17825804>, 'BayerRG10': <PixelFormat.BayerRG10: 17825805>, 'BayerGB10': <PixelFormat.BayerGB10: 17825806>, 'BayerBG10': <PixelFormat.BayerBG10: 17825807>, 'BayerGR12': <PixelFormat.BayerGR12: 17825808>, 'BayerRG12': <PixelFormat.BayerRG12: 17825809>, 'BayerGB12': <PixelFormat.BayerGB12: 17825810>, 'BayerBG12': <PixelFormat.BayerBG12: 17825811>, 'RGB8': <PixelFormat.RGB8: 35127316>, 'BGR8': <PixelFormat.BGR8: 35127317>, 'RGBa8': <PixelFormat.RGBa8: 35651606>, 'BGRa8': <PixelFormat.BGRa8: 35651607>, 'RGB10V1Packed1': <PixelFormat.RGB10V1Packed1: 35651612>, 'RGB10p32': <PixelFormat.RGB10p32: 35651613>, 'RGB565p': <PixelFormat.RGB565p: 34603061>, 'BGR565p': <PixelFormat.BGR565p: 34603062>, 'YUV422_8_UYVY': <PixelFormat.YUV422_8_UYVY: 34603039>, 'YUV422_8': <PixelFormat.YUV422_8: 34603058>, 'YUV8_UYV': <PixelFormat.YUV8_UYV: 35127328>, 'YCbCr8_CbYCr': <PixelFormat.YCbCr8_CbYCr: 35127354>, 'YCbCr422_8': <PixelFormat.YCbCr422_8: 34603067>, 'YCbCr422_8_CbYCrY': <PixelFormat.YCbCr422_8_CbYCrY: 34603075>, 'YCbCr601_8_CbYCr': <PixelFormat.YCbCr601_8_CbYCr: 35127357>, 'YCbCr601_422_8': <PixelFormat.YCbCr601_422_8: 34603070>, 'YCbCr601_422_8_CbYCrY': <PixelFormat.YCbCr601_422_8_CbYCrY: 34603076>, 'YCbCr709_8_CbYCr': <PixelFormat.YCbCr709_8_CbYCr: 35127360>, 'YCbCr709_422_8': <PixelFormat.YCbCr709_422_8: 34603073>, 'YCbCr709_422_8_CbYCrY': <PixelFormat.YCbCr709_422_8_CbYCrY: 34603077>, 'RGB8_Planar': <PixelFormat.RGB8_Planar: 35127329>}
         unknown: typing.ClassVar[FrameFormat.PixelFormat]  # value = <PixelFormat.unknown: 0>
-        @staticmethod
-        def _pybind11_conduit_v1_(*args, **kwargs):
-            ...
         def __eq__(self, other: typing.Any) -> bool:
             ...
         def __getstate__(self) -> int:
@@ -234,7 +219,7 @@ class FrameFormat:
             ...
         def __index__(self) -> int:
             ...
-        def __init__(self, value: int) -> None:
+        def __init__(self, value: typing.SupportsInt) -> None:
             ...
         def __int__(self) -> int:
             ...
@@ -242,7 +227,7 @@ class FrameFormat:
             ...
         def __repr__(self) -> str:
             ...
-        def __setstate__(self, state: int) -> None:
+        def __setstate__(self, state: typing.SupportsInt) -> None:
             ...
         def __str__(self) -> str:
             ...
@@ -291,9 +276,6 @@ class FrameFormat:
     YUV422_8_UYVY: typing.ClassVar[FrameFormat.PixelFormat]  # value = <PixelFormat.YUV422_8_UYVY: 34603039>
     YUV8_UYV: typing.ClassVar[FrameFormat.PixelFormat]  # value = <PixelFormat.YUV8_UYV: 35127328>
     unknown: typing.ClassVar[FrameFormat.PixelFormat]  # value = <PixelFormat.unknown: 0>
-    @staticmethod
-    def _pybind11_conduit_v1_(*args, **kwargs):
-        ...
     def __init__(self) -> None:
         ...
     def get_bytes_per_pixel(self) -> int:
@@ -312,29 +294,26 @@ class FrameFormat:
         ...
     def get_word_width(self) -> int:
         ...
-    def set_bpp(self, arg0: int) -> None:
+    def set_bpp(self, arg0: typing.SupportsInt) -> None:
         ...
     def set_dim(self, arg0: FrameFormat.Dim) -> None:
         ...
     @typing.overload
-    def set_format(self, dim: FrameFormat.Dim, bytes_per_pixel: int, word_width: int = 4) -> None:
+    def set_format(self, dim: FrameFormat.Dim, bytes_per_pixel: typing.SupportsInt, word_width: typing.SupportsInt = 4) -> None:
         ...
     @typing.overload
-    def set_format(self, dim: FrameFormat.Dim, pix_fmt_str: str, word_width: int = 4) -> None:
+    def set_format(self, dim: FrameFormat.Dim, pix_fmt_str: str, word_width: typing.SupportsInt = 4) -> None:
         ...
     @typing.overload
-    def set_format(self, dim: FrameFormat.Dim, pix_fmt: FrameFormat.PixelFormat, word_width: int = 4) -> None:
+    def set_format(self, dim: FrameFormat.Dim, pix_fmt: FrameFormat.PixelFormat, word_width: typing.SupportsInt = 4) -> None:
         ...
     def set_pix_fmt(self, arg0: FrameFormat.PixelFormat) -> None:
         ...
-    def set_word_width(self, arg0: int) -> None:
+    def set_word_width(self, arg0: typing.SupportsInt) -> None:
         ...
 class HwAccessor:
     """
     """
-    @staticmethod
-    def _pybind11_conduit_v1_(*args, **kwargs):
-        ...
 class LogLevel:
     """
     Members:
@@ -352,9 +331,6 @@ class LogLevel:
     INFO: typing.ClassVar[LogLevel]  # value = <LogLevel.INFO: 2>
     TRACE: typing.ClassVar[LogLevel]  # value = <LogLevel.TRACE: 0>
     __members__: typing.ClassVar[dict[str, LogLevel]]  # value = {'FATAL': <LogLevel.FATAL: 5>, 'INFO': <LogLevel.INFO: 2>, 'DEBUG': <LogLevel.DEBUG: 1>, 'TRACE': <LogLevel.TRACE: 0>}
-    @staticmethod
-    def _pybind11_conduit_v1_(*args, **kwargs):
-        ...
     def __eq__(self, other: typing.Any) -> bool:
         ...
     def __getstate__(self) -> int:
@@ -363,7 +339,7 @@ class LogLevel:
         ...
     def __index__(self) -> int:
         ...
-    def __init__(self, value: int) -> None:
+    def __init__(self, value: typing.SupportsInt) -> None:
         ...
     def __int__(self) -> int:
         ...
@@ -371,7 +347,7 @@ class LogLevel:
         ...
     def __repr__(self) -> str:
         ...
-    def __setstate__(self, state: int) -> None:
+    def __setstate__(self, state: typing.SupportsInt) -> None:
         ...
     def __str__(self) -> str:
         ...
@@ -386,10 +362,7 @@ class UDmaBuf(DmaBufferAbstract):
     DMA data buffer accessed over AXI/UIO, implemented w/ udmabuf (see
     https://github.com/ikwzm/udmabuf)
     """
-    @staticmethod
-    def _pybind11_conduit_v1_(*args, **kwargs):
-        ...
-    def __init__(self, buf_idx: int = 0) -> None:
+    def __init__(self, buf_idx: typing.SupportsInt = 0) -> None:
         """
         Constructs a UDmaBuf
         
@@ -400,9 +373,6 @@ class UioAxiDmaIf(UioIf):
     """
     Interface to AXI DMA Core
     """
-    @staticmethod
-    def _pybind11_conduit_v1_(*args, **kwargs):
-        ...
     def __init__(self, arg0: UioDeviceLocation) -> None:
         ...
     def dump_status(self) -> None:
@@ -414,15 +384,12 @@ class UioDeviceLocation:
     Holds information where a device can be found over both UIO and XDMA
     """
     @staticmethod
-    def _pybind11_conduit_v1_(*args, **kwargs):
-        ...
-    @staticmethod
     def set_link_axi() -> None:
         """
         Set UioIf's globally to use a AXI/UIO link
         """
     @staticmethod
-    def set_link_xdma(arg0: str, arg1: int, arg2: bool) -> None:
+    def set_link_xdma(arg0: str, arg1: typing.SupportsInt, arg2: bool) -> None:
         """
         Set UioIf's globally to use a XDMA link
         
@@ -468,16 +435,15 @@ class UioIf:
     """
     Base class for UIO interfaces
     """
-    @staticmethod
-    def _pybind11_conduit_v1_(*args, **kwargs):
-        ...
     def __init__(self, arg0: str, arg1: UioDeviceLocation) -> None:
         ...
-    def _rd32(self, arg0: int) -> int:
+    def _rd32(self, arg0: typing.SupportsInt) -> int:
         ...
-    def _wr32(self, arg0: int, arg1: int) -> None:
+    def _wr32(self, arg0: typing.SupportsInt, arg1: typing.SupportsInt) -> None:
         ...
     def arm_interrupt(self) -> None:
+        ...
+    def read_bulk(self, arg0: typing.SupportsInt, arg1: typing.SupportsInt) -> numpy.typing.NDArray[numpy.uint8]:
         ...
     def wait_for_interrupt(self) -> int:
         ...
@@ -486,9 +452,6 @@ class UioMemSgdma(UioIf):
     Interface to AXI DMA scatter-gather buffers & descriptors Uses a UioIf
     to access DMA descriptor memory
     """
-    @staticmethod
-    def _pybind11_conduit_v1_(*args, **kwargs):
-        ...
     def __init__(self, arg0: UioDeviceLocation) -> None:
         ...
     def print_descs(self) -> None:
@@ -499,12 +462,19 @@ class UioRegion:
     """
     General-purpose struct to define a memory area
     """
-    addr: int
-    size: int
-    @staticmethod
-    def _pybind11_conduit_v1_(*args, **kwargs):
+    def __init__(self, arg0: typing.SupportsInt, arg1: typing.SupportsInt) -> None:
         ...
-    def __init__(self, arg0: int, arg1: int) -> None:
+    @property
+    def addr(self) -> int:
+        ...
+    @addr.setter
+    def addr(self, arg0: typing.SupportsInt) -> None:
+        ...
+    @property
+    def size(self) -> int:
+        ...
+    @size.setter
+    def size(self, arg0: typing.SupportsInt) -> None:
         ...
 def set_logging_level(arg0: LogLevel) -> None:
     ...
