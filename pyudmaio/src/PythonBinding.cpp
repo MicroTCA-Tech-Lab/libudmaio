@@ -13,6 +13,7 @@
 
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
+#include <udmaio/UioIf.hpp>
 
 #include "DataHandlerPython.hpp"
 #include "docstrings.hpp"
@@ -25,16 +26,12 @@
 
 namespace py = pybind11;
 
-class UioIf_PyOverrideHelper : public udmaio::UioIf {
-  public:
-    using udmaio::UioIf::UioIf;
-};
-
 class UioIf_PyPublishHelper : public udmaio::UioIf {
   public:
     using udmaio::UioIf::_rd32;
     using udmaio::UioIf::_wr32;
     using udmaio::UioIf::arm_interrupt;
+    using udmaio::UioIf::read_bulk;
     using udmaio::UioIf::UioIf;
     using udmaio::UioIf::wait_for_interrupt;
 };
@@ -96,7 +93,7 @@ PYBIND11_MODULE(binding, m) {
              py::arg("x7_series_mode") = bool(false),
              DOC(udmaio, UioConfigXdma, UioConfigXdma));
 
-    py::class_<udmaio::UioIf, UioIf_PyOverrideHelper, std::shared_ptr<udmaio::UioIf>>(
+    py::class_<udmaio::UioIf, UioIf_PyPublishHelper, std::shared_ptr<udmaio::UioIf>>(
         m,
         "UioIf",
         DOC(udmaio, UioIf))
@@ -108,7 +105,21 @@ PYBIND11_MODULE(binding, m) {
              DOC(udmaio, UioIf, arm_interrupt))
         .def("wait_for_interrupt",
              &UioIf_PyPublishHelper::wait_for_interrupt,
-             DOC(udmaio, UioIf, wait_for_interrupt));
+             DOC(udmaio, UioIf, wait_for_interrupt))
+        .def("read_bulk", [](UioIf_PyPublishHelper& self, uint32_t offs, uint32_t size) {
+            // Create vector on the heap, holding the data
+            auto vec = new std::vector<uint8_t>(self.read_bulk(offs, size));
+            // Callback for Python garbage collector
+            py::capsule gc_callback(vec, [](void* f) {
+                auto ptr = reinterpret_cast<std::vector<uint8_t>*>(f);
+                delete ptr;
+            });
+            // Return Numpy array, transferring ownership to Python
+            return py::array_t<uint8_t>({vec->size() / sizeof(uint8_t)},          // shape
+                                        {sizeof(uint8_t)},                        // stride
+                                        reinterpret_cast<uint8_t*>(vec->data()),  // data pointer
+                                        gc_callback);
+        });
 
     py::class_<udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::DmaBufferAbstract>>(
         m,
