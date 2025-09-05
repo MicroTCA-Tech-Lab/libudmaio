@@ -32,6 +32,7 @@ class UioIf_PyPublishHelper : public udmaio::UioIf {
     using udmaio::UioIf::_wr32;
     using udmaio::UioIf::arm_interrupt;
     using udmaio::UioIf::read_bulk;
+    using udmaio::UioIf::write_bulk;
     using udmaio::UioIf::UioIf;
     using udmaio::UioIf::wait_for_interrupt;
 };
@@ -119,7 +120,19 @@ PYBIND11_MODULE(binding, m) {
                                         {sizeof(uint8_t)},                        // stride
                                         reinterpret_cast<uint8_t*>(vec->data()),  // data pointer
                                         gc_callback);
-        });
+        })
+        .def("write_bulk",
+             [](UioIf_PyPublishHelper& self, uint32_t offs, py::buffer b) {
+                 py::buffer_info info = b.request();
+                 // Accept only contiguous 1-D buffers
+                 if (info.ndim != 1) {
+                     throw std::runtime_error("write_bulk expects a 1-D bytes-like object");
+                 }
+                 auto ptr = static_cast<uint8_t*>(info.ptr);
+                 std::vector<uint8_t> data(ptr, ptr + info.size * info.itemsize);
+                 self.write_bulk(offs, std::move(data));
+             },
+             "Write a contiguous bytes-like object to the mapped device memory at the given offset");
 
     py::class_<udmaio::DmaBufferAbstract, std::shared_ptr<udmaio::DmaBufferAbstract>>(
         m,
