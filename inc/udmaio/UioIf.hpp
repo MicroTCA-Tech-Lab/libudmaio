@@ -79,6 +79,10 @@ class UioIf : private boost::noncopyable {
         return _hw->read_bulk(offs, size);
     }
 
+    void write_bulk(uint32_t offs, std::vector<uint8_t> data) {
+        return _hw->write_bulk(offs, data);
+    }
+
     template <typename C>
     C _rd_reg(uint32_t offs) const {
         return _hw->template _rd_reg<C>(offs);
