@@ -11,6 +11,7 @@ var classudmaio_1_1_hw_accessor_mmap =
     [ "get_virt_mem", "classudmaio_1_1_hw_accessor_mmap.html#a096d74608a4499d234ee47a14396ca1a", null ],
     [ "read_bulk", "classudmaio_1_1_hw_accessor_mmap.html#a90c87817cd8c3c906a617b1e0941bcd4", null ],
     [ "wait_for_interrupt", "classudmaio_1_1_hw_accessor_mmap.html#a7d00057806e3b9e98e5f4b200dd81b71", null ],
+    [ "write_bulk", "classudmaio_1_1_hw_accessor_mmap.html#ae9fd29f7d7607de38e8f83c6b85195a0", null ],
     [ "_access_mem", "classudmaio_1_1_hw_accessor_mmap.html#abb226e09f75ef2c1cae366f3b30b54c0", null ],
     [ "_fd", "classudmaio_1_1_hw_accessor_mmap.html#ae4fd7d9ff21a903af787040ddc36fa91", null ],
     [ "_mmap_mem", "classudmaio_1_1_hw_accessor_mmap.html#a26b9a4df8e04fb7a6e4748f21c809e7f", null ],

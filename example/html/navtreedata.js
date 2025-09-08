@@ -41,7 +41,7 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Typedefs", "functions_type.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
@@ -64,10 +64,10 @@ var NAVTREEINDEX =
 [
 "_axi_dma_8hpp.html",
 "classudmaio_1_1_frame_format.html#a33c5553c8ca80b559c948e252081e8b7",
-"classudmaio_1_1_reg_accessor_array.html#a488582212ef79d90b08842feb6ec876b",
-"dir_17a9c27f48eb40d1f2b86d618cc4c05b.html",
-"structaxi__dma_1_1mm2s__length__t.html",
-"structaxi__vdma_1_1s2mm__frmdly__stride__t.html#a0488e7c5a31744eecf7318c42e6920d8"
+"classudmaio_1_1_hw_accessor_xdma.html#af13a77bce91f00d58b1f0f0fa399f6d8",
+"classudmaio_1_1_uio_mem_sgdma.html#ad1c770a8302c0f8c6838dca51efe5993",
+"structaxi__dma_1_1mm2s__dmasr__t.html#a6abf8273e3f2567e7cb21e24db7e276a",
+"structaxi__vdma_1_1mm2s__vsize__t.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -41,6 +41,8 @@ void \mbox{\hyperlink{classudmaio_1_1_uio_if_a0287ff2c15a31b97b78c57e4eeb802e8}{
 \item 
 std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classudmaio_1_1_uio_if_a5f8fc60947d75be15927a2310658cb03}{read\+\_\+bulk}} (uint32\+\_\+t offs, uint32\+\_\+t size)
 \item 
+void \mbox{\hyperlink{classudmaio_1_1_uio_if_a5b8e830656fa56ce4611cdc9ab0eda25}{write\+\_\+bulk}} (uint32\+\_\+t offs, std\+::vector$<$ uint8\+\_\+t $>$ data)
+\item 
 {\footnotesize template$<$typename C $>$ }\\C \mbox{\hyperlink{classudmaio_1_1_uio_if_a4cbf37ba60ea1ecf70034eeb7e953494}{\+\_\+rd\+\_\+reg}} (uint32\+\_\+t offs) const
 \item 
 {\footnotesize template$<$typename C $>$ }\\void \mbox{\hyperlink{classudmaio_1_1_uio_if_aa8ff2dcd394a824dab2a04e2aa275094}{\+\_\+wr\+\_\+reg}} (uint32\+\_\+t offs, const C \&value)
@@ -177,6 +179,12 @@ static uint64\+\_\+t udmaio\+::\+Uio\+If\+::reg\+\_\+to\+\_\+raw (\begin{DoxyPar
 \index{wait\_for\_interrupt@{wait\_for\_interrupt}!udmaio::UioIf@{udmaio::UioIf}}
 \doxysubsubsection{\texorpdfstring{wait\_for\_interrupt()}{wait\_for\_interrupt()}}
 {\footnotesize\ttfamily uint32\+\_\+t udmaio\+::\+Uio\+If\+::wait\+\_\+for\+\_\+interrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classudmaio_1_1_uio_if_a5b8e830656fa56ce4611cdc9ab0eda25}\label{classudmaio_1_1_uio_if_a5b8e830656fa56ce4611cdc9ab0eda25}} 
+\index{udmaio::UioIf@{udmaio::UioIf}!write\_bulk@{write\_bulk}}
+\index{write\_bulk@{write\_bulk}!udmaio::UioIf@{udmaio::UioIf}}
+\doxysubsubsection{\texorpdfstring{write\_bulk()}{write\_bulk()}}
+{\footnotesize\ttfamily void udmaio\+::\+Uio\+If\+::write\+\_\+bulk (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{offs,  }\item[{std\+::vector$<$ uint8\+\_\+t $>$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
 
 

@@ -151,6 +151,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a61e8c3716300168c83877da12fe7ffbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c47d6a8cbec9b1c542e2d0c234dc4f1"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_hw_accessor.html#a8c47d6a8cbec9b1c542e2d0c234dc4f1">read_bulk</a> (uint32_t offs, uint32_t size)</td></tr>
 <tr class="separator:a8c47d6a8cbec9b1c542e2d0c234dc4f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a5b3d37554f4f6672f8078dee01ceef"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_hw_accessor.html#a0a5b3d37554f4f6672f8078dee01ceef">write_bulk</a> (uint32_t offs, std::vector&lt; uint8_t &gt; data)</td></tr>
+<tr class="separator:a0a5b3d37554f4f6672f8078dee01ceef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab52226a091bb09bde417d163384fc645"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
 <tr class="memitem:ab52226a091bb09bde417d163384fc645"><td class="memTemplItemLeft" align="right" valign="top">C&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_hw_accessor.html#ab52226a091bb09bde417d163384fc645">_rd_reg</a> (uint32_t offs) const</td></tr>
 <tr class="memdesc:ab52226a091bb09bde417d163384fc645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read register from UIO interface.  <a href="classudmaio_1_1_hw_accessor.html#ab52226a091bb09bde417d163384fc645">More...</a><br /></td></tr>
@@ -797,6 +799,44 @@ template&lt;typename C &gt; </div>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classudmaio_1_1_hw_accessor_mmap.html#a7d00057806e3b9e98e5f4b200dd81b71">udmaio::HwAccessorMmap&lt; max_access_width_t &gt;</a>, and <a class="el" href="classudmaio_1_1_hw_accessor_mmap.html#a7d00057806e3b9e98e5f4b200dd81b71">udmaio::HwAccessorMmap&lt; uint64_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a0a5b3d37554f4f6672f8078dee01ceef" name="a0a5b3d37554f4f6672f8078dee01ceef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a5b3d37554f4f6672f8078dee01ceef">&#9670;&#160;</a></span>write_bulk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void udmaio::HwAccessor::write_bulk </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>offs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classudmaio_1_1_hw_accessor_mmap.html#ae9fd29f7d7607de38e8f83c6b85195a0">udmaio::HwAccessorMmap&lt; max_access_width_t &gt;</a>, and <a class="el" href="classudmaio_1_1_hw_accessor_mmap.html#ae9fd29f7d7607de38e8f83c6b85195a0">udmaio::HwAccessorMmap&lt; uint64_t &gt;</a>.</p>
 
 </div>
 </div>

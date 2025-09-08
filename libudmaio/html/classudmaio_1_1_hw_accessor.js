@@ -19,6 +19,7 @@ var classudmaio_1_1_hw_accessor =
     [ "get_virt_mem", "classudmaio_1_1_hw_accessor.html#a722d56b34c177ab7b2d05664fa74f040", null ],
     [ "read_bulk", "classudmaio_1_1_hw_accessor.html#a8c47d6a8cbec9b1c542e2d0c234dc4f1", null ],
     [ "wait_for_interrupt", "classudmaio_1_1_hw_accessor.html#a05bca18dee3f8705c565fe15e845a163", null ],
+    [ "write_bulk", "classudmaio_1_1_hw_accessor.html#a0a5b3d37554f4f6672f8078dee01ceef", null ],
     [ "RegAccessorBase", "classudmaio_1_1_hw_accessor.html#a55fe8d02d0291443c9351b5be423747f", null ],
     [ "UioIf", "classudmaio_1_1_hw_accessor.html#a3d8633ab4f2e3163dd14ae7cef0a5471", null ],
     [ "_debug_enable", "classudmaio_1_1_hw_accessor.html#a8b7c51c0fcdf2daeac15526ebaf6ebe4", null ]

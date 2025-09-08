@@ -151,6 +151,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a0287ff2c15a31b97b78c57e4eeb802e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f8fc60947d75be15927a2310658cb03"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if.html#a5f8fc60947d75be15927a2310658cb03">read_bulk</a> (uint32_t offs, uint32_t size)</td></tr>
 <tr class="separator:a5f8fc60947d75be15927a2310658cb03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b8e830656fa56ce4611cdc9ab0eda25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if.html#a5b8e830656fa56ce4611cdc9ab0eda25">write_bulk</a> (uint32_t offs, std::vector&lt; uint8_t &gt; data)</td></tr>
+<tr class="separator:a5b8e830656fa56ce4611cdc9ab0eda25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cbf37ba60ea1ecf70034eeb7e953494"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
 <tr class="memitem:a4cbf37ba60ea1ecf70034eeb7e953494"><td class="memTemplItemLeft" align="right" valign="top">C&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classudmaio_1_1_uio_if.html#a4cbf37ba60ea1ecf70034eeb7e953494">_rd_reg</a> (uint32_t offs) const</td></tr>
 <tr class="separator:a4cbf37ba60ea1ecf70034eeb7e953494"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -605,6 +607,42 @@ template&lt;typename C , typename  = std::enable_if_t&lt;(sizeof(C) == 8)&gt;&gt
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b8e830656fa56ce4611cdc9ab0eda25" name="a5b8e830656fa56ce4611cdc9ab0eda25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b8e830656fa56ce4611cdc9ab0eda25">&#9670;&#160;</a></span>write_bulk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void udmaio::UioIf::write_bulk </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>offs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
