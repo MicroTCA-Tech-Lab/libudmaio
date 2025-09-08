@@ -69,6 +69,8 @@ class HwAccessor : public Logger, private boost::noncopyable {
         return {};
     }
 
+    virtual void write_bulk(uint32_t offs, std::vector<uint8_t> data) {}
+
     /**
      * @brief Read register from UIO interface
      *
@@ -235,6 +237,11 @@ class HwAccessorMmap : public HwAccessor {
         auto src = _mem_ptr<uint8_t>(offs);
         memcpy(&result[0], const_cast<uint8_t*>(src), size);
         return result;
+    }
+
+    virtual void write_bulk(uint32_t offs, std::vector<uint8_t> data) final override {
+        auto dst = _mem_ptr<uint8_t>(offs);
+        memcpy(const_cast<uint8_t*>(dst), &data[0], std::size(data));
     }
 
   public:
