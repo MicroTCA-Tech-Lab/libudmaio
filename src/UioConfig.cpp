@@ -104,8 +104,6 @@ UioRegion UioConfigUio::_get_map_region(int uio_number, int map_index) {
         static_cast<size_t>(_get_uio_val(base_path + "size")),
     };
 
-    std::cout << "UIoRegion is " << region.size << " bytes at 0x" << std::hex << region.addr
-              << std::endl;
     return region;
 }
 
@@ -115,7 +113,6 @@ size_t UioConfigUio::_get_map_offset(int uio_number, int map_index) {
 
     auto offset = static_cast<size_t>(_get_uio_val(base_path + "offset"));
 
-    std::cout << "UIoOffset is 0x" << std::hex << offset << std::endl;
     return offset;
 }
 
